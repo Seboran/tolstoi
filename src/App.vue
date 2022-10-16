@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { Tooltip } from "bootstrap";
+import { ref } from "vue";
 
 import StartScreen from "./components/StartScreen.vue";
 import GameRules from "./components/GameRules.vue";
@@ -34,11 +33,7 @@ function endGame() {
   gameState.value = GameStates.End;
 }
 
-const rulesButton = ref(null);
 
-onMounted(() => {
-  new Tooltip(rulesButton.value);
-});
 </script>
 
 <template>
@@ -46,7 +41,6 @@ onMounted(() => {
     v-if="gameState === GameStates.Start"
     id="rules-button"
     class="btn btn-secondary btn-circle"
-    ref="rulesButton"
     @click="seeRules"
     type="button"
     data-toggle="tooltip"
