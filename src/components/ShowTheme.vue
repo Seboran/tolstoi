@@ -12,6 +12,7 @@ const emits = defineEmits<{
 
 const playerIndex = ref<number>(0);
 const randomPlayer = ref<number>(0);
+const show = ref(false);
 const theme = themes[Math.floor(Math.random() * themes.length)];
 
 function getRandomInt(): number {
@@ -25,6 +26,7 @@ const displayedMessage = computed<string>(() =>
 function nextPlayer() {
   if (playerIndex.value < props.numberPlayers - 1) {
     playerIndex.value++;
+    show.value = false;
   } else {
     emits("quit");
   }
@@ -35,6 +37,6 @@ onMounted(() => (randomPlayer.value = getRandomInt()));
 
 <template>
   <h1>Le thème est</h1>
-  <ShowThemeButton :msg="displayedMessage" />
-  <button @click="nextPlayer">Suivant-e</button>
+  <ShowThemeButton :msg="displayedMessage" v-model:show="show"/>
+  <button class="btn btn-secondary w-100" @click="nextPlayer">Suivant-e</button>
 </template>
