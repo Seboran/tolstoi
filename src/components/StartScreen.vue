@@ -11,7 +11,7 @@ const numberPlayers = ref(3);
   <div>
     <h2>Nombre de joueurs ?</h2>
   </div>
-  <input class="form-control" v-model="numberPlayers" />
+  <input type="number" class="form-control" v-model="numberPlayers" />
   <button class="btn btn-primary w-100" @click="emit('start', numberPlayers)">
     Jouer !
   </button>
