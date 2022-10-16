@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { Tooltip } from "bootstrap";
+
 import StartScreen from "./components/StartScreen.vue";
 import GameRules from "./components/GameRules.vue";
 import ShowTheme from "./components/ShowTheme.vue";
@@ -31,42 +33,80 @@ function seeRules() {
 function endGame() {
   gameState.value = GameStates.End;
 }
+
+const rulesButton = ref(null);
+
+onMounted(() => {
+  new Tooltip(rulesButton.value);
+});
 </script>
 
 <template>
   <main>
-    <StartScreen
-      v-if="gameState === GameStates.Start"
-      @start="startGame"
-      @rules="seeRules"
-    />
-    <GameRules v-if="gameState === GameStates.Rules" @quit="backMainScreen" />
-    <ShowTheme
-      v-if="gameState === GameStates.Reveal"
-      :number-players="numberPlayers"
-      @quit="endGame"
-    />
-    <EndScreen v-if="gameState === GameStates.End" @replay="backMainScreen" />
+    <header>
+      <h1>
+        Jeu du débat
+        <button
+          v-if="gameState === GameStates.Start"
+          id="rules-button"
+          class="btn btn-secondary btn-circle"
+          ref="rulesButton"
+          @click="seeRules"
+          type="button"
+          data-toggle="tooltip"
+          data-placement="top"
+        >
+          ?
+        </button>
+      </h1>
+    </header>
+    <div class="card">
+      <div class="content card-body">
+        <StartScreen v-if="gameState === GameStates.Start" @start="startGame" />
+        <GameRules
+          v-if="gameState === GameStates.Rules"
+          @quit="backMainScreen"
+        />
+        <ShowTheme
+          v-if="gameState === GameStates.Reveal"
+          :number-players="numberPlayers"
+          @quit="endGame"
+        />
+        <EndScreen
+          v-if="gameState === GameStates.End"
+          @replay="backMainScreen"
+        />
+      </div>
+    </div>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
 }
 
 header {
-  display: flex;
-  place-items: center;
-  padding-right: calc(var(--section-gap) / 2);
+  text-align: center;
+  width: 100%;
 }
 
-.logo {
-  margin: 0 2rem 0 0;
+main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  padding: 10px;
+}
+
+.content {
+  height: 400px !important;
+  width: 400px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

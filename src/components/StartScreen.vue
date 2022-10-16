@@ -3,16 +3,16 @@ import { ref } from "vue";
 
 const emit = defineEmits<{
   (e: "start", value: number): void;
-  (e: "rules"): void;
 }>();
 const numberPlayers = ref(3);
 </script>
 
 <template>
   <div>
-    <button @click="emit('rules')">Règles</button>
-    <h1>Nombre de joueurs ?</h1>
-    <input v-model="numberPlayers" />
-    <button @click="emit('start', numberPlayers)">Jouer</button>
+    <h2>Nombre de joueurs ?</h2>
   </div>
+  <input class="form-control" v-model="numberPlayers" />
+  <button class="btn btn-primary w-100" @click="emit('start', numberPlayers)">
+    Jouer !
+  </button>
 </template>

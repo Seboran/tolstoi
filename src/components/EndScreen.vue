@@ -3,6 +3,9 @@ const emits = defineEmits<{ (e: "replay"): void }>();
 </script>
 
 <template>
-  <h1>Débattez !</h1>
-  <button @click="emits('replay')">Rejouer ?</button>
+  <div><!-- empty div --></div>
+  <h2>Débattez !</h2>
+  <button class="btn btn-primary w-100" @click="emits('replay')">
+    Rejouer ?
+  </button>
 </template>
