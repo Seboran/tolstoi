@@ -36,7 +36,7 @@ onMounted(() => (randomPlayer.value = getRandomInt()));
 </script>
 
 <template>
-  <h2>Le thème est</h2>
-  <ShowThemeButton :msg="displayedMessage" v-model:show="show"/>
+  <h2>Appuie pour voir le thème !</h2>
+  <ShowThemeButton :msg="displayedMessage" v-model:show="show" />
   <button class="btn btn-secondary w-100" @click="nextPlayer">Suivant-e</button>
 </template>

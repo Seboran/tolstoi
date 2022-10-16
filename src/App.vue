@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
-import { Tooltip } from "bootstrap";
+import { ref } from "vue";
 
 import StartScreen from "./components/StartScreen.vue";
 import GameRules from "./components/GameRules.vue";
@@ -34,30 +33,26 @@ function endGame() {
   gameState.value = GameStates.End;
 }
 
-const rulesButton = ref(null);
 
-onMounted(() => {
-  new Tooltip(rulesButton.value);
-});
 </script>
 
 <template>
+  <button
+    v-if="gameState === GameStates.Start"
+    id="rules-button"
+    class="btn btn-secondary btn-circle"
+    @click="seeRules"
+    type="button"
+    data-toggle="tooltip"
+    data-placement="top"
+  >
+    ?
+  </button>
   <main>
     <header>
       <h1>
-        Jeu du débat
-        <button
-          v-if="gameState === GameStates.Start"
-          id="rules-button"
-          class="btn btn-secondary btn-circle"
-          ref="rulesButton"
-          @click="seeRules"
-          type="button"
-          data-toggle="tooltip"
-          data-placement="top"
-        >
-          ?
-        </button>
+        🤓<br />
+        Le jeu du débat
       </h1>
     </header>
     <div class="card">
@@ -102,11 +97,17 @@ main {
 }
 
 .content {
-  height: 400px !important;
-  width: 400px !important;
+  min-height: 200px !important;
+  width: 300px !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+#rules-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 </style>
