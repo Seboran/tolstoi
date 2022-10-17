@@ -1,24 +1,20 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
-const props = defineProps<{ msg: string; show: boolean }>();
-const emit = defineEmits<{ (e: "update:show", value: boolean): void }>();
-
-const text = computed(() => (_show.value ? props.msg : "Révéler"));
-const _show = computed({
-  get() {
-    return props.show;
-  },
-  set(val) {
-    emit("update:show", val);
-  },
-});
-
-function showText() {
-  _show.value = !_show.value;
-}
+defineProps<{ msg: string; show: boolean }>();
 </script>
 
 <template>
-  <button class="btn btn-primary w-100" @click="showText">{{ text }}</button>
+  <div class="hidden card">
+    <h2 v-show="show">{{ msg }}</h2>
+  </div>
 </template>
+
+<style scoped>
+.hidden {
+  min-height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+</style>

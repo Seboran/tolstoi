@@ -9,10 +9,16 @@ const numberPlayers = ref(3);
 
 <template>
   <div>
-    <h2>Nombre de joueurs ?</h2>
+    <h2>Combien de joueurs ?</h2>
   </div>
   <input type="number" class="form-control" v-model="numberPlayers" />
   <button class="btn btn-primary w-100" @click="emit('start', numberPlayers)">
     Jouer !
   </button>
 </template>
+
+<style scoped>
+h2 {
+  text-align: center;
+}
+</style>

@@ -23,6 +23,12 @@ const displayedMessage = computed<string>(() =>
   playerIndex.value !== randomPlayer.value ? theme : "tu ne sais pas"
 );
 
+const nextPlayerMessage = computed<string>(() =>
+  playerIndex.value === props.numberPlayers - 1
+    ? "Terminer"
+    : "Donner au joueur suivant"
+);
+
 function nextPlayer() {
   if (playerIndex.value < props.numberPlayers - 1) {
     playerIndex.value++;
@@ -32,11 +38,26 @@ function nextPlayer() {
   }
 }
 
+function showTheme() {
+  show.value = true;
+}
+
+function onClick() {
+  if (show.value) {
+    nextPlayer();
+  } else {
+    showTheme();
+  }
+}
+
 onMounted(() => (randomPlayer.value = getRandomInt()));
 </script>
 
 <template>
-  <h2>Appuie pour voir le thème !</h2>
+  <h2>Le thème est</h2>
   <ShowThemeButton :msg="displayedMessage" v-model:show="show" />
-  <button class="btn btn-secondary w-100" @click="nextPlayer">Suivant-e</button>
+
+  <button class="btn btn-primary w-100" @click="onClick">
+    {{ !show ? "Révéler" : nextPlayerMessage }}
+  </button>
 </template>

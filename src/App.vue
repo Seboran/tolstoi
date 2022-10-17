@@ -32,8 +32,6 @@ function seeRules() {
 function endGame() {
   gameState.value = GameStates.End;
 }
-
-
 </script>
 
 <template>
@@ -46,7 +44,7 @@ function endGame() {
     data-toggle="tooltip"
     data-placement="top"
   >
-    ?
+    Règles du jeu
   </button>
   <main>
     <header>
