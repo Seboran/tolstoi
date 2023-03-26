@@ -19,5 +19,8 @@ export default defineConfig({
     transformMode: {
       web: [/.[tj]sx$/],
     },
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
   },
 });

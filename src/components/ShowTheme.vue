@@ -55,7 +55,7 @@ onMounted(() => (randomPlayer.value = getRandomInt()));
 
 <template>
   <h2>Le thème est</h2>
-  <ShowThemeButton :msg="displayedMessage" v-model:show="show" />
+  <ShowThemeButton :msg="displayedMessage" :show="show" />
 
   <button class="btn btn-primary w-100" @click="onClick">
     {{ !show ? "Révéler" : nextPlayerMessage }}
