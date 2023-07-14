@@ -48,8 +48,13 @@ function onClick() {
   }
 }
 
+function getRandomInt(): number {
+  return Math.floor(Math.random() * props.numberPlayers);
+}
+
 onMounted(async () => {
   await get();
+  randomPlayer.value = getRandomInt();
 });
 </script>
 
