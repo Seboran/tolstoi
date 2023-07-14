@@ -1,5 +1,4 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/themes.json"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
