@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
-import themes from "./themes.json";
+
 import ShowThemeButton from "./ShowThemeButton.vue";
+import { useThemes } from "@/composables/appwrite";
 
 const props = defineProps<{
   numberPlayers: number;
@@ -9,6 +10,8 @@ const props = defineProps<{
 const emits = defineEmits<{
   (e: "quit"): void;
 }>();
+
+const { themes, get } = useThemes()
 
 const playerIndex = ref<number>(0);
 const randomPlayer = ref<number>(0);
@@ -50,7 +53,10 @@ function onClick() {
   }
 }
 
-onMounted(() => (randomPlayer.value = getRandomInt()));
+onMounted(async () => {
+  await get();
+  (randomPlayer.value = getRandomInt())
+});
 </script>
 
 <template>
