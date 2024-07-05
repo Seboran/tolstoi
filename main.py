@@ -29,7 +29,12 @@ def solve_for_n(balances: list):
         return np.sum(np.abs(vector1))
 
     # Use scipy.optimize.minimize to find the minimum of the function
-    result = opt.minimize(minimize_vector, x0=np.array(np.zeros(n**2)), constraints=[
+    somme_initiale_a_transferer = sum(
+        filter(lambda x: x > 0, BALANCES_6_PERSONNES))
+    initial_guess = np.zeros(n**2)
+
+    print("somme_initiale_a_transferer", somme_initiale_a_transferer)
+    result = opt.minimize(minimize_vector, x0=initial_guess, constraints=[
         {'type': 'eq', 'fun': constraint1},  # First constraint
         # Second constraint ensuring diagonal terms are zero
         {'type': 'eq', 'fun': constraint_anti_symmetric},
