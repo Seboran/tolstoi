@@ -64,7 +64,7 @@ print(BALANCES)
 
 solve_for_n(BALANCES)
 
-BALANCES_5_PERSONNES = [17, -4, -13, -5, 5]
+BALANCES_5_PERSONNES = np.zeros(5)
 
 BALANCES_5_PERSONNES = ajouter_depense(3, 1, BALANCES_5_PERSONNES)
 BALANCES_5_PERSONNES = ajouter_depense(15, 2, BALANCES_5_PERSONNES)
@@ -77,7 +77,7 @@ BALANCES_5_PERSONNES = ajouter_depense(10, 0, BALANCES_5_PERSONNES)
 BALANCES_5_PERSONNES = ajouter_depense(15, 1, BALANCES_5_PERSONNES)
 BALANCES_5_PERSONNES = ajouter_depense(7, 3, BALANCES_5_PERSONNES)
 
-print(BALANCES_5_PERSONNES)
+print("Cas pour 5 personnes", BALANCES_5_PERSONNES)
 
 solve_for_n(BALANCES_5_PERSONNES)
 
@@ -108,5 +108,6 @@ BALANCES_6_PERSONNES = ajouter_depense(46, 1, BALANCES_6_PERSONNES)
 BALANCES_6_PERSONNES = ajouter_depense(7, 3, BALANCES_6_PERSONNES)
 
 print(BALANCES_6_PERSONNES)
+print("somme totale", sum(filter(lambda x: x > 0, BALANCES_6_PERSONNES)))
 
 solve_for_n(BALANCES_6_PERSONNES)
