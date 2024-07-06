@@ -6,6 +6,9 @@ import { fetchBalances } from '@/components/useFetchBalances'
 import NOMS_AU_HASARD from '@/nomsAuHasard.json'
 import { useAsyncState } from '@vueuse/core'
 import { computed, ref } from 'vue'
+import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
+import HistoriqueDepenses from './HistoriqueDepenses.vue'
+import { useAjouterDepense } from './useAjouterDepense'
 const balances = ref<number[]>([])
 const nomsBalances = ref<string[]>([])
 
@@ -35,44 +38,20 @@ const erreurBalance = computed(() =>
     .toFixed(2)
 )
 
-const indexDepenseur = ref(0)
-const montant = ref(0)
-const bénéficiaires = ref<number[]>([])
-function ajouterDepense() {
-  const montantParBénéficiaire = montant.value / bénéficiaires.value.length
-  bénéficiaires.value.forEach((indexBénéficiaire) => {
-    balances.value[indexBénéficiaire] -= montantParBénéficiaire
-  })
-  balances.value[indexDepenseur.value] += montant.value
-
-  historiqueDépenses.value.push({
-    indexDépenseur: indexDepenseur.value,
-    montant: montant.value,
-    listeIndexesBénéficiares: bénéficiaires.value
-  })
-}
-
-const historiqueDépenses = ref<
-  { indexDépenseur: number; montant: number; listeIndexesBénéficiares: number[] }[]
->([])
+const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
+  useAjouterDepense(balances)
 </script>
 
 <template>
   <div class="main-app">
     <section>
-      <label for="dépenseur">Un</label>
-
-      <select name="dépenseur" id="dépenseur" v-model="indexDepenseur">
-        <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
-      </select>
-
-      <label for="montant">a dépensé</label>
-      <input type="number" name="montant" id="montant" v-model="montant" />
-      <label for="bénéficiaires">pour</label>
-      <select name="cars" id="cars" multiple v-model="bénéficiaires">
-        <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
-      </select>
-      <input type="button" value="Ajouter dépense" @click="ajouterDepense" />
+      <AjoutDepenseFormulaire
+        v-model:indexDepenseur="indexDepenseur"
+        v-model:montant="montant"
+        v-model:beneficiaire="bénéficiaires"
+        :nomsBalances="nomsBalances"
+        @ajouterDepense="ajouterDepense"
+      />
     </section>
     <section>
       <input type="button" value="Ajouter une personne" @click="addBalance" />
@@ -88,19 +67,7 @@ const historiqueDépenses = ref<
       <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
     </section>
     <section>
-      <ul>
-        <li
-          v-for="(
-            { indexDépenseur, listeIndexesBénéficiares, montant }, index
-          ) in historiqueDépenses"
-          :key="index"
-        >
-          {{ nomsBalances[indexDépenseur] }}
-          a dépensé
-          {{ montant }}€ pour
-          {{ listeIndexesBénéficiares.map((index) => nomsBalances[index]).join(', ') }}
-        </li>
-      </ul>
+      <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
     </section>
   </div>
 </template>
