@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import { fetchBalances } from '@/components/useFetchBalances'
+import BalanceInput from '@/components/BalanceInput.vue'
 
 const balances = ref<number[]>([])
 
@@ -27,13 +28,18 @@ async function solveBalances() {
     <section>
       <input type="button" value="Ajouter balance" @click="addBalance" />
       <template v-for="(_balance, index) in balances" :key="index">
-        <input v-model="balances[index]" type="number" name="what" id="" />
+        <BalanceInput v-model:balance="balances[index]" />
       </template>
-      Error:
-      {{ balances.reduce((total, balance) => total + balance, 0).toFixed(2) }}
+      Erreur de comptes à régler:
+      {{
+        balances
+          .filter((b) => !isNaN(b))
+          .reduce((total, balance) => total + balance, 0)
+          .toFixed(2)
+      }}
     </section>
     <section>
-      <input type="button" value="Find balances" @click="solveBalances" />
+      <input type="button" value="Calculer remboursements" @click="solveBalances" />
       <AffichageRemboursements :matriceDeRemboursements="matriceDeRemboursements" />
     </section>
   </div>
