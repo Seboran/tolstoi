@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const balance = defineModel<number>('balance')
+const name = defineModel<string>('name')
 
 function updateBalance(event: Event) {
   try {
@@ -11,5 +12,8 @@ function updateBalance(event: Event) {
 </script>
 
 <template>
-  <input :value="balance" @change="updateBalance" type="number" name="balance" id="" />
+  <div>
+    <input name="Nom de la personne" v-model="name" type="text" />
+    <input :value="balance" @change="updateBalance" type="number" name="balance" id="" />
+  </div>
 </template>

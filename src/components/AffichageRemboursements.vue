@@ -3,6 +3,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{
   matriceDeRemboursements: number[][]
+  nomsBalances: string[]
 }>()
 
 const lignesRemboursement = computed(() => {
@@ -30,9 +31,9 @@ const lignesRemboursement = computed(() => {
     <tbody>
       <template v-for="({ qui, combien, àQui }, _index) in lignesRemboursement" :key="_index">
         <tr>
-          <td>{{ qui }}</td>
-          <td>{{ -combien }}</td>
-          <td>{{ àQui }}</td>
+          <td>{{ nomsBalances[qui] }} doit</td>
+          <td>{{ -combien }}€</td>
+          <td>à {{ nomsBalances[àQui] }}</td>
         </tr>
       </template>
     </tbody>

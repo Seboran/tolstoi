@@ -4,11 +4,14 @@ import BalanceInput from '@/components/BalanceInput.vue'
 import { fetchBalances } from '@/components/useFetchBalances'
 import { useAsyncState } from '@vueuse/core'
 import { computed, ref } from 'vue'
-
+import ChargementCalcul from '@/components/ChargementCalcul.vue'
+import NOMS_AU_HASARD from '@/nomsAuHasard.json'
 const balances = ref<number[]>([])
+const nomsBalances = ref<string[]>([])
 
 function addBalance() {
   balances.value.push(0)
+  nomsBalances.value.push(NOMS_AU_HASARD[nomsBalances.value.length])
 }
 
 const matriceDeRemboursements = ref<number[][]>([])
@@ -23,7 +26,7 @@ async function solveBalances() {
   }
 }
 
-const { isLoading, execute } = useAsyncState(solveBalances, undefined)
+const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: false })
 
 const erreurBalance = computed(() =>
   balances.value
@@ -38,17 +41,15 @@ const erreurBalance = computed(() =>
     <section>
       <input type="button" value="Ajouter balance" @click="addBalance" />
       <template v-for="(_balance, index) in balances" :key="index">
-        <BalanceInput v-model:balance="balances[index]" />
+        <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
       </template>
       Erreur de comptes à régler:
       {{ erreurBalance }}
     </section>
     <section>
       <input type="button" value="Calculer remboursements" @click="execute()" />
-      <template v-if="isLoading">
-        <p>Calcul en cours...</p>
-      </template>
-      <AffichageRemboursements :matriceDeRemboursements="matriceDeRemboursements" />
+      <ChargementCalcul :isLoading="isLoading" />
+      <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
     </section>
   </div>
 </template>
