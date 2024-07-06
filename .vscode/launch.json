@@ -5,18 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "bun dev",
-      "name": "Front end",
-      "request": "launch",
-      "type": "node-terminal",
-      "cwd": "${workspaceFolder}/packages/frontend"
-    },
-    {
       "command": "bun vercel dev",
-      "name": "Back end",
+      "name": "Full app via vercel",
       "request": "launch",
-      "type": "node-terminal",
-      "cwd": "${workspaceFolder}/packages/backend"
-    },
+      "type": "node-terminal"
+    }
   ]
 }
