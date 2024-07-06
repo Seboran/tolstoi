@@ -44,7 +44,17 @@ function ajouterDepense() {
     balances.value[indexBénéficiaire] -= montantParBénéficiaire
   })
   balances.value[indexDepenseur.value] += montant.value
+
+  historiqueDépenses.value.push({
+    indexDépenseur: indexDepenseur.value,
+    montant: montant.value,
+    listeIndexesBénéficiares: bénéficiaires.value
+  })
 }
+
+const historiqueDépenses = ref<
+  { indexDépenseur: number; montant: number; listeIndexesBénéficiares: number[] }[]
+>([])
 </script>
 
 <template>
@@ -76,6 +86,21 @@ function ajouterDepense() {
       <input type="button" value="Calculer remboursements" @click="execute()" />
       <ChargementCalcul :isLoading="isLoading" />
       <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
+    </section>
+    <section>
+      <ul>
+        <li
+          v-for="(
+            { indexDépenseur, listeIndexesBénéficiares, montant }, index
+          ) in historiqueDépenses"
+          :key="index"
+        >
+          {{ nomsBalances[indexDépenseur] }}
+          a dépensé
+          {{ montant }}€ pour
+          {{ listeIndexesBénéficiares.map((index) => nomsBalances[index]).join(', ') }}
+        </li>
+      </ul>
     </section>
   </div>
 </template>
