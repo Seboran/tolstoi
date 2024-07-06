@@ -6,27 +6,17 @@
   "configurations": [
     {
       "command": "bun dev",
-      "name": "Run npm start",
+      "name": "Front end",
       "request": "launch",
       "type": "node-terminal",
       "cwd": "${workspaceFolder}/packages/frontend"
     },
     {
-      "name": "Python Debugger: Flask",
-      "type": "debugpy",
+      "command": "bun vercel dev",
+      "name": "Back end",
       "request": "launch",
-      "module": "flask",
-      "env": {
-        "FLASK_APP": "packages/backend/app.py",
-        "FLASK_DEBUG": "1"
-      },
-      "args": [
-        "run",
-        "--no-debugger",
-        "--no-reload"
-      ],
-      "jinja": true,
-      "autoStartBrowser": false
-    }
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}/packages/backend"
+    },
   ]
 }
