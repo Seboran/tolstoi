@@ -12,8 +12,18 @@ function updateBalance(event: Event) {
 </script>
 
 <template>
-  <div>
+  <div class="balances">
     <input name="Nom de la personne" v-model="name" type="text" />
     <input :value="balance" @change="updateBalance" type="number" name="balance" id="" />
   </div>
 </template>
+
+<style scoped>
+.balances {
+  display: flex;
+  gap: 1rem;
+}
+input {
+  flex: 1;
+}
+</style>

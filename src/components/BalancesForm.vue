@@ -2,44 +2,39 @@
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import BalanceInput from '@/components/BalanceInput.vue'
 import ChargementCalcul from '@/components/ChargementCalcul.vue'
-import { fetchBalances } from '@/components/useFetchBalances'
-import NOMS_AU_HASARD from '@/nomsAuHasard.json'
 import { useAsyncState } from '@vueuse/core'
-import { computed, ref } from 'vue'
+import { ref, watch } from 'vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import { useAjouterDepense } from './useAjouterDepense'
-const balances = ref<number[]>([])
-const nomsBalances = ref<string[]>([])
+import { useBalances } from './useBalances'
+import { fetchBalances } from './useFetchBalances'
 
-function addBalance() {
-  balances.value.push(0)
-  nomsBalances.value.push(NOMS_AU_HASARD[nomsBalances.value.length])
-}
+const { balances, nomsBalances, erreurBalance, addBalance } = useBalances()
+const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
+  useAjouterDepense(balances)
 
 const matriceDeRemboursements = ref<number[][]>([])
-
 async function solveBalances() {
-  try {
-    matriceDeRemboursements.value = []
-    const solution = await fetchBalances(balances)
-    matriceDeRemboursements.value = solution.result_matrix
-  } finally {
-    //
-  }
+  if (Math.abs(erreurBalance.value) < 0.0001)
+    try {
+      matriceDeRemboursements.value = []
+      const solution = await fetchBalances(balances)
+      matriceDeRemboursements.value = solution.result_matrix
+    } finally {
+      //
+    }
 }
 
 const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: false })
 
-const erreurBalance = computed(() =>
-  balances.value
-    .filter((b) => !isNaN(b))
-    .reduce((total, balance) => total + balance, 0)
-    .toFixed(2)
+watch(
+  balances,
+  () => {
+    execute()
+  },
+  { deep: true }
 )
-
-const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
-  useAjouterDepense(balances)
 </script>
 
 <template>
@@ -59,7 +54,7 @@ const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDép
         <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
       </template>
       Erreur de comptes à régler:
-      {{ erreurBalance }}
+      {{ erreurBalance.toFixed(2) }}
     </section>
     <section>
       <input type="button" value="Calculer remboursements" @click="execute()" />
@@ -83,5 +78,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex: 1;
 }
 </style>
+ref, import { fetchBalances } from './useFetchBalances'
