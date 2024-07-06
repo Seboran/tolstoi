@@ -2,6 +2,7 @@
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import BalanceInput from '@/components/BalanceInput.vue'
 import { fetchBalances } from '@/components/useFetchBalances'
+import { useAsyncState } from '@vueuse/core'
 import { computed, ref } from 'vue'
 
 const balances = ref<number[]>([])
@@ -22,6 +23,8 @@ async function solveBalances() {
   }
 }
 
+const { isLoading, execute } = useAsyncState(solveBalances, undefined)
+
 const erreurBalance = computed(() =>
   balances.value
     .filter((b) => !isNaN(b))
@@ -41,7 +44,10 @@ const erreurBalance = computed(() =>
       {{ erreurBalance }}
     </section>
     <section>
-      <input type="button" value="Calculer remboursements" @click="solveBalances" />
+      <input type="button" value="Calculer remboursements" @click="execute()" />
+      <template v-if="isLoading">
+        <p>Calcul en cours...</p>
+      </template>
       <AffichageRemboursements :matriceDeRemboursements="matriceDeRemboursements" />
     </section>
   </div>
