@@ -1,12 +1,17 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+
 import scipy.optimize as opt
 
 from solve_for_n import solve_for_n
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/solve', methods=['POST'])
+@cross_origin()
 def solve_route():
     data = request.get_json()
     balances = data.get('balances')

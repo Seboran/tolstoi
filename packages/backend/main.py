@@ -29,7 +29,7 @@ def ajouter_depense_avec_trous(depense: int, index_receveur: int, balances: list
 def test_valeurs():
     while True:
 
-        NOMBRE_GENS = 7
+        NOMBRE_GENS = 5
         BALANCES = np.zeros(NOMBRE_GENS)
         for count in np.random.randint(1, 60, 1500):
             random_spender = np.random.randint(0, len(BALANCES))
@@ -50,13 +50,12 @@ def calculate_reimbursements(BALANCES):
     (matrice_de_remboursements, solution, message,
      success) = solve_for_n(nouvelles_balances)
 
-    if not success:
-        print(BALANCES, sum(BALANCES))
-        print(np.round(matrice_de_remboursements, 2))
-        print("Error from solution", np.abs(
-            solution / 2 - sum(filter(lambda x: x > 0, BALANCES))))
-        print(message)
-        print()
+    print(BALANCES, sum(BALANCES))
+    print(np.round(matrice_de_remboursements, 2))
+    print(np.abs(
+        solution / 2 - sum(filter(lambda x: x > 0, BALANCES))))
+    print(message)
+    print()
 
 
 def calculate_hfti_example():
@@ -67,6 +66,6 @@ def calculate_hfti_example():
         hfti_balances_example)
 
 
-# test_valeurs()
+test_valeurs()
 
 # calculate_hfti_example()
