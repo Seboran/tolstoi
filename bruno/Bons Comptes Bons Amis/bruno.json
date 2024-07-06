@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Bons Comptes Bons Amis",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
