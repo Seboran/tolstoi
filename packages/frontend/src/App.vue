@@ -12,7 +12,6 @@ import BalancesForm from '@/components/BalancesForm.vue'
 <style scoped>
 main {
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh; /* This ensures the main element takes up the full viewport height */
   flex-direction: column;
