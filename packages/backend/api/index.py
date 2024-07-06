@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
+import os
 
 import scipy.optimize as opt
 
 from solve_for_n import solve_for_n
 
 app = Flask(__name__)
-cors = CORS(app)
+
+frontend_url = os.environ.get('FRONTEND_URL', '*')
+cors = CORS(app, resources={
+            r"/solve": {"origins": [frontend_url]}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
