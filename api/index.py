@@ -6,13 +6,11 @@ from solve_for_n import solve_for_n
 
 app = Flask(__name__)
 
-frontend_url = os.environ.get('FRONTEND_URL', 'localhost:5173')
-cors = CORS(app, resources={
-            r"/solve": {"origins": [frontend_url]}})
+cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-@app.route('/solve', methods=['POST'])
+@app.route('/api/solve', methods=['POST'])
 @cross_origin()
 def solve_route():
     data = request.get_json()
