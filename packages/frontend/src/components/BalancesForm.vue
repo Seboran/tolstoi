@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
-import { fetchBalances } from '@/components/useFetchBalances'
 import BalanceInput from '@/components/BalanceInput.vue'
+import { fetchBalances } from '@/components/useFetchBalances'
+import { computed, ref } from 'vue'
 
 const balances = ref<number[]>([])
 
@@ -21,6 +21,13 @@ async function solveBalances() {
     //
   }
 }
+
+const erreurBalance = computed(() =>
+  balances.value
+    .filter((b) => !isNaN(b))
+    .reduce((total, balance) => total + balance, 0)
+    .toFixed(2)
+)
 </script>
 
 <template>
@@ -31,12 +38,7 @@ async function solveBalances() {
         <BalanceInput v-model:balance="balances[index]" />
       </template>
       Erreur de comptes à régler:
-      {{
-        balances
-          .filter((b) => !isNaN(b))
-          .reduce((total, balance) => total + balance, 0)
-          .toFixed(2)
-      }}
+      {{ erreurBalance }}
     </section>
     <section>
       <input type="button" value="Calculer remboursements" @click="solveBalances" />
