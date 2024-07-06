@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import BalanceInput from '@/components/BalanceInput.vue'
+import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import { fetchBalances } from '@/components/useFetchBalances'
+import NOMS_AU_HASARD from '@/nomsAuHasard.json'
 import { useAsyncState } from '@vueuse/core'
 import { computed, ref } from 'vue'
-import ChargementCalcul from '@/components/ChargementCalcul.vue'
-import NOMS_AU_HASARD from '@/nomsAuHasard.json'
 const balances = ref<number[]>([])
 const nomsBalances = ref<string[]>([])
 
@@ -34,12 +34,38 @@ const erreurBalance = computed(() =>
     .reduce((total, balance) => total + balance, 0)
     .toFixed(2)
 )
+
+const indexDepenseur = ref(0)
+const montant = ref(0)
+const bénéficiaires = ref<number[]>([])
+function ajouterDepense() {
+  const montantParBénéficiaire = montant.value / bénéficiaires.value.length
+  bénéficiaires.value.forEach((indexBénéficiaire) => {
+    balances.value[indexBénéficiaire] -= montantParBénéficiaire
+  })
+  balances.value[indexDepenseur.value] += montant.value
+}
 </script>
 
 <template>
   <div class="main-app">
     <section>
-      <input type="button" value="Ajouter balance" @click="addBalance" />
+      <label for="dépenseur">Un</label>
+
+      <select name="dépenseur" id="dépenseur" v-model="indexDepenseur">
+        <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
+      </select>
+
+      <label for="montant">a dépensé</label>
+      <input type="number" name="montant" id="montant" v-model="montant" />
+      <label for="bénéficiaires">pour</label>
+      <select name="cars" id="cars" multiple v-model="bénéficiaires">
+        <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
+      </select>
+      <input type="button" value="Ajouter dépense" @click="ajouterDepense" />
+    </section>
+    <section>
+      <input type="button" value="Ajouter une personne" @click="addBalance" />
       <template v-for="(_balance, index) in balances" :key="index">
         <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
       </template>
