@@ -19,14 +19,15 @@ def solve_for_n(balances: list):
         return np.linalg.norm(diff.flatten(), ord=2)
 
     def minimize_vector(vector1):
-        return np.linalg.norm(vector1, ord=1)
+        """Minimize sum and number of non-zero elements in vector1."""
+        return np.linalg.norm(vector1, ord=1) + np.count_nonzero(vector1)
 
     initial_guess = np.zeros(n**2)
 
     result = opt.minimize(minimize_vector, x0=initial_guess, method="SLSQP", constraints=[
         {'type': 'eq', 'fun': constraint1},
         {'type': 'eq', 'fun': constraint_anti_symmetric},
-    ], options={'maxiter': 1000})
+    ], options={'maxiter': 1000, 'disp': True})
 
     argument_result = np.reshape(result.x, (n, n))
     argument_result = np.round(argument_result, 2)
