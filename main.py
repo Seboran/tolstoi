@@ -52,8 +52,6 @@ def calculate_reimbursements(BALANCES):
 
     print(BALANCES, sum(BALANCES))
     print(np.round(matrice_de_remboursements, 2))
-    print(np.abs(
-        solution / 2 - sum(filter(lambda x: x > 0, BALANCES))))
     print(message)
     print()
 
