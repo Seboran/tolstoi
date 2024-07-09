@@ -71,6 +71,7 @@ watch(
 .main-app {
   display: flex;
   flex-direction: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   max-width: 1200px;
 }
@@ -79,6 +80,7 @@ section {
   flex-direction: column;
   gap: 1rem;
   flex: 1;
+  margin: 10px;
 }
 </style>
 ref, import { fetchBalances } from './useFetchBalances'
