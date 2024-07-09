@@ -9,6 +9,7 @@ import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import { useAjouterDepense } from './useAjouterDepense'
 import { useBalances } from './useBalances'
 import { fetchBalances } from './useFetchBalances'
+import StyledButton from './StyledButton.vue'
 
 const { balances, nomsBalances, erreurBalance, addBalance } = useBalances()
 const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
@@ -49,7 +50,7 @@ watch(
       />
     </section>
     <section>
-      <input type="button" value="Ajouter une personne" @click="addBalance" />
+      <StyledButton label="Ajouter une personne" @click="addBalance" />
       <template v-for="(_balance, index) in balances" :key="index">
         <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
       </template>
@@ -57,7 +58,7 @@ watch(
       {{ erreurBalance.toFixed(2) }}
     </section>
     <section>
-      <input type="button" value="Calculer remboursements" @click="execute()" />
+      <StyledButton label="Calculer remboursements" @click="execute" />
       <ChargementCalcul :isLoading="isLoading" />
       <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
     </section>
@@ -83,4 +84,3 @@ section {
   margin: 10px;
 }
 </style>
-ref, import { fetchBalances } from './useFetchBalances'

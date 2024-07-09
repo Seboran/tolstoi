@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import StyledButton from './StyledButton.vue'
+
 defineProps<{
   nomsBalances: string[]
 }>()
@@ -28,5 +30,5 @@ function ajouterDepense() {
   <select name="cars" id="cars" multiple v-model="bénéficiaires">
     <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
   </select>
-  <input type="button" value="Ajouter dépense" @click="ajouterDepense" />
+  <StyledButton label="Ajouter dépense" @click="ajouterDepense"></StyledButton>
 </template>
