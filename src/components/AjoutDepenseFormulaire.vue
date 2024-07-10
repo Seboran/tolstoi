@@ -18,8 +18,6 @@ function ajouterDepense() {
 </script>
 
 <template>
-  <label for="dépenseur">Un</label>
-
   <select name="dépenseur" id="dépenseur" v-model="indexDepenseur">
     <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
   </select>
