@@ -29,3 +29,7 @@ coverage
 
 *.tsbuildinfo
 .vercel
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
