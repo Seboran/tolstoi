@@ -39,3 +39,39 @@ const lignesRemboursement = computed(() => {
     </tbody>
   </table>
 </template>
+
+<style scoped>
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th:first-child {
+  border-top-left-radius: var(--border-radius);
+}
+th:last-child {
+  border-top-right-radius: var(--border-radius);
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius);
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius);
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+thead {
+  background-color: var(--main-bg-color);
+}
+</style>

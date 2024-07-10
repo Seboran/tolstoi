@@ -1,20 +1,14 @@
 <script setup lang="ts">
+import StyledTextInput from './StyledTextInput.vue'
+import StyledNumberInput from './StyledNumberInput.vue'
 const balance = defineModel<number>('balance')
 const name = defineModel<string>('name')
-
-function updateBalance(event: Event) {
-  try {
-    balance.value = parseFloat((event.target as HTMLInputElement).value)
-  } finally {
-    //
-  }
-}
 </script>
 
 <template>
   <div class="balances">
-    <input name="Nom de la personne" v-model="name" type="text" />
-    <input :value="balance" @change="updateBalance" type="number" name="balance" id="" />
+    <StyledTextInput class="nom-personne" label="Nom de la personne" v-model="name" />
+    <StyledNumberInput v-model="balance" label="balance" id="" />
   </div>
 </template>
 
@@ -25,5 +19,9 @@ function updateBalance(event: Event) {
 }
 input {
   flex: 1;
+}
+
+.nom-personne {
+  width: 10rem;
 }
 </style>
