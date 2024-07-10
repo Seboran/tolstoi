@@ -41,6 +41,14 @@ watch(
 <template>
   <div class="main-app">
     <section>
+      <StyledButton label="Ajouter une personne" @click="addBalance" />
+      <template v-for="(_balance, index) in balances" :key="index">
+        <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
+      </template>
+      Erreur de comptes à régler:
+      {{ erreurBalance.toFixed(2) }}
+    </section>
+    <section v-if="nomsBalances.length > 2">
       <AjoutDepenseFormulaire
         v-model:indexDepenseur="indexDepenseur"
         v-model:montant="montant"
@@ -49,22 +57,16 @@ watch(
         @ajouterDepense="ajouterDepense"
       />
     </section>
-    <section>
-      <StyledButton label="Ajouter une personne" @click="addBalance" />
-      <template v-for="(_balance, index) in balances" :key="index">
-        <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
-      </template>
-      Erreur de comptes à régler:
-      {{ erreurBalance.toFixed(2) }}
-    </section>
-    <section>
-      <StyledButton label="Calculer remboursements" @click="execute" />
-      <ChargementCalcul :isLoading="isLoading" />
-      <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
-    </section>
-    <section>
-      <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
-    </section>
+    <template v-if="historiqueDépenses.length > 0">
+      <section>
+        <!-- <StyledButton label="Calculer remboursements" @click="execute" /> -->
+        <ChargementCalcul :isLoading="isLoading" />
+        <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
+      </section>
+      <section>
+        <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
+      </section>
+    </template>
   </div>
 </template>
 
