@@ -1,13 +1,7 @@
 name: Build and Test
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+  workflow_call:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest

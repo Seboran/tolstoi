@@ -1,0 +1,18 @@
+name: integration
+on:
+  push:
+    branches-ignore:
+      - main
+permissions:
+  # Required to checkout the code
+  contents: read
+  # Required to put a comment into the pull-request
+  pull-requests: write
+
+jobs:
+  build-and-quality:
+    uses: ./.github/workflows/build-and-quality.yaml
+
+  test:
+    needs: [build-and-quality]
+    uses: ./.github/workflows/preview.yaml
