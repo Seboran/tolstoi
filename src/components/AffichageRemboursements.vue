@@ -25,15 +25,15 @@ const lignesRemboursement = computed(() => {
   <table>
     <thead>
       <th>Qui</th>
-      <th>Combien</th>
-      <th>À qui</th>
+      <th>doit combien à</th>
+      <th>qui</th>
     </thead>
     <tbody>
       <template v-for="({ qui, combien, àQui }, _index) in lignesRemboursement" :key="_index">
         <tr>
-          <td>{{ nomsBalances[qui] }} doit</td>
+          <td>{{ nomsBalances[qui] }}</td>
           <td>{{ -combien }}€</td>
-          <td>à {{ nomsBalances[àQui] }}</td>
+          <td>{{ nomsBalances[àQui] }}</td>
         </tr>
       </template>
     </tbody>

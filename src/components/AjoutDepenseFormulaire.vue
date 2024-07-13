@@ -29,5 +29,5 @@ function ajouterDepense() {
   <select name="bénéficiaires" multiple v-model="bénéficiaires">
     <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
   </select>
-  <StyledButton label="Ajouter dépense" @click="ajouterDepense"></StyledButton>
+  <StyledButton label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
 </template>
