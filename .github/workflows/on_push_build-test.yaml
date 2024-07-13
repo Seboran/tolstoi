@@ -1,7 +1,7 @@
 name: Build and Test
 
 on:
-  workflow_call:
+  push:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
