@@ -1,4 +1,4 @@
-name: integration
+name: test and preview
 on:
   push:
     branches-ignore:
@@ -16,3 +16,5 @@ jobs:
   test:
     needs: [build-and-quality]
     uses: ./.github/workflows/preview.yaml
+    secrets:
+      token: ${{ secrets.VERCEL_TOKEN }}
