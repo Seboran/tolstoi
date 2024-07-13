@@ -7,8 +7,8 @@ const name = defineModel<string>('name')
 
 <template>
   <div class="balances">
-    <StyledTextInput class="nom-personne" label="Nom de la personne" v-model="name" />
-    <StyledNumberInput v-model="balance" label="balance" id="" />
+    <StyledTextInput class="nom-personne" :label="'Modifier le nom de ' + name" v-model="name" />
+    <StyledNumberInput v-model="balance" :label="'balance de ' + name" id="" />
   </div>
 </template>
 
