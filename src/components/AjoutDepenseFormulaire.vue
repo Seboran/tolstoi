@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import SelecteurDepenseur from './SelecteurDepenseur.vue'
 import StyledButton from './StyledButton.vue'
+import StyledNumberInput from './StyledNumberInput.vue'
+import MultiSelecteur from './MultiSelecteur.vue'
 
-defineProps<{
+const props = defineProps<{
   nomsBalances: string[]
 }>()
 const indexDepenseur = defineModel<number>('indexDepenseur', { required: true })
@@ -15,19 +19,62 @@ const emit = defineEmits<{
 function ajouterDepense() {
   emit('ajouterDepense', indexDepenseur.value, montant.value, bénéficiaires.value)
 }
+
+const toutLeMondeSélectionné = computed(
+  () => bénéficiaires.value.length == props.nomsBalances.length
+)
+
+function toggleSelectionToutleMonde() {
+  if (bénéficiaires.value.length != 0) {
+    bénéficiaires.value = []
+  } else {
+    bénéficiaires.value = props.nomsBalances.map((_, i) => i)
+  }
+}
 </script>
 
 <template>
-  <label for="dépenseur" hidden>Dépenseur</label>
-  <select name="dépenseur" id="dépenseur" v-model="indexDepenseur">
-    <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
-  </select>
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 100%">
+      <SelecteurDepenseur id="dépenseur" v-model="indexDepenseur" :nomsBalances name="dépenseur" />
+    </div>
+    <label style="width: 150px; margin-left: 20px" for="montant">a dépensé</label>
+  </div>
+  <div
+    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 100%">
+      <StyledNumberInput v-model="montant" label="montant" id="montant"></StyledNumberInput>
+    </div>
+    <label
+      style="width: 150px; margin-left: 20px"
+      for="bénéficiaires"
+      aria-label="pour les bénéficiaires"
+      >pour</label
+    >
+  </div>
 
-  <label for="montant">a dépensé</label>
-  <input type="number" name="montant" id="montant" v-model="montant" />
-  <label for="bénéficiaires" aria-label="pour les bénéficiaires">pour</label>
-  <select name="bénéficiaires" multiple v-model="bénéficiaires">
-    <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
-  </select>
+  <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
+    <div style="margin-left: 0px">
+      <label style="right: 0px">
+        <input
+          type="checkbox"
+          :checked="toutLeMondeSélectionné"
+          @click="toggleSelectionToutleMonde"
+        />
+        Tout le monde
+      </label>
+    </div>
+  </div>
+  ou
+  <MultiSelecteur
+    id="bénéficiaires"
+    v-model="bénéficiaires"
+    name="bénéficiaires"
+    :nomsBalances
+  ></MultiSelecteur>
+
   <StyledButton label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
 </template>

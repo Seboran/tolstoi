@@ -42,11 +42,11 @@ watch(
   <div class="main-app">
     <section>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
-      <template v-for="(_balance, index) in balances" :key="index">
-        <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
-      </template>
-      Erreur de comptes à régler:
-      {{ erreurBalance.toFixed(2) }}
+      <table title="Balances personnes">
+        <template v-for="(_balance, index) in balances" :key="index">
+          <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
+        </template>
+      </table>
     </section>
     <section v-if="nomsBalances.length > 2">
       <AjoutDepenseFormulaire

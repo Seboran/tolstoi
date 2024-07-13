@@ -22,11 +22,11 @@ const lignesRemboursement = computed(() => {
 </script>
 
 <template>
-  <table>
+  <table title="Remboursements">
     <thead>
-      <th>Qui</th>
-      <th>doit combien à</th>
       <th>qui</th>
+      <th>doit</th>
+      <th>à qui</th>
     </thead>
     <tbody>
       <template v-for="({ qui, combien, àQui }, _index) in lignesRemboursement" :key="_index">
@@ -43,6 +43,7 @@ const lignesRemboursement = computed(() => {
 <style scoped>
 table {
   width: 100%;
+  min-width: 300px;
   border-collapse: collapse;
 }
 

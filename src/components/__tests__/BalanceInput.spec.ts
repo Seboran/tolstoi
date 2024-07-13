@@ -12,18 +12,7 @@ describe('Balance input', () => {
       }
     })
 
-    expect(screen.getByRole('spinbutton', { name: 'balance de une autruche rose' }).value).toBe(
-      '10'
-    )
-    await userEvent.clear(screen.getByRole('spinbutton', { name: 'balance de une autruche rose' }))
-    await userEvent.type(
-      screen.getByRole('spinbutton', { name: 'balance de une autruche rose' }),
-      '20'
-    )
-    expect(emitted('update:balance').at(-1)).toMatchObject([20])
-    expect(screen.getByRole('spinbutton', { name: 'balance de une autruche rose' }).value).toBe(
-      '20'
-    )
+    expect(screen.getByRole('spinbutton', { name: 'balance' }).value).toBe('10')
   })
 
   test('change name', async () => {
@@ -33,19 +22,10 @@ describe('Balance input', () => {
         name: 'une autruche rose'
       }
     })
-    expect(
-      screen.getByRole('textbox', { name: 'Modifier le nom de une autruche rose' }).value
-    ).toBe('une autruche rose')
-    await userEvent.clear(
-      screen.getByRole('textbox', { name: 'Modifier le nom de une autruche rose' })
-    )
-    await userEvent.type(
-      screen.getByRole('textbox', { name: 'Modifier le nom de' }),
-      'un castor affairé'
-    )
+    expect(screen.getByRole('textbox', { name: 'Nom' }).value).toBe('une autruche rose')
+    await userEvent.clear(screen.getByRole('textbox', { name: 'Nom' }))
+    await userEvent.type(screen.getByRole('textbox', { name: 'Nom' }), 'un castor affairé')
     expect(emitted('update:name').at(-1)).toMatchObject(['un castor affairé'])
-    expect(
-      screen.getByRole('textbox', { name: 'Modifier le nom de un castor affairé' }).value
-    ).toBe('un castor affairé')
+    expect(screen.getByRole('textbox', { name: 'Nom' }).value).toBe('un castor affairé')
   })
 })

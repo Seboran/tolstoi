@@ -6,20 +6,21 @@ const name = defineModel<string>('name', { required: true })
 </script>
 
 <template>
-  <div class="balances">
-    <StyledTextInput
-      class="nom-personne"
-      :label="'Modifier le nom de ' + name"
-      v-model="name"
-      :id="name + 'nom'"
-    />
-    <StyledNumberInput v-model="balance" :label="'balance de ' + name" :id="name + 'nombre'" />
-  </div>
+  <tr class="balances">
+    <td>
+      <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
+    </td>
+    <td>
+      <StyledNumberInput v-model="balance" label="balance" :id="name + 'nombre'" disabled />
+    </td>
+  </tr>
 </template>
 
 <style scoped>
-.balances {
+section {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 1rem;
 }
 input {

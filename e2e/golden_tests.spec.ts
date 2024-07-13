@@ -11,11 +11,9 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox').nth(1).fill('NIRINA')
 
   await page.getByLabel('Dépenseur').selectOption('NIRINA')
-  await page.getByRole('listbox').selectOption('Un castor affairé')
-  await page.getByRole('listbox').selectOption(['Un castor affairé', 'NIRINA'])
-  await page
-    .getByRole('listbox')
-    .selectOption(['Un castor affairé', 'NIRINA', 'Un ornithorynque malicieux'])
+  await page.getByRole('checkbox', { name: 'Un castor affairé' }).click()
+  await page.getByRole('checkbox', { name: 'NIRINA' }).click()
+  await page.getByRole('checkbox', { name: 'Un ornithorynque malicieux' }).click()
   await page.getByLabel('a dépensé').dblclick()
   await page.getByLabel('a dépensé').press('ArrowLeft')
   await page.getByLabel('a dépensé').fill('310')
@@ -26,11 +24,13 @@ test('test', async ({ page }) => {
   await page.getByLabel('a dépensé').fill('218')
   await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
 
-  await expect(page.getByLabel('balance de Un castor affairé')).toHaveValue('-176')
-  await expect(page.getByLabel('balance de NIRINA')).toHaveValue('134')
-  await expect(page.getByLabel('balance de Un ornithorynque malicieux')).toHaveValue('42')
-  await expect(page.getByRole('row').nth(0)).toHaveText('Un castor affairé134€NIRINA')
-  await expect(page.getByRole('row').nth(1)).toHaveText(
+  await expect(page.getByLabel('balance').nth(0)).toHaveValue('-176')
+  await expect(page.getByLabel('balance').nth(1)).toHaveValue('134')
+  await expect(page.getByLabel('balance').nth(2)).toHaveValue('42')
+  await expect(page.getByTitle('Remboursements').getByRole('row').nth(0)).toHaveText(
+    'Un castor affairé134€NIRINA'
+  )
+  await expect(page.getByTitle('Remboursements').getByRole('row').nth(1)).toHaveText(
     'Un castor affairé42€Un ornithorynque malicieux'
   )
   await expect(
