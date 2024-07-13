@@ -16,3 +16,5 @@ jobs:
   test:
     needs: [build-and-quality]
     uses: ./.github/workflows/production.yaml
+    secrets:
+      token: ${{ secrets.VERCEL_TOKEN }}
