@@ -59,7 +59,6 @@ watch(
     </section>
     <template v-if="historiqueDépenses.length > 0">
       <section>
-        <!-- <StyledButton label="Calculer remboursements" @click="execute" /> -->
         <ChargementCalcul :isLoading="isLoading" />
         <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
       </section>
@@ -81,8 +80,10 @@ watch(
 section {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   flex: 1;
   margin: 10px;
+  width: 100%;
 }
 </style>

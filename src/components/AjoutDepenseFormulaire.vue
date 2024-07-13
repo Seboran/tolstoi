@@ -17,58 +17,67 @@ const emit = defineEmits<{
 }>()
 
 function ajouterDepense() {
+  if (bénéficiaires.value.length === 0) {
+    return
+  }
+
+  if (montant.value <= 0) {
+    return
+  }
+
   emit('ajouterDepense', indexDepenseur.value, montant.value, bénéficiaires.value)
 }
 
 const toutLeMondeSélectionné = computed(
-  () => bénéficiaires.value.length == props.nomsBalances.length
+  () => bénéficiaires.value.length === props.nomsBalances.length
 )
 
 function toggleSelectionToutleMonde() {
-  if (bénéficiaires.value.length != 0) {
-    bénéficiaires.value = []
-  } else {
+  if (bénéficiaires.value.length == 0) {
     bénéficiaires.value = props.nomsBalances.map((_, i) => i)
+  } else {
+    bénéficiaires.value = []
   }
 }
 </script>
 
 <template>
   <div
-    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    "
   >
     <div style="width: 100%">
       <SelecteurDepenseur id="dépenseur" v-model="indexDepenseur" :nomsBalances name="dépenseur" />
     </div>
-    <label style="width: 150px; margin-left: 20px" for="montant">a dépensé</label>
   </div>
-  <div
-    style="display: flex; flex-direction: row; justify-content: space-between; align-items: center"
-  >
+  <div style="display: flex; flex-direction: row; align-items: center; width: 100%">
+    <label style="margin-right: 20px; text-wrap: nowrap" for="montant"> a dépensé </label>
     <div style="width: 100%">
       <StyledNumberInput v-model="montant" label="montant" id="montant"></StyledNumberInput>
     </div>
-    <label
-      style="width: 150px; margin-left: 20px"
-      for="bénéficiaires"
-      aria-label="pour les bénéficiaires"
-      >pour</label
-    >
+    <label style="margin-left: 20px" for="bénéficiaires" aria-label="pour les bénéficiaires">
+      pour
+    </label>
   </div>
 
-  <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
+  <!-- <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
     <div style="margin-left: 0px">
       <label style="right: 0px">
         <input
           type="checkbox"
-          :checked="toutLeMondeSélectionné"
-          @click="toggleSelectionToutleMonde"
+          :value="toutLeMondeSélectionné"
+          @input="toggleSelectionToutleMonde()"
         />
         Tout le monde
       </label>
     </div>
   </div>
-  ou
+  ou -->
   <MultiSelecteur
     id="bénéficiaires"
     v-model="bénéficiaires"

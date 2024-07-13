@@ -8,7 +8,9 @@ const name = defineModel<string>('name', { required: true })
 <template>
   <tr class="balances">
     <td>
-      <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
+      <div style="width: 80%">
+        <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
+      </div>
     </td>
     <td>
       <StyledNumberInput v-model="balance" label="balance" :id="name + 'nombre'" disabled />
@@ -17,17 +19,7 @@ const name = defineModel<string>('name', { required: true })
 </template>
 
 <style scoped>
-section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 1rem;
-}
 input {
   flex: 1;
-}
-
-.nom-personne {
-  width: 10rem;
 }
 </style>

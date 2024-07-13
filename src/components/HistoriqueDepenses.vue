@@ -23,8 +23,4 @@ defineProps<{
   </ul>
 </template>
 
-<style scoped>
-ul {
-  min-width: 400px;
-}
-</style>
+<style scoped></style>

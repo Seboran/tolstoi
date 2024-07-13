@@ -27,6 +27,7 @@ div {
   display: flex;
   flex-direction: column;
   margin: 3px;
+  width: 100%;
 }
 input {
   background-color: #fff;
@@ -35,5 +36,6 @@ input {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: border-color 0.2s;
+  width: 100%;
 }
 </style>
