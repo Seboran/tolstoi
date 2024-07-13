@@ -4,3 +4,5 @@ docs
 test-results
 tests
 playwright-report
+.github
+.venv
