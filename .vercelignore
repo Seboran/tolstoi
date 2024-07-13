@@ -2,7 +2,7 @@ bruno
 docs
 .vscode
 test-results
-tests
+e2e
 playwright-report
 .github
 .venv

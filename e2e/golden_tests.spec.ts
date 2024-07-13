@@ -11,9 +11,9 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox').nth(1).fill('NIRINA')
 
   await page.getByLabel('Dépenseur').selectOption('1')
-  await page.locator('#cars').selectOption('0')
-  await page.locator('#cars').selectOption(['0', '1'])
-  await page.locator('#cars').selectOption(['0', '1', '2'])
+  await page.getByRole('listbox').selectOption('0')
+  await page.getByRole('listbox').selectOption(['0', '1'])
+  await page.getByRole('listbox').selectOption(['0', '1', '2'])
   await page.getByLabel('a dépensé').dblclick()
   await page.getByLabel('a dépensé').press('ArrowLeft')
   await page.getByLabel('a dépensé').fill('310')
