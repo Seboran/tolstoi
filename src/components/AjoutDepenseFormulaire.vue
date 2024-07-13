@@ -25,7 +25,7 @@ function ajouterDepense() {
 
   <label for="montant">a dépensé</label>
   <input type="number" name="montant" id="montant" v-model="montant" />
-  <label for="bénéficiaires">pour</label>
+  <label for="bénéficiaires" aria-label="pour les bénéficiaires">pour</label>
   <select name="bénéficiaires" multiple v-model="bénéficiaires">
     <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
   </select>

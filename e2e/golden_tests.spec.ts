@@ -24,11 +24,9 @@ test('test', async ({ page }) => {
   await page.getByLabel('a dépensé').fill('218')
   await page.getByRole('button', { name: 'Ajouter dépense' }).click()
 
-  await expect(page.locator('input[name="balance de Un castor affairé"]')).toHaveValue('-176')
-  await expect(page.locator('input[name="balance de NIRINA"]')).toHaveValue('134')
-  await expect(page.locator('input[name="balance de Un ornithorynque malicieux"]')).toHaveValue(
-    '42'
-  )
+  await expect(page.getByLabel('balance de Un castor affairé')).toHaveValue('-176')
+  await expect(page.getByLabel('balance de NIRINA')).toHaveValue('134')
+  await expect(page.getByLabel('balance de Un ornithorynque malicieux')).toHaveValue('42')
   await expect(page.getByRole('row').nth(0)).toHaveText('Un castor affairé doit134€à NIRINA')
   await expect(page.getByRole('row').nth(1)).toHaveText(
     'Un castor affairé doit42€à Un ornithorynque malicieux'

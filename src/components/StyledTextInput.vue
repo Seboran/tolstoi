@@ -1,16 +1,27 @@
 <script setup lang="ts">
 defineProps<{
   label: string | undefined
+  id: string
 }>()
 
 const name = defineModel<string>({ required: true })
 </script>
 
 <template>
-  <input :label v-model="name" type="text" />
+  <div>
+    <label :for="id">{{ label }}</label>
+    <input :label :id v-model="name" type="text" />
+  </div>
 </template>
 
 <style scoped>
+label {
+  font-size: small;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
 input {
   background-color: #f8f9fa;
   color: #495057;

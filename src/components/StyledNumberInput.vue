@@ -1,15 +1,26 @@
 <script setup lang="ts">
 defineProps<{
   label: string
+  id: string
 }>()
-const balance = defineModel<string>({ required: true })
+const balance = defineModel<number>({ required: true })
 </script>
 
 <template>
-  <input v-model="balance" type="number" :name="label" id="" />
+  <div>
+    <label :for="id">{{ label }}</label>
+    <input v-model="balance" type="number" :id />
+  </div>
 </template>
 
 <style scoped>
+label {
+  font-size: small;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
 input {
   border: 1px solid #ccc;
   border-radius: 4px;

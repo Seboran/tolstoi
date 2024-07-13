@@ -2,13 +2,18 @@
 import StyledTextInput from './StyledTextInput.vue'
 import StyledNumberInput from './StyledNumberInput.vue'
 const balance = defineModel<number>('balance')
-const name = defineModel<string>('name')
+const name = defineModel<string>('name', { required: true })
 </script>
 
 <template>
   <div class="balances">
-    <StyledTextInput class="nom-personne" :label="'Modifier le nom de ' + name" v-model="name" />
-    <StyledNumberInput v-model="balance" :label="'balance de ' + name" id="" />
+    <StyledTextInput
+      class="nom-personne"
+      :label="'Modifier le nom de ' + name"
+      v-model="name"
+      :id="name + 'nom'"
+    />
+    <StyledNumberInput v-model="balance" :label="'balance de ' + name" :id="name + 'nombre'" />
   </div>
 </template>
 
