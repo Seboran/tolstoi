@@ -6,8 +6,9 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      globals: true,
       environment: 'happy-dom',
-      exclude: [...configDefaults.exclude, 'e2e/**'],
+      exclude: [...configDefaults.exclude, 'e2e/**', '.vercel/**'],
       root: fileURLToPath(new URL('./', import.meta.url))
     }
   })
