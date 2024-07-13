@@ -6,6 +6,6 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.tsbuildinfo",
 
     "lib": [],
-    "types": ["node", "happy-dom"]
+    "types": ["node"]
   }
 }
