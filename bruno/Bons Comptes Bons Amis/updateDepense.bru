@@ -5,36 +5,50 @@ meta {
 }
 
 post {
-  url: {{baseUrl}}/api/historique?id=66939ea40015a8e38c39
+  url: {{baseUrl}}/api/historique?id=6693bd07002413e18a95
   body: json
   auth: none
 }
 
 params:query {
-  id: 66939ea40015a8e38c39
+  id: 6693bd07002413e18a95
 }
 
 body:json {
   {
     "depense": [
       {
-        "beneficiaires": [
-          "Un blblbl affairé",
-          "Une autruche curieuse",
-          "Un ornithorynque malicieux"
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
         ],
-        "montant": 20,
-        "depenseur": "Une autruche curieuse"
+        "montant": 30,
+        "indexDepenseur": 1
       },
       {
-        "beneficiaires": [
-          "Un blblbl affairé",
-          "Une autruche curieuse",
-          "Un ornithorynque malicieux"
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
         ],
         "montant": 35,
-        "depenseur": "Un ornithorynque malicieux"
+        "indexDepenseur": 0
+      },
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 18,
+        "indexDepenseur": 1
       }
+    ],
+    "noms": [
+      "Un castor affairé",
+      "Un ornithorynque malicieux",
+      "Une autruche curieuse"
     ]
   }
 }

@@ -18,7 +18,8 @@
   "dependencies": {
     "@vueuse/core": "^10.11.0",
     "appwrite": "^15.0.0",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.1",

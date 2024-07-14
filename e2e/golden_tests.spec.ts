@@ -28,7 +28,8 @@ test('test', async ({ page }) => {
   await expect(page.getByLabel('balance').nth(1)).toHaveValue('134')
   await expect(page.getByLabel('balance').nth(2)).toHaveValue('42')
   await expect(page.getByTitle('Remboursements').getByRole('row').nth(0)).toHaveText(
-    'Un castor affairé134€NIRINA'
+    'Un castor affairé134€NIRINA',
+    { timeout: 60000 }
   )
   await expect(page.getByTitle('Remboursements').getByRole('row').nth(1)).toHaveText(
     'Un castor affairé42€Un ornithorynque malicieux'

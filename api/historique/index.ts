@@ -12,55 +12,60 @@ client.setEndpoint(APPWRITE_ENDPOINT).setProject(APPWRITE_PROJECT_ID).setKey(APP
 const databases = new Databases(client)
 
 interface IEnregistrementDepense {
-  beneficiaires: string[]
+  indexBeneficiaires: number[]
   montant: number
-  depenseur: string
+  indexDepenseur: number
 }
 
 interface IHistoriqueDepenses {
   depense: IEnregistrementDepense[]
+  noms: string[]
 }
 
 interface IEnregistrementDepenseDto extends IEnregistrementDepense, Models.Document {
-  beneficiaires: string[]
+  indexBeneficiaires: number[]
   montant: number
-  depenseur: string
+  indexDepenseur: number
 }
 interface IHistoriqueDepensesDto extends IHistoriqueDepenses, Models.Document {
   depense: IEnregistrementDepenseDto[]
 }
 
 class EnregistrementDepense implements IEnregistrementDepense {
-  beneficiaires: string[]
+  indexBeneficiaires: number[]
   montant: number
-  depenseur: string
+  indexDepenseur: number
   constructor(value: IEnregistrementDepenseDto) {
-    this.beneficiaires = value.beneficiaires
+    this.indexBeneficiaires = value.indexBeneficiaires
     this.montant = value.montant
-    this.depenseur = value.depenseur
+    this.indexDepenseur = value.indexDepenseur
   }
 }
 
 class HistoriqueDepenses implements IHistoriqueDepenses {
   depense: EnregistrementDepense[]
+  noms: string[]
   constructor(value: IHistoriqueDepenses) {
     this.depense = value.depense
+    this.noms = value.noms
   }
 }
 
-type HistoriqueDepenseValue = HistoriqueDepenses['depense']
-
-async function get(id: string): Promise<HistoriqueDepenseValue> {
+async function get(id: string): Promise<HistoriqueDepenses> {
   const document = (await databases.getDocument(
     APPWRITE_DOCUMENT_ID,
     APPWRITE_COLLECTION_ID,
     id
   )) as IHistoriqueDepensesDto
 
-  return mapDocumentToHistoriqueDepense(document).depense
+  return mapDocumentToHistoriqueDepense(document)
 }
 
-async function add(balances: IHistoriqueDepenses): Promise<HistoriqueDepenseValue> {
+type IdEtHistoriqueDepense = {
+  id: string
+} & HistoriqueDepenses
+
+async function add(balances: IHistoriqueDepenses): Promise<IdEtHistoriqueDepense> {
   const id = ID.unique()
 
   const documentCree = (await databases.createDocument(
@@ -70,10 +75,11 @@ async function add(balances: IHistoriqueDepenses): Promise<HistoriqueDepenseValu
     balances
   )) as IHistoriqueDepensesDto
 
-  return mapDocumentToHistoriqueDepense(documentCree).depense
+  const historiqueDepense = mapDocumentToHistoriqueDepense(documentCree)
+  return { noms: historiqueDepense.noms, depense: historiqueDepense.depense, id: documentCree.$id }
 }
 
-async function update(balances: IHistoriqueDepenses, id: string): Promise<HistoriqueDepenseValue> {
+async function update(balances: IHistoriqueDepenses, id: string): Promise<HistoriqueDepenses> {
   const documentMiseAJour = (await databases.updateDocument(
     APPWRITE_DOCUMENT_ID,
     APPWRITE_COLLECTION_ID,
@@ -81,7 +87,7 @@ async function update(balances: IHistoriqueDepenses, id: string): Promise<Histor
     balances
   )) as IHistoriqueDepensesDto
 
-  return mapDocumentToHistoriqueDepense(documentMiseAJour).depense
+  return mapDocumentToHistoriqueDepense(documentMiseAJour)
 }
 
 export async function POST(req: Request) {
@@ -115,6 +121,7 @@ export async function PUT(req: Request) {
 
 function mapDocumentToHistoriqueDepense(document: IHistoriqueDepensesDto): HistoriqueDepenses {
   return new HistoriqueDepenses({
-    depense: document.depense.map((depense) => new EnregistrementDepense(depense))
+    depense: document.depense.map((depense) => new EnregistrementDepense(depense)),
+    noms: document.noms
   })
 }
