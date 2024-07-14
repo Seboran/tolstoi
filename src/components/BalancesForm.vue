@@ -8,7 +8,7 @@ import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import StyledButton from './StyledButton.vue'
-import { getHistorique } from './fetchHistorique'
+import { getHistorique, updateHistorique } from './fetchHistorique'
 import { useAjouterDepense } from './useAjouterDepense'
 import { useBalances } from './useBalances'
 import { fetchBalances } from './useFetchBalances'
@@ -53,8 +53,11 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
 
 watch(
   balances,
-  () => {
-    execute()
+  async () => {
+    const urlParams = new URLSearchParams(window.location.search)
+    const id = urlParams.get('id')
+    await updateHistorique(id!, historiqueDépenses.value, nomsBalances.value)
+    await execute()
   },
   { deep: true }
 )
