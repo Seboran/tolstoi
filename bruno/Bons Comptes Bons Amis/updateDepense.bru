@@ -1,0 +1,40 @@
+meta {
+  name: updateDepense
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/historique?id=66939ea40015a8e38c39
+  body: json
+  auth: none
+}
+
+params:query {
+  id: 66939ea40015a8e38c39
+}
+
+body:json {
+  {
+    "depense": [
+      {
+        "beneficiaires": [
+          "Un blblbl affairé",
+          "Une autruche curieuse",
+          "Un ornithorynque malicieux"
+        ],
+        "montant": 20,
+        "depenseur": "Une autruche curieuse"
+      },
+      {
+        "beneficiaires": [
+          "Un blblbl affairé",
+          "Une autruche curieuse",
+          "Un ornithorynque malicieux"
+        ],
+        "montant": 35,
+        "depenseur": "Un ornithorynque malicieux"
+      }
+    ]
+  }
+}
