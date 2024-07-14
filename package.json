@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.11.0",
+    "appwrite": "^15.0.0",
     "vue": "^3.4.29"
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "@testing-library/vue": "^8.1.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
+    "@vercel/node": "^3.2.2",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitest/coverage-v8": "^2.0.2",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -35,6 +37,7 @@
     "eslint": "^9.0.0",
     "eslint-plugin-vue": "^9.23.0",
     "happy-dom": "^14.12.3",
+    "node-appwrite": "^13.0.0",
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
     "typescript": "~5.4.0",
