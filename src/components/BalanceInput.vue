@@ -12,9 +12,6 @@ const name = defineModel<string>('name', { required: true })
         <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
       </div>
     </td>
-    <td>
-      <StyledNumberInput v-model="balance" label="balance" :id="name + 'nombre'" disabled />
-    </td>
   </tr>
 </template>
 

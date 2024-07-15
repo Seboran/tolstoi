@@ -25,9 +25,6 @@ test('test', async ({ page }) => {
   await page.getByLabel('a dépensé').fill('218')
   await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
 
-  await expect(page.getByLabel('balance').nth(0)).toHaveValue('-176')
-  await expect(page.getByLabel('balance').nth(1)).toHaveValue('134')
-  await expect(page.getByLabel('balance').nth(2)).toHaveValue('42')
   await expect(page.getByTitle('Remboursements').getByRole('row').nth(0)).toHaveText(
     'Un castor affairé134€NIRINA',
     { timeout: 60000 }
