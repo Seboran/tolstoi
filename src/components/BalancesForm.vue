@@ -17,7 +17,7 @@ const { balances, nomsBalances, erreurBalance, addBalance } = useBalances()
 const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
   useAjouterDepense(balances)
 
-onMounted(async () => {
+const loadHistorique = async () => {
   const urlParams = new URLSearchParams(window.location.search)
   const id = urlParams.get('id')
 
@@ -35,7 +35,9 @@ onMounted(async () => {
     ajouterDepense()
   })
   await execute()
-})
+}
+
+const { isReady } = useAsyncState(loadHistorique, undefined, { immediate: true })
 
 const matriceDeRemboursements = ref<number[][]>([])
 async function solveBalances() {
@@ -49,7 +51,7 @@ async function solveBalances() {
     }
 }
 
-const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: false })
+const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
 
 watch(
   balances,
@@ -64,7 +66,7 @@ watch(
 </script>
 
 <template>
-  <div class="main-app">
+  <div v-if="isReady" class="main-app">
     <section>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <table title="Balances personnes">
