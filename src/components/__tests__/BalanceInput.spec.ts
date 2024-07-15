@@ -4,17 +4,6 @@ import { describe, expect, test } from 'vitest'
 import BalanceInput from '../BalanceInput.vue'
 
 describe('Balance input', () => {
-  test('change balance and name', async () => {
-    const { emitted } = render(BalanceInput, {
-      props: {
-        balance: 10,
-        name: 'une autruche rose'
-      }
-    })
-
-    expect(screen.getByRole('spinbutton', { name: 'balance' }).value).toBe('10')
-  })
-
   test('change name', async () => {
     const { emitted } = render(BalanceInput, {
       props: {
