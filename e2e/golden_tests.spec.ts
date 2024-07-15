@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test'
 
 test('test', async ({ page }) => {
   await page.goto('/')
+  await page.getByRole('button', { name: 'Créer une session' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()

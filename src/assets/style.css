@@ -6,3 +6,10 @@
 * {
   font-family: 'Arial', sans-serif;
 }
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh; /* This ensures the main element takes up the full viewport height */
+  flex-direction: column;
+}
