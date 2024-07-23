@@ -22,58 +22,58 @@ importers:
         version: 3.4.33(typescript@5.5.4)
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: ^1.3.2
+        specifier: 1.10.3
         version: 1.10.3
       '@types/jsdom':
-        specifier: ^21.1.1
+        specifier: 21.1.7
         version: 21.1.7
       '@types/node':
-        specifier: ^20.4.2
+        specifier: 20.14.11
         version: 20.14.11
       '@vitejs/plugin-vue':
-        specifier: ^5.0.0
+        specifier: 5.0.5
         version: 5.0.5(vite@5.3.4(@types/node@20.14.11))(vue@3.4.33(typescript@5.5.4))
       '@vitest/coverage-c8':
-        specifier: ^0.33.0
+        specifier: 0.33.0
         version: 0.33.0(vitest@2.0.4(@types/node@20.14.11)(@vitest/ui@2.0.4)(jsdom@24.1.1))
       '@vitest/ui':
-        specifier: ^2.0.0
+        specifier: 2.0.4
         version: 2.0.4(vitest@2.0.4)
       '@vue/eslint-config-prettier':
-        specifier: ^9.0.0
+        specifier: 9.0.0
         version: 9.0.0(eslint@9.7.0)(prettier@3.3.3)
       '@vue/eslint-config-typescript':
-        specifier: ^13.0.0
+        specifier: 13.0.0
         version: 13.0.0(eslint-plugin-vue@9.27.0(eslint@9.7.0))(eslint@9.7.0)(typescript@5.5.4)
       '@vue/test-utils':
-        specifier: ^2.4.0
+        specifier: 2.4.6
         version: 2.4.6
       eslint:
-        specifier: ^9.0.0
+        specifier: 9.7.0
         version: 9.7.0
       eslint-plugin-vue:
-        specifier: ^9.15.1
+        specifier: 9.27.0
         version: 9.27.0(eslint@9.7.0)
       jsdom:
-        specifier: ^24.0.0
+        specifier: 24.1.1
         version: 24.1.1
       npm-run-all2:
-        specifier: ^6.0.0
+        specifier: 6.2.2
         version: 6.2.2
       prettier:
-        specifier: ^3.0.0
+        specifier: 3.3.3
         version: 3.3.3
       typescript:
-        specifier: ~5.5.0
+        specifier: 5.5.4
         version: 5.5.4
       vite:
-        specifier: ^5.0.12
+        specifier: 5.3.4
         version: 5.3.4(@types/node@20.14.11)
       vitest:
-        specifier: ^2.0.0
+        specifier: 2.0.4
         version: 2.0.4(@types/node@20.14.11)(@vitest/ui@2.0.4)(jsdom@24.1.1)
       vue-tsc:
-        specifier: ^2.0.0
+        specifier: 2.0.28
         version: 2.0.28(typescript@5.5.4)
 
 packages:
@@ -293,9 +293,6 @@ packages:
   '@jridgewell/set-array@1.2.1':
     resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
-
-  '@jridgewell/sourcemap-codec@1.4.15':
-    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
@@ -1153,10 +1150,6 @@ packages:
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
 
-  magic-string@0.30.7:
-    resolution: {integrity: sha512-8vBuFF/I/+OSLRmdf2wwFCJCz+nSn0m6DPvGH1fS/KiQoSaR+sETbov0eIk9KhEKy8CYqIkIAnbohxT/4H0kuA==}
-    engines: {node: '>=12'}
-
   make-dir@4.0.0:
     resolution: {integrity: sha512-hXdUTZYIVOt1Ex//jAQi+wTZZpUpwBj/0QsOzqegb3rGMMeJiSEu5xLHnYfBrRV4RH2+OCSOO95Is/7x1WJ4bw==}
     engines: {node: '>=10'}
@@ -1309,9 +1302,6 @@ packages:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
     engines: {node: '>= 14.16'}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -1405,11 +1395,6 @@ packages:
   saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
-
-  semver@7.6.2:
-    resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
-    engines: {node: '>=10'}
-    hasBin: true
 
   semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
@@ -1637,12 +1622,6 @@ packages:
 
   vue-component-type-helpers@2.0.16:
     resolution: {integrity: sha512-qisL/iAfdO++7w+SsfYQJVPj6QKvxp4i1MMxvsNO41z/8zu3KuAw9LkhKUfP/kcOWGDxESp+pQObWppXusejCA==}
-
-  vue-eslint-parser@9.4.2:
-    resolution: {integrity: sha512-Ry9oiGmCAK91HrKMtCrKFWmSFWvYkpGglCeFAIqDdr9zdXmMMpJOmUJS7WWsW7fX81h6mwHmUZCQQ1E0PkSwYQ==}
-    engines: {node: ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      eslint: '>=6.0.0'
 
   vue-eslint-parser@9.4.3:
     resolution: {integrity: sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==}
@@ -1901,8 +1880,6 @@ snapshots:
 
   '@jridgewell/set-array@1.2.1': {}
 
-  '@jridgewell/sourcemap-codec@1.4.15': {}
-
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
   '@jridgewell/trace-mapping@0.3.25':
@@ -2098,8 +2075,8 @@ snapshots:
     dependencies:
       '@ampproject/remapping': 2.3.0
       c8: 7.14.0
-      magic-string: 0.30.7
-      picocolors: 1.0.0
+      magic-string: 0.30.10
+      picocolors: 1.0.1
       std-env: 3.7.0
       vitest: 2.0.4(@types/node@20.14.11)(@vitest/ui@2.0.4)(jsdom@24.1.1)
 
@@ -2204,7 +2181,7 @@ snapshots:
       '@typescript-eslint/parser': 7.1.1(eslint@9.7.0)(typescript@5.5.4)
       eslint: 9.7.0
       eslint-plugin-vue: 9.27.0(eslint@9.7.0)
-      vue-eslint-parser: 9.4.2(eslint@9.7.0)
+      vue-eslint-parser: 9.4.3(eslint@9.7.0)
     optionalDependencies:
       typescript: 5.5.4
     transitivePeerDependencies:
@@ -2480,7 +2457,7 @@ snapshots:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.1.0
-      semver: 7.6.2
+      semver: 7.6.3
       vue-eslint-parser: 9.4.3(eslint@9.7.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -2854,10 +2831,6 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  magic-string@0.30.7:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-
   make-dir@4.0.0:
     dependencies:
       semver: 7.6.3
@@ -2989,8 +2962,6 @@ snapshots:
 
   pathval@2.0.0: {}
 
-  picocolors@1.0.0: {}
-
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
@@ -3078,8 +3049,6 @@ snapshots:
   saxes@6.0.0:
     dependencies:
       xmlchars: 2.2.0
-
-  semver@7.6.2: {}
 
   semver@7.6.3: {}
 
@@ -3280,19 +3249,6 @@ snapshots:
 
   vue-component-type-helpers@2.0.16: {}
 
-  vue-eslint-parser@9.4.2(eslint@9.7.0):
-    dependencies:
-      debug: 4.3.5
-      eslint: 9.7.0
-      eslint-scope: 7.2.2
-      eslint-visitor-keys: 3.4.3
-      espree: 9.6.1
-      esquery: 1.6.0
-      lodash: 4.17.21
-      semver: 7.6.3
-    transitivePeerDependencies:
-      - supports-color
-
   vue-eslint-parser@9.4.3(eslint@9.7.0):
     dependencies:
       debug: 4.3.5
@@ -3302,7 +3258,7 @@ snapshots:
       espree: 9.6.1
       esquery: 1.6.0
       lodash: 4.17.21
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
 
