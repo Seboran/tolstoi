@@ -9,12 +9,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: pnpm/action-setup@v2
         with:
-          bun-version: latest
+          version: 9
       - name: Install dependencies
-        run: bun i --frozen-lockfile
+        run: pnpm i --frozen-lockfile
       - name: Build app
-        run: bun run build
+        run: pnpm run build
       - name: Run tests
-        run: bun run test
+        run: pnpm run test
