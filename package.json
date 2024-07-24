@@ -19,7 +19,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "1.10.3",
     "@types/jsdom": "21.1.7",
-    "@types/node": "20.14.11",
+    "@types/node": "20.14.12",
     "@vitejs/plugin-vue": "5.0.5",
     "@vitest/coverage-c8": "0.33.0",
     "@vitest/ui": "2.0.4",
