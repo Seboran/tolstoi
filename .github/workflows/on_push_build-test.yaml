@@ -22,5 +22,6 @@ jobs:
     needs: [build-and-test]
     permissions:
       deployments: write
+    secrets: inherit
     uses: './.github/workflows/on_workflow_call_deploy_and_run_e2e.yaml'
     if: github.ref == 'refs/heads/main'
