@@ -18,22 +18,27 @@ jobs:
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-      - uses: avakar/set-deployment-status@v1
+      - uses: chrnorm/deployment-action@v2
+        id: deployment
         with:
-          state: in_progress
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment-url: ${{ steps.vars.outputs.preview_url }}
       - name: Deploy Project Artifacts to Vercel
         run: echo "preview_url=vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz" >> $GITHUB_OUTPUT
-      - uses: avakar/set-deployment-status@v1
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@v2
         with:
-          state: success
-          environment_url: ${{ steps.vars.outputs.preview_url }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: avakar/set-deployment-status@v1
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.vars.outputs.preview_url }}
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status (failure)
         if: failure()
+        uses: chrnorm/deployment-status@v2
         with:
-          state: failure
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.vars.outputs.preview_url }}
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
