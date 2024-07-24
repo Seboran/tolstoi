@@ -3,14 +3,18 @@ env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    outputs:
+      url:
+        description: 'The URL of the production deployment'
+        value: ${{ jobs.Deploy-Production.outputs.url }}
 jobs:
   Deploy-Production:
     permissions:
       deployments: write
     runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.deployment.outputs.deployment_url}}
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - uses: pnpm/action-setup@v2

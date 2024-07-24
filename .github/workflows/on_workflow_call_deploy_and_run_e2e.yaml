@@ -1,0 +1,15 @@
+name: Deploy and E2E Test
+
+on:
+  workflow_call:
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run deploy
+        id: deploy
+        uses: './.github/workflows/on_main_deploy_to_vercel.yaml'
+      - name: Run E2E tests
+        uses: './.github/workflows/on_deploy_run_e2e.yaml'
+        with:
+          enviromnent_url: ${{ steps.deploy.outputs.url }}
