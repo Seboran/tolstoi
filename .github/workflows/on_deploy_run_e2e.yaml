@@ -16,24 +16,12 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 9
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
-      - name: Cache playwright binaries
-        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4
-        id: playwright-cache
-        with:
-          path: |
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm dlx playwright install --with-deps
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-      - run: pnpm dlx playwright install-deps
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-
-      - name: Run Playwright tests
-        run: pnpm dlx playwright test
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
+      - name: Install playwright browsers
+        run: pnpm dlx playwright install --with-deps
+      - name: Run tests
+        run: pnpm test:e2e
         env:
           PLAYWRIGHT_BASE_URL: ${{ inputs.enviromnent_url }}
       - uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b # v4
