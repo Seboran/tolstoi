@@ -20,6 +20,8 @@ jobs:
         run: pnpm run test
   deploy:
     if: github.ref == 'refs/heads/main'
+    permissions:
+      deployments: write
     uses: './.github/workflows/on_main_deploy_to_vercel.yaml'
     secrets: inherit
   run-e2e-tests:
