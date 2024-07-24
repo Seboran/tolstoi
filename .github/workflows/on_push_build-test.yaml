@@ -18,5 +18,7 @@ jobs:
         run: pnpm run build
       - name: Run tests
         run: pnpm run test
-      - uses: './.github/workflows/on_workflow_call_deploy_and_run_e2e.yaml'
-        if: github.ref == 'refs/heads/main'
+  deploy_and_run:
+    needs: [build-and-test]
+    uses: './.github/workflows/on_workflow_call_deploy_and_run_e2e.yaml'
+    if: github.ref == 'refs/heads/main'
