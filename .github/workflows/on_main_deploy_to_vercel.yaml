@@ -7,7 +7,7 @@ on:
     outputs:
       url:
         description: 'The URL of the production deployment'
-        value: ${{ jobs.Deploy-Production.outputs.url }}
+        value: ${{ jobs.Deploy-Production.outputs.preview_url }}
 jobs:
   Deploy-Production:
     permissions:
