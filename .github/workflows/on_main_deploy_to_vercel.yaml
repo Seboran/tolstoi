@@ -18,5 +18,22 @@ jobs:
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - uses: avakar/set-deployment-status@v1
+        with:
+          state: in_progress
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz
+        run: echo "preview_url=vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz" >> $GITHUB_OUTPUT
+      - uses: avakar/set-deployment-status@v1
+        with:
+          state: success
+          environment_url: ${{ steps.vars.outputs.preview_url }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: avakar/set-deployment-status@v1
+        if: failure()
+        with:
+          state: failure
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
