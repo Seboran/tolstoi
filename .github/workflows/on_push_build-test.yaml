@@ -25,3 +25,8 @@ jobs:
       deployments: write
     uses: './.github/workflows/on_main_deploy_to_vercel.yaml'
     secrets: inherit
+  smoke-test:
+    needs: [deploy]
+    uses: './.github/workflows/on_deploy_run_e2e.yaml'
+    with:
+      base_url: ${{ needs.deploy.outputs.url }}
