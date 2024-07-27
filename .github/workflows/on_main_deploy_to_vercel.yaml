@@ -24,13 +24,15 @@ jobs:
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        run: |
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
+          echo "cat deployment-url.txt" >> $GITHUB_OUTPUT
       - uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2
         id: deployment
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           environment-url: ${{ steps.vars.outputs.preview_url }}
-      - name: Deploy Project Artifacts to Vercel
-        run: echo "preview_url=vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz" >> $GITHUB_OUTPUT
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2
