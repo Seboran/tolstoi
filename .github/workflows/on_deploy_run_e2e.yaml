@@ -1,7 +1,6 @@
 name: Playwright Tests
 
-on:
-  deployment_status:
+on: deployment_status
 jobs:
   run-e2e-tests:
     if: github.event.deployment_status.state == 'success'
