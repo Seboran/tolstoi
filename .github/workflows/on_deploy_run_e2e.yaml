@@ -8,7 +8,6 @@ on:
         required: true
 jobs:
   run-e2e-tests:
-    if: github.event.deployment_status.state == 'success'
     timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
