@@ -4,5 +4,8 @@
   "github": {
     "autoJobCancellation": true
   },
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "git": {
+    "deploymentEnabled": false
+  }
 }
