@@ -31,18 +31,19 @@ jobs:
           environment: production
           initial-status: in_progress
       - name: Deploy Project Artifacts to Vercel
+        id: vercel-deploy
         run: |
           vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
           cat deployment-url.txt
           echo "preview_url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
       - name: Debug github output
-        run: echo ${{ steps.vars.outputs.preview_url}}
+        run: echo ${{ steps.vercel-deploy.outputs.preview_url }}
       - name: Update deployment status (success)
         if: success()
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2
         with:
           token: '${{ github.token }}'
-          environment-url: ${{ steps.vars.outputs.preview_url }}
+          environment-url: ${{ steps.vercel-deploy.outputs.preview_url }}
           state: 'success'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
@@ -51,6 +52,6 @@ jobs:
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2
         with:
           token: '${{ github.token }}'
-          environment-url: ${{ steps.vars.outputs.preview_url }}
+          environment-url: ${{ steps.vercel-deploy.outputs.preview_url }}
           state: 'failure'
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
