@@ -22,8 +22,8 @@ importers:
         version: 3.4.34(typescript@5.5.4)
     devDependencies:
       '@rushstack/eslint-patch':
-        specifier: 1.10.3
-        version: 1.10.3
+        specifier: 1.10.4
+        version: 1.10.4
       '@types/jsdom':
         specifier: 21.1.7
         version: 21.1.7
@@ -409,8 +409,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/eslint-patch@1.10.3':
-    resolution: {integrity: sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==}
+  '@rushstack/eslint-patch@1.10.4':
+    resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1958,7 +1958,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.1':
     optional: true
 
-  '@rushstack/eslint-patch@1.10.3': {}
+  '@rushstack/eslint-patch@1.10.4': {}
 
   '@types/estree@1.0.5': {}
 
