@@ -20,6 +20,7 @@ onMounted(() => {
 
   idBalances.value = idFromQuery
 })
+console.log('ceci est un horrible test en production')
 </script>
 
 <template>
