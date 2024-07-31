@@ -31,7 +31,7 @@
     "@types/node": "20.14.13",
     "@vercel/node": "3.2.7",
     "@vitejs/plugin-vue": "5.1.1",
-    "@vitest/coverage-v8": "2.0.4",
+    "@vitest/coverage-v8": "2.0.5",
     "@vue/eslint-config-prettier": "9.0.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "@vue/tsconfig": "0.5.1",
@@ -45,7 +45,7 @@
     "vercel": "35.2.2",
     "vite": "5.3.5",
     "vite-plugin-vue-devtools": "7.3.7",
-    "vitest": "2.0.4",
+    "vitest": "2.0.5",
     "vue-tsc": "2.0.29"
   }
 }
