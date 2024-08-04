@@ -7,7 +7,7 @@ import { computed, onMounted, ref } from 'vue'
 const passwordEntries = ref<string[]>()
 
 onMounted(async () => {
-  passwordEntries.value = await invoke<string[]>('show_passwords')
+  passwordEntries.value = await invoke<string[]>('list_entries')
 })
 
 const nameSearch = ref('')
@@ -18,7 +18,11 @@ const filteredPasswordList = computed(() =>
   )
 )
 
-function copyPassword(passwordEntryName: string) {}
+async function copyPassword(name: string) {
+  // TODO: risky operation
+  const password = await invoke('show_password', { name })
+  console.log(password)
+}
 </script>
 
 <template>
