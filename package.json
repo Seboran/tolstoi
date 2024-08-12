@@ -44,7 +44,7 @@
     "typescript": "5.5.4",
     "vercel": "35.2.4",
     "vite": "5.4.0",
-    "vite-plugin-vue-devtools": "7.3.7",
+    "vite-plugin-vue-devtools": "7.3.8",
     "vitest": "2.0.5",
     "vue-tsc": "2.0.29"
   }
