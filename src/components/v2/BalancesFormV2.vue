@@ -40,14 +40,13 @@ const { isReady } = useAsyncState(loadHistorique, undefined, { immediate: true }
 
 const matriceDeRemboursements = ref<number[][]>([])
 async function solveBalances() {
-  if (Math.abs(erreurBalance.value) < 0.0001)
-    try {
-      matriceDeRemboursements.value = []
-      const solution = await fetchBalances(balances)
-      matriceDeRemboursements.value = solution.result_matrix
-    } finally {
-      //
-    }
+  try {
+    matriceDeRemboursements.value = []
+    const solution = await fetchBalances(balances)
+    matriceDeRemboursements.value = solution.result_matrix
+  } finally {
+    //
+  }
 }
 
 async function calculerRemboursements() {
@@ -59,13 +58,13 @@ async function calculerRemboursements() {
   })
   try {
     await execute()
-    depensesParPersonne.value = Array(nomsBalances.value.length).fill(0)
   } finally {
+    depensesParPersonne.value = Array(nomsBalances.value.length).fill(0)
     //
   }
 }
 
-const { isLoading, execute } = useAsyncState(solveBalances, undefined)
+const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
 </script>
 
 <template>
