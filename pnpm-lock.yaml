@@ -79,7 +79,7 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
       unplugin-vue-router:
-        specifier: ^0.10.7
+        specifier: 0.10.7
         version: 0.10.7(rollup@4.21.0)(vue-router@4.4.3(vue@3.4.38(typescript@5.5.4)))(vue@3.4.38(typescript@5.5.4))
       vercel:
         specifier: 37.1.1
