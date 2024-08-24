@@ -8,12 +8,12 @@ const name = defineModel<string>('name', { required: true })
 <template>
   <tr class="balances">
     <td>
-      <section style="width: 80%">
+      <section>
         <div>
           <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
         </div>
         <div>
-          <StyledNumberInput v-model="balance"></StyledNumberInput>
+          <StyledNumberInput label="Dépense" v-model="balance"></StyledNumberInput>
         </div>
       </section>
     </td>
