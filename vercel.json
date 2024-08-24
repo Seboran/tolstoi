@@ -1,6 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index" }],
+  "rewrites": [
+    {
+      "source": "/api/solve",
+      "destination": "https://bons-comptes-bons-amis.vercel.app/api/solve"
+    }
+  ],
   "github": {
     "autoJobCancellation": true
   },
