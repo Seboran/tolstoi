@@ -30,7 +30,7 @@ const balance = defineModel<number>({ required: true })
 <template>
   <div class="selecteur">
     <label :for="id">{{ label }}</label>
-    <input v-model="balance" type="string" :id :disabled />
+    <input v-model="balance" type="number" :id :disabled />
   </div>
 </template>
 
