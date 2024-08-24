@@ -17,10 +17,10 @@ const emit = defineEmits<{
 }>()
 // const balance = defineModel<number>({ required: true })
 
-const balanceString = ref(props.modelValue.toString())
+const balanceString = ref()
 
 const balanceLocale = computed({
-  get: () => balanceString.value.replace(',', '.'),
+  get: () => props.modelValue.toString().replace(',', '.'),
   set: (value) => (balanceString.value = value)
 })
 
