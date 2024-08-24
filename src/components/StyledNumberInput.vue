@@ -1,21 +1,36 @@
 <script setup lang="ts">
-withDefaults(
+import { computed, ref, watch } from 'vue'
+
+const props = withDefaults(
   defineProps<{
     label: string
     id: string
     disabled: boolean
+    modelValue: number
   }>(),
   {
     disabled: false
   }
 )
-const balance = defineModel<number>({ required: true })
+const emit = defineEmits<{
+  'update:modelValue': [number]
+}>()
+// const balance = defineModel<number>({ required: true })
+
+const balanceString = ref(props.modelValue.toString())
+
+const balanceLocale = computed({
+  get: () => balanceString.value.replace(',', '.'),
+  set: (value) => (balanceString.value = value)
+})
+
+watch(balanceString, () => emit('update:modelValue', parseFloat(balanceString.value)))
 </script>
 
 <template>
   <div class="selecteur">
     <label :for="id">{{ label }}</label>
-    <input v-model="balance" type="number" :id :disabled />
+    <input v-model="balanceLocale" type="string" :id :disabled />
   </div>
 </template>
 
