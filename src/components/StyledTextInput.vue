@@ -8,13 +8,18 @@ const name = defineModel<string>({ required: true })
 </script>
 
 <template>
-  <div style="position: relative">
-    <label :for="id">{{ label }}</label>
-    <input :label :id v-model="name" type="text" />
+  <div class="block">
+    <div class="wrapper" style="position: relative">
+      <label :for="id">{{ label }}</label>
+      <input :label :id v-model="name" type="text" />
+    </div>
   </div>
 </template>
 
 <style scoped>
+.block {
+  display: inline-block;
+}
 label {
   position: absolute;
   top: -8px;
@@ -23,7 +28,7 @@ label {
   font-size: xx-small;
   background-color: #fff;
 }
-div {
+.wrapper {
   display: flex;
   flex-direction: column;
   margin: 3px;
@@ -36,6 +41,5 @@ input {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: border-color 0.2s;
-  width: 100%;
 }
 </style>
