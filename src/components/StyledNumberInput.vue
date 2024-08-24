@@ -6,31 +6,31 @@ const props = withDefaults(
     label: string
     id: string
     disabled: boolean
-    modelValue: number
+    // modelValue: number
   }>(),
   {
     disabled: false
   }
 )
-const emit = defineEmits<{
-  'update:modelValue': [number]
-}>()
-// const balance = defineModel<number>({ required: true })
+// const emit = defineEmits<{
+//   'update:modelValue': [number]
+// }>()
+const balance = defineModel<number>({ required: true })
 
-const balanceString = ref()
+// const balanceString = ref()
 
-const balanceLocale = computed({
-  get: () => props.modelValue.toString().replace(',', '.'),
-  set: (value) => (balanceString.value = value)
-})
+// const balanceLocale = computed({
+//   get: () => props.modelValue.toString().replace(',', '.'),
+//   set: (value) => (balanceString.value = value)
+// })
 
-watch(balanceString, () => emit('update:modelValue', parseFloat(balanceString.value)))
+// watch(balanceString, () => emit('update:modelValue', parseFloat(balanceString.value)))
 </script>
 
 <template>
   <div class="selecteur">
     <label :for="id">{{ label }}</label>
-    <input v-model="balanceLocale" type="string" :id :disabled />
+    <input v-model="balance" type="string" :id :disabled />
   </div>
 </template>
 
