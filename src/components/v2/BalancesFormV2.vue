@@ -57,10 +57,15 @@ async function calculerRemboursements() {
     bénéficiaires.value = Array.from(Array(depensesParPersonne.value.length).keys())
     ajouterDepense()
   })
-  await execute()
+  try {
+    await execute()
+    depensesParPersonne.value = Array(nomsBalances.value.length).fill(0)
+  } finally {
+    //
+  }
 }
 
-const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
+const { isLoading, execute } = useAsyncState(solveBalances, undefined)
 </script>
 
 <template>
