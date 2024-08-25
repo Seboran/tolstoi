@@ -25,19 +25,19 @@ importers:
         specifier: 1.10.4
         version: 1.10.4
       '@tauri-apps/cli':
-        specifier: ^1
+        specifier: 1.6.1
         version: 1.6.1
       '@testing-library/jest-dom':
-        specifier: ^6.5.0
+        specifier: 6.5.0
         version: 6.5.0
       '@types/node':
         specifier: 20.14.14
         version: 20.14.14
       '@vitejs/plugin-vue':
-        specifier: ^5.0.5
+        specifier: 5.1.2
         version: 5.1.2(vite@5.4.2(@types/node@20.14.14))(vue@3.4.38(typescript@5.5.4))
       '@vitest/coverage-v8':
-        specifier: ^2.0.5
+        specifier: 2.0.5
         version: 2.0.5(vitest@2.0.5(@types/node@20.14.14)(happy-dom@15.0.0))
       '@vue/eslint-config-prettier':
         specifier: 9.0.0
@@ -52,22 +52,22 @@ importers:
         specifier: 9.27.0
         version: 9.27.0(eslint@9.8.0)
       happy-dom:
-        specifier: ^15.0.0
+        specifier: 15.0.0
         version: 15.0.0
       prettier:
         specifier: 3.3.3
         version: 3.3.3
       typescript:
-        specifier: ^5.2.2
+        specifier: 5.5.4
         version: 5.5.4
       vite:
-        specifier: ^5.3.1
+        specifier: 5.4.2
         version: 5.4.2(@types/node@20.14.14)
       vitest:
-        specifier: ^2.0.5
+        specifier: 2.0.5
         version: 2.0.5(@types/node@20.14.14)(happy-dom@15.0.0)
       vue-tsc:
-        specifier: ^2.0.22
+        specifier: 2.0.29
         version: 2.0.29(typescript@5.5.4)
 
 packages:
