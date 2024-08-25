@@ -3,6 +3,7 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { invoke } from '@tauri-apps/api/tauri'
 import { computed, onMounted, ref } from 'vue'
+import { useClipboard } from '@vueuse/core'
 
 const passwordEntries = ref<string[]>()
 
@@ -18,10 +19,12 @@ const filteredPasswordList = computed(() =>
   )
 )
 
+const { copy } = useClipboard()
+
 async function copyPassword(name: string) {
-  // TODO: risky operation
-  const password = await invoke('show_password', { name })
-  console.log(password)
+  const entry = await invoke<string>('show_password', { name })
+  const [password] = entry.split('\n')
+  await copy(password)
 }
 </script>
 
