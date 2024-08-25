@@ -11,29 +11,34 @@
     "preview": "vite preview",
     "format": "prettier --write src/",
     "tauri": "tauri",
+    "lint": "eslint src --fix",
     "test:all": "pnpm test run && cd src-tauri && cargo test"
   },
   "dependencies": {
     "@tauri-apps/api": "^1",
-    "@testing-library/vue": "^8.1.0",
     "@vueuse/core": "^11.0.3",
-    "vue": "^3.3.4"
+    "vue": "^3.4.38"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "1.10.4",
     "@tauri-apps/cli": "1.6.1",
     "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/vue": "^8.1.0",
     "@types/node": "20.16.1",
+    "@typescript-eslint/parser": "^8.2.0",
     "@vitejs/plugin-vue": "5.1.2",
     "@vitest/coverage-v8": "2.0.5",
     "@vue/eslint-config-prettier": "9.0.0",
     "@vue/eslint-config-typescript": "13.0.0",
-    "eslint": "9.9.1",
+    "eslint": "^8.57.0",
     "eslint-plugin-vue": "9.27.0",
     "happy-dom": "15.0.0",
     "prettier": "3.3.3",
     "typescript": "5.5.4",
+    "typescript-eslint": "^8.2.0",
     "vite": "5.4.2",
+    "vite-plugin-vue-devtools": "7.3.8",
     "vitest": "2.0.5",
     "vue-tsc": "2.0.29"
   }
