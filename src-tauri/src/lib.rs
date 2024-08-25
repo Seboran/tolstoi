@@ -63,16 +63,4 @@ mod tests {
             vec![String::from("impots"), String::from("laredoute")]
         );
     }
-
-    #[test]
-    fn retourne_un_mot_de_pass_crypté() {
-        let mut test_folder_path = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
-        test_folder_path.push(PASSWORD_STORE_RESOURCES);
-        println!("{}", test_folder_path.display());
-        let result = list_entries_folder(&test_folder_path);
-        assert_eq!(
-            result,
-            vec![String::from("impots"), String::from("laredoute")]
-        );
-    }
 }

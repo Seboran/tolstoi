@@ -2,9 +2,10 @@ import { fireEvent, render, waitFor } from '@testing-library/vue'
 import { expect, suite, test, vi } from 'vitest'
 import App from '../App.vue'
 
-import { mockIPC } from '@tauri-apps/api/mocks'
-
-mockIPC((cmd, args) => {
+window.__TAURI_INVOKE__ = async (
+  cmd: string,
+  args?: Record<string, unknown>
+): Promise<any | undefined> => {
   // simulated rust command called "add" that just adds two numbers
   if (cmd === 'list_entries') {
     const entries: string[] = ['laredoute.fr', 'impots']
@@ -12,7 +13,7 @@ mockIPC((cmd, args) => {
   }
 
   if (cmd === 'show_password') {
-    const { name } = args
+    const { name } = args as Record<string, any>
     switch (name) {
       case 'laredoute.fr':
         return 'motdepasselaredoute'
@@ -20,7 +21,7 @@ mockIPC((cmd, args) => {
         return 'motdepasseimpots'
     }
   }
-})
+}
 
 const clipBoard = vi.fn().mockImplementation(() => console.log('bonjour monsieur'))
 vi.mock('@vueuse/core', () => ({

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { invoke } from '@tauri-apps/api/tauri'
-import { computed, onMounted, ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
+import { computed, onMounted, ref } from 'vue'
+import { listEntries, showPassword } from './bindings'
 
 const passwordEntries = ref<string[]>()
 
 onMounted(async () => {
-  passwordEntries.value = await invoke<string[]>('list_entries')
+  passwordEntries.value = await listEntries()
 })
 
 const nameSearch = ref('')
@@ -22,10 +22,14 @@ const filteredPasswordList = computed(() =>
 const { copy } = useClipboard()
 
 async function copyPassword(name: string) {
-  const entry = await invoke<string>('show_password', { name })
+  const entry = await showPassword(name)
+
+  if (!entry) {
+    console.log('No entry for this name')
+    return
+  }
   const [password] = entry.split('\n')
   await copy(password)
-  console.log('coucou')
 }
 </script>
 
