@@ -25,6 +25,7 @@ async function copyPassword(name: string) {
   const entry = await invoke<string>('show_password', { name })
   const [password] = entry.split('\n')
   await copy(password)
+  console.log('coucou')
 }
 </script>
 
@@ -48,13 +49,19 @@ async function copyPassword(name: string) {
             <td>
               <input
                 type="password"
-                name="password of {{ passwordItem }}"
-                id="password{{ passwordItem }}"
+                :name="'password of ' + passwordItem"
+                :id="'password ' + passwordItem"
                 value="*************"
               />
             </td>
             <td>
-              <button type="button" @click="copyPassword(passwordItem)">Copy to clipboard</button>
+              <button
+                type="button"
+                :aria-label="'Copy password of ' + passwordItem"
+                @click="copyPassword(passwordItem)"
+              >
+                Copy to clipboard
+              </button>
               <button type="button">Auto type</button>
             </td>
           </tr>

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test": "vitest",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "format": "prettier --write src/",
@@ -12,21 +13,26 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1",
+    "@testing-library/vue": "^8.1.0",
     "@vueuse/core": "^11.0.3",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "1.10.4",
     "@tauri-apps/cli": "^1",
+    "@testing-library/jest-dom": "^6.5.0",
     "@types/node": "20.14.14",
     "@vitejs/plugin-vue": "^5.0.5",
+    "@vitest/coverage-v8": "^2.0.5",
     "@vue/eslint-config-prettier": "9.0.0",
     "@vue/eslint-config-typescript": "13.0.0",
     "eslint": "9.8.0",
     "eslint-plugin-vue": "9.27.0",
+    "happy-dom": "^15.0.0",
     "prettier": "3.3.3",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
+    "vitest": "^2.0.5",
     "vue-tsc": "^2.0.22"
   }
 }
