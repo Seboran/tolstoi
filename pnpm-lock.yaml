@@ -28,16 +28,16 @@ importers:
         specifier: 6.5.0
         version: 6.5.0
       '@testing-library/user-event':
-        specifier: ^14.5.2
+        specifier: 14.5.2
         version: 14.5.2(@testing-library/dom@9.3.4)
       '@testing-library/vue':
-        specifier: ^8.1.0
+        specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.4.38)(vue@3.4.38(typescript@5.5.4))
       '@types/node':
         specifier: 20.16.1
         version: 20.16.1
       '@typescript-eslint/parser':
-        specifier: ^8.2.0
+        specifier: 8.2.0
         version: 8.2.0(eslint@8.57.0)(typescript@5.5.4)
       '@vitejs/plugin-vue':
         specifier: 5.1.2
@@ -52,7 +52,7 @@ importers:
         specifier: 13.0.0
         version: 13.0.0(eslint-plugin-vue@9.27.0(eslint@8.57.0))(eslint@8.57.0)(typescript@5.5.4)
       eslint:
-        specifier: ^8.57.0
+        specifier: 8.57.0
         version: 8.57.0
       eslint-plugin-vue:
         specifier: 9.27.0
@@ -67,7 +67,7 @@ importers:
         specifier: 5.5.4
         version: 5.5.4
       typescript-eslint:
-        specifier: ^8.2.0
+        specifier: 8.2.0
         version: 8.2.0(eslint@8.57.0)(typescript@5.5.4)
       vite:
         specifier: 5.4.2
