@@ -49,6 +49,8 @@ jobs:
         run: pnpm lint
       - name: test frontend app
         run: pnpm test
+      - name: build frontend app
+        run: pnpm build
 
       - name: test rust app
         working-directory: ./src-tauri
