@@ -5,7 +5,6 @@ import { useClipboard } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 import { listEntries, showPassword } from './bindings'
 import ListOfEntryPasswords from './ListOfEntryPasswords.vue'
-import FilterEntryInput from './FilterEntryInput.vue'
 
 const passwordEntries = ref<string[]>()
 
@@ -42,12 +41,7 @@ async function copyPassword(name: string) {
     <section>
       <h2>Liste des mots de passe</h2>
       <label for="search">Chercher entrée</label>
-      <input
-        id="search"
-        v-model="nameSearch"
-        type="search"
-        name="search"
-      >
+      <input id="search" v-model="nameSearch" type="search" name="search" />
       <ListOfEntryPasswords
         v-if="filteredPasswordList"
         :filtered-password-list="filteredPasswordList"
