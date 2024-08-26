@@ -41,7 +41,7 @@ async function copyPassword(name: string) {
     <section>
       <h2>Liste des mots de passe</h2>
       <label for="search">Chercher entrée</label>
-      <input id="search" v-model="nameSearch" type="search" name="search" />
+      <input id="search" v-model="nameSearch" type="search" name="search" autofocus />
       <ListOfEntryPasswords
         v-if="filteredPasswordList"
         :filtered-password-list="filteredPasswordList"
