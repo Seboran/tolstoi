@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "tauri:dev": "pnpm tauri dev",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "build": "vue-tsc --noEmit && vite build",
