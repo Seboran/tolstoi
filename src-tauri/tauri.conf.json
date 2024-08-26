@@ -20,8 +20,13 @@
     "windows": [
       {
         "title": "nirinapass",
-        "width": 1080,
-        "height": 720
+        "width": 500,
+        "height": 400,
+        "resizable": false,
+        "maximizable": false,
+        "minimizable": false,
+        "closable": false,
+        "titleBarStyle": "Transparent"
       }
     ],
     "security": {
