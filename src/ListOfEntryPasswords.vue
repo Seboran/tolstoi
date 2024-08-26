@@ -17,8 +17,7 @@ function copyPassword(name: string) {
   <table>
     <thead>
       <th>Nom</th>
-      <th>mot de passe</th>
-      <th>actions</th>
+      <th>Actions</th>
     </thead>
     <tbody>
       <PasswordEntryLine
@@ -33,9 +32,7 @@ function copyPassword(name: string) {
         >
           Copy to clipboard
         </button>
-        <button type="button">
-          Auto type
-        </button>
+        <button type="button">Auto type</button>
       </PasswordEntryLine>
     </tbody>
   </table>
