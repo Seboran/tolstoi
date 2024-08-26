@@ -4,6 +4,9 @@
 import { useClipboard } from '@vueuse/core'
 import { computed, onMounted, ref } from 'vue'
 import { listEntries, showPassword } from './bindings'
+import MainTitle from './components/headings/MainTitle.vue'
+import Input from './components/ui/input/Input.vue'
+import Label from './components/ui/label/Label.vue'
 import ListOfEntryPasswords from './ListOfEntryPasswords.vue'
 
 const passwordEntries = ref<string[]>()
@@ -32,56 +35,37 @@ async function copyPassword(name: string) {
   const [password] = entry.split('\n')
   await copy(password)
 }
+
+const entries = ref<InstanceType<typeof ListOfEntryPasswords> | null>(null)
 </script>
 
 <template>
-  <div class="container">
-    <h1>Ananas Pass</h1>
-
-    <section>
-      <h2>Liste des mots de passe</h2>
-      <label for="search">Chercher entrée</label>
-      <input id="search" v-model="nameSearch" type="search" name="search" autofocus />
-      <ListOfEntryPasswords
-        v-if="filteredPasswordList"
-        :filtered-password-list="filteredPasswordList"
-        @copy="copyPassword"
-      />
+  <div class="container w-full">
+    <MainTitle>Nirina Pass</MainTitle>
+    <section class="w-full">
+      <form
+        class="grid w-full max-w-sm items-center gap-1.5"
+        @submit.prevent="entries?.items?.[0]?.$el.focus()"
+      >
+        <Label for="search">Chercher entrée</Label>
+        <Input id="search" v-model="nameSearch" type="search" name="search" autofocus />
+      </form>
+      <div class="w-full">
+        <ListOfEntryPasswords
+          v-if="filteredPasswordList"
+          :filtered-password-list="filteredPasswordList"
+          @copy="copyPassword"
+          ref="entries"
+        />
+      </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
 .container {
   margin: 0;
-  padding-top: 10vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-h1 {
-  text-align: center;
-}
-
-table {
-  margin: auto;
 }
 </style>

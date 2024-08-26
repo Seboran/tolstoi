@@ -2,6 +2,7 @@ import userEvent from '@testing-library/user-event'
 import { fireEvent, render, waitFor } from '@testing-library/vue'
 import { expect, suite, test, vi } from 'vitest'
 import App from '../App.vue'
+import { keyboard } from '@testing-library/user-event/dist/cjs/keyboard/index.js'
 
 window.__TAURI_INVOKE__ = async (
   cmd: string,
@@ -25,11 +26,15 @@ window.__TAURI_INVOKE__ = async (
 }
 
 const clipBoard = vi.fn()
-vi.mock('@vueuse/core', () => ({
-  useClipboard: () => ({
-    copy: clipBoard
-  })
-}))
+vi.mock('@vueuse/core', async (importOriginal) => {
+  const actual = (await importOriginal()) as any
+  return {
+    ...actual,
+    useClipboard: () => ({
+      copy: clipBoard
+    })
+  }
+})
 
 suite('App.vue', () => {
   suite('affichage', () => {
@@ -56,9 +61,9 @@ suite('App.vue', () => {
   })
   suite('copier-coller', () => {
     test('Doit copier coller les deux mots de passe', async () => {
-      const { findByRole } = render(App)
+      const { findByText } = render(App)
 
-      const ligneLaRedoute = await findByRole('button', { name: 'Copy password of laredoute.fr' })
+      const ligneLaRedoute = await findByText(/laredoute/)
 
       await fireEvent.click(ligneLaRedoute)
 
