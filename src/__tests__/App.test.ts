@@ -2,7 +2,6 @@ import userEvent from '@testing-library/user-event'
 import { fireEvent, render, waitFor } from '@testing-library/vue'
 import { expect, suite, test, vi } from 'vitest'
 import App from '../App.vue'
-import { keyboard } from '@testing-library/user-event/dist/cjs/keyboard/index.js'
 
 window.__TAURI_INVOKE__ = async (
   cmd: string,

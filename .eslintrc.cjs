@@ -14,7 +14,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['src/pages/*.vue'], // Change this to default.vue path
+      files: ['src/pages/*.vue', 'src/components/ui/**/*.vue'], // Change this to default.vue path
       rules: {
         'vue/multi-word-component-names': 'off'
       }
