@@ -7,6 +7,8 @@ on:
       - '*'
 # This workflow will build your tauri app without uploading it anywhere.
 
+permissions: write-all
+
 jobs:
   test-tauri:
     strategy:
