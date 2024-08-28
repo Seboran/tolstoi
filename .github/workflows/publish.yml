@@ -1,4 +1,4 @@
-name: 'build-on-tag'
+name: 'publish-on-tag'
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 permissions: write-all
 
 jobs:
-  test-tauri:
+  publish-tauri:
     strategy:
       fail-fast: false
       matrix:
@@ -56,6 +56,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: ${{ matrix.args }}
-          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version.
-          releaseName: 'App v__VERSION__'
+          tagName: nirinapass-${{ github.ref_name }} # the action automatically replaces \_\_VERSION\_\_ with the nirinapass version.
+          releaseName: 'NirinaPass ${{ github.ref_name }}'
           releaseBody: 'See the assets to download this version and install.'
