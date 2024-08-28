@@ -55,3 +55,4 @@ jobs:
         with:
           args: ${{ matrix.args }}
           tagName: ${{ github.ref_name }} # the action automatically replaces \_\_VERSION\_\_ with the nirinapass version.
+          releaseName: ${{ github.ref_name }}
