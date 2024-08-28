@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.3-alpha...v0.1.4-alpha) (2024-08-28)
+
+
+### Bug Fixes
+
+* ne pas spammer les gens avec des releases ([a93e6bb](https://github.com/Seboran/nirinapass/commit/a93e6bb791e7cc0fc709a36a0918ea3507c286aa))
+
 ## [0.1.3-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.2-alpha...v0.1.3-alpha) (2024-08-28)
 
 
