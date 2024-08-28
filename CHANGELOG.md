@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.1-alpha...v0.1.2-alpha) (2024-08-28)
+
+
+### Bug Fixes
+
+* trigger publish on release and not tag ([047cfcf](https://github.com/Seboran/nirinapass/commit/047cfcfe29d791f0b6ea8cdb21a094f3e3fd65f8))
+
 ## [0.1.1-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.0-alpha...v0.1.1-alpha) (2024-08-28)
 
 
