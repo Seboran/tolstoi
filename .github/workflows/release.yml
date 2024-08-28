@@ -1,21 +1,29 @@
 on:
   push:
     branches:
-      - main
+      - master # or main
 
 permissions:
-  contents: write
-  pull-requests: write
-
-name: release
+  contents: read # for checkout
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
-      - id: semver-tag
-        uses: gandarez/semver-action@master
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          branching_model: 'trunk-based'
-      - name: 'Created tag'
-        run: echo "tag ${{ steps.semver-tag.outputs.semver_tag }}"
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: pnpm dlx semantic-release
