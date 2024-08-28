@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.2-alpha...v0.1.3-alpha) (2024-08-28)
+
+
+### Bug Fixes
+
+* utilise une PAT ([add2084](https://github.com/Seboran/nirinapass/commit/add2084da0b1f7d93e4dbd3786cb031c118f0642))
+
 ## [0.1.2-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.1-alpha...v0.1.2-alpha) (2024-08-28)
 
 
