@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1-alpha](https://github.com/Seboran/nirinapass/compare/v0.1.0-alpha...v0.1.1-alpha) (2024-08-28)
+
+
+### Bug Fixes
+
+* renomme le workflow de test ([c4df414](https://github.com/Seboran/nirinapass/commit/c4df414d19ecf9a9d4a73304556b8f99368c9ee3))
+
 ## [0.1.0-alpha](https://github.com/Seboran/nirinapass/compare/v0.0.3-alpha...v0.1.0-alpha) (2024-08-28)
 
 
