@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - id: semver-tag
+        uses: gandarez/semver-action@master
+        with:
+          branching_model: 'trunk-based'
+      - name: 'Created tag'
+        run: echo "tag ${{ steps.semver-tag.outputs.semver_tag }}"
