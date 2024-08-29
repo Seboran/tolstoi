@@ -70,7 +70,6 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
 <template>
   <div v-if="isReady" class="main-app">
     <section>
-      <StyledButton label="Ajouter une personne" @click="addBalance" />
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInputV2
@@ -79,8 +78,9 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
           />
         </template>
       </table>
+      <StyledButton label="Ajouter une personne" @click="addBalance" />
       <StyledButton
-        v-if="balances.length > 2"
+        v-if="balances.length >= 2"
         label="Calculer remboursements"
         @click="calculerRemboursements"
       ></StyledButton>
