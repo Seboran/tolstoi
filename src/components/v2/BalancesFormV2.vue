@@ -79,7 +79,11 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
           />
         </template>
       </table>
-      <StyledButton label="Calculer remboursements" @click="calculerRemboursements"></StyledButton>
+      <StyledButton
+        v-if="balances.length > 2"
+        label="Calculer remboursements"
+        @click="calculerRemboursements"
+      ></StyledButton>
     </section>
 
     <template v-if="historiqueDépenses.length > 0">
