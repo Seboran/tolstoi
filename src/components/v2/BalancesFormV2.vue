@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { useAsyncState } from '@vueuse/core'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
+import { fetchBalances } from '@/components//useFetchBalances'
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import ChargementCalcul from '@/components/ChargementCalcul.vue'
-import StyledButton from '@/components/StyledButton.vue'
-import BalanceInputV2 from './BalanceInputV2.vue'
 import { getHistorique } from '@/components/fetchHistorique'
-import HistoriqueDepenses from '@/components/HistoriqueDepenses.vue'
+import StyledButton from '@/components/StyledButton.vue'
 import { useAjouterDepense } from '@/components/useAjouterDepense'
+import BalanceInputV2 from './BalanceInputV2.vue'
 import { useBalances } from './useBalancesV2'
-import { fetchBalances } from '@/components//useFetchBalances'
 
 const { balances, nomsBalances, erreurBalance, addBalance, depensesParPersonne } = useBalances()
 const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
@@ -50,21 +49,34 @@ async function solveBalances() {
 }
 
 async function calculerRemboursements() {
-  depensesParPersonne.value.filter(Boolean).forEach((depense, index) => {
+  historiqueDépenses.value.splice(0)
+  balances.value = Array(nomsBalances.value.length).fill(0)
+
+  depensesParPersonne.value.forEach((depense, index) => {
     indexDepenseur.value = index
     montant.value = depense
     bénéficiaires.value = Array.from(Array(depensesParPersonne.value.length).keys())
     ajouterDepense()
   })
   try {
+    modified.value = false
     await execute()
-  } finally {
-    depensesParPersonne.value = Array(nomsBalances.value.length).fill(0)
-    //
+  } catch (e) {
+    modified.value = true
   }
 }
 
+const modified = ref(true)
+
 const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
+
+watch(
+  depensesParPersonne,
+  () => {
+    modified.value = true
+  },
+  { deep: true }
+)
 </script>
 
 <template>
@@ -82,6 +94,7 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
       <StyledButton
         v-if="balances.length >= 2"
         label="Calculer remboursements"
+        :disabled="!modified"
         @click="calculerRemboursements"
       ></StyledButton>
     </section>
@@ -90,9 +103,6 @@ const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immedia
       <section>
         <ChargementCalcul :isLoading="isLoading" />
         <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
-      </section>
-      <section>
-        <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
       </section>
     </template>
   </div>
