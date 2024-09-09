@@ -29,7 +29,7 @@
     "@testing-library/vue": "8.1.0",
     "@tsconfig/node20": "20.1.4",
     "@types/node": "20.16.5",
-    "@vercel/node": "3.2.10",
+    "@vercel/node": "3.2.12",
     "@vitejs/plugin-vue": "5.1.2",
     "@vitest/coverage-v8": "2.0.5",
     "@vue/eslint-config-prettier": "9.0.0",
