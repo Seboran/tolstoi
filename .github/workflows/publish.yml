@@ -46,7 +46,7 @@ jobs:
         run: pnpm install # change this to npm, pnpm or bun depending on which one you use.
 
       # If tagName and releaseId are omitted tauri-action will only build the app and won't try to upload any assets.
-      - uses: tauri-apps/tauri-action@a130ac329546b42aff78d7ef0596fb9b764c1355 # v0
+      - uses: tauri-apps/tauri-action@4ec5841d83495da72c665daa556e6f231b89ae06 # v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
