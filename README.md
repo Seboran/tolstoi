@@ -1,11 +1,22 @@
 # Aux bons comptes les bons amis
 
-Application de remboursement entre colocs ou potes.
 
-## Installation
+Imaginez, vous rentrez de vacances. Vous êtes nombreux à avoir dépensé, certains beaucoup, certains moins, certains pas du tout, et vous voulez faire les remboursements pour compter.
 
-Voir requirements
+Malheureusement, vous ne savez pas comment vous répartir les dépenses, vous vous embêtez pour savoir qui rembourser qui, et vous vous rendez compte que ça peut vite être la pagaille.
 
-## Qu'est-ce que cela fait ?
+Et vous voulez juste avoir une liste de ce que vous avez dépensé, avec le nom de qui vous l'avez dépensé.
 
-Ce projet programme des solutions de remboursement au problème de comment gérer des comptes entre colocs ?
+> Heureusement que les bons comptes font les bons amis 😉
+
+## Le fonctionnement
+
+Renseignez la liste de toutes les personnes faisant partie du groupe, même celles qui n'ont rien mis. Renseignez les sommes dépensées (et changez éventuellement les noms), et laissez faire la magie ✨
+
+## Développement local
+
+```sh
+pnpm i
+python -r requirements.txt
+pnpm dev
+```
