@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import BalancesFormV2 from './components/v2/BalancesFormV2.vue'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import { RouterView } from 'vue-router'
     <h1>Bons comptes bons amis</h1>
   </header>
   <main>
-    <RouterView />
+    <BalancesFormV2 />
   </main>
 </template>
 

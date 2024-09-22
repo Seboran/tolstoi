@@ -30,8 +30,7 @@ coverage
 *.tsbuildinfo
 .vercel
 /test-results/
-/playwright-report/
+/playwright-report
 /blob-report/
 /playwright/.cache/
-
-appwrite.json
+__pycache__/
