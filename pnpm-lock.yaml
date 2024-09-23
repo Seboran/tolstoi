@@ -52,7 +52,7 @@ importers:
         specifier: 0.5.1
         version: 0.5.1
       concurrently:
-        specifier: ^9.0.1
+        specifier: 9.0.1
         version: 9.0.1
       eslint:
         specifier: 8.57.0
