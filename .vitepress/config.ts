@@ -6,6 +6,7 @@ export default defineConfig({
   head: [
     ['meta', { name: 'twitter:site', content: '@nirinarabeson.fr' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['description', { content: 'Le site de Nirina Rabeson' }],
     [
       'link',
       {

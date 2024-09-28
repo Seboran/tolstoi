@@ -26,7 +26,7 @@ const { page, frontmatter } = useData()
             href="https://www.linkedin.com/in/nirinarabeson/"
             target="_blank"
             rel="noopener"
-            ><span class="hidden sm:inline">Me </span>contacter →</a
+            >Me contacter →</a
           >
         </div>
       </nav>
