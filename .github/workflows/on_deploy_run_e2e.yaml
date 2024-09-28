@@ -12,19 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: |
+            README.md
+          lookup-only: true
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**') }}-smoke-tests
       - uses: pnpm/action-setup@v2
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           version: 9
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm i --frozen-lockfile
       - name: Install playwright browsers
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm exec playwright install --with-deps
       - name: Run tests
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm test:e2e
         env:
           PLAYWRIGHT_BASE_URL: ${{ inputs.base_url }}
       - uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4
-        if: always()
+        if: always() && steps.cache.outputs.cache-hit != 'true'
         with:
           name: playwright-test-results
           path: test-results/

@@ -11,16 +11,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: |
+            dist
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**') }}
       - uses: pnpm/action-setup@v2
         with:
           version: 9
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm i --frozen-lockfile
       - name: Lint app
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm run lint
       - name: Build app
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm run build
       - name: Run tests
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm run test
   deploy:
     needs: [build-and-test]
