@@ -17,7 +17,7 @@ jobs:
           path: |
             dist
           lookup-only: true
-          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**') }}
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**', 'requirements.txt') }}
       - uses: pnpm/action-setup@v4
         with:
           version: 9

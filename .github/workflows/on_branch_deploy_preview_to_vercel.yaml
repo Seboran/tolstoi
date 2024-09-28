@@ -23,7 +23,7 @@ jobs:
           path: |
             README.md
           lookup-only: true
-          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**') }}-preview-vercel
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**', 'requirements.txt') }}-preview-vercel
       - uses: pnpm/action-setup@v4
         if: steps.cache.outputs.cache-hit != 'true'
         with:
