@@ -11,7 +11,7 @@ import { useAjouterDepense } from '@/components/useAjouterDepense'
 import BalanceInputV2 from './BalanceInputV2.vue'
 import { useBalances } from './useBalancesV2'
 
-const { balances, nomsBalances, erreurBalance, addBalance, depensesParPersonne } = useBalances()
+const { balances, nomsBalances, retirerBalance, addBalance, depensesParPersonne } = useBalances()
 const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
   useAjouterDepense(balances)
 
@@ -77,6 +77,13 @@ watch(
   },
   { deep: true }
 )
+
+function retirerBalancerEtViderComptes(index: number) {
+  balances.value = Array(nomsBalances.value.length).fill(0)
+  historiqueDépenses.value.splice(0)
+
+  retirerBalance(index)
+}
 </script>
 
 <template>
@@ -87,6 +94,7 @@ watch(
           <BalanceInputV2
             v-model:balance="depensesParPersonne[index]"
             v-model:name="nomsBalances[index]"
+            @remove="retirerBalancerEtViderComptes(index)"
           />
         </template>
       </table>

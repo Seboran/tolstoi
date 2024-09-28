@@ -16,11 +16,18 @@ export function useBalances() {
     nomsBalances.value.push(NOMS_AU_HASARD[nomsBalances.value.length])
   }
 
+  function retirerBalance(index: number) {
+    balances.value.splice(index, 1)
+    nomsBalances.value.splice(index, 1)
+    depensesParPersonne.value.splice(index, 1)
+  }
+
   return {
     balances,
     nomsBalances,
     erreurBalance,
     addBalance,
+    retirerBalance,
     depensesParPersonne
   }
 }

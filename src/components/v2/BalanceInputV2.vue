@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import StyledTextInput from '@/components/StyledTextInput.vue'
 import StyledNumberInput from '@/components/StyledNumberInput.vue'
+import StyledButton from '../StyledButton.vue'
 const balance = defineModel<number>('balance')
 const name = defineModel<string>('name', { required: true })
+
+defineEmits<{
+  remove: []
+}>()
 </script>
 
 <template>
@@ -15,6 +20,7 @@ const name = defineModel<string>('name', { required: true })
         <div>
           <StyledNumberInput label="Dépense" v-model="balance"></StyledNumberInput>
         </div>
+        <div><StyledButton @click="$emit('remove')" label="supprimer" /></div>
       </section>
     </td>
   </tr>
