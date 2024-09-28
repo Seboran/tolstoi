@@ -20,3 +20,7 @@ pnpm i
 python -r requirements.txt
 pnpm dev
 ```
+
+### Devcontainer
+
+Vous pouvez démarrer le projet depuis un `devcontainer` ! Voir <https://code.visualstudio.com/docs/devcontainers/tutorial>
