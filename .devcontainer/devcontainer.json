@@ -6,7 +6,7 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bullseye",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/python:1": {"version": "3.12"},
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },
     "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {}
   },
 
