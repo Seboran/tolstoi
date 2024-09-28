@@ -33,7 +33,9 @@
         "Vue.volar",
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "ms-python.python",
+        "ms-python.debugpy"
       ]
     }
   }
