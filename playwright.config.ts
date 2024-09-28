@@ -62,7 +62,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm build && pnpm preview',
+    command: 'pnpm preview',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: !process.env.CI
   }
