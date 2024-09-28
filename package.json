@@ -7,7 +7,7 @@
   "scripts": {
     "dev:vercel": "vercel dev",
     "dev:flask": "python -m flask --app api/index.py run -p 5328",
-    "dev:vite": "vite",
+    "dev:vite": "vite --host",
     "dev": "concurrently \"pnpm run dev:vite\" \"pnpm run dev:flask\"",
     "test": "vitest",
     "build": "vite build",
