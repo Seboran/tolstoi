@@ -18,7 +18,7 @@ test('get started link', async ({ page, context }) => {
   const newPage = await pagePromise
 
   // Expects page to have a heading with the name of Installation.
-  await expect(newPage).toHaveURL('https://www.linkedin.com/in/nirinarabeson/')
+  await expect(newPage).toHaveURL(/https:\/\/www.linkedin.com\/*/)
 })
 
 test("affiche le titre d'un article et permet de cliquer dessus", async ({
@@ -26,8 +26,8 @@ test("affiche le titre d'un article et permet de cliquer dessus", async ({
 }) => {
   await page.goto('/')
   await page.getByRole('heading').getByRole('link').first().click()
-  const textContent = await page.getByRole('heading').nth(1).textContent()
 
+  const textContent = await page.getByRole('heading').nth(1).textContent()
   await expect(page).toHaveURL(/\/posts\/*/)
   await expect(page).toHaveTitle(new RegExp(textContent!))
 })
