@@ -24,9 +24,11 @@ const lignesRemboursement = computed(() => {
 <template>
   <table title="Remboursements">
     <thead>
-      <th>qui</th>
-      <th>doit</th>
-      <th>à qui</th>
+      <tr>
+        <th>qui</th>
+        <th>doit</th>
+        <th>à qui</th>
+      </tr>
     </thead>
     <tbody>
       <template v-for="({ qui, combien, àQui }, _index) in lignesRemboursement" :key="_index">
