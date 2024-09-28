@@ -21,3 +21,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+  deploy:
+    needs: [test]
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      deployments: write
+    uses: './.github/workflows/on_main_deploy_to_vercel.yaml'
+    secrets: inherit
