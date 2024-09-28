@@ -26,5 +26,6 @@ jobs:
     if: github.ref == 'refs/heads/main'
     permissions:
       deployments: write
+      contents: read
     uses: './.github/workflows/on_main_deploy_to_vercel.yaml'
     secrets: inherit

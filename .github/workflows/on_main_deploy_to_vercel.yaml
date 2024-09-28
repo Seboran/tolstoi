@@ -12,6 +12,7 @@ jobs:
   Deploy-Production:
     permissions:
       deployments: write
+      contents: read
     runs-on: ubuntu-latest
     outputs:
       url: ${{ steps.vercel-deploy.outputs.preview_url}}
