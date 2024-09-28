@@ -25,9 +25,13 @@ test("affiche le titre d'un article et permet de cliquer dessus", async ({
   page
 }) => {
   await page.goto('/')
+  const textContent = await page
+    .getByRole('heading')
+    .getByRole('link')
+    .first()
+    .textContent()
   await page.getByRole('heading').getByRole('link').first().click()
 
-  const textContent = await page.getByRole('heading').nth(1).textContent()
   await expect(page).toHaveURL(/\/posts\/*/)
   await expect(page).toHaveTitle(new RegExp(textContent!))
 })
