@@ -24,7 +24,7 @@ jobs:
             README.md
           lookup-only: true
           key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**') }}-deploy-prod
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         if: steps.cache.outputs.cache-hit != 'true'
         with:
           version: 9
