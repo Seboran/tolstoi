@@ -35,7 +35,12 @@
         "esbenp.prettier-vscode",
         "github.vscode-github-actions",
         "ms-python.python",
-        "ms-python.debugpy"
+        "ms-python.debugpy",
+        "ms-python.autopep8",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "ms-python.pylint",
+        "redhat.vscode-yaml"
       ]
     }
   }
