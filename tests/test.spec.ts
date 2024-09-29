@@ -14,6 +14,7 @@ test('get started link', async ({ page, context }) => {
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Me contacter' }).click()
+  await page.getByRole('link', { name: /LinkedIn/}).click()
 
   const newPage = await pagePromise
 
