@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useMouse, useResizeObserver } from '@vueuse/core'
+import { useDark, useMouse, useResizeObserver } from '@vueuse/core'
 import { computed, reactive, useTemplateRef } from 'vue'
+
+const isDark = useDark()
 
 const { x, y } = useMouse()
 const refLienZenika = useTemplateRef('lien-zenika')
@@ -45,7 +47,9 @@ const saturation = computed(() => {
       ref="lien-zenika"
       class="font-bold"
       :style="{
-        color: `color-mix(in oklab, hsl(0, 70%, 35.29%) ${saturation}%, black)`
+        color: `color-mix(in oklab, hsl(0, 70%, 35.29%) ${saturation}%, ${
+          isDark ? 'white' : 'black'
+        })`
       }"
       href="https://www.linkedin.com/company/zenika"
       target="_blank"
