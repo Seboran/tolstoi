@@ -6,8 +6,8 @@ jobs:
     timeout-minutes: 10
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+      - uses: oven-sh/setup-bun@4bc047ad259df6fc24a6c9b0f9a0cb08cf17fbe5 # v2
         with:
           bun-version: '1.1.29'
       - name: Install dependencies
@@ -17,7 +17,7 @@ jobs:
         run: bunx playwright install --with-deps
       - name: Run Playwright tests
         run: bunx playwright test
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
