@@ -26,7 +26,7 @@ const distance = computed(() => {
 
 const MAX_COLOR_SATURATION = 100.0
 const COEFFICIENT_SATURATION = 400
-const VITESSE_CHANGEMENT_COULEUR = 20
+const VITESSE_CHANGEMENT_COULEUR = 40
 const saturation = computed(() => {
   if (!distance.value) {
     return 0
