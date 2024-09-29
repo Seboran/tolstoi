@@ -11,7 +11,7 @@ const { page, frontmatter } = useData()
 </script>
 
 <template>
-  <div class="antialiased dark:bg-slate-900">
+  <div class="antialiased dark:bg-slate-900 min-h-screen">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <nav class="flex justify-between items-center py-10 font-bold">
         <AnimatedTitle :show="frontmatter.index" />
@@ -22,6 +22,7 @@ const { page, frontmatter } = useData()
       <Home v-if="frontmatter.index" />
       <Contact v-else-if="page.relativePath === 'contact.md'" />
       <NotFound v-else-if="page.isNotFound" />
+      <Contact v-else-if="page.relativePath === 'pgp.md'" />
       <Article v-else />
     </main>
   </div>

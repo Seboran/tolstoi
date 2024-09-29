@@ -1,16 +1,13 @@
 <template>
   <Transition appear name="appear">
     <div
-      class="text-sm text-gray-500 dark:text-white leading-5"
+      class="bouton text-sm text-gray-500 dark:text-white leading-5"
       :class="{
         shake
       }"
+      @click="shakeButton"
     >
-      <a
-        class="hover:text-gray-700 dark:hover:text-gray-200"
-        href="https://www.linkedin.com/in/nirinarabeson/"
-        target="_blank"
-        rel="noopener"
+      <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/contact"
         >Me contacter →</a
       >
     </div>
@@ -18,16 +15,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const shake = ref(false)
 
 const DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS = 5000
+
+const refClickTimeout = ref()
+
+function shakeButton() {
+  clearTimeout(refTimeout.value)
+  clearTimeout(refClickTimeout.value)
+  shake.value = true
+  refClickTimeout.value = setTimeout(() => {
+    shake.value = false
+  }, 820)
+}
+const refTimeout = ref()
 onMounted(() => {
-  setTimeout(
-    () => (shake.value = true),
-    DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS
-  )
+  refTimeout.value = setTimeout(() => {
+    shakeButton()
+  }, DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS)
 })
 </script>
 
