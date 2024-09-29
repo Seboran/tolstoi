@@ -23,11 +23,13 @@
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "bun i",
+  "postCreateCommand": "bun i -g vercel && bun i",
   "postStartCommand": "bun dev --host",
 
   // Configure tool-specific properties.
-  "customizations": { "vscode": { "extensions": [
+  "customizations": {
+    "vscode": {
+      "extensions": [
         "ms-playwright.playwright",
         "bradlc.vscode-tailwindcss",
         "christian-kohler.npm-intellisense",
@@ -38,7 +40,9 @@
         "DavidAnson.vscode-markdownlint",
         "esbenp.prettier-vscode",
         "redhat.vscode-yaml"
-      ] } }
+      ]
+    }
+  }
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
