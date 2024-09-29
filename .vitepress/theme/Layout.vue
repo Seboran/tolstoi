@@ -12,7 +12,10 @@ const shake = ref(false)
 
 const DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS = 5000
 onMounted(() => {
-  setTimeout(() => (shake.value = true), DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS)
+  setTimeout(
+    () => (shake.value = true),
+    DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS
+  )
 })
 </script>
 
@@ -22,11 +25,13 @@ onMounted(() => {
       <nav class="flex justify-between items-center py-10 font-bold">
         <a class="text-xl" href="/" aria-label="The Vue Point">
           ✨
-          <span
-            v-if="!frontmatter.index"
-            class="hidden md:inline dark:text-white"
-            >Nirina Rabeson</span
-          >
+          <Transition name="title-apparaitre">
+            <span
+              v-if="!frontmatter.index"
+              class="hidden md:inline dark:text-white"
+              >Nirina Rabeson</span
+            >
+          </Transition>
         </a>
         <Transition appear name="appear">
           <div
@@ -56,6 +61,13 @@ onMounted(() => {
 </template>
 
 <style lang="css" scoped>
+.title-apparaitre-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.title-apparaitre-enter-from {
+  opacity: 0;
+}
 .appear-enter-active,
 .appear-leave-active {
   transition: opacity 0.5s ease;
