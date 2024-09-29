@@ -16,6 +16,7 @@ export default defineConfig({
       }
     ]
   ],
+  description: 'Site web et blog de Nirina Rabeson',
   appearance: false,
   metaChunk: true,
   vite: {
