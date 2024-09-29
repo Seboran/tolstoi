@@ -27,7 +27,18 @@
   "postStartCommand": "bun dev --host",
 
   // Configure tool-specific properties.
-  "customizations": { "vscode": { "extensions": ["ms-playwright.playwright"] } }
+  "customizations": { "vscode": { "extensions": [
+        "ms-playwright.playwright",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.npm-intellisense",
+        "wix.vscode-import-cost",
+        "Vue.volar",
+        "github.vscode-github-actions",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
+      ] } }
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
