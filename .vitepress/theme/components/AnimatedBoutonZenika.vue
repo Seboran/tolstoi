@@ -24,17 +24,17 @@ const distance = computed(() => {
   return Math.abs(positionLien.x - x.value) + Math.abs(positionLien.y - y.value)
 })
 
-const MINIMUM_FONT_WEIGHT = 500.0
-const COEFFICIENT_FONT_WEIGHT = 800
-const CONVERSION_FONT_WEIGHT = 125.0
-const fontWeight = computed(() => {
+const MAX_COLOR_SATURATION = 100.0
+const COEFFICIENT_SATURATION = 400
+const VITESSE_CHANGEMENT_COULEUR = 20
+const saturation = computed(() => {
   if (!distance.value) {
     return 0
   }
-  return Math.max(
-    Math.tanh(Math.abs(1.0 / distance.value) * CONVERSION_FONT_WEIGHT) *
-      COEFFICIENT_FONT_WEIGHT,
-    MINIMUM_FONT_WEIGHT
+  return Math.min(
+    Math.tanh(Math.abs(1.0 / distance.value) * VITESSE_CHANGEMENT_COULEUR) *
+      COEFFICIENT_SATURATION,
+    MAX_COLOR_SATURATION
   )
 })
 </script>
@@ -42,9 +42,9 @@ const fontWeight = computed(() => {
 <template>
   <a
     ref="lien-zenika"
-    class="text-gray-900 dark:text-white"
+    class="text-gray-900 dark:text-white font-bold"
     :style="{
-      fontWeight
+      color: `hsl(0, ${saturation}%, 35.29%)`
     }"
     href="https://www.linkedin.com/company/zenika/mycompany/verification/"
     target="_blank"
@@ -54,6 +54,6 @@ const fontWeight = computed(() => {
 
 <style scoped>
 a {
-  transition: 0.05s all ease;
+  transition: 0.1s all ease;
 }
 </style>
