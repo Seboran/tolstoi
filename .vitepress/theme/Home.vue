@@ -3,18 +3,13 @@ import { useData } from 'vitepress'
 import Date from './Date.vue'
 import { data as posts } from './posts.data.js'
 import AnimatedBoutonZenika from './components/AnimatedBoutonZenika.vue'
-
-const { frontmatter } = useData()
+import AnimatedHomeTitle from './components/AnimatedHomeTitle.vue'
 </script>
 
 <template>
   <div class="divide-y divide-gray-200 dark:divide-slate-200/5">
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
-      <h1
-        class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-      >
-        {{ frontmatter.title }}
-      </h1>
+      <AnimatedHomeTitle />
       <p class="text-lg leading-7 text-gray-500 dark:text-white">
         Je suis développeur fullstack actuellement chez
         <AnimatedBoutonZenika />. Je suis passioné de musique, de stack

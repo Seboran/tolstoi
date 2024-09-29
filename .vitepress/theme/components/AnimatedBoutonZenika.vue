@@ -40,16 +40,18 @@ const saturation = computed(() => {
 </script>
 
 <template>
-  <a
-    ref="lien-zenika"
-    class="text-gray-900 dark:text-white font-bold"
-    :style="{
-      color: `color-mix(in oklab, hsl(0, 70%, 35.29%) ${saturation}%, black)`
-    }"
-    href="https://www.linkedin.com/company/zenika/mycompany/verification/"
-    target="_blank"
-    >Zenika</a
-  >
+  <ClientOnly>
+    <a
+      ref="lien-zenika"
+      class="font-bold"
+      :style="{
+        color: `color-mix(in oklab, hsl(0, 70%, 35.29%) ${saturation}%, black)`
+      }"
+      href="https://www.linkedin.com/company/zenika/mycompany/verification/"
+      target="_blank"
+      >Zenika</a
+    >
+  </ClientOnly>
 </template>
 
 <style scoped>
