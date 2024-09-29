@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { useData } from 'vitepress'
 import Date from './Date.vue'
 import { data as posts } from './posts.data.js'
-import { useData } from 'vitepress'
+import AnimatedBoutonZenika from './components/AnimatedBoutonZenika.vue'
 
 const { frontmatter } = useData()
 </script>
@@ -16,16 +17,11 @@ const { frontmatter } = useData()
       </h1>
       <p class="text-lg leading-7 text-gray-500 dark:text-white">
         Je suis développeur fullstack actuellement chez
-        <a
-          class="text-gray-900 dark:text-white"
-          href="https://www.linkedin.com/company/zenika/mycompany/verification/"
-          target="_blank"
-          >Zenika</a
-        >. Je suis passioné de musique, de stack javascripts, mais j'adore aussi
-        le partage et la bonne vibe. Motivé par une énergie détonnante et une
-        bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
-        soit dans le domaine du web, de l'intelligence artificielle, ou de
-        sujets très variés un peu geeks.
+        <AnimatedBoutonZenika />. Je suis passioné de musique, de stack
+        javascripts, mais j'adore aussi le partage et la bonne vibe. Motivé par
+        une énergie détonnante et une bonne humeur inébranlable, j'ai plaisir à
+        contribuer et partager, que ce soit dans le domaine du web, de
+        l'intelligence artificielle, ou de sujets très variés un peu geeks.
       </p>
     </div>
     <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
