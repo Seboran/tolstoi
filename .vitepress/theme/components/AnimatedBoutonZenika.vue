@@ -47,7 +47,7 @@ const saturation = computed(() => {
       :style="{
         color: `color-mix(in oklab, hsl(0, 70%, 35.29%) ${saturation}%, black)`
       }"
-      href="https://www.linkedin.com/company/zenika/mycompany/verification/"
+      href="https://www.linkedin.com/company/zenika"
       target="_blank"
       >Zenika</a
     >
