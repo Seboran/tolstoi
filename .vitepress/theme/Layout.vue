@@ -22,8 +22,10 @@ const { page, frontmatter } = useData()
       <Home v-if="frontmatter.index" />
       <Contact v-else-if="page.relativePath === 'contact.md'" />
       <NotFound v-else-if="page.isNotFound" />
-      <Contact v-else-if="page.relativePath === 'pgp.md'" />
-      <Article v-else />
+      <Article v-else-if="page.relativePath.startsWith('posts')" />
+      <section v-else>
+        <Content class="prose dark:prose-invert max-w-none pt-10 pb-8" />
+      </section>
     </main>
   </div>
 </template>
