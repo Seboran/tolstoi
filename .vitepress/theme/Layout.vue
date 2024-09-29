@@ -15,7 +15,27 @@ const { page, frontmatter } = useData()
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <nav class="flex justify-between items-center py-10 font-bold">
         <AnimatedTitle :show="frontmatter.index" />
-        <AnimatedBoutonMeContacter />
+        <div class="flex justify-between items-center py-10 font-bold gap-10">
+          <Transition name="appear" appear>
+            <div class="text-sm text-gray-500 dark:text-white leading-5">
+              <a
+                class="hover:text-gray-700 dark:hover:text-gray-200"
+                href="/projets"
+                >Mes projets</a
+              >
+            </div>
+          </Transition>
+          <Transition name="appear" appear>
+            <div class="text-sm text-gray-500 dark:text-white leading-5">
+              <a
+                class="hover:text-gray-700 dark:hover:text-gray-200"
+                href="/presentations"
+                >Mes presentations</a
+              >
+            </div>
+          </Transition>
+          <AnimatedBoutonMeContacter />
+        </div>
       </nav>
     </div>
     <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
@@ -29,3 +49,16 @@ const { page, frontmatter } = useData()
     </main>
   </div>
 </template>
+
+<style lang="css" scoped>
+.appear-enter-active,
+.appear-leave-active {
+  transition: opacity 0.5s ease;
+  transition-delay: 0.225s;
+}
+
+.appear-enter-from,
+.appear-leave-to {
+  opacity: 0;
+}
+</style>
