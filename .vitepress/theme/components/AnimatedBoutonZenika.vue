@@ -5,7 +5,7 @@ import { computed, reactive, useTemplateRef } from 'vue'
 const isDark = useDark()
 
 const { x, y } = useMouse()
-const refLienZenika = useTemplateRef('lien-zenika')
+const refLienZenika = useTemplateRef<HTMLLinkElement>('lien-zenika')
 const positionLien = reactive({ x: 0, y: 0 })
 
 useResizeObserver(document.body, () => {
