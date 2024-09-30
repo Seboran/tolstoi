@@ -13,7 +13,7 @@ import AnimatedHomeTitle from './components/AnimatedHomeTitle.vue'
       <p class="text-lg leading-7 text-gray-500 dark:text-white">
         Je suis développeur fullstack actuellement chez
         <AnimatedBoutonZenika />. Je suis passioné de musique, de stack
-        javascripts, mais j'adore aussi le partage et la bonne vibe. Motivé par
+        javascript, mais j'adore aussi le partage et la bonne vibe. Motivé par
         une énergie détonnante et une bonne humeur inébranlable, j'ai plaisir à
         contribuer et partager, que ce soit dans le domaine du web, de
         l'intelligence artificielle, ou de sujets très variés un peu geeks.
