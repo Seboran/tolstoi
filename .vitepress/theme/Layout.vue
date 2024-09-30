@@ -16,24 +16,20 @@ const { page, frontmatter } = useData()
       <nav class="flex justify-between items-center py-10 font-bold">
         <AnimatedTitle :show="frontmatter.index" />
         <div class="flex justify-between items-center py-10 font-bold gap-10">
-          <Transition name="appear" appear>
-            <div class="text-sm text-gray-500 dark:text-white leading-5">
-              <a
-                class="hover:text-gray-700 dark:hover:text-gray-200"
-                href="/projets"
-                >Mes projets</a
-              >
-            </div>
-          </Transition>
-          <Transition name="appear" appear>
-            <div class="text-sm text-gray-500 dark:text-white leading-5">
-              <a
-                class="hover:text-gray-700 dark:hover:text-gray-200"
-                href="/presentations"
-                >Mes presentations</a
-              >
-            </div>
-          </Transition>
+          <div class="text-sm text-gray-500 dark:text-white leading-5">
+            <a
+              class="hover:text-gray-700 dark:hover:text-gray-200"
+              href="/projets"
+              >Mes projets</a
+            >
+          </div>
+          <div class="text-sm text-gray-500 dark:text-white leading-5">
+            <a
+              class="hover:text-gray-700 dark:hover:text-gray-200"
+              href="/presentations"
+              >Mes presentations</a
+            >
+          </div>
           <AnimatedBoutonMeContacter />
         </div>
       </nav>
