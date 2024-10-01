@@ -1,43 +1,10 @@
 <template>
-  <Transition appear name="appear">
-    <div
-      class="bouton text-sm text-gray-500 dark:text-white leading-5"
-      :class="{
-        shake
-      }"
-      @click="shakeButton"
+  <div class="shake bouton text-sm text-gray-500 dark:text-white leading-5">
+    <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/contact"
+      >Me contacter →</a
     >
-      <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/contact"
-        >Me contacter →</a
-      >
-    </div>
-  </Transition>
+  </div>
 </template>
-
-<script setup lang="ts">
-import { onMounted, ref } from 'vue'
-
-const shake = ref(false)
-
-const DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS = 5000
-
-const refClickTimeout = ref()
-
-function shakeButton() {
-  clearTimeout(refTimeout.value)
-  clearTimeout(refClickTimeout.value)
-  shake.value = true
-  refClickTimeout.value = setTimeout(() => {
-    shake.value = false
-  }, 820)
-}
-const refTimeout = ref()
-onMounted(() => {
-  refTimeout.value = setTimeout(() => {
-    shakeButton()
-  }, DELAI_AVANT_AGITER_BOUTON_CONTACTER_IN_MS)
-})
-</script>
 
 <style scoped>
 .appear-enter-active,
@@ -51,7 +18,7 @@ onMounted(() => {
   opacity: 0;
 }
 
-.shake {
+.shake:hover {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
 }

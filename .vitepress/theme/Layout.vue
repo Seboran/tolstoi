@@ -15,15 +15,19 @@ const { page, frontmatter } = useData()
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <nav class="flex justify-between items-center py-10 font-bold">
         <AnimatedTitle :show="frontmatter.index" />
-        <div class="flex justify-between items-center py-10 font-bold gap-10">
-          <div class="text-sm text-gray-500 dark:text-white leading-5">
+        <div class="flex justify-between items-center py-10 font-bold gap-5">
+          <div
+            class="invisible md:visible text-sm text-gray-500 dark:text-white leading-5"
+          >
             <a
               class="hover:text-gray-700 dark:hover:text-gray-200"
               href="/projets"
               >Mes projets</a
             >
           </div>
-          <div class="text-sm text-gray-500 dark:text-white leading-5">
+          <div
+            class="invisible sm:visible text-sm text-gray-500 dark:text-white leading-5"
+          >
             <a
               class="hover:text-gray-700 dark:hover:text-gray-200"
               href="/presentations"
