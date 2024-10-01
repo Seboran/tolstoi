@@ -17,7 +17,7 @@ const { page, frontmatter } = useData()
         <AnimatedTitle :show="frontmatter.index" />
         <div class="flex justify-between items-center py-10 font-bold gap-5">
           <div
-            class="invisible md:visible text-sm text-gray-500 dark:text-white leading-5"
+            class="hidden md:block text-sm text-gray-500 dark:text-white leading-5"
           >
             <a
               class="hover:text-gray-700 dark:hover:text-gray-200"
@@ -26,7 +26,7 @@ const { page, frontmatter } = useData()
             >
           </div>
           <div
-            class="invisible sm:visible text-sm text-gray-500 dark:text-white leading-5"
+            class="hidden sm:block text-sm text-gray-500 dark:text-white leading-5"
           >
             <a
               class="hover:text-gray-700 dark:hover:text-gray-200"
