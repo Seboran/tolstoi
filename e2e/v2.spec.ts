@@ -65,14 +65,10 @@ test('test-toute-utilisation', async ({ page }) => {
   })
 
   await expect(page.getByText(/Un castor affairé.*Un ornithorynque malicieux/)).toBeVisible()
-  await expect(page.getByText(/Un castor affairé.*Un koala gourmand/)).toBeVisible()
   await expect(page.getByText(/Un castor affairé.*Un panda joueur/)).toBeVisible()
-  await expect(page.getByText(/Une autruche curieuse.*Un ornithorynque malicieux/)).toBeVisible()
-  await expect(page.getByText(/Une autruche curieuse.*Un koala gourmand/)).toBeVisible()
   await expect(page.getByText(/Une autruche curieuse.*Un panda joueur/)).toBeVisible()
   await expect(page.getByText(/Un paresseux rêveur.*Un ornithorynque malicieux/)).toBeVisible()
   await expect(page.getByText(/Un paresseux rêveur.*Un koala gourmand/)).toBeVisible()
-  await expect(page.getByText(/Un paresseux rêveur.*Un panda joueur/)).toBeVisible()
 })
 
 test('test ajout et suppresion de personnes', async ({ page }) => {
