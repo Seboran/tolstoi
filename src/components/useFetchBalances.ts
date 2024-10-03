@@ -5,7 +5,7 @@ interface BalanceSolutionResponse {
 }
 
 // TODO : trouver une plus jolie façon de local dev
-const SOLVE_API = import.meta.env.DEV ? 'http://localhost:5328/api/solve' : `/api/solve`
+const SOLVE_API = import.meta.env.DEV ? 'http://localhost:5328/api/v2/solve' : `/api/v2/solve`
 
 export async function fetchBalances(balances: MaybeRef<number[]>) {
   const response = await fetch(SOLVE_API, {

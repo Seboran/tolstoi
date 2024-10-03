@@ -4,6 +4,7 @@ import { ref, watch } from 'vue'
 
 import { fetchBalances } from '@/components//useFetchBalances'
 import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
+import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import { getHistorique } from '@/components/fetchHistorique'
 import StyledButton from '@/components/StyledButton.vue'
@@ -110,7 +111,10 @@ function retirerBalancerEtViderComptes(index: number) {
     <template v-if="historiqueDépenses.length > 0">
       <section>
         <ChargementCalcul :isLoading="isLoading" />
-        <AffichageRemboursements :matriceDeRemboursements :nomsBalances />
+        <section>
+          <h3>Linalg version</h3>
+          <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
+        </section>
       </section>
     </template>
   </div>
