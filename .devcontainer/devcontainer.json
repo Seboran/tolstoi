@@ -3,11 +3,12 @@
 {
   "name": "Node.js",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bullseye",
+  "dockerFile": "Dockerfile",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },
-    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {}
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {},
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh": {}
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
@@ -23,8 +24,8 @@
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "pip install -r requirements.txt && pnpm i",
-  "postStartCommand": "pnpm dev --host",
+  "postStartCommand": "pip install -r requirements.txt && pnpm i",
+  "postAttachCommand": "pnpm dev --host",
   "customizations": {
     "vscode": {
       "extensions": [
