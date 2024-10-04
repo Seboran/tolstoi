@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAsyncState } from '@vueuse/core'
+import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
 import BalanceInput from '@/components/BalanceInput.vue'
@@ -17,7 +17,7 @@ const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDép
   useAjouterDepense(balances)
 
 const matriceDeRemboursements = ref<number[][]>([])
-async function solveBalances() {
+async function _solveBalances() {
   if (Math.abs(erreurBalance.value) < 0.0001)
     try {
       matriceDeRemboursements.value = []
@@ -27,6 +27,8 @@ async function solveBalances() {
       //
     }
 }
+
+const solveBalances = useDebounceFn(_solveBalances, 1000)
 
 const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
 

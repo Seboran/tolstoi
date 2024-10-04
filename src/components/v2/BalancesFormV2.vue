@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useAsyncState } from '@vueuse/core'
+import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
 import { fetchBalances } from '@/components//useFetchBalances'
-import AffichageRemboursements from '@/components/AffichageRemboursements.vue'
 import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import { getHistorique } from '@/components/fetchHistorique'
@@ -39,7 +38,7 @@ const loadHistorique = async () => {
 const { isReady } = useAsyncState(loadHistorique, undefined, { immediate: true })
 
 const matriceDeRemboursements = ref<number[][]>([])
-async function solveBalances() {
+async function _solveBalances() {
   try {
     matriceDeRemboursements.value = []
     const solution = await fetchBalances(balances)
@@ -48,6 +47,8 @@ async function solveBalances() {
     //
   }
 }
+
+const solveBalances = useDebounceFn(_solveBalances, 1000)
 
 async function calculerRemboursements() {
   historiqueDépenses.value.splice(0)
