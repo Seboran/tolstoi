@@ -10,11 +10,13 @@ const modeAvance = ref(false)
   <header class="m-auto text-center">
     <h1>Bons comptes bons amis</h1>
   </header>
-  <main class="min-h-[80vh] flex items-center flex-col">
-    <UCheckbox v-model="modeAvance" label="Mode avancé" />
-    <BalancesForm v-if="modeAvance" />
-    <BalancesFormV2 v-else />
-    <footer class="relative right-5 bottom-3 text-right">
+  <main class="min-h-[80vh] flex justify-between items-center flex-col">
+    <div>
+      <UCheckbox v-model="modeAvance" label="Mode avancé" />
+      <BalancesForm v-if="modeAvance" />
+      <BalancesFormV2 v-else />
+    </div>
+    <footer class="relative justify-self-stretch text-right bottom-0">
       <ULink
         active-class="text-primary"
         inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
