@@ -7,5 +7,5 @@ export default defineNuxtConfig({
     '@': fileURLToPath(new URL('.', import.meta.url))
   },
   devtools: { enabled: true },
-  modules: ['@nuxt/test-utils/module']
+  modules: ['@nuxt/test-utils/module', '@nuxt/ui']
 })
