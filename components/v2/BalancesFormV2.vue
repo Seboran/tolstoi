@@ -112,10 +112,7 @@ function retirerBalancerEtViderComptes(index: number) {
     <template v-if="historiqueDépenses.length > 0">
       <section>
         <ChargementCalcul :isLoading="isLoading" />
-        <section>
-          <h3>Linalg version</h3>
-          <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
-        </section>
+        <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
       </section>
     </template>
   </div>
