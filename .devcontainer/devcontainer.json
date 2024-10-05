@@ -41,7 +41,14 @@
         "dbaeumer.vscode-eslint",
         "DavidAnson.vscode-markdownlint",
         "ms-python.pylint",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "oderwat.indent-rainbow",
+        "wix.vscode-import-cost",
+        "ms-python.isort",
+        "ms-azuretools.vscode-docker",
+        "christian-kohler.npm-intellisense",
+        "YoavBls.pretty-ts-errors",
+        "austenc.tailwind-docs"
       ]
     }
   }
