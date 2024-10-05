@@ -11,10 +11,10 @@ describe('Balance input', () => {
         name: 'une autruche rose'
       }
     })
-    expect(screen.getByRole('textbox', { name: 'Nom' }).value).toBe('une autruche rose')
-    await userEvent.clear(screen.getByRole('textbox', { name: 'Nom' }))
-    await userEvent.type(screen.getByRole('textbox', { name: 'Nom' }), 'un castor affairé')
+    expect(screen.getByRole<HTMLTextAreaElement>('textbox').value).toEqual('une autruche rose')
+    await userEvent.clear(screen.getByRole('textbox'))
+    await userEvent.type(screen.getByRole('textbox'), 'un castor affairé')
     expect(emitted('update:name').at(-1)).toMatchObject(['un castor affairé'])
-    expect(screen.getByRole('textbox', { name: 'Nom' }).value).toBe('un castor affairé')
+    expect(screen.getByRole<HTMLTextAreaElement>('textbox').value).toBe('un castor affairé')
   })
 })
