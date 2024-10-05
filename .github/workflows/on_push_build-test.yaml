@@ -16,7 +16,7 @@ jobs:
         with:
           path: |
             dist
-          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**', 'requirements.txt') }}
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'components/**', 'api/**', 'app.vue', 'requirements.txt') }}
       - uses: pnpm/action-setup@v4
         with:
           version: 9

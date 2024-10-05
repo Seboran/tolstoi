@@ -1,15 +1,9 @@
-import { fileURLToPath } from 'node:url'
-import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
-import viteConfig from './vite.config'
+import { defineVitestConfig } from '@nuxt/test-utils/config'
 
-export default mergeConfig(
-  viteConfig,
-  defineConfig({
-    test: {
-      globals: true,
-      environment: 'happy-dom',
-      exclude: [...configDefaults.exclude, 'e2e/**', '.vercel/**'],
-      root: fileURLToPath(new URL('./', import.meta.url))
-    }
-  })
-)
+export default defineVitestConfig({
+  // any custom Vitest config you require
+  test: {
+    environment: 'nuxt',
+    include: ['components/**/*.spec.ts']
+  }
+})

@@ -1,4 +1,4 @@
-import NOMS_AU_HASARD from '@/nomsAuHasard.json'
+import NOMS_AU_HASARD from './nomsAuHasard.json'
 import { computed, ref } from 'vue'
 
 export function useBalances() {

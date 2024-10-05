@@ -24,7 +24,23 @@ const modeAvance = ref(false)
   </footer>
 </template>
 
-<style scoped>
+<style>
+:root {
+  --main-bg-color: #f9f9f9; /* Define your CSS variable here */
+  --border-radius: 5px;
+}
+
+* {
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh; /* This ensures the main element takes up the full viewport height */
+  flex-direction: column;
+}
+
 header {
   margin: auto;
   text-align: center;

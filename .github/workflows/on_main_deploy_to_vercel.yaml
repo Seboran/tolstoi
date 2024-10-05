@@ -23,7 +23,7 @@ jobs:
           path: |
             README.md
           lookup-only: true
-          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'src/**', 'requirements.txt', 'e2e/**') }}-deploy-prod
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'components/**', 'api/**', 'app.vue', 'requirements.txt', 'e2e/**') }}-deploy-prod
       - uses: pnpm/action-setup@v4
         if: steps.cache.outputs.cache-hit != 'true'
         with:
