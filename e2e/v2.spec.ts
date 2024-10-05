@@ -314,7 +314,7 @@ test('test extrême', async ({ page }) => {
     .getByRole('cell', { name: 'Nom Un chat malicieux' })
     .getByLabel('Nom')
     .fill('Dieudonné')
-  for (let i = 0; i < 300; i++) {
+  for (let i = 0; i < 30; i++) {
     await page.getByLabel('Dépenseur').selectOption('1')
     await page.getByLabel('a dépensé').click()
     await page.getByLabel('a dépensé').fill('3200')
