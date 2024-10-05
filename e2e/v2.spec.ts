@@ -271,7 +271,6 @@ test('test utilisateur', async ({ page }) => {
 
 test('test extrême', async ({ page }) => {
   test.slow()
-  test.setTimeout(180000)
   await page.goto('/')
   await page.getByRole('checkbox').click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
