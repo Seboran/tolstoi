@@ -65,19 +65,6 @@ function toggleSelectionToutleMonde() {
     </label>
   </div>
 
-  <!-- <div style="width: 100%; display: flex; flex-direction: row; justify-content: space-between">
-    <div style="margin-left: 0px">
-      <label style="right: 0px">
-        <input
-          type="checkbox"
-          :value="toutLeMondeSélectionné"
-          @input="toggleSelectionToutleMonde()"
-        />
-        Tout le monde
-      </label>
-    </div>
-  </div>
-  ou -->
   <MultiSelecteur
     id="bénéficiaires"
     v-model="bénéficiaires"

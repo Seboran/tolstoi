@@ -7,21 +7,23 @@ const modeAvance = ref(false)
 </script>
 
 <template>
-  <header>
+  <header class="m-auto text-center">
     <h1>Bons comptes bons amis</h1>
   </header>
-  <main>
-    <label for="mode-avance"
-      >mode avancé
-
-      <input type="checkbox" name="mode-avance" v-model="modeAvance" />
-    </label>
+  <main class="min-h-[80vh] flex items-center flex-col">
+    <UCheckbox v-model="modeAvance" label="Mode avancé" />
     <BalancesForm v-if="modeAvance" />
     <BalancesFormV2 v-else />
+    <footer class="relative right-5 bottom-3 text-right">
+      <ULink
+        active-class="text-primary"
+        inactive-class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+        to="https://github.com/Seboran/bons-comptes-bons-amis"
+      >
+        Code github
+      </ULink>
+    </footer>
   </main>
-  <footer>
-    <a href="https://github.com/Seboran/bons-comptes-bons-amis"> Code github </a>
-  </footer>
 </template>
 
 <style>
@@ -32,28 +34,5 @@ const modeAvance = ref(false)
 
 * {
   font-family: 'Arial', sans-serif;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  height: 100vh; /* This ensures the main element takes up the full viewport height */
-  flex-direction: column;
-}
-
-header {
-  margin: auto;
-  text-align: center;
-}
-
-main {
-  min-height: 80vh;
-}
-
-footer {
-  position: relative;
-  right: 20px;
-  bottom: 10px;
-  text-align: right;
 }
 </style>

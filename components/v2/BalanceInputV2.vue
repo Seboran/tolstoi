@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import StyledTextInput from '@/components/StyledTextInput.vue'
 import StyledNumberInput from '@/components/StyledNumberInput.vue'
-import StyledButton from '../StyledButton.vue'
-const balance = defineModel<number>('balance')
+const balance = defineModel<number>('balance', {
+  required: true
+})
 const name = defineModel<string>('name', { required: true })
 
 defineEmits<{
@@ -20,7 +21,9 @@ defineEmits<{
         <div>
           <StyledNumberInput label="Dépense" v-model="balance"></StyledNumberInput>
         </div>
-        <div><StyledButton @click="$emit('remove')" label="supprimer" /></div>
+        <div>
+          <UButton @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
+        </div>
       </section>
     </td>
   </tr>

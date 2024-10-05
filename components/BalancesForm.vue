@@ -22,7 +22,7 @@ async function _solveBalances() {
     try {
       matriceDeRemboursements.value = []
       const solution = await fetchBalances(balances)
-      matriceDeRemboursements.value = solution.result_matrix
+      matriceDeRemboursements.value = solution?.result_matrix ?? []
     } finally {
       //
     }

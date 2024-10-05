@@ -18,27 +18,7 @@ function onClickOption(optionSélectionnée: number) {
 <template>
   <div>
     <template v-for="(nom, i) in nomsBalances" :key="nom">
-      <div>
-        <label>
-          <input type="checkbox" :value="modelValue.includes(i)" @change="onClickOption(i)" />
-          {{ nom }}
-        </label>
-      </div>
+      <UCheckbox @change="onClickOption(i)" :label="nom" />
     </template>
   </div>
 </template>
-
-<style scoped>
-select {
-  appearance: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-}
-
-option:hover {
-  background-color: #f0f0f0;
-}
-</style>

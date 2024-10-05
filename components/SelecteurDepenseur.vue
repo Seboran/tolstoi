@@ -1,20 +1,28 @@
 <script setup lang="ts" generic="ModelValueType extends number | string[]">
 const modelValue = defineModel<ModelValueType>({ required: true })
 
-defineProps<{
-  nomsBalances: string[]
+const props = defineProps<{
+  nomsBalances: ModelValueType[]
   id: string
   name: string
 }>()
+const _model = ref<ModelValueType>(modelValue.value)
+
+watch(_model, () => {
+  modelValue.value = props.nomsBalances[_model.value]
+})
 </script>
 
 <template>
   <div class="selecteur">
-    <label :for="id">Dépenseur</label>
-
-    <select :name :id v-model="modelValue">
-      <option v-for="(nom, i) in nomsBalances" :value="i" :key="nom">{{ nom }}</option>
-    </select>
+    <USelect
+      placeholder="Dépenseur"
+      aria-label="Dépenseur"
+      v-model="modelValue"
+      :options="nomsBalances.map((nom, index) => ({ index, nom }))"
+      option-attribute="nom"
+      value-attribute="index"
+    ></USelect>
   </div>
 </template>
 

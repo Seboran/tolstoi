@@ -12,37 +12,31 @@ test('test super avancé', async ({ page }) => {
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
-  await page.getByRole('cell', { name: 'Nom Un castor affairé' }).getByLabel('Nom').click({
+  await page.locator('input[name="Un castor affairé"]').click({
     clickCount: 3
   })
-  await page.getByRole('cell', { name: 'Nom Un castor affairé' }).getByLabel('Nom').fill('Julien')
-  await page.getByRole('row', { name: 'Nom Une autruche curieuse' }).getByLabel('Nom').dblclick()
-  await page.getByRole('row', { name: 'Nom Une autruche curieuse' }).getByLabel('Nom').dblclick()
-  await page.getByRole('row', { name: 'Nom Une autruche curieuse' }).getByLabel('Nom').click({
+  await page.locator('input[name="Un castor affairé"]').fill('Julien')
+  await page.locator('input[name="Une autruche curieuse"]').dblclick()
+  await page.locator('input[name="Une autruche curieuse"]').dblclick()
+  await page.locator('input[name="Une autruche curieuse"]').click({
     clickCount: 3
   })
-  await page.getByRole('row', { name: 'Nom Une autruche curieuse' }).getByLabel('Nom').fill('Oscar')
-  await page.getByRole('row', { name: 'Nom Un ornithorynque' }).getByLabel('Nom').click()
-  await page
-    .getByRole('row', { name: 'Nom Un ornithorynque' })
-    .getByLabel('Nom')
-    .press('ControlOrMeta+a')
-  await page.getByRole('row', { name: 'Nom Un ornithorynque' }).getByLabel('Nom').fill('Sophie')
-  await page.getByRole('row', { name: 'Nom Un paresseux rêveur' }).getByLabel('Nom').click()
-  await page.getByRole('row', { name: 'Nom Un paresseux rêveur' }).getByLabel('Nom').click({
+  await page.locator('input[name="Une autruche curieuse"]').fill('Oscar')
+  await page.locator('input[name="Un ornithorynque malicieux"]').click()
+  await page.locator('input[name="Un ornithorynque malicieux"]').press('ControlOrMeta+a')
+  await page.locator('input[name="Un ornithorynque malicieux"]').fill('Sophie')
+  await page.locator('input[name="Un paresseux rêveur"]').click()
+  await page.locator('input[name="Un paresseux rêveur"]').click({
     clickCount: 3
   })
-  await page.getByRole('row', { name: 'Nom Un paresseux rêveur' }).getByLabel('Nom').fill('Julie')
-  await page.getByRole('cell', { name: 'Nom Un koala gourmand' }).getByLabel('Nom').fill('Bob')
-  await page.getByRole('cell', { name: 'Nom Un panda joueur' }).getByLabel('Nom').fill('Enzo')
-  await page.getByRole('cell', { name: 'Nom Un loup solitaire' }).getByLabel('Nom').fill('Sarah')
-  await page.getByRole('cell', { name: 'Nom Un renard rusé' }).getByLabel('Nom').fill('Ni')
-  await page.getByRole('cell', { name: 'Nom Ni' }).getByLabel('Nom').fill('Nicolas')
-  await page.getByRole('cell', { name: 'Nom Ni' }).getByLabel('Nom').press('Tab')
-  await page
-    .getByRole('cell', { name: 'Nom Un chat malicieux' })
-    .getByLabel('Nom')
-    .fill('Dieudonné')
+  await page.locator('input[name="Un paresseux rêveur"]').fill('Julie')
+  await page.locator('input[name="Un koala gourmand"]').fill('Bob')
+  await page.locator('input[name="Un panda joueur"]').fill('Enzo')
+  await page.locator('input[name="Un loup solitaire"]').fill('Sarah')
+  await page.locator('input[name="Un renard rusé"]').fill('Ni')
+  await page.locator('input[name="Ni"]').fill('Nicolas')
+  // await page.locator('input[name="Ni"]').press('Tab')
+  await page.locator('input[name="Un chat malicieux"]').fill('Dieudonné')
   await page.getByLabel('Dépenseur').selectOption('1')
   await page.getByLabel('a dépensé').click()
   await page.getByLabel('a dépensé').fill('3200')
