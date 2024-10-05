@@ -19,7 +19,7 @@
   "portsAttributes": {
     "3000": {
       "label": "Application",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openBrowserOnce"
     },
     "5328": {
       "label": "Flask local app",
