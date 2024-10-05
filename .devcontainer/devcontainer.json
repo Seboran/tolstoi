@@ -20,6 +20,10 @@
     "3000": {
       "label": "Application",
       "onAutoForward": "openBrowser"
+    },
+    "5328": {
+      "label": "Flask local app",
+      "onAutoForward": "ignore"
     }
   },
 
