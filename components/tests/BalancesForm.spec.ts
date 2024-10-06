@@ -42,7 +42,7 @@ describe('Afficher version 1 des balances', () => {
 
     await userEvent.click(getByRole('button', { name: 'Ajouter une dépense' }))
 
-    const tableauRemboursements = getByRole('table', { name: '' })
+    const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
     await waitFor(
       () => {
         expect(tableauRemboursements.textContent).toEqual(

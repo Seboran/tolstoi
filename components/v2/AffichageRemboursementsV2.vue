@@ -20,7 +20,9 @@ const lignesRemboursement = computed(() => {
   })
 })
 
-const columns = [
+type KeysRemboursements = 'qui' | 'combien' | 'àQui'
+
+const columns: { key: KeysRemboursements; label: string }[] = [
   {
     key: 'qui',
     label: 'qui'
@@ -48,5 +50,16 @@ const rows = computed(() => {
 </script>
 
 <template>
-  <UTable aria-label="Remboursements" title="Remboursements" :columns :rows />
+  <table title="Remboursements" aria-label="Remboursements" class="min-w-80">
+    <thead>
+      <tr>
+        <th v-for="(column, index) in columns" :key="index">{{ column.label }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(row, index) in rows" :key="index">
+        <td v-for="(column, i) in columns" :key="i">{{ row[column.key] }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>

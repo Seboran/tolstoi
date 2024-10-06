@@ -42,8 +42,8 @@ watch(
 </script>
 
 <template>
-  <div class="main-app">
-    <section>
+  <div class="flex flex-wrap gap-4 max-w-screen-xl justify-center">
+    <section class="min-w-80">
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
@@ -51,7 +51,7 @@ watch(
         </template>
       </table>
     </section>
-    <section v-if="nomsBalances.length > 2">
+    <section class="min-w-80" v-if="nomsBalances.length > 2">
       <AjoutDepenseFormulaire
         v-model:indexDepenseur="indexDepenseur"
         v-model:montant="montant"
@@ -61,33 +61,18 @@ watch(
       />
     </section>
     <template v-if="historiqueDépenses.length > 0">
-      <section>
-        <ChargementCalcul :isLoading="isLoading" />
-        <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
-      </section>
-      <section>
-        <h3>Historique dépenses</h3>
-        <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
+      <section class="flex flex-col gap-2 min-w-80">
+        <UCommandPalette v-if="isLoading" loading placeholder="loading" />
+
+        <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
+        <section>
+          <h3>Historique dépenses</h3>
+          <HistoriqueDepenses
+            :historiqueDépenses="historiqueDépenses"
+            :nomsBalances="nomsBalances"
+          />
+        </section>
       </section>
     </template>
   </div>
 </template>
-
-<style scoped>
-.main-app {
-  display: flex;
-  flex-direction: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 1200px;
-}
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-  margin: 10px;
-  width: 100%;
-}
-</style>

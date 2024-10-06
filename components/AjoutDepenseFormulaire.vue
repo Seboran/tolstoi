@@ -30,35 +30,19 @@ function ajouterDepense() {
 </script>
 
 <template>
-  <div
-    style="
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-    "
-  >
-    <div style="width: 100%">
-      <SelecteurDepenseur id="dépenseur" v-model="indexDepenseur" :nomsBalances name="dépenseur" />
-    </div>
-  </div>
-  <div style="display: flex; flex-direction: row; align-items: center; width: 100%">
-    <label style="margin-right: 20px; text-wrap: nowrap" for="montant"> a dépensé </label>
-    <div style="width: 100%">
-      <StyledNumberInput v-model="montant" label="montant" id="montant"></StyledNumberInput>
-    </div>
-    <label style="margin-left: 20px" for="bénéficiaires" aria-label="pour les bénéficiaires">
-      pour
-    </label>
-  </div>
+  <div class="flex items-start flex-col gap-2">
+    <SelecteurDepenseur id="dépenseur" v-model="indexDepenseur" :nomsBalances name="dépenseur" />
+    <label style="text-wrap: nowrap" for="montant">a dépensé</label>
+    <StyledNumberInput v-model="montant" label="montant" id="montant"></StyledNumberInput>
+    <label for="bénéficiaires" aria-label="pour les bénéficiaires"> pour </label>
 
-  <MultiSelecteur
-    id="bénéficiaires"
-    v-model="bénéficiaires"
-    name="bénéficiaires"
-    :nomsBalances
-  ></MultiSelecteur>
+    <MultiSelecteur
+      id="bénéficiaires"
+      v-model="bénéficiaires"
+      name="bénéficiaires"
+      :nomsBalances
+    ></MultiSelecteur>
 
-  <StyledButton label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
+    <StyledButton label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
+  </div>
 </template>

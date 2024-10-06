@@ -66,8 +66,8 @@ function retirerBalancerEtViderComptes(index: number) {
 </script>
 
 <template>
-  <div class="main-app">
-    <section>
+  <div class="flex flex-wrap gap-1 min-w-80">
+    <section class="min-w-80">
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInputV2
@@ -87,9 +87,9 @@ function retirerBalancerEtViderComptes(index: number) {
     </section>
 
     <template v-if="historiqueDépenses.length > 0">
-      <section>
-        <ChargementCalcul :isLoading="isLoading" />
-        <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
+      <section class="min-w-80">
+        <UCommandPalette v-if="isLoading" loading placeholder="loading" :emptyState="null" />
+        <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
       </section>
     </template>
   </div>

@@ -8,9 +8,13 @@ const modeAvance = ref(false)
 
 <template>
   <header class="m-auto text-center">
-    <h1>Bons comptes bons amis</h1>
+    <h1
+      class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+    >
+      Bons comptes bons amis
+    </h1>
   </header>
-  <main class="min-h-[80vh] flex justify-between items-center flex-col">
+  <main class="">
     <div>
       <UCheckbox v-model="modeAvance" label="Mode avancé" />
       <BalancesForm v-if="modeAvance" />

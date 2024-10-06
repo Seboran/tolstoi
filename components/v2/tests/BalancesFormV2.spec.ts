@@ -44,7 +44,7 @@ describe("Affiche les balances et permet d'ajouter des dépenses", () => {
 
     await userEvent.click(getByRole('button', { name: 'Calculer remboursements' }))
 
-    const tableauRemboursements = getByRole('table', { name: '' })
+    const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
     await waitFor(() => {
       expect(tableauRemboursements.textContent).toEqual(
         'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
