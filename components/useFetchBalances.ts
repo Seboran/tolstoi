@@ -1,6 +1,6 @@
 import { toValue, type MaybeRef } from 'vue'
 
-interface BalanceSolutionResponse {
+export interface BalanceSolutionResponse {
   result_matrix: number[][]
 }
 

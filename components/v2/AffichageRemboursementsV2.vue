@@ -48,5 +48,5 @@ const rows = computed(() => {
 </script>
 
 <template>
-  <UTable title="Remboursements" :columns :rows> </UTable>
+  <UTable aria-label="Remboursements" title="Remboursements" :columns :rows />
 </template>

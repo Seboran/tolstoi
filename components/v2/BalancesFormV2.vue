@@ -2,10 +2,9 @@
 import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
-import { fetchBalances } from '@/components//useFetchBalances'
+import { fetchBalances } from '@/components/useFetchBalances'
 import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import ChargementCalcul from '@/components/ChargementCalcul.vue'
-import { getHistorique } from '@/components/fetchHistorique'
 import StyledButton from '@/components/StyledButton.vue'
 import { useAjouterDepense } from '@/components/useAjouterDepense'
 import BalanceInputV2 from './BalanceInputV2.vue'
@@ -15,33 +14,13 @@ const { balances, nomsBalances, retirerBalance, addBalance, depensesParPersonne 
 const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
   useAjouterDepense(balances)
 
-const loadHistorique = async () => {
-  const urlParams = new URLSearchParams(window.location.search)
-  const id = urlParams.get('id')
-
-  if (!id) return
-
-  const { depense, noms } = await getHistorique(id)
-
-  nomsBalances.value = noms
-  balances.value = Array(noms.length).fill(0)
-  depensesParPersonne.value = Array(noms.length).fill(0)
-
-  depense.forEach(({ indexBeneficiaires, indexDepenseur: iDepenseur, montant: montantDepense }) => {
-    indexDepenseur.value = iDepenseur
-    montant.value = montantDepense
-    bénéficiaires.value = indexBeneficiaires
-    ajouterDepense()
-  })
-}
-
-const { isReady } = useAsyncState(loadHistorique, undefined, { immediate: true })
-
 const matriceDeRemboursements = ref<number[][]>([])
 async function _solveBalances() {
   try {
     matriceDeRemboursements.value = []
+    console.log('yolo 2')
     const solution = await fetchBalances(balances)
+    console.log('yolo 3')
     matriceDeRemboursements.value = solution.result_matrix
   } finally {
     //
@@ -62,6 +41,7 @@ async function calculerRemboursements() {
   })
   try {
     modified.value = false
+    console.log('yolo')
     await execute()
   } catch (e) {
     modified.value = true
@@ -89,7 +69,7 @@ function retirerBalancerEtViderComptes(index: number) {
 </script>
 
 <template>
-  <div v-if="isReady" class="main-app">
+  <div class="main-app">
     <section>
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
