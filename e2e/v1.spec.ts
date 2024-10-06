@@ -187,6 +187,38 @@ test('test super avancé', async ({ page }) => {
   await page.getByLabel('Enzo').uncheck()
   await page.getByLabel('Sarah').uncheck()
   await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
+
+  await expect(page.getByTitle('Remboursements').getByRole('row')).toHaveText([
+    'quidoità qui',
+    'Julien46.15€Sophie',
+    'Julie458.29€Oscar',
+    'Enzo605.44€Bob',
+    'Sarah658.65€Sophie',
+    'Nicolas847.34€Oscar',
+    'Dieudonné254.17€Oscar',
+    'Dieudonné246.9€Sophie',
+    'Dieudonné180.56€Bob'
+  ])
+
+  await expect(page.getByRole('list').getByRole('listitem')).toHaveText([
+    'Oscar a dépensé 3200€ pour Julien, Oscar, Sophie, Julie, Bob, Enzo, Sarah, Nicolas, Dieudonné',
+    'Julie a dépensé 2200€ pour Julien, Oscar, Sophie, Julie, Bob, Nicolas, Dieudonné',
+    'Sophie a dépensé 3000€ pour Julien, Oscar, Sophie, Julie, Bob, Nicolas, Dieudonné',
+    'Julien a dépensé 450€ pour Julien, Oscar, Sophie, Julie, Nicolas, Dieudonné, Enzo',
+    'Oscar a dépensé 340€ pour Julien, Oscar, Sophie, Julie, Nicolas, Dieudonné, Enzo, Bob',
+    'Nicolas a dépensé 500€ pour Oscar, Sophie, Julie, Nicolas, Dieudonné, Enzo, Bob, Sarah',
+    'Enzo a dépensé 400€ pour Oscar, Sophie, Julie, Nicolas, Dieudonné, Bob, Sarah, Julien',
+    'Sarah a dépensé 550€ pour Julie, Nicolas, Dieudonné, Bob, Sarah',
+    'Enzo a dépensé 120€ pour Julie, Nicolas, Dieudonné, Bob, Sarah, Enzo, Sophie',
+    'Bob a dépensé 180€ pour Julie, Nicolas, Dieudonné, Bob, Sarah, Enzo, Sophie, Oscar',
+    'Oscar a dépensé 240€ pour Julie, Nicolas, Dieudonné, Bob, Sarah, Sophie, Oscar, Julien',
+    'Bob a dépensé 2400€ pour Julie, Bob, Oscar, Julien',
+    'Julien a dépensé 1900€ pour Julie, Bob, Julien, Enzo, Sarah, Sophie',
+    'Dieudonné a dépensé 660€ pour Julie, Bob, Julien, Enzo, Sarah, Sophie, Dieudonné',
+    'Nicolas a dépensé 400€ pour Julie, Bob, Enzo, Sarah, Sophie, Dieudonné, Oscar, Nicolas',
+    'Bob a dépensé 900€ pour Julie, Bob, Enzo, Sarah, Sophie, Dieudonné, Oscar, Nicolas, Julien',
+    'Dieudonné a dépensé 500€ pour Bob, Sophie, Dieudonné, Oscar, Nicolas'
+  ])
 })
 
 test('test rapide', async ({ page }) => {
@@ -261,4 +293,15 @@ test('test utilisateur', async ({ page }) => {
   await page.getByLabel('Dépenseur').selectOption('1')
   await page.getByLabel('Dépenseur').selectOption('2')
   await page.getByLabel('Dépenseur').selectOption('1')
+
+  await expect(page.getByTitle('Remboursements').getByRole('row')).toHaveText([
+    'quidoità qui',
+    'Une autruche curieuse22.97€Un castor affairé',
+    'Un ornithorynque malicieux22.97€Un castor affairé'
+  ])
+
+  await expect(page.getByRole('list').getByRole('listitem')).toHaveText([
+    'Un castor affairé a dépensé 34€ pour Une autruche curieuse, Un ornithorynque malicieux, Un castor affairé',
+    'Un castor affairé a dépensé 34.9€ pour Une autruche curieuse, Un ornithorynque malicieux, Un castor affairé'
+  ])
 })

@@ -66,6 +66,7 @@ watch(
         <AffichageRemboursementsV2 :matriceDeRemboursements :nomsBalances />
       </section>
       <section>
+        <h3>Historique dépenses</h3>
         <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
       </section>
     </template>
