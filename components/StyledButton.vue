@@ -14,9 +14,11 @@ function onClick(...args: unknown[]) {
 </script>
 
 <template>
-  <UButton @click="onClick" :disabled v-on="$attrs" type="button" :value="label">{{
-    label
-  }}</UButton>
+  <Suspense>
+    <UButton @click="onClick" :disabled v-on="$attrs" type="button" :value="label">{{
+      label
+    }}</UButton>
+  </Suspense>
 </template>
 
 <style scoped></style>

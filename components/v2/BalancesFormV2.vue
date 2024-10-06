@@ -18,9 +18,7 @@ const matriceDeRemboursements = ref<number[][]>([])
 async function _solveBalances() {
   try {
     matriceDeRemboursements.value = []
-    console.log('yolo 2')
     const solution = await fetchBalances(balances)
-    console.log('yolo 3')
     matriceDeRemboursements.value = solution.result_matrix
   } finally {
     //
@@ -41,7 +39,6 @@ async function calculerRemboursements() {
   })
   try {
     modified.value = false
-    console.log('yolo')
     await execute()
   } catch (e) {
     modified.value = true
