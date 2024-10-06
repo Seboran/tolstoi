@@ -7,19 +7,17 @@ const modeAvance = ref(false)
 </script>
 
 <template>
-  <header class="m-auto text-center">
-    <h1
-      class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
-    >
-      Bons comptes bons amis
-    </h1>
-  </header>
-  <main class="">
-    <div>
-      <UCheckbox v-model="modeAvance" label="Mode avancé" />
-      <BalancesForm v-if="modeAvance" />
-      <BalancesFormV2 v-else />
-    </div>
+  <main class="flex flex-col p-8">
+    <header class="m-auto text-center">
+      <h1
+        class="text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
+      >
+        Bons comptes bons amis
+      </h1>
+    </header>
+    <UCheckbox class="self-end" v-model="modeAvance" label="Mode avancé" />
+    <BalancesForm v-if="modeAvance" />
+    <BalancesFormV2 v-else />
     <footer class="relative justify-self-stretch text-right bottom-0">
       <ULink
         active-class="text-primary"

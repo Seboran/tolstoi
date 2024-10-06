@@ -65,8 +65,8 @@ function retirerBalancerEtViderComptes(index: number) {
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-1 min-w-80">
-    <section class="min-w-80">
+  <div class="flex flex-wrap gap-4 min-w-80 justify-center">
+    <section class="min-w-80 flex flex-col justify-center gap-4">
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInputV2
@@ -93,22 +93,3 @@ function retirerBalancerEtViderComptes(index: number) {
     </template>
   </div>
 </template>
-
-<style scoped>
-.main-app {
-  display: flex;
-  flex-direction: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 1200px;
-}
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-  margin: 10px;
-  width: 100%;
-}
-</style>

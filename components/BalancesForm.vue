@@ -41,8 +41,8 @@ watch(
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-4 max-w-screen-xl justify-center">
-    <section class="min-w-80">
+  <div class="flex flex-wrap gap-4 max-w-screen-xl min-w-80 justify-center">
+    <section class="min-w-80 flex flex-col justify-center gap-4">
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
