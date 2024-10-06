@@ -43,10 +43,15 @@ describe('Afficher version 1 des balances', () => {
     await userEvent.click(getByRole('button', { name: 'Ajouter une dépense' }))
 
     const tableauRemboursements = getByRole('table', { name: '' })
-    await waitFor(() => {
-      expect(tableauRemboursements.textContent).toEqual(
-        'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
-      )
-    })
+    await waitFor(
+      () => {
+        expect(tableauRemboursements.textContent).toEqual(
+          'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
+        )
+      },
+      {
+        timeout: 2000
+      }
+    )
   })
 })

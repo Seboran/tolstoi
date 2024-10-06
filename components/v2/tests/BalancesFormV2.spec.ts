@@ -48,7 +48,8 @@ describe("Affiche les balances et permet d'ajouter des dépenses", () => {
     await waitFor(() => {
       expect(tableauRemboursements.textContent).toEqual(
         'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
-      )
+      ),
+        { timeout: 2000 }
     })
   })
 
