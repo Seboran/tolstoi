@@ -22,7 +22,7 @@ defineEmits<{
           <StyledNumberInput label="Dépense" v-model="balance"></StyledNumberInput>
         </div>
         <div>
-          <UButton @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
+          <UButton aria-label="delete" @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
         </div>
       </section>
     </td>

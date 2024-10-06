@@ -13,6 +13,7 @@
     "dev:flask": "python -m flask --app api/index.py run -p 5328",
     "dev:vite": "vite --host",
     "test": "vitest",
+    "test:ui": "vitest --ui --coverage",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
