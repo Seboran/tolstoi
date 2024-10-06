@@ -2,11 +2,10 @@
 import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
-import { fetchBalances } from '@/components/useFetchBalances'
-import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
-import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import StyledButton from '@/components/StyledButton.vue'
 import { useAjouterDepense } from '@/components/useAjouterDepense'
+import { fetchBalances } from '@/components/useFetchBalances'
+import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
 import { useBalances } from './useBalancesV2'
 

@@ -3,7 +3,6 @@ import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
 import BalanceInput from '@/components/BalanceInput.vue'
-import ChargementCalcul from '@/components/ChargementCalcul.vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import StyledButton from './StyledButton.vue'

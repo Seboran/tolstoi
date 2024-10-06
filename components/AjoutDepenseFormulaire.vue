@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import MultiSelecteur from './MultiSelecteur.vue'
 import SelecteurDepenseur from './SelecteurDepenseur.vue'
 import StyledButton from './StyledButton.vue'
 import StyledNumberInput from './StyledNumberInput.vue'
-import MultiSelecteur from './MultiSelecteur.vue'
 
-const props = defineProps<{
+defineProps<{
   nomsBalances: string[]
 }>()
 const indexDepenseur = defineModel<number>('indexDepenseur', { required: true })
