@@ -26,3 +26,4 @@ logs
 playwright-report
 test-results
 __pycache__
+coverage
