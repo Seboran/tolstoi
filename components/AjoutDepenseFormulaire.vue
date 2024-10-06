@@ -27,18 +27,6 @@ function ajouterDepense() {
 
   emit('ajouterDepense', indexDepenseur.value, montant.value, bénéficiaires.value)
 }
-
-const toutLeMondeSélectionné = computed(
-  () => bénéficiaires.value.length === props.nomsBalances.length
-)
-
-function toggleSelectionToutleMonde() {
-  if (bénéficiaires.value.length == 0) {
-    bénéficiaires.value = props.nomsBalances.map((_, i) => i)
-  } else {
-    bénéficiaires.value = []
-  }
-}
 </script>
 
 <template>
