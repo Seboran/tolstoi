@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import BalancesFormV2 from '@/components/v2/BalancesFormV2.vue'
 import BalancesForm from '@/components/BalancesForm.vue'
+import BalancesFormV2 from '@/components/v2/BalancesFormV2.vue'
+import { ref } from 'vue'
 
 const modeAvance = ref(false)
-const allowUserInput = ref(false)
-onNuxtReady(() => {
-  allowUserInput.value = true
-})
+const { allowUserInput } = useCanUserInteract()
 </script>
 
 <template>

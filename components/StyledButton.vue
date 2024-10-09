@@ -12,10 +12,7 @@ function onClick(...args: unknown[]) {
   emit('click', args)
 }
 
-const allowUserInput = ref(false)
-onNuxtReady(() => {
-  allowUserInput.value = true
-})
+const { allowUserInput } = useCanUserInteract()
 </script>
 
 <template>
