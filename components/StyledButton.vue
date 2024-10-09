@@ -11,12 +11,22 @@ function onClick(...args: unknown[]) {
   }
   emit('click', args)
 }
+
+const allowUserInput = ref(false)
+onNuxtReady(() => {
+  allowUserInput.value = true
+})
 </script>
 
 <template>
-  <UButton @click="onClick" :disabled v-on="$attrs" type="button" :value="label">{{
-    label
-  }}</UButton>
+  <UButton
+    @click="onClick"
+    :disabled="!allowUserInput || disabled"
+    v-on="$attrs"
+    type="button"
+    :value="label"
+    >{{ label }}</UButton
+  >
 </template>
 
 <style scoped></style>

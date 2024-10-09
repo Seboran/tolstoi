@@ -19,7 +19,7 @@ defineEmits<{
           <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
         </div>
         <div>
-          <StyledNumberInput label="Dépense" v-model="balance"></StyledNumberInput>
+          <StyledNumberInput id="Dépense" label="Dépense" v-model="balance"></StyledNumberInput>
         </div>
         <div>
           <UButton aria-label="delete" @click="$emit('remove')" icon="i-heroicons-trash"></UButton>

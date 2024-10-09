@@ -1,16 +1,11 @@
-<script setup lang="ts" generic="ModelValueType extends number | string[]">
-const modelValue = defineModel<ModelValueType>({ required: true })
+<script setup lang="ts">
+const modelValue = defineModel<number>({ required: true })
 
-const props = defineProps<{
-  nomsBalances: ModelValueType[]
+defineProps<{
+  nomsBalances: string[]
   id: string
   name: string
 }>()
-const _model = ref<ModelValueType>(modelValue.value)
-
-watch(_model, () => {
-  modelValue.value = props.nomsBalances[_model.value]
-})
 </script>
 
 <template>

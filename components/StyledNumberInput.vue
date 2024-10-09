@@ -3,7 +3,7 @@ withDefaults(
   defineProps<{
     label: string
     id: string
-    disabled: boolean
+    disabled?: boolean
   }>(),
   {
     disabled: false

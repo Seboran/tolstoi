@@ -18,7 +18,9 @@ async function _solveBalances() {
   try {
     matriceDeRemboursements.value = []
     const solution = await fetchBalances(balances)
-    matriceDeRemboursements.value = solution.result_matrix
+    if (solution) {
+      matriceDeRemboursements.value = solution.result_matrix
+    }
   } finally {
     //
   }
@@ -84,11 +86,9 @@ function retirerBalancerEtViderComptes(index: number) {
         @click="calculerRemboursements"
       ></StyledButton>
     </template>
-    <template #deuxieme-groupe>
-      <section class="min-w-80">
-        <UCommandPalette v-if="isLoading" loading placeholder="loading" :emptyState="null" />
-        <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
-      </section>
+    <template #deuxieme-groupe v-if="historiqueDépenses.length > 0">
+      <UCommandPalette v-if="isLoading" loading placeholder="loading" :emptyState="null" />
+      <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
     </template>
   </TemplatesBalances>
 </template>

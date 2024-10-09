@@ -50,7 +50,7 @@ watch(
         </template>
       </table>
     </template>
-    <template #deuxieme-groupe>
+    <template #deuxieme-groupe v-if="nomsBalances.length > 2">
       <AjoutDepenseFormulaire
         v-model:indexDepenseur="indexDepenseur"
         v-model:montant="montant"
@@ -59,7 +59,7 @@ watch(
         @ajouterDepense="ajouterDepense"
       />
     </template>
-    <template #troisie-groupe>
+    <template #troisie-groupe v-if="historiqueDépenses.length > 0">
       <UCommandPalette v-if="isLoading" loading placeholder="loading" />
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
