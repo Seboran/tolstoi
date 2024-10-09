@@ -41,16 +41,16 @@ watch(
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-4 max-w-screen-xl min-w-80 justify-center">
-    <section class="min-w-80 flex flex-col justify-center gap-4">
+  <TemplatesBalances>
+    <template #premier-groupe>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <table title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
         </template>
       </table>
-    </section>
-    <section class="min-w-80" v-if="nomsBalances.length > 2">
+    </template>
+    <template #deuxieme-groupe>
       <AjoutDepenseFormulaire
         v-model:indexDepenseur="indexDepenseur"
         v-model:montant="montant"
@@ -58,20 +58,15 @@ watch(
         :nomsBalances="nomsBalances"
         @ajouterDepense="ajouterDepense"
       />
-    </section>
-    <template v-if="historiqueDépenses.length > 0">
-      <section class="flex flex-col gap-2 min-w-80">
-        <UCommandPalette v-if="isLoading" loading placeholder="loading" />
+    </template>
+    <template #troisie-groupe>
+      <UCommandPalette v-if="isLoading" loading placeholder="loading" />
 
-        <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
-        <section>
-          <h3>Historique dépenses</h3>
-          <HistoriqueDepenses
-            :historiqueDépenses="historiqueDépenses"
-            :nomsBalances="nomsBalances"
-          />
-        </section>
+      <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
+      <section>
+        <h3>Historique dépenses</h3>
+        <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
       </section>
     </template>
-  </div>
+  </TemplatesBalances>
 </template>
