@@ -7,5 +7,10 @@ export default defineNuxtConfig({
     '@': fileURLToPath(new URL('.', import.meta.url))
   },
   devtools: { enabled: true },
-  modules: ['@nuxt/test-utils/module', '@nuxt/ui', '@nuxtjs/tailwindcss']
+  modules: [
+    '@nuxt/test-utils/module',
+    '@nuxt/ui',
+    '@nuxtjs/tailwindcss',
+    'nuxt-typed-router'
+  ]
 })

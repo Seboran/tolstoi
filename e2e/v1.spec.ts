@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test'
 
 test('test super avancé', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('checkbox').click()
+  await page.getByRole('tab', { name: 'Mode détaillé' }).click()
+  await page.waitForURL('/detaille')
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
@@ -223,7 +224,8 @@ test('test super avancé', async ({ page }) => {
 
 test('test rapide', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('checkbox').click()
+  await page.getByRole('tab', { name: 'Mode détaillé' }).click()
+  await page.waitForURL('/detaille')
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
@@ -267,7 +269,8 @@ test('test rapide', async ({ page }) => {
 
 test('test utilisateur', async ({ page }) => {
   await page.goto('/')
-  await page.getByRole('checkbox').click()
+  await page.getByRole('tab', { name: 'Mode détaillé', disabled: false }).click()
+  await page.waitForURL('/detaille')
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
