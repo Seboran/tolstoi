@@ -13,7 +13,7 @@ const { page, frontmatter } = useData()
 <template>
   <div class="antialiased">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-      <nav class="flex justify-between items-center py-10 font-bold">
+      <nav class="flex justify-between items-center pb-10 font-bold">
         <AnimatedTitle :show="frontmatter.index" />
         <div class="flex justify-between items-center py-10 font-bold gap-5">
           <div
