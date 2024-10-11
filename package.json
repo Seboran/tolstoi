@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build:digitalocean": "pnpm install --production=false && pnpm run build && rm -rf node_modules && pnpm install --production --frozen-lockfile",
     "dev": "vitepress --open",
     "build": "vitepress build",
     "serve": "vitepress serve",
@@ -17,6 +18,9 @@
     "tailwindcss": "3.4.13",
     "vitepress": "1.4.0",
     "vue": "3.5.11"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "packageManager": "pnpm@9.12.1"
 }
