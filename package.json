@@ -1,10 +1,9 @@
 {
-  "name": "vue-blog",
+  "name": "nirina-blog",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "build:digitalocean": "pnpm install --production=false && pnpm run build && rm -rf node_modules && pnpm install --production --frozen-lockfile",
     "dev": "vitepress --open",
     "build": "vitepress build",
     "serve": "vitepress serve",
