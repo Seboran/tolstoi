@@ -3,18 +3,19 @@ import StyledButton from '@/components/StyledButton.vue'
 import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
 
+const storeBalancesEtRemboursements = useBalancesEtRemboursementsStore()
+const { calculerRemboursements, retirerBalancerEtViderComptes, addBalance } =
+  storeBalancesEtRemboursements
+
 const {
-  calculerRemboursements,
   remboursementsModifies,
   calculLoading,
   historiqueDépenses,
-  retirerBalancerEtViderComptes,
   balances,
   depensesParPersonne,
   nomsBalances,
-  addBalance,
   matriceDeRemboursements
-} = useRemboursements()
+} = storeToRefs(storeBalancesEtRemboursements)
 </script>
 
 <template>
