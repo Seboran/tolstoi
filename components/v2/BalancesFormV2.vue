@@ -1,69 +1,20 @@
 <script setup lang="ts">
-import { useAsyncState, useDebounceFn } from '@vueuse/core'
-import { ref, watch } from 'vue'
-
 import StyledButton from '@/components/StyledButton.vue'
-import { useAjouterDepense } from '@/components/useAjouterDepense'
-import { fetchBalances } from '@/components/useFetchBalances'
 import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
-import { useBalances } from './useBalancesV2'
 
-const { balances, nomsBalances, retirerBalance, addBalance, depensesParPersonne } = useBalances()
-const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =
-  useAjouterDepense(balances)
-
-const matriceDeRemboursements = ref<number[][]>([])
-async function _solveBalances() {
-  try {
-    matriceDeRemboursements.value = []
-    const solution = await fetchBalances(balances)
-    if (solution) {
-      matriceDeRemboursements.value = solution.result_matrix
-    }
-  } finally {
-    //
-  }
-}
-
-const solveBalances = useDebounceFn(_solveBalances, 1000)
-
-async function calculerRemboursements() {
-  historiqueDépenses.value.splice(0)
-  balances.value = Array(nomsBalances.value.length).fill(0)
-
-  depensesParPersonne.value.forEach((depense, index) => {
-    indexDepenseur.value = index
-    montant.value = depense
-    bénéficiaires.value = Array.from(Array(depensesParPersonne.value.length).keys())
-    ajouterDepense()
-  })
-  try {
-    modified.value = false
-    await execute()
-  } catch (e) {
-    modified.value = true
-  }
-}
-
-const modified = ref(true)
-
-const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
-
-watch(
+const {
+  calculerRemboursements,
+  remboursementsModifies,
+  calculLoading,
+  historiqueDépenses,
+  retirerBalancerEtViderComptes,
+  balances,
   depensesParPersonne,
-  () => {
-    modified.value = true
-  },
-  { deep: true }
-)
-
-function retirerBalancerEtViderComptes(index: number) {
-  balances.value = Array(nomsBalances.value.length).fill(0)
-  historiqueDépenses.value.splice(0)
-
-  retirerBalance(index)
-}
+  nomsBalances,
+  addBalance,
+  matriceDeRemboursements
+} = useRemboursements()
 </script>
 
 <template>
@@ -82,12 +33,12 @@ function retirerBalancerEtViderComptes(index: number) {
       <StyledButton
         v-if="balances.length >= 2"
         label="Calculer remboursements"
-        :disabled="!modified"
+        :disabled="!remboursementsModifies"
         @click="calculerRemboursements"
       ></StyledButton>
     </template>
     <template #deuxieme-groupe v-if="historiqueDépenses.length > 0">
-      <UCommandPalette v-if="isLoading" loading placeholder="loading" :emptyState="null" />
+      <UCommandPalette v-if="calculLoading" loading placeholder="loading" :emptyState="null" />
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
     </template>
   </TemplatesBalances>
