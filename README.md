@@ -1,6 +1,5 @@
 # Aux bons comptes les bons amis
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Seboran/bons-comptes-bons-amis)
 
 [![Build and Test](https://github.com/Seboran/bons-comptes-bons-amis/actions/workflows/on_push_build-test.yaml/badge.svg?branch=main)](https://github.com/Seboran/bons-comptes-bons-amis/actions/workflows/on_push_build-test.yaml)
 
@@ -25,5 +24,7 @@ pnpm dev
 ```
 
 ### Devcontainer
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Seboran/bons-comptes-bons-amis)
 
 Vous pouvez démarrer le projet depuis un `devcontainer` ! Voir <https://code.visualstudio.com/docs/devcontainers/tutorial>
