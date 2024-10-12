@@ -24,6 +24,10 @@ python -r requirements.txt
 pnpm dev
 ```
 
+### Déploiement
+
+Vous pouvez déployer vous-même ce site sur vercel en cliquant sur ce bouton :
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSeboran%2Fbons-comptes-bons-amis)
 
 ### Devcontainer
