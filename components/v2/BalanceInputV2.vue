@@ -12,27 +12,17 @@ defineEmits<{
 </script>
 
 <template>
-  <tr class="balances">
-    <td>
-      <section>
-        <div>
-          <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
-        </div>
-        <div>
-          <StyledNumberInput id="Dépense" label="Dépense" v-model="balance"></StyledNumberInput>
-        </div>
-        <div>
-          <UButton aria-label="delete" @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
-        </div>
-      </section>
+  <tr>
+    <td :aria-label="name">
+      <StyledTextInput label="Nom" v-model="name" :id="name + 'nom'" />
+    </td>
+    <td :aria-label="name">
+      <StyledNumberInput id="Dépense" label="Dépense" v-model="balance"></StyledNumberInput>
+    </td>
+    <td class="text-end" :aria-label="name">
+      <UTooltip text="Supprimer personne ?" :popper="{ placement: 'top' }">
+        <UButton aria-label="delete" @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
+      </UTooltip>
     </td>
   </tr>
 </template>
-
-<style scoped>
-section {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-</style>

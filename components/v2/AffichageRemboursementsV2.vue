@@ -50,15 +50,23 @@ const rows = computed(() => {
 </script>
 
 <template>
-  <table title="Remboursements" aria-label="Remboursements" class="min-w-80">
+  <table title="Remboursements" aria-label="Remboursements" class="min-w-80 w-full m-auto">
     <thead>
       <tr>
         <th v-for="(column, index) in columns" :key="index">{{ column.label }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, index) in rows" :key="index">
-        <td v-for="(column, i) in columns" :key="i">{{ row[column.key] }}</td>
+      <tr v-for="row in rows" :key="row.qui + row.àQui">
+        <td class="px-2 text-start">
+          {{ row.qui }}
+        </td>
+        <td class="px-2 text-center">
+          {{ row.combien }}
+        </td>
+        <td class="px-2 text-center">
+          {{ row.àQui }}
+        </td>
       </tr>
     </tbody>
   </table>

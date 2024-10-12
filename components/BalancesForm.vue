@@ -60,7 +60,7 @@ watch(
       />
     </template>
     <template #troisie-groupe v-if="historiqueDépenses.length > 0">
-      <UCommandPalette v-if="isLoading" loading placeholder="loading" />
+      <UCommandPalette v-if="isLoading" loading placeholder="loading" :empty-state="null" />
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
       <section>

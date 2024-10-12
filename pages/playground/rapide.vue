@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import BalancesFormV2 from '~/components/v2/BalancesFormV2.vue'
+const { balances, depensesParPersonne, nomsBalances } = storeToRefs(
+  useBalancesEtRemboursementsStore()
+)
+const { calculerRemboursements } = useBalancesEtRemboursementsStore()
+balances.value = [0, 0, 0, 0]
+nomsBalances.value = ['Nirina', 'Alice', 'Joseph', 'Émeline']
+depensesParPersonne.value = [230, 12, 200, 42]
+
+onMounted(() => {
+  calculerRemboursements()
+})
 </script>
 
-<template><BalancesFormV2 /></template>
+<template><V2BalancesFormV2 /></template>
