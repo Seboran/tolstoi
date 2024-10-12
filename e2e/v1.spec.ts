@@ -279,8 +279,6 @@ test('test utilisateur', async ({ page }) => {
   await page.getByLabel('Un castor affairé').check()
   await page.getByLabel('Une autruche curieuse').check()
   await page.getByLabel('Un ornithorynque malicieux').check()
-  await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
-  await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
   await page.getByLabel('a dépensé').click()
   await page.getByLabel('a dépensé').fill('34')
   await page.getByLabel('Un castor affairé').uncheck()
