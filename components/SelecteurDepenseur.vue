@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="selecteur">
+  <DesignInput label="Dépenseur" :id>
     <USelect
       placeholder="Dépenseur"
       aria-label="Dépenseur"
@@ -18,7 +18,7 @@ defineProps<{
       option-attribute="nom"
       value-attribute="index"
     ></USelect>
-  </div>
+  </DesignInput>
 </template>
 
 <style scoped>

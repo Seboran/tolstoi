@@ -10,7 +10,7 @@ defineProps<{
     <slot></slot>
     <label
       :for="id"
-      class="absolute z-10 top-[-0.5rem] left-1 text-xs bg-white dark:bg-transparent"
+      class="absolute z-10 top-[-0.5rem] left-1 text-xs bg-white dark:bg-[#1c1b22]"
       >{{ label }}</label
     >
   </div>

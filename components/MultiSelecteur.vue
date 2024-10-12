@@ -16,7 +16,8 @@ function onClickOption(optionSélectionnée: number) {
 </script>
 
 <template>
-  <div>
+  <div class="mx-1">
+    <label class="text-xs" for="bénéficiaires" aria-label="pour les bénéficiaires"> pour </label>
     <template v-for="(nom, i) in nomsBalances" :key="nom">
       <UCheckbox @change="onClickOption(i)" :label="nom" />
     </template>
