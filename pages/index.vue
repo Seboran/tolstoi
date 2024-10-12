@@ -19,9 +19,19 @@ const items: {
 const selectedTab = ref<number>(0)
 
 const { push } = useRouter()
-watchEffect(() => {
+watch(selectedTab, () => {
   push({ name: items[selectedTab.value].routeName })
 })
+const { name } = useRoute()
+onMounted(() => {
+  if (name === 'index-detaille') {
+    selectedTab.value = 1
+  } else {
+    selectedTab.value = 0
+    push({ name: 'index-rapide' })
+  }
+})
+
 const { allowUserInput } = useCanUserInteract()
 const activeItemTabs = computed(() =>
   items.map((item) => ({ ...item, disabled: false || !allowUserInput.value }))
