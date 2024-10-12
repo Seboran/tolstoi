@@ -21,7 +21,9 @@ defineEmits<{
       :aria-label="'dépense de ' + name"
     ></StyledNumberInput>
     <UTooltip text="Supprimer personne ?" :popper="{ placement: 'top' }">
-      <UButton aria-label="delete" @click="$emit('remove')" icon="i-heroicons-trash"></UButton>
+      <UButton class="text-center" variant="ghost" aria-label="delete" @click="$emit('remove')"
+        >❌</UButton
+      >
     </UTooltip>
   </div>
 </template>
