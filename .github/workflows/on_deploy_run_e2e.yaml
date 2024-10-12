@@ -12,19 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4
+        id: cache
+        with:
+          path: |
+            README.md
+          lookup-only: true
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'components/**', 'api/**', 'app.vue', 'requirements.txt', 'e2e/**') }}-smoke-tests
       - uses: pnpm/action-setup@v4
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           version: 9
       - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm i --frozen-lockfile
       - name: Install playwright browsers
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm exec playwright install --with-deps
       - name: Run tests
+        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm test:e2e
         env:
           PLAYWRIGHT_BASE_URL: ${{ inputs.base_url }}
       - uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
-        if: always()
+        if: always() && steps.cache.outputs.cache-hit != 'true'
         with:
           name: playwright-test-results
           path: test-results/
