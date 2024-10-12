@@ -4,8 +4,8 @@
   </NuxtLayout>
   <Head>
     <Title>Bons comptes bons amis, appli de remboursement</Title>
-    <Meta lang="fr">
   </Head>
+  <Html lang="fr" />
 </template>
 
 <style lang="css">
