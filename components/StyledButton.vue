@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { disableButtons } from './injectSymbols/disableSymbol'
+
 const props = defineProps<{ label: string; disabled?: boolean }>()
 
 const emit = defineEmits<{
@@ -13,13 +15,14 @@ function onClick(...args: unknown[]) {
 }
 
 const { allowUserInput } = useCanUserInteract()
+const disabledFromParent = inject(disableButtons, false)
 </script>
 
 <template>
   <UButton
     @click="onClick"
     class="dark:text-white"
-    :disabled="!allowUserInput || disabled"
+    :disabled="!allowUserInput || disabled || disabledFromParent"
     v-on="$attrs"
     type="button"
     :value="label"

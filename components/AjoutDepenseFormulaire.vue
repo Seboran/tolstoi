@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { disableButtons } from './injectSymbols/disableSymbol'
 import MultiSelecteur from './MultiSelecteur.vue'
 import SelecteurDepenseur from './SelecteurDepenseur.vue'
 import StyledButton from './StyledButton.vue'
@@ -26,6 +27,9 @@ function ajouterDepense() {
 
   emit('ajouterDepense', indexDepenseur.value, montant.value, bénéficiaires.value)
 }
+
+const peutAjouterDepense = computed(() => montant.value <= 0 || bénéficiaires.value.length === 0)
+const disabledFromParent = inject(disableButtons, false)
 </script>
 
 <template>
@@ -51,10 +55,18 @@ function ajouterDepense() {
       :nomsBalances
     ></MultiSelecteur>
 
-    <StyledButton
-      class="w-full mt-3"
-      label="Ajouter une dépense"
-      @click="ajouterDepense"
-    ></StyledButton>
+    <UTooltip
+      class="w-full"
+      :prevent="!peutAjouterDepense || disabledFromParent"
+      :popper="{ placement: 'top' }"
+    >
+      <template #text>Vous devez renseigner une dépense positive</template>
+      <StyledButton
+        class="w-full mt-3"
+        label="Ajouter une dépense"
+        :disabled="peutAjouterDepense"
+        @click="ajouterDepense"
+      ></StyledButton>
+    </UTooltip>
   </div>
 </template>

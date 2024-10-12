@@ -17,6 +17,8 @@ const {
   historiqueDépenses,
   matriceDeRemboursements
 } = storeToRefs(balancesDetailStore)
+
+const disableSelecteur = computed(() => nomsBalances.value.length < 3)
 </script>
 
 <template>
@@ -29,17 +31,23 @@ const {
       </div>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
     </template>
-    <template #deuxieme-groupe v-if="nomsBalances.length > 2">
-      <AjoutDepenseFormulaire
-        v-model:indexDepenseur="indexDepenseur"
-        v-model:montant="montant"
-        v-model:beneficiaire="bénéficiaires"
-        :nomsBalances="nomsBalances"
-        @ajouterDepense="ajouterDepense"
-      />
+    <template #deuxieme-groupe>
+      <InjectorsInjectDisableButtons class="w-full" :value="disableSelecteur">
+        <UTooltip class="w-full" :prevent="!disableSelecteur" :popper="{ placement: 'top' }">
+          <template #text>Vous devez ajouter au moins trois personnes</template>
+          <AjoutDepenseFormulaire
+            class="w-full"
+            v-model:indexDepenseur="indexDepenseur"
+            v-model:montant="montant"
+            v-model:beneficiaire="bénéficiaires"
+            :nomsBalances="nomsBalances"
+            @ajouterDepense="ajouterDepense"
+          />
+        </UTooltip>
+      </InjectorsInjectDisableButtons>
       <hr />
     </template>
-    <template #troisieme-groupe v-if="historiqueDépenses.length > 0">
+    <template #troisieme-groupe>
       <UCommandPalette v-if="isLoading" loading placeholder="loading" :empty-state="null" />
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
