@@ -31,8 +31,12 @@ function ajouterDepense() {
 <template>
   <div class="flex items-start flex-col gap-2">
     <SelecteurDepenseur id="dépenseur" v-model="indexDepenseur" :nomsBalances name="dépenseur" />
-    <label style="text-wrap: nowrap" for="montant">a dépensé</label>
-    <StyledNumberInput v-model="montant" label="montant" id="montant"></StyledNumberInput>
+    <StyledNumberInput
+      class="w-full"
+      v-model="montant"
+      label="a dépensé"
+      id="montant"
+    ></StyledNumberInput>
     <label for="bénéficiaires" aria-label="pour les bénéficiaires"> pour </label>
 
     <MultiSelecteur
@@ -42,6 +46,6 @@ function ajouterDepense() {
       :nomsBalances
     ></MultiSelecteur>
 
-    <StyledButton label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
+    <StyledButton class="w-full" label="Ajouter une dépense" @click="ajouterDepense"></StyledButton>
   </div>
 </template>

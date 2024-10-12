@@ -43,12 +43,12 @@ watch(
 <template>
   <TemplatesBalances>
     <template #premier-groupe>
-      <StyledButton label="Ajouter une personne" @click="addBalance" />
-      <table title="Balances personnes">
+      <table v-show="balances.length" title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
         </template>
       </table>
+      <StyledButton label="Ajouter une personne" @click="addBalance" />
     </template>
     <template #deuxieme-groupe v-if="nomsBalances.length > 2">
       <AjoutDepenseFormulaire
@@ -58,15 +58,14 @@ watch(
         :nomsBalances="nomsBalances"
         @ajouterDepense="ajouterDepense"
       />
+      <hr />
     </template>
-    <template #troisie-groupe v-if="historiqueDépenses.length > 0">
+    <template #troisieme-groupe v-if="historiqueDépenses.length > 0">
       <UCommandPalette v-if="isLoading" loading placeholder="loading" :empty-state="null" />
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
-      <section>
-        <h3>Historique dépenses</h3>
-        <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
-      </section>
+      <h3 class="text-lg">Historique dépenses :</h3>
+      <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
     </template>
   </TemplatesBalances>
 </template>

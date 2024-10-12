@@ -21,7 +21,7 @@ const {
 <template>
   <TemplatesBalances>
     <template #premier-groupe>
-      <table title="Balances personnes">
+      <table v-show="balances.length" title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInputV2
             v-model:balance="depensesParPersonne[index]"

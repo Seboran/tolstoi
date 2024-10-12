@@ -13,7 +13,7 @@ const balance = defineModel<number>({ required: true })
 </script>
 
 <template>
-  <DesignInput :id label="Somme">
+  <DesignInput :id :label>
     <UInput class="w-full" :name="label" :id :disabled type="number" v-model="balance" />
   </DesignInput>
 </template>
