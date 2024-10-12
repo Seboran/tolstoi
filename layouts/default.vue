@@ -9,8 +9,8 @@
       </h1>
       <p class="text-start">
         Vous avez besoin d'aide pour répartir vos dépenses en groupe suite à des vacances, la vie en
-        coloc ou les tournées ? Choisissez un des modes, remplissez la liste des personnes du groupe
-        et ajoutez ce que chacun a dépensé ! (ou pas... 🙈)
+        coloc ou les restaurants ? Choisissez un des modes, remplissez la liste des personnes du
+        groupe et ajoutez ce que chacun a dépensé ! (ou pas... 🙈)
       </p>
     </header>
     <slot />
