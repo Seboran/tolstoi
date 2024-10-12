@@ -1,8 +1,6 @@
 import { useAsyncState, useDebounceFn } from '@vueuse/core'
-import { useAjouterDepense } from '~/components/useAjouterDepense'
-import { fetchBalances } from '~/components/useFetchBalances'
-import { useBalances } from '~/components/v2/useBalancesV2'
-
+import { useAjouterDepense } from './useAjouterDepense'
+import { useBalances } from './v2/useBalancesV2'
 export function useRemboursements() {
   const { balances, nomsBalances, retirerBalance, addBalance, depensesParPersonne } = useBalances()
   const { indexDepenseur, montant, bénéficiaires, ajouterDepense, historiqueDépenses } =

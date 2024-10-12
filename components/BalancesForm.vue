@@ -5,18 +5,18 @@ import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import StyledButton from './StyledButton.vue'
 import AffichageRemboursementsV2 from './v2/AffichageRemboursementsV2.vue'
 
+const balancesDetailStore = useBalancesDetaillesStore()
+const { ajouterDepense, addBalance } = balancesDetailStore
 const {
   balances,
   nomsBalances,
   indexDepenseur,
   montant,
   bénéficiaires,
-  ajouterDepense,
-  addBalance,
   isLoading,
   historiqueDépenses,
   matriceDeRemboursements
-} = useRemboursementsDetailles()
+} = storeToRefs(balancesDetailStore)
 </script>
 
 <template>

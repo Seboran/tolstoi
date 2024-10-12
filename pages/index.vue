@@ -29,7 +29,7 @@ const activeItemTabs = computed(() =>
 </script>
 
 <template>
-  <UTabs :items="activeItemTabs" v-model="selectedTab">
+  <UTabs :items="activeItemTabs" v-model="selectedTab" unmount>
     <template #item>
       <NuxtPage />
     </template>
