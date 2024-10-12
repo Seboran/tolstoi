@@ -2,6 +2,9 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <Head>
+    <Title>Bons comptes bons amis, appli de remboursement</Title>
+  </Head>
 </template>
 
 <style lang="css">

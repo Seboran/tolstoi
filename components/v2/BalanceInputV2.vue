@@ -17,7 +17,11 @@ defineEmits<{
       <StyledTextInput label="Nom" v-model="name" :id="name + 'nom'" />
     </td>
     <td :aria-label="name">
-      <StyledNumberInput id="Dépense" label="Dépense" v-model="balance"></StyledNumberInput>
+      <StyledNumberInput
+        :id="'depense_' + name"
+        label="Dépense"
+        v-model="balance"
+      ></StyledNumberInput>
     </td>
     <td class="text-end" :aria-label="name">
       <UTooltip text="Supprimer personne ?" :popper="{ placement: 'top' }">
