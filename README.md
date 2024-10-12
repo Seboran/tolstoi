@@ -1,5 +1,8 @@
 # Aux bons comptes les bons amis
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Seboran/bons-comptes-bons-amis)
+
+[![Build and Test](https://github.com/Seboran/bons-comptes-bons-amis/actions/workflows/on_push_build-test.yaml/badge.svg?branch=main)](https://github.com/Seboran/bons-comptes-bons-amis/actions/workflows/on_push_build-test.yaml)
 
 Imaginez, vous rentrez de vacances. Vous êtes nombreux à avoir dépensé, certains beaucoup, certains moins, certains pas du tout, et vous voulez faire les remboursements pour compter.
 
