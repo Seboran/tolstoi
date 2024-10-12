@@ -1,14 +1,15 @@
 <script setup lang="ts">
-const { balances, depensesParPersonne, nomsBalances } = storeToRefs(
-  useBalancesEtRemboursementsStore()
+const { balances, nomsBalances, indexDepenseur, bénéficiaires, montant } = storeToRefs(
+  useBalancesDetaillesStore()
 )
-const { calculerRemboursements } = useBalancesEtRemboursementsStore()
+const { ajouterDepense } = useBalancesDetaillesStore()
 balances.value = [0, 0, 0, 0]
 nomsBalances.value = ['Nirina', 'Alice', 'Joseph', 'Émeline']
-depensesParPersonne.value = [230, 12, 200, 42]
-
 onMounted(() => {
-  calculerRemboursements()
+  indexDepenseur.value = 1
+  bénéficiaires.value = [0, 1, 2]
+  montant.value = 500
+  ajouterDepense()
 })
 </script>
 
