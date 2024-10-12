@@ -11,6 +11,7 @@ defineProps<{
 <template>
   <DesignInput label="Dépenseur" :id>
     <USelect
+      :id
       placeholder="Dépenseur"
       aria-label="Dépenseur"
       v-model="modelValue"
