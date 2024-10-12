@@ -21,7 +21,7 @@ const {
 <template>
   <TemplatesBalances>
     <template #premier-groupe>
-      <table v-show="balances.length" title="Balances personnes">
+      <div v-show="balances.length" title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInputV2
             v-model:balance="depensesParPersonne[index]"
@@ -29,7 +29,7 @@ const {
             @remove="retirerBalancerEtViderComptes(index)"
           />
         </template>
-      </table>
+      </div>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <StyledButton
         v-if="balances.length >= 2"

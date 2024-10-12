@@ -18,6 +18,7 @@ const { allowUserInput } = useCanUserInteract()
 <template>
   <UButton
     @click="onClick"
+    class="dark:text-white"
     :disabled="!allowUserInput || disabled"
     v-on="$attrs"
     type="button"

@@ -22,11 +22,11 @@ const {
 <template>
   <TemplatesBalances>
     <template #premier-groupe>
-      <table v-show="balances.length" title="Balances personnes">
+      <div v-show="balances.length" title="Balances personnes">
         <template v-for="(_balance, index) in balances" :key="index">
           <BalanceInput v-model:balance="balances[index]" v-model:name="nomsBalances[index]" />
         </template>
-      </table>
+      </div>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
     </template>
     <template #deuxieme-groupe v-if="nomsBalances.length > 2">
@@ -43,7 +43,7 @@ const {
       <UCommandPalette v-if="isLoading" loading placeholder="loading" :empty-state="null" />
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
-      <h3 class="text-lg">Historique dépenses :</h3>
+      <h2 class="text-lg">Historique dépenses :</h2>
       <HistoriqueDepenses :historiqueDépenses="historiqueDépenses" :nomsBalances="nomsBalances" />
     </template>
   </TemplatesBalances>

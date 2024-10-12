@@ -5,11 +5,7 @@ const name = defineModel<string>('name', { required: true })
 </script>
 
 <template>
-  <tr class="balances">
-    <td>
-      <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
-    </td>
-  </tr>
+  <StyledTextInput class="nom-personne" label="Nom" v-model="name" :id="name + 'nom'" />
 </template>
 
 <style scoped></style>
