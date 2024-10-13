@@ -6,12 +6,24 @@ defineProps<{
   name: string
 }>()
 
-function onClickOption(optionSélectionnée: number) {
-  if (modelValue.value.includes(optionSélectionnée)) {
-    modelValue.value = modelValue.value.filter((option) => option !== optionSélectionnée)
-  } else {
-    modelValue.value = [...modelValue.value, optionSélectionnée]
+const setBénéficiaires = computed({
+  get() {
+    return new Set<number>(modelValue.value)
+  },
+  set(val) {
+    modelValue.value = Array.from(val)
   }
+})
+
+function onClickOption(optionSélectionnée: number) {
+  // Vue reactivity does not work on sets, so you have to make it yourself through arrays
+  const newSet = new Set<number>([...setBénéficiaires.value])
+  if (setBénéficiaires.value.has(optionSélectionnée)) {
+    newSet.delete(optionSélectionnée)
+  } else {
+    newSet.add(optionSélectionnée)
+  }
+  setBénéficiaires.value = new Set([...newSet])
 }
 </script>
 
@@ -19,7 +31,7 @@ function onClickOption(optionSélectionnée: number) {
   <div class="mx-1">
     <label class="text-xs" for="bénéficiaires" aria-label="pour les bénéficiaires"> pour </label>
     <template v-for="(nom, i) in nomsBalances" :key="nom">
-      <UCheckbox @change="onClickOption(i)" :label="nom" />
+      <UCheckbox :model-value="setBénéficiaires.has(i)" @change="onClickOption(i)" :label="nom" />
     </template>
   </div>
 </template>
