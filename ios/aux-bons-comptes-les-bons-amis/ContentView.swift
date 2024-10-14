@@ -13,7 +13,7 @@ private struct PersonneDepenses: Identifiable {
   var id: String { name }
 }
 
-private struct LigneRemboursement: Hashable {
+struct LigneRemboursement: Hashable {
   var qui: String
   var combien: Double
   var àQui: String
@@ -36,13 +36,7 @@ struct ContentView: View {
   @State private var lignesRemboursement: [LigneRemboursement] = []
   var body: some View {
     VStack {
-      VStack {
-        Text("Bons comptes bons amis").font(.largeTitle)
-
-        Text(
-          "Vous avez besoin d'aide pour répartir vos dépenses en groupe suite à des vacances, la vie en coloc ou les restaurants ? Choisissez un des modes, remplissez la liste des personnes du groupe et ajoutez ce que chacun a dépensé ! (ou pas... 🙈) "
-        ).font(.caption)
-      }
+      TitleView()
 
       ForEach(Array($personnes.enumerated()), id: \.offset) {
         index, $personne in
@@ -85,13 +79,7 @@ struct ContentView: View {
       VStack {
         ForEach($lignesRemboursement, id: \.self.hashValue) {
           $ligne in
-          HStack {
-
-            Text(
-              "\($ligne.qui.wrappedValue) doit \((100.0 * $ligne.combien.wrappedValue).rounded()/100.0) à \($ligne.àQui.wrappedValue)"
-            )
-
-          }
+          TextLigneRemboursement(ligne: $ligne.wrappedValue)
         }
 
       }
@@ -186,4 +174,19 @@ func fetchRemboursements(balances: [Double]) async throws -> [[Double]] {
 
 #Preview {
   ContentView()
+}
+
+
+
+struct TextLigneRemboursement: View {
+  let ligne: LigneRemboursement
+  var body: some View {
+    HStack {
+      
+      Text(
+        "\(ligne.qui) doit \((100.0 * ligne.combien).rounded()/100.0) à \(ligne.àQui)"
+      )
+      
+    }
+  }
 }
