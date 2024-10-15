@@ -84,6 +84,14 @@ struct ContentView: View {
 
       }
       Spacer()
+      Button {
+        // empty balances
+        balances.wrappedValue.removeAll()
+        personnes.removeAll()
+        lignesRemboursement.removeAll()
+      } label: {
+        Text("Recommencer").frame(maxWidth: .infinity)
+      }.buttonStyle(.plain)
     }.padding()
   }
 

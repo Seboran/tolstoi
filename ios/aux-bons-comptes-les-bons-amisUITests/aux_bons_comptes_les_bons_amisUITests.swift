@@ -32,7 +32,7 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     }
   }
 
-  func testExample() {
+  func testAjoutRemboursements() {
 
     let app = XCUIApplication()
     app.launch()
@@ -64,6 +64,99 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
       app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
         timeout: 10.0))
 
+  }
+
+  func testSuppressionQuelquun() {
+
+    let app = XCUIApplication()
+    app.launch()
+
+    let ajouterUnePersonneButton = app.buttons["Ajouter une personne"]
+    ajouterUnePersonneButton.tap()
+    ajouterUnePersonneButton.tap()
+    ajouterUnePersonneButton.tap()
+
+    app.textFields.element(boundBy: 0).tap()
+    app.textFields.element(boundBy: 0).typeText("Sophie")
+    app.textFields.element(boundBy: 2).tap()
+    app.textFields.element(boundBy: 2).typeText("Antoine")
+    app.textFields.element(boundBy: 4).tap()
+    app.textFields.element(boundBy: 4).typeText("Thierry")
+    app.textFields.element(boundBy: 3).tap()
+    app.textFields.element(boundBy: 3).typeText(
+      String(XCUIKeyboardKey.delete.rawValue))
+
+    app.textFields.element(boundBy: 3).typeText("230")
+    ajouterUnePersonneButton.tap()
+
+    app.textFields.element(boundBy: 6).tap()
+    app.textFields.element(boundBy: 6).typeText("Stéphanie")
+    app /*@START_MENU_TOKEN@*/.buttons[
+      "trash"
+    ] /*[[".buttons[\"Supprimer\"]",".buttons[\"trash\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+      .firstMatch.tap()
+
+    app.buttons["Calculer remboursements"].tap()
+
+    XCTAssertEqual(
+      app.textFields.element(boundBy: 0).value as! String, "Antoine")
+    XCTAssertEqual(
+      app.textFields.element(boundBy: 2).value as! String, "Thierry")
+    XCTAssertEqual(
+      app.textFields.element(boundBy: 4).value as! String, "Stéphanie")
+    
+    XCTAssertTrue(
+      app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
+        timeout: 10.0))
+
+    XCTAssertTrue(
+      app.staticTexts["Stéphanie doit 76.67 à Antoine"].waitForExistence(
+        timeout: 10.0))
+
+  }
+  
+  func testRecommencer() {
+
+    let app = XCUIApplication()
+    app.launch()
+
+    let ajouterUnePersonneButton = app.buttons["Ajouter une personne"]
+    ajouterUnePersonneButton.tap()
+    ajouterUnePersonneButton.tap()
+    ajouterUnePersonneButton.tap()
+
+    app.textFields.element(boundBy: 0).tap()
+    app.textFields.element(boundBy: 0).typeText("Sophie")
+    app.textFields.element(boundBy: 2).tap()
+    app.textFields.element(boundBy: 2).typeText("Antoine")
+    app.textFields.element(boundBy: 4).tap()
+    app.textFields.element(boundBy: 4).typeText("Thierry")
+    app.textFields.element(boundBy: 3).tap()
+    app.textFields.element(boundBy: 3).typeText(
+      String(XCUIKeyboardKey.delete.rawValue))
+
+    app.textFields.element(boundBy: 3).typeText("230")
+
+    app.buttons["Calculer remboursements"].tap()
+    
+
+    XCTAssertTrue(
+      app.staticTexts["Sophie doit 76.67 à Antoine"].waitForExistence(
+        timeout: 10.0))
+
+    XCTAssertTrue(
+      app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
+        timeout: 10.0))
+    
+    app.buttons["Recommencer"].tap()
+
+    XCTAssertFalse(
+      app.staticTexts["Sophie doit 76.67 à Antoine"].exists)
+
+    XCTAssertFalse(
+      app.staticTexts["Thierry doit 76.67 à Antoine"].exists)
+    
+    XCTAssertEqual(app.textFields.count, 0)
   }
 
 }
