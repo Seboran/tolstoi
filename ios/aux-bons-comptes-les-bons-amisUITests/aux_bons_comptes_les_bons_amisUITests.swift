@@ -57,11 +57,11 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     app.buttons["Calculer remboursements"].tap()
 
     XCTAssertTrue(
-      app.staticTexts["Sophie doit 76,670000 à Antoine"].waitForExistence(
+      app.staticTexts["Sophie doit 76.67 à Antoine"].waitForExistence(
         timeout: 10.0))
 
     XCTAssertTrue(
-      app.staticTexts["Thierry doit 76,670000 à Antoine"].waitForExistence(
+      app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
         timeout: 10.0))
 
   }

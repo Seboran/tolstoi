@@ -8,11 +8,15 @@ import SwiftUI
 
 struct TextLigneRemboursement: View {
   let ligne: LigneRemboursement
+  
+  var combien: String {
+    String(Double(floor(100*ligne.combien)/100))
+  }
   var body: some View {
     HStack {
 
       Text(
-        "\(ligne.qui) doit \((100.0 * ligne.combien).rounded()/100.0) à \(ligne.àQui)"
+        "\(ligne.qui) doit \(combien) à \(ligne.àQui)"
       )
 
     }
