@@ -9,7 +9,7 @@ import SwiftUI
 
 private struct PersonneDepenses: Identifiable {
   var name: String = ""
-  var depense: Double = 0
+  var depense: Double?
   var id: String { name }
 }
 
@@ -21,19 +21,27 @@ struct LigneRemboursement: Hashable {
 
 struct ContentView: View {
 
-  @State private var selected = "Baseball"
-
   @State private var id = 1
 
   @State private var personnes: [PersonneDepenses] = []
-  private var balances: Binding<[Double]> {
-    Binding(get: { personnes.map({ $0.depense }) }, set: { $0 })
+  private var balances: [Double] {
+    personnes.map({ $0.depense ?? 0 })
   }
 
   @State private var name: String = ""
   @State private var depense: Int = 0
   @State private var matriceRemboursements: [[Double]] = []
-  @State private var lignesRemboursement: [LigneRemboursement] = []
+  private var lignesRemboursement: [LigneRemboursement] {
+    return matriceRemboursements.enumerated().flatMap {
+      index, ligne in
+      return ligne.enumerated().map {
+        index2, montant in
+        return LigneRemboursement(
+          qui: personnes[index].name, combien: montant,
+          àQui: personnes[index2].name)
+      }
+    }.filter { $0.combien > 0 }
+  }
   var body: some View {
     VStack {
       TitleView()
@@ -44,6 +52,7 @@ struct ContentView: View {
         HStack {
           TextField("Nom", text: $personne.name)
           TextField("Dépense", value: $personne.depense, format: .number)
+            .keyboardType(.numberPad)
           Button("Supprimer", systemImage: "trash") {
             personnes.remove(at: index)
           }.labelStyle(.iconOnly)
@@ -59,17 +68,7 @@ struct ContentView: View {
       Button {
         Task {
           matriceRemboursements = try await fetchRemboursements(
-            balances: balances.wrappedValue)
-          lignesRemboursement = matriceRemboursements.enumerated().flatMap {
-            index, ligne in
-            return ligne.enumerated().map {
-              index2, montant in
-              return LigneRemboursement(
-                qui: personnes[index].name, combien: montant,
-                àQui: personnes[index2].name)
-            }
-
-          }.filter { $0.combien > 0 }
+            balances: balances)
         }
       } label: {
         Text("Calculer remboursements").frame(maxWidth: .infinity)
@@ -77,18 +76,17 @@ struct ContentView: View {
 
         .buttonStyle(.borderedProminent)
       VStack {
-        ForEach($lignesRemboursement, id: \.self.hashValue) {
-          $ligne in
-          TextLigneRemboursement(ligne: $ligne.wrappedValue)
+        ForEach(lignesRemboursement, id: \.self.hashValue) {
+          ligne in
+          TextLigneRemboursement(ligne: ligne)
         }
 
       }
       Spacer()
       Button {
         // empty balances
-        balances.wrappedValue.removeAll()
         personnes.removeAll()
-        lignesRemboursement.removeAll()
+        matriceRemboursements.removeAll()
       } label: {
         Text("Recommencer").frame(maxWidth: .infinity)
       }.buttonStyle(.plain)
@@ -101,51 +99,11 @@ struct RetourApiSolve: Decodable {
   let result_matrix: [[Double]]
 }
 
-class HistoriqueDepenses {
-  var indexDépenseur: Int
-  var montant: Double
-  var listeIndexesBénéficiares: [Int]
-
-  init(indexDépenseur: Int, montant: Double, listeIndexesBénéficiares: [Int]) {
-    self.indexDépenseur = indexDépenseur
-    self.montant = montant
-    self.listeIndexesBénéficiares = listeIndexesBénéficiares
-  }
-}
-
-class UseAjouterDepense {
-  private var balances: [Double]
-  private var historiqueDépenses: [HistoriqueDepenses] = []
-
-  init(balances: [Double]) {
-    self.balances = balances
-  }
-
-  @Published var indexDepenseur: Int = 0
-  @Published var montant: Double = 0.0
-  @Published var bénéficiaires: [Int] = []
-
-  func ajouterDepense() {
-    let montantParBénéficiaire = montant / Double(bénéficiaires.count)
-
-    for indexBénéficiaire in bénéficiaires {
-      balances[indexBénéficiaire] -= montantParBénéficiaire
-    }
-    balances[indexDepenseur] += montant
-
-    let historiqueDépense = HistoriqueDepenses(
-      indexDépenseur: indexDepenseur,
-      montant: montant,
-      listeIndexesBénéficiares: bénéficiaires)
-    historiqueDépenses.append(historiqueDépense)
-  }
-}
-
 func fetchRemboursements(balances: [Double]) async throws -> [[Double]] {
   var depenses: [Double] = Array(repeating: 0.0, count: balances.count)
   balances.enumerated().forEach {
     index1, balance in
-    for (index, _depense) in depenses.enumerated() {
+    for (index, _) in depenses.enumerated() {
       depenses[index] -= balance / Double(depenses.count)
     }
     depenses[index1] += balance
