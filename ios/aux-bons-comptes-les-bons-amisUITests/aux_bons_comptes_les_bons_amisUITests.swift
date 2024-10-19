@@ -49,8 +49,6 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     app.textFields.element(boundBy: 4).tap()
     app.textFields.element(boundBy: 4).typeText("Thierry")
     app.textFields.element(boundBy: 3).tap()
-    app.textFields.element(boundBy: 3).typeText(
-      String(XCUIKeyboardKey.delete.rawValue))
 
     app.textFields.element(boundBy: 3).typeText("230")
 
@@ -83,8 +81,6 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     app.textFields.element(boundBy: 4).tap()
     app.textFields.element(boundBy: 4).typeText("Thierry")
     app.textFields.element(boundBy: 3).tap()
-    app.textFields.element(boundBy: 3).typeText(
-      String(XCUIKeyboardKey.delete.rawValue))
 
     app.textFields.element(boundBy: 3).typeText("230")
     ajouterUnePersonneButton.tap()
@@ -104,7 +100,7 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
       app.textFields.element(boundBy: 2).value as! String, "Thierry")
     XCTAssertEqual(
       app.textFields.element(boundBy: 4).value as! String, "Stéphanie")
-    
+
     XCTAssertTrue(
       app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
         timeout: 10.0))
@@ -114,7 +110,7 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
         timeout: 10.0))
 
   }
-  
+
   func testRecommencer() {
 
     let app = XCUIApplication()
@@ -132,13 +128,10 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     app.textFields.element(boundBy: 4).tap()
     app.textFields.element(boundBy: 4).typeText("Thierry")
     app.textFields.element(boundBy: 3).tap()
-    app.textFields.element(boundBy: 3).typeText(
-      String(XCUIKeyboardKey.delete.rawValue))
 
     app.textFields.element(boundBy: 3).typeText("230")
 
     app.buttons["Calculer remboursements"].tap()
-    
 
     XCTAssertTrue(
       app.staticTexts["Sophie doit 76.67 à Antoine"].waitForExistence(
@@ -147,7 +140,7 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
     XCTAssertTrue(
       app.staticTexts["Thierry doit 76.67 à Antoine"].waitForExistence(
         timeout: 10.0))
-    
+
     app.buttons["Recommencer"].tap()
 
     XCTAssertFalse(
@@ -155,7 +148,7 @@ final class aux_bons_comptes_les_bons_amisUITests: XCTestCase {
 
     XCTAssertFalse(
       app.staticTexts["Thierry doit 76.67 à Antoine"].exists)
-    
+
     XCTAssertEqual(app.textFields.count, 0)
   }
 
