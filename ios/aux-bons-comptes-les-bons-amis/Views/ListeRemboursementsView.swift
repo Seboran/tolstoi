@@ -24,6 +24,7 @@ struct ListeRemboursementsView: View {
     }.filter { $0.combien > 0 }
   }
   var body: some View {
+    
     ScrollView {
       VStack(alignment: .leading) {
         ForEach(lignesRemboursement, id: \.self.hashValue) {
