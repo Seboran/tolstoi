@@ -48,12 +48,12 @@
     "eslint": "8.57.1",
     "eslint-plugin-vue": "9.29.0",
     "happy-dom": "15.7.4",
-    "npm-run-all2": "6.2.3",
+    "npm-run-all2": "6.2.4",
     "playwright-core": "1.48.1",
     "prettier": "3.3.3",
     "tailwind": "4.0.0",
     "typescript": "5.6.3",
-    "vercel": "37.9.0",
+    "vercel": "37.11.0",
     "vitest": "2.1.3"
   }
 }
