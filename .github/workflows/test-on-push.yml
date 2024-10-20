@@ -12,7 +12,11 @@ jobs:
       - name: Xcodebuild Action
         uses: sersoft-gmbh/xcodebuild-action@v3.2.0
         with:
+          workspace: nirinapass.xcworkspace
+          scheme: nirinapass
+          destination: platform=macOS
           action: test
+
   test-tauri:
     runs-on: ubuntu-22.04
     steps:
