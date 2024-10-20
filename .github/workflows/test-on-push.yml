@@ -9,7 +9,12 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: xcodebuild clean test -scheme 'nirinapassUITests' -showBuildTimingSummary
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - run: xcodebuild -list
+      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassTests"
+      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassUITests"
 
   test-tauri:
     runs-on: ubuntu-22.04
