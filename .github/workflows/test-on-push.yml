@@ -46,7 +46,6 @@ jobs:
         working-directory: ./tauri
         run: pnpm test
       - name: test rust app
-        working-directory: ./tauri/src-tauri
         run: cargo test
       - name: build frontend app
         working-directory: ./tauri
