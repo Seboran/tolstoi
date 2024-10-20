@@ -6,9 +6,14 @@ on: [push]
 
 jobs:
   test-macos:
-    runs-on: macos-latest
+    runs-on: macos-15
+    strategy:
+      matrix:
+        run-config:
+          - { arch: 'arch=arm64' }
+          - { arch: 'arch=x86_64' }
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
       - name: Install the Apple certificate and provisioning profile
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
@@ -42,8 +47,9 @@ jobs:
         with:
           xcode-version: latest-stable
       - run: xcodebuild -list
-      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassTests"
-      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassUITests"
+      - run: xcodebuild build -workspace "nirinapass.xcworkspace" -scheme "nirinapass" -destination '${{ matrix.run-config['arch'] }}'
+      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassTests" -destination '${{ matrix.run-config['arch'] }}'
+      - run: xcodebuild test -workspace "nirinapass.xcworkspace" -scheme "nirinapassUITests" -destination '${{ matrix.run-config['arch'] }}'
 
   test-tauri:
     runs-on: ubuntu-22.04
