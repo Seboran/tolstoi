@@ -9,13 +9,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Xcodebuild Action
-        uses: sersoft-gmbh/xcodebuild-action@v3.2.0
-        with:
-          workspace: nirinapass.xcworkspace
-          scheme: nirinapass
-          destination: platform=macOS
-          action: test
+      - run: xcodebuild clean test -scheme 'nirinapass' -showBuildTimingSummary
 
   test-tauri:
     runs-on: ubuntu-22.04
