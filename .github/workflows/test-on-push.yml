@@ -5,6 +5,14 @@ on: [push]
 # This workflow will build your tauri app without uploading it anywhere.
 
 jobs:
+  test-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: swift build
+      - name: Run tests
+        run: swift test
   test-tauri:
     runs-on: ubuntu-22.04
     steps:
