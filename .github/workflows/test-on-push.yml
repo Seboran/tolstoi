@@ -9,12 +9,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build
-        working-directory: './macos/nirinapass'
-        run: swift build
-      - name: Run tests
-        working-directory: './macos/nirinapass'
-        run: swift test
+      - name: Xcodebuild Action
+        uses: sersoft-gmbh/xcodebuild-action@v3.2.0
+        with:
+          action: test
   test-tauri:
     runs-on: ubuntu-22.04
     steps:
