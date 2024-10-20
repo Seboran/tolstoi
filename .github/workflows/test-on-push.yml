@@ -9,7 +9,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: xcodebuild clean test -scheme 'nirinapass' -showBuildTimingSummary
+      - run: xcodebuild clean test -scheme 'nirinapassUITests' -showBuildTimingSummary
 
   test-tauri:
     runs-on: ubuntu-22.04
