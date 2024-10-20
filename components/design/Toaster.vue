@@ -14,7 +14,7 @@ defineExpose({ afficherToaster })
 <template>
   <Teleport to="body">
     <Transition name="slide">
-      <div v-if="value" class="absolute top-2 right-2 md:top-5 md:right-5 w-full max-w-80">
+      <div v-if="value" class="fixed top-2 right-2 md:top-5 md:right-5 w-full max-w-80">
         <UAlert color="orange" variant="solid">
           <template #icon> ℹ️ </template>
           <template #description>
