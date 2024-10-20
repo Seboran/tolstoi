@@ -16,9 +16,13 @@ const {
   nomsBalances,
   matriceDeRemboursements
 } = storeToRefs(storeBalancesEtRemboursements)
+
+const toaster = useTemplateRef('toaster')
 </script>
 
 <template>
+  <DesignToaster ref="toaster">Veuillez ajouter au moins trois personnes</DesignToaster>
+
   <TemplatesBalances>
     <template #premier-groupe>
       <div v-show="balances.length" title="Balances personnes">
@@ -32,10 +36,9 @@ const {
       </div>
       <StyledButton label="Ajouter une personne" @click="addBalance" />
       <StyledButton
-        v-if="balances.length >= 2"
         label="Calculer remboursements"
         :disabled="!remboursementsModifies"
-        @click="calculerRemboursements"
+        @click="balances.length < 3 ? toaster?.afficherToaster() : calculerRemboursements()"
       ></StyledButton>
     </template>
     <template #deuxieme-groupe v-if="historiqueDépenses.length > 0">

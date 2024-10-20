@@ -23,14 +23,21 @@ const disableSelecteur = computed(() => nomsBalances.value.length < 3)
 
 const animateAjouterBouton = ref(false)
 
+const toaster = useTemplateRef('toaster')
+
 function changeAnimateAjouterBouton() {
-  animateAjouterBouton.value = true
-  setTimeout(() => (animateAjouterBouton.value = false), 4000)
+  toaster.value?.afficherToaster()
+  setTimeout(() => {
+    animateAjouterBouton.value = true
+    setTimeout(() => (animateAjouterBouton.value = false), 4000)
+  }, 3000)
 }
 const debouncedEteindreBouton = useThrottleFn(() => changeAnimateAjouterBouton())
 </script>
 
 <template>
+  <DesignToaster ref="toaster">Veuillez ajouter au moins trois personnes</DesignToaster>
+
   <TemplatesBalances>
     <template #premier-groupe>
       <div v-show="balances.length" title="Balances personnes">
