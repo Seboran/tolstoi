@@ -10,10 +10,10 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "@playwright/test": "1.48.1",
+    "@playwright/test": "1.48.2",
     "@tailwindcss/typography": "0.5.15",
     "@tryghost/content-api": "1.11.21",
-    "@types/node": "22.7.9",
+    "@types/node": "22.8.1",
     "@vueuse/core": "11.1.0",
     "fs-extra": "11.2.0",
     "js-yaml": "4.1.0",
