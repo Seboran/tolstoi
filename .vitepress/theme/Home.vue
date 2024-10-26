@@ -2,6 +2,11 @@
 import Date from './Date.vue'
 import { data as posts } from './posts.data.js'
 import AnimatedHomeTitle from './components/AnimatedHomeTitle.vue'
+import { computed } from 'vue'
+
+const filteredPosts = computed(() =>
+  posts.filter((post) => post.date.time !== null)
+)
 </script>
 
 <template>
@@ -23,7 +28,7 @@ import AnimatedHomeTitle from './components/AnimatedHomeTitle.vue'
       </p>
     </div>
     <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
-      <li class="py-12" v-for="{ title, url, date, excerpt } of posts">
+      <li class="py-12" v-for="{ title, url, date, excerpt } of filteredPosts">
         <article
           class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline"
         >
