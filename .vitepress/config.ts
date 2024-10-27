@@ -7,6 +7,13 @@ export default defineConfig({
   title: 'Nirina Rabeson',
   cleanUrls: true,
   head: [
+    [
+      'meta',
+      {
+        name: 'og:image',
+        content: imageurlCard
+      }
+    ],
     ['meta', { name: 'twitter:site', content: '@nirinarabeson.fr' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:title', content: titleCard }],
@@ -15,13 +22,6 @@ export default defineConfig({
       'meta',
       {
         name: 'twitter:image',
-        content: imageurlCard
-      }
-    ],
-    [
-      'meta',
-      {
-        name: 'og:image',
         content: imageurlCard
       }
     ],
