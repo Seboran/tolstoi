@@ -4,6 +4,8 @@ date: 2024-09-25
 author: Nirina Rabeson
 ---
 
+![photo de la mer avec des vagues et une mouette volant au dessus](/anthony-gomez-lqmDtXdcmUM-unsplash.jpg)
+
 **Si vous lisez cet article, c'est que je viens de lancer mon propre site web !! Félicitations à vous !**
 
 Vous voulez savoir de quoi je vais parler ? Pourquoi je fais ce blog ? Qu'est-ce que je veux vous apporter ? Et bien il vous suffit de lire l'article !
