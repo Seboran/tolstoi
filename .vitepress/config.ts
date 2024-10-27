@@ -10,14 +10,27 @@ export default defineConfig({
     [
       'meta',
       {
-        name: 'og:image',
+        property: 'og:image:secure_url',
+        content: imageurlCard
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: imageurlCard
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:image:url',
         content: imageurlCard
       }
     ],
     ['meta', { name: 'twitter:site', content: '@nirinarabeson.fr' }],
-    ['meta', { name: 'twitter:card', content: 'summary' }],
     ['meta', { name: 'twitter:title', content: titleCard }],
-    ['meta', { name: 'og:title', content: titleCard }],
+    ['meta', { property: 'og:title', content: titleCard }],
     [
       'meta',
       {
@@ -25,10 +38,9 @@ export default defineConfig({
         content: imageurlCard
       }
     ],
-    ['meta', { name: 'og:type', content: 'homepage' }],
+    ['meta', { property: 'og:type', content: 'homepage' }],
     ['meta', { name: 'twitter:description', content: descriptionCard }],
-    ['meta', { name: 'og:description', content: descriptionCard }],
-    ['meta', { name: 'og:url', content: 'https://www.nirinarabeson.fr' }],
+    ['meta', { property: 'og:description', content: descriptionCard }],
     ['description', { content: 'Le site de Nirina Rabeson' }],
     [
       'link',
