@@ -24,7 +24,7 @@ Stack technique : *Vuejs, TypesScript, Vite, Vitest*
 
 ## Générateur de sudoku et de musique
 
-Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs. Jetez-y un oeil : <https://generateur-musique-app-musique.vercel.app> et <https://generateur-musique-app-musique.vercel.app>
+Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs. Jetez-y un oeil : <https://generateur-sudoku-app-sudoku.vercel.app> et <https://generateur-musique-app-musique.vercel.app>
 
 Le code source : <https://github.com/Seboran/generateur-musique>
 
