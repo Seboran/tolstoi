@@ -53,7 +53,7 @@
     "prettier": "3.3.3",
     "tailwind": "4.0.0",
     "typescript": "5.6.3",
-    "vercel": "37.12.1",
+    "vercel": "37.13.0",
     "vitest": "2.1.4"
   }
 }
