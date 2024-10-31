@@ -3,8 +3,5 @@
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/index" }],
   "github": {
     "autoJobCancellation": true
-  },
-  "git": {
-    "deploymentEnabled": false
   }
 }
