@@ -23,10 +23,10 @@ jobs:
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-turbo-
-      - name: Run test:unit
-        run: turbo test:unit
       - name: Run build
         run: turbo build
+      - name: Run test:unit
+        run: turbo test:unit
       - name: Install playwright browsers
         run: pnpm exec playwright install
       - name: Install playwright browsers
