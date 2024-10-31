@@ -1,0 +1,37 @@
+{
+  "name": "ethereum-wallet-generator",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview --port 5050",
+    "test:unit": "vitest run --environment jsdom",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bn.js": "^5.2.1",
+    "bootstrap": "^5.3.2",
+    "buffer": "^6.0.3",
+    "elliptic": "^6.5.4",
+    "js-sha3": "^0.9.3",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.13",
+    "vue-clipboard3": "^2.0.0"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "1.10.4",
+    "@types/bootstrap": "5.2.10",
+    "@vitejs/plugin-vue": "5.1.4",
+    "@vue/eslint-config-prettier": "10.1.0",
+    "@vue/test-utils": "2.4.6",
+    "eslint": "9.13.0",
+    "eslint-plugin-vue": "9.30.0",
+    "jsdom": "25.0.1",
+    "prettier": "3.3.3",
+    "vite": "5.4.10",
+    "vitest": "2.1.4"
+  }
+}
