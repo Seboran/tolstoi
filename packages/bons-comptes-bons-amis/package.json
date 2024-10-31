@@ -3,7 +3,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "install": "pip install -r requirements.txt",
     "build": "nuxt build",
     "dev": "concurrently \"pnpm run dev:nuxt\" \"pnpm run dev:flask\"",
     "dev:nuxt": "nuxt dev --host",
