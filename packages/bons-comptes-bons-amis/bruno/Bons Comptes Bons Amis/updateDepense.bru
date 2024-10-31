@@ -1,0 +1,54 @@
+meta {
+  name: updateDepense
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/historique?id=6693bd07002413e18a95
+  body: json
+  auth: none
+}
+
+params:query {
+  id: 6693bd07002413e18a95
+}
+
+body:json {
+  {
+    "depense": [
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 30,
+        "indexDepenseur": 1
+      },
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 35,
+        "indexDepenseur": 0
+      },
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 18,
+        "indexDepenseur": 1
+      }
+    ],
+    "noms": [
+      "Un castor affairé",
+      "Un ornithorynque malicieux",
+      "Une autruche curieuse"
+    ]
+  }
+}

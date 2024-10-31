@@ -1,6 +1,5 @@
 # Logs
 logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -12,20 +11,36 @@ node_modules
 dist
 dist-ssr
 coverage
-*.local
+local
 
 /cypress/videos/
 /cypress/screenshots/
 
 # Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.vscode/
+.idea/
+.suo
+.njsproj
+.sln
+.sw?
 .nuxt
 .turbo
 target/
+.output
+.data
+.nitro
+.cache
+nuxt-dev-build-outputs
+# Node dependencies
+# Misc
+.DS_Store
+.fleet
+# Local env files
+.env
+.env.*
+!.env.example
+playwright-report
+test-results
+__pycache__
+coverage
+xcuserdata

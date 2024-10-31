@@ -1,0 +1,41 @@
+meta {
+  name: createDepenses
+  type: http
+  seq: 1
+}
+
+put {
+  url: {{baseUrl}}/api/historique
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "depense": [
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 20,
+        "indexDepenseur": 1
+      },
+      {
+        "indexBeneficiaires": [
+          0,
+          1,
+          2
+        ],
+        "montant": 35,
+        "indexDepenseur": 3
+      }
+    ],
+    "noms": [
+      "Un castor affairé",
+      "NIRINA",
+      "Une autruche curieuse"
+    ]
+  }
+}
