@@ -20,5 +20,7 @@ jobs:
         run: turbo test:unit
       - name: Run build
         run: turbo build
+      - name: Install playwright browsers
+        run: pnpm exec playwright install
       - name: Run e2e
         run: turbo test:e2e
