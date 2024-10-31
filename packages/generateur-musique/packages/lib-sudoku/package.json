@@ -1,0 +1,27 @@
+{
+  "name": "lib-sudoku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/playground.ts --watch src",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "build": "tsc",
+    "prepublish": "ctix create --overwrite --useRootDir && tsc"
+  },
+  "devDependencies": {
+    "@types/node": "22.8.4",
+    "ctix": "2.7.0",
+    "nodemon": "3.1.7",
+    "prettier": "3.3.3",
+    "ts-node": "10.9.2",
+    "vitest": "2.0.5"
+  },
+  "dependencies": {
+    "lib-effondrement": "workspace:*"
+  },
+  "files": [
+    "dist"
+  ]
+}

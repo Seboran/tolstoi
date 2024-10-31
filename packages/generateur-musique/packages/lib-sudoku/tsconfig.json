@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "typeRoots": ["./node_modules/@types"],
+    "experimentalDecorators": true,
+    "declaration": true,
+    "moduleResolution": "Bundler"
+  },
+  "include": ["src/**/*.ts"]
+}
