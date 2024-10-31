@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+  "name": "Node.js",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerFile": "Dockerfile",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },
+    "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {},
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh": {}
+  },
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "5328": {
+      "label": "Flask local app",
+      "onAutoForward": "ignore"
+    }
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postStartCommand": "pip install -r requirements.txt && pnpm i",
+  "postAttachCommand": "pnpm dev --host",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-playwright.playwright",
+        "vitest.explorer",
+        "Vue.volar",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "github.vscode-github-actions",
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.autopep8",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "ms-python.pylint",
+        "redhat.vscode-yaml",
+        "oderwat.indent-rainbow",
+        "wix.vscode-import-cost",
+        "ms-python.isort",
+        "ms-azuretools.vscode-docker",
+        "christian-kohler.npm-intellisense",
+        "YoavBls.pretty-ts-errors",
+        "austenc.tailwind-docs"
+      ]
+    }
+  }
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
