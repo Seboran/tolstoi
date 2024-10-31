@@ -16,6 +16,13 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install && pnpm i -g turbo
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
       - name: Run test:unit
         run: turbo test:unit
       - name: Run build
