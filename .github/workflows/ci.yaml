@@ -47,5 +47,8 @@ jobs:
       - name: Install python
         run: pip install -r requirements.txt
         working-directory: packages/bons-comptes-bons-amis
-      - name: Run and build
-        run: turbo build test:unit test:e2e
+
+      ## Run tasks
+      - run: turbo build
+      - run: turbo test:unit
+      - run: turbo test:e2e
