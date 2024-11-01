@@ -54,5 +54,7 @@ jobs:
       - run: turbo test:e2e
   deploy:
     needs: [ci]
+    permissions:
+      deployments: write
     uses: './.github/workflows/deploy.yaml'
     secrets: inherit
