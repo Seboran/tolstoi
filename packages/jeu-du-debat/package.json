@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "run-p build-only",
     "preview": "vite preview --port 4173",
-    "test:unit": "vitest",
+    "test:unit": "vitest run",
     "build-only": "vite build",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "coverage": "vitest run --coverage"
