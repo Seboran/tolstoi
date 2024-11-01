@@ -35,7 +35,6 @@ jobs:
         id: vercel-deploy
 
         run: |
-          pnpm dlx turbo-ignore bons-comptes-bons-amis
           vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
           cat deployment-url.txt
           echo "preview_url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
