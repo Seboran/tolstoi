@@ -35,6 +35,15 @@ jobs:
 
       - name: Install playwright browsers
         run: pnpm exec playwright install-deps
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: install dependencies (ubuntu only)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
+
       - name: Install python
         run: pip install -r requirements.txt
         working-directory: packages/bons-comptes-bons-amis
