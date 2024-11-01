@@ -1,4 +1,4 @@
-name: pnpm test
+name: ci
 on:
   push:
 jobs:
@@ -17,8 +17,6 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install && pnpm i -g turbo
       - name: Cache turbo build setup
         uses: actions/cache@v4
         with:
@@ -26,6 +24,12 @@ jobs:
           key: ${{ runner.os }}-turbo-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-turbo-
+
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install turbo
+        run: pnpm i -g turbo
+
       - name: Run build
         run: turbo build
       - name: Run test:unit
