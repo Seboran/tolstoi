@@ -16,11 +16,5 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    transformMode: {
-      web: [/.[tj]sx$/],
-    },
-    coverage: {
-      reporter: ["text", "json", "html"],
-    },
   },
 });
