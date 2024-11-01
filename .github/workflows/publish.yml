@@ -1,0 +1,66 @@
+name: 'publish-on-tag'
+
+on:
+  release:
+    types: [published]
+# This workflow will build your tauri app without uploading it anywhere.
+
+permissions: write-all
+
+jobs:
+  publish-tauri:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: 'macos-latest' # for Arm based macs (M1 and above).
+            args: '--target aarch64-apple-darwin'
+          - platform: 'macos-latest' # for Intel based macs.
+            args: '--target x86_64-apple-darwin'
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+  
+      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          # Those targets are only used on macos runners so it's in an `if` to slightly speed up windows and linux builds.
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+      - uses: Swatinem/rust-cache@82a92a6e8fbeee089604da2575dc567ae9ddeaab # v2
+
+      - name: install dependencies (ubuntu only)
+        if: matrix.platform == 'ubuntu-20.04' # This must match the platform value defined above.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
+
+      - name: install frontend dependencies
+        working-directory: ./tauri
+        run: pnpm install # change this to npm, pnpm or bun depending on which one you use.
+
+      # If tagName and releaseId are omitted tauri-action will only build the app and won't try to upload any assets.
+      - uses: tauri-apps/tauri-action@8c3e0753aa015d00d03631d6d4f64ad59489251d # v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: './tauri'
+          args: ${{ matrix.args }}
+          tagName: ${{ github.ref_name }} # the action automatically replaces \_\_VERSION\_\_ with the nirinapass version.
+          releaseName: ${{ github.ref_name }}
