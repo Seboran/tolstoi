@@ -34,7 +34,7 @@ jobs:
         run: pnpm i -g turbo
 
       - name: Install playwright browsers
-        run: pnpm exec playwright install-deps
+        run: pnpm playwright install-deps
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
