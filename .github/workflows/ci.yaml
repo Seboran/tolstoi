@@ -33,10 +33,6 @@ jobs:
       - name: Install turbo
         run: pnpm i -g turbo
 
-      - name: Run build
-        run: turbo build
-      - name: Run test:unit
-        run: turbo test:unit
       - name: Install playwright browsers
         run: pnpm exec playwright install
       - name: Install playwright browsers
@@ -44,5 +40,5 @@ jobs:
       - name: Install python
         run: pip install -r requirements.txt
         working-directory: packages/bons-comptes-bons-amis
-      - name: Run e2e
-        run: turbo test:e2e --concurrency=1
+      - name: Run and build
+        run: turbo build test:unit test:e2e

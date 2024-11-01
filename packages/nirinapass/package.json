@@ -8,12 +8,13 @@
     "tauri:dev": "pnpm tauri dev",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "pnpm tauri build",
+    "build:front": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "format": "prettier --write src/",
     "tauri": "tauri",
     "lint": "eslint src --fix",
-    "test:all": "pnpm test run && cd src-tauri && cargo test"
+    "test:unit": "pnpm test run && cd src-tauri && cargo test"
   },
   "dependencies": {
     "@tanstack/vue-table": "^8.20.5",

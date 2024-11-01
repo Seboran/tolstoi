@@ -48,6 +48,7 @@ suite('App.vue', () => {
       const { findAllByRole } = render(App)
 
       const rows = await findAllByRole('row')
+      // @ts-expect-error
       expect(rows[0]).toHaveTextContent('laredoute.fr')
     })
 
@@ -55,6 +56,7 @@ suite('App.vue', () => {
       const { findAllByRole } = render(App)
 
       const rows = await findAllByRole('row')
+      // @ts-expect-error
       expect(rows[1]).toHaveTextContent('impots')
     })
   })
@@ -74,6 +76,7 @@ suite('App.vue', () => {
       const { findByRole } = render(App)
       await userEvent.type(await findByRole('searchbox', { name: /Chercher entrée/i }), 'redoute')
       const entreeLaRedoute = await findByRole('row')
+      // @ts-expect-error
       expect(entreeLaRedoute).toHaveTextContent('laredoute')
     })
   })
