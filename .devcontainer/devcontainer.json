@@ -8,14 +8,16 @@
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },
     "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {},
-    "ghcr.io/nils-geistmann/devcontainers-features/zsh": {}
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh": {},
+    "ghcr.io/audacioustux/devcontainers/bun": {},
+    "ghcr.io/devcontainers/features/desktop-lite": {}
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   // "features": {},
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [3000],
+  "forwardPorts": [3000, 4173, 5173],
   "portsAttributes": {
     "3000": {
       "label": "Application",
@@ -24,6 +26,10 @@
     "5328": {
       "label": "Flask local app",
       "onAutoForward": "ignore"
+    },
+    "5173": {
+      "label": "Application",
+      "onAutoForward": "openBrowser"
     }
   },
 
@@ -52,13 +58,19 @@
         "ms-azuretools.vscode-docker",
         "christian-kohler.npm-intellisense",
         "YoavBls.pretty-ts-errors",
-        "austenc.tailwind-docs"
+        "austenc.tailwind-docs",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.npm-intellisense",
+        "wix.vscode-import-cost",
+        "Vue.volar",
+        "github.vscode-github-actions",
+        "dbaeumer.vscode-eslint",
+        "DavidAnson.vscode-markdownlint",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
       ]
     }
   }
-
-  // Configure tool-specific properties.
-  // "customizations": {},
 
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
