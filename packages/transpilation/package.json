@@ -1,0 +1,31 @@
+{
+  "name": "transpilation-ts",
+  "version": "0.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "packageManager": "pnpm@9.12.1",
+  "scripts": {
+    "start": "nodemon src/playground.ts --watch src",
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "coverage": "vitest run --coverage",
+    "build": "tsc",
+    "prepublish": "ctix create --overwrite --useRootDir && tsc"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "2.1.4",
+    "ctix": "2.7.0",
+    "nodemon": "3.1.7",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.3",
+    "vitest": "2.1.4"
+  },
+  "dependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "^3.2.4"
+  },
+  "files": [
+    "dist"
+  ]
+}
