@@ -34,5 +34,8 @@ jobs:
         run: pnpm exec playwright install
       - name: Install playwright browsers
         run: pnpm exec playwright install-deps
+      - name: Install python
+        run: pip install -r requirements.txt
+        working-directory: packages/bons-comptes-bons-amis
       - name: Run e2e
         run: turbo test:e2e
