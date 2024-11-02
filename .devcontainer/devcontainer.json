@@ -33,7 +33,7 @@
   },
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postStartCommand": "pnpm i",
+  "postCreateCommand": "pip install -r apps/bons-comptes-bons-amis/requirements.txt && pnpm i",
   "customizations": {
     "vscode": {
       "extensions": [
