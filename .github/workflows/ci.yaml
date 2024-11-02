@@ -51,7 +51,7 @@ jobs:
       ## Run tasks
       - run: turbo build
       - run: turbo test:unit
-      - run: turbo test:e2e
+      - run: turbo test:e2e:with_install
   deploy:
     needs: [ci]
     permissions:
