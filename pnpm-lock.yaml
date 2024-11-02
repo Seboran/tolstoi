@@ -34,7 +34,7 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/blog:
+  apps/blog:
     devDependencies:
       '@playwright/test':
         specifier: 1.48.2
@@ -67,7 +67,7 @@ importers:
         specifier: 3.5.12
         version: 3.5.12(typescript@5.6.3)
 
-  packages/bons-comptes-bons-amis:
+  apps/bons-comptes-bons-amis:
     dependencies:
       '@nuxt/ui':
         specifier: ^2.18.6
@@ -77,7 +77,7 @@ importers:
         version: 0.5.5(magicast@0.3.5)(rollup@4.21.0)(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))
       '@vueuse/core':
         specifier: ^11.1.0
-        version: 11.2.0(vue@3.5.12(typescript@5.6.3))
+        version: 11.1.0(vue@3.5.12(typescript@5.6.3))
       nuxt:
         specifier: ^3.13.0
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@16.18.11)(encoding@0.1.13)(eslint@8.57.1)(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.21.0)(terser@5.36.0)(typescript@5.6.3)(vite@5.4.10(@types/node@16.18.11)(terser@5.36.0))(vue-tsc@2.1.10(typescript@5.6.3))
@@ -167,7 +167,7 @@ importers:
         specifier: 2.1.4
         version: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.4)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/ethereum-wallet-generator:
+  apps/ethereum-wallet-generator:
     dependencies:
       '@popperjs/core':
         specifier: ^2.11.8
@@ -231,7 +231,7 @@ importers:
         specifier: 2.1.4
         version: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.1.4)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/generateur-musique:
+  apps/generateur-musique:
     optionalDependencies:
       '@vitest/ui':
         specifier: ^2.0.0
@@ -256,7 +256,7 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.1.4)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/generateur-musique/packages/app-musique:
+  apps/generateur-musique/packages/app-musique:
     dependencies:
       lib-musique:
         specifier: workspace:*
@@ -320,7 +320,7 @@ importers:
         specifier: 2.1.6
         version: 2.1.6(typescript@5.6.3)
 
-  packages/generateur-musique/packages/app-sudoku:
+  apps/generateur-musique/packages/app-sudoku:
     dependencies:
       lib-style:
         specifier: workspace:*
@@ -384,7 +384,7 @@ importers:
         specifier: 2.1.6
         version: 2.1.6(typescript@5.6.3)
 
-  packages/generateur-musique/packages/lib-effondrement:
+  apps/generateur-musique/packages/lib-effondrement:
     devDependencies:
       '@types/node':
         specifier: 22.8.4
@@ -405,7 +405,7 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/generateur-musique/packages/lib-musique:
+  apps/generateur-musique/packages/lib-musique:
     devDependencies:
       '@types/node':
         specifier: 22.8.4
@@ -426,7 +426,7 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/generateur-musique/packages/lib-style:
+  apps/generateur-musique/packages/lib-style:
     dependencies:
       vue:
         specifier: ^3.4.3
@@ -484,7 +484,7 @@ importers:
         specifier: 2.1.6
         version: 2.1.6(typescript@5.6.3)
 
-  packages/generateur-musique/packages/lib-sudoku:
+  apps/generateur-musique/packages/lib-sudoku:
     dependencies:
       lib-effondrement:
         specifier: workspace:*
@@ -509,7 +509,7 @@ importers:
         specifier: 2.0.5
         version: 2.0.5(@edge-runtime/vm@3.2.0)(@types/node@22.8.4)(@vitest/ui@2.0.5)(happy-dom@15.7.4)(jsdom@25.0.1)(terser@5.36.0)
 
-  packages/jeu-du-debat:
+  apps/jeu-du-debat:
     dependencies:
       '@popperjs/core':
         specifier: ^2.11.8
@@ -2629,26 +2629,17 @@ packages:
   '@volar/language-core@1.11.1':
     resolution: {integrity: sha512-dOcNn3i9GgZAcJt43wuaEykSluAuOkQgzni1cuxLxTV0nJKanQztp7FxyswdRILaKH+P2XZMPRp2S4MV/pElCw==}
 
-  '@volar/language-core@2.4.5':
-    resolution: {integrity: sha512-F4tA0DCO5Q1F5mScHmca0umsi2ufKULAnMOVBfMsZdT4myhVl4WdKRwCaKcfOkIEuyrAVvtq1ESBdZ+rSyLVww==}
-
   '@volar/language-core@2.4.8':
     resolution: {integrity: sha512-K/GxMOXGq997bO00cdFhTNuR85xPxj0BEEAy+BaqqayTmy9Tmhfgmq2wpJcVspRhcwfgPoE2/mEJa26emUhG/g==}
 
   '@volar/source-map@1.11.1':
     resolution: {integrity: sha512-hJnOnwZ4+WT5iupLRnuzbULZ42L7BWWPMmruzwtLhJfpDVoZLjNBxHDi2sY2bgZXCKlpU5XcsMFoYrsQmPhfZg==}
 
-  '@volar/source-map@2.4.5':
-    resolution: {integrity: sha512-varwD7RaKE2J/Z+Zu6j3mNNJbNT394qIxXwdvz/4ao/vxOfyClZpSDtLKkwWmecinkOVos5+PWkWraelfMLfpw==}
-
   '@volar/source-map@2.4.8':
     resolution: {integrity: sha512-jeWJBkC/WivdelMwxKkpFL811uH/jJ1kVxa+c7OvG48DXc3VrP7pplSWPP2W1dLMqBxD+awRlg55FQQfiup4cA==}
 
   '@volar/typescript@1.11.1':
     resolution: {integrity: sha512-iU+t2mas/4lYierSnoFOeRFQUhAEMgsFuQxoxvwn5EdQopw43j+J27a4lt9LMInx1gLJBC6qL14WYGlgymaSMQ==}
-
-  '@volar/typescript@2.4.5':
-    resolution: {integrity: sha512-mcT1mHvLljAEtHviVcBuOyAwwMKz1ibXTi5uYtP/pf4XxoAzpdkQ+Br2IC0NPCvLCbjPZmbf3I0udndkfB1CDg==}
 
   '@volar/typescript@2.4.8':
     resolution: {integrity: sha512-6xkIYJ5xxghVBhVywMoPMidDDAFT1OoQeXwa27HSgJ6AiIKRe61RXLoik+14Z7r0JvnblXVsjsRLmCr42SGzqg==}
@@ -3477,7 +3468,6 @@ packages:
 
   commands-events@1.0.4:
     resolution: {integrity: sha512-HdP/+1Anoc7z+6L2h7nd4Imz54+LW+BjMGt30riBZrZ3ZeP/8el93wD8Jj8ltAaqVslqNgjX6qlhSBJwuDSmpg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   comment-json@4.2.5:
     resolution: {integrity: sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw==}
@@ -3492,7 +3482,6 @@ packages:
 
   comparejs@1.0.0:
     resolution: {integrity: sha512-Ue/Zd9aOucHzHXwaCe4yeHR7jypp7TKrIBZ5yls35nPNiVXlW14npmNVKM1ZaLlQTKZ6/4ewA//gYKHHIwCpOw==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   compatx@0.1.8:
     resolution: {integrity: sha512-jcbsEAR81Bt5s1qOFymBufmCbXCXbk0Ql+K5ouj6gCyx2yHlu6AgmGIi9HxfKixpUDO5bCFJUHQ5uM6ecbTebw==}
@@ -3628,7 +3617,6 @@ packages:
 
   crypto2@2.0.0:
     resolution: {integrity: sha512-jdXdAgdILldLOF53md25FiQ6ybj2kUFTiRjs7msKTUoZrzgT/M1FPX5dYGJjbbwFls+RJIiZxNTC02DE/8y0ZQ==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   css-declaration-sorter@7.2.0:
     resolution: {integrity: sha512-h70rUM+3PNFuaBDTLe8wF/cdWu+dOZmb7pJt8Z2sedYbAcQVQV/tEchueg3GWxwqS0cxtbxmaHEdkNACqcvsow==}
@@ -3718,7 +3706,6 @@ packages:
 
   datasette@1.0.1:
     resolution: {integrity: sha512-aJdlCBToEJUP4M57r67r4V6tltwGKa3qetnjpBtXYIlqbX9tM9jsoDMxb4xd9AGjpp3282oHRmqI5Z8TVAU0Mg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   dayjs@1.11.13:
     resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
@@ -3938,7 +3925,6 @@ packages:
 
   draht@1.0.1:
     resolution: {integrity: sha512-yNNHL864dniNmIE9ZKD++mKypiAUAvVZtyV0QrbXH/ak3ebzFqo5xsmRBRqV8pZVhImOSBiyq500Wcmrf44zAg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
@@ -4448,7 +4434,6 @@ packages:
 
   flaschenpost@1.1.3:
     resolution: {integrity: sha512-1VAYPvDsVBGFJyUrOa/6clnJwZYC3qVq9nJLcypy6lvaaNbo1wOQiH8HQ+4Fw/k51pVG7JHzSf5epb8lmIW86g==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     hasBin: true
 
   flat-cache@3.2.0:
@@ -4487,7 +4472,6 @@ packages:
 
   formats@1.0.0:
     resolution: {integrity: sha512-For0Y8egwEK96JgJo4NONErPhtl7H2QzeB2NYGmzeGeJ8a1JZqPgLYOtM3oJRCYhmgsdDFd6KGRYyfe37XY4Yg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   forwarded@0.2.0:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
@@ -4744,7 +4728,6 @@ packages:
 
   hase@2.0.0:
     resolution: {integrity: sha512-L83pBR/oZvQQNjv4kw9aUpTqBxERPiY7B42jsmkt1VDeUaRVhYkEIKzkCqrppjtxHe2EZqzZJzuhMXsWsxYIsw==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   hash-sum@2.0.0:
     resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
@@ -5231,7 +5214,6 @@ packages:
 
   json-lines@1.0.0:
     resolution: {integrity: sha512-ytuLZb4RBQb3bTRsG/QBenyIo5oHLpjeCVph3s2NnoAsZE9K6h+uR+OWpEOWV1UeHdX63tYctGppBpGAc+JNMA==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   json-parse-even-better-errors@4.0.0:
     resolution: {integrity: sha512-lR4MXjGNgkJc7tkQ97kb2nuEMnNCyU//XYVH0MKTGcXEiSudQ5MKGKen3C5QubYy0vmq+JGitUg92uuywGEwIA==}
@@ -5340,7 +5322,6 @@ packages:
 
   limes@2.0.0:
     resolution: {integrity: sha512-evWD0pnTgPX7QueaSoJl5JBUL30T1ZVzo34ke97tIKmeagqhBTYK/JkKL0vtG3MpNApw8ZY9TlbybfwEz9knBA==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -6087,7 +6068,6 @@ packages:
 
   partof@1.0.0:
     resolution: {integrity: sha512-+TXdhKCySpJDynCxgAPoGVyAkiK3QPusQ63/BdU5t68QcYzyU6zkP/T7F3gkMQBVUYqdWEADKa6Kx5zg8QIKrg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   pascal-case@3.1.2:
     resolution: {integrity: sha512-uWlGT3YSnK9x3BQJaOdcZwrnV6hPpd8jFH1/ucpiLRPh/2zCVJKS19E4GvYHvaCcACn3foXZ0cLB9Wrx1KGe5g==}
@@ -6547,7 +6527,6 @@ packages:
 
   processenv@1.1.0:
     resolution: {integrity: sha512-SymqIsn8GjEUy8nG7HiyEjgbfk1xFosRIakUX1NHLpriq3vVpKniGrr9RdMWCaGYWByIovbRt2f/WvmP/IOApQ==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   promise-inflight@1.0.1:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
@@ -7057,7 +7036,6 @@ packages:
 
   stethoskop@1.0.0:
     resolution: {integrity: sha512-4JnZ+UmTs9SFfDjSHFlD/EoXcb1bfwntkt4h1ipNGrpxtRzmHTxOmdquCJvIrVu608Um7a09cGX0ZSOSllWJNQ==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   stop-iteration-iterator@1.0.0:
     resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
@@ -7215,7 +7193,6 @@ packages:
 
   tailwind@4.0.0:
     resolution: {integrity: sha512-LlUNoD/5maFG1h5kQ6/hXfFPdcnYw+1Z7z+kUD/W/E71CUMwcnrskxiBM8c3G8wmPsD1VvCuqGYMHviI8+yrmg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -7283,7 +7260,6 @@ packages:
 
   timer2@1.0.0:
     resolution: {integrity: sha512-UOZql+P2ET0da+B7V3/RImN3IhC5ghb+9cpecfUhmYGIm0z73dDr3A781nBLnFYmRzeT1AmoT4w9Lgr8n7n7xg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   tiny-emitter@2.1.0:
     resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
@@ -7510,15 +7486,6 @@ packages:
   typescript-collections@1.3.3:
     resolution: {integrity: sha512-7sI4e/bZijOzyURng88oOFZCISQPTHozfE2sUu5AviFYk5QV7fYGb6YiDl+vKjF/pICA354JImBImL9XJWUvdQ==}
 
-  typescript-eslint@8.12.2:
-    resolution: {integrity: sha512-UbuVUWSrHVR03q9CWx+JDHeO6B/Hr9p4U5lRH++5tq/EbFq1faYZe50ZSBePptgfIKLEti0aPQ3hFgnPVcd8ZQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      typescript: '*'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   typescript-eslint@8.8.1:
     resolution: {integrity: sha512-R0dsXFt6t4SAFjUSKFjMh4pXDtq04SsFKCVGDP3ZOzNP7itF0jBcZYU4fMsZr4y7O7V7Nc751dDeESbe4PbQMQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -7739,11 +7706,9 @@ packages:
 
   uuidv4@2.0.0:
     resolution: {integrity: sha512-sAUlwUVepcVk6bwnaW/oi6LCwMdueako5QQzRr90ioAVVcms6p1mV0PaSxK8gyAC4CRvKddsk217uUpZUbKd2Q==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   uuidv4@3.0.1:
     resolution: {integrity: sha512-PPzksdWRl2a5C9hrs3OOYrArTeyoR0ftJ3jtOy+BnVHkT2UlrrzPNt9nTdiGuxmQItHM/AcTXahwZZC57Njojg==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
@@ -9210,7 +9175,7 @@ snapshots:
       semver: 7.6.3
       simple-git: 3.27.0
       sirv: 2.0.4
-      tinyglobby: 0.2.6
+      tinyglobby: 0.2.10
       unimport: 3.13.1(rollup@4.21.0)
       vite: 5.4.10(@types/node@16.18.11)(terser@5.36.0)
       vite-plugin-inspect: 0.8.7(@nuxt/kit@3.13.2(magicast@0.3.5)(rollup@4.21.0))(rollup@4.21.0)(vite@5.4.10(@types/node@16.18.11)(terser@5.36.0))
@@ -10040,6 +10005,24 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@typescript-eslint/eslint-plugin@8.8.1(@typescript-eslint/parser@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)':
+    dependencies:
+      '@eslint-community/regexpp': 4.12.1
+      '@typescript-eslint/parser': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/scope-manager': 8.8.1
+      '@typescript-eslint/type-utils': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/utils': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/visitor-keys': 8.8.1
+      eslint: 9.13.0(jiti@2.3.3)
+      graphemer: 1.4.0
+      ignore: 5.3.2
+      natural-compare: 1.4.0
+      ts-api-utils: 1.4.0(typescript@5.6.3)
+    optionalDependencies:
+      typescript: 5.6.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3)':
     dependencies:
       '@typescript-eslint/scope-manager': 7.18.0
@@ -10074,6 +10057,19 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.8.1
       debug: 4.3.7(supports-color@5.5.0)
       eslint: 8.57.1
+    optionalDependencies:
+      typescript: 5.6.3
+    transitivePeerDependencies:
+      - supports-color
+
+  '@typescript-eslint/parser@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)':
+    dependencies:
+      '@typescript-eslint/scope-manager': 8.8.1
+      '@typescript-eslint/types': 8.8.1
+      '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.6.3)
+      '@typescript-eslint/visitor-keys': 8.8.1
+      debug: 4.3.7(supports-color@5.5.0)
+      eslint: 9.13.0(jiti@2.3.3)
     optionalDependencies:
       typescript: 5.6.3
     transitivePeerDependencies:
@@ -10122,6 +10118,18 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.6.3)
       '@typescript-eslint/utils': 8.8.1(eslint@8.57.1)(typescript@5.6.3)
+      debug: 4.3.7(supports-color@5.5.0)
+      ts-api-utils: 1.4.0(typescript@5.6.3)
+    optionalDependencies:
+      typescript: 5.6.3
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+
+  '@typescript-eslint/type-utils@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)':
+    dependencies:
+      '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.6.3)
+      '@typescript-eslint/utils': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
       debug: 4.3.7(supports-color@5.5.0)
       ts-api-utils: 1.4.0(typescript@5.6.3)
     optionalDependencies:
@@ -10210,6 +10218,17 @@ snapshots:
       '@typescript-eslint/types': 8.8.1
       '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.6.3)
       eslint: 8.57.1
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+
+  '@typescript-eslint/utils@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)':
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.1(eslint@9.13.0(jiti@2.3.3))
+      '@typescript-eslint/scope-manager': 8.8.1
+      '@typescript-eslint/types': 8.8.1
+      '@typescript-eslint/typescript-estree': 8.8.1(typescript@5.6.3)
+      eslint: 9.13.0(jiti@2.3.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -10600,10 +10619,6 @@ snapshots:
     dependencies:
       '@volar/source-map': 1.11.1
 
-  '@volar/language-core@2.4.5':
-    dependencies:
-      '@volar/source-map': 2.4.5
-
   '@volar/language-core@2.4.8':
     dependencies:
       '@volar/source-map': 2.4.8
@@ -10612,20 +10627,12 @@ snapshots:
     dependencies:
       muggle-string: 0.3.1
 
-  '@volar/source-map@2.4.5': {}
-
   '@volar/source-map@2.4.8': {}
 
   '@volar/typescript@1.11.1':
     dependencies:
       '@volar/language-core': 1.11.1
       path-browserify: 1.0.1
-
-  '@volar/typescript@2.4.5':
-    dependencies:
-      '@volar/language-core': 2.4.5
-      path-browserify: 1.0.1
-      vscode-uri: 3.0.8
 
   '@volar/typescript@2.4.8':
     dependencies:
@@ -10719,7 +10726,7 @@ snapshots:
 
   '@vue/devtools-core@7.4.4(vite@5.4.10(@types/node@16.18.11)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3))':
     dependencies:
-      '@vue/devtools-kit': 7.4.4
+      '@vue/devtools-kit': 7.6.2
       '@vue/devtools-shared': 7.6.2
       mitt: 3.0.1
       nanoid: 3.3.7
@@ -10822,7 +10829,7 @@ snapshots:
       eslint: 9.13.0(jiti@2.3.3)
       eslint-plugin-vue: 9.30.0(eslint@9.13.0(jiti@2.3.3))
       fast-glob: 3.3.2
-      typescript-eslint: 8.12.2(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      typescript-eslint: 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
       vue-eslint-parser: 9.4.3(eslint@9.13.0(jiti@2.3.3))
     optionalDependencies:
       typescript: 5.6.3
@@ -10859,7 +10866,7 @@ snapshots:
 
   '@vue/language-core@2.1.6(typescript@5.6.3)':
     dependencies:
-      '@volar/language-core': 2.4.5
+      '@volar/language-core': 2.4.8
       '@vue/compiler-dom': 3.5.12
       '@vue/compiler-vue2': 2.7.16
       '@vue/shared': 3.5.12
@@ -11317,7 +11324,7 @@ snapshots:
   body-parser@1.18.3:
     dependencies:
       bytes: 3.0.0
-      content-type: 1.0.4
+      content-type: 1.0.5
       debug: 2.6.9
       depd: 1.1.2
       http-errors: 1.6.3
@@ -12738,7 +12745,7 @@ snapshots:
       array-flatten: 1.1.1
       body-parser: 1.18.3
       content-disposition: 0.5.2
-      content-type: 1.0.4
+      content-type: 1.0.5
       cookie: 0.3.1
       cookie-signature: 1.0.6
       debug: 2.6.9
@@ -13899,7 +13906,7 @@ snapshots:
       citty: 0.1.6
       clipboardy: 4.0.0
       consola: 3.2.3
-      crossws: 0.2.4
+      crossws: 0.3.1
       defu: 6.1.4
       get-port-please: 3.1.2
       h3: 1.13.0
@@ -13912,8 +13919,6 @@ snapshots:
       ufo: 1.5.4
       untun: 0.1.3
       uqr: 0.1.2
-    transitivePeerDependencies:
-      - uWebSockets.js
 
   local-pkg@0.5.0:
     dependencies:
@@ -16366,22 +16371,22 @@ snapshots:
 
   typescript-collections@1.3.3: {}
 
-  typescript-eslint@8.12.2(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3):
+  typescript-eslint@8.8.1(eslint@8.57.1)(typescript@5.6.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 8.12.2(@typescript-eslint/parser@8.12.2(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
-      '@typescript-eslint/parser': 8.12.2(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
-      '@typescript-eslint/utils': 8.12.2(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 8.8.1(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/parser': 8.8.1(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/utils': 8.8.1(eslint@8.57.1)(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
     transitivePeerDependencies:
       - eslint
       - supports-color
 
-  typescript-eslint@8.8.1(eslint@8.57.1)(typescript@5.6.3):
+  typescript-eslint@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 8.8.1(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)
-      '@typescript-eslint/parser': 8.8.1(eslint@8.57.1)(typescript@5.6.3)
-      '@typescript-eslint/utils': 8.8.1(eslint@8.57.1)(typescript@5.6.3)
+      '@typescript-eslint/eslint-plugin': 8.8.1(@typescript-eslint/parser@8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/parser': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
+      '@typescript-eslint/utils': 8.8.1(eslint@9.13.0(jiti@2.3.3))(typescript@5.6.3)
     optionalDependencies:
       typescript: 5.6.3
     transitivePeerDependencies:
@@ -16559,8 +16564,6 @@ snapshots:
       ufo: 1.5.4
     optionalDependencies:
       ioredis: 5.4.1
-    transitivePeerDependencies:
-      - uWebSockets.js
 
   untildify@3.0.3: {}
 
@@ -17191,7 +17194,7 @@ snapshots:
 
   vue-tsc@2.1.6(typescript@5.6.3):
     dependencies:
-      '@volar/typescript': 2.4.5
+      '@volar/typescript': 2.4.8
       '@vue/language-core': 2.1.6(typescript@5.6.3)
       semver: 7.6.3
       typescript: 5.6.3
