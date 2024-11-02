@@ -50,6 +50,7 @@ jobs:
       - run: turbo test:unit
       - run: turbo test:e2e:with_install
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: [ci]
     permissions:
       deployments: write
