@@ -48,4 +48,8 @@ jobs:
       ## Run tasks
       - run: turbo build
       - run: turbo test:unit
-      - run: turbo test:e2e:with_install
+
+      - name: Install playwright browsers
+        run: pnpm exec playwright install && pnpm exec playwright install-deps
+
+      - run: turbo test:e2e
