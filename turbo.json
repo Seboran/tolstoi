@@ -8,7 +8,9 @@
     "check-types": {
       "dependsOn": ["^check-types"]
     },
-    "test:unit": {},
+    "test:unit": {
+      "dependsOn": ["^build"]
+    },
     "test:e2e": {},
     "dev": {
       "persistent": true,
