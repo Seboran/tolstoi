@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { disableButtons } from './injectSymbols/disableSymbol'
 import MultiSelecteur from './MultiSelecteur.vue'
 import SelecteurDepenseur from './SelecteurDepenseur.vue'
-import StyledButton from './StyledButton.vue'
 import StyledNumberInput from './StyledNumberInput.vue'
 
 defineProps<{
@@ -16,7 +14,14 @@ const emit = defineEmits<{
   ajouterDepense: [indexDepenseur: number, montant: number, bénéficiaires: number[]]
 }>()
 
+const showErreurPasAssezNoms = defineModel<boolean>('showErreurPasAssezNoms', {
+  required: true
+})
 function ajouterDepense() {
+  if (peutAjouterDepense.value) {
+    showErreurPasAssezNoms.value = true
+    return
+  }
   if (bénéficiaires.value.length === 0) {
     return
   }
@@ -25,11 +30,11 @@ function ajouterDepense() {
     return
   }
 
+  showErreurPasAssezNoms.value = false
   emit('ajouterDepense', indexDepenseur.value, montant.value, bénéficiaires.value)
 }
 
 const peutAjouterDepense = computed(() => montant.value <= 0 || bénéficiaires.value.length === 0)
-const disabledFromParent = inject(disableButtons, false)
 </script>
 
 <template>
@@ -49,24 +54,20 @@ const disabledFromParent = inject(disableButtons, false)
     ></StyledNumberInput>
 
     <MultiSelecteur
+      class="mb-2"
       id="bénéficiaires"
       v-model="bénéficiaires"
       name="bénéficiaires"
       :nomsBalances
     ></MultiSelecteur>
 
-    <UTooltip
+    <BoutonCalculerRemboursements
+      @click="ajouterDepense"
       class="w-full"
-      :prevent="!peutAjouterDepense || disabledFromParent"
-      :popper="{ placement: 'top' }"
+      label="Ajouter une dépense"
+      :show-error-message="showErreurPasAssezNoms"
     >
-      <template #text>Vous devez renseigner une dépense positive</template>
-      <StyledButton
-        class="w-full mt-3"
-        label="Ajouter une dépense"
-        :disabled="peutAjouterDepense"
-        @click="ajouterDepense"
-      ></StyledButton>
-    </UTooltip>
+      <template #error-message> Veuillez rajouter au moins 3 noms dans la liste </template>
+    </BoutonCalculerRemboursements>
   </div>
 </template>

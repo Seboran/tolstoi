@@ -8,7 +8,6 @@ const { calculerRemboursements, retirerBalancerEtViderComptes, addBalance } =
   storeBalancesEtRemboursements
 
 const {
-  remboursementsModifies,
   calculLoading,
   historiqueDépenses,
   balances,
@@ -18,6 +17,28 @@ const {
 } = storeToRefs(storeBalancesEtRemboursements)
 
 const toaster = useTemplateRef('toaster')
+
+const erreurRemboursement = ref(false)
+function clickOnCalculerRemboursement() {
+  balances.value.length < 3
+    ? afficherErreurCalculRemboursement()
+    : calculerRemboursementsEtRetirerErreur()
+}
+
+function addBalanceEtRetirerErreur() {
+  erreurRemboursement.value = false
+  addBalance()
+}
+
+function calculerRemboursementsEtRetirerErreur() {
+  calculerRemboursements()
+  erreurRemboursement.value = false
+}
+
+function afficherErreurCalculRemboursement() {
+  toaster?.value?.afficherToaster()
+  erreurRemboursement.value = true
+}
 </script>
 
 <template>
@@ -34,15 +55,22 @@ const toaster = useTemplateRef('toaster')
           />
         </template>
       </div>
-      <StyledButton label="Ajouter une personne" @click="addBalance" />
-      <StyledButton
-        label="Calculer remboursements"
-        :disabled="!remboursementsModifies"
-        @click="balances.length < 3 ? toaster?.afficherToaster() : calculerRemboursements()"
-      ></StyledButton>
+      <StyledButton label="Ajouter une personne" @click="addBalanceEtRetirerErreur" />
+      <div>
+        <BoutonCalculerRemboursements
+          label="Calculer remboursements"
+          :show-error-message="erreurRemboursement"
+          @click="clickOnCalculerRemboursement"
+        >
+          <template #error-message>Veuillez ajouter au moins trois personnes</template>
+        </BoutonCalculerRemboursements>
+      </div>
     </template>
     <template #deuxieme-groupe v-if="historiqueDépenses.length > 0">
-      <UCommandPalette v-if="calculLoading" loading placeholder="loading" :emptyState="null" />
+      <div v-if="calculLoading" class="space-y-2">
+        <USkeleton class="h-4 w-full" />
+        <USkeleton class="h-4 w-3/4" />
+      </div>
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
     </template>
   </TemplatesBalances>

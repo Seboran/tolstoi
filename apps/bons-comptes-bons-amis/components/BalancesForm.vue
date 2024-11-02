@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import BalanceInput from '@/components/BalanceInput.vue'
-import { useThrottleFn } from '@vueuse/core'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
 import StyledButton from './StyledButton.vue'
@@ -19,20 +18,17 @@ const {
   matriceDeRemboursements
 } = storeToRefs(balancesDetailStore)
 
-const disableSelecteur = computed(() => nomsBalances.value.length < 3)
-
 const animateAjouterBouton = ref(false)
 
 const toaster = useTemplateRef('toaster')
 
-function changeAnimateAjouterBouton() {
-  toaster.value?.afficherToaster()
-  setTimeout(() => {
-    animateAjouterBouton.value = true
-    setTimeout(() => (animateAjouterBouton.value = false), 4000)
-  }, 3000)
+const showErreurPasAssezNoms = ref(false)
+function addBalanceEtEffacerErreur() {
+  addBalance()
+  if (balances.value.length > 2) {
+    showErreurPasAssezNoms.value = false
+  }
 }
-const debouncedEteindreBouton = useThrottleFn(() => changeAnimateAjouterBouton())
 </script>
 
 <template>
@@ -48,36 +44,26 @@ const debouncedEteindreBouton = useThrottleFn(() => changeAnimateAjouterBouton()
       <StyledButton
         :class="{ shake: animateAjouterBouton }"
         label="Ajouter une personne"
-        @click="addBalance"
+        @click="addBalanceEtEffacerErreur"
       />
     </template>
     <template #deuxieme-groupe>
-      <InjectorsInjectDisableButtons class="w-full" :value="disableSelecteur">
-        <UTooltip
-          class="w-full relative"
-          :prevent="!disableSelecteur"
-          :popper="{ placement: 'top' }"
-        >
-          <template #text>Vous devez ajouter au moins trois personnes</template>
-          <div
-            v-show="disableSelecteur"
-            class="absolute h-40 z-20 bg-transparent w-full"
-            @click="debouncedEteindreBouton"
-          ></div>
-          <AjoutDepenseFormulaire
-            class="w-full"
-            v-model:indexDepenseur="indexDepenseur"
-            v-model:montant="montant"
-            v-model:beneficiaire="bénéficiaires"
-            :nomsBalances="nomsBalances"
-            @ajouterDepense="ajouterDepense"
-          />
-        </UTooltip>
-      </InjectorsInjectDisableButtons>
+      <AjoutDepenseFormulaire
+        class="w-full"
+        v-model:show-erreur-pas-assez-noms="showErreurPasAssezNoms"
+        v-model:indexDepenseur="indexDepenseur"
+        v-model:montant="montant"
+        v-model:beneficiaire="bénéficiaires"
+        :nomsBalances="nomsBalances"
+        @ajouterDepense="ajouterDepense"
+      />
       <hr />
     </template>
     <template #troisieme-groupe>
-      <UCommandPalette v-if="isLoading" loading placeholder="loading" :empty-state="null" />
+      <div v-if="isLoading" class="space-y-2">
+        <USkeleton class="h-4 w-full" />
+        <USkeleton class="h-4 w-3/4" />
+      </div>
 
       <AffichageRemboursementsV2 v-else :matriceDeRemboursements :nomsBalances />
       <h2 class="text-lg">Historique dépenses :</h2>
