@@ -1,10 +1,10 @@
 import { fileURLToPath } from 'node:url'
-import { configDefaults, defineProject, mergeConfig } from 'vitest/config'
+import { configDefaults, defineConfig, mergeConfig } from 'vitest/config'
 import viteConfig from './vite.config'
 
 export default mergeConfig(
   viteConfig,
-  defineProject({
+  defineConfig({
     test: {
       environment: 'happy-dom',
       exclude: [...configDefaults.exclude, 'e2e/*'],

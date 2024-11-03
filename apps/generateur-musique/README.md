@@ -1,27 +1,46 @@
-# Tu sais résoudre un sudoku ? Tu sais composer de la musique.
+# app-musique
 
-Ce projet a pour but de permettre aux gens d'apprendre la musique, à composer la musique et j'oserais dire à comprendre la musique.
+This template should help get you started developing with Vue 3 in Vite.
 
-Hélas ce n'est pas un chemin facile
+## Recommended IDE Setup
 
-## La structure
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-Le projet est en deux parties :
+## Type Support for `.vue` Imports in TS
 
-1. La partie qui fait de la musique
-2. L'algorithme de génération de contenu procédural
-3. Un démonstrateur de cet algorithme appliqué aux sudokus et un petit peu à la musique
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-Aujourd'hui, le projet a du mal à généraliser l'algorithme de sudokus à de la musique en général.
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-## La vision
+1. Disable the built-in TypeScript Extension
+   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-Ce projet doit permettre de transformer des émotions ou des concepts en des accords, en guidant l'utilisateur dans ses choix. Par exemple, en donnant un aperçu d'une progression d'accord, ou en donnant des pistes pour les accords suivants.
+## Customize configuration
 
-Une partie de l'appli devra permettre d'expliquer des concepts comme les accords, les gammes, les cadences, la dissonance.
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Zieuter
+## Project Setup
 
-Le sudoku : https://generateur-musique-app-sudoku.vercel.app
+```sh
+pnpm install
+```
 
-La musique : https://vercel.com/seboran/generateur-musique-app-musique
+### Compile and Hot-Reload for Development
+
+```sh
+pnpm dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+pnpm build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+pnpm test:unit
+```

@@ -3,13 +3,13 @@ import {
   mergeConfig,
   defineConfig,
   configDefaults,
-  defineProject,
+  defineConfig,
 } from 'vitest/config'
 import viteConfig from './vite.config'
 
 export default mergeConfig(
   viteConfig,
-  defineProject({
+  defineConfig({
     test: {
       environment: 'happy-dom',
       globals: true,
