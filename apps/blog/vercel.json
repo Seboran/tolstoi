@@ -35,5 +35,8 @@
   ],
   "github": {
     "autoJobCancellation": true
+  },
+  "git": {
+    "deploymentEnabled": false
   }
 }
