@@ -20,7 +20,8 @@
     "lint": "eslint . --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "test:e2e": "pnpm playwright test",
-    "test:e2e:with_install": "pnpm exec playwright install && pnpm exec playwright install-deps && pnpm playwright test"
+    "pull": "vercel pull --yes --environment=production",
+    "deploy": "vercel deploy --prod --archive=tgz"
   },
   "dependencies": {
     "@nuxt/ui": "^2.18.6",
