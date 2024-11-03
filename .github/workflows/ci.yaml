@@ -64,7 +64,7 @@ jobs:
           version: 9.12.3
 
       - name: Install Vercel CLI
-        run: pnpm install --global vercel@latest
+        run: pnpm install --global vercel@latest && turbo
 
       - name: Pull vercel environments
         run: turbo pull -- --token=${{ secrets.VERCEL_TOKEN }}
