@@ -1,10 +1,13 @@
+import path from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
 
+const rootDir = fileURLToPath(new URL('../..', import.meta.url))
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   alias: {
-    '@': fileURLToPath(new URL('.', import.meta.url))
+    '@': fileURLToPath(new URL('.', import.meta.url)),
+    pinia: path.resolve(rootDir, 'node_modules/pinia/dist/pinia.mjs')
   },
   devtools: { enabled: true },
   modules: [
