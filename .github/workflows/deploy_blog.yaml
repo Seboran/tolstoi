@@ -1,10 +1,9 @@
-name: Vercel Deploy prod
-
+name: Vercel Bons Comptes Bons Amis Production Deployment
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
 on:
   workflow_call:
-    inputs:
-      VERCEL_PROJECT_ID:
-        type: string
     outputs:
       url:
         description: 'The URL of the production deployment'
@@ -14,9 +13,6 @@ jobs:
     permissions:
       deployments: write
     runs-on: ubuntu-latest
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ inputs.VERCEL_PROJECT_ID }}
     outputs:
       url: ${{ steps.vercel-deploy.outputs.preview_url}}
     steps:
@@ -31,11 +27,12 @@ jobs:
       - uses: pnpm/action-setup@v4
 
         with:
-          version: 9.12.3
+          version: 9
       - name: Install Vercel CLI
 
         run: pnpm install --global vercel@latest
       - name: Pull Vercel Environment Information
+        working-directory: apps/blog
 
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       - uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2
@@ -47,12 +44,13 @@ jobs:
           initial-status: in_progress
       - name: Deploy Project Artifacts to Vercel
         id: vercel-deploy
-
+        working-directory: apps/blog
         run: |
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
+          npx turbo-ignore && vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
           cat deployment-url.txt
           echo "preview_url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
       - name: Debug github output
+        working-directory: apps/blog
         run: echo ${{ steps.vercel-deploy.outputs.preview_url }}
       - name: Update deployment status (success)
         if: success()
