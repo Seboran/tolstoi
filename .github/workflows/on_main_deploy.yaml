@@ -15,6 +15,8 @@ jobs:
     permissions:
       deployments: write
     runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ inputs.VERCEL_PROJECT_ID }}
     outputs:
       url: ${{ steps.vercel-deploy.outputs.preview_url}}
     steps:
