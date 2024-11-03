@@ -7,7 +7,7 @@
     "start": "nodemon src/playground.ts --watch src",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "build:local": "tsc",
+    "build": "tsc",
     "prepublish": "ctix create --overwrite --useRootDir && tsc"
   },
   "devDependencies": {

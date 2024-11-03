@@ -18,7 +18,7 @@
   },
   "scripts": {
     "dev": "nodemon --watch src -e vue,ts --exec \"pnpm build\"",
-    "build:local": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
@@ -42,6 +42,7 @@
     "tailwindcss": "3.4.14",
     "typescript": "5.6.3",
     "vite": "5.4.10",
+    "vite-plugin-dts": "^4.3.0",
     "vitest": "2.0.5",
     "vue-tsc": "2.1.6"
   }
