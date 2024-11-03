@@ -15,6 +15,14 @@
     "dev": {
       "persistent": true,
       "cache": false
+    },
+    "pull": {
+      "env": ["VERCEL_TOKEN", "VERCEL_ORG_ID", "VERCEL_BLOG_PROJECT_ID"],
+      "cache": false
+    },
+    "deploy": {
+      "dependsOn": ["^pull"],
+      "env": ["VERCEL_TOKEN", "VERCEL_ORG_ID", "VERCEL_BLOG_PROJECT_ID"]
     }
   }
 }
