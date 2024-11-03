@@ -16,13 +16,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vitest/coverage-v8": "2.0.5",
-    "happy-dom": "15.7.4",
+    "@vitest/coverage-v8": "2.1.4",
+    "happy-dom": "15.8.0",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.8",
     "turbo": "2.2.3",
     "typescript": "5.6.3",
-    "vitest": "2.0.5"
+    "vitest": "2.1.4"
   },
   "optionalDependencies": {
     "@vitest/ui": "^2.0.0"
