@@ -53,3 +53,28 @@ jobs:
         run: pnpm exec playwright install && pnpm exec playwright install-deps
 
       - run: turbo test:e2e
+
+  deploy-bons-comptes-bons-amis:
+    needs: [ci]
+    permissions:
+      deployments: write
+    uses: './.github/workflows/on_main_deploy.yaml'
+    with:
+      VERCEL_PROJECT_ID: secrets.VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID
+    secrets: inherit
+  deploy-blog:
+    needs: [ci]
+    permissions:
+      deployments: write
+    uses: './.github/workflows/on_main_deploy.yaml'
+    with:
+      VERCEL_PROJECT_ID: secrets.VERCEL_BLOG_PROJECT_ID
+    secrets: inherit
+  deploy-ethereum-wallet-generator:
+    needs: [ci]
+    permissions:
+      deployments: write
+    uses: './.github/workflows/on_main_deploy.yaml'
+    with:
+      VERCEL_PROJECT_ID: secrets.VERCEL_ETHEREUM_WALLET_GENERATOR_PROJECT_ID
+    secrets: inherit

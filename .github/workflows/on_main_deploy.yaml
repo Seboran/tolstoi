@@ -1,0 +1,71 @@
+name: Vercel Deploy prod
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+on:
+  workflow_call:
+    inputs:
+      VERCEL_PROJECT_ID:
+        type: string
+    outputs:
+      url:
+        description: 'The URL of the production deployment'
+        value: ${{ jobs.Deploy-Production.outputs.url }}
+jobs:
+  Deploy-Production:
+    permissions:
+      deployments: write
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.vercel-deploy.outputs.preview_url}}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        id: cache
+        with:
+          path: |
+            README.md
+          lookup-only: true
+          key: ${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'components/**', 'api/**', 'app.vue', 'requirements.txt', 'e2e/**') }}-deploy-prod
+      - uses: pnpm/action-setup@v4
+
+        with:
+          version: 9
+      - name: Install Vercel CLI
+
+        run: pnpm install --global vercel@latest
+      - name: Pull Vercel Environment Information
+
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2
+        id: deployment
+
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: production
+          initial-status: in_progress
+      - name: Deploy Project Artifacts to Vercel
+        id: vercel-deploy
+
+        run: |
+          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
+          cat deployment-url.txt
+          echo "preview_url=$(cat deployment-url.txt)" >> $GITHUB_OUTPUT
+      - name: Debug github output
+        run: echo ${{ steps.vercel-deploy.outputs.preview_url }}
+      - name: Update deployment status (success)
+        if: success()
+        uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2
+        with:
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.vercel-deploy.outputs.preview_url }}
+          state: 'success'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+
+      - name: Update deployment status (failure)
+        if: failure()
+        uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2
+        with:
+          token: '${{ github.token }}'
+          environment-url: ${{ steps.vercel-deploy.outputs.preview_url }}
+          state: 'failure'
+          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
