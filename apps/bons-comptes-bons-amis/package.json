@@ -21,7 +21,7 @@
     "format": "prettier --write src/",
     "test:e2e": "pnpm playwright test",
     "pull": "vercel pull --yes --environment=production",
-    "deploy": "vercel deploy --prod --archive=tgz"
+    "deploy": "vercel build --prod && vercel deploy --prebuilt --prod --archive=tgz"
   },
   "dependencies": {
     "@nuxt/ui": "^2.18.6",
