@@ -77,7 +77,7 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy bons comptes bons amis
-        run: npx turbo-ignore --filter bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore -d ./apps/bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy-blog:
     if: github.ref == 'refs/heads/main'
@@ -100,4 +100,4 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy blog
-        run: npx turbo-ignore --filter blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore -d ./apps/blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
