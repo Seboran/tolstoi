@@ -1,5 +1,5 @@
 'use client'
-import { ChangeEvent, useState } from 'react'
+import { type ChangeEvent, useState } from 'react'
 
 export function InputMotsAEcrire() {
   const mots = ['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']
@@ -11,12 +11,14 @@ export function InputMotsAEcrire() {
 
   function filterKeyDownAndSetDerniereLettre(e: ChangeEvent<HTMLInputElement>) {
     const motEcrit = e.target.value
-    if (
+    const derniereLettreTapee = motEcrit.at(-1) ?? ''
+    const isBonneLettreATaper =
+      derniereLettreTapee === '^' ||
       mots
         .join(' ')
         .at(motEcrit.length - 1)
-        ?.toLowerCase() === (motEcrit.at(-1) ?? '').toLowerCase()
-    ) {
+        ?.toLowerCase() === derniereLettreTapee.toLowerCase()
+    if (isBonneLettreATaper) {
       setShowErreur(false)
       setTextCopié(motEcrit)
     } else {
