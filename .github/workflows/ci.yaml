@@ -45,6 +45,9 @@ jobs:
           sudo apt-get update
           npx turbo-ignore -d packages/nirinapass || sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Install python
         run: npx turbo-ignore || pip install -r requirements.txt
         working-directory: apps/bons-comptes-bons-amis
