@@ -53,8 +53,9 @@ jobs:
       - run: turbo build
       - run: turbo test:unit
 
+      - run: pnpm exec playwright install
       - name: Install playwright browsers
-        run: npx turbo-ignore --task test:e2e -d apps/blog || npx turbo-ignore --task test:e2e -d apps/bons-comptes-bons-amis || pnpm exec playwright install && pnpm exec playwright install-deps
+        run: npx turbo-ignore --task test:e2e -d apps/blog || npx turbo-ignore --task test:e2e -d apps/bons-comptes-bons-amis || pnpm exec playwright install-deps
 
       - run: turbo test:e2e
 
