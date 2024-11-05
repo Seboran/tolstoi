@@ -101,3 +101,26 @@ jobs:
 
       - name: Deploy blog
         run: npx turbo-ignore -d ./apps/blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+
+  deploy-clavier-turbo-rapide:
+    if: github.ref == 'refs/heads/main'
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_CLAVIER_TURBO_RAPIDE_PROJECT_ID }}
+    runs-on: ubuntu-latest
+    needs: [ci]
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.3
+
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest turbo
+
+      - name: Pull vercel environments
+        run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy blog
+        run: npx turbo-ignore -d ./apps/blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
