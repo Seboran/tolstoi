@@ -16,12 +16,12 @@
     "@playwright/test": "1.48.2",
     "@tailwindcss/typography": "0.5.15",
     "@tryghost/content-api": "1.11.21",
-    "@types/node": "22.8.7",
+    "@types/node": "22.9.0",
     "@vueuse/core": "11.2.0",
     "fs-extra": "11.2.0",
     "js-yaml": "4.1.0",
     "tailwindcss": "3.4.14",
-    "vitepress": "1.4.4",
+    "vitepress": "1.5.0",
     "vue": "3.5.12"
   },
   "engines": {
