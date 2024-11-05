@@ -2,7 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "outputs": ["dist/**", ".output/**", ".vitepress/dist/**"],
+      "outputs": [
+        "dist/**",
+        ".output/**",
+        ".vitepress/dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ],
       "dependsOn": ["^build"]
     },
     "check-types": {
