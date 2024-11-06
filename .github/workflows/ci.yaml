@@ -61,7 +61,7 @@ jobs:
       - name: Install playwright browsers
         run: pnpm exec playwright install-deps
 
-      - run: turbo test:e2e
+      - run: turbo test:e2e --concurrency=1
 
   deploy-bons-comptes-bons-amis:
     if: github.ref == 'refs/heads/main'
