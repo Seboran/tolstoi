@@ -1,9 +1,7 @@
 'use client'
 import { type ChangeEvent, useState } from 'react'
 
-export function InputMotsAEcrire() {
-  const mots = ['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']
-
+export function InputMotsAEcrire({ mots }: { mots: string[] }) {
   const [textCopie, setTextCopié] = useState('')
   const [derniereLettre, setDerniereLettre] = useState('')
 
@@ -28,23 +26,22 @@ export function InputMotsAEcrire() {
   }
   return (
     <>
-      <label>
-        Votre saisie
-        <div className="flex flex-row gap-2">
-          {mots.map((mot) => (
-            <div key={mot}>{mot}</div>
-          ))}
-        </div>
-        <input
-          name="zone-text"
-          value={textCopie}
-          onChange={(e) => filterKeyDownAndSetDerniereLettre(e)}
-          className="w-full text-black"
-        />
-        <div>Texte copié :{textCopie}</div>
-        <div>Dernière lettre : {derniereLettre}</div>
-        {showErreur ? <div>Erreur de saisie !</div> : null}
-      </label>
+      Votre saisie
+      <div className="flex flex-row gap-2">
+        {mots.map((mot) => (
+          <div key={mot}>{mot}</div>
+        ))}
+      </div>
+      <label htmlFor="zone-text">Zone de texte</label>
+      <input
+        id="zone-text"
+        value={textCopie}
+        onChange={(e) => filterKeyDownAndSetDerniereLettre(e)}
+        className="w-full text-black"
+      />
+      <div>Texte copié :{textCopie}</div>
+      <div>Dernière lettre : {derniereLettre}</div>
+      {showErreur ? <div>Erreur de saisie !</div> : null}
     </>
   )
 }
