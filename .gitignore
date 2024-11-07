@@ -45,3 +45,4 @@ __pycache__
 coverage
 xcuserdata
 vite.config.js.timestamp-*
+.vercel
