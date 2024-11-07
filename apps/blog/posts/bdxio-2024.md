@@ -21,9 +21,7 @@ Sinon, je vous invite à échanger à propos de plusieurs de mes inspirations po
 
 ## La musique de mon père
 
-Vous pouvez écouter directement sur spotify via ce lien : 
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/365QeEq2T2B2OyLybLWbFF?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+Vous pouvez écouter directement sur spotify via ce lien : <https://open.spotify.com/embed/album/365QeEq2T2B2OyLybLWbFF?utm_source=generator>
 
 Ou ici pour les personnes utilisant apple music :
 

@@ -24,7 +24,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'none'; default-src 'none'; object-src 'none'; script-src 'self' https: embed.music.apple.com open.spotify.com; style-src 'self' 'unsafe-inline'; img-src https: *; connect-src 'self'"
+          "value": "frame-ancestors 'none'; default-src 'none' https: *.apple.com *.spotify.com; object-src 'none'; script-src 'self' https: *.sentry.io; style-src 'self' 'unsafe-inline'; img-src https: *; connect-src 'self'"
         },
         {
           "key": "Referrer-Policy",
