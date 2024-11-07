@@ -25,7 +25,7 @@
     "vue": "3.5.12"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "packageManager": "pnpm@9.12.3"
 }
