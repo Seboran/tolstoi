@@ -15,8 +15,6 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 2
       - uses: pnpm/action-setup@v4
         with:
           version: 9.12.3
@@ -72,7 +70,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          fetch-depth: 2
+          fetch-depth: 11
       - uses: pnpm/action-setup@v4
         with:
           version: 9.12.3
@@ -84,7 +82,7 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy bons comptes bons amis
-        run: npx turbo-ignore -d ./apps/bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy-blog:
     if: github.ref == 'refs/heads/main'
@@ -97,7 +95,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          fetch-depth: 2
+          fetch-depth: 11
       - uses: pnpm/action-setup@v4
         with:
           version: 9.12.3
@@ -109,7 +107,7 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy blog
-        run: npx turbo-ignore -d ./apps/blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/blog || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy-clavier-turbo-rapide:
     if: github.ref == 'refs/heads/main'
@@ -122,7 +120,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          fetch-depth: 2
+          fetch-depth: 11
       - uses: pnpm/action-setup@v4
         with:
           version: 9.12.3
@@ -134,4 +132,4 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy blog
-        run: npx turbo-ignore -d ./apps/clavier-turbo-rapide || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/clavier-turbo-rapide || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
