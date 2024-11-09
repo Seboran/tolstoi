@@ -1,4 +1,4 @@
-import NOMS_AU_HASARD from './nomsAuHasard.json'
+import NOMS_AU_HASARD from '@/composables/nomsAuHasard.json'
 import { computed, ref } from 'vue'
 
 export function useBalances() {
@@ -11,7 +11,7 @@ export function useBalances() {
 
   function addBalance() {
     balances.value.push(0)
-    nomsBalances.value.push(NOMS_AU_HASARD[nomsBalances.value.length])
+    nomsBalances.value.push(NOMS_AU_HASARD[nomsBalances.value.length] ?? '')
   }
 
   return {

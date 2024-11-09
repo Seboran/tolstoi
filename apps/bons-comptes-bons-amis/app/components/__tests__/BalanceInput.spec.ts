@@ -1,7 +1,7 @@
 import { userEvent } from '@testing-library/user-event'
 import { render, screen } from '@testing-library/vue'
 import { describe, expect, test } from 'vitest'
-import BalanceInput from '../BalanceInput.vue'
+import BalanceInput from '@/components/BalanceInput.vue'
 
 describe('Balance input', () => {
   test('change name', async () => {

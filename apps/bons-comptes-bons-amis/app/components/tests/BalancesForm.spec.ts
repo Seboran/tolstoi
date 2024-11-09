@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event'
 import { render, waitFor } from '@testing-library/vue'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
-import BalancesForm from '../BalancesForm.vue'
+import BalancesForm from '@/components/BalancesForm.vue'
 import type { BalanceSolutionResponse } from '../../composables/useFetchBalances'
 import { createPinia } from 'pinia'
 
