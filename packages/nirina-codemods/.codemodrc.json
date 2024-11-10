@@ -1,0 +1,12 @@
+{
+  "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
+  "version": "0.0.1",
+  "private": false,
+  "name": "vue-2-to-vue-3-refs",
+  "engine": "jscodeshift",
+  "meta": {
+    "tags": ["vue", "3", "migration"],
+    "git": "https://github.com/Seboran/monorepo/tree/main/packages/nirina-codemods"
+  },
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.vue"]
+}
