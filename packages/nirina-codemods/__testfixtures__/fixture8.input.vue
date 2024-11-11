@@ -1,3 +1,4 @@
+<script>
 export default {
   data: () => ({ count: 0 }),
   methods: {
@@ -6,3 +7,4 @@ export default {
     },
   },
 };
+</script>

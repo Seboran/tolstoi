@@ -1,3 +1,4 @@
+<script>
 // convert vue2 script component into vue 3 setup
 export default {
   methods: {
@@ -6,3 +7,4 @@ export default {
     },
   },
 };
+</script>
