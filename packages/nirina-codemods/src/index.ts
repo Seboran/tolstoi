@@ -85,7 +85,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
       // Transform the extracted JavaScript content from <script> tags
       const transformedScriptContent = transformCode(scriptContent)
       // Replace the original <script> content with the transformed content, preserving the original opening tag
-      return `<script setup>\n${transformedScriptContent}\n</script>`
+      return `${openingTag.replace('>', ' setup>')}\n${transformedScriptContent}\n${closingTag}`
     },
   )
 }
