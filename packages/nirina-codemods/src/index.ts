@@ -51,6 +51,12 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
               })
               // Remove the data property from the export default object
               declaration.properties = properties.filter((p) => p !== prop)
+
+              // Remove export default if empty
+              if (declaration.properties.length === 0) {
+                path.prune()
+              }
+
               dirtyFlag = true
             }
           }
