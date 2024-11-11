@@ -2,6 +2,7 @@ import type {
   API,
   ArrayExpression,
   FileInfo,
+  FunctionExpression,
   Identifier,
   Options,
 } from 'jscodeshift'
@@ -21,6 +22,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
       if (j.ObjectExpression.check(declaration)) {
         const properties = declaration.properties
         properties.forEach((prop) => {
+          // Convert data properties to refs
           if (
             j.ObjectProperty.check(prop) &&
             (prop.key as Identifier).name === 'data'
@@ -63,6 +65,44 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         })
       }
     })
+
+    // Transform methods to standalone functions
+    root.find(j.ExportDefaultDeclaration).forEach((path) => {
+      const properties = path.value.declaration.properties
+      properties.forEach((prop) => {
+        if (j.ObjectProperty.check(prop) && prop.key.name === 'methods') {
+          const methodsObject = prop.value
+          if (j.ObjectExpression.check(methodsObject)) {
+            methodsObject.properties.forEach((methodProp) => {
+              if (j.ObjectProperty.check(methodProp)) {
+                const key = methodProp.key.name
+                const func = methodProp.value as FunctionExpression
+
+                const standaloneFunction = j.functionDeclaration(
+                  j.identifier(key),
+                  func.params,
+                  func.body,
+                  func.async,
+                )
+
+                if (func.async) {
+                  standaloneFunction.generator = false
+                  standaloneFunction.async = true
+                }
+                // Ensure the function is not a generator
+                j(path).insertBefore(standaloneFunction)
+                dirtyFlag = true
+              }
+            })
+          }
+        }
+      })
+    })
+
+    // Remove the original export default object if transformations were made
+    if (dirtyFlag) {
+      root.find(j.ExportDefaultDeclaration).remove()
+    }
 
     // Add import { ref } from 'vue' if data was transformed
     if (hasDataTransformed) {
