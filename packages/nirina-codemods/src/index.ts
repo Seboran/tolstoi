@@ -64,6 +64,24 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
           }
         })
       }
+
+      if (path.node.declaration) {
+        const properties = path.node.declaration.properties
+
+        // Extract props
+        const props = properties.find((prop) => prop.key.name === 'props')
+        if (props) {
+          const definePropsCall = j.callExpression(
+            j.identifier('defineProps'),
+            [j.objectExpression(props.value.properties)],
+          )
+          const definePropsDeclaration = j.variableDeclaration('const', [
+            j.variableDeclarator(j.identifier('props'), definePropsCall),
+          ])
+          path.insertBefore(definePropsDeclaration)
+          dirtyFlag = true
+        }
+      }
     })
 
     // Transform methods to standalone functions
@@ -87,22 +105,18 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
 
                 // Replace `this.property` with `property.value`
                 j(standaloneFunction)
-                .find(j.MemberExpression, {
+                  .find(j.MemberExpression, {
                     object: { type: 'ThisExpression' },
-                })
-                .replaceWith((memberPath) => {
-                    if (
-                        j.Identifier.check(memberPath.node.property)
-                    ) {
-                        return j.memberExpression(
-                            j.identifier(
-                                memberPath.node.property.name,
-                            ),
-                            j.identifier('value'),
-                        );
+                  })
+                  .replaceWith((memberPath) => {
+                    if (j.Identifier.check(memberPath.node.property)) {
+                      return j.memberExpression(
+                        j.identifier(memberPath.node.property.name),
+                        j.identifier('value'),
+                      )
                     }
-                    return memberPath.node;
-                });
+                    return memberPath.node
+                  })
 
                 if (func.async) {
                   standaloneFunction.generator = false
