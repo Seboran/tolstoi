@@ -21,7 +21,7 @@ const buildApi = (parser: string | undefined): API => ({
 })
 
 describe('vue/3/ref-transform', () => {
-  const [_zero, ...numbers] = [...Array(11).keys()]
+  const [_zero, ...numbers] = [...Array(12).keys()]
   it.each(numbers)('test #%d', async (number) => {
     const inputFilePath = join(
       __dirname,

@@ -85,6 +85,25 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
                   func.async,
                 )
 
+                // Replace `this.property` with `property.value`
+                j(standaloneFunction)
+                .find(j.MemberExpression, {
+                    object: { type: 'ThisExpression' },
+                })
+                .replaceWith((memberPath) => {
+                    if (
+                        j.Identifier.check(memberPath.node.property)
+                    ) {
+                        return j.memberExpression(
+                            j.identifier(
+                                memberPath.node.property.name,
+                            ),
+                            j.identifier('value'),
+                        );
+                    }
+                    return memberPath.node;
+                });
+
                 if (func.async) {
                   standaloneFunction.generator = false
                   standaloneFunction.async = true
@@ -114,7 +133,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
       dirtyFlag = true
     }
 
-    return root.toSource()
+    return dirtyFlag ? root.toSource() : undefined
   }
 
   const scriptTagRegex = /(<script[^>]*>)([\s\S]*?)(<\/script>)/gm
