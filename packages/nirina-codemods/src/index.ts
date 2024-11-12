@@ -72,7 +72,6 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         const properties = path.node.declaration.properties
 
         // Extract props
-        console.log(properties)
         const props = properties.find(
           (prop) =>
             j.ObjectProperty.check(prop) &&
@@ -84,7 +83,6 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
           j.ObjectProperty.check(props) &&
           j.ObjectExpression.check(props.value)
         ) {
-          console.log('props', props)
           const definePropsCall = j.callExpression(
             j.identifier('defineProps'),
             [j.objectExpression(props.value.properties)],
