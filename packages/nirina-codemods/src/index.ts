@@ -65,12 +65,26 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         })
       }
 
-      if (path.node.declaration) {
+      if (
+        path.node.declaration &&
+        j.ObjectExpression.check(path.node.declaration)
+      ) {
         const properties = path.node.declaration.properties
 
         // Extract props
-        const props = properties.find((prop) => prop.key.name === 'props')
-        if (props) {
+        console.log(properties)
+        const props = properties.find(
+          (prop) =>
+            j.ObjectProperty.check(prop) &&
+            j.Identifier.check(prop.key) &&
+            prop.key.name === 'props',
+        )
+        if (
+          props &&
+          j.ObjectProperty.check(props) &&
+          j.ObjectExpression.check(props.value)
+        ) {
+          console.log('props', props)
           const definePropsCall = j.callExpression(
             j.identifier('defineProps'),
             [j.objectExpression(props.value.properties)],
@@ -86,50 +100,59 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
 
     // Transform methods to standalone functions
     root.find(j.ExportDefaultDeclaration).forEach((path) => {
-      const properties = path.value.declaration.properties
-      properties.forEach((prop) => {
-        if (j.ObjectProperty.check(prop) && prop.key.name === 'methods') {
-          const methodsObject = prop.value
-          if (j.ObjectExpression.check(methodsObject)) {
-            methodsObject.properties.forEach((methodProp) => {
-              if (j.ObjectProperty.check(methodProp)) {
-                const key = methodProp.key.name
-                const func = methodProp.value as FunctionExpression
+      if (j.ObjectExpression.check(path.value.declaration)) {
+        const properties = path.value.declaration.properties
+        properties.forEach((prop) => {
+          if (
+            j.ObjectProperty.check(prop) &&
+            j.Identifier.check(prop.key) &&
+            prop.key.name === 'methods'
+          ) {
+            const methodsObject = prop.value
+            if (j.ObjectExpression.check(methodsObject)) {
+              methodsObject.properties.forEach((methodProp) => {
+                if (
+                  j.ObjectProperty.check(methodProp) &&
+                  j.Identifier.check(methodProp.key)
+                ) {
+                  const key = methodProp.key.name
+                  const func = methodProp.value as FunctionExpression
 
-                const standaloneFunction = j.functionDeclaration(
-                  j.identifier(key),
-                  func.params,
-                  func.body,
-                  func.async,
-                )
+                  const standaloneFunction = j.functionDeclaration(
+                    j.identifier(key),
+                    func.params,
+                    func.body,
+                    func.async,
+                  )
 
-                // Replace `this.property` with `property.value`
-                j(standaloneFunction)
-                  .find(j.MemberExpression, {
-                    object: { type: 'ThisExpression' },
-                  })
-                  .replaceWith((memberPath) => {
-                    if (j.Identifier.check(memberPath.node.property)) {
-                      return j.memberExpression(
-                        j.identifier(memberPath.node.property.name),
-                        j.identifier('value'),
-                      )
-                    }
-                    return memberPath.node
-                  })
+                  // Replace `this.property` with `property.value`
+                  j(standaloneFunction)
+                    .find(j.MemberExpression, {
+                      object: { type: 'ThisExpression' },
+                    })
+                    .replaceWith((memberPath) => {
+                      if (j.Identifier.check(memberPath.node.property)) {
+                        return j.memberExpression(
+                          j.identifier(memberPath.node.property.name),
+                          j.identifier('value'),
+                        )
+                      }
+                      return memberPath.node
+                    })
 
-                if (func.async) {
-                  standaloneFunction.generator = false
-                  standaloneFunction.async = true
+                  if (func.async) {
+                    standaloneFunction.generator = false
+                    standaloneFunction.async = true
+                  }
+                  // Ensure the function is not a generator
+                  j(path).insertBefore(standaloneFunction)
+                  dirtyFlag = true
                 }
-                // Ensure the function is not a generator
-                j(path).insertBefore(standaloneFunction)
-                dirtyFlag = true
-              }
-            })
+              })
+            }
           }
-        }
-      })
+        })
+      }
     })
 
     // Remove the original export default object if transformations were made
