@@ -154,9 +154,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
     })
 
     // Remove the original export default object if transformations were made
-    if (dirtyFlag) {
-      root.find(j.ExportDefaultDeclaration).remove()
-    }
+    root.find(j.ExportDefaultDeclaration).remove()
 
     // Add import { ref } from 'vue' if data was transformed
     if (hasDataTransformed) {
@@ -168,7 +166,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
       dirtyFlag = true
     }
 
-    return dirtyFlag ? root.toSource() : undefined
+    return root.toSource()
   }
 
   const scriptTagRegex = /(<script[^>]*>)([\s\S]*?)(<\/script>)/gm
@@ -178,8 +176,12 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
     (_match, openingTag, scriptContent, closingTag) => {
       // Transform the extracted JavaScript content from <script> tags
       const transformedScriptContent = transformCode(scriptContent)
-      // Replace the original <script> content with the transformed content, preserving the original opening tag
-      return `${openingTag.replace('>', ' setup>')}\n${transformedScriptContent}\n${closingTag}`
+
+      if (transformedScriptContent)
+        // Replace the original <script> content with the transformed content, preserving the original opening tag
+        return `${openingTag.replace('>', ' setup>')}\n${transformedScriptContent}\n${closingTag}`
+
+      return `${openingTag}\n${scriptContent}\n${closingTag}`
     },
   )
 }

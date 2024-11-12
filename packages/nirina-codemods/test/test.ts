@@ -78,4 +78,33 @@ describe('vue/3/ref-transform', () => {
       OUTPUT.replace(/W/gm, ''),
     )
   })
+
+  it('test import components', async () => {
+    const number = 13
+    const inputFilePath = join(
+      __dirname,
+      '..',
+      `__testfixtures__/fixture${number}.input.vue`,
+    )
+    console.log('reading input file path ', inputFilePath)
+    const INPUT = await readFile(inputFilePath, 'utf-8')
+    const OUTPUT = await readFile(
+      join(__dirname, '..', `__testfixtures__/fixture${number}.output.vue`),
+      'utf-8',
+    )
+
+    const actualOutput = transform(
+      {
+        path: 'index.js',
+        source: INPUT,
+      },
+      buildApi('tsx'),
+      {},
+    )
+
+    assert.deepEqual(
+      actualOutput?.replace(/W/gm, ''),
+      OUTPUT.replace(/W/gm, ''),
+    )
+  })
 })
