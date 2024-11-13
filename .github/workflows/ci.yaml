@@ -103,7 +103,7 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm install --global turbo netlify
 
-      - run: turbo build --filter nirina-blog
+      - run: netlify build
 
       - run: |
           npx turbo-ignore --fallback=HEAD~10 -d ./apps/blog || netlify deploy \
