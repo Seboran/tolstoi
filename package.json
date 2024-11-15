@@ -26,5 +26,8 @@
   },
   "optionalDependencies": {
     "@vitest/ui": "^2.0.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.9"
   }
 }
