@@ -3,7 +3,8 @@ on:
   push:
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-
+permissions:
+  contents: read # for checkout
 jobs:
   ci:
     concurrency:
@@ -58,60 +59,7 @@ jobs:
       - run: turbo test:unit
 
       - run: turbo test:e2e --concurrency=1
-
-  deploy-bons-comptes-bons-amis:
-    if: github.ref == 'refs/heads/main'
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID }}
-    runs-on: ubuntu-latest
-    needs: [ci]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 11
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.3
-
-      - name: Install Vercel CLI
-        run: pnpm install --global vercel@latest turbo
-
-      - name: Pull vercel environments
-        run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy bons comptes bons amis
-        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
-
-  deploy-blog:
-    if: github.ref == 'refs/heads/main'
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID }}
-    runs-on: ubuntu-latest
-    # needs: [ci]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 11
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.3
-
-      - name: Install netlify CLI
-        run: pnpm install --global turbo netlify
-
-      - name: Link project
-        run: netlify link --filter nirina-blog --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-
-      - run: |
-          netlify build \
-            --filter nirina-blog \
-
-      - run: |
-          npx turbo-ignore --fallback=HEAD~10 -d ./apps/blog || netlify deploy \
-            --site ${{ secrets.NETLIFY_BLOG_SITE_ID }} \
-            --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-            --filter nirina-blog \
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        run: pnpm dlx semantic-release
