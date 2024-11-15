@@ -26,8 +26,5 @@
   },
   "optionalDependencies": {
     "@vitest/ui": "^2.0.0"
-  },
-  "repository": {
-    "url": "https://github.com/Seboran/monorepo/"
   }
 }
