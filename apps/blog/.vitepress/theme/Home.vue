@@ -20,7 +20,7 @@ const filteredPosts = computed(() =>
           href="https://www.linkedin.com/company/zenika"
           target="_blank"
           >Zenika</a
-        >. Je suis passioné de musique, de stack javascript, mais j'adore aussi
+        >. Je suis passionné de musique, de stack javascript, mais j'adore aussi
         le partage et la bonne vibe. Motivé par une énergie détonnante et une
         bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
         soit dans le domaine du web, de l'intelligence artificielle, ou de
