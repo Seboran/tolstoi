@@ -97,8 +97,5 @@ jobs:
       - name: Pull vercel environments
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Prebuild
-        run: vercel build --prod
-
       - name: Deploy bons comptes bons amis
-        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/nirina-site || vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/nirina-site || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
