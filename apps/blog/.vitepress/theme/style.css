@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 .vp-code span {
   color: var(--shiki-dark, inherit);
@@ -15,6 +16,12 @@
   body {
     background-color: #0f172a;
   }
+}
+
+h1 {
+  font-family: 'DM Serif Text', serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 nav img {
