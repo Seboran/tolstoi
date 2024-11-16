@@ -75,3 +75,30 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
         timeout-minutes: 1
+
+  deploy-site:
+    if: github.ref == 'refs/heads/main'
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_SITE_PROJECT_ID }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 11
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.3
+
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest turbo
+
+      - name: Pull vercel environments
+        run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Prebuild
+        run: vercel build --prod
+
+      - name: Deploy bons comptes bons amis
+        run: npx turbo-ignore --fallback=HEAD~10 -d ./apps/nirina-site || vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
