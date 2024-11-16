@@ -38,24 +38,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
         with:
-          fetch-depth: 11
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.3
-
-      - name: Install netlify CLI
-        run: pnpm install --global turbo netlify
-
-      - name: Link project
-        run: netlify link --filter nirina-blog --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-
-      - run: |
-          netlify build \
-            --filter nirina-blog \
-
-      - run: |
-          npx turbo-ignore --fallback=HEAD~10 -d ./apps/blog || netlify deploy \
-            --site ${{ secrets.NETLIFY_BLOG_SITE_ID }} \
-            --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-            --filter nirina-blog \
+          publish-dir: './apps/blog/.vitepress/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
+        timeout-minutes: 1
