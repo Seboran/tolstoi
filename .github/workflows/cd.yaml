@@ -1,9 +1,6 @@
 name: deploy
 on:
-  # deploy on tag
-  push:
-    tags:
-      - '*'
+  workflow_call:
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 

@@ -60,21 +60,7 @@ jobs:
 
       - run: turbo test:e2e --concurrency=1
 
-  release:
-    name: Release
-    runs-on: ubuntu-latest
+  cd:
     needs: [ci]
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.12.3
-      - name: Use Node.js 20
-        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
-        with:
-          node-version: 20
-
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: './.github/workflows/cd.yaml'
+    secrets: inherit
