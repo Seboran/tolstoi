@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content'
 import DatePublieLe from './DatePublieLe.astro'
 interface Post {
   title: string
@@ -9,36 +10,15 @@ interface Post {
   }
   excerpt: string | undefined
 }
-const filteredPosts: Post[] = []
+const allPosts = await getCollection('posts')
+allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 {
-  filteredPosts.map(({ title, url, date, excerpt }) => (
-    <li class="py-12" v-for="{ title, url, date, excerpt } of filteredPosts">
+  allPosts.map(({ slug, data }) => (
+    <li class="py-12">
       <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
-        <DatePublieLe date={date} />
-        <div class="space-y-5 xl:col-span-3">
-          <div class="space-y-6">
-            <h2 class="text-2xl leading-8 font-bold tracking-tight">
-              <a
-                class="rainbow-animation text-gray-900 dark:text-white"
-                href={url}
-              >
-                {title}
-              </a>
-            </h2>
-            <div
-              v-if="excerpt"
-              class="prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-300"
-              v-html="excerpt"
-            ></div>
-          </div>
-          <div class="text-base leading-6 font-medium">
-            <a class="link" aria-label="read more" href={url}>
-              Lire plus →
-            </a>
-          </div>
-        </div>
+        <a href={`/posts/${slug}/`}>{data.title}</a>
       </article>
     </li>
   ))
