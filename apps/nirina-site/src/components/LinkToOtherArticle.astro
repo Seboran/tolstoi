@@ -1,0 +1,17 @@
+---
+import { type CollectionEntry } from 'astro:content'
+interface Props {
+  nextPost: CollectionEntry<'posts'>
+}
+
+const { nextPost } = Astro.props
+---
+
+<div class="py-8">
+  <h2 class="text-xs tracking-wide uppercase text-gray-500 dark:text-white">
+    <slot />
+  </h2>
+  <div class="link">
+    <a href=`/posts/${nextPost?.slug}`>{nextPost?.data.title}</a>
+  </div>
+</div>
