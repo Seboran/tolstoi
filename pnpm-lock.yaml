@@ -478,9 +478,15 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.4
         version: 0.9.4(prettier@3.3.3)(typescript@5.6.3)
+      '@astrojs/tailwind':
+        specifier: ^5.1.2
+        version: 5.1.2(astro@4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
       astro:
         specifier: ^4.16.13
         version: 4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3)
+      tailwindcss:
+        specifier: ^3.4.15
+        version: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -639,7 +645,7 @@ importers:
         version: 5.6.3
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
+        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4(vitest@2.1.4))(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/nirinapass:
     dependencies:
@@ -899,6 +905,12 @@ packages:
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/tailwind@5.1.2':
+    resolution: {integrity: sha512-IvOF0W/dtHElcXvhrPR35nHmhyV3cfz1EzPitMGtU7sYy9Hci3BNK1To6FWmVuuNKPxza1IgCGetSynJZL7fOg==}
+    peerDependencies:
+      astro: ^3.0.0 || ^4.0.0 || ^5.0.0-beta.0
+      tailwindcss: ^3.0.24
 
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
@@ -9682,6 +9694,16 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
+  '@astrojs/tailwind@5.1.2(astro@4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))':
+    dependencies:
+      astro: 4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3)
+      autoprefixer: 10.4.20(postcss@8.4.49)
+      postcss: 8.4.49
+      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
+      tailwindcss: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
+    transitivePeerDependencies:
+      - ts-node
+
   '@astrojs/telemetry@3.1.0':
     dependencies:
       ci-info: 4.0.0
@@ -12321,7 +12343,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -12398,7 +12420,7 @@ snapshots:
       sirv: 3.0.0
       tinyglobby: 0.2.10
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0)
 
   '@vitest/utils@1.6.0':
     dependencies:
@@ -19829,7 +19851,7 @@ snapshots:
       - vue-router
       - webpack-sources
 
-  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4)(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0):
+  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4(vitest@2.1.4))(happy-dom@15.10.2)(jsdom@25.0.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0

@@ -1,0 +1,20 @@
+---
+interface Props {
+  show: boolean
+}
+
+const { show } = Astro.props
+---
+
+<template>
+  <a class="text-xl" href="/" aria-label="Site de Nirina Rabeson">
+    ✨
+    {
+      show && (
+        <span class="rainbow-animation hidden md:inline dark:text-white">
+          Nirina Rabeson
+        </span>
+      )
+    }
+  </a>
+</template>
