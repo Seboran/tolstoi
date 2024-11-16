@@ -1,5 +1,7 @@
 ---
 import AnimatedBoutonMeContacter from '../components/AnimatedBoutonMeContacter.astro'
+import '../styles/theme.css'
+
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
@@ -10,373 +12,80 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
 
 <!doctype html>
 <meta charset="utf-8" />
-<div class="antialiased">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-    <nav class="flex justify-between items-center pb-10 font-bold">
-      <a class="text-xl" href="/" aria-label="Site de Nirina Rabeson">
-        ✨
-        {
-          showNirinaRabesonInNavBar && (
-            <span class="rainbow-animation hidden md:inline dark:text-white">
-              Nirina Rabeson
-            </span>
-          )
-        }
-      </a>
-      <div class="flex justify-between items-center py-10 font-bold gap-5">
-        <div
-          class="hidden md:block text-sm text-gray-500 dark:text-white leading-5"
-        >
-          <a
-            class="hover:text-gray-700 dark:hover:text-gray-200"
-            href="/projets">Mes projets</a
-          >
-        </div>
-        <div
-          class="hidden sm:block text-sm text-gray-500 dark:text-white leading-5"
-        >
-          <a
-            class="hover:text-gray-700 dark:hover:text-gray-200"
-            href="/presentations">Mes presentations</a
-          >
-        </div>
-        <AnimatedBoutonMeContacter />
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta lang="fr-FR" />
+  <title>{title}</title>
+  <meta
+    property="og:image:secure_url"
+    content="https://www.nirinarabeson.fr/card.png"
+  />
+  <meta property="og:image" content="https://www.nirinarabeson.fr/card.png" />
+  <meta
+    property="og:image:url"
+    content="https://www.nirinarabeson.fr/card.png"
+  />
+  <meta name="twitter:site" content="@nirinarabeson.fr" />
+  <meta name="twitter:title" content="Blog de Nirina Rabeson" />
+  <meta property="og:title" content="Blog de Nirina Rabeson" />
+  <meta name="twitter:image" content="https://www.nirinarabeson.fr/card.png" />
+  <meta property="og:type" content="homepage" />
+  <meta
+    name="twitter:description"
+    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
+  />
+  <meta
+    property="og:description"
+    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
+  />
+  <meta
+    name="description"
+    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
+  />
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>"
+  />
+</head>
+<body>
+  <div>
+    <div class="antialiased">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <nav class="flex justify-between items-center pb-10">
+          <a class="text-xl" href="/" aria-label="Site de Nirina Rabeson">
+            ✨
+            {
+              showNirinaRabesonInNavBar && (
+                <span class="rainbow-animation hidden md:inline dark:text-white">
+                  Nirina Rabeson
+                </span>
+              )
+            }
+          </a>
+          <div class="flex justify-between items-center py-10 font-bold gap-5">
+            <div
+              class="hidden md:block text-sm text-gray-500 dark:text-white leading-5"
+            >
+              <a
+                class="hover:text-gray-700 dark:hover:text-gray-200"
+                href="/projets">Mes projets</a
+              >
+            </div>
+            <div
+              class="hidden sm:block text-sm text-gray-500 dark:text-white leading-5"
+            >
+              <a
+                class="hover:text-gray-700 dark:hover:text-gray-200"
+                href="/presentations">Mes presentations</a
+              >
+            </div>
+            <AnimatedBoutonMeContacter />
+          </div>
+        </nav>
       </div>
-    </nav>
+      <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+        <slot />
+      </main>
+    </div>
   </div>
-  <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-    <slot />
-  </main>
-</div>
-
-<style>
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-
-  .appear-enter-active,
-  .appear-leave-active {
-    transition: opacity 0.5s ease;
-    transition-delay: 0.225s;
-  }
-
-  .appear-enter-from,
-  .appear-leave-to {
-    opacity: 0;
-  }
-
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-  .astro-a {
-    position: absolute;
-    top: -32px;
-    left: 50%;
-    transform: translatex(-50%);
-    width: 220px;
-    height: auto;
-    z-index: -1;
-  }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .vp-code span {
-    color: var(--shiki-dark, inherit);
-  }
-
-  :root {
-    --c-brand: #4b8d97;
-    --c-brand-light: #75a8b0;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #0f172a;
-    }
-  }
-
-  h1 {
-    font-family: 'DM Serif Text', serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  nav img {
-    vertical-align: middle;
-  }
-
-  p img {
-    margin: 0px auto;
-  }
-
-  .prose hr {
-    border-top: 1px solid #e5e7eb;
-  }
-
-  .link {
-    color: var(--c-brand);
-  }
-
-  .link:hover {
-    color: var(--c-brand-light);
-  }
-
-  .header-anchor {
-    display: none;
-  }
-
-  h3 .header-anchor {
-    display: inline-block;
-    position: absolute;
-    left: -1em;
-    text-decoration: none;
-    color: var(--c-brand);
-  }
-
-  h3 .header-anchor:before {
-    content: '#';
-  }
-
-  /**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
- * Based on https://github.com/chriskempson/tomorrow-theme
- *
- * @author Rose Pritchard
- */
-  .token.comment,
-  .token.block-comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata {
-    color: #999;
-  }
-
-  .token.punctuation {
-    color: #ccc;
-  }
-
-  .token.tag,
-  .token.attr-name,
-  .token.namespace,
-  .token.deleted {
-    color: #e2777a;
-  }
-
-  .token.function-name {
-    color: #6196cc;
-  }
-
-  .token.boolean,
-  .token.number,
-  .token.function {
-    color: #f08d49;
-  }
-
-  .token.property,
-  .token.class-name,
-  .token.constant,
-  .token.symbol {
-    color: #f8c555;
-  }
-
-  .token.selector,
-  .token.important,
-  .token.atrule,
-  .token.keyword,
-  .token.builtin {
-    color: #cc99cd;
-  }
-
-  .token.string,
-  .token.char,
-  .token.attr-value,
-  .token.regex,
-  .token.variable {
-    color: #7ec699;
-  }
-
-  .token.operator,
-  .token.entity,
-  .token.url {
-    color: #67cdcc;
-  }
-
-  .token.important,
-  .token.bold {
-    font-weight: bold;
-  }
-
-  .token.italic {
-    font-style: italic;
-  }
-
-  .token.entity {
-    cursor: help;
-  }
-
-  .token.inserted {
-    color: #67cdcc;
-  }
-
-  button.copy {
-    display: none;
-  }
-
-  span.lang {
-    position: absolute;
-    right: 0.5em;
-    font-size: 0.75em;
-    color: #999;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-      'Liberation Mono', 'Courier New', monospace;
-  }
-
-  .custom-block {
-    margin: 28px 0;
-    padding: 0 24px 2px;
-    border-radius: 8px;
-    overflow-x: auto;
-    position: relative;
-    font-size: 14px;
-    line-height: 1.3;
-    font-weight: 500;
-    color: #444;
-    background-color: #f9f9f9;
-  }
-  .custom-block .custom-block-title {
-    margin-bottom: 8px;
-    font-size: 15px;
-    font-weight: bold;
-  }
-
-  .custom-block.tip {
-    border: 1px solid #42b883;
-  }
-  .custom-block.tip:before {
-    color: #42b883;
-  }
-
-  .prose
-    :where(:not(pre) > code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    ) {
-    color: #0a3760;
-    padding: 0.25em 0.4em;
-    border-radius: 4px;
-    background-color: #eee;
-  }
-
-  .prose
-    :where(code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    )::before {
-    content: '' !important;
-  }
-
-  .prose
-    :where(code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    )::after {
-    content: '' !important;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .prose
-      :where(:not(pre) > code):not(
-        :where([class~='not-prose'], [class~='not-prose'] *)
-      ) {
-      color: #d1e9ff;
-      background-color: #3c3a5b;
-    }
-  }
-
-  @media (max-width: 518px) {
-    .prose img {
-      max-width: 100% !important;
-    }
-  }
-
-  .rainbow-animation:hover {
-    background: linear-gradient(
-        217deg,
-        rgba(255, 0, 0, 0.8),
-        rgba(255, 0, 0, 0) 70.71%,
-        rgba(255, 0, 0, 0.8)
-      ),
-      linear-gradient(
-        127deg,
-        rgba(0, 255, 0, 0.8),
-        rgba(0, 255, 0, 0) 70.71%,
-        rgba(0, 255, 0, 0.8)
-      ),
-      linear-gradient(
-        336deg,
-        rgba(0, 0, 255, 0.8),
-        rgba(0, 0, 255, 0) 70.71%,
-        rgba(0, 0, 255, 0.8)
-      );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: rainbow_animation 6s ease-in-out infinite;
-    transition: 1s all ease-in-out;
-    background-size: 400% 100%;
-  }
-
-  @keyframes rainbow_animation {
-    0%,
-    100% {
-      background-position: 0 0;
-    }
-
-    50% {
-      background-position: 100% 0;
-    }
-  }
-</style>
+</body>
