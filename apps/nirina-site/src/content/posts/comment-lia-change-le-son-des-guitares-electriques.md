@@ -6,13 +6,15 @@ author: Nirina Rabeson
 
 Vous avez sûrement déjà une fois dans votre vie écouté un morceau de musique contenant de la guitare, mais vous-êtes vous déjà demandé comment le son de cette guitare est produit ?
 
+_A priori_, vous vous dites qu'il faut une guitare, un ampli de guitare et un micro pour capter le son
+
+---
+
 _A priori_, vous vous dites qu'il faut une guitare, un ampli de guitare et un micro pour capter le son, pour obtenir une installation ressemblant à cela [(source)](https://www.flickr.com/photos/50794637@N00/2874677149):
 
 ![Photo d'un ampli fender avec des micros](https://upload.wikimedia.org/wikipedia/commons/0/0b/Fender_Supersonic_stack_4x10.jpg)
 
 Et si je vous disais que ce morceau de musique contenant de la guitare que vous venez d'écouter n'utilise (probablement) pas d'ampli de guitare ? 😱
-
----
 
 Vous entendez tout simplement une émulation digitale, basée sur le **machine learning**.
 

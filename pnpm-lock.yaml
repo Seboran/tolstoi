@@ -487,6 +487,12 @@ importers:
       astro:
         specifier: ^4.16.13
         version: 4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3)
+      gray-matter:
+        specifier: ^4.0.3
+        version: 4.0.3
+      markdown-it:
+        specifier: ^14.1.0
+        version: 14.1.0
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
@@ -499,7 +505,7 @@ importers:
         version: 1.48.2
       '@tailwindcss/typography':
         specifier: 0.5.15
-        version: 0.5.15(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))
+        version: 0.5.15(tailwindcss@3.4.15)
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
@@ -6083,6 +6089,9 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  linkify-it@5.0.0:
+    resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
+
   listhen@1.9.0:
     resolution: {integrity: sha512-I8oW2+QL5KJo8zXNWX046M134WchxsXC7SawLPvRQpogCbkyQIaFxPE89A2HiwR7vAK2Dm2ERBAmyjTYGYEpBg==}
     hasBin: true
@@ -6230,6 +6239,10 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
+  markdown-it@14.1.0:
+    resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
+    hasBin: true
+
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
@@ -6282,6 +6295,9 @@ packages:
 
   mdn-data@2.0.30:
     resolution: {integrity: sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==}
+
+  mdurl@2.0.0:
+    resolution: {integrity: sha512-Lf+9+2r+Tdp5wXDXC4PcIBjTDtq4UKjCPMQhKIuzpJNW0b96kVqSwW0bT7FhRSfmAiFYgP+SCRvdrDozfh0U5w==}
 
   media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
@@ -7566,6 +7582,10 @@ packages:
   pump@3.0.2:
     resolution: {integrity: sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==}
 
+  punycode.js@2.3.1:
+    resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
+    engines: {node: '>=6'}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -8675,6 +8695,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
+
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
@@ -9750,7 +9773,7 @@ snapshots:
   '@astrojs/telemetry@3.1.0':
     dependencies:
       ci-info: 4.0.0
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
       dlv: 1.1.3
       dset: 3.1.4
       is-docker: 3.0.0
@@ -9805,7 +9828,7 @@ snapshots:
       '@babel/traverse': 7.25.9
       '@babel/types': 7.26.0
       convert-source-map: 2.0.0
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -10073,7 +10096,7 @@ snapshots:
       '@babel/parser': 7.26.2
       '@babel/template': 7.25.9
       '@babel/types': 7.26.0
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -11724,14 +11747,6 @@ snapshots:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
 
-  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))':
-    dependencies:
-      lodash.castarray: 4.4.0
-      lodash.isplainobject: 4.0.6
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
-
   '@tailwindcss/typography@0.5.15(tailwindcss@3.4.15)':
     dependencies:
       lodash.castarray: 4.4.0
@@ -12956,7 +12971,7 @@ snapshots:
 
   agent-base@6.0.2:
     dependencies:
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -13240,7 +13255,7 @@ snapshots:
       common-ancestor-path: 1.0.1
       cookie: 0.7.2
       cssesc: 3.0.0
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
       deterministic-object-hash: 2.0.2
       devalue: 5.1.1
       diff: 5.2.0
@@ -14059,10 +14074,6 @@ snapshots:
       ms: 2.1.3
 
   debug@4.1.1:
-    dependencies:
-      ms: 2.1.3
-
-  debug@4.3.7:
     dependencies:
       ms: 2.1.3
 
@@ -15538,7 +15549,7 @@ snapshots:
   https-proxy-agent@5.0.1:
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -16182,6 +16193,10 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  linkify-it@5.0.0:
+    dependencies:
+      uc.micro: 2.1.0
+
   listhen@1.9.0:
     dependencies:
       '@parcel/watcher': 2.5.0
@@ -16361,6 +16376,15 @@ snapshots:
 
   mark.js@8.11.1: {}
 
+  markdown-it@14.1.0:
+    dependencies:
+      argparse: 2.0.1
+      entities: 4.5.0
+      linkify-it: 5.0.0
+      mdurl: 2.0.0
+      punycode.js: 2.3.1
+      uc.micro: 2.1.0
+
   markdown-table@3.0.4: {}
 
   mathjs@12.4.3:
@@ -16498,6 +16522,8 @@ snapshots:
   mdn-data@2.0.28: {}
 
   mdn-data@2.0.30: {}
+
+  mdurl@2.0.0: {}
 
   media-typer@0.3.0: {}
 
@@ -16687,7 +16713,7 @@ snapshots:
   micromark@4.0.1:
     dependencies:
       '@types/debug': 4.1.12
-      debug: 4.3.7
+      debug: 4.3.7(supports-color@5.5.0)
       decode-named-character-reference: 1.0.2
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.2
@@ -18017,6 +18043,8 @@ snapshots:
       end-of-stream: 1.4.4
       once: 1.4.0
 
+  punycode.js@2.3.1: {}
+
   punycode@2.3.1: {}
 
   queue-microtask@1.2.3: {}
@@ -19332,6 +19360,8 @@ snapshots:
   typescript@5.4.2: {}
 
   typescript@5.6.3: {}
+
+  uc.micro@2.1.0: {}
 
   ufo@1.5.4: {}
 

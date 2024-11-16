@@ -4,16 +4,12 @@ date: 2024-11-08
 author: Nirina Rabeson
 ---
 
-<script setup lang="ts">
-import AnimatedBoutonMeContacter from './AnimatedBoutonMeContacter.vue'
-</script>
 
 Si vous êtes ici, c'est que vous avez suivi le lien que je vous ai montré, que vous avez cliqué sur mon site, ou que vous êtes juste arrivé·es ici par hasard.
 
 Si la keynote vous a plût, je vous invite énormément à me faire un feedback ici
 <https://openfeedback.io/bdxio2024/2024-11-08/688> merci :)
 
-Si vous voulez garder contact, j'ai fait ce bouton agaçant qui bouge quand on le survole : <AnimatedBoutonMeContacter />
 
 Sinon, je vous invite à échanger à propos de plusieurs de mes inspirations pour ce talk, en commençant par la musique de mon papa ?
 
@@ -37,7 +33,6 @@ Est-ce que je fais du jazz ? Pas du tout. Est-ce que je fais des tournées ? Pas
 
 **Est-ce qu'on peut écouter ce que je fais ?** Pour être franc je ne suis pas très à l'aise... Mais ça fait partie de mes défis de publier à tout le monde la musique que je fais avec toutes ses potentielles imperfections... C'est la vie comme on dit.
 
-J'avoue que je compose dans un genre qui n'a rien à voir avec le jazz : je fais plutôt du... métal ? avec du rock ? Pensez à Sleep Token (qui si vous connaissez pas est déjà un genre à part de métal et rock...) et un peu le punk émo de My Chemical Romance mais avec de la poésie française ? Si ça vous intéresse en vrai envoyez moi un petit mot et je vous partagerai des choses :)  <AnimatedBoutonMeContacter />
 
 Mais regarder mon père et toute la famille être autant impliqué dans la musique ça m'a amené à entendre la musique différemment. J'aimerais un peu challenger certains opinions qu'on se fait sur la musique et vous permettre de découvrir ce monde incroyable.
 
@@ -82,8 +77,6 @@ Il explique très bien toute la théorie de la musique qui permet de retransmett
 La suite, et bien la musique, le partage, l'amour et l'émotion... je m'emballe ?
 
 Si vous faites de la musique, ce serait vraiment un plaisir que vous me la fassiez écouter, quelque soit son niveau ce sera avec plaisir de vous faire un feedback, ou juste de l'écouter et passer un bon moment. Et si vous voulez qu'on continue la discussion en général, vous pouvez cliquer sur le bouton contact que je vous spamme de plus en plus :
-
-<AnimatedBoutonMeContacter />
 
 Et si jamais vous voulez encore lire sur la musique, je vous invite à lire cet article : [Comment l'IA change radicalement le son des guitares électriques.](/posts/comment-lia-change-le-son-des-guitares-electriques)
 

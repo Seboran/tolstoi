@@ -7,18 +7,11 @@ const postsCollection = defineCollection({
     title: z.string(),
     date: z.date(),
     author: z.string(),
+    cover_url: z.string().optional(),
+    alt_cover_image: z.string().optional(),
   }),
 })
 
-interface Post {
-  title: string
-  url: string
-  date: {
-    time: number
-    string: string
-  }
-  excerpt: string | undefined
-}
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   posts: postsCollection,

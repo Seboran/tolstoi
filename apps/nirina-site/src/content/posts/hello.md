@@ -2,9 +2,9 @@
 title: Mon nouveau blog !
 date: 2024-09-25
 author: Nirina Rabeson
+cover_url: images/anthony-gomez-lqmDtXdcmUM-unsplash.jpg
+alt_cover_image: photo de la mer avec des vagues et une mouette volant au dessus
 ---
-
-![photo de la mer avec des vagues et une mouette volant au dessus](images/anthony-gomez-lqmDtXdcmUM-unsplash.jpg)
 
 **Si vous lisez cet article, c'est que je viens de lancer mon propre site web !! Félicitations à vous !**
 
