@@ -18,9 +18,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props
 const { Content } = await entry.render()
 
-const posts = (await getCollection('posts')).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-)
+const posts = (await getCollection('posts'))
+  .filter(({ data }) => !data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 
 const currentPostIndex = posts.findIndex(
   (post) => post.slug == Astro.params.slug
