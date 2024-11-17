@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "playwright test -c playwright-ct.config.ts",
-    "test:unit": "pnpm test",
-    "test:e2e": "playwright test"
+    "test:unit": "pnpm exec playwright install && pnpm exec playwright install-deps && pnpm test",
+    "test:e2e": "pnpm exec playwright install && pnpm exec playwright install-deps && playwright test"
   },
   "dependencies": {
     "next": "15.0.3",
