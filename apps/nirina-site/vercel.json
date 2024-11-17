@@ -24,7 +24,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'none'; default-src 'none' https: fonts.googleapis.com *.apple.com *.spotify.com; object-src 'none'; script-src 'self' https: *.sentry.io; style-src 'self' 'unsafe-inline'; img-src https: *; connect-src 'self'"
+          "value": "frame-ancestors 'none'; default-src 'none' https: *.apple.com *.spotify.com; object-src 'none'; script-src 'self' https: *.sentry.io; style-src 'self' 'unsafe-inline' fonts.googleapis.com; img-src https: *; connect-src 'self'; font-src fonts.gstatic.com"
         },
         {
           "key": "Referrer-Policy",
