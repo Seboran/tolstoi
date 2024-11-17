@@ -9,7 +9,7 @@ import vercel from '@astrojs/vercel/serverless'
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://www.nirinarabeson.fr',
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel({
     isr: true,
   }),
