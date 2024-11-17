@@ -7,22 +7,18 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Nirina Rabeson/)
 })
 
-test.skip('get started link', async ({ page, context }) => {
+test('get started link', async ({ page, context }) => {
   await page.goto('/')
-
-  const pagePromise = context.waitForEvent('page')
 
   // Click the get started link.
   await page.getByRole('link', { name: 'Me contacter' }).click()
   await page.getByRole('link', { name: /LinkedIn/ }).click()
 
-  const newPage = await pagePromise
-
   // Expects page to have a heading with the name of Installation.
-  await expect(newPage).toHaveURL(/https:\/\/www.linkedin.com\/*/)
+  await expect(page).toHaveURL(/https:\/\/www.linkedin.com\/*/)
 })
 
-test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({
+test("affiche le titre d'un article et permet de cliquer dessus", async ({
   page,
 }) => {
   await page.goto('/')
@@ -34,10 +30,10 @@ test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({
   await page.getByRole('heading').getByRole('link').first().click()
 
   await expect(page).toHaveURL(/\/posts\/*/)
-  await expect(page).toHaveTitle(new RegExp(textContent!))
+  await expect(page).toHaveTitle(new RegExp(textContent! + ' | Nirina Rabeson'))
 })
 
-test.skip('affiche 404', async ({ page }) => {
+test('affiche 404', async ({ page }) => {
   await page.goto('/jemesuisperduetjedevraispasetreici2388394')
-  await expect(page.getByText('404 Page Not Found')).toBeVisible()
+  await expect(page.getByText('404')).toBeVisible()
 })
