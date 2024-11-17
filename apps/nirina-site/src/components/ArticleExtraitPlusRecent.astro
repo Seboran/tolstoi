@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import matter from 'gray-matter'
 import DatePublieLeV2 from './DatePublieLeV2.astro'
 import Prose from './Prose.astro'
 interface Props {
@@ -10,8 +9,6 @@ interface Props {
 const { entry } = Astro.props
 
 const { data, slug, body } = entry
-
-const extraitArticle = matter(body, { excerpt: true })
 ---
 
 <article
@@ -28,17 +25,7 @@ const extraitArticle = matter(body, { excerpt: true })
           {data.title}
         </a>
       </h2>
-      {
-        (
-          <Fragment>
-            {extraitArticle.excerpt && (
-              <Prose>
-                <Fragment set:html={body} />
-              </Prose>
-            )}
-          </Fragment>
-        )
-      }
+      {(<Fragment>{data.excerpt && <Prose>{data.excerpt}</Prose>}</Fragment>)}
     </div>
     <div class="text-base leading-6 font-medium">
       <a class="link" aria-label="read more" href={`/posts/${slug}`}>

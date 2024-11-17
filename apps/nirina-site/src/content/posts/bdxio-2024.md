@@ -2,8 +2,8 @@
 title: Bonsoir le BDXIO !
 date: 2024-11-08
 author: Nirina Rabeson
+excerpt: Si vous êtes ici, c'est que vous avez suivi le lien que je vous ai montré, que vous avez cliqué sur mon site, ou que vous êtes juste arrivé·es ici par hasard. Je vous invite à découvrir les sources qui m'ont inspiré pour faire ce talk, et continuer la réflexion de comment vous pouvez aussi faire de la musique.
 ---
-
 
 Si vous êtes ici, c'est que vous avez suivi le lien que je vous ai montré, que vous avez cliqué sur mon site, ou que vous êtes juste arrivé·es ici par hasard.
 

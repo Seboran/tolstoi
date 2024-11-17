@@ -2,6 +2,7 @@
 title: Comment l'IA change radicalement le son des guitares électriques.
 date: 2024-01-18
 author: Nirina Rabeson
+excerpt: Vous avez sûrement déjà une fois dans votre vie écouté un morceau de musique contenant de la guitare, mais vous-êtes vous déjà demandé comment le son de cette guitare est produit ?
 ---
 
 Vous avez sûrement déjà une fois dans votre vie écouté un morceau de musique contenant de la guitare, mais vous-êtes vous déjà demandé comment le son de cette guitare est produit ?

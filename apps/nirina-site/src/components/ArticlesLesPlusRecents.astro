@@ -6,10 +6,12 @@ const allPosts = await getCollection('posts')
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
-{
-  allPosts.map((entry) => (
-    <li class="py-12">
-      <ArticleExtraitPlusRecent entry={entry} />
-    </li>
-  ))
-}
+<ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
+  {
+    allPosts.map((entry) => (
+      <li class="py-12">
+        <ArticleExtraitPlusRecent entry={entry} />
+      </li>
+    ))
+  }
+</ul>
