@@ -1,25 +1,16 @@
 ---
 import { getCollection } from 'astro:content'
-import DatePublieLe from './DatePublieLe.astro'
-import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
+import DatePublieLe from './DatePublieLe.astro'
 import Prose from './Prose.astro'
-interface Post {
-  title: string
-  url: string
-  date: {
-    time: number
-    string: string
-  }
-  excerpt: string | undefined
-}
+
 const allPosts = await getCollection('posts')
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 {
   allPosts.map(({ slug, data, body }) => {
-    const extraitArticle = matter(body, { excerpt: true, })
+    const extraitArticle = matter(body, { excerpt: true })
     return (
       <Fragment>
         <li class="py-12">
@@ -48,7 +39,7 @@ allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
                   <Fragment>
                     {extraitArticle.excerpt && (
                       <Prose>
-                        <div set:html={extraitArticle.excerpt}></div>
+                        <div set:html={extraitArticle.excerpt} />
                       </Prose>
                     )}
                   </Fragment>
