@@ -94,7 +94,7 @@ jobs:
       - name: Install Vercel CLI
         run: pnpm install --global vercel@latest turbo
 
-      - run: turbo build --filter nirina-blog
+      - run: turbo build --filter nirina-site
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
