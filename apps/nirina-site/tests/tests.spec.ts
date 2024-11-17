@@ -7,7 +7,7 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Nirina Rabeson/)
 })
 
-test('get started link', async ({ page, context }) => {
+test('get started link', async ({ page }) => {
   await page.goto('/')
 
   // Click the get started link.
