@@ -1,59 +1,15 @@
 ---
 import { getCollection } from 'astro:content'
-import matter from 'gray-matter'
-import DatePublieLe from './DatePublieLe.astro'
-import Prose from './Prose.astro'
+import ArticleExtraitPlusRecent from './ArticleExtraitPlusRecent.astro'
 
 const allPosts = await getCollection('posts')
 allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 {
-  allPosts.map(({ slug, data, body }) => {
-    const extraitArticle = matter(body, { excerpt: true })
-    return (
-      <Fragment>
-        <li class="py-12">
-          <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
-            <DatePublieLe
-              date={{
-                time: data.date.getTime(),
-                string: data.date.toLocaleDateString('fr-FR', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric',
-                }),
-              }}
-            />
-            <div class="space-y-5 xl:col-span-3">
-              <div class="space-y-6">
-                <h2 class="text-2xl leading-8 font-bold tracking-tight">
-                  <a
-                    class="rainbow-animation text-gray-900 dark:text-white"
-                    href={`/posts/${slug}`}
-                  >
-                    {data.title}
-                  </a>
-                </h2>
-                {
-                  <Fragment>
-                    {extraitArticle.excerpt && (
-                      <Prose>
-                        <div set:html={extraitArticle.excerpt} />
-                      </Prose>
-                    )}
-                  </Fragment>
-                }
-              </div>
-              <div class="text-base leading-6 font-medium">
-                <a class="link" aria-label="read more" href={`/posts/${slug}`}>
-                  Lire plus →
-                </a>
-              </div>
-            </div>
-          </article>
-        </li>
-      </Fragment>
-    )
-  })
+  allPosts.map((entry) => (
+    <li class="py-12">
+      <ArticleExtraitPlusRecent entry={entry} />
+    </li>
+  ))
 }

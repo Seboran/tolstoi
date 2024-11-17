@@ -2,7 +2,7 @@
 import { Fragment } from 'astro/jsx-runtime'
 import { getCollection } from 'astro:content'
 import Author from '../../components/Author.astro'
-import DatePublieLe from '../../components/DatePublieLe.astro'
+import DatePublieLeV2 from '../../components/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../../components/LinkToOtherArticle.astro'
 import Prose from '../../components/Prose.astro'
 import MarkdownPostLayout from '../../layouts/Layout.astro'
@@ -38,16 +38,8 @@ export const prerender = true
 <MarkdownPostLayout title={entry.data.title + ' | Nirina Rabeson'}>
   <article class="xl:divide-y xl:divide-gray-200 dark:xl:divide-slate-200/5">
     <header class="pt-6 xl:pb-10 space-y-1 text-center">
-      <DatePublieLe
-        date={{
-          time: entry.data.date.getTime(),
-          string: entry.data.date.toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          }),
-        }}
-      />
+      <DatePublieLeV2 date={entry.data.date} />
+
       <h1
         class="rainbow-animation text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
       >
@@ -65,7 +57,7 @@ export const prerender = true
       >
         <div>
           <Prose>
-            <Content class="prose dark:prose-invert max-w-none pt-10 pb-8" />
+            <Content />
           </Prose>
         </div>
       </div>

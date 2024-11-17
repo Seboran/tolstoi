@@ -1,21 +1,20 @@
 ---
 interface Props {
-  date: {
-    time: number
-    string: string
-  }
+  date: Date
 }
 
 const { date } = Astro.props
 
-function getDateTime() {
-  return new Date(date.time).toISOString()
-}
+const time = date.toLocaleDateString('fr-FR', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+})
 ---
 
 <dl>
   <dt class="sr-only">Publié le</dt>
   <dd class="text-base leading-6 font-medium text-gray-500 dark:text-gray-300">
-    <time datetime={getDateTime()}>{date.string}</time>
+    <time datetime={date.toISOString()}>{time}</time>
   </dd>
 </dl>

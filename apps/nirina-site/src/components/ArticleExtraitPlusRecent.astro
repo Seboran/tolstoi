@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import matter from 'gray-matter'
+import DatePublieLeV2 from './DatePublieLeV2.astro'
+import Prose from './Prose.astro'
+interface Props {
+  entry: CollectionEntry<'posts'>
+}
+
+const { entry } = Astro.props
+
+const { data, slug, body } = entry
+
+const extraitArticle = matter(body, { excerpt: true })
+---
+
+<article
+  class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline"
+>
+  <DatePublieLeV2 date={data.date} />
+  <div class="space-y-5 xl:col-span-3">
+    <div class="space-y-6">
+      <h2 class="text-2xl leading-8 font-bold tracking-tight">
+        <a
+          class="rainbow-animation text-gray-900 dark:text-white"
+          href={`/posts/${slug}`}
+        >
+          {data.title}
+        </a>
+      </h2>
+      {
+        (
+          <Fragment>
+            {extraitArticle.excerpt && (
+              <Prose>
+                <Fragment set:html={body} />
+              </Prose>
+            )}
+          </Fragment>
+        )
+      }
+    </div>
+    <div class="text-base leading-6 font-medium">
+      <a class="link" aria-label="read more" href={`/posts/${slug}`}>
+        Lire plus →
+      </a>
+    </div>
+  </div>
+</article>
