@@ -46,3 +46,6 @@ coverage
 xcuserdata
 vite.config.js.timestamp-*
 .vercel
+
+# Local Netlify folder
+.netlify
