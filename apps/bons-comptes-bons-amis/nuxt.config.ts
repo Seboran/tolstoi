@@ -41,7 +41,8 @@ export default defineNuxtConfig({
         'font-src': ["'self'", 'https:', 'data:'], //  For increased security, replace by the specific sources for fonts
         'object-src': ["'none'"],
         'script-src-attr': ["'none'"],
-        'upgrade-insecure-requests': true
+        'upgrade-insecure-requests': true,
+        'frame-ancestors': ["'self'", 'https://nirinarabeson.fr', 'https://www.nirinarabeson.fr']
       }
     }
   }
