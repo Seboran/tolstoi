@@ -55,8 +55,8 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
           <a class="text-xl" href="/" aria-label="Site de Nirina Rabeson">
             ✨
             {
-              showNirinaRabesonInNavBar && (
-                <span class="rainbow-animation hidden md:inline dark:text-white">
+              !showNirinaRabesonInNavBar && (
+                <span class="statement-font rainbow-animation hidden md:inline dark:text-white">
                   Nirina Rabeson
                 </span>
               )
