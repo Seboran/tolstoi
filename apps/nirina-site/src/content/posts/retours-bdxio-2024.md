@@ -5,7 +5,7 @@ author: Nirina Rabeson
 excerpt: J'ai vu plein de talks incroyables au BDX.io 2024 ! Regardons ensemble les talks qui m'ont le plus marqué, ce que j'ai appris, et le feeling général sur le talk.
 ---
 
-![(Photo illustrative) Photo d'un amphithéâtre au BDXIO d'une capacité de 1200 personnes, à moitié rempli.](./images/IMG_5656.jpeg)
+![(Photo illustrative) Photo d'un amphithéâtre au BDXIO d'une capacité de 1200 personnes, à moitié rempli.](images/IMG_5656.jpeg)
 
 
 J'ai vu plein de talks incroyables au BDX.io 2024 ! Regardons ensemble les talks qui m'ont le plus marqué, ce que j'ai appris, et le feeling général sur le talk.
@@ -26,7 +26,7 @@ Un petit lien expliquera mieux ce que c'est : <https://bdxio.fr/>. C'est la conf
 
 J'ai pas les titres exactes car ce sont les titres que j'ai noté dans mon carnet de note 🫣
 
-![Photo de mon carnet de note avec mon écriture manuscrite. On peut lire : "Ia et handicapt, progrès ou exclusion. Second brain ? Tanh Lan. 80% des handicaps sont invisibles. IA en pratique. 3% population handicapée. Personne autiste : IA qui représente que négativité. Explicabilité du modèle ? Handicap : valeur aberrantes ? Valeurs extrêmes"](./images/IMG_5703.jpeg)
+![Photo de mon carnet de note avec mon écriture manuscrite. On peut lire : "Ia et handicapt, progrès ou exclusion. Second brain ? Tanh Lan. 80% des handicaps sont invisibles. IA en pratique. 3% population handicapée. Personne autiste : IA qui représente que négativité. Explicabilité du modèle ? Handicap : valeur aberrantes ? Valeurs extrêmes"](images/IMG_5703.jpeg)
 
 On va rapid fire tous ces sujets !
 
