@@ -19,7 +19,7 @@ test('get started link', async ({ page, context }) => {
   const newPage = await pagePromise
 
   // Expects page to have a heading with the name of Installation.
-  await expect(newPage).toHaveURL(/https:\/\/www.linkedin.com\/*/)
+  await expect(newPage).toHaveURL(/https:\/\/www\.linkedin\.com\/*/)
 })
 
 test("affiche le titre d'un article et permet de cliquer dessus", async ({
