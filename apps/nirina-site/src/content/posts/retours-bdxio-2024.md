@@ -46,7 +46,7 @@ Présentation de [Guillaume Ehret](https://www.linkedin.com/in/guehret/) et [Cha
 
 Guillaume et Charles présentent tout ce qu'ils ont mis en place pour réussir à faire monter à l'échelle la production des services dans leur entreprise (leur mission ?). Ils parlent à la fois de mise en place d'AWS, de comment faire du recrutement en masse, de mise en place de bonne CI et CD et du concept de cost of delay
 
-Cette présentation étaient vraiment dense en relisant mes notes ! Donc le mieux, c'est que vous trouviez le lien pour la regarder car j'aurai du mal à tout vous résumer, mais j'ai trouvé ça très intéressant surtout que l'ordre de grandeur est d'une équipe de 20 personnes je crois à presque 300 en 5 ans ? (corrigez-moi si je me trompe dans les ordres de grandeur)
+Cette présentation étaient vraiment dense en relisant mes notes ! Donc le mieux, c'est que vous trouviez le lien pour la regarder car j'aurai du mal à tout vous résumer, mais j'ai trouvé ça très intéressant surtout que l'ordre de grandeur est d'une équipe de 7 personnes je crois à presque 70 en 3 ans ?
 
 ### Passage de vue 2 à vue 3 chez Back Market
 
