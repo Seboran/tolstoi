@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test:e2e": "pnpm exec playwright install && pnpm exec playwright install-deps && pnpm playwright test"
+    "test:e2e": "pnpm playwright test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

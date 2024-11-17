@@ -8,7 +8,7 @@
     "build": "vitepress build",
     "serve": "vitepress serve",
     "preview": "vitepress preview",
-    "test:e2e": "pnpm exec playwright install && pnpm exec playwright install-deps && pnpm playwright test",
+    "test:e2e": "pnpm playwright test",
     "pull": "vercel pull --yes --environment=production",
     "deploy": "vercel deploy --prod --archive=tgz"
   },

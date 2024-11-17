@@ -19,7 +19,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "test:e2e": "pnpm exec playwright install && pnpm exec playwright install-deps && pnpm playwright test",
+    "test:e2e": "pnpm playwright test",
     "pull": "vercel pull --yes --environment=production",
     "deploy": "vercel build --prod && vercel deploy --prebuilt --prod --archive=tgz"
   },
