@@ -21,7 +21,6 @@ const { Content } = await entry.render()
 const posts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
-console.log(posts.map(({ data }) => ({ date: data.date, title: data.title })))
 
 const currentPostIndex = posts.findIndex(
   (post) => post.slug == Astro.params.slug
