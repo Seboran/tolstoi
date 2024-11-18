@@ -95,11 +95,11 @@ Qu'est-ce que la meilleure solution ? C'est la somme de tous les virements (posi
 
 Le problème de l'algorithmie, c'est que c'est difficile d'avoir une intuition de ce qu'il se passe. Par contre pour l'optimisation numérique, c'est très facile : tout est une coline. Par exemple, saurez-vous me trouver le minimum de cette fonction ?
 
-![Photo d'une courbe contenant un signal chaotique. En absisses, le texte "fminsearch performance", et en ordonnées "Number of function evaluations needed". Le minimum est situé vers -0.5](images/image.png)
+![Photo d'une courbe contenant un signal chaotique. En absisses, le texte "fminsearch performance", et en ordonnées "Number of function evaluations needed". Le minimum est situé vers -0.5](./images/image.png)
 
 C'est plutôt facile, c'est la valeur située le plus bas possible. Mais que signifie "le plus bas possible" pour de l'optimisation numérique ?
 
-![Photo de collines verdoyantes avec des arbres et un beau ciel avec de jolis nuages](images/image-1.png)
+![Photo de collines verdoyantes avec des arbres et un beau ciel avec de jolis nuages](./images/image-1.png)
 
 Imaginez vous plutôt dans des collines, et imaginez qu'on vous demande de trouver le point le plus bas parmi ces collines. Vous n'avez pas moyen de trouver le point le plus bas, et vous n'avez pas un appareil magique comme un GPS pour déterminer ce point. Comment faites vous ?
 
@@ -115,7 +115,7 @@ Dans notre exemple ci-dessus, la fonction n'est jamais plate, mais elle est trè
 
 Et pour notre problème, alors quel est le point le plus plat ou le plus cassé ? Et bien sans trop faire les calculs (mais si vous aimez la géométrie en dimension élevée, n'hésitez pas à me contacter), la somme totale de l'argent versé ressemble un peu à ceci (source <https://math.stackexchange.com/questions/2455896/minimizing-a-function-involving-several-modulus-terms>) :
 
-![graphique de somme de fonctions valeurs absolues. On peut voir plusieurs segments collés ensemble.](images/image-2.png)
+![graphique de somme de fonctions valeurs absolues. On peut voir plusieurs segments collés ensemble.](./images/image-2.png)
 
 Le point le plus bas est celui rouge. L'algorithme d'optimisation numérique est capable de détecter tous les emplacements un peu cassés, et il teste juste celui qui semble être le plus plat. Comment on obtient cette courbe ? Comment trouver tous les points les plus cassés ? Comment on itère sur chacun ?
 
