@@ -5,7 +5,7 @@ author: Nirina Rabeson
 excerpt: J'ai vu plein de talks incroyables au BDX.io 2024 ! Regardons ensemble les talks qui m'ont le plus marqué, ce que j'ai appris, et le feeling général sur le talk.
 ---
 
-![(Photo illustrative) Photo d'un amphithéâtre au BDXIO d'une capacité de 1200 personnes, à moitié rempli.](./images/IMG_5656.jpeg)
+![(Photo illustrative) Photo d'un amphithéâtre au BDXIO d'une capacité de 1200 personnes, à moitié rempli.](./images/IMG_5656.JPEG)
 
 
 J'ai vu plein de talks incroyables au BDX.io 2024 ! Regardons ensemble les talks qui m'ont le plus marqué, ce que j'ai appris, et le feeling général sur le talk.
