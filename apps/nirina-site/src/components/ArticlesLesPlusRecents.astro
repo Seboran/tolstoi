@@ -2,10 +2,9 @@
 import { getCollection } from 'astro:content'
 import ArticleExtraitPlusRecent from './ArticleExtraitPlusRecent.astro'
 
-const allPosts = await getCollection('posts')
-allPosts
-  .filter(({ data }) => !data.draft)
+const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .filter(({ data }) => !data.draft)
 ---
 
 <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
