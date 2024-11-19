@@ -5,3 +5,7 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
+
+[[edge_functions]]
+function = "webfinger"
+path = "/.well-known/webfinger"
