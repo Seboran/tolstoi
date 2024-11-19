@@ -1,8 +1,8 @@
 import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
 
-export function GET(context) {
-  const blog = getCollection('posts')
+export async function GET(context) {
+  const blog = await getCollection('posts')
   return rss({
     // `<title>` field in output xml
     title: 'Le blog de Nirina Rabeson',
