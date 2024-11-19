@@ -484,6 +484,9 @@ importers:
       '@astrojs/netlify':
         specifier: ^5.5.4
         version: 5.5.4(@types/node@22.9.0)(astro@4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3))(encoding@0.1.13)(terser@5.36.0)
+      '@astrojs/rss':
+        specifier: ^4.0.9
+        version: 4.0.9
       '@astrojs/tailwind':
         specifier: ^5.1.2
         version: 5.1.2(astro@4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))
@@ -654,7 +657,7 @@ importers:
         version: 5.6.3
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4(vitest@2.1.4))(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/nirinapass:
     dependencies:
@@ -925,6 +928,9 @@ packages:
   '@astrojs/prism@3.1.0':
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
+
+  '@astrojs/rss@4.0.9':
+    resolution: {integrity: sha512-W1qeLc/WP1vMS5xXa+BnaLU0paeSeGjN8RJVAoBaOIkQuKXjIUA9hvPno89heo73in5i67g40gy70oeeHMqp6A==}
 
   '@astrojs/tailwind@5.1.2':
     resolution: {integrity: sha512-IvOF0W/dtHElcXvhrPR35nHmhyV3cfz1EzPitMGtU7sYy9Hci3BNK1To6FWmVuuNKPxza1IgCGetSynJZL7fOg==}
@@ -5052,6 +5058,10 @@ packages:
   fast-npm-meta@0.2.2:
     resolution: {integrity: sha512-E+fdxeaOQGo/CMWc9f4uHFfgUPJRAu7N3uB8GBvB3SDPAIWJK4GKyYhkAGFq+GYrcbKNfQIz5VVQyJnDuPPCrg==}
 
+  fast-xml-parser@4.5.0:
+    resolution: {integrity: sha512-/PlTQCI96+fZMAOLMZK4CWG1ItCbfZ/0jx7UIJFChPNrx7tcEgerUgWbeieCM9MfHInUDyK8DWYZ+YrywDJuTg==}
+    hasBin: true
+
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
@@ -8344,6 +8354,9 @@ packages:
     resolution: {integrity: sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==}
     engines: {node: '>=0.10.0'}
 
+  strnum@1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
+
   style-to-object@0.4.4:
     resolution: {integrity: sha512-HYNoHZa2GorYNyqiCaBgsxvcJIn7OHq6inEga+E6Ke3m5JkoqpQbnFssk4jwe+K7AhGa2fcha4wSOf1Kn01dMg==}
 
@@ -9885,6 +9898,11 @@ snapshots:
   '@astrojs/prism@3.1.0':
     dependencies:
       prismjs: 1.29.0
+
+  '@astrojs/rss@4.0.9':
+    dependencies:
+      fast-xml-parser: 4.5.0
+      kleur: 4.1.5
 
   '@astrojs/tailwind@5.1.2(astro@4.16.13(@types/node@22.9.0)(rollup@4.24.4)(terser@5.36.0)(typescript@5.6.3))(tailwindcss@3.4.15(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.9.0)(typescript@5.6.3))':
     dependencies:
@@ -12614,7 +12632,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -12691,7 +12709,7 @@ snapshots:
       sirv: 3.0.0
       tinyglobby: 0.2.10
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.4(@edge-runtime/vm@3.2.0)(@types/node@22.9.0)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
 
   '@vitest/utils@1.6.0':
     dependencies:
@@ -15170,6 +15188,10 @@ snapshots:
   fast-levenshtein@2.0.6: {}
 
   fast-npm-meta@0.2.2: {}
+
+  fast-xml-parser@4.5.0:
+    dependencies:
+      strnum: 1.0.5
 
   fastq@1.17.1:
     dependencies:
@@ -19317,6 +19339,8 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
 
+  strnum@1.0.5: {}
+
   style-to-object@0.4.4:
     dependencies:
       inline-style-parser: 0.1.1
@@ -20388,7 +20412,7 @@ snapshots:
       - vue-router
       - webpack-sources
 
-  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0):
+  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@20.17.6)(@vitest/ui@2.1.4(vitest@2.1.4))(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
