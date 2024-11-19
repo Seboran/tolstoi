@@ -13,6 +13,7 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
 <!doctype html>
 <meta charset="utf-8" />
 <head>
+  <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta lang="fr-FR" />
   <title>{title}</title>
@@ -88,4 +89,5 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
       </main>
     </div>
   </div>
+  <a class="hidden" rel="me" href="https://hachyderm.io/@nirina">Mastodon</a>
 </body>
