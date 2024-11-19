@@ -81,7 +81,7 @@ Un bon talk ! Et n'hésitez pas à zieuter son site car Hadrien parle énorméme
 
 ### Une présentation sur le cache dont j'ai vraiment pas tout noté 😶‍🌫️
 
-Cette présentation montre en 15 minutes comment fonctionne un cache réseau, que ce soit dans le navigateur ou dans une couche d'abstraction.
+Cette présentation par [Robin Colombier](https://www.linkedin.com/in/robin-colombier-9ab996153/) montre en 15 minutes comment fonctionne un cache réseau, que ce soit dans le navigateur ou dans une couche d'abstraction.
 
 Je vais pas cacher, j'étais un peu déçu... La présentation était très bien et je pense qu'elle m'influencera sur comment je devrais présenter du cache, mais je m'attendais à des exemples un peu plus détaillés. Mais 15 minutes c'est beaucoup trop rapide !! Donc... j'ai envie d'un second tour.
 
