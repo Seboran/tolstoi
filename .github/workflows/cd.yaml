@@ -49,7 +49,7 @@ jobs:
           eval `ssh-agent -s`
           ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
       - run: ./pull-blog-content.sh
-        working-directory: ./apps/nirina-site/dist
+        working-directory: ./apps/nirina-site
       - run: turbo build --filter nirina-site
 
       - name: Deploy to Netlify
