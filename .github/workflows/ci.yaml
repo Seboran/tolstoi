@@ -52,7 +52,6 @@ jobs:
 
       - name: Install playwright browsers
         run: |
-          pnpm exec playwright install
           pnpm exec playwright install-deps
       - run: turbo test:e2e --concurrency=1 --affected
       - name: install dependencies (ubuntu only)

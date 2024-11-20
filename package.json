@@ -16,18 +16,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vitest/coverage-v8": "2.1.4",
-    "happy-dom": "15.11.6",
+    "@playwright/test": "1.49.0",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "0.6.9",
-    "turbo": "2.3.0",
-    "typescript": "5.6.3",
-    "vitest": "2.1.4"
-  },
-  "optionalDependencies": {
-    "@vitest/ui": "^2.0.0"
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.27.9"
+    "turbo": "2.3.0"
   }
 }
