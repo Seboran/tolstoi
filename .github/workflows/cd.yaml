@@ -44,6 +44,11 @@ jobs:
 
       - run: pnpm install --ignore-scripts
 
+      - name: set deploy key to pull content
+        run: |
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
+      - run: ./pull-blog-content.sh
       - run: turbo build --filter nirina-site
 
       - name: Deploy to Netlify
