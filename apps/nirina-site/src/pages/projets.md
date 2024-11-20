@@ -11,7 +11,7 @@ Peut-être la partie la plus *portfolio* de ce site est ici. Vous pourrez voir l
 
 C'est une appli de remboursement entre amis qui a pour seul but que de remplacer l'application tricount. Jetez-y un oeil : <https://bons-comptes-bons-amis.vercel.app>
 
-Le code source est accessible ici <https://github.com/Seboran/bons-comptes-bons-amis>
+
 
 Stack technique : *Vuejs, Python Flask, scipy, lambdas, Vercel*
 
@@ -23,15 +23,11 @@ Le but est de deviner qui ne sait pas de quoi on parle, ou de quoi tout le monde
 
 Vous verrez, c'est très drôle, et les thèmes sont particulièrement amusants : <https://jeu-du-debat.vercel.app>
 
-Et le code source : <https://github.com/Seboran/jeu-du-debat>
-
 Stack technique : *Vuejs, TypesScript, Vite, Vitest*
 
 ## Générateur de sudoku et de musique
 
-Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs. Jetez-y un oeil : <https://generateur-sudoku-app-sudoku.vercel.app> et <https://generateur-musique-app-musique.vercel.app>
-
-Le code source : <https://github.com/Seboran/generateur-musique>
+Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs. Jetez-y un oeil : <https://generateur-sudoku.netlify.app> et <https://generateur-musique.netlify.app>
 
 Stack technique : *Nuxt, Vuejs, Vite et vitest workspace*
 
@@ -39,10 +35,10 @@ Stack technique : *Nuxt, Vuejs, Vite et vitest workspace*
 
 Ce petit projet présente comment on pourrait tenter de "copier" une clef Ethereum en en créant une suffisamment ressemblante. C'est un peu janky, mais avec de la patience on peut obtenir un peu ce qu'on veut comme nom de clef. <https://ethereum-wallet-generator-2.vercel.app>
 
-Code source : <https://github.com/Seboran/ethereum-wallet-generator>
-
 Stack technique : *vuejs, webworkers, crypto*
 
-## Renovate et Github Actions
+## Source ?
 
-Tous mes projets sont mis à jour massivement, en partie entre autres pour faire une sorte de veille technologique, mais aussi car ces projets commencent à avoir une durée de vie de plus en plus longue, et la maintenance automatisée reste pratique pour rester à la pointe de la mode 💅🏼.
+Tous les projets sont regroupés dans un monorepo : <https://github.com/Seboran/monorepo>
+
+Stack technique du monorepo : *Vercel, Netlify, turborepo, eslint, pnpm workspaces, renovate, devcontainers, gitpod (WIP), GitHub actions*
