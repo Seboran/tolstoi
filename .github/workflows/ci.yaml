@@ -13,6 +13,8 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 2
       - uses: pnpm/action-setup@v4
         with:
           version: 9.14.2
@@ -31,23 +33,27 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
+
       - name: Install turbo
         run: pnpm i -g turbo
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
+      - run: turbo test:unit --concurrency=1 --affected
+
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
+        with:
+          python-version: '3.12'
+
+      - name: Install python
+        run: pnpx turbo-ignore && pip install -r requirements.txt
+        working-directory: apps/bons-comptes-bons-amis
+
       - name: Install playwright browsers
         run: |
           pnpm exec playwright install
           pnpm exec playwright install-deps
-      - run: turbo test:unit --concurrency=1 --affected
-      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
-        with:
-          python-version: '3.12'
-      - name: Install python
-        run: pnpx turbo-ignore && pip install -r requirements.txt
-        working-directory: apps/bons-comptes-bons-amis
       - run: turbo test:e2e --concurrency=1 --affected
       - name: install dependencies (ubuntu only)
         run: |

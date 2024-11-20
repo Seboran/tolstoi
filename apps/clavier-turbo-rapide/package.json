@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "test": "playwright test -c playwright-ct.config.ts",
-    "test:unit": "pnpm test",
     "test:e2e": "playwright test"
   },
   "dependencies": {
