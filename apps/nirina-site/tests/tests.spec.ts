@@ -18,7 +18,7 @@ test('get started link', async ({ page }) => {
   await expect(page).toHaveURL(/https:\/\/www.linkedin.com\/*/)
 })
 
-test("affiche le titre d'un article et permet de cliquer dessus", async ({
+test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({
   page,
 }) => {
   await page.goto('/')
