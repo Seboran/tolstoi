@@ -28,3 +28,4 @@ pnpm-debug.log*
 /playwright/.cache/
 
 .netlify
+src/content/posts/
