@@ -37,22 +37,20 @@ jobs:
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      - name: install dependencies (ubuntu only)
+      - name: Install playwright browsers
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
-
+          pnpm exec playwright install
+          pnpm exec playwright install-deps
+      - run: turbo test:unit --concurrency=1 --affected
       - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
         with:
           python-version: '3.12'
       - name: Install python
-        run: pip install -r requirements.txt
+        run: pnpx turbo-ignore && pip install -r requirements.txt
         working-directory: apps/bons-comptes-bons-amis
+      - run: turbo test:e2e --concurrency=1 --affected
+      - name: install dependencies (ubuntu only)
+        run: |
+          npx turbo-ignore nirinapass || sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - run: pnpm exec playwright install
-      - name: Install playwright browsers
-        run: pnpm exec playwright install-deps
-
-      - run: turbo build
-      - run: turbo test:unit --concurrency=1
-      - run: turbo test:e2e --concurrency=1
+      - run: turbo build --affected
