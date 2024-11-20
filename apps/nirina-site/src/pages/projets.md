@@ -11,8 +11,6 @@ Peut-être la partie la plus *portfolio* de ce site est ici. Vous pourrez voir l
 
 C'est une appli de remboursement entre amis qui a pour seul but que de remplacer l'application tricount. Jetez-y un oeil : <https://bons-comptes-bons-amis.vercel.app>
 
-
-
 Stack technique : *Vuejs, Python Flask, scipy, lambdas, Vercel*
 
 ## Jeu du débat
@@ -21,7 +19,7 @@ Le but de ce jeu, c'est que au moins 3 personnes discutent autour d'un sujet... 
 
 Le but est de deviner qui ne sait pas de quoi on parle, ou de quoi tout le monde parle.
 
-Vous verrez, c'est très drôle, et les thèmes sont particulièrement amusants : <https://jeu-du-debat.vercel.app>
+Vous verrez, c'est très drôle, et les thèmes sont particulièrement amusants : <https://jeu-du-debat.netlify.app/>
 
 Stack technique : *Vuejs, TypesScript, Vite, Vitest*
 
@@ -33,7 +31,7 @@ Stack technique : *Nuxt, Vuejs, Vite et vitest workspace*
 
 ## Démonstrateur de génération de clefs privées vanity pour la blockchain Ethereum
 
-Ce petit projet présente comment on pourrait tenter de "copier" une clef Ethereum en en créant une suffisamment ressemblante. C'est un peu janky, mais avec de la patience on peut obtenir un peu ce qu'on veut comme nom de clef. <https://ethereum-wallet-generator-2.vercel.app>
+Ce petit projet présente comment on pourrait tenter de "copier" une clef Ethereum en en créant une suffisamment ressemblante. C'est un peu janky, mais avec de la patience on peut obtenir un peu ce qu'on veut comme nom de clef. <https://ethereum-wallet-generator.netlify.app/>
 
 Stack technique : *vuejs, webworkers, crypto*
 
