@@ -47,7 +47,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install python
-        run: pnpx turbo-ignore && pip install -r requirements.txt
+        run: pnpx turbo-ignore || pip install -r requirements.txt
         working-directory: apps/bons-comptes-bons-amis
 
       - name: Install playwright browsers
