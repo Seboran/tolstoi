@@ -2,6 +2,8 @@
 import AnimatedBoutonMeContacter from '../components/AnimatedBoutonMeContacter.astro'
 import '../styles/theme.css'
 
+Astro.response.headers.set("Cache-Control", "public, s-maxage=86400");
+
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
