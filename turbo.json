@@ -10,6 +10,11 @@
         "!.next/cache/**",
         ".netlify/build"
       ],
+      "env": [
+        "VITE_APPWRITE_PROJECT_ID",
+        "VITE_APPWRITE_DATABASE_ID",
+        "VITE_APPWRITE_COLLECTION_ID"
+      ],
       "dependsOn": ["^build"]
     },
     "check-types": {
@@ -18,28 +23,6 @@
     "test:unit": {
       "dependsOn": ["^build"]
     },
-    "test:e2e": {},
-    "dev": {
-      "persistent": true,
-      "cache": false
-    },
-    "pull": {
-      "env": [
-        "VERCEL_TOKEN",
-        "VERCEL_ORG_ID",
-        "VERCEL_BLOG_PROJECT_ID",
-        "VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID"
-      ],
-      "cache": false
-    },
-    "deploy": {
-      "dependsOn": ["^pull"],
-      "env": [
-        "VERCEL_TOKEN",
-        "VERCEL_ORG_ID",
-        "VERCEL_BLOG_PROJECT_ID",
-        "VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID"
-      ]
-    }
+    "test:e2e": {}
   }
 }
