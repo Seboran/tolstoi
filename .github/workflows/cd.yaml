@@ -109,3 +109,46 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_MUSIQUE_SITE_ID }}
         timeout-minutes: 1
+      - name: Deploy Generateur Musique to Netlify
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
+        with:
+          publish-dir: './apps/generateur-musique/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_ETHEREUM_VANITY_SITE_ID }}
+        timeout-minutes: 1
+
+  deploy-ethereum-generateur:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.3
+
+      - name: Install turbo CLI
+        run: pnpm install --global turbo
+
+      - run: pnpm install --ignore-scripts
+
+      - run: turbo build --filter=ethereum-wallet-generator
+      - name: Deploy Generateur Musique to Netlify
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
+        with:
+          publish-dir: './apps/ethereum-wallet-generator/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_ETHEREUM_VANITY_SITE_ID }}
+        timeout-minutes: 1
