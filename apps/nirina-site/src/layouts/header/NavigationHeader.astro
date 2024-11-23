@@ -1,27 +1,16 @@
 ---
 import AnimatedBoutonMeContacter from '../../components/AnimatedBoutonMeContacter.astro'
+import LinkInHeader from './LinkInHeader.astro'
 ---
 
 <nav class="flex justify-between items-center pb-10">
   <a class="text-xl" href="/" aria-label="Site de Nirina Rabeson">
     <slot />
   </a>
+
   <div class="flex justify-between items-center py-10 font-bold gap-5">
-    <div
-      class="hidden md:block text-sm text-gray-500 dark:text-white leading-5"
-    >
-      <a class="hover:text-gray-700 dark:hover:text-gray-200" href="/projets"
-        >Mes projets</a
-      >
-    </div>
-    <div
-      class="hidden sm:block text-sm text-gray-500 dark:text-white leading-5"
-    >
-      <a
-        class="hover:text-gray-700 dark:hover:text-gray-200"
-        href="/presentations">Mes presentations</a
-      >
-    </div>
+    <LinkInHeader href="/projets">Mes projets</LinkInHeader>
+    <LinkInHeader href="/presentations">Mes presentations</LinkInHeader>
     <AnimatedBoutonMeContacter />
   </div>
 </nav>
