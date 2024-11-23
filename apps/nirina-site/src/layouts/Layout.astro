@@ -15,6 +15,8 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
 <!doctype html>
 <meta charset="utf-8" />
 <head>
+  <ViewTransitions />
+
   <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta lang="fr-FR" />
@@ -55,7 +57,7 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
     title="Site de Nirina Rabeson."
     href={new URL('rss.xml', Astro.site)}
   />
-  <ViewTransitions />
+  <link rel="stylesheet" href="/styles/global.css" />
 </head>
 <body>
   <div>
