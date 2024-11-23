@@ -263,10 +263,18 @@ html {
   text-size-adjust: none;
 }
 
-.perspective-on-hover {
+.perspective-on-hover,
+.big-perspective-on-hover {
+  transform: perspective(500px) translate3d(0, 0, 0);
+
   transition: transform 1s;
+  backface-visibility: hidden;
 }
 
 .perspective-on-hover:hover {
-  transform: perspective(500px) translate3d(0, 0, 18.5px);
+  transform: perspective(500px) translate3d(0, 0, 18px);
+}
+
+.big-perspective-on-hover:hover {
+  transform: perspective(500px) translate3d(0, 0, 5px);
 }
