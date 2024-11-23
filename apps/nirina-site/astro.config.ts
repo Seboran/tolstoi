@@ -15,4 +15,9 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true,
   }),
+  vite: {
+    build: {
+      cssCodeSplit: false,
+    },
+  },
 })
