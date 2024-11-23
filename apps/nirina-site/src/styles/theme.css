@@ -262,3 +262,11 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
 }
+
+.perspective-on-hover {
+  transition: transform 1s;
+}
+
+.perspective-on-hover:hover {
+  transform: perspective(500px) translate3d(0, 0, 18.5px);
+}
