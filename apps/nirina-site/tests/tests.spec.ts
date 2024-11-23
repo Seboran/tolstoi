@@ -15,7 +15,7 @@ test('get started link', async ({ page }) => {
   await page.getByRole('link', { name: /LinkedIn/ }).click()
 
   // Expects page to have a heading with the name of Installation.
-  await expect(page).toHaveURL(/https:\/\/www.linkedin.com\/*/)
+  await expect(page).toHaveURL(/https:\/\/www\.linkedin\.com\/*/)
 })
 
 test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({
