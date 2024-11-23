@@ -11,7 +11,7 @@ import netlify from '@astrojs/netlify'
 export default defineConfig({
   integrations: [tailwind(), mdx()],
   site: 'https://www.nirinarabeson.fr',
-  output: 'hybrid',
+  output: 'static',
   adapter: netlify({
     edgeMiddleware: true,
   }),
