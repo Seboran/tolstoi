@@ -246,6 +246,14 @@ span.lang {
   background-size: 400% 100%;
 }
 
+@media screen and (prefers-reduced-motion: reduce) {
+  .rainbow-animation,
+  .rainbow-animation:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 @keyframes rainbow_animation {
   0%,
   100% {
@@ -269,6 +277,14 @@ html {
 
   transition: transform 1s;
   backface-visibility: hidden;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .perspective-on-hover,
+  .big-perspective-on-hover {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 .perspective-on-hover:hover {

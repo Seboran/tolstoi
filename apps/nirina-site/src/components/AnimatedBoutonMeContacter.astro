@@ -10,6 +10,13 @@
     transform: translate3d(0, 0, 0);
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    .shake {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+
   @keyframes shake {
     10%,
     90% {
