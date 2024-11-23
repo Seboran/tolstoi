@@ -37,13 +37,6 @@ jobs:
       - name: Install turbo
         run: pnpm i -g turbo
 
-      - name: install Rust stable
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: install rust build dependencies
-        run: |
-          sudo apt-get update && sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
-
       - run: turbo test:unit --concurrency=1
 
       - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
