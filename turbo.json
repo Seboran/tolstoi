@@ -23,6 +23,10 @@
     "test:unit": {
       "dependsOn": ["^build"]
     },
-    "test:e2e": {}
+    "test:e2e": {},
+    "dev": {
+      "persistent": true,
+      "cache": false
+    }
   }
 }
