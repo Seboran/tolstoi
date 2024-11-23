@@ -1,7 +1,7 @@
 ---
 import '../styles/theme.css'
 import NavigationHeader from './header/NavigationHeader.astro'
-
+import { ViewTransitions } from 'astro:transitions'
 Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400')
 
 interface Props {
@@ -55,6 +55,7 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
     title="Site de Nirina Rabeson."
     href={new URL('rss.xml', Astro.site)}
   />
+  <ViewTransitions />
 </head>
 <body>
   <div>
