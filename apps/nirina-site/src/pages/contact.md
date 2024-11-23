@@ -6,7 +6,7 @@ layout: ../layouts/BlogLayout.astro
 
 Vous pouvez me contacter le plus simplement :
 
-- **Par courrier électronique à [hello@nirinarabeson.fr](mailto:hello@nirinarabeson.fr)** [\(PGP\)](pgp), où je réponds rapidement
+- **Par courrier électronique à [hello@nirinarabeson.fr](mailto:hello@nirinarabeson.fr)** [\(PGP\)](/pgp), où je réponds rapidement
 - **Sur [LinkedIn](https://www.linkedin.com/in/nirinarabeson/)**, où je réponds moins rapidement
 - **Dans la vraie vie** où je réponds très rapidement
 
