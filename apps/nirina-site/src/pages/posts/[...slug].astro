@@ -1,12 +1,8 @@
 ---
-import { Fragment } from 'astro/jsx-runtime'
 import { getCollection } from 'astro:content'
-import Author from '../../components/Author.astro'
-import DatePublieLeV2 from '../../components/DatePublieLeV2.astro'
-import LinkToOtherArticle from '../../components/LinkToOtherArticle.astro'
-import Prose from '../../components/Prose.astro'
-import MarkdownPostLayout from '../../layouts/Layout.astro'
+import BlogPostView from '../../components/views/BlogPostView.astro'
 
+const { entry } = Astro.props
 export async function getStaticPaths() {
   const blogEntries = await getCollection('posts')
   return blogEntries.map((entry) => ({
@@ -14,75 +10,6 @@ export async function getStaticPaths() {
     props: { entry },
   }))
 }
-
-const { entry } = Astro.props
-const { Content } = await entry.render()
-
-const posts = (await getCollection('posts'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .filter(({ data }) => !data.draft)
-
-const currentPostIndex = posts.findIndex(
-  (post) => post.slug == Astro.params.slug
-)
-const previousPost =
-  currentPostIndex + 1 === posts.length
-    ? undefined
-    : posts[currentPostIndex + 1]
-const nextPost =
-  currentPostIndex === 0 ? undefined : posts[currentPostIndex - 1]
-
-export const prerender = true
 ---
 
-<MarkdownPostLayout title={entry.data.title + ' | Nirina Rabeson'}>
-  <article class="xl:divide-y xl:divide-gray-200 dark:xl:divide-slate-200/5">
-    <header class="pt-6 xl:pb-10 space-y-1 text-center">
-      <DatePublieLeV2 date={entry.data.date} />
-
-      <h1
-        class="statement-font rainbow-animation text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-      >
-        {entry.data.title}
-      </h1>
-    </header>
-
-    <div
-      class="divide-y xl:divide-y-0 divide-gray-200 dark:divide-slate-200/5 xl:grid xl:grid-cols-4 xl:gap-x-10 pb-16 xl:pb-20"
-      style="grid-template-rows: auto 1fr"
-    >
-      <Author author="Nirina Rabeson" />
-      <div
-        class="divide-y divide-gray-200 dark:divide-slate-200/5 xl:pb-0 xl:col-span-3 xl:row-span-2 py-8"
-      >
-        <Prose>
-          <Content />
-        </Prose>
-      </div>
-
-      <footer
-        class="text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-slate-200/5 xl:col-start-1 xl:row-start-2"
-      >
-        {
-          nextPost && (
-            <LinkToOtherArticle nextPost={nextPost}>
-              Article suivant
-            </LinkToOtherArticle>
-          )
-        }
-
-        {
-          previousPost && (
-            <LinkToOtherArticle nextPost={previousPost}>
-              Article précédent
-            </LinkToOtherArticle>
-          )
-        }
-      </footer>
-
-      <div class="pt-8">
-        <a class="link" href="/">← Retour au blog</a>
-      </div>
-    </div>
-  </article>
-</MarkdownPostLayout>
+<BlogPostView entry={entry} />

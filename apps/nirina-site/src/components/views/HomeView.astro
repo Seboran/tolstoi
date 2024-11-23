@@ -1,0 +1,47 @@
+---
+import AnimatedHomeTitle from '../AnimatedHomeTitle.astro'
+import ArticlesLesPlusRecents from '../ArticlesLesPlusRecents.astro'
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title="Nirina Rabeson" showNirinaRabesonInNavBar
+  ><div class="divide-y divide-gray-200 dark:divide-slate-200/5">
+    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+      <AnimatedHomeTitle />
+      <p class="description text-lg leading-7 text-gray-500 dark:text-white">
+        Je suis développeur fullstack actuellement chez
+        <a
+          class="shake zenika-lien font-bold"
+          href="https://www.linkedin.com/company/zenika"
+          target="_blank">Zenika</a
+        >. Je suis passionné de musique, de stack javascript, mais j'adore aussi
+        le partage et la bonne vibe. Motivé par une énergie détonnante et une
+        bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
+        soit dans le domaine du web, de l'intelligence artificielle, ou de
+        sujets très variés un peu geeks.
+      </p>
+    </div>
+    <ArticlesLesPlusRecents />
+  </div></Layout
+>
+
+<style scoped>
+  .zenika-lien {
+    transition: 1s all ease;
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, black);
+  }
+
+  .description:hover .zenika-lien,
+  .zenika-lien:hover {
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, black);
+  }
+  @media (prefers-color-scheme: dark) {
+    .zenika-lien {
+      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
+    }
+    .description:hover .zenika-lien,
+    .zenika-lien:hover {
+      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
+    }
+  }
+</style>
