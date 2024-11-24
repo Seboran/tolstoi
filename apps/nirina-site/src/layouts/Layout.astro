@@ -1,10 +1,6 @@
 ---
 import '../styles/theme.css'
 import NavigationHeader from './header/NavigationHeader.astro'
-Astro.response.headers.set(
-  'Cache-Control',
-  'public, s-maxage=86400, max-age=10, must-revalidate'
-)
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
