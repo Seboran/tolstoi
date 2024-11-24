@@ -1,9 +1,10 @@
 ---
 import '../styles/theme.css'
 import NavigationHeader from './header/NavigationHeader.astro'
-import { ViewTransitions } from 'astro:transitions'
-Astro.response.headers.set('Cache-Control', 'public, s-maxage=86400')
-
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, s-maxage=86400, max-age=10, must-revalidate'
+)
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
@@ -15,8 +16,6 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
 <!doctype html>
 <meta charset="utf-8" />
 <head>
-  <ViewTransitions />
-
   <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta lang="fr-FR" />
