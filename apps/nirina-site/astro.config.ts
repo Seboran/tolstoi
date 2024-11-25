@@ -20,7 +20,4 @@ export default defineConfig({
       assetsInlineLimit: 0,
     },
   },
-  prefetch: {
-    prefetchAll: true,
-  },
 })
