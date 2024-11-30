@@ -1,6 +1,7 @@
 ---
 import AnimatedBoutonMeContacter from '../../components/AnimatedBoutonMeContacter.astro'
 import LinkInHeader from './LinkInHeader.astro'
+import NavigationMenuList from './menu/NavigationMenuList.astro'
 ---
 
 <nav class="flex justify-between items-center pb-10">
@@ -12,9 +13,15 @@ import LinkInHeader from './LinkInHeader.astro'
     <slot />
   </a>
 
-  <div class="flex justify-between items-center py-10 font-bold gap-5">
+  <div
+    class="hidden md:flex justify-between items-center py-10 font-bold gap-5 text-sm"
+  >
     <LinkInHeader href="/projets">Mes projets</LinkInHeader>
     <LinkInHeader href="/presentations">Mes presentations</LinkInHeader>
     <AnimatedBoutonMeContacter />
+  </div>
+
+  
+    <NavigationMenuList />
   </div>
 </nav>
