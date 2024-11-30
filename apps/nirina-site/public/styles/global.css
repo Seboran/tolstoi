@@ -275,7 +275,8 @@ html {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  * {
+  .perspective-on-hover,
+  .big-perspective-on-hover {
     animation: none !important;
     transform: none !important;
   }
