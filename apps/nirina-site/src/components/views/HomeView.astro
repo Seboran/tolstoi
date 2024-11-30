@@ -1,7 +1,13 @@
 ---
+import { getCollection } from 'astro:content'
+import ChatInterface from '../../components/chat/ChatInterface.astro'
 import Layout from '../../layouts/Layout.astro'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
-import ChatInterface from '../../components/chat/ChatInterface.astro'
+
+const lastPost = (await getCollection('posts'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .filter(({ data }) => !data.draft)
+  .at(0)?.slug
 ---
 
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
@@ -16,7 +22,7 @@ import ChatInterface from '../../components/chat/ChatInterface.astro'
       >
         Comment puis-je vous aider aujourd'hui ?
       </h2>
-      <ChatInterface />
+      <ChatInterface lienDernierArticle={`/posts/${lastPost}`} />
     </div>
   </div></Layout
 >

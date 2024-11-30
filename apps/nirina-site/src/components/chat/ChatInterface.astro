@@ -1,5 +1,11 @@
 ---
 import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
+
+interface Props {
+  lienDernierArticle: string
+}
+
+const { lienDernierArticle } = Astro.props
 ---
 
 <script>
@@ -73,11 +79,18 @@ import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
     if (e.preventDefault) e.preventDefault()
 
     const texteRentre = document.querySelector('textarea')!
+    const lienDernierArticle = document.querySelector('.lien-dernier-article')?.attributes.getNamedItem('data-url')?.textContent!
+
+    if (texteRentre.value.length === 0) {
+      document.location.href =
+        lienDernierArticle
+      return false
+    }
 
     const lowerCaseInput = texteRentre.value.toLowerCase()
     // Derniers articles
     if (lowerCaseInput.includes('dernier')) {
-      document.location.href = '/blog'
+      document.location.href = lienDernierArticle
       return false
     }
 
@@ -159,6 +172,8 @@ import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
     >Je me balade juste</BoutonSuggestionChat
   >
 </div>
+
+<div class="hidden lien-dernier-article" data-url={lienDernierArticle}></div>
 
 <style scoped>
   @keyframes fade-in {
