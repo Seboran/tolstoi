@@ -1,7 +1,15 @@
-<div class="perspective-on-hover">
-  <button
-    class="border-slate-100/25 bg-slate-100 dark:bg-slate-800 text-black dark:text-white border px-2 py-1 text-xs rounded-lg text-nowrap"
-  >
+---
+interface Props {
+  selector: string
+}
+
+const { selector } = Astro.props
+---
+
+<div
+  class="border-slate-100/25 bg-slate-100 dark:bg-slate-800 text-black dark:text-white border px-2 py-1 text-xs rounded-lg text-nowrap perspective-on-hover"
+>
+  <button class:list={[selector]}>
     <slot />
   </button>
 </div>

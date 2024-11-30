@@ -2,6 +2,121 @@
 import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
 ---
 
+<script>
+  async function waitForDelay(delayMs: number) {
+    await new Promise((resolve) => setTimeout(resolve, delayMs))
+  }
+  const boutonDernierArticle = document.querySelector('button.dernier-article')
+  boutonDernierArticle?.addEventListener('click', async () => {
+    await writeInTextArea(boutonDernierArticle)
+  })
+  const boutonArticles = document.querySelector('button.articles')
+  boutonArticles?.addEventListener('click', async () => {
+    await writeInTextArea(boutonArticles)
+  })
+  const boutonContact = document.querySelector('button.contact')
+  boutonContact?.addEventListener('click', async () => {
+    await writeInTextArea(boutonContact)
+  })
+  const boutonAccueil = document.querySelector('button.accueil')
+  boutonAccueil?.addEventListener('click', async () => {
+    await writeInTextArea(boutonAccueil)
+  })
+
+  async function writeInTextArea(boutonDernierArticle: Element) {
+    const texte = (boutonDernierArticle.textContent ?? '').trim()
+    const texteareElement = document.querySelector('textarea')
+    if (!texteareElement) {
+      throw 'Mon site est pété'
+    }
+    texteareElement.value = ''
+    const indexPremierePause = 11
+    for (let c of texte.slice(0, indexPremierePause)) {
+      texteareElement.value += c
+      await waitForDelay(20)
+    }
+    await waitForDelay(600)
+    const indexDeuxiemePause = 35
+
+    for (let c of texte.slice(indexPremierePause, indexDeuxiemePause)) {
+      texteareElement.value += c
+      await waitForDelay(20)
+    }
+
+    await waitForDelay(600)
+
+    for (let c of texte.slice(indexDeuxiemePause, texte.length)) {
+      texteareElement.value += c
+      await waitForDelay(20)
+    }
+
+    await waitForDelay(600)
+
+    const boutonSubmit = document.querySelector("button[type='submit']")
+    var clickEvent = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: false,
+    })
+    boutonSubmit?.dispatchEvent(clickEvent)
+  }
+
+  document.querySelector('textarea')!.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+
+      document.querySelector('form')!.requestSubmit()
+    }
+  })
+
+  async function processForm(e: SubmitEvent) {
+    if (e.preventDefault) e.preventDefault()
+
+    const texteRentre = document.querySelector('textarea')!
+
+    const lowerCaseInput = texteRentre.value.toLowerCase()
+    // Derniers articles
+    if (lowerCaseInput.includes('dernier')) {
+      document.location.href = '/blog'
+      return false
+    }
+
+    if (
+      lowerCaseInput.includes('articles') ||
+      lowerCaseInput.includes('blog') ||
+      lowerCaseInput.includes('post')
+    ) {
+      document.location.href = '/blog'
+      return false
+    }
+
+    if (
+      lowerCaseInput.includes('contact') ||
+      lowerCaseInput.includes('email') ||
+      lowerCaseInput.includes('appel')
+    ) {
+      document.location.href = '/contact'
+      return false
+    }
+
+    if (lowerCaseInput.includes('balade')) {
+      document.location.href = '/presentations'
+      return false
+    }
+
+    document.location.href = '/blog'
+
+    // You must return false to prevent the default form behavior
+    return false
+  }
+
+  var form = document.querySelector('form')
+  if (form?.attachEvent) {
+    form.attachEvent('submit', processForm)
+  } else {
+    form?.addEventListener('submit', processForm)
+  }
+</script>
 <form
   class="chat-container bg-slate-100 dark:bg-slate-700 text-black dark:text-white max-w-lg m-auto p-4 flex flex-row gap-3"
 >
@@ -10,7 +125,10 @@ import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
     placeholder="Par exemple : Je voudrais lire le dernier article de blog."
     autofocus></textarea>
   <div class="flex flex-col">
-    <button class="bg-blue-500 hover:bg-blue-400 h-8 w-8 p-2 rounded-sm">
+    <button
+      class="bg-blue-500 hover:bg-blue-400 h-8 w-8 p-2 rounded-sm"
+      type="submit"
+    >
       <svg
         viewBox="0 0 24 24"
         class="text-white"
@@ -28,14 +146,18 @@ import BoutonSuggestionChat from './BoutonSuggestionChat.astro'
 </form>
 
 <div class="flex flex-row flex-wrap pt-5 gap-2">
-  <BoutonSuggestionChat>
+  <BoutonSuggestionChat selector="dernier-article">
     Je voudrais lire le dernier article de blog
   </BoutonSuggestionChat>
-  <BoutonSuggestionChat>
+  <BoutonSuggestionChat selector="articles">
     Peux-tu montrer tous tes articles ?
   </BoutonSuggestionChat>
-  <BoutonSuggestionChat>Je voudrais prendre contact</BoutonSuggestionChat>
-  <BoutonSuggestionChat>Je me balade juste</BoutonSuggestionChat>
+  <BoutonSuggestionChat selector="contact"
+    >Je voudrais prendre contact</BoutonSuggestionChat
+  >
+  <BoutonSuggestionChat selector="accueil"
+    >Je me balade juste</BoutonSuggestionChat
+  >
 </div>
 
 <style scoped>
