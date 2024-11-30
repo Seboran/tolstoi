@@ -2,9 +2,23 @@
 import AnimatedBoutonMeContacter from '../../components/AnimatedBoutonMeContacter.astro'
 import LinkInHeader from './LinkInHeader.astro'
 import NavigationMenuList from './menu/NavigationMenuList.astro'
+
+interface Props {
+  animate?: boolean
+}
+
+const { animate } = Astro.props
 ---
 
-<nav class="flex justify-between items-center pb-10">
+<nav
+  class:list={[
+    'flex',
+    'justify-between',
+    'items-center',
+    'pb-10',
+    animate && 'animate',
+  ]}
+>
   <a
     class="perspective-on-hover text-xl"
     href="/"
@@ -24,3 +38,22 @@ import NavigationMenuList from './menu/NavigationMenuList.astro'
 
   <NavigationMenuList />
 </nav>
+
+<style>
+  .animate {
+    animation: slide-in 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  @keyframes slide-in {
+    0% {
+      transform: translateY(-65px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

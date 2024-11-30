@@ -4,9 +4,10 @@ import NavigationHeader from './header/NavigationHeader.astro'
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
+  animate?: boolean
 }
 
-const { title, showNirinaRabesonInNavBar } = Astro.props
+const { title, showNirinaRabesonInNavBar, animate } = Astro.props
 ---
 
 <!doctype html>
@@ -58,7 +59,7 @@ const { title, showNirinaRabesonInNavBar } = Astro.props
   <div>
     <div class="antialiased">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <NavigationHeader>
+        <NavigationHeader animate={animate}>
           ✨
           {
             !showNirinaRabesonInNavBar && (

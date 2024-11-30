@@ -1,14 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
+import ChatInterface from '../../components/chat/ChatInterface.astro'
 ---
 
-<Layout title="Nirina Rabeson" showNirinaRabesonInNavBar
-  ><div class="divide-y divide-gray-200 dark:divide-slate-200/5">
-    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+<Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
+  ><div class="m-auto">
+    <div class="pt-6 pb-8 space-y-2 md:space-y-5 text-center">
       <MovingAnimatedHomeTitle />
     </div>
-    <div>todo</div>
+
+    <div class="m-auto max-w-lg">
+      <h2
+        class="text-lg md:text-2xl leading-3 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
+      >
+        Comment puis-je vous aider aujourd'hui ?
+      </h2>
+      <ChatInterface />
+    </div>
   </div></Layout
 >
 
