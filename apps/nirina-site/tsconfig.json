@@ -1,4 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "exclude": ["netlify"]
+  "exclude": [
+    "netlify"
+  ],
+  "compilerOptions": {
+    "jsx": "preserve"
+  }
 }
