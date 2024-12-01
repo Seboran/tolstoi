@@ -29,6 +29,7 @@ const { lienDernierArticle } = Astro.props
     await writeInTextArea(boutonAccueil)
   })
 
+  const pauseEntreMots = 300
   async function writeInTextArea(boutonDernierArticle: Element) {
     const texte = (boutonDernierArticle.textContent ?? '').trim()
     const texteareElement = document.querySelector('textarea')
@@ -41,7 +42,7 @@ const { lienDernierArticle } = Astro.props
       texteareElement.value += c
       await waitForDelay(20)
     }
-    await waitForDelay(600)
+    await waitForDelay(pauseEntreMots)
     const indexDeuxiemePause = 35
 
     for (let c of texte.slice(indexPremierePause, indexDeuxiemePause)) {
@@ -49,14 +50,14 @@ const { lienDernierArticle } = Astro.props
       await waitForDelay(20)
     }
 
-    await waitForDelay(600)
+    await waitForDelay(pauseEntreMots)
 
     for (let c of texte.slice(indexDeuxiemePause, texte.length)) {
       texteareElement.value += c
       await waitForDelay(20)
     }
 
-    await waitForDelay(600)
+    await waitForDelay(800)
 
     const boutonSubmit = document.querySelector("button[type='submit']")
     var clickEvent = new MouseEvent('click', {
@@ -144,6 +145,8 @@ const { lienDernierArticle } = Astro.props
     <div class="flex flex-col">
       <button
         class="bg-blue-500 hover:bg-blue-400 h-8 w-8 p-2 rounded-sm"
+        name="Envoyer message"
+        aria-label="Envoyer message"
         type="submit"
       >
         <svg

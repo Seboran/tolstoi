@@ -1,0 +1,128 @@
+<div class="background-effect"></div>
+<style>
+  @property --hue1 {
+    syntax: '<number>';
+    initial-value: 220;
+    inherits: false;
+  }
+
+  @property --hue2 {
+    syntax: '<number>';
+    initial-value: 260;
+    inherits: false;
+  }
+
+  @property --hue3 {
+    syntax: '<number>';
+    initial-value: 300;
+    inherits: false;
+  }
+
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  .background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        100% 100% at 0% 0%,
+        hsla(var(--hue1), 100%, 90%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        100% 100% at 100% 0%,
+        hsla(var(--hue2), 100%, 90%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        100% 100% at 50% 100%,
+        hsla(var(--hue3), 100%, 90%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsla(var(--hue1), 80%, 50%, 0.1) 0%,
+        transparent 100%
+      ),
+      hsl(0, 0%, 87%);
+
+    z-index: -1;
+    opacity: 1;
+    mix-blend-mode: screen;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .background-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+          100% 100% at 0% 0%,
+          hsla(var(--hue1), 100%, 60%, 0.2) 0%,
+          transparent 60%
+        ),
+        radial-gradient(
+          100% 100% at 100% 0%,
+          hsla(var(--hue2), 100%, 60%, 0.2) 0%,
+          transparent 60%
+        ),
+        radial-gradient(
+          100% 100% at 50% 100%,
+          hsla(var(--hue3), 100%, 60%, 0.2) 0%,
+          transparent 60%
+        ),
+        radial-gradient(
+          50% 50% at 50% 50%,
+          hsla(var(--hue1), 80%, 50%, 0.1) 0%,
+          transparent 100%
+        ),
+        hsl(220, 80%, 8%);
+      z-index: -1;
+      opacity: 1;
+      mix-blend-mode: screen;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .background-effect {
+      animation: hue-rotate 15s linear infinite;
+    }
+  }
+
+  @keyframes hue-rotate {
+    0% {
+      --hue1: 220;
+      --hue2: 260;
+      --hue3: 300;
+    }
+    33% {
+      --hue1: 260;
+      --hue2: 300;
+      --hue3: 220;
+    }
+    66% {
+      --hue1: 300;
+      --hue2: 220;
+      --hue3: 260;
+    }
+    100% {
+      --hue1: 220;
+      --hue2: 260;
+      --hue3: 300;
+    }
+  }
+</style>

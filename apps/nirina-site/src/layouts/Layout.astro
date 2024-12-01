@@ -1,5 +1,6 @@
 ---
 import '../styles/theme.css'
+import RainbowRotatingBackground from './background/RainbowRotatingBackground.astro'
 import NavigationHeader from './header/NavigationHeader.astro'
 interface Props {
   title: string
@@ -11,8 +12,9 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
 ---
 
 <!doctype html>
-<meta charset="utf-8" />
-<head>
+<html lang="fr-FR">
+  <meta charset="utf-8" />
+
   <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta lang="fr-FR" />
@@ -71,28 +73,29 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
     // Whenever the user explicitly chooses to respect the OS preference
     localStorage.removeItem('theme')
   </script>
-</head>
-<body>
-  <div class="funny-background absolute h-screen w-screen -z-10"></div>
 
-  <div>
-    <div class="antialiased">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <NavigationHeader animate={animate}>
-          ✨
-          {
-            !showNirinaRabesonInNavBar && (
-              <span class="statement-font rainbow-animation dark:text-white">
-                Nirina Rabeson
-              </span>
-            )
-          }</NavigationHeader
-        >
+  <body>
+    <RainbowRotatingBackground />
+
+    <div>
+      <div class="antialiased">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+          <NavigationHeader animate={animate}>
+            ✨
+            {
+              !showNirinaRabesonInNavBar && (
+                <span class="statement-font rainbow-animation dark:text-white">
+                  Nirina Rabeson
+                </span>
+              )
+            }</NavigationHeader
+          >
+        </div>
+        <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-20">
+          <slot />
+        </main>
       </div>
-      <main class="max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-5xl xl:px-0 mb-20">
-        <slot />
-      </main>
     </div>
-  </div>
-  <a class="hidden" rel="me" href="https://hachyderm.io/@nirina">Mastodon</a>
-</body>
+    <a class="hidden" rel="me" href="https://hachyderm.io/@nirina">Mastodon</a>
+  </body>
+</html>

@@ -11,12 +11,12 @@
   --c-brand: #4b8d97;
   --c-brand-light: #75a8b0;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #0f172a;
   }
-}
+} */
 
 .statement-font {
   font-family: 'DM Serif Text', serif;

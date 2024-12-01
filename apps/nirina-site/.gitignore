@@ -29,3 +29,4 @@ pnpm-debug.log*
 
 .netlify
 src/content/posts/
+.unlighthouse

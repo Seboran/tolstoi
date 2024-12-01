@@ -1,0 +1,29 @@
+---
+import MovingAnimatedHomeTitle from '../components/header/MovingAnimatedHomeTitle.astro'
+import RainbowRotatingBackground from '../layouts/background/RainbowRotatingBackground.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Bonjour je m'appelle Nirina</title>
+  </head>
+  <body>
+    <RainbowRotatingBackground />
+    <div class="pt-6 pb-8 space-y-2 md:space-y-5 text-center">
+      <MovingAnimatedHomeTitle />
+      <p class="text-black dark:text-white">
+        Bienvenu sur la page où je bricole plein de choses ! Vous êtes
+        techniquement perdu·e, mais vous pouvez admirer les choses que je
+        bricole en ce moment. Par tout hasard, comment êtes-vous tombé sur cette
+        page ? N'hésitez pas à me <a href="/contact">contacter</a> si vous pour me
+        le dire.
+      </p>
+    </div>
+  </body>
+</html>
