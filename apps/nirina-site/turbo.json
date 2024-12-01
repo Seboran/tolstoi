@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md"]
+      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"]
     }
   }
 }
