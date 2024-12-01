@@ -11,6 +11,7 @@ const postsCollection = defineCollection({
     cover_url: z.string().optional(),
     alt_cover_image: z.string().optional(),
     draft: z.boolean().optional(),
+    tags: z.array(z.string()),
   }),
 })
 
