@@ -28,8 +28,13 @@ const { lienDernierArticle } = Astro.props
   boutonAccueil?.addEventListener('click', async () => {
     await writeInTextArea(boutonAccueil)
   })
+  const boutonPresentation = document.querySelector('button.presentation')
+  boutonPresentation?.addEventListener('click', async () => {
+    await writeInTextArea(boutonPresentation)
+  })
 
-  const pauseEntreMots = 300
+  const pauseEntreMotsEnMs = 300
+  const pauseEntreCaracteresEnMs = 20
   async function writeInTextArea(boutonDernierArticle: Element) {
     const texte = (boutonDernierArticle.textContent ?? '').trim()
     const texteareElement = document.querySelector('textarea')
@@ -40,21 +45,21 @@ const { lienDernierArticle } = Astro.props
     const indexPremierePause = 11
     for (let c of texte.slice(0, indexPremierePause)) {
       texteareElement.value += c
-      await waitForDelay(20)
+      await waitForDelay(pauseEntreCaracteresEnMs)
     }
-    await waitForDelay(pauseEntreMots)
+    await waitForDelay(pauseEntreMotsEnMs)
     const indexDeuxiemePause = 35
 
     for (let c of texte.slice(indexPremierePause, indexDeuxiemePause)) {
       texteareElement.value += c
-      await waitForDelay(20)
+      await waitForDelay(pauseEntreCaracteresEnMs)
     }
 
-    await waitForDelay(pauseEntreMots)
+    await waitForDelay(pauseEntreMotsEnMs)
 
     for (let c of texte.slice(indexDeuxiemePause, texte.length)) {
       texteareElement.value += c
-      await waitForDelay(20)
+      await waitForDelay(pauseEntreCaracteresEnMs)
     }
 
     await waitForDelay(800)
@@ -114,6 +119,17 @@ const { lienDernierArticle } = Astro.props
       return false
     }
 
+    if (
+      lowerCaseInput.includes('parler de toi') ||
+      lowerCaseInput.includes('presentation') ||
+      lowerCaseInput.includes('présentation') ||
+      lowerCaseInput.includes('présenter') ||
+      lowerCaseInput.includes('CV')
+    ) {
+      document.location.href = '/a-propos'
+      return false
+    }
+
     document.location.href = '/blog'
 
     // You must return false to prevent the default form behavior
@@ -160,7 +176,7 @@ const { lienDernierArticle } = Astro.props
     </div>
   </form>
 
-  <div class="flex flex-row flex-wrap pt-5 gap-2">
+  <div class="flex flex-row flex-wrap pt-5 gap-2 justify-center">
     <BoutonSuggestionChat selector="dernier-article">
       Je voudrais lire le dernier article de blog
     </BoutonSuggestionChat>
@@ -172,6 +188,9 @@ const { lienDernierArticle } = Astro.props
     >
     <BoutonSuggestionChat selector="accueil"
       >Je me balade juste</BoutonSuggestionChat
+    >
+    <BoutonSuggestionChat selector="presentation"
+      >Peux-tu te présenter ?</BoutonSuggestionChat
     >
   </div>
 

@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
+---
+
+<Layout title="Nirina Rabeson" showNirinaRabesonInNavBar>
+  <div class="space-y-8">
+    <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+      <AnimatedHomeTitle />
+      <p class="description text-lg leading-7 text-gray-500 dark:text-white">
+        Je suis développeur fullstack actuellement chez
+        <a
+          class="zenika-lien font-bold"
+          href="https://www.linkedin.com/company/zenika"
+          target="_blank">Zenika</a
+        >. Je suis passionné de musique, de stack javascript, mais j'adore aussi
+        le partage et la bonne vibe. Motivé par une énergie détonnante et une
+        bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
+        soit dans le domaine du web, de l'intelligence artificielle, ou de
+        sujets très variés un peu geeks.
+      </p>
+    </div>
+    <div class="mt-8 prose">
+      <h2>Comment me contacter ?</h2>
+      <p>Vous pouvez me contacter le plus simplement :</p>
+      <ul>
+        <li>
+          <strong
+            >Par courrier électronique à <a href="mailto:hello@nirinarabeson.fr"
+              >hello@nirinarabeson.fr</a
+            ></strong
+          >
+          <a href="/pgp">(PGP)</a>, où je réponds rapidement
+        </li>
+        <li>
+          <strong
+            >Sur <a href="https://www.linkedin.com/in/nirinarabeson/"
+              >LinkedIn</a
+            ></strong
+          >, où je réponds moins rapidement
+        </li>
+        <li>
+          <strong>Dans la vraie vie</strong> où je réponds très rapidement
+        </li>
+      </ul>
+      <h2>Comment me suivre ?</h2>
+      <ul>
+        <li>
+          <strong>Sur Github</strong>
+          <a href="https://github.com/Seboran">où je suis plutôt actif</a>
+        </li>
+        <li>
+          <strong>Sur BlueSky 🌌</strong>
+          <a href="https://bsky.app/profile/nirinarabeson.fr"
+            >où j’échange de façon très chaotique</a
+          >
+        </li>
+        <li>
+          <strong>J’ai un flux RSS !</strong> Vous pouvez le suivre en cliquant sur
+          ce <a href="/rss.xml">flux RSS</a>
+        </li>
+      </ul>
+      <p>
+        En attendant que je vous réponde, vous pouvez regarder mes <a href="/"
+          >articles</a
+        >, mes <a href="/presentations">présentations</a>, mes <a
+          href="/projets">projets</a
+        >, ou mes <strong
+          ><a href="/opinions-impopulaires">opinions impopulaires</a></strong
+        >
+      </p>
+    </div>
+  </div>
+</Layout>
