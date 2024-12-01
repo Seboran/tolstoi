@@ -55,7 +55,18 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
     title="Site de Nirina Rabeson."
     href={new URL('rss.xml', Astro.site)}
   />
-  <meta name="theme-color" content="#211440" />
+  <meta
+    name="theme-color"
+    content="#211440"
+    media="(prefers-color-scheme: dark)"
+  />
+  <meta
+    name="theme-color"
+    content="#dbdae2"
+    media="(prefers-color-scheme: light)"
+  />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     document.documentElement.classList.toggle(
