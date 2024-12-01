@@ -59,13 +59,8 @@ const { lienDernierArticle } = Astro.props
 
     await waitForDelay(800)
 
-    const boutonSubmit = document.querySelector("button[type='submit']")
-    var clickEvent = new MouseEvent('click', {
-      view: window,
-      bubbles: true,
-      cancelable: false,
-    })
-    boutonSubmit?.dispatchEvent(clickEvent)
+    const form = document.querySelector('form')
+    form?.requestSubmit()
   }
 
   document.querySelector('textarea')!.addEventListener('keypress', (e) => {
