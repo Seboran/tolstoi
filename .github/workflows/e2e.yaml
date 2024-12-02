@@ -77,6 +77,8 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install turbo
+        run: pnpm i -g turbo
       - run: turbo build --filter=nirina-site
       - name: Deploy to Netlify
         id: deploy-to-netlify
