@@ -37,19 +37,11 @@ jobs:
       - name: Install turbo
         run: pnpm i -g turbo
 
-      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5
-        with:
-          python-version: '3.12'
-
-      - name: Install python
-        run: pip install -r requirements.txt
-        working-directory: apps/bons-comptes-bons-amis
-
       - name: Install playwright browsers
         run: |
           pnpm exec playwright install
           pnpm exec playwright install-deps
-      - run: turbo test:e2e --concurrency=1 --filter=\!nirina-site
+      - run: turbo test:e2e --concurrency=1 --filter=clavier-turbo-rapide
   e2e-nirina-site:
     runs-on: ubuntu-22.04
     env:
