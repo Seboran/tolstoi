@@ -16,7 +16,7 @@
     "nodemon": "3.1.7",
     "prettier": "3.3.3",
     "ts-node": "10.9.2",
-    "vitest": "2.1.5"
+    "vitest": "2.1.8"
   },
   "dependencies": {
     "lib-effondrement": "workspace:*"
