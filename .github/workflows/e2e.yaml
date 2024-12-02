@@ -1,12 +1,6 @@
 name: e2e
 on:
   push:
-    paths:
-      [
-        'apps/bons-comptes-bons-amis/**',
-        'apps/clavier-turbo-rapide/**',
-        'apps/nirina-site/**',
-      ]
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 permissions:
