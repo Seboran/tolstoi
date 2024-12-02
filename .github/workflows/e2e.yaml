@@ -129,4 +129,5 @@ jobs:
         run: |
           pnpm exec playwright install
           pnpm exec playwright install-deps
-      - run: turbo test:e2e --filter=bons-comptes-bons-amis
+      - run: pnpm test:e2e
+        working-directory: ./apps/bons-comptes-bons-amis
