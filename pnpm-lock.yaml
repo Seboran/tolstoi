@@ -53,7 +53,7 @@ importers:
         version: 1.2.1
       '@nuxt/test-utils':
         specifier: 3.14.4
-        version: 3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.6)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+        version: 3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.7)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       '@nuxtjs/tailwindcss':
         specifier: 6.12.2
         version: 6.12.2(magicast@0.3.5)(rollup@4.27.3)
@@ -97,8 +97,8 @@ importers:
         specifier: 9.31.0
         version: 9.31.0(eslint@9.15.0(jiti@2.4.0))
       happy-dom:
-        specifier: 15.11.6
-        version: 15.11.6
+        specifier: 15.11.7
+        version: 15.11.7
       npm-run-all2:
         specifier: 7.0.1
         version: 7.0.1
@@ -116,7 +116,7 @@ importers:
         version: 37.14.0(encoding@0.1.13)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   apps/clavier-turbo-rapide:
     dependencies:
@@ -223,7 +223,7 @@ importers:
         version: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   apps/generateur-musique:
     dependencies:
@@ -265,8 +265,8 @@ importers:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
       happy-dom:
-        specifier: 15.11.6
-        version: 15.11.6
+        specifier: 15.11.7
+        version: 15.11.7
       npm-run-all2:
         specifier: 7.0.1
         version: 7.0.1
@@ -284,7 +284,7 @@ importers:
         version: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
       vue-tsc:
         specifier: 2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -348,7 +348,7 @@ importers:
         version: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
       vue-tsc:
         specifier: 2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -418,7 +418,7 @@ importers:
         version: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
       vue-tsc:
         specifier: 2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -491,7 +491,7 @@ importers:
         version: 10.9.2(@types/node@22.9.3)(typescript@5.6.3)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/lib-musique:
     devDependencies:
@@ -512,7 +512,7 @@ importers:
         version: 10.9.2(@types/node@22.9.3)(typescript@5.6.3)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/lib-style:
     dependencies:
@@ -542,8 +542,8 @@ importers:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
       happy-dom:
-        specifier: 15.11.6
-        version: 15.11.6
+        specifier: 15.11.7
+        version: 15.11.7
       jsdom:
         specifier: 25.0.1
         version: 25.0.1
@@ -570,7 +570,7 @@ importers:
         version: 4.3.0(@types/node@22.9.3)(rollup@4.27.3)(typescript@5.6.3)(vite@5.4.11(@types/node@22.9.3)(terser@5.36.0))
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
       vue-tsc:
         specifier: 2.1.10
         version: 2.1.10(typescript@5.6.3)
@@ -598,7 +598,7 @@ importers:
         version: 10.9.2(@types/node@22.9.3)(typescript@5.6.3)
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/nirina-codemods:
     devDependencies:
@@ -619,7 +619,7 @@ importers:
         version: 5.6.3
       vitest:
         specifier: 1.6.0
-        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 1.6.0(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   packages/transpilation:
     dependencies:
@@ -647,7 +647,7 @@ importers:
         version: 5.6.3
       vitest:
         specifier: 2.1.5
-        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+        version: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
 packages:
 
@@ -4936,8 +4936,8 @@ packages:
   h3@1.13.0:
     resolution: {integrity: sha512-vFEAu/yf8UMUcB4s43OaDaigcqpQd14yanmOsn+NcRX3/guSKncyE2rOYhq8RIchgJrPSs/QiIddnTTR1ddiAg==}
 
-  happy-dom@15.11.6:
-    resolution: {integrity: sha512-elX7iUTu+5+3b2+NGQc0L3eWyq9jKhuJJ4GpOMxxT/c2pg9O3L5H3ty2VECX0XXZgRmmRqXyOK8brA2hDI6LsQ==}
+  happy-dom@15.11.7:
+    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
     engines: {node: '>=18.0.0'}
 
   has-bigints@1.0.2:
@@ -10514,7 +10514,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/test-utils@3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.6)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
+  '@nuxt/test-utils@3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.7)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
       '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.27.3)
       '@nuxt/schema': 3.13.2(rollup@4.27.3)
@@ -10541,7 +10541,7 @@ snapshots:
       unenv: 1.10.0
       unplugin: 1.15.0
       vite: 5.4.11(@types/node@16.18.11)(terser@5.36.0)
-      vitest-environment-nuxt: 1.0.1(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.6)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+      vitest-environment-nuxt: 1.0.1(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.7)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
       vue: 3.5.13(typescript@5.6.3)
       vue-router: 4.5.0(vue@3.5.13(typescript@5.6.3))
     optionalDependencies:
@@ -10549,10 +10549,10 @@ snapshots:
       '@testing-library/vue': 8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3))
       '@vitest/ui': 2.1.5(vitest@2.1.5)
       '@vue/test-utils': 2.4.6
-      happy-dom: 15.11.6
+      happy-dom: 15.11.7
       jsdom: 25.0.1
       playwright-core: 1.49.0
-      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
     transitivePeerDependencies:
       - magicast
       - rollup
@@ -11762,7 +11762,7 @@ snapshots:
       std-env: 3.8.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -11839,7 +11839,7 @@ snapshots:
       sirv: 3.0.0
       tinyglobby: 0.2.10
       tinyrainbow: 1.2.0
-      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0)
+      vitest: 2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0)
 
   '@vitest/utils@1.6.0':
     dependencies:
@@ -14613,7 +14613,7 @@ snapshots:
       uncrypto: 0.1.3
       unenv: 1.10.0
 
-  happy-dom@15.11.6:
+  happy-dom@15.11.7:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -19401,9 +19401,9 @@ snapshots:
     optionalDependencies:
       vite: 5.4.11(@types/node@22.9.3)(terser@5.36.0)
 
-  vitest-environment-nuxt@1.0.1(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.6)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3)):
+  vitest-environment-nuxt@1.0.1(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.7)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3)):
     dependencies:
-      '@nuxt/test-utils': 3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.6)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
+      '@nuxt/test-utils': 3.14.4(@playwright/test@1.49.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3)))(@vitest/ui@2.1.5)(@vue/test-utils@2.4.6)(h3@1.13.0)(happy-dom@15.11.7)(jsdom@25.0.1)(magicast@0.3.5)(nitropack@2.10.4(encoding@0.1.13)(typescript@5.6.3))(playwright-core@1.49.0)(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))(vitest@2.1.5)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3))
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
@@ -19425,7 +19425,7 @@ snapshots:
       - vue-router
       - webpack-sources
 
-  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0):
+  vitest@1.6.0(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -19450,7 +19450,7 @@ snapshots:
     optionalDependencies:
       '@edge-runtime/vm': 3.2.0
       '@types/node': 22.9.3
-      happy-dom: 15.11.6
+      happy-dom: 15.11.7
       jsdom: 25.0.1
     transitivePeerDependencies:
       - less
@@ -19462,7 +19462,7 @@ snapshots:
       - supports-color
       - terser
 
-  vitest@2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0):
+  vitest@2.1.5(@edge-runtime/vm@3.2.0)(@types/node@16.18.11)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 2.1.5
       '@vitest/mocker': 2.1.5(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0))
@@ -19488,7 +19488,7 @@ snapshots:
       '@edge-runtime/vm': 3.2.0
       '@types/node': 16.18.11
       '@vitest/ui': 2.1.5(vitest@2.1.5)
-      happy-dom: 15.11.6
+      happy-dom: 15.11.7
       jsdom: 25.0.1
     transitivePeerDependencies:
       - less
@@ -19501,7 +19501,7 @@ snapshots:
       - supports-color
       - terser
 
-  vitest@2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.6)(jsdom@25.0.1)(terser@5.36.0):
+  vitest@2.1.5(@edge-runtime/vm@3.2.0)(@types/node@22.9.3)(@vitest/ui@2.1.5)(happy-dom@15.11.7)(jsdom@25.0.1)(terser@5.36.0):
     dependencies:
       '@vitest/expect': 2.1.5
       '@vitest/mocker': 2.1.5(vite@5.4.11(@types/node@22.9.3)(terser@5.36.0))
@@ -19527,7 +19527,7 @@ snapshots:
       '@edge-runtime/vm': 3.2.0
       '@types/node': 22.9.3
       '@vitest/ui': 2.1.5(vitest@2.1.5)
-      happy-dom: 15.11.6
+      happy-dom: 15.11.7
       jsdom: 25.0.1
     transitivePeerDependencies:
       - less
