@@ -51,17 +51,17 @@ export default defineConfig({
       name: 'Mobile Chrome',
       use: { ...devices['Pixel 5'] }
     }
-  ],
-  webServer: [
-    {
-      command: 'pnpm dev:nuxt',
-      port: 3000,
-      reuseExistingServer: !process.env.CI
-    },
-    {
-      command: 'pnpm run dev:flask',
-      port: 5328,
-      reuseExistingServer: !process.env.CI
-    }
   ]
+  // webServer: [
+  //   {
+  //     command: 'pnpm dev:nuxt',
+  //     port: 3000,
+  //     reuseExistingServer: !process.env.CI
+  //   },
+  //   {
+  //     command: 'pnpm run dev:flask',
+  //     port: 5328,
+  //     reuseExistingServer: !process.env.CI
+  //   }
+  // ]
 })

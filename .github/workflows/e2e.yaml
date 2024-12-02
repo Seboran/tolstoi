@@ -101,3 +101,48 @@ jobs:
           pnpm exec playwright install
           pnpm exec playwright install-deps
       - run: turbo test:e2e --filter=nirina-site
+
+  e2e-bons-comptes:
+    runs-on: ubuntu-22.04
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 2
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.2
+      - name: Use Node.js 20
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Cache turbo build setup
+        uses: actions/cache@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Install turbo
+        run: pnpm i -g turbo
+      - run: turbo build --filter=bons-comptes-bons-amis
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        id: vercel-deploy
+        run: |
+          vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
+          cat deployment-url.txt
+          echo "PLAYWRIGHT_BASE_URL=$(cat deployment-url.txt)" >> $GITHUB_ENV
+      - name: Install playwright browsers
+        run: |
+          pnpm exec playwright install
+          pnpm exec playwright install-deps
+      - run: turbo test:e2e --filter=bons-comptes-bons-amis
