@@ -7,6 +7,7 @@ permissions:
   contents: read # for checkout
 jobs:
   ci:
+    environment: Preview
     runs-on: ubuntu-22.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -43,6 +44,7 @@ jobs:
           pnpm exec playwright install-deps
       - run: turbo test:e2e --concurrency=1 --filter=clavier-turbo-rapide
   e2e-nirina-site:
+    environment: Preview
     runs-on: ubuntu-22.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -95,6 +97,7 @@ jobs:
       - run: turbo test:e2e --filter=nirina-site
 
   e2e-bons-comptes:
+    environment: Preview
     runs-on: ubuntu-22.04
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
