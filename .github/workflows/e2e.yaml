@@ -97,4 +97,8 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
         timeout-minutes: 1
       - run: echo "PLAYWRIGHT_URL=$(echo ${{ steps.deploy-to-netlify.outputs.deploy-url }})" >> $GITHUB_ENV
+      - name: Install playwright browsers
+        run: |
+          pnpm exec playwright install
+          pnpm exec playwright install-deps
       - run: turbo test:e2e --filter=nirina-site
