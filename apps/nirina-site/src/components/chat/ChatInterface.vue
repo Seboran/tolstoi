@@ -140,7 +140,7 @@ function submitOnEnter(key: KeyboardEvent) {
       </div>
     </form>
 
-    <div class="flex flex-row flex-wrap gap-2 pt-5">
+    <div class="flex flex-row flex-wrap justify-center gap-2 pt-5">
       <BoutonSuggestionChat @click="handleClickOnSuggestion">
         Je voudrais lire le dernier article de blog
       </BoutonSuggestionChat>
@@ -158,11 +158,6 @@ function submitOnEnter(key: KeyboardEvent) {
         >Peux-tu te présenter ?</BoutonSuggestionChat
       >
     </div>
-
-    <div
-      class="lien-dernier-article hidden"
-      data-url="{lienDernierArticle}"
-    ></div>
   </div>
 </template>
 <style scoped>
