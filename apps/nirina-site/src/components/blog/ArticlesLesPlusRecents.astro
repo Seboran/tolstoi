@@ -5,7 +5,6 @@ import ArticleExtraitPlusRecent from './ArticleExtraitPlusRecent.astro'
 const allPosts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
-console.log(allPosts)
 ---
 
 <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
