@@ -12,6 +12,6 @@ const { nextPost } = Astro.props
     <slot />
   </h2>
   <div class="link">
-    <a href=`/posts/${nextPost?.slug}`>{nextPost?.data.title}</a>
+    <a href=`/posts/${nextPost?.id}`>{nextPost?.data.title}</a>
   </div>
 </div>

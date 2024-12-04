@@ -1,6 +1,6 @@
 ---
 import { Fragment } from 'astro/jsx-runtime'
-import { getCollection } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import Author from '../blog/Author.astro'
 import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
@@ -8,15 +8,13 @@ import Prose from '../Prose.astro'
 import MarkdownPostLayout from '../../layouts/Layout.astro'
 
 const { entry } = Astro.props
-const { Content } = await entry.render()
+const { Content } = await render(entry)
 
 const posts = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
 
-const currentPostIndex = posts.findIndex(
-  (post) => post.slug == Astro.params.slug
-)
+const currentPostIndex = posts.findIndex((post) => post.id == Astro.params.slug)
 const previousPost =
   currentPostIndex + 1 === posts.length
     ? undefined

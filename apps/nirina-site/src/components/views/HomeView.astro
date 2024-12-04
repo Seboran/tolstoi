@@ -7,7 +7,7 @@ import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
-  .at(0)?.slug
+  .at(0)?.id
 
 export const prerender = false
 ---

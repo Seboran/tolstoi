@@ -16,7 +16,7 @@ import { astroCSPHashGenerator } from './astroCSPHashgenerator'
 export default defineConfig({
   integrations: [tailwind(), mdx(), shield({}), vue(), astroCSPHashGenerator],
   site: 'https://www.nirinarabeson.fr',
-  output: 'hybrid',
+  output: 'static',
   adapter: netlify({
     edgeMiddleware: true,
   }),

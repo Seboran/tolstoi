@@ -1,8 +1,12 @@
 // Import utilities from `astro:content`
+import { glob } from 'astro/loaders'
 import { z, defineCollection } from 'astro:content'
 // Define a `type` and `schema` for each collection
 const postsCollection = defineCollection({
-  type: 'content',
+  loader: glob({
+    pattern: ['**/*.md', '**/*.mdx'],
+    base: './src/content/posts',
+  }),
   schema: z.object({
     title: z.string(),
     date: z.date(),
