@@ -35,12 +35,10 @@ jobs:
         run: npx turbo-ignore -d ./apps/bons-comptes-bons-amis || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
 
   deploy-site:
-    environment: Production
+    environment: Production – blog
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 11
 
       - uses: pnpm/action-setup@v4
         with:
