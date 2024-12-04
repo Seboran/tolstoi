@@ -9,7 +9,7 @@ env:
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 jobs:
   deploy-bons-comptes-bons-amis:
-    environment: Production
+    environment: Production – bons-comptes-bons-amis
     env:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_BONS_COMPTES_BONS_AMIS_PROJECT_ID }}
     runs-on: ubuntu-latest

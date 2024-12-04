@@ -97,7 +97,7 @@ jobs:
       - run: turbo test:e2e --filter=nirina-site
 
   e2e-bons-comptes:
-    environment: Preview
+    environment: Preview – bons-comptes-bons-amis
     runs-on: ubuntu-22.04
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
