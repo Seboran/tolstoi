@@ -78,7 +78,7 @@ jobs:
         timeout-minutes: 1
 
   deploy-sudoku-musique:
-    environment: Production
+    environment: Production – generateur-musique-app-sudoku
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -141,7 +141,7 @@ jobs:
         timeout-minutes: 1
 
   deploy-ethereum-generateur:
-    environment: Production
+    environment: Production – ethereum-wallet-generator
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -176,7 +176,7 @@ jobs:
         timeout-minutes: 1
 
   deploy-jeu-du-debat:
-    environment: Production
+    environment: Production – jeu-du-debat
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4

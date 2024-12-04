@@ -7,7 +7,7 @@ permissions:
   contents: read # for checkout
 jobs:
   ci:
-    environment: Preview
+    environment: Preview – clavier-turbo-rapide
     runs-on: ubuntu-22.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
           pnpm exec playwright install-deps
       - run: turbo test:e2e --concurrency=1 --filter=clavier-turbo-rapide
   e2e-nirina-site:
-    environment: Preview
+    environment: Preview – blog
     runs-on: ubuntu-22.04
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
