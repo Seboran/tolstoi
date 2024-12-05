@@ -41,56 +41,90 @@ async function handleClickOnSuggestion(texte: string) {
   await handleFormSubmit()
 }
 
+// Gestionnaire des redirections pour le chatbot
 async function handleFormSubmit() {
-  if (message.value.length === 0) {
+  const inputMessage = message.value.trim()
+
+  // Si le champ est vide, redirige vers le dernier article
+  if (inputMessage.length === 0) {
     document.location.href = lienDernierArticle
     return false
   }
 
-  const lowerCaseInput = message.value.toLowerCase()
-  console.log(lowerCaseInput)
-  // Derniers articles
-  if (lowerCaseInput.includes('dernier')) {
-    document.location.href = lienDernierArticle
-    return
-  }
+  // Convertir l'entrée utilisateur en minuscules pour éviter les erreurs liées à la casse
+  const lowerCaseInput = inputMessage.toLowerCase()
 
-  if (
-    lowerCaseInput.includes('articles') ||
-    lowerCaseInput.includes('blog') ||
-    lowerCaseInput.includes('post')
-  ) {
-    document.location.href = '/blog'
-    return
-  }
+  // Expressions régulières pour matcher différents types de requêtes
+  const regexMap = [
+    // Demander le dernier article ou les nouveautés
+    {
+      pattern: /dernier|récents?|latest|nouveau|nouveautés|actualités/,
+      href: lienDernierArticle,
+    },
 
-  if (
-    lowerCaseInput.includes('contact') ||
-    lowerCaseInput.includes('email') ||
-    lowerCaseInput.includes('appel')
-  ) {
-    document.location.href = '/contact'
-    return
-  }
+    // Accéder à tous les articles ou au blog
+    { pattern: /articles?|blog|posts?|contenus?/, href: '/blog' },
 
-  if (lowerCaseInput.includes('balade')) {
-    document.location.href = '/presentations'
-    return
-  }
+    // Demande de contact, email ou prise de contact
+    {
+      pattern:
+        /contact|email|e-mail|appel|message|joindre|écris-moi|me contacter|envoyer un message|me trouver/,
+      href: '/contact',
+    },
 
-  if (
-    lowerCaseInput.includes('parler de toi') ||
-    lowerCaseInput.includes('presentation') ||
-    lowerCaseInput.includes('présentation') ||
-    lowerCaseInput.includes('présenter') ||
-    lowerCaseInput.includes('CV')
-  ) {
-    document.location.href = '/a-propos'
-    return
-  }
+    // Questions générales
+    {
+      pattern:
+        /questions?|poser une question|faq|réponses?|demandes?|besoin d'aide/,
+      href: '/a-propos',
+    },
 
-  document.location.href = '/blog'
-  return
+    // Conférences, présentations ou balades (événements, activités)
+    {
+      pattern:
+        /présentations?|conférences?|balades?|événements?|talks?|meetups?|ateliers?|workshops?/,
+      href: '/presentations',
+    },
+
+    // À propos de vous, bio, CV ou parcours
+    {
+      pattern:
+        /parler de toi|présentation|présenter|bio|à propos|cv|parcours|expérience|histoire/,
+      href: '/a-propos',
+    },
+
+    // Questions liées aux projets ou portefolio
+    {
+      pattern:
+        /projets?|portfolio|travail|réalisations?|mes créations?|mes travaux?/,
+      href: '/projets',
+    },
+
+    // Recherche ou navigation libre
+    {
+      pattern:
+        /recherche|explorer|balade|je me balade|naviguer|exploration|parcourir|curiosité/,
+      href: '/projets',
+    },
+
+    // Sujets liés au blog ou conférences
+    {
+      pattern:
+        /sujets?|thèmes?|articles spécifiques|catégories?|intérêts?|centres d'intérêt/,
+      href: '/presentations',
+    },
+
+    // Par défaut, redirige vers le blog si rien ne correspond
+    { pattern: /.*/, href: '/blog' },
+  ]
+
+  // Parcourir la map pour trouver la première correspondance
+  for (const { pattern, href } of regexMap) {
+    if (pattern.test(lowerCaseInput)) {
+      document.location.href = href
+      return
+    }
+  }
 }
 
 function submitOnEnter(key: KeyboardEvent) {
