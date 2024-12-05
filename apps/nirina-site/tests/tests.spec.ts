@@ -7,10 +7,29 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Nirina Rabeson/)
 })
 
-test('get started link', async ({ page }) => {
+test('get started link', async ({ page }, testInfo) => {
+  if (testInfo.project.name.includes('Mobile')) {
+    test.skip()
+  }
   await page.goto('/')
 
   // Click the get started link.
+  await page.getByRole('link', { name: 'Me contacter' }).click()
+  await page.getByRole('link', { name: /LinkedIn/ }).click()
+
+  // Expects page to have a heading with the name of Installation.
+  await expect(page).toHaveURL(/https:\/\/www\.linkedin\.com\/*/)
+})
+
+test('get started link on mobile', async ({ page }, testInfo) => {
+  if (!testInfo.project.name.includes('Mobile')) {
+    test.skip()
+  }
+  await page.goto('/')
+
+  // Click the get started link.
+
+  await page.getByLabel('Toggle navigation menu').click()
   await page.getByRole('link', { name: 'Me contacter' }).click()
   await page.getByRole('link', { name: /LinkedIn/ }).click()
 
