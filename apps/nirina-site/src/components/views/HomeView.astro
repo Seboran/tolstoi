@@ -24,11 +24,7 @@ export const prerender = false
       >
         Comment puis-je vous aider aujourd'hui ?
       </h2>
-      <ChatInterfaceVue
-        server:defer
-        client:load
-        lienDernierArticle={`/posts/${lastPost}`}
-      />
+      <ChatInterfaceVue client:load lienDernierArticle={`/posts/${lastPost}`} />
     </div>
   </div></Layout
 >
