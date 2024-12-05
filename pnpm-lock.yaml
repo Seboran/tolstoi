@@ -83,7 +83,7 @@ importers:
         version: 10.1.0(eslint@9.16.0(jiti@2.4.1))(prettier@3.3.3)
       '@vue/eslint-config-typescript':
         specifier: 14.1.4
-        version: 14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.31.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
+        version: 14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -94,8 +94,8 @@ importers:
         specifier: 9.16.0
         version: 9.16.0(jiti@2.4.1)
       eslint-plugin-vue:
-        specifier: 9.31.0
-        version: 9.31.0(eslint@9.16.0(jiti@2.4.1))
+        specifier: 9.32.0
+        version: 9.32.0(eslint@9.16.0(jiti@2.4.1))
       happy-dom:
         specifier: 15.11.7
         version: 15.11.7
@@ -210,8 +210,8 @@ importers:
         specifier: 9.16.0
         version: 9.16.0(jiti@2.4.1)
       eslint-plugin-vue:
-        specifier: 9.31.0
-        version: 9.31.0(eslint@9.16.0(jiti@2.4.1))
+        specifier: 9.32.0
+        version: 9.32.0(eslint@9.16.0(jiti@2.4.1))
       jsdom:
         specifier: 25.0.1
         version: 25.0.1
@@ -388,7 +388,7 @@ importers:
         version: 10.1.0(eslint@9.16.0(jiti@2.4.1))(prettier@3.3.3)
       '@vue/eslint-config-typescript':
         specifier: 14.1.4
-        version: 14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.31.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
+        version: 14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
@@ -396,8 +396,8 @@ importers:
         specifier: 9.16.0
         version: 9.16.0(jiti@2.4.1)
       eslint-plugin-vue:
-        specifier: 9.31.0
-        version: 9.31.0(eslint@9.16.0(jiti@2.4.1))
+        specifier: 9.32.0
+        version: 9.32.0(eslint@9.16.0(jiti@2.4.1))
       jsdom:
         specifier: 25.0.1
         version: 25.0.1
@@ -4398,8 +4398,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-vue@9.31.0:
-    resolution: {integrity: sha512-aYMUCgivhz1o4tLkRHj5oq9YgYPM4/EJc0M7TAKRLCUA5OYxRLAhYEVD2nLtTwLyixEFI+/QXSvKU9ESZFgqjQ==}
+  eslint-plugin-vue@9.32.0:
+    resolution: {integrity: sha512-b/Y05HYmnB/32wqVcjxjHZzNpwxj1onBOvqW89W+V+XNG1dRuaFbNd3vT9CLbr2LXjEoq+3vn8DanWf7XU22Ug==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -8191,10 +8191,6 @@ packages:
 
   type-fest@4.26.1:
     resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
-    engines: {node: '>=16'}
-
-  type-fest@4.27.0:
-    resolution: {integrity: sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==}
     engines: {node: '>=16'}
 
   type-fest@4.30.0:
@@ -12076,11 +12072,11 @@ snapshots:
     transitivePeerDependencies:
       - '@types/eslint'
 
-  '@vue/eslint-config-typescript@14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.31.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)':
+  '@vue/eslint-config-typescript@14.1.4(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@2.4.1)))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)':
     dependencies:
       '@typescript-eslint/eslint-plugin': 8.16.0(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3))(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
       eslint: 9.16.0(jiti@2.4.1)
-      eslint-plugin-vue: 9.31.0(eslint@9.16.0(jiti@2.4.1))
+      eslint-plugin-vue: 9.32.0(eslint@9.16.0(jiti@2.4.1))
       fast-glob: 3.3.2
       typescript-eslint: 8.16.0(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
       vue-eslint-parser: 9.4.3(eslint@9.16.0(jiti@2.4.1))
@@ -13461,7 +13457,7 @@ snapshots:
 
   dot-prop@9.0.0:
     dependencies:
-      type-fest: 4.27.0
+      type-fest: 4.30.0
 
   dotenv@16.4.5: {}
 
@@ -13966,7 +13962,7 @@ snapshots:
       string.prototype.matchall: 4.0.11
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-vue@9.31.0(eslint@9.16.0(jiti@2.4.1)):
+  eslint-plugin-vue@9.32.0(eslint@9.16.0(jiti@2.4.1)):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.16.0(jiti@2.4.1))
       eslint: 9.16.0(jiti@2.4.1)
@@ -18742,8 +18738,6 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-fest@4.26.1: {}
-
-  type-fest@4.27.0: {}
 
   type-fest@4.30.0: {}
 
