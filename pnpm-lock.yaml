@@ -70,8 +70,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.6.3))
       '@vercel/node':
-        specifier: 3.2.27
-        version: 3.2.27(encoding@0.1.13)
+        specifier: 3.2.28
+        version: 3.2.28(encoding@0.1.13)
       '@vitest/coverage-v8':
         specifier: 2.1.8
         version: 2.1.8(vitest@2.1.8)
@@ -2598,8 +2598,8 @@ packages:
   '@vercel/node@3.2.24':
     resolution: {integrity: sha512-KEm50YBmcfRNOw5NfdcqMI4BkP4+5TD9kRwAByHHlIZXLj1NTTknvMF+69sHBYzwpK/SUZIkeo7jTrtcl4g+RQ==}
 
-  '@vercel/node@3.2.27':
-    resolution: {integrity: sha512-vvTBD8Rz2jgbnm9/mTe+wB1rh/uISr7HRkyECUt92IlI4tYxOf/vS7ARgR86TGzb9WDwTrnRVxCl92q//f7hHA==}
+  '@vercel/node@3.2.28':
+    resolution: {integrity: sha512-1TJqaBs8iiZX8l18rW2UGWB9XhHIBpkigFitqMRPapU3W8AaS29Uns64lgH4t9OVlcH4Jd9+3gNcy7amB7vhLQ==}
 
   '@vercel/python@4.3.1':
     resolution: {integrity: sha512-pWRApBwUsAQJS8oZ7eKMiaBGbYJO71qw2CZqDFvkTj34FNBZtNIUcWSmqGfJJY5m2pU/9wt8z1CnKIyT9dstog==}
@@ -11633,7 +11633,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/node@3.2.27(encoding@0.1.13)':
+  '@vercel/node@3.2.28(encoding@0.1.13)':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
