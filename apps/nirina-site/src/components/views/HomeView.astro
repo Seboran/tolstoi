@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import ChatInterfaceVue from '../../components/chat/ChatInterface.vue'
 import Layout from '../../layouts/Layout.astro'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
+// import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 
 const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -25,6 +26,10 @@ export const prerender = false
         Comment puis-je vous aider aujourd'hui ?
       </h2>
       <ChatInterfaceVue client:load lienDernierArticle={`/posts/${lastPost}`} />
+      <!-- <ChatInterfaceV2Vue
+        client:load
+        lienDernierArticle={`/posts/${lastPost}`}
+      /> -->
     </div>
   </div></Layout
 >

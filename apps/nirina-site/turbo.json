@@ -3,7 +3,8 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"]
+      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"],
+      "env": ["MISTRAL_API_KEY", "ENABLE_CHAT"]
     },
     "test:e2e": {
       "env": ["PLAYWRIGHT_URL"]
