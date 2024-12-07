@@ -61,13 +61,17 @@ function submitOnEnter(key: KeyboardEvent) {
       class="big-perspective-on-hover chat-container relative top-0 m-auto flex max-w-lg flex-row gap-3 bg-slate-100 p-4 text-black dark:bg-slate-700 dark:text-white"
       @submit.prevent="handleFormSubmit"
     >
-      <textarea
-        class="h-16 w-full resize-none border-none bg-transparent outline-none placeholder:text-slate-400/75 dark:placeholder:text-slate-100/75"
-        placeholder="Par exemple : Je voudrais lire le dernier article de blog."
-        autofocus
-        v-model="message"
-        @keypress="submitOnEnter"
-      ></textarea>
+      <div class="grid w-full columns-1 divide-y">
+        <textarea
+          class="h-16 w-full resize-none border-none bg-transparent outline-none placeholder:text-slate-400/75 dark:placeholder:text-slate-100/75"
+          placeholder="Par exemple : Je voudrais lire le dernier article de blog."
+          autofocus
+          v-model="message"
+          @keypress="submitOnEnter"
+        ></textarea>
+        <slot />
+      </div>
+
       <div class="flex flex-col">
         <button
           class="h-8 w-8 rounded-sm bg-blue-500 p-2 hover:bg-blue-400"
@@ -91,8 +95,6 @@ function submitOnEnter(key: KeyboardEvent) {
         </button>
       </div>
     </form>
-
-    <slot />
 
     <div class="flex flex-row flex-wrap justify-center gap-2 pt-5">
       <BoutonSuggestionChat @click="handleClickOnSuggestion">
@@ -165,7 +167,7 @@ function submitOnEnter(key: KeyboardEvent) {
 
 form {
   opacity: 0.8;
-  transition: opacity 0.5s ease;
+  transition: all 0.5s ease;
 }
 form:hover {
   opacity: 1;

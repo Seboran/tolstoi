@@ -139,17 +139,21 @@ async function handleFormSubmit(inputMessage: string) {
 </script>
 <template>
   <ChatInterfaceTemplate @submit="handleFormSubmit">
-    <div class="chat-output p-4 text-black dark:text-white">
-      <p v-if="mistralAnswer"><strong>Réponse:</strong> {{ mistralAnswer }}</p>
-    </div>
+    <div v-if="mistralAnswer">
+      <div class="chat-output py-4 text-black dark:text-white">
+        <p v-if="mistralAnswer">
+          <strong>Réponse:</strong> {{ mistralAnswer }}
+        </p>
+      </div>
 
-    <a
-      v-if="lienVersSuite"
-      :href="lienVersSuite"
-      class="chat-output p-4 text-black dark:text-white"
-    >
-      Continuer vers {{ lienVersSuite }}</a
-    >
+      <a
+        v-if="lienVersSuite"
+        :href="lienVersSuite"
+        class="chat-output py-4 text-black dark:text-white"
+      >
+        Continuer vers {{ lienVersSuite }}</a
+      >
+    </div>
   </ChatInterfaceTemplate>
 </template>
 <style scoped>
