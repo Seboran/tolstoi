@@ -3,8 +3,6 @@ import type { Context, Config } from '@netlify/edge-functions'
 const apiKey = Netlify.env.get('MISTRAL_API_KEY')
 const ENABLE_CHAT = Netlify.env.get('ENABLE_CHAT')
 
-if (!apiKey) throw 'MISTRAL_API_KEY is not set'
-
 interface ChatCompletionChunk {
   id: string
   object: string
@@ -20,6 +18,8 @@ interface ChatCompletionChunk {
 }
 
 export default async (request: Request, context: Context) => {
+  if (!apiKey) throw 'MISTRAL_API_KEY is not set'
+
   if (!ENABLE_CHAT)
     return {
       statusCode: 405,
