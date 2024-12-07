@@ -7,6 +7,12 @@
     Referrer-Policy = "no-referrer"
     Cache-Control = "public, max-age=5, s-maxage=36000, must-revalidate"
 
+[context.dev]
+  [[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = ""
+
 [[redirects]]
   from = "/.well-known/webfinger"
   to = "https://hachyderm.io/.well-known/webfinger?resource=acct:nirina@hachyderm.io"
