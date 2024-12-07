@@ -5,13 +5,14 @@ import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
+import { useToggles } from '../utils/useToggles'
 
 const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
   .at(0)?.id
 
-const enableChatWithMistral = !!import.meta.env.DEV
+const { enableChatWithMistral } = useToggles()
 
 export const prerender = false
 ---

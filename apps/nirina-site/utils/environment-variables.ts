@@ -1,0 +1,2 @@
+export const MISTRAL_API_KEY = 'MISTRAL_API_KEY'
+export const ENABLE_CHAT = 'ENABLE_CHAT'

@@ -1,7 +1,11 @@
 import type { Context, Config } from '@netlify/edge-functions'
+import {
+  MISTRAL_API_KEY,
+  ENABLE_CHAT as ENABLE_CHAT_ENV,
+} from '../../utils/environment-variables.ts'
 
-const apiKey = Netlify.env.get('MISTRAL_API_KEY')
-const ENABLE_CHAT = Netlify.env.get('ENABLE_CHAT')
+const apiKey = Netlify.env.get(MISTRAL_API_KEY)
+const ENABLE_CHAT = Netlify.env.get(ENABLE_CHAT_ENV)
 
 interface ChatCompletionChunk {
   id: string
