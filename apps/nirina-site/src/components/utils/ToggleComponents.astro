@@ -1,0 +1,11 @@
+---
+/**
+ * @property toggle display first slot if true, second if not
+ */
+interface Props {
+  toggle: 'a' | 'b'
+}
+const { toggle } = Astro.props
+---
+
+{toggle === 'a' ? <slot name="a" /> : <slot name="b" />}

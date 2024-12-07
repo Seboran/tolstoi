@@ -1,14 +1,17 @@
 ---
 import { getCollection } from 'astro:content'
-import ChatInterfaceVue from '../../components/chat/ChatInterface.vue'
 import Layout from '../../layouts/Layout.astro'
+import ChatInterfaceVue from '../chat/ChatInterface.vue'
+import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
-// import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
+import ToggleComponents from '../utils/ToggleComponents.astro'
 
 const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
   .at(0)?.id
+
+const enableChatWithMistral = !!import.meta.env.DEV
 
 export const prerender = false
 ---
@@ -25,11 +28,18 @@ export const prerender = false
       >
         Comment puis-je vous aider aujourd'hui ?
       </h2>
-      <ChatInterfaceVue client:load lienDernierArticle={`/posts/${lastPost}`} />
-      <!-- <ChatInterfaceV2Vue
-        client:load
-        lienDernierArticle={`/posts/${lastPost}`}
-      /> -->
+      <ToggleComponents toggle={enableChatWithMistral ? 'a' : 'b'}>
+        <ChatInterfaceV2Vue
+          slot="a"
+          client:load
+          lienDernierArticle={`/posts/${lastPost}`}
+        />
+        <ChatInterfaceVue
+          slot="b"
+          client:load
+          lienDernierArticle={`/posts/${lastPost}`}
+        />
+      </ToggleComponents>
     </div>
   </div></Layout
 >
