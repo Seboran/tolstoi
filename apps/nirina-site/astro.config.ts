@@ -19,6 +19,7 @@ export default defineConfig({
   output: 'static',
   adapter: netlify({
     edgeMiddleware: true,
+    cacheOnDemandPages: true,
   }),
   vite: {
     build: {
