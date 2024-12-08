@@ -52,7 +52,7 @@ jobs:
       - name: Install turbo CLI
         run: pnpm install --global turbo
 
-      - run: pnpm install --ignore-scripts
+      - run: pnpm install
 
       - name: set deploy key to pull content
         run: |
