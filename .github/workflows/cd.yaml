@@ -64,20 +64,11 @@ jobs:
         working-directory: ./apps/nirina-site
       - run: turbo build --filter nirina-site
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
-        with:
-          publish-dir: './apps/nirina-site/dist'
-          netlify-config-path: './apps/nirina-site/netlify.toml'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
+        working-directory: ./apps/nirina-site
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
-        timeout-minutes: 1
+        run: 'npm install -g netlify-cli && npx netlify build && npx netlify deploy --prod --message "${{ github.event.head_commit.message }}"'
 
   deploy-sudoku-musique:
     environment: Production – generateur-musique-app-sudoku
