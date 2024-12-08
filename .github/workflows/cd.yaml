@@ -65,7 +65,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
-        run: 'pnpm install -g netlify-cli && netlify link --id ${{ secrets.NETLIFY_BLOG_SITE_ID }} &&netlify build --context production && netlify deploy --prod --message "${{ github.event.head_commit.message }}"'
+        run: 'pnpm install -g netlify-cli@17.37.2 && netlify link --id ${{ secrets.NETLIFY_BLOG_SITE_ID }} && netlify build --context production && netlify deploy --prod --context production --message "${{ github.event.head_commit.message }}"'
 
   deploy-sudoku-musique:
     environment: Production – generateur-musique-app-sudoku
