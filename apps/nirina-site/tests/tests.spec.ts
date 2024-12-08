@@ -66,7 +66,6 @@ test.describe("Chat dans l'accueil", () => {
 
   test('permet de lire le dernier article de blog', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1000)
     await page
       .getByRole('button')
       .getByText(/Je voudrais lire le dernier article de blog/)
@@ -77,7 +76,6 @@ test.describe("Chat dans l'accueil", () => {
 
   test('permet de prendre contact en tapant à la main', async ({ page }) => {
     await page.goto('/')
-    await page.waitForTimeout(1000)
 
     await page.getByRole('textbox').fill('Je voudrais prendre contact')
     await page.getByLabel('Envoyer message').click()
@@ -89,7 +87,6 @@ test.describe("Chat dans l'accueil", () => {
     page,
   }) => {
     await page.goto('/')
-    await page.waitForTimeout(1000)
 
     await page
       .getByRole('textbox')

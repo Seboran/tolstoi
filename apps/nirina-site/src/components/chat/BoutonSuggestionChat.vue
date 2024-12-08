@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import { useSlots } from 'vue'
+import { onMounted, ref, useSlots } from 'vue'
 
 defineEmits<{
   click: [message: string]
 }>()
 
 const slotText = useSlots()['default']?.().at(0)?.children?.toString() ?? ''
+
+const disabledUntilLoaded = ref(true)
+
+onMounted(() => (disabledUntilLoaded.value = false))
 </script>
 
 <template>
   <div
     class="perspective-on-hover text-nowrap rounded-lg border border-slate-100/25 bg-slate-100 px-2 py-1 text-xs text-black dark:bg-slate-800 dark:text-white"
   >
-    <button @click="$emit('click', slotText)">
+    <button @click="$emit('click', slotText)" :disabled="disabledUntilLoaded">
       <slot />
     </button>
   </div>
