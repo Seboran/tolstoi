@@ -14,7 +14,10 @@ const createCspHash = async (scriptContent: string): Promise<string> => {
   return `'sha256-${hash}'`
 }
 
-const updateNetlifyCSP = async (hashes: string[]): Promise<void> => {
+const updateNetlifyCSP = async (
+  scriptHashes: string[],
+  styleHashes: string[],
+): Promise<void> => {
   try {
     // Read the Netlify configuration file
     const configContent = await readFile(NETLIFY_CONFIG_PATH, 'utf-8')
@@ -29,9 +32,22 @@ const updateNetlifyCSP = async (hashes: string[]): Promise<void> => {
         )
 
         if (scriptSrcIndex !== -1) {
-          cspParts[scriptSrcIndex] = `script-src 'self' ${hashes.join(' ')}`
+          cspParts[scriptSrcIndex] =
+            `script-src 'self' ${scriptHashes.join(' ')}`
         } else {
-          cspParts.push(`script-src 'self' ${hashes.join(' ')}`)
+          cspParts.push(`script-src 'self' ${scriptHashes.join(' ')}`)
+        }
+
+        // Update or add style-src
+        const styleSrcIndex = cspParts.findIndex((part: any) =>
+          part.startsWith('style-src'),
+        )
+        const hashesWithGoogle = [...styleHashes, 'fonts.googleapis.com']
+        if (styleSrcIndex !== -1) {
+          cspParts[styleSrcIndex] =
+            `style-src 'self' ${hashesWithGoogle.join(' ')}`
+        } else {
+          cspParts.push(`style-src 'self' ${hashesWithGoogle.join(' ')}`)
         }
 
         return `Content-Security-Policy = "${cspParts.join('; ')}"`
@@ -52,7 +68,8 @@ export const astroCSPHashGenerator: AstroIntegration = {
   name: 'astro-csp-hash-generator',
   hooks: {
     'astro:build:done': async ({ dir, pages, logger }) => {
-      const hashes: string[] = []
+      const scriptHashes: string[] = []
+      const styleHashes: string[] = []
 
       for (const page of pages) {
         const filePath = fileURLToPath(`${dir.href}${page.pathname}index.html`)
@@ -63,18 +80,25 @@ export const astroCSPHashGenerator: AstroIntegration = {
 
           for (const script of scripts) {
             const hash = await createCspHash(script.textContent || '')
-            hashes.push(hash)
+            scriptHashes.push(hash)
+          }
+
+          // Process style tags
+          const styles = root.querySelectorAll('style')
+          for (const style of styles) {
+            const hash = await createCspHash(style.textContent || '')
+            styleHashes.push(hash)
           }
         } catch (error) {
           logger.error(`Cannot read file ${filePath}: ${error}`)
         }
       }
 
-      if (hashes.length > 0) {
-        await updateNetlifyCSP(hashes)
+      if (scriptHashes.length > 0 || styleHashes.length > 0) {
+        await updateNetlifyCSP(scriptHashes, styleHashes)
       }
 
-      logger.info(`Generated hashes: ${hashes.join(' ')}`)
+      logger.info(`Generated hashes: ${scriptHashes.join(' ')}`)
     },
   },
 }
