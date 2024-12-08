@@ -12,7 +12,11 @@ const lastPost = (await getCollection('posts'))
   .filter(({ data }) => !data.draft)
   .at(0)?.id
 
-const { enableChatWithMistral } = useToggles()
+const TOGGLES_URL_ENDPOINT = new URL("/api/toggles", Astro.url)
+
+const { enableChatWithMistral } = await useToggles(TOGGLES_URL_ENDPOINT)
+
+export const prerender = false
 ---
 
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
