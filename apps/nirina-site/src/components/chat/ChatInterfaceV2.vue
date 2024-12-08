@@ -57,8 +57,6 @@ async function handleFormSubmit(inputMessage: string) {
     return false
   }
 
-  await fetchMistralResponse(inputMessage)
-
   // Convertir l'entrée utilisateur en minuscules pour éviter les erreurs liées à la casse
   const lowerCaseInput = inputMessage.toLowerCase()
 
@@ -132,6 +130,7 @@ async function handleFormSubmit(inputMessage: string) {
   for (const { pattern, href } of regexMap) {
     if (pattern.test(lowerCaseInput)) {
       lienVersSuite.value = href
+      await fetchMistralResponse(inputMessage)
       return
     }
   }
