@@ -132,9 +132,10 @@ async function handleFormSubmit(inputMessage: string) {
       lienVersSuite.value = href
       try {
         await fetchMistralResponse(inputMessage)
-      } finally {
-        return
+      } catch (e) {
+        console.error(e)
       }
+      return
     }
   }
 }
