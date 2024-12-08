@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "start": "nodemon src/playground.ts --watch src",
     "test": "vitest",
