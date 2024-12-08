@@ -130,8 +130,11 @@ async function handleFormSubmit(inputMessage: string) {
   for (const { pattern, href } of regexMap) {
     if (pattern.test(lowerCaseInput)) {
       lienVersSuite.value = href
-      await fetchMistralResponse(inputMessage)
-      return
+      try {
+        await fetchMistralResponse(inputMessage)
+      } finally {
+        return
+      }
     }
   }
 }
