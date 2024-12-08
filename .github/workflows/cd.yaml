@@ -66,7 +66,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
         run: |
           pnpm install -g netlify-cli@17.37.2
-          netlify deploy --filter nirina-site --build --message "${{ github.event.head_commit.message }}"
+          netlify deploy --filter nirina-site --build --prod --message "${{ github.event.head_commit.message }}"
 
   deploy-sudoku-musique:
     environment: Production – generateur-musique-app-sudoku
