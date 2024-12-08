@@ -62,7 +62,6 @@ jobs:
           ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
           ./pull-blog-content.sh
         working-directory: ./apps/nirina-site
-      - run: turbo build --filter nirina-site
       - name: Deploy to Netlify
         working-directory: ./apps/nirina-site
         env:
