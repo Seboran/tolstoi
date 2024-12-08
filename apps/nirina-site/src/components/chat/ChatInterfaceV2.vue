@@ -140,7 +140,7 @@ async function handleFormSubmit(inputMessage: string) {
 <template>
   <ChatInterfaceTemplate @submit="handleFormSubmit">
     <div v-if="mistralAnswer">
-      <div class="chat-output py-4 text-black dark:text-white">
+      <div class="py-4 text-black dark:text-white">
         <p v-if="mistralAnswer">
           <strong>Réponse:</strong> {{ mistralAnswer }}
         </p>
@@ -149,85 +149,10 @@ async function handleFormSubmit(inputMessage: string) {
       <a
         v-if="lienVersSuite"
         :href="lienVersSuite"
-        class="chat-output py-4 text-black dark:text-white"
+        class="link py-4 text-black dark:text-white"
       >
         Continuer vers {{ lienVersSuite }}</a
       >
     </div>
   </ChatInterfaceTemplate>
 </template>
-<style scoped>
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-.chat-container {
-  /* animation: fade-in 0.8s ease-out forwards; */
-  /* opacity: 0; */
-  border: 1px solid transparent;
-  border-image: linear-gradient(
-    to bottom right,
-    #b827fc 0%,
-    #2c90fc 25%,
-    #888888 50%,
-    #888888 75%,
-    #888888 100%
-  );
-  border-image-slice: 1;
-}
-
-.chat-container:after {
-  filter: blur(25px);
-  transform: translate3d(0, 0, 0);
-}
-
-@media (prefers-color-scheme: dark) {
-  .chat-container {
-    /* animation: fade-in 0.8s ease-out forwards; */
-    /* opacity: 0; */
-    border: 1px solid transparent;
-    border-image: linear-gradient(
-      to bottom right,
-      #b827fc 0%,
-      #2c90fc 25%,
-      rgb(15, 23, 42) 50%,
-      rgb(15, 23, 42) 75%,
-      rgb(15, 23, 42) 100%
-    );
-    border-image-slice: 1;
-  }
-}
-
-form {
-  opacity: 0.8;
-}
-form:hover {
-  opacity: 1;
-}
-
-/* .funny-background {
-    filter: blur(50px);
-    opacity: 0.2;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 0, 0, 1) 0%,
-      rgba(255, 154, 0, 1) 10%,
-      rgba(208, 222, 33, 1) 20%,
-      rgba(79, 220, 74, 1) 30%,
-      rgba(63, 218, 216, 1) 40%,
-      rgba(47, 201, 226, 1) 50%,
-      rgba(28, 127, 238, 1) 60%,
-      rgba(95, 21, 242, 1) 70%,
-      rgba(186, 12, 248, 1) 80%,
-      rgba(251, 7, 217, 1) 90%,
-      rgba(255, 0, 0, 1) 100%
-    );
-  } */
-</style>
