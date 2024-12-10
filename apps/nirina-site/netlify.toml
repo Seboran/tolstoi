@@ -5,7 +5,6 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
-    Cache-Control = "public, max-age=5, s-maxage=36000, must-revalidate"
 
 [context.dev]
   [[headers]]
