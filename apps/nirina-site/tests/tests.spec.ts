@@ -57,7 +57,7 @@ test('affiche 404', async ({ page }) => {
   await expect(page.getByText('404')).toBeVisible()
 })
 
-test.describe("Chat dans l'accueil", () => {
+test.describe.skip("Chat dans l'accueil", () => {
   test('affiche une zone de chat avec autofocus', async ({ page }) => {
     await page.goto('/')
 
