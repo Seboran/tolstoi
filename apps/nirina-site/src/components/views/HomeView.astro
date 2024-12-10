@@ -5,16 +5,11 @@ import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
-import { useToggles } from '../utils/useToggles'
 
 const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
   .at(0)?.id
-
-const TOGGLES_URL_ENDPOINT = new URL("/api/toggles", Astro.url)
-
-const { enableChatWithMistral } = await useToggles(TOGGLES_URL_ENDPOINT)
 
 export const prerender = false
 ---
@@ -31,7 +26,7 @@ export const prerender = false
       >
         Comment puis-je vous aider aujourd'hui ?
       </h2>
-      <ToggleComponents toggle={enableChatWithMistral ? 'a' : 'b'}>
+      <ToggleComponents toggle={false ? 'a' : 'b'}>
         <ChatInterfaceV2Vue
           slot="a"
           client:load
