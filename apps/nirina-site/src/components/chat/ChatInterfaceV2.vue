@@ -143,7 +143,7 @@ async function handleFormSubmit(inputMessage: string) {
 <template>
   <ChatInterfaceTemplate @submit="handleFormSubmit">
     <div v-if="mistralAnswer">
-      <div class="py-4 text-black dark:text-white">
+      <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">
           <strong>Réponse:</strong> {{ mistralAnswer }}
         </p>
@@ -152,10 +152,12 @@ async function handleFormSubmit(inputMessage: string) {
       <a
         v-if="lienVersSuite"
         :href="lienVersSuite"
-        class="link py-4 text-black dark:text-white"
+        class="text-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
       >
-        Continuer vers {{ lienVersSuite }}</a
-      >
+        <div class="my-1 rounded border p-1">
+          <button>Continuer vers {{ lienVersSuite }}</button>
+        </div>
+      </a>
     </div>
   </ChatInterfaceTemplate>
 </template>

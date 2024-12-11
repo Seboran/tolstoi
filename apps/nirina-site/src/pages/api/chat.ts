@@ -25,6 +25,7 @@ interface ChatCompletionChunk {
 }
 
 export const POST = async (request: Request) => {
+  console.log(request)
   /**
    * Gestion des erreurs de configuration
    */
