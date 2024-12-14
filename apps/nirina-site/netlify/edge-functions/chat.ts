@@ -1,17 +1,19 @@
-export const prerender = false
-
-import { getSecret } from 'astro:env/server'
+import type { Config } from '@netlify/edge-functions'
 import {
   ENABLE_CHAT as ENABLE_CHAT_ENV,
   MISTRAL_AGENT_ID_KEY,
   MISTRAL_API_ENDPOINT_KEY,
   MISTRAL_API_KEY,
-} from '../../../utils/environment-variables'
+} from '../../utils/environment-variables.ts'
 
-const apiKey = getSecret(MISTRAL_API_KEY)
-const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
-const MISTRAL_API_ENDPOINT = getSecret(MISTRAL_API_ENDPOINT_KEY)
-const MISTRAL_AGENT_ID = getSecret(MISTRAL_AGENT_ID_KEY)
+export const config: Config = {
+  path: '/api/chat',
+}
+
+const apiKey = Netlify.env.get(MISTRAL_API_KEY)
+const ENABLE_CHAT = Netlify.env.get(ENABLE_CHAT_ENV)
+const MISTRAL_API_ENDPOINT = Netlify.env.get(MISTRAL_API_ENDPOINT_KEY)
+const MISTRAL_AGENT_ID = Netlify.env.get(MISTRAL_AGENT_ID_KEY)
 
 interface ChatCompletionChunk {
   id: string
@@ -27,10 +29,7 @@ interface ChatCompletionChunk {
   }[]
 }
 
-interface HelloRequest {
-  request: Request
-}
-export const POST = async ({ request }: HelloRequest) => {
+export default async (request: Request) => {
   /**
    * Gestion des erreurs de configuration
    */
