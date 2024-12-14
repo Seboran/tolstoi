@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
+import { getSecret } from 'astro:env/server'
+import { ENABLE_CHAT as ENABLE_CHAT_ENV } from '../../../utils/environment-variables'
 import Layout from '../../layouts/Layout.astro'
 import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
@@ -10,6 +12,8 @@ const lastPost = (await getCollection('posts'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .filter(({ data }) => !data.draft)
   .at(0)?.id
+
+const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
 
 export const prerender = false
 ---
@@ -26,7 +30,7 @@ export const prerender = false
       >
         Comment puis-je vous aider aujourd'hui ?
       </h2>
-      <ToggleComponents toggle={true ? 'a' : 'b'}>
+      <ToggleComponents toggle={ENABLE_CHAT ? 'a' : 'b'}>
         <ChatInterfaceV2Vue
           slot="a"
           client:load

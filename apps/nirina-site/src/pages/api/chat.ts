@@ -1,3 +1,6 @@
+export const prerender = false
+
+import { getSecret } from 'astro:env/server'
 import {
   ENABLE_CHAT as ENABLE_CHAT_ENV,
   MISTRAL_AGENT_ID_KEY,
@@ -5,10 +8,10 @@ import {
   MISTRAL_API_KEY,
 } from '../../../utils/environment-variables'
 
-const apiKey = import.meta.env[MISTRAL_API_KEY]
-const ENABLE_CHAT = import.meta.env[ENABLE_CHAT_ENV]
-const MISTRAL_API_ENDPOINT = import.meta.env[MISTRAL_API_ENDPOINT_KEY]
-const MISTRAL_AGENT_ID = import.meta.env[MISTRAL_AGENT_ID_KEY]
+const apiKey = getSecret(MISTRAL_API_KEY)
+const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
+const MISTRAL_API_ENDPOINT = getSecret(MISTRAL_API_ENDPOINT_KEY)
+const MISTRAL_AGENT_ID = getSecret(MISTRAL_AGENT_ID_KEY)
 
 interface ChatCompletionChunk {
   id: string
@@ -24,14 +27,19 @@ interface ChatCompletionChunk {
   }[]
 }
 
-export const POST = async (request: Request) => {
-  console.log(request)
+interface HelloRequest {
+  request: Request
+}
+export const POST = async ({ request }: HelloRequest) => {
   /**
    * Gestion des erreurs de configuration
    */
-  if (!apiKey) throw `${MISTRAL_API_KEY} is not set on netlify or is empty`
+  if (!apiKey)
+    throw new Error(`${MISTRAL_API_KEY} is not set on netlify or is empty`)
   if (!MISTRAL_API_ENDPOINT)
-    throw `${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`
+    throw new Error(
+      `${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`,
+    )
 
   /**
    * Désactivation du service si non configuré
@@ -44,6 +52,7 @@ export const POST = async (request: Request) => {
       }),
     }
   const requestBody = await request.json()
+
   if (!requestBody) {
     return {
       statusCode: 400,
@@ -129,7 +138,8 @@ async function queueStreamingBody(
         try {
           const content = mapMistralEventToToken<ChatCompletionChunk>(rawEvent)
           if (content) {
-            controller.enqueue(encoder.encode(content))
+            const boutDeChunk = encoder.encode(content)
+            controller.enqueue(boutDeChunk)
           }
         } catch (error) {
           console.error('Error parsing SSE event:', rawEvent, error)
