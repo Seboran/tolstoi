@@ -152,12 +152,31 @@ async function handleFormSubmit(inputMessage: string) {
       <a
         v-if="lienVersSuite"
         :href="lienVersSuite"
-        class="text-black hover:text-gray-800 dark:text-white dark:hover:text-gray-200"
+        class="text-blue-800 hover:text-gray-800 dark:text-blue-200 dark:hover:text-gray-200"
       >
-        <div class="my-1 rounded border p-1">
-          <button>Continuer vers {{ lienVersSuite }}</button>
+        <div class="my-1 py-1">
+          <button class="button-levitation">
+            Continuer vers {{ lienVersSuite }} &rarr;
+          </button>
         </div>
       </a>
     </div>
   </ChatInterfaceTemplate>
 </template>
+
+<style>
+@keyframes levitation {
+  0%,
+  100% {
+    transform: translateY(0); /* Position de départ et de fin */
+  }
+  50% {
+    transform: translateY(-1px); /* Léger mouvement vers le haut */
+  }
+}
+
+.button-levitation {
+  animation: levitation 3s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+</style>
