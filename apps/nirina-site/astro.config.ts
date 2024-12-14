@@ -17,10 +17,7 @@ export default defineConfig({
   integrations: [tailwind(), mdx(), shield({}), vue(), astroCSPHashGenerator],
   site: 'https://www.nirinarabeson.fr',
   output: 'static',
-  adapter: netlify({
-    edgeMiddleware: true,
-    cacheOnDemandPages: true,
-  }),
+  adapter: netlify({}),
   vite: {
     build: {
       assetsInlineLimit: 0,
