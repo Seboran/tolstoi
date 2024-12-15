@@ -42,12 +42,7 @@ export default defineNuxtConfig({
         'object-src': ["'none'"],
         'script-src-attr': ["'none'"],
         'upgrade-insecure-requests': true,
-        'frame-ancestors': [
-          "'self'",
-          'https://nirinarabeson.fr',
-          'https://www.nirinarabeson.fr',
-          'http://localhost:4321'
-        ]
+        'frame-ancestors': ["'self'", 'https://nirinarabeson.fr', 'https://www.nirinarabeson.fr']
       }
     }
   }
