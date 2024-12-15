@@ -26,6 +26,7 @@ const items: {
 
 const { allowUserInput } = useCanUserInteract()
 const activeItemTabs = computed(() =>
+  // eslint-disable-next-line no-constant-binary-expression
   items.map((item) => ({ ...item, disabled: false || !allowUserInput.value }))
 )
 </script>
