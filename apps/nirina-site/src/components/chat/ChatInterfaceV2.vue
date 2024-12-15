@@ -155,7 +155,7 @@ async function handleFormSubmit(inputMessage: string) {
         class="text-blue-800 hover:text-gray-800 dark:text-blue-200 dark:hover:text-gray-200"
       >
         <div class="my-1 py-1">
-          <button class="button-levitation">
+          <button type="button" class="button-levitation">
             Continuer vers {{ lienVersSuite }} &rarr;
           </button>
         </div>
