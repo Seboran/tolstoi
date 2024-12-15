@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import StyledButton from '@/components/StyledButton.vue'
 import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
 
@@ -42,7 +41,7 @@ function afficherErreurCalculRemboursement() {
 </script>
 
 <template>
-  <DesignToaster ref="toaster">Veuillez ajouter au moins trois personnes</DesignToaster>
+  <Toaster ref="toaster">Veuillez ajouter au moins trois personnes</Toaster>
 
   <TemplatesBalances>
     <template #premier-groupe>

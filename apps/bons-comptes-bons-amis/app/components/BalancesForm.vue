@@ -2,7 +2,6 @@
 import BalanceInput from '@/components/BalanceInput.vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
-import StyledButton from './StyledButton.vue'
 import AffichageRemboursementsV2 from './v2/AffichageRemboursementsV2.vue'
 
 const balancesDetailStore = useBalancesDetaillesStore()
@@ -32,7 +31,7 @@ function addBalanceEtEffacerErreur() {
 </script>
 
 <template>
-  <DesignToaster ref="toaster">Veuillez ajouter au moins trois personnes</DesignToaster>
+  <Toaster ref="toaster">Veuillez ajouter au moins trois personnes</Toaster>
 
   <TemplatesBalances>
     <template #premier-groupe>

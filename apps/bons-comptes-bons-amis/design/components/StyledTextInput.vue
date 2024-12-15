@@ -8,7 +8,7 @@ const name = defineModel<string>({ required: true })
 </script>
 
 <template>
-  <DesignInput :id label="Nom">
+  <Input :id label="Nom">
     <UInput class="m-w-20" :name :aria-label="label" :id type="text" v-model="name" />
-  </DesignInput>
+  </Input>
 </template>

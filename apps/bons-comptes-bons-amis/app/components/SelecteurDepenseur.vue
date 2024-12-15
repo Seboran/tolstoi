@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { disableButtons } from './injectSymbols/disableSymbol'
-
 const modelValue = defineModel<number>({ required: true })
 
 defineProps<{
@@ -8,14 +6,11 @@ defineProps<{
   id: string
   name: string
 }>()
-
-const disabled = inject(disableButtons, false)
 </script>
 
 <template>
-  <DesignInput label="Dépenseur" :id>
+  <Input label="Dépenseur" :id>
     <USelect
-      :disabled
       :id
       placeholder="Dépenseur"
       aria-label="Dépenseur"
@@ -24,7 +19,7 @@ const disabled = inject(disableButtons, false)
       option-attribute="nom"
       value-attribute="index"
     ></USelect>
-  </DesignInput>
+  </Input>
 </template>
 
 <style scoped>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MultiSelecteur from './MultiSelecteur.vue'
 import SelecteurDepenseur from './SelecteurDepenseur.vue'
-import StyledNumberInput from './StyledNumberInput.vue'
 
 defineProps<{
   nomsBalances: string[]

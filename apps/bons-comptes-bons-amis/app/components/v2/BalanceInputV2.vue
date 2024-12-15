@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import StyledTextInput from '@/components/StyledTextInput.vue'
-import StyledNumberInput from '@/components/StyledNumberInput.vue'
 const balance = defineModel<number>('balance', {
   required: true
 })

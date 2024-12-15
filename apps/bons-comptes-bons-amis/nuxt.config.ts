@@ -4,6 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 const rootDir = fileURLToPath(new URL('../..', import.meta.url))
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  extends: ['./design'],
   compatibilityDate: '2024-04-03',
   future: {
     compatibilityVersion: 4

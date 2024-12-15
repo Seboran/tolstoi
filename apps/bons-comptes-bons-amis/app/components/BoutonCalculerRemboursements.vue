@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import StyledButton from '@/components/StyledButton.vue'
-
 defineEmits<{
   click: []
 }>()
