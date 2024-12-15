@@ -129,11 +129,12 @@ async function handleFormSubmit(inputMessage: string) {
   // Parcourir la map pour trouver la première correspondance
   for (const { pattern, href } of regexMap) {
     if (pattern.test(lowerCaseInput)) {
-      lienVersSuite.value = href
       try {
         await fetchMistralResponse(inputMessage)
       } catch (e) {
         console.error(e)
+      } finally {
+        lienVersSuite.value = href
       }
       return
     }
@@ -145,7 +146,7 @@ async function handleFormSubmit(inputMessage: string) {
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">
-          <strong>Réponse:</strong> {{ mistralAnswer }}
+          <strong>Réponse :</strong> {{ mistralAnswer }}
         </p>
       </div>
 
