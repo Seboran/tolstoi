@@ -11,7 +11,7 @@ export function useRemboursements() {
       matriceDeRemboursements.value = []
       const solution = await fetchBalances(balances)
       if (solution) {
-        matriceDeRemboursements.value = solution.result_matrix
+        matriceDeRemboursements.value = solution
       }
     } finally {
       //

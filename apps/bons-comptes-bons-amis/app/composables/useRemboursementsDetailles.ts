@@ -1,7 +1,6 @@
-import { useDebounceFn, useAsyncState } from '@vueuse/core'
+import { useAsyncState, useDebounceFn } from '@vueuse/core'
 import { useAjouterDepense } from '~/composables/useAjouterDepense'
 import { useBalances } from '~/composables/useBalances'
-import { fetchBalances } from '~/composables/useFetchBalances'
 
 export function useRemboursementsDetailles() {
   const { balances, nomsBalances, erreurBalance, addBalance } = useBalances()
@@ -14,7 +13,7 @@ export function useRemboursementsDetailles() {
       try {
         matriceDeRemboursements.value = []
         const solution = await fetchBalances(balances)
-        matriceDeRemboursements.value = solution?.result_matrix ?? []
+        matriceDeRemboursements.value = solution ?? []
       } finally {
         //
       }

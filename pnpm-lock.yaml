@@ -47,6 +47,9 @@ importers:
       vue-router:
         specifier: latest
         version: 4.5.0(vue@3.5.13(typescript@5.6.3))
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@iconify-json/heroicons':
         specifier: 1.2.1
@@ -468,6 +471,8 @@ importers:
       node-html-parser:
         specifier: 6.1.13
         version: 6.1.13
+
+  apps/tricount-solver: {}
 
   packages/lib-effondrement:
     devDependencies:
