@@ -21,3 +21,7 @@ pnpm i
 python -r requirements.txt
 pnpm dev
 ```
+
+## Dépendances
+
+Ce projet dépend de l'application [tricount-solver](https://github.com/Seboran/monorepo/tree/main/apps/tricount-solver) pour faire le calcul en live des dépendances
