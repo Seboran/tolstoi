@@ -4,7 +4,7 @@ export interface BalanceSolutionResponse {
   result_matrix: number[][]
 }
 
-const SOLVE_API = import.meta.env.SOLVER_URL ?? 'http://localhost:5328/api/v2/solve'
+const SOLVE_API = process.env.SOLVER_URL ?? 'http://localhost:5328/api/v2/solve'
 
 const balancesSchema = z.array(z.number())
 
