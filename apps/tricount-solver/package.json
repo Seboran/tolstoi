@@ -1,0 +1,8 @@
+{
+  "name": "tricount-solver",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python -m flask --app api/index.py run -p 5328"
+  }
+}
