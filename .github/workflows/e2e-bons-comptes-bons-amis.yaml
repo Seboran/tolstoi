@@ -1,0 +1,50 @@
+name: e2e-bons-comptes-bons-amis
+on:
+  push:
+    paths:
+      - apps/bons-comptes-bons-amis/**
+      - pnpm-lock.yaml
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+permissions:
+  contents: read # for checkout
+jobs:
+  e2e:
+    environment: Preview – bons-comptes-bons-amis
+    runs-on: ubuntu-22.04
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      SOLVER_URL: ${{ secrets.SOLVER_URL}}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 2
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+      - name: Use Node.js 20
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Project Artifacts to Vercel
+        id: vercel-deploy
+        run: |
+          vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --archive=tgz > deployment-url.txt
+          cat deployment-url.txt
+          echo "PLAYWRIGHT_BASE_URL=$(cat deployment-url.txt)" >> $GITHUB_ENV
+      - name: Install playwright browsers
+        run: |
+          pnpm exec playwright install
+          pnpm exec playwright install-deps
+      - run: pnpm test:e2e
+        working-directory: ./apps/bons-comptes-bons-amis
