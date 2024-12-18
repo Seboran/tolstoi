@@ -1,5 +1,4 @@
 import { resolve } from 'path'
-import VitePluginWindicss from 'vite-plugin-windicss'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -20,19 +19,12 @@ export default defineConfig({
       name: 'Style',
       // the proper extensions will be added
       fileName: 'lib-style',
+      cssFileName: 'style',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['vue', 'tailwindcss'],
-
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
-        },
-      },
     },
   },
 })
