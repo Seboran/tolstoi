@@ -1,0 +1,47 @@
+name: deploy
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/ethereum-wallet-generator/**
+      - pnpm-lock.yaml
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+jobs:
+  deploy-ethereum-generateur:
+    environment: Production – ethereum-wallet-generator
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+      - name: Use Node.js 20
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install turbo CLI
+        run: pnpm install --global turbo
+
+      - run: pnpm install --ignore-scripts
+
+      - run: turbo build --filter=ethereum-wallet-generator
+      - name: Deploy Generateur Musique to Netlify
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
+        with:
+          publish-dir: './apps/ethereum-wallet-generator/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_ETHEREUM_VANITY_SITE_ID }}
+        timeout-minutes: 1

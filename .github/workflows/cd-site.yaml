@@ -1,0 +1,47 @@
+name: deploy
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/nirina-site/**
+      - pnpm-lock.yaml
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+jobs:
+  deploy-site:
+    environment: Production – blog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.14.4
+      - name: Use Node.js 20
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install turbo CLI
+        run: pnpm install --global turbo
+
+      - run: pnpm install
+
+      - name: set deploy key to pull content
+        run: |
+          eval `ssh-agent -s`
+          ssh-add - <<< '${{ secrets.PRIVATE_SSH_KEY }}'
+          ./pull-blog-content.sh
+        working-directory: ./apps/nirina-site
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
+          COMMIT_MESSAE: ${{ github.event.head_commit.message }}
+        run: |
+          pnpm install -g netlify-cli@17.37.2
+          netlify deploy --filter nirina-site --build --prod --message "$COMMIT_MESSAGE"
