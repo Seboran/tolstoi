@@ -1,4 +1,4 @@
-name: deploy
+name: cd-jeu-du-debat
 on:
   push:
     branches:

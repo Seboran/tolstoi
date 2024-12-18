@@ -1,4 +1,4 @@
-name: deploy
+name: cd-nirina-site
 on:
   push:
     branches:
