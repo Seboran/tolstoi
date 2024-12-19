@@ -6,14 +6,19 @@ const { lienDernierArticle } = defineProps<{
   lienDernierArticle: string
 }>()
 
-const message = ref('')
-
 const mistralAnswer = ref('')
 
 const lienVersSuite = ref('')
 
+const bloquerSubmitDoublon = ref(false)
+
 // Function to handle real-time SSE updates
 async function fetchMistralResponse(inputMessage: string) {
+  if (bloquerSubmitDoublon.value) {
+    return false
+  }
+
+  bloquerSubmitDoublon.value = true
   mistralAnswer.value = ''
   try {
     const response = await fetch('/api/chat', {
@@ -46,6 +51,8 @@ async function fetchMistralResponse(inputMessage: string) {
     console.error('Error while fetching Mistral AI response:', error)
     mistralAnswer.value =
       "Mon chatbot a un peu du mal 💀. N'hésitez pas à naviguer via le menu en haut !"
+  } finally {
+    bloquerSubmitDoublon.value = false
   }
 }
 
