@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import BoutonSuggestionChat from './BoutonSuggestionChat.vue'
 
-const pauseEntreMots = 300
+const pauseEntreMots = 120
 
 const message = ref('')
 
@@ -15,21 +15,21 @@ async function handleClickOnSuggestion(texte: string) {
   const indexPremierePause = 11
   for (let c of texte.slice(0, indexPremierePause)) {
     message.value += c
-    await waitForDelay(20)
+    await waitForDelay(10)
   }
   await waitForDelay(pauseEntreMots)
   const indexDeuxiemePause = 35
 
   for (let c of texte.slice(indexPremierePause, indexDeuxiemePause)) {
     message.value += c
-    await waitForDelay(20)
+    await waitForDelay(10)
   }
 
   await waitForDelay(pauseEntreMots)
 
   for (let c of texte.slice(indexDeuxiemePause, texte.length)) {
     message.value += c
-    await waitForDelay(20)
+    await waitForDelay(10)
   }
 
   await waitForDelay(800)
