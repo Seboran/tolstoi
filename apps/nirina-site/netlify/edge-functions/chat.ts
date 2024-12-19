@@ -5,6 +5,7 @@ import {
   MISTRAL_API_ENDPOINT_KEY,
   MISTRAL_API_KEY,
 } from '../../utils/environment-variables.ts'
+import { ListeMessagesMistral } from '../../utils/types.ts'
 
 export const config: Config = {
   path: '/api/chat',
@@ -66,7 +67,7 @@ export default async (request: Request) => {
    */
 
   const body = getReadableStream(
-    fetchMistralApi(MISTRAL_API_ENDPOINT, requestBody.message),
+    fetchMistralApi(MISTRAL_API_ENDPOINT, requestBody.messages),
   )
   return new Response(body, {
     headers: {
@@ -157,7 +158,7 @@ function mapMistralEventToToken<T extends ChatCompletionChunk>(
   return content
 }
 
-async function fetchMistralApi(url: string, message: string) {
+async function fetchMistralApi(url: string, messages: ListeMessagesMistral) {
   return await fetch(url, {
     method: 'POST', // Adjust the method as necessary
     headers: {
@@ -166,12 +167,7 @@ async function fetchMistralApi(url: string, message: string) {
     },
     body: JSON.stringify({
       stream: true,
-      messages: [
-        {
-          role: 'user',
-          content: message,
-        },
-      ],
+      messages,
       agent_id: MISTRAL_AGENT_ID,
     }),
   })

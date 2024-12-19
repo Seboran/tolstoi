@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ChatInterfaceTemplate from './ChatInterfaceTemplate.vue'
+import type { ListeMessagesMistral } from '../../../utils/types'
+import { useListeMessages } from './useListeMessages'
 
 const { lienDernierArticle } = defineProps<{
   lienDernierArticle: string
@@ -12,6 +14,9 @@ const lienVersSuite = ref('')
 
 const bloquerSubmitDoublon = ref(false)
 
+const { messages, ajouterMessageUser, ajouterMessageAssistant } =
+  useListeMessages()
+
 // Function to handle real-time SSE updates
 async function fetchMistralResponse(inputMessage: string) {
   if (bloquerSubmitDoublon.value) {
@@ -20,13 +25,16 @@ async function fetchMistralResponse(inputMessage: string) {
 
   bloquerSubmitDoublon.value = true
   mistralAnswer.value = ''
+
+  ajouterMessageUser(inputMessage)
+
   try {
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: inputMessage }),
+      body: JSON.stringify({ messages }),
     })
 
     if (!response.body) {
@@ -47,6 +55,8 @@ async function fetchMistralResponse(inputMessage: string) {
         mistralAnswer.value += decoder.decode(value)
       }
     }
+
+    ajouterMessageAssistant(mistralAnswer.value)
   } catch (error) {
     console.error('Error while fetching Mistral AI response:', error)
     mistralAnswer.value =
