@@ -297,5 +297,5 @@ test('test utilisateur', async ({ page }) => {
   // await expect(page.getByRole('list').getByRole('listitem')).toHaveText([
   //   'Un castor affairé a dépensé 34€ pour Une autruche curieuse, Un ornithorynque malicieux, Un castor affairé',
   //   'Un castor affairé a dépensé 34.9€ pour Une autruche curieuse, Un ornithorynque malicieux, Un castor affairé'
-  ])
+  // ])
 })
