@@ -9385,8 +9385,8 @@ snapshots:
 
   '@babel/generator@7.26.2':
     dependencies:
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 3.0.2
@@ -9465,14 +9465,14 @@ snapshots:
   '@babel/helper-simple-access@7.25.9':
     dependencies:
       '@babel/traverse': 7.25.9
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-skip-transparent-expression-wrappers@7.25.9':
     dependencies:
       '@babel/traverse': 7.25.9
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
     transitivePeerDependencies:
       - supports-color
 
@@ -9485,7 +9485,7 @@ snapshots:
   '@babel/helpers@7.26.0':
     dependencies:
       '@babel/template': 7.25.9
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
 
   '@babel/parser@7.26.2':
     dependencies:
@@ -9646,16 +9646,16 @@ snapshots:
   '@babel/template@7.25.9':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
 
   '@babel/traverse@7.25.9':
     dependencies:
       '@babel/code-frame': 7.26.2
       '@babel/generator': 7.26.2
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       '@babel/template': 7.25.9
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
       debug: 4.4.0(supports-color@5.5.0)
       globals: 11.12.0
     transitivePeerDependencies:
@@ -10629,7 +10629,7 @@ snapshots:
       h3: 1.13.0
       jiti: 2.4.1
       knitwork: 1.1.0
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mlly: 1.7.3
       ohash: 1.1.4
       pathe: 1.1.2
@@ -10855,33 +10855,33 @@ snapshots:
 
   '@rollup/plugin-commonjs@28.0.1(rollup@4.27.3)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       commondir: 1.0.1
       estree-walker: 2.0.2
       fdir: 6.4.2(picomatch@4.0.2)
       is-reference: 1.2.1
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       picomatch: 4.0.2
     optionalDependencies:
       rollup: 4.27.3
 
   '@rollup/plugin-inject@5.0.5(rollup@4.27.3)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       estree-walker: 2.0.2
-      magic-string: 0.30.14
+      magic-string: 0.30.15
     optionalDependencies:
       rollup: 4.27.3
 
   '@rollup/plugin-json@6.1.0(rollup@4.27.3)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
     optionalDependencies:
       rollup: 4.27.3
 
   '@rollup/plugin-node-resolve@15.3.0(rollup@4.27.3)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       '@types/resolve': 1.20.2
       deepmerge: 4.3.1
       is-module: 1.0.0
@@ -10891,8 +10891,8 @@ snapshots:
 
   '@rollup/plugin-replace@6.0.1(rollup@4.27.3)':
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
-      magic-string: 0.30.14
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
+      magic-string: 0.30.15
     optionalDependencies:
       rollup: 4.27.3
 
@@ -10909,14 +10909,6 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  '@rollup/pluginutils@5.1.3(rollup@4.27.3)':
-    dependencies:
-      '@types/estree': 1.0.6
-      estree-walker: 2.0.2
-      picomatch: 4.0.2
-    optionalDependencies:
-      rollup: 4.27.3
-
   '@rollup/pluginutils@5.1.3(rollup@4.28.1)':
     dependencies:
       '@types/estree': 1.0.6
@@ -10924,6 +10916,14 @@ snapshots:
       picomatch: 4.0.2
     optionalDependencies:
       rollup: 4.28.1
+
+  '@rollup/pluginutils@5.1.4(rollup@4.27.3)':
+    dependencies:
+      '@types/estree': 1.0.6
+      estree-walker: 2.0.2
+      picomatch: 4.0.2
+    optionalDependencies:
+      rollup: 4.27.3
 
   '@rollup/pluginutils@5.1.4(rollup@4.28.1)':
     dependencies:
@@ -11275,24 +11275,24 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
 
   '@types/babel__generator@7.6.8':
     dependencies:
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
 
   '@types/babel__traverse@7.20.6':
     dependencies:
-      '@babel/types': 7.26.0
+      '@babel/types': 7.26.3
 
   '@types/bootstrap@5.2.10':
     dependencies:
@@ -11742,7 +11742,7 @@ snapshots:
     dependencies:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
-      magic-string: 0.30.14
+      magic-string: 0.30.15
     optionalDependencies:
       vite: 5.4.11(@types/node@16.18.11)(terser@5.36.0)
 
@@ -11750,7 +11750,7 @@ snapshots:
     dependencies:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
-      magic-string: 0.30.14
+      magic-string: 0.30.15
     optionalDependencies:
       vite: 5.4.11(@types/node@22.10.2)(terser@5.36.0)
 
@@ -11766,7 +11766,7 @@ snapshots:
   '@vitest/snapshot@2.1.8':
     dependencies:
       '@vitest/pretty-format': 2.1.8
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       pathe: 1.1.2
 
   '@vitest/spy@2.1.8':
@@ -11854,8 +11854,8 @@ snapshots:
 
   '@vue-macros/common@1.15.0(rollup@4.27.3)(vue@3.5.13(typescript@5.6.3))':
     dependencies:
-      '@babel/types': 7.26.0
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@babel/types': 7.26.3
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       '@vue/compiler-sfc': 3.5.13
       ast-kit: 1.3.1
       local-pkg: 0.5.1
@@ -11897,7 +11897,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.12':
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       '@vue/shared': 3.5.12
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -11905,7 +11905,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -11929,7 +11929,7 @@ snapshots:
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
       estree-walker: 2.0.2
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       postcss: 8.4.49
       source-map-js: 1.2.1
 
@@ -12391,7 +12391,7 @@ snapshots:
 
   ast-kit@1.3.1:
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       pathe: 1.1.2
 
   ast-types-flow@0.0.8: {}
@@ -12406,7 +12406,7 @@ snapshots:
 
   ast-walker-scope@0.6.2:
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       ast-kit: 1.3.1
 
   astring@1.9.0: {}
@@ -14819,7 +14819,7 @@ snapshots:
 
   impound@0.2.0(rollup@4.27.3):
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       mlly: 1.7.3
       pathe: 1.1.2
       unenv: 1.10.0
@@ -15114,7 +15114,7 @@ snapshots:
   istanbul-lib-source-maps@5.0.6:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
-      debug: 4.3.7
+      debug: 4.4.0(supports-color@5.5.0)
       istanbul-lib-coverage: 3.2.2
     transitivePeerDependencies:
       - supports-color
@@ -15520,7 +15520,7 @@ snapshots:
 
   magic-string-ast@0.6.3:
     dependencies:
-      magic-string: 0.30.14
+      magic-string: 0.30.15
 
   magic-string@0.30.12:
     dependencies:
@@ -15540,8 +15540,8 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.26.2
-      '@babel/types': 7.26.0
+      '@babel/parser': 7.26.3
+      '@babel/types': 7.26.3
       source-map-js: 1.2.1
 
   make-dir@2.1.0:
@@ -16275,7 +16275,7 @@ snapshots:
       '@rollup/plugin-node-resolve': 15.3.0(rollup@4.27.3)
       '@rollup/plugin-replace': 6.0.1(rollup@4.27.3)
       '@rollup/plugin-terser': 0.4.4(rollup@4.27.3)
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       '@types/http-proxy': 1.17.15
       '@vercel/nft': 0.27.6(encoding@0.1.13)
       archiver: 7.0.1
@@ -16306,7 +16306,7 @@ snapshots:
       klona: 2.0.6
       knitwork: 1.1.0
       listhen: 1.9.0
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       magicast: 0.3.5
       mime: 4.0.4
       mlly: 1.7.3
@@ -18814,7 +18814,7 @@ snapshots:
     dependencies:
       acorn: 8.14.0
       estree-walker: 3.0.3
-      magic-string: 0.30.13
+      magic-string: 0.30.15
       unplugin: 1.16.0
 
   unctx@2.4.0:
@@ -18863,7 +18863,7 @@ snapshots:
 
   unimport@3.13.1(rollup@4.27.3):
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       acorn: 8.14.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
@@ -18881,13 +18881,13 @@ snapshots:
 
   unimport@3.13.2(rollup@4.27.3):
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       acorn: 8.14.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
       fast-glob: 3.3.2
       local-pkg: 0.5.1
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mlly: 1.7.3
       pathe: 1.1.2
       pkg-types: 1.2.1
@@ -18899,12 +18899,12 @@ snapshots:
 
   unimport@3.14.3(rollup@4.27.3):
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       acorn: 8.14.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
       local-pkg: 0.5.1
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mlly: 1.7.3
       pathe: 1.1.2
       picomatch: 4.0.2
@@ -18918,7 +18918,7 @@ snapshots:
 
   unimport@3.14.5(rollup@4.27.3):
     dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       acorn: 8.14.0
       escape-string-regexp: 5.0.0
       estree-walker: 3.0.3
@@ -19003,8 +19003,8 @@ snapshots:
       '@babel/generator': 7.26.2
       '@babel/parser': 7.26.2
       '@babel/traverse': 7.25.9
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
-      magic-string: 0.30.14
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
+      magic-string: 0.30.15
       unplugin: 1.16.0
     transitivePeerDependencies:
       - rollup
@@ -19013,14 +19013,14 @@ snapshots:
   unplugin-vue-router@0.10.8(rollup@4.27.3)(vue-router@4.5.0(vue@3.5.13(typescript@5.6.3)))(vue@3.5.13(typescript@5.6.3)):
     dependencies:
       '@babel/types': 7.26.0
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       '@vue-macros/common': 1.15.0(rollup@4.27.3)(vue@3.5.13(typescript@5.6.3))
       ast-walker-scope: 0.6.2
       chokidar: 3.6.0
       fast-glob: 3.3.2
       json5: 2.2.3
       local-pkg: 0.5.1
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mlly: 1.7.3
       pathe: 1.1.2
       scule: 1.3.0
@@ -19083,7 +19083,7 @@ snapshots:
   unwasm@0.3.9:
     dependencies:
       knitwork: 1.1.0
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mlly: 1.7.3
       pathe: 1.1.2
       pkg-types: 1.2.1
@@ -19187,7 +19187,7 @@ snapshots:
   vite-node@2.1.8(@types/node@16.18.11)(terser@5.36.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.7
+      debug: 4.4.0(supports-color@5.5.0)
       es-module-lexer: 1.5.4
       pathe: 1.1.2
       vite: 5.4.11(@types/node@16.18.11)(terser@5.36.0)
@@ -19205,7 +19205,7 @@ snapshots:
   vite-node@2.1.8(@types/node@22.10.2)(terser@5.36.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.7
+      debug: 4.4.0(supports-color@5.5.0)
       es-module-lexer: 1.5.4
       pathe: 1.1.2
       vite: 5.4.11(@types/node@22.10.2)(terser@5.36.0)
@@ -19265,7 +19265,7 @@ snapshots:
   vite-plugin-inspect@0.8.8(@nuxt/kit@3.14.1592(magicast@0.3.5)(rollup@4.27.3))(rollup@4.27.3)(vite@5.4.11(@types/node@16.18.11)(terser@5.36.0)):
     dependencies:
       '@antfu/utils': 0.7.10
-      '@rollup/pluginutils': 5.1.3(rollup@4.27.3)
+      '@rollup/pluginutils': 5.1.4(rollup@4.27.3)
       debug: 4.4.0(supports-color@5.5.0)
       error-stack-parser-es: 0.1.5
       fs-extra: 11.2.0
@@ -19322,7 +19322,7 @@ snapshots:
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.26.0)
       '@vue/compiler-dom': 3.5.13
       kolorist: 1.8.0
-      magic-string: 0.30.13
+      magic-string: 0.30.15
       vite: 5.4.11(@types/node@16.18.11)(terser@5.36.0)
     transitivePeerDependencies:
       - supports-color
