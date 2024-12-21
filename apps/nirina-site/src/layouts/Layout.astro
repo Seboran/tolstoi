@@ -12,7 +12,7 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
 ---
 
 <!doctype html>
-<html lang="fr-FR">
+<html lang="fr-FR" class="overflow-x-hidden">
   <meta charset="utf-8" />
 
   <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
@@ -88,7 +88,7 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
     localStorage.removeItem('theme')
   </script>
 
-  <body>
+  <body class="relative overflow-x-hidden">
     <RainbowRotatingBackground />
 
     <div>
