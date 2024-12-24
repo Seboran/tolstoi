@@ -427,44 +427,44 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.4(prettier@3.4.2)(typescript@5.6.3)
+        version: 0.9.4(prettier@3.4.2)(typescript@5.7.2)
       '@astrojs/mdx':
         specifier: ^4.0.1
-        version: 4.0.3(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))
+        version: 4.0.3(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))
       '@astrojs/netlify':
         specifier: ^6.0.0
-        version: 6.0.1(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(yaml@2.6.1)
+        version: 6.0.1(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(yaml@2.6.1)
       '@astrojs/rss':
         specifier: ^4.0.9
         version: 4.0.10
       '@astrojs/tailwind':
         specifier: ^5.1.3
-        version: 5.1.4(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
+        version: 5.1.4(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)))(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
       '@astrojs/vue':
         specifier: ^5.0.1
-        version: 5.0.3(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(vue@3.5.13(typescript@5.6.3))(yaml@2.6.1)
+        version: 5.0.3(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(vue@3.5.13(typescript@5.7.2))(yaml@2.6.1)
       astro:
         specifier: ^5.0.2
-        version: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+        version: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
       tailwindcss:
         specifier: ^3.4.15
-        version: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
+        version: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
       typescript:
         specifier: ^5.6.3
-        version: 5.6.3
+        version: 5.7.2
       vue:
         specifier: ^3.5.13
-        version: 3.5.13(typescript@5.6.3)
+        version: 3.5.13(typescript@5.7.2)
     devDependencies:
       '@kindspells/astro-shield':
         specifier: 1.7.1
-        version: 1.7.1(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))
+        version: 1.7.1(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))
       '@playwright/test':
         specifier: 1.49.1
         version: 1.49.1
       '@tailwindcss/typography':
         specifier: 0.5.15
-        version: 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)))
+        version: 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)))
       '@types/node':
         specifier: 22.10.2
         version: 22.10.2
@@ -8306,11 +8306,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.6.3:
-    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
   typescript@5.7.2:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
@@ -9273,12 +9268,12 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@astrojs/check@0.9.4(prettier@3.4.2)(typescript@5.6.3)':
+  '@astrojs/check@0.9.4(prettier@3.4.2)(typescript@5.7.2)':
     dependencies:
-      '@astrojs/language-server': 2.15.4(prettier@3.4.2)(typescript@5.6.3)
+      '@astrojs/language-server': 2.15.4(prettier@3.4.2)(typescript@5.7.2)
       chokidar: 4.0.1
       kleur: 4.1.5
-      typescript: 5.6.3
+      typescript: 5.7.2
       yargs: 17.7.2
     transitivePeerDependencies:
       - prettier
@@ -9290,12 +9285,12 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.2': {}
 
-  '@astrojs/language-server@2.15.4(prettier@3.4.2)(typescript@5.6.3)':
+  '@astrojs/language-server@2.15.4(prettier@3.4.2)(typescript@5.7.2)':
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/yaml2ts': 0.2.2
       '@jridgewell/sourcemap-codec': 1.5.0
-      '@volar/kit': 2.4.10(typescript@5.6.3)
+      '@volar/kit': 2.4.10(typescript@5.7.2)
       '@volar/language-core': 2.4.10
       '@volar/language-server': 2.4.10
       '@volar/language-service': 2.4.10
@@ -9339,12 +9334,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.0.3(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))':
+  '@astrojs/mdx@4.0.3(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))':
     dependencies:
       '@astrojs/markdown-remark': 6.0.1
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       acorn: 8.14.0
-      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
       es-module-lexer: 1.5.4
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.4
@@ -9358,13 +9353,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@6.0.1(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(yaml@2.6.1)':
+  '@astrojs/netlify@6.0.1(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(encoding@0.1.13)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(yaml@2.6.1)':
     dependencies:
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/underscore-redirects': 0.4.0
       '@netlify/functions': 2.8.2
       '@vercel/nft': 0.27.10(encoding@0.1.13)(rollup@4.28.1)
-      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
       esbuild: 0.24.0
       vite: 6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1)
     transitivePeerDependencies:
@@ -9392,13 +9387,13 @@ snapshots:
       fast-xml-parser: 4.5.0
       kleur: 4.1.5
 
-  '@astrojs/tailwind@5.1.4(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)))(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))':
+  '@astrojs/tailwind@5.1.4(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)))(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))':
     dependencies:
-      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
       autoprefixer: 10.4.20(postcss@8.4.49)
       postcss: 8.4.49
-      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
+      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
     transitivePeerDependencies:
       - ts-node
 
@@ -9416,15 +9411,15 @@ snapshots:
 
   '@astrojs/underscore-redirects@0.4.0': {}
 
-  '@astrojs/vue@5.0.3(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(vue@3.5.13(typescript@5.6.3))(yaml@2.6.1)':
+  '@astrojs/vue@5.0.3(@types/node@22.10.2)(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(vue@3.5.13(typescript@5.7.2))(yaml@2.6.1)':
     dependencies:
-      '@vitejs/plugin-vue': 5.2.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
-      '@vitejs/plugin-vue-jsx': 4.1.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
+      '@vitejs/plugin-vue': 5.2.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
+      '@vitejs/plugin-vue-jsx': 4.1.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
       '@vue/compiler-sfc': 3.5.13
-      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
       vite: 6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1)
-      vite-plugin-vue-devtools: 7.6.8(rollup@4.28.1)(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
-      vue: 3.5.13(typescript@5.6.3)
+      vite-plugin-vue-devtools: 7.6.8(rollup@4.28.1)(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
+      vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
       - '@nuxt/kit'
       - '@types/node'
@@ -10200,9 +10195,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@kindspells/astro-shield@1.7.1(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1))':
+  '@kindspells/astro-shield@1.7.1(astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1))':
     dependencies:
-      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1)
+      astro: 5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1)
 
   '@koa/router@12.0.2':
     dependencies:
@@ -11288,13 +11283,13 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.16(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.7.2))
 
-  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)))':
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2))
 
   '@tanstack/virtual-core@3.10.9': {}
 
@@ -11783,13 +11778,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue-jsx@4.1.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))':
+  '@vitejs/plugin-vue-jsx@4.1.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/plugin-transform-typescript': 7.26.3(@babel/core@7.26.0)
       '@vue/babel-plugin-jsx': 1.2.5(@babel/core@7.26.0)
       vite: 6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1)
-      vue: 3.5.13(typescript@5.6.3)
+      vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -11797,11 +11792,6 @@ snapshots:
     dependencies:
       vite: 5.4.11(@types/node@16.18.11)(terser@5.36.0)
       vue: 3.5.13(typescript@5.7.2)
-
-  '@vitejs/plugin-vue@5.2.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))':
-    dependencies:
-      vite: 6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1)
-      vue: 3.5.13(typescript@5.6.3)
 
   '@vitejs/plugin-vue@5.2.1(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))':
     dependencies:
@@ -11885,12 +11875,12 @@ snapshots:
       loupe: 3.1.2
       tinyrainbow: 1.2.0
 
-  '@volar/kit@2.4.10(typescript@5.6.3)':
+  '@volar/kit@2.4.10(typescript@5.7.2)':
     dependencies:
       '@volar/language-service': 2.4.10
       '@volar/typescript': 2.4.10
       typesafe-path: 0.2.2
-      typescript: 5.6.3
+      typescript: 5.7.2
       vscode-languageserver-textdocument: 1.0.12
       vscode-uri: 3.0.8
 
@@ -12058,7 +12048,7 @@ snapshots:
     transitivePeerDependencies:
       - vite
 
-  '@vue/devtools-core@7.6.8(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))':
+  '@vue/devtools-core@7.6.8(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       '@vue/devtools-kit': 7.6.8
       '@vue/devtools-shared': 7.6.8
@@ -12066,7 +12056,7 @@ snapshots:
       nanoid: 5.0.9
       pathe: 1.1.2
       vite-hot-client: 0.2.4(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))
-      vue: 3.5.13(typescript@5.6.3)
+      vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
       - vite
 
@@ -12172,12 +12162,6 @@ snapshots:
       '@vue/runtime-core': 3.5.13
       '@vue/shared': 3.5.13
       csstype: 3.1.3
-
-  '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.6.3))':
-    dependencies:
-      '@vue/compiler-ssr': 3.5.13
-      '@vue/shared': 3.5.13
-      vue: 3.5.13(typescript@5.6.3)
 
   '@vue/server-renderer@3.5.13(vue@3.5.13(typescript@5.7.2))':
     dependencies:
@@ -12520,7 +12504,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.6.3)(yaml@2.6.1):
+  astro@5.1.1(@types/node@22.10.2)(db0@0.2.1)(ioredis@5.4.1)(jiti@2.4.1)(rollup@4.28.1)(terser@5.36.0)(typescript@5.7.2)(yaml@2.6.1):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.2
@@ -12567,7 +12551,7 @@ snapshots:
       semver: 7.6.3
       shiki: 1.24.3
       tinyexec: 0.3.1
-      tsconfck: 3.1.4(typescript@5.6.3)
+      tsconfck: 3.1.4(typescript@5.7.2)
       ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
       unstorage: 1.14.1(db0@0.2.1)(ioredis@5.4.1)
@@ -12580,7 +12564,7 @@ snapshots:
       yocto-spinner: 0.1.2
       zod: 3.24.1
       zod-to-json-schema: 3.24.1(zod@3.24.1)
-      zod-to-ts: 1.2.0(typescript@5.6.3)(zod@3.24.1)
+      zod-to-ts: 1.2.0(typescript@5.7.2)(zod@3.24.1)
     optionalDependencies:
       sharp: 0.33.5
     transitivePeerDependencies:
@@ -17224,14 +17208,6 @@ snapshots:
       postcss: 8.4.49
       ts-node: 10.9.2(@types/node@16.18.11)(typescript@5.7.2)
 
-  postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)):
-    dependencies:
-      lilconfig: 3.1.3
-      yaml: 2.6.1
-    optionalDependencies:
-      postcss: 8.4.49
-      ts-node: 10.9.2(@types/node@22.10.2)(typescript@5.6.3)
-
   postcss-load-config@4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)):
     dependencies:
       lilconfig: 3.1.3
@@ -18521,33 +18497,6 @@ snapshots:
     transitivePeerDependencies:
       - ts-node
 
-  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3)):
-    dependencies:
-      '@alloc/quick-lru': 5.2.0
-      arg: 5.0.2
-      chokidar: 3.6.0
-      didyoumean: 1.2.2
-      dlv: 1.1.3
-      fast-glob: 3.3.2
-      glob-parent: 6.0.2
-      is-glob: 4.0.3
-      jiti: 1.21.7
-      lilconfig: 3.1.3
-      micromatch: 4.0.8
-      normalize-path: 3.0.0
-      object-hash: 3.0.0
-      picocolors: 1.1.1
-      postcss: 8.4.49
-      postcss-import: 15.1.0(postcss@8.4.49)
-      postcss-js: 4.0.1(postcss@8.4.49)
-      postcss-load-config: 4.0.2(postcss@8.4.49)(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3))
-      postcss-nested: 6.2.0(postcss@8.4.49)
-      postcss-selector-parser: 6.1.2
-      resolve: 1.22.10
-      sucrase: 3.35.0
-    transitivePeerDependencies:
-      - ts-node
-
   tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
@@ -18784,25 +18733,6 @@ snapshots:
       yn: 3.1.1
     optional: true
 
-  ts-node@10.9.2(@types/node@22.10.2)(typescript@5.6.3):
-    dependencies:
-      '@cspotcode/source-map-support': 0.8.1
-      '@tsconfig/node10': 1.0.11
-      '@tsconfig/node12': 1.0.11
-      '@tsconfig/node14': 1.0.3
-      '@tsconfig/node16': 1.0.4
-      '@types/node': 22.10.2
-      acorn: 8.14.0
-      acorn-walk: 8.3.4
-      arg: 4.1.3
-      create-require: 1.1.1
-      diff: 4.0.2
-      make-error: 1.3.6
-      typescript: 5.6.3
-      v8-compile-cache-lib: 3.0.1
-      yn: 3.1.1
-    optional: true
-
   ts-node@10.9.2(@types/node@22.10.2)(typescript@5.7.2):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -18825,9 +18755,9 @@ snapshots:
 
   ts-toolbelt@6.15.5: {}
 
-  tsconfck@3.1.4(typescript@5.6.3):
+  tsconfck@3.1.4(typescript@5.7.2):
     optionalDependencies:
-      typescript: 5.6.3
+      typescript: 5.7.2
 
   tsconfig-paths@3.15.0:
     dependencies:
@@ -18949,8 +18879,6 @@ snapshots:
   typescript@4.9.5: {}
 
   typescript@5.4.2: {}
-
-  typescript@5.6.3: {}
 
   typescript@5.7.2: {}
 
@@ -19473,9 +19401,9 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-vue-devtools@7.6.8(rollup@4.28.1)(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3)):
+  vite-plugin-vue-devtools@7.6.8(rollup@4.28.1)(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2)):
     dependencies:
-      '@vue/devtools-core': 7.6.8(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
+      '@vue/devtools-core': 7.6.8(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.1)(terser@5.36.0)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
       '@vue/devtools-kit': 7.6.8
       '@vue/devtools-shared': 7.6.8
       execa: 9.5.2
@@ -19824,16 +19752,6 @@ snapshots:
       '@vue/language-core': 2.2.0(typescript@5.7.2)
       typescript: 5.7.2
 
-  vue@3.5.13(typescript@5.6.3):
-    dependencies:
-      '@vue/compiler-dom': 3.5.13
-      '@vue/compiler-sfc': 3.5.13
-      '@vue/runtime-dom': 3.5.13
-      '@vue/server-renderer': 3.5.13(vue@3.5.13(typescript@5.6.3))
-      '@vue/shared': 3.5.13
-    optionalDependencies:
-      typescript: 5.6.3
-
   vue@3.5.13(typescript@5.7.2):
     dependencies:
       '@vue/compiler-dom': 3.5.13
@@ -20091,9 +20009,9 @@ snapshots:
     dependencies:
       zod: 3.24.1
 
-  zod-to-ts@1.2.0(typescript@5.6.3)(zod@3.24.1):
+  zod-to-ts@1.2.0(typescript@5.7.2)(zod@3.24.1):
     dependencies:
-      typescript: 5.6.3
+      typescript: 5.7.2
       zod: 3.24.1
 
   zod@3.24.1: {}
