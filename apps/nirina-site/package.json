@@ -27,6 +27,6 @@
     "@playwright/test": "1.49.1",
     "@tailwindcss/typography": "0.5.15",
     "@types/node": "22.10.2",
-    "node-html-parser": "6.1.13"
+    "node-html-parser": "7.0.1"
   }
 }
