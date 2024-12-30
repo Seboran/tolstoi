@@ -11,6 +11,7 @@ import { shield } from '@kindspells/astro-shield'
 
 import vue from '@astrojs/vue'
 import { astroCSPHashGenerator } from './astroCSPHashgenerator'
+import { targetBlank } from './src/plugins/targetBlank'
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,5 +23,15 @@ export default defineConfig({
     build: {
       assetsInlineLimit: 0,
     },
+  },
+  markdown: {
+    rehypePlugins: [
+      [
+        targetBlank,
+        {
+          domain: 'nirinarabeson.fr',
+        },
+      ],
+    ],
   },
 })
