@@ -12,6 +12,6 @@ Todo, parler de plugins, de CSP...
 
 ## Remerciements
 
-Ce blog est à l'origine un fork du blog de vue.js, qui était sous license MIT.
+Ce blog est à l'origine un fork du blog de vue.js, qui n'avait pas de license...
 
 Ma version est relicencée sous les termes de ce monorepo. (GPLv3).
