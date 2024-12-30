@@ -10,7 +10,7 @@ import netlify from '@astrojs/netlify'
 import { shield } from '@kindspells/astro-shield'
 
 import vue from '@astrojs/vue'
-import { astroCSPHashGenerator } from './astroCSPHashgenerator'
+import { astroCSPHashGenerator } from './src/plugins/astroCSPHashgenerator'
 import { targetBlank } from './src/plugins/targetBlank'
 
 // https://astro.build/config
