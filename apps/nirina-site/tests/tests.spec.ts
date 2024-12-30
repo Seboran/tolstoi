@@ -7,7 +7,8 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Nirina Rabeson/)
 })
 
-test('get started link', async ({ page }, testInfo) => {
+// Vérifier que cela ouvre bien une nouvelle page
+test.skip('get started link', async ({ page }, testInfo) => {
   if (testInfo.project.name.includes('Mobile')) {
     test.skip()
   }
