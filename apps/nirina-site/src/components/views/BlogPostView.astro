@@ -26,8 +26,8 @@ export const prerender = true
 ---
 
 <MarkdownPostLayout title={entry.data.title + ' | Nirina Rabeson'}>
-  <article class="xl:divide-y xl:divide-gray-200 dark:xl:divide-slate-200/5">
-    <header class="pt-6 xl:pb-10 space-y-1 text-center">
+  <article>
+    <header class="pt-6 space-y-1 text-center">
       <DatePublieLeV2 date={entry.data.date} />
 
       <h1
@@ -38,28 +38,18 @@ export const prerender = true
     </header>
 
     <div
-      class="divide-y xl:divide-y-0 divide-gray-200 dark:divide-slate-200/5 xl:grid xl:grid-cols-4 xl:gap-x-10 pb-16 xl:pb-20"
+      class="divide-y divide-gray-200 dark:divide-slate-200/5 pb-16 xl:pb-20"
       style="grid-template-rows: auto 1fr"
     >
-      <div
-        class="divide-y divide-gray-200 dark:divide-slate-200/5 xl:pb-0 xl:col-span-3 xl:row-span-2 py-8"
-      >
+      <div class="divide-y divide-gray-200 dark:divide-slate-200/5 py-8">
         <Prose>
           <Content />
         </Prose>
       </div>
 
       <footer
-        class="text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-slate-200/5 xl:col-start-1 xl:row-start-2"
+        class="flex flex-row w-full justify-between text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-slate-200/5"
       >
-        {
-          nextPost && (
-            <LinkToOtherArticle nextPost={nextPost}>
-              Article suivant
-            </LinkToOtherArticle>
-          )
-        }
-
         {
           previousPost && (
             <LinkToOtherArticle nextPost={previousPost}>
@@ -67,10 +57,17 @@ export const prerender = true
             </LinkToOtherArticle>
           )
         }
+        {
+          nextPost && (
+            <LinkToOtherArticle nextPost={nextPost}>
+              Article suivant
+            </LinkToOtherArticle>
+          )
+        }
       </footer>
 
       <div class="pt-8">
-        <a class="link" href="/">← Retour au blog</a>
+        <a class="link" href="/blog">← Retour au blog</a>
       </div>
     </div>
   </article>
