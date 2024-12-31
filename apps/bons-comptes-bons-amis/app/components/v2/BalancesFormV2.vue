@@ -12,7 +12,7 @@ const {
   balances,
   depensesParPersonne,
   nomsBalances,
-  matriceDeRemboursements
+  matriceDeRemboursements,
 } = storeToRefs(storeBalancesEtRemboursements)
 
 const toaster = useTemplateRef('toaster')

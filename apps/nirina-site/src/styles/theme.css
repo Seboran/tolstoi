@@ -150,8 +150,8 @@ span.lang {
   right: 0.5em;
   font-size: 0.75em;
   color: #999;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 
 .custom-block {
@@ -179,35 +179,23 @@ span.lang {
   color: #42b883;
 }
 
-.prose
-  :where(:not(pre) > code):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  ) {
+.prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
   color: #0a3760;
   padding: 0.25em 0.4em;
   border-radius: 4px;
   background-color: #eee;
 }
 
-.prose
-  :where(code):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::before {
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::before {
   content: '' !important;
 }
 
-.prose
-  :where(code):not(
-    :where([class~='not-prose'], [class~='not-prose'] *)
-  )::after {
+.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after {
   content: '' !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  .prose
-    :where(:not(pre) > code):not(
-      :where([class~='not-prose'], [class~='not-prose'] *)
-    ) {
+  .prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
     color: #d1e9ff;
     background-color: #3c3a5b;
   }
@@ -226,18 +214,8 @@ span.lang {
       rgba(255, 0, 0, 0) 70.71%,
       rgba(255, 0, 0, 0.8)
     ),
-    linear-gradient(
-      127deg,
-      rgba(0, 255, 0, 0.8),
-      rgba(0, 255, 0, 0) 70.71%,
-      rgba(0, 255, 0, 0.8)
-    ),
-    linear-gradient(
-      336deg,
-      rgba(0, 0, 255, 0.8),
-      rgba(0, 0, 255, 0) 70.71%,
-      rgba(0, 0, 255, 0.8)
-    );
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%, rgba(0, 255, 0, 0.8)),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%, rgba(0, 0, 255, 0.8));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

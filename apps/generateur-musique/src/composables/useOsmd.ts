@@ -5,8 +5,7 @@ import { createPartition } from './musiqueUtils'
 import { numberToNote } from './numberToNote'
 
 export function useOsmd(divId: string, grilleAccords: SudokuGrid) {
-  const $osmd = (identifier: string) =>
-    new OSMD.OpenSheetMusicDisplay(identifier)
+  const $osmd = (identifier: string) => new OSMD.OpenSheetMusicDisplay(identifier)
   let osmd: ReturnType<typeof $osmd> | undefined
 
   const notes = ref<string[]>([])

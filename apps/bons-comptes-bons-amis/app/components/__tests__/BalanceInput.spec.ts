@@ -8,8 +8,8 @@ describe('Balance input', () => {
     const { emitted } = render(BalanceInput, {
       props: {
         balance: 10,
-        name: 'une autruche rose'
-      }
+        name: 'une autruche rose',
+      },
     })
     expect(screen.getByRole<HTMLTextAreaElement>('textbox').value).toEqual('une autruche rose')
     await userEvent.clear(screen.getByRole('textbox'))

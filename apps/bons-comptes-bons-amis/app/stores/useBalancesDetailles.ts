@@ -10,6 +10,6 @@ export const useBalancesDetaillesStore = defineStore('balancesDetailles', () => 
       use.matriceDeRemboursements.value.splice(0)
       use.montant.value = 0
       use.indexDepenseur.value = 0
-    }
+    },
   }
 })

@@ -1,7 +1,7 @@
 export function consolelogDecorator(
   target: any,
   propertyKey: string,
-  descriptor: PropertyDescriptor
+  descriptor: PropertyDescriptor,
 ) {
   const originalMethod = descriptor.value
 

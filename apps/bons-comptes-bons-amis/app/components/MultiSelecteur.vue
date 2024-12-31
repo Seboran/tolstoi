@@ -12,7 +12,7 @@ const setBénéficiaires = computed({
   },
   set(val) {
     modelValue.value = Array.from(val)
-  }
+  },
 })
 
 function onClickOption(optionSélectionnée: number) {

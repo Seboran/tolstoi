@@ -13,7 +13,7 @@ const lignesRemboursement = computed(() => {
         return {
           qui: index,
           combien: montant,
-          àQui: i
+          àQui: i,
         }
       })
       .filter(({ combien }) => combien > 0)
@@ -25,16 +25,16 @@ type KeysRemboursements = 'qui' | 'combien' | 'àQui'
 const columns: { key: KeysRemboursements; label: string }[] = [
   {
     key: 'qui',
-    label: 'qui'
+    label: 'qui',
   },
   {
     key: 'combien',
-    label: 'doit'
+    label: 'doit',
   },
   {
     key: 'àQui',
-    label: 'à qui'
-  }
+    label: 'à qui',
+  },
 ]
 
 const rows = computed(() => {
@@ -43,14 +43,14 @@ const rows = computed(() => {
       id: qui + àQui,
       qui: props.nomsBalances[qui],
       àQui: props.nomsBalances[àQui],
-      combien: combien + '€'
+      combien: combien + '€',
     }
   })
 })
 </script>
 
 <template>
-  <table title="Remboursements" aria-label="Remboursements" class="min-w-80 w-full m-auto">
+  <table title="Remboursements" aria-label="Remboursements" class="m-auto w-full min-w-80">
     <thead>
       <tr>
         <th v-for="(column, index) in columns" :key="index">{{ column.label }}</th>

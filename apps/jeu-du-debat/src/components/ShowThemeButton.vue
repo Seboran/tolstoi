@@ -1,9 +1,9 @@
 <script setup lang="ts">
-defineProps<{ msg: string; show: boolean }>();
+defineProps<{ msg: string; show: boolean }>()
 </script>
 
 <template>
-  <div class="hidden card">
+  <div class="card hidden">
     <h2 v-show="show">{{ msg }}</h2>
   </div>
 </template>

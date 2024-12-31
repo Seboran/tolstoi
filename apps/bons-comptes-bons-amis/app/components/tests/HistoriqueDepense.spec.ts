@@ -10,20 +10,20 @@ describe('Afficher historique des dépenses', () => {
           {
             indexDépenseur: 0,
             montant: 230,
-            listeIndexesBénéficiares: [0, 1, 2]
+            listeIndexesBénéficiares: [0, 1, 2],
           },
           {
             indexDépenseur: 1,
             montant: 20,
-            listeIndexesBénéficiares: [0, 1]
-          }
+            listeIndexesBénéficiares: [0, 1],
+          },
         ],
-        nomsBalances: ['Arthur', 'Gru', 'Minions']
-      }
+        nomsBalances: ['Arthur', 'Gru', 'Minions'],
+      },
     })
 
     expect(getAllByRole('listitem')[0].textContent).toEqual(
-      'Arthur a dépensé 230€ pour Arthur, Gru, Minions'
+      'Arthur a dépensé 230€ pour Arthur, Gru, Minions',
     )
     expect(getAllByRole('listitem')[1].textContent).toEqual('Gru a dépensé 20€ pour Arthur, Gru')
   })

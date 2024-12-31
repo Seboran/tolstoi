@@ -13,6 +13,6 @@ test('test', async ({ page }) => {
     await page.keyboard.type(caractere)
   }
   await expect(page.getByLabel('Zone de texte')).toHaveValue(
-    'amour gloire beauté pâtée champignons brun'
+    'amour gloire beauté pâtée champignons brun',
   )
 })

@@ -1,5 +1,5 @@
 <script setup>
-const sourceCode = import.meta.env.VITE_GITHUB_LINK;
+const sourceCode = import.meta.env.VITE_GITHUB_LINK
 </script>
 
 <template>

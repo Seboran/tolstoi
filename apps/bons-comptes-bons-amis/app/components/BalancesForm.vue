@@ -14,7 +14,7 @@ const {
   bénéficiaires,
   isLoading,
   historiqueDépenses,
-  matriceDeRemboursements
+  matriceDeRemboursements,
 } = storeToRefs(balancesDetailStore)
 
 const animateAjouterBouton = ref(false)

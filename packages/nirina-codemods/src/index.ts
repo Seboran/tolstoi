@@ -23,10 +23,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         const properties = declaration.properties
         properties.forEach((prop) => {
           // Convert data properties to refs
-          if (
-            j.ObjectProperty.check(prop) &&
-            (prop.key as Identifier).name === 'data'
-          ) {
+          if (j.ObjectProperty.check(prop) && (prop.key as Identifier).name === 'data') {
             const dataFunction = prop.value
             if (
               j.ArrowFunctionExpression.check(dataFunction) &&
@@ -41,9 +38,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
                   const refDeclaration = j.variableDeclaration('const', [
                     j.variableDeclarator(
                       j.identifier(key),
-                      j.callExpression(j.identifier('ref'), [
-                        value as ArrayExpression,
-                      ]),
+                      j.callExpression(j.identifier('ref'), [value as ArrayExpression]),
                     ),
                   ])
                   // Insert the ref declaration at the top level
@@ -65,10 +60,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         })
       }
 
-      if (
-        path.node.declaration &&
-        j.ObjectExpression.check(path.node.declaration)
-      ) {
+      if (path.node.declaration && j.ObjectExpression.check(path.node.declaration)) {
         const properties = path.node.declaration.properties
 
         // Extract props
@@ -78,15 +70,10 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
             j.Identifier.check(prop.key) &&
             prop.key.name === 'props',
         )
-        if (
-          props &&
-          j.ObjectProperty.check(props) &&
-          j.ObjectExpression.check(props.value)
-        ) {
-          const definePropsCall = j.callExpression(
-            j.identifier('defineProps'),
-            [j.objectExpression(props.value.properties)],
-          )
+        if (props && j.ObjectProperty.check(props) && j.ObjectExpression.check(props.value)) {
+          const definePropsCall = j.callExpression(j.identifier('defineProps'), [
+            j.objectExpression(props.value.properties),
+          ])
           const definePropsDeclaration = j.variableDeclaration('const', [
             j.variableDeclarator(j.identifier('props'), definePropsCall),
           ])
@@ -109,10 +96,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
             const methodsObject = prop.value
             if (j.ObjectExpression.check(methodsObject)) {
               methodsObject.properties.forEach((methodProp) => {
-                if (
-                  j.ObjectProperty.check(methodProp) &&
-                  j.Identifier.check(methodProp.key)
-                ) {
+                if (j.ObjectProperty.check(methodProp) && j.Identifier.check(methodProp.key)) {
                   const key = methodProp.key.name
                   const func = methodProp.value as FunctionExpression
 
@@ -171,17 +155,14 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
 
   const scriptTagRegex = /(<script[^>]*>)([\s\S]*?)(<\/script>)/gm
 
-  return file.source.replace(
-    scriptTagRegex,
-    (_match, openingTag, scriptContent, closingTag) => {
-      // Transform the extracted JavaScript content from <script> tags
-      const transformedScriptContent = transformCode(scriptContent)
+  return file.source.replace(scriptTagRegex, (_match, openingTag, scriptContent, closingTag) => {
+    // Transform the extracted JavaScript content from <script> tags
+    const transformedScriptContent = transformCode(scriptContent)
 
-      if (transformedScriptContent)
-        // Replace the original <script> content with the transformed content, preserving the original opening tag
-        return `${openingTag.replace('>', ' setup>')}\n${transformedScriptContent}\n${closingTag}`
+    if (transformedScriptContent)
+      // Replace the original <script> content with the transformed content, preserving the original opening tag
+      return `${openingTag.replace('>', ' setup>')}\n${transformedScriptContent}\n${closingTag}`
 
-      return `${openingTag}\n${scriptContent}\n${closingTag}`
-    },
-  )
+    return `${openingTag}\n${scriptContent}\n${closingTag}`
+  })
 }

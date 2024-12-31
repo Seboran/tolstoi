@@ -1,7 +1,4 @@
-import {
-  MISTRAL_API_KEY,
-  MISTRAL_API_ENDPOINT_KEY,
-} from '../../utils/environment-variables.ts'
+import { MISTRAL_API_KEY, MISTRAL_API_ENDPOINT_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
 
 interface ChatCompletionChunk {
@@ -29,12 +26,9 @@ export function useChatFunction(
     /**
      * Gestion des erreurs de configuration
      */
-    if (!variables.apiKey)
-      throw new Error(`${MISTRAL_API_KEY} is not set on netlify or is empty`)
+    if (!variables.apiKey) throw new Error(`${MISTRAL_API_KEY} is not set on netlify or is empty`)
     if (!variables.MISTRAL_API_ENDPOINT)
-      throw new Error(
-        `${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`,
-      )
+      throw new Error(`${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`)
 
     /**
      * Désactivation du service si non configuré
@@ -86,9 +80,7 @@ export function useChatFunction(
 
           const body = response.body
           if (!body) {
-            throw new Error(
-              'No response body received from the streaming endpoint.',
-            )
+            throw new Error('No response body received from the streaming endpoint.')
           }
 
           await queueStreamingBody(body, controller)
@@ -132,8 +124,7 @@ export function useChatFunction(
 
         if (rawEvent.startsWith('data: ')) {
           try {
-            const content =
-              mapMistralEventToToken<ChatCompletionChunk>(rawEvent)
+            const content = mapMistralEventToToken<ChatCompletionChunk>(rawEvent)
             if (content) {
               const boutDeChunk = encoder.encode(content)
               controller.enqueue(boutDeChunk)
@@ -147,9 +138,7 @@ export function useChatFunction(
     controller.close()
   }
 
-  function mapMistralEventToToken<T extends ChatCompletionChunk>(
-    rawEvent: string,
-  ) {
+  function mapMistralEventToToken<T extends ChatCompletionChunk>(rawEvent: string) {
     const jsonData = JSON.parse(rawEvent.slice(6)) as T
     const content = jsonData.choices.at(0)?.delta.content
     return content

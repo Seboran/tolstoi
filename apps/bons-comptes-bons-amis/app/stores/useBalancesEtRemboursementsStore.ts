@@ -8,6 +8,6 @@ export const useBalancesEtRemboursementsStore = defineStore('balancesEtRembourse
       use.historiqueDépenses.value.splice(0)
       use.matriceDeRemboursements.value.splice(0)
       use.calculLoading.value = false
-    }
+    },
   }
 })

@@ -4,9 +4,7 @@
       <div>
         <SudokuAfficherGrille
           v-model:grid="sudoku.contexte"
-          :possibilites="
-            arrayToGrid(sudoku.valeurs.map(({ solutions }) => solutions))
-          "
+          :possibilites="arrayToGrid(sudoku.valeurs.map(({ solutions }) => solutions))"
         />
       </div>
       <StyledBouton @click="propager"> RÉSOUDRE ! </StyledBouton>

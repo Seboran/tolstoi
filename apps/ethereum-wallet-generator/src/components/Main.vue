@@ -1,48 +1,48 @@
 <script setup>
-import { onMounted, ref, nextTick } from "vue";
+import { onMounted, ref, nextTick } from 'vue'
 
-import GenerateButton from "./generator/GenerateButton.vue";
-import PrivateKeyField from "./generator/PrivateKeyField.vue";
-import PublicKeyField from "./generator/PublicKeyField.vue";
+import GenerateButton from './generator/GenerateButton.vue'
+import PrivateKeyField from './generator/PrivateKeyField.vue'
+import PublicKeyField from './generator/PublicKeyField.vue'
 
-const worker = new Worker(new URL("./workers/worker.js", import.meta.url), {
-  type: "module",
-});
+const worker = new Worker(new URL('./workers/worker.js', import.meta.url), {
+  type: 'module',
+})
 
-const publicKey = ref("");
-const privateKey = ref("");
+const publicKey = ref('')
+const privateKey = ref('')
 
-const start = ref("");
-const end = ref("");
+const start = ref('')
+const end = ref('')
 
-const loading = ref(false);
+const loading = ref(false)
 
 function update({ start: st, end: en }) {
-  start.value = st;
-  end.value = en;
+  start.value = st
+  end.value = en
 }
 
 function generateKeys() {
-  loading.value = true;
-  worker.postMessage({ start: start.value, end: end.value });
+  loading.value = true
+  worker.postMessage({ start: start.value, end: end.value })
 }
 
 function invalid() {
-  console.error("Invalid ethereum address");
+  console.error('Invalid ethereum address')
 }
 
 onMounted(async () => {
-  await nextTick();
+  await nextTick()
   worker.onmessage = ({ data }) => {
-    publicKey.value = data.publicKey;
-    privateKey.value = data.privateKey;
-    loading.value = false;
-  };
+    publicKey.value = data.publicKey
+    privateKey.value = data.privateKey
+    loading.value = false
+  }
   worker.onmessageerror = (e) => {
-    loading.value = false;
-    console.error(e);
-  };
-});
+    loading.value = false
+    console.error(e)
+  }
+})
 </script>
 
 <template>

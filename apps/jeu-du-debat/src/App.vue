@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-import StartScreen from "./components/StartScreen.vue";
-import GameRules from "./components/GameRules.vue";
-import ShowTheme from "./components/ShowTheme.vue";
-import EndScreen from "./components/EndScreen.vue";
+import StartScreen from './components/StartScreen.vue'
+import GameRules from './components/GameRules.vue'
+import ShowTheme from './components/ShowTheme.vue'
+import EndScreen from './components/EndScreen.vue'
 
 enum GameStates {
   Start,
@@ -13,24 +13,24 @@ enum GameStates {
   End,
 }
 
-const gameState = ref(GameStates.Start);
-const numberPlayers = ref(0);
+const gameState = ref(GameStates.Start)
+const numberPlayers = ref(0)
 
 function startGame(value: number) {
-  numberPlayers.value = value;
-  gameState.value = GameStates.Reveal;
+  numberPlayers.value = value
+  gameState.value = GameStates.Reveal
 }
 
 function backMainScreen() {
-  gameState.value = GameStates.Start;
+  gameState.value = GameStates.Start
 }
 
 function seeRules() {
-  gameState.value = GameStates.Rules;
+  gameState.value = GameStates.Rules
 }
 
 function endGame() {
-  gameState.value = GameStates.End;
+  gameState.value = GameStates.End
 }
 </script>
 
@@ -56,19 +56,13 @@ function endGame() {
     <div class="card">
       <div class="content card-body">
         <StartScreen v-if="gameState === GameStates.Start" @start="startGame" />
-        <GameRules
-          v-if="gameState === GameStates.Rules"
-          @quit="backMainScreen"
-        />
+        <GameRules v-if="gameState === GameStates.Rules" @quit="backMainScreen" />
         <ShowTheme
           v-if="gameState === GameStates.Reveal"
           :number-players="numberPlayers"
           @quit="endGame"
         />
-        <EndScreen
-          v-if="gameState === GameStates.End"
-          @replay="backMainScreen"
-        />
+        <EndScreen v-if="gameState === GameStates.End" @replay="backMainScreen" />
       </div>
     </div>
   </main>

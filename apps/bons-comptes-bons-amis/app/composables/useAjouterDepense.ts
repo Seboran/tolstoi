@@ -17,7 +17,7 @@ export function useAjouterDepense(balances: Ref<number[]>) {
     historiqueDépenses.value.push({
       indexDépenseur: indexDepenseur.value,
       montant: montant.value,
-      listeIndexesBénéficiares: bénéficiaires.value
+      listeIndexesBénéficiares: bénéficiaires.value,
     })
   }
 

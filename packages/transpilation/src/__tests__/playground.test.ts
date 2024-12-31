@@ -13,14 +13,14 @@ describe('playground', () => {
   test('should work', async () => {
     const instruction = new AssignationNoeud(
       new LitteralNoeud('test'),
-      new AdditionNoeud(new NombreNoeud(5), new NombreNoeud(3))
+      new AdditionNoeud(new NombreNoeud(5), new NombreNoeud(3)),
     )
     const generateurJavascript = new JavascriptGenerator()
     const prettiedCode = await prettier.format(
       instruction.accept(generateurJavascript),
       {
         parser: 'babel',
-      }
+      },
     )
     expect(prettiedCode).toEqual('var test = 5 + 3;\n')
   })
@@ -28,7 +28,7 @@ describe('playground', () => {
   test('other test', () => {
     const instruction = new AssignationNoeud(
       new LitteralNoeud('test'),
-      new AdditionNoeud(new NombreNoeud(5), new NombreNoeud(3))
+      new AdditionNoeud(new NombreNoeud(5), new NombreNoeud(3)),
     )
     const generateurCobol = new CobolGenerator()
 

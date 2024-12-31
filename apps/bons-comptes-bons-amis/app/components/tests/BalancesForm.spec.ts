@@ -10,9 +10,9 @@ vi.mock('@/components/useFetchBalances', () => ({
     result_matrix: [
       [0, 1, 0],
       [0, 0, 1],
-      [0, 0, 0]
-    ]
-  } as BalanceSolutionResponse)
+      [0, 0, 0],
+    ],
+  } as BalanceSolutionResponse),
 }))
 describe('Afficher version 1 des balances', () => {
   afterEach(() => {
@@ -21,8 +21,8 @@ describe('Afficher version 1 des balances', () => {
   test('Permet de renseigner 3 personnes à rembourser', async () => {
     const { queryAllByRole, getByRole } = render(BalancesForm, {
       global: {
-        plugins: [createPinia()]
-      }
+        plugins: [createPinia()],
+      },
     })
 
     expect(queryAllByRole('textbox')).toHaveLength(0)
@@ -41,8 +41,8 @@ describe('Afficher version 1 des balances', () => {
 
       const { getByRole } = render(BalancesForm, {
         global: {
-          plugins: [createPinia()]
-        }
+          plugins: [createPinia()],
+        },
       })
 
       await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
@@ -62,13 +62,13 @@ describe('Afficher version 1 des balances', () => {
       await waitFor(
         () => {
           expect(tableauRemboursements.textContent).toEqual(
-            'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
+            'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
           )
         },
         {
-          timeout: 2000
-        }
+          timeout: 2000,
+        },
       )
-    }
+    },
   )
 })

@@ -1,19 +1,13 @@
 <script setup>
-import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
-import SourceCode from "./components/SourceCode.vue";
+import Header from './components/Header.vue'
+import Main from './components/Main.vue'
+import SourceCode from './components/SourceCode.vue'
 </script>
 
 <template>
   <div id="grid">
     <header>
-      <img
-        alt="Ethereum logo"
-        class="logo"
-        src="./assets/logo.svg"
-        width="125"
-        height="125"
-      />
+      <img alt="Ethereum logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
       <div class="wrapper">
         <Header msg="Ethereum Wallet Generator" />
@@ -25,11 +19,11 @@ import SourceCode from "./components/SourceCode.vue";
     </main>
   </div>
 
-  <footer class="text-end text-muted"><SourceCode /></footer>
+  <footer class="text-muted text-end"><SourceCode /></footer>
 </template>
 
 <style>
-@import "./assets/base.css";
+@import './assets/base.css';
 
 #app {
   max-width: 1280px;

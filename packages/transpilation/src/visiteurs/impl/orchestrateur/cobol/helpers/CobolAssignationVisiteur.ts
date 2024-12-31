@@ -28,18 +28,18 @@ export default class CobolAssignationVisiteur
   }
   multiplication(
     node: AssignationNoeud,
-    multiplication: MultiplicationNoeud
+    multiplication: MultiplicationNoeud,
   ): string {
     return `MULTIPLY ${super.visit(multiplication.a)} BY ${super.visit(
-      multiplication.b
+      multiplication.b,
     )} GIVING ${node.variable.name}`
   }
   soustraction(
     node: AssignationNoeud,
-    soustraction: SoustractionNoeud
+    soustraction: SoustractionNoeud,
   ): string {
     return `SUBTRACT ${super.visit(soustraction.b)} FROM ${super.visit(
-      soustraction.a
+      soustraction.a,
     )} GIVING ${node.variable.name}`
   }
   assignationDefaut(node: AssignationNoeud): string {

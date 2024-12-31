@@ -3,9 +3,7 @@ import { InputMotsAEcrire } from '@/app/InputMotsAEcrire'
 
 test('doit permettre de saisir le texte proposé', async ({ mount, page }) => {
   const component = await mount(
-    <InputMotsAEcrire
-      mots={['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']}
-    />,
+    <InputMotsAEcrire mots={['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']} />,
   )
 
   await component.getByLabel('Zone de texte').click()
@@ -24,9 +22,7 @@ test("doit afficher un message d'erreur quand on se trompe de caractère", async
   mount,
 }) => {
   const component = await mount(
-    <InputMotsAEcrire
-      mots={['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']}
-    />,
+    <InputMotsAEcrire mots={['amour', 'gloire', 'beauté', 'pâtée', 'champignons', 'brun']} />,
   )
   await component.getByLabel('Zone de texte').click()
 
@@ -34,9 +30,7 @@ test("doit afficher un message d'erreur quand on se trompe de caractère", async
   for (const caractere of textAFrapper) {
     await page.keyboard.type(caractere)
   }
-  await expect(component.getByLabel('Zone de texte')).toHaveValue(
-    'amour gloire beaut',
-  )
+  await expect(component.getByLabel('Zone de texte')).toHaveValue('amour gloire beaut')
 
   await expect(component.getByText('Erreur de saisie !')).toBeVisible()
 })

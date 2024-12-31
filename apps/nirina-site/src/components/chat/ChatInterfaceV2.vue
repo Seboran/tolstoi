@@ -14,8 +14,7 @@ const lienVersSuite = ref('')
 
 const bloquerSubmitDoublon = ref(false)
 
-const { messages, ajouterMessageUser, ajouterMessageAssistant } =
-  useListeMessages()
+const { messages, ajouterMessageUser, ajouterMessageAssistant } = useListeMessages()
 
 // Function to handle real-time SSE updates
 async function fetchMistralResponse(inputMessage: string) {
@@ -97,8 +96,7 @@ async function handleFormSubmit(inputMessage: string) {
 
     // Questions générales
     {
-      pattern:
-        /questions?|poser une question|faq|réponses?|demandes?|besoin d'aide/,
+      pattern: /questions?|poser une question|faq|réponses?|demandes?|besoin d'aide/,
       href: '/a-propos',
     },
 
@@ -111,29 +109,25 @@ async function handleFormSubmit(inputMessage: string) {
 
     // À propos de vous, bio, CV ou parcours
     {
-      pattern:
-        /parler de toi|présentation|présenter|bio|à propos|cv|parcours|expérience|histoire/,
+      pattern: /parler de toi|présentation|présenter|bio|à propos|cv|parcours|expérience|histoire/,
       href: '/a-propos',
     },
 
     // Questions liées aux projets ou portefolio
     {
-      pattern:
-        /projets?|portfolio|travail|réalisations?|mes créations?|mes travaux?/,
+      pattern: /projets?|portfolio|travail|réalisations?|mes créations?|mes travaux?/,
       href: '/projets',
     },
 
     // Recherche ou navigation libre
     {
-      pattern:
-        /recherche|explorer|balade|je me balade|naviguer|exploration|parcourir|curiosité/,
+      pattern: /recherche|explorer|balade|je me balade|naviguer|exploration|parcourir|curiosité/,
       href: '/projets',
     },
 
     // Sujets liés au blog ou conférences
     {
-      pattern:
-        /sujets?|thèmes?|articles spécifiques|catégories?|intérêts?|centres d'intérêt/,
+      pattern: /sujets?|thèmes?|articles spécifiques|catégories?|intérêts?|centres d'intérêt/,
       href: '/presentations',
     },
 
@@ -162,9 +156,7 @@ async function handleFormSubmit(inputMessage: string) {
   <ChatInterfaceTemplate @submit="handleFormSubmit">
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
-        <p v-if="mistralAnswer">
-          <strong>Réponse :</strong> {{ mistralAnswer }}
-        </p>
+        <p v-if="mistralAnswer"><strong>Réponse :</strong> {{ mistralAnswer }}</p>
       </div>
 
       <a

@@ -8,8 +8,8 @@ describe('Affiche les balances et permet de les modifier', () => {
     const { getByRole } = render(BalanceInputV2, {
       props: {
         name: 'Alfred',
-        balance: 20
-      }
+        balance: 20,
+      },
     })
 
     expect(getByRole<HTMLInputElement>('textbox').value).toEqual('Alfred')
@@ -20,8 +20,8 @@ describe('Affiche les balances et permet de les modifier', () => {
     const { getByRole, emitted } = render(BalanceInputV2, {
       props: {
         name: 'Alfred',
-        balance: 20
-      }
+        balance: 20,
+      },
     })
     const nomInput = getByRole<HTMLInputElement>('textbox')
     const balanceInput = getByRole<HTMLInputElement>('spinbutton')
@@ -39,12 +39,12 @@ describe('Affiche les balances et permet de les modifier', () => {
     const { getByRole, emitted } = render(BalanceInputV2, {
       props: {
         name: 'Alfred',
-        balance: 20
-      }
+        balance: 20,
+      },
     })
 
     const deleteButton = getByRole('button', {
-      name: 'delete'
+      name: 'delete',
     })
 
     await userEvent.click(deleteButton)
