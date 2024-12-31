@@ -14,7 +14,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "GPL-3.0-only",
   "devDependencies": {
     "@playwright/test": "1.49.1",
     "prettier": "3.4.2",
