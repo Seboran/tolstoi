@@ -37,6 +37,7 @@ jobs:
       - name: Install turbo
         run: pnpm i -g turbo
 
+      - run: pnpm format:check
       - run: turbo test:unit --concurrency=1
 
       - run: turbo build
