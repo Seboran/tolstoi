@@ -1,2 +1,9 @@
 .output
 pnpm-lock.yaml
+.next
+.unlighthouse
+packages/nirina-codemods/__testfixtures__
+bruno
+*.md
+*.mdx
+.astro
