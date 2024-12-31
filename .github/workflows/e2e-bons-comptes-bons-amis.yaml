@@ -11,7 +11,7 @@ permissions:
 jobs:
   e2e:
     environment: Preview – bons-comptes-bons-amis
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
