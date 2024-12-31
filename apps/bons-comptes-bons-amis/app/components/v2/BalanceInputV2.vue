@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const balance = defineModel<number>('balance', {
-  required: true
+  required: true,
 })
 const name = defineModel<string>('name', { required: true })
 
@@ -10,7 +10,7 @@ defineEmits<{
 </script>
 
 <template>
-  <div class="grid grid-flow-col grid-cols-2 gap-1 my-1 w-full">
+  <div class="my-1 grid w-full grid-flow-col grid-cols-2 gap-1">
     <StyledTextInput label="Nom" v-model="name" :id="name + 'nom'" />
     <StyledNumberInput
       :id="'depense_' + name"

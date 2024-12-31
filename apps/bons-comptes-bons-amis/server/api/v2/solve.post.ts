@@ -13,9 +13,9 @@ export default defineEventHandler<{ body: number[] }>(async (event) => {
   const data = await $fetch<BalanceSolutionResponse>(SOLVE_API, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ balances })
+    body: JSON.stringify({ balances }),
   })
   return data.result_matrix
 })

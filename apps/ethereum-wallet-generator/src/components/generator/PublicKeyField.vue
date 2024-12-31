@@ -1,12 +1,12 @@
 <script setup>
-import CopyButton from "./CopyButton.vue";
+import CopyButton from './CopyButton.vue'
 
 defineProps({
   value: {
     type: String,
     required: true,
   },
-});
+})
 </script>
 
 <template>

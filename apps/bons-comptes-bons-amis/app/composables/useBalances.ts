@@ -6,7 +6,7 @@ export function useBalances() {
   const nomsBalances = ref<string[]>([])
 
   const erreurBalance = computed(() =>
-    balances.value.filter((b) => !isNaN(b)).reduce((total, balance) => total + balance, 0)
+    balances.value.filter((b) => !isNaN(b)).reduce((total, balance) => total + balance, 0),
   )
 
   function addBalance() {
@@ -18,6 +18,6 @@ export function useBalances() {
     balances,
     nomsBalances,
     erreurBalance,
-    addBalance
+    addBalance,
   }
 }

@@ -6,8 +6,8 @@ withDefaults(
     disabled?: boolean
   }>(),
   {
-    disabled: false
-  }
+    disabled: false,
+  },
 )
 const balance = defineModel<number>({ required: true })
 </script>

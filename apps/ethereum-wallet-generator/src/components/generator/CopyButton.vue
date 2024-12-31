@@ -1,8 +1,8 @@
 <script setup>
-import { Tooltip } from "bootstrap";
-import { onMounted, ref } from "vue";
+import { Tooltip } from 'bootstrap'
+import { onMounted, ref } from 'vue'
 
-import { useCopy } from "./useCopy.js";
+import { useCopy } from './useCopy.js'
 defineProps({
   value: {
     required: true,
@@ -12,13 +12,13 @@ defineProps({
     required: true,
     type: String,
   },
-});
+})
 
-const copyButton = ref(null);
+const copyButton = ref(null)
 
 onMounted(() => {
-  new Tooltip(copyButton.value);
-});
+  new Tooltip(copyButton.value)
+})
 </script>
 
 <template>

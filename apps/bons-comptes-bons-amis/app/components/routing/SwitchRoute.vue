@@ -4,7 +4,7 @@ import type { RoutesNamesList } from '@typed-router'
 const ModesRemboursement = {
   rapide: 'rapide',
   detaille: 'detaille',
-  tuto: 'tuto'
+  tuto: 'tuto',
 } as const
 
 defineEmits<{
@@ -21,13 +21,13 @@ const items: {
   routeName: RoutesNamesList
 }[] = [
   { label: 'Mode rapide', key: ModesRemboursement.rapide, routeName: 'index' },
-  { label: 'Mode détaillé', key: ModesRemboursement.detaille, routeName: 'detaille' }
+  { label: 'Mode détaillé', key: ModesRemboursement.detaille, routeName: 'detaille' },
 ]
 
 const { allowUserInput } = useCanUserInteract()
 const activeItemTabs = computed(() =>
   // eslint-disable-next-line no-constant-binary-expression
-  items.map((item) => ({ ...item, disabled: false || !allowUserInput.value }))
+  items.map((item) => ({ ...item, disabled: false || !allowUserInput.value })),
 )
 </script>
 

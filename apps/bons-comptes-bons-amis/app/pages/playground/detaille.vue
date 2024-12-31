@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { balances, nomsBalances, indexDepenseur, bénéficiaires, montant } = storeToRefs(
-  useBalancesDetaillesStore()
+  useBalancesDetaillesStore(),
 )
 const { ajouterDepense } = useBalancesDetaillesStore()
 balances.value = [0, 0, 0, 0]

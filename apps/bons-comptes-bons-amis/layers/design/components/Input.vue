@@ -6,11 +6,11 @@ defineProps<{
 </script>
 
 <template>
-  <div class="relative my-1 mx-0.5">
+  <div class="relative mx-0.5 my-1">
     <slot></slot>
     <label
       :for="id"
-      class="absolute z-10 top-[-0.5rem] left-1 text-xs bg-white dark:bg-[#1c1b22]"
+      class="absolute left-1 top-[-0.5rem] z-10 bg-white text-xs dark:bg-[#1c1b22]"
       >{{ label }}</label
     >
   </div>

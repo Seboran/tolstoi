@@ -46,7 +46,7 @@ export function useRemboursements() {
     () => {
       modified.value = true
     },
-    { deep: true }
+    { deep: true },
   )
 
   function retirerBalancerEtViderComptes(index: number) {
@@ -67,6 +67,6 @@ export function useRemboursements() {
     balances,
     nomsBalances,
     addBalance,
-    matriceDeRemboursements
+    matriceDeRemboursements,
   }
 }

@@ -1,7 +1,5 @@
 <template>
-  <tr
-    class="border-blue-300 [&:nth-child(3n+0)]:border-b-4 [&:nth-child(3n+1)]:border-t-4"
-  >
+  <tr class="border-blue-300 [&:nth-child(3n+0)]:border-b-4 [&:nth-child(3n+1)]:border-t-4">
     <SudokuAfficherCellule
       v-for="(cellule, index) in modelValue"
       :key="index"

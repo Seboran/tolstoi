@@ -9,9 +9,9 @@ vi.mock('@/components/useFetchBalances', () => ({
     result_matrix: [
       [0, 1, 0],
       [0, 0, 1],
-      [0, 0, 0]
-    ]
-  } as BalanceSolutionResponse)
+      [0, 0, 0],
+    ],
+  } as BalanceSolutionResponse),
 }))
 
 describe("Affiche les balances et permet d'ajouter des dépenses", () => {
@@ -52,11 +52,11 @@ describe("Affiche les balances et permet d'ajouter des dépenses", () => {
       const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
       await waitFor(() => {
         expect(tableauRemboursements.textContent).toEqual(
-          'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux'
+          'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
         ),
           { timeout: 2000 }
       })
-    }
+    },
   )
 
   test('Après avoir ajouté 3 personnes, vider les résultats quand on retire une personne', async () => {

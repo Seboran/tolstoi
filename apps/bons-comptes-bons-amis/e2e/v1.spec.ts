@@ -14,13 +14,13 @@ test.skip('test super avancé', async ({ page }) => {
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.locator('input[name="Un castor affairé"]').click({
-    clickCount: 3
+    clickCount: 3,
   })
   await page.locator('input[name="Un castor affairé"]').fill('Julien')
   await page.locator('input[name="Une autruche curieuse"]').dblclick()
   await page.locator('input[name="Une autruche curieuse"]').dblclick()
   await page.locator('input[name="Une autruche curieuse"]').click({
-    clickCount: 3
+    clickCount: 3,
   })
   await page.locator('input[name="Une autruche curieuse"]').fill('Oscar')
   await page.locator('input[name="Un ornithorynque malicieux"]').click()
@@ -28,7 +28,7 @@ test.skip('test super avancé', async ({ page }) => {
   await page.locator('input[name="Un ornithorynque malicieux"]').fill('Sophie')
   await page.locator('input[name="Un paresseux rêveur"]').click()
   await page.locator('input[name="Un paresseux rêveur"]').click({
-    clickCount: 3
+    clickCount: 3,
   })
   await page.locator('input[name="Un paresseux rêveur"]').fill('Julie')
   await page.locator('input[name="Un koala gourmand"]').fill('Bob')
@@ -78,7 +78,7 @@ test.skip('test super avancé', async ({ page }) => {
   await page.getByLabel('a dépensé').click()
   await page.getByLabel('a dépensé').dblclick()
   await page.getByLabel('a dépensé').click({
-    clickCount: 4
+    clickCount: 4,
   })
   await page.getByLabel('a dépensé').fill('3000')
   await page.getByLabel('Enzo').uncheck()
@@ -198,7 +198,7 @@ test.skip('test super avancé', async ({ page }) => {
     'Nicolas847.34€Oscar',
     'Dieudonné254.17€Oscar',
     'Dieudonné246.9€Sophie',
-    'Dieudonné180.56€Bob'
+    'Dieudonné180.56€Bob',
   ])
 
   await expect(page.getByRole('list').getByRole('listitem')).toHaveText([
@@ -218,7 +218,7 @@ test.skip('test super avancé', async ({ page }) => {
     'Dieudonné a dépensé 660€ pour Julie, Bob, Julien, Enzo, Sarah, Sophie, Dieudonné',
     'Nicolas a dépensé 400€ pour Julie, Bob, Enzo, Sarah, Sophie, Dieudonné, Oscar, Nicolas',
     'Bob a dépensé 900€ pour Julie, Bob, Enzo, Sarah, Sophie, Dieudonné, Oscar, Nicolas, Julien',
-    'Dieudonné a dépensé 500€ pour Bob, Sophie, Dieudonné, Oscar, Nicolas'
+    'Dieudonné a dépensé 500€ pour Bob, Sophie, Dieudonné, Oscar, Nicolas',
   ])
 })
 
@@ -230,7 +230,7 @@ test.skip('test rapide', async ({ page }) => {
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('button', { name: 'Ajouter une personne' }).click()
   await page.getByRole('textbox').nth(1).click({
-    clickCount: 3
+    clickCount: 3,
   })
   await page.getByRole('textbox').nth(1).fill('NIRINA')
 
@@ -249,21 +249,21 @@ test.skip('test rapide', async ({ page }) => {
   await page.getByRole('button', { name: 'Ajouter une dépense' }).click()
 
   await expect(page.getByTitle('Remboursements').getByRole('row').nth(1)).toHaveText(
-    'Un castor affairé134€NIRINA'
+    'Un castor affairé134€NIRINA',
   )
   await expect(page.getByTitle('Remboursements').getByRole('row').nth(2)).toHaveText(
-    'Un castor affairé42€Un ornithorynque malicieux'
+    'Un castor affairé42€Un ornithorynque malicieux',
   )
   await expect(
     page.getByText(
-      'NIRINA a dépensé 310€ pour Un castor affairé, NIRINA, Un ornithorynque malicieux'
-    )
+      'NIRINA a dépensé 310€ pour Un castor affairé, NIRINA, Un ornithorynque malicieux',
+    ),
   ).toBeVisible()
 
   await expect(
     page.getByText(
-      'Un ornithorynque malicieux a dépensé 218€ pour Un castor affairé, NIRINA, Un ornithorynque malicieux'
-    )
+      'Un ornithorynque malicieux a dépensé 218€ pour Un castor affairé, NIRINA, Un ornithorynque malicieux',
+    ),
   ).toBeVisible()
 })
 

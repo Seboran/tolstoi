@@ -38,15 +38,9 @@ test('get started link on mobile', async ({ page }, testInfo) => {
   await expect(page).toHaveURL(/https:\/\/www\.linkedin\.com\/*/)
 })
 
-test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({
-  page,
-}) => {
+test.skip("affiche le titre d'un article et permet de cliquer dessus", async ({ page }) => {
   await page.goto('/')
-  const textContent = await page
-    .getByRole('heading')
-    .getByRole('link')
-    .first()
-    .textContent()
+  const textContent = await page.getByRole('heading').getByRole('link').first().textContent()
   await page.getByRole('heading').getByRole('link').first().click()
 
   await expect(page).toHaveURL(/\/posts\/*/)
@@ -86,15 +80,11 @@ test.describe.skip("Chat dans l'accueil", () => {
     expect(page.url()).toMatch(/\/contact/)
   })
 
-  test('permet de prendre contact en appuyant ensuite sur enter', async ({
-    page,
-  }) => {
+  test('permet de prendre contact en appuyant ensuite sur enter', async ({ page }) => {
     await page.goto('/')
     await page.waitForTimeout(1000)
 
-    await page
-      .getByRole('textbox')
-      .pressSequentially('Je voudrais prendre contact')
+    await page.getByRole('textbox').pressSequentially('Je voudrais prendre contact')
     await page.keyboard.press('Enter')
     await page.waitForURL('**/contact/')
     expect(page.url()).toMatch(/\/contact/)

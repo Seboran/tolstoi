@@ -23,12 +23,7 @@
     "allowJs": true,
     "outDir": "dist"
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.js",
-    "./test/**/*.ts",
-    "./test/**/*.js"
-  ],
+  "include": ["./src/**/*.ts", "./src/**/*.js", "./test/**/*.ts", "./test/**/*.js"],
   "exclude": ["node_modules", "./dist/**/*"],
   "ts-node": {
     "transpileOnly": true

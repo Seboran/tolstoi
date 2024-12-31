@@ -1,11 +1,11 @@
 export function applyMethodDecoratorToAllMethods(decorator: Function) {
   return function (constructor: Function) {
     for (const propertyName of Object.getOwnPropertyNames(
-      constructor.prototype
+      constructor.prototype,
     )) {
       const descriptor = Object.getOwnPropertyDescriptor(
         constructor.prototype,
-        propertyName
+        propertyName,
       )
 
       // Vérifiez si la propriété est une méthode (et non le constructeur)
@@ -16,13 +16,13 @@ export function applyMethodDecoratorToAllMethods(decorator: Function) {
         const decoratedDescriptor = decorator(
           constructor.prototype,
           propertyName,
-          descriptor
+          descriptor,
         )
         if (decoratedDescriptor) {
           Object.defineProperty(
             constructor.prototype,
             propertyName,
-            decoratedDescriptor
+            decoratedDescriptor,
           )
         }
       }

@@ -10,8 +10,8 @@ describe('Multi sélection', () => {
         nomsBalances: ['arthur', 'eve', 'alice'],
         id: 'id',
         name: 'name',
-        modelValue: []
-      }
+        modelValue: [],
+      },
     })
 
     await userEvent.click(getByRole('checkbox', { name: 'alice' }))
@@ -27,8 +27,8 @@ describe('Multi sélection', () => {
         nomsBalances: ['arthur', 'eve', 'alice'],
         id: 'id',
         name: 'name',
-        modelValue: []
-      }
+        modelValue: [],
+      },
     })
 
     await userEvent.click(getByRole('checkbox', { name: 'alice' }))
@@ -36,7 +36,7 @@ describe('Multi sélection', () => {
     await userEvent.click(getByRole('checkbox', { name: 'eve' }))
     await userEvent.click(getByRole('checkbox', { name: 'arthur' }))
     await rerender({
-      nomsBalances: ['arthur', 'eve', 'jean-claude']
+      nomsBalances: ['arthur', 'eve', 'jean-claude'],
     })
 
     expect(getByRole<HTMLInputElement>('checkbox', { name: 'jean-claude' }).checked).toBe(true)

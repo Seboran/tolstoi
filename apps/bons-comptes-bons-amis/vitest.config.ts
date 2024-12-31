@@ -5,6 +5,6 @@ export default defineVitestConfig({
   test: {
     globals: true,
     environment: 'nuxt',
-    include: ['app/components/**/*.spec.ts']
-  }
+    include: ['app/components/**/*.spec.ts'],
+  },
 })

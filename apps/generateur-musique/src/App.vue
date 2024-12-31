@@ -15,9 +15,7 @@ import { StyledBouton } from 'lib-style'
 import { defineAsyncComponent, ref } from 'vue'
 import AppLayout from './components/AppLayout.vue'
 
-const MusiqueSheet = defineAsyncComponent(
-  () => import('./components/MusiqueSheet.vue'),
-)
+const MusiqueSheet = defineAsyncComponent(() => import('./components/MusiqueSheet.vue'))
 const initialSudokuGrid: SudokuGrid = [
   [0, 0, 0, 0, 7, 0, 0, 8, 0],
   [2, 7, 4, 9, 0, 8, 0, 0, 5],

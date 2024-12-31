@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { balances, depensesParPersonne, nomsBalances } = storeToRefs(
-  useBalancesEtRemboursementsStore()
+  useBalancesEtRemboursementsStore(),
 )
 const { calculerRemboursements } = useBalancesEtRemboursementsStore()
 balances.value = [0, 0, 0, 0]

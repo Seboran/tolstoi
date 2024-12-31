@@ -5,9 +5,4 @@ import StyledTransitionMenuNavigation from './components/StyledTransitionMenuNav
 
 import 'tailwindcss/tailwind.css'
 
-export {
-  StyledBouton,
-  StyledHeader,
-  StyledMenuNavigation,
-  StyledTransitionMenuNavigation,
-}
+export { StyledBouton, StyledHeader, StyledMenuNavigation, StyledTransitionMenuNavigation }

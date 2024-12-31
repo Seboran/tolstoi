@@ -9,15 +9,15 @@ describe('Afficher la liste des remboursements', () => {
         matriceDeRemboursements: [
           [0, 1, 0],
           [0, 0, 0],
-          [0, 1, 0]
+          [0, 1, 0],
         ],
-        nomsBalances: ['une vache', 'une poule', 'un guépard']
-      }
+        nomsBalances: ['une vache', 'une poule', 'un guépard'],
+      },
     })
     expect(getAllByRole('row').map((row) => row.textContent)).toEqual([
       'quidoità qui',
       'une vache1€une poule',
-      'un guépard1€une poule'
+      'un guépard1€une poule',
     ])
   })
 })

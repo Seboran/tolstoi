@@ -7,18 +7,18 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
   overrides: [
     {
       files: ['**/*.vue'], // Change this to default.vue path
 
       rules: {
-        'vue/multi-word-component-names': 'off'
-      }
-    }
-  ]
+        'vue/multi-word-component-names': 'off',
+      },
+    },
+  ],
 }

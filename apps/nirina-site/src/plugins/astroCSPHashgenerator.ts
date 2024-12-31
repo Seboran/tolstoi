@@ -7,17 +7,11 @@ import * as crypto from 'crypto'
 const NETLIFY_CONFIG_PATH = './netlify.toml' // Adjust this path as necessary
 
 const createCspHash = async (scriptContent: string): Promise<string> => {
-  const hash = crypto
-    .createHash('sha256')
-    .update(scriptContent)
-    .digest('base64')
+  const hash = crypto.createHash('sha256').update(scriptContent).digest('base64')
   return `'sha256-${hash}'`
 }
 
-const updateNetlifyCSP = async (
-  scriptHashes: string[],
-  styleHashes: string[],
-): Promise<void> => {
+const updateNetlifyCSP = async (scriptHashes: string[], styleHashes: string[]): Promise<void> => {
   try {
     // Read the Netlify configuration file
     const configContent = await readFile(NETLIFY_CONFIG_PATH, 'utf-8')
@@ -27,25 +21,19 @@ const updateNetlifyCSP = async (
       /Content-Security-Policy\s*=\s*"([^"]+)"/,
       (match, currentCsp) => {
         const cspParts = currentCsp.split(';').map((part: any) => part.trim())
-        const scriptSrcIndex = cspParts.findIndex((part: any) =>
-          part.startsWith('script-src'),
-        )
+        const scriptSrcIndex = cspParts.findIndex((part: any) => part.startsWith('script-src'))
 
         if (scriptSrcIndex !== -1) {
-          cspParts[scriptSrcIndex] =
-            `script-src 'self' ${scriptHashes.join(' ')}`
+          cspParts[scriptSrcIndex] = `script-src 'self' ${scriptHashes.join(' ')}`
         } else {
           cspParts.push(`script-src 'self' ${scriptHashes.join(' ')}`)
         }
 
         // Update or add style-src
-        const styleSrcIndex = cspParts.findIndex((part: any) =>
-          part.startsWith('style-src'),
-        )
+        const styleSrcIndex = cspParts.findIndex((part: any) => part.startsWith('style-src'))
         const hashesWithGoogle = [...styleHashes, 'fonts.googleapis.com']
         if (styleSrcIndex !== -1) {
-          cspParts[styleSrcIndex] =
-            `style-src 'self' ${hashesWithGoogle.join(' ')}`
+          cspParts[styleSrcIndex] = `style-src 'self' ${hashesWithGoogle.join(' ')}`
         } else {
           cspParts.push(`style-src 'self' ${hashesWithGoogle.join(' ')}`)
         }
@@ -56,9 +44,7 @@ const updateNetlifyCSP = async (
 
     // Write the updated configuration back to the file
     await writeFile(NETLIFY_CONFIG_PATH, updatedConfig, 'utf-8')
-    console.log(
-      'Netlify configuration updated successfully with new CSP hashes.',
-    )
+    console.log('Netlify configuration updated successfully with new CSP hashes.')
   } catch (error) {
     console.error(`Error updating Netlify configuration: ${error}`)
   }

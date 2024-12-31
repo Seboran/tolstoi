@@ -28,7 +28,7 @@ export function useRemboursementsDetailles() {
     async () => {
       await execute()
     },
-    { deep: true }
+    { deep: true },
   )
 
   return {
@@ -42,6 +42,6 @@ export function useRemboursementsDetailles() {
     nomsBalances,
     erreurBalance,
     historiqueDépenses,
-    ajouterDepense
+    ajouterDepense,
   }
 }

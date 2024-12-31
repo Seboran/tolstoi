@@ -5,7 +5,7 @@ export default class SiNoeud extends NoeudModel {
   constructor(
     public condition: ConditionNode,
     public conditionVraieExpression: NoeudModel,
-    public conditionFausseExpression: NoeudModel
+    public conditionFausseExpression: NoeudModel,
   ) {
     super()
   }

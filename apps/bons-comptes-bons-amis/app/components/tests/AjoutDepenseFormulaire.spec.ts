@@ -10,8 +10,8 @@ describe('Ajout de dépenses', () => {
         nomsBalances: ['un castor affairé', 'une autruche curieuse', 'un ornithorynque malicieux'],
         indexDepenseur: 0,
         montant: 0,
-        beneficiaire: []
-      }
+        beneficiaire: [],
+      },
     })
     await userEvent.selectOptions(getByRole('combobox'), ['une autruche curieuse'])
 

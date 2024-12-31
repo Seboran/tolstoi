@@ -14,7 +14,7 @@ const emit = defineEmits<{
 }>()
 
 const showErreurPasAssezNoms = defineModel<boolean>('showErreurPasAssezNoms', {
-  required: true
+  required: true,
 })
 function ajouterDepense() {
   if (peutAjouterDepense.value) {
@@ -37,7 +37,7 @@ const peutAjouterDepense = computed(() => montant.value <= 0 || bénéficiaires.
 </script>
 
 <template>
-  <div class="flex items-start flex-col">
+  <div class="flex flex-col items-start">
     <SelecteurDepenseur
       class="w-full"
       id="dépenseur"
