@@ -2,12 +2,13 @@
 import { type CollectionEntry } from 'astro:content'
 interface Props {
   nextPost: CollectionEntry<'posts'>
+  class: string
 }
 
-const { nextPost } = Astro.props
+const { nextPost, class: className } = Astro.props
 ---
 
-<div class="py-8">
+<div class={className}>
   <h2 class="text-xs tracking-wide uppercase text-gray-500 dark:text-white">
     <slot />
   </h2>

@@ -50,10 +50,18 @@ export const prerender = true
       >
         {
           previousPost && (
-            <LinkToOtherArticle nextPost={previousPost}>Article précédent</LinkToOtherArticle>
+            <LinkToOtherArticle class="py-8" nextPost={previousPost}>
+              Article précédent
+            </LinkToOtherArticle>
           )
         }
-        {nextPost && <LinkToOtherArticle nextPost={nextPost}>Article suivant</LinkToOtherArticle>}
+        {
+          nextPost && (
+            <LinkToOtherArticle class="py-8 text-right" nextPost={nextPost}>
+              Article suivant
+            </LinkToOtherArticle>
+          )
+        }
       </footer>
 
       <div class="pt-8">
