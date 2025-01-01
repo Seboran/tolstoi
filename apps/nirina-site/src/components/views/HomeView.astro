@@ -7,11 +7,9 @@ import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
+import { getSortedPublishedPosts } from '../../utils/getCollections'
 
-const lastPost = (await getCollection('posts'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .filter(({ data }) => !data.draft)
-  .at(0)?.id
+const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 
 const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
 
@@ -31,24 +29,13 @@ export const prerender = false
         Comment puis-je vous aider aujourd'hui ?
       </h2>
       <ToggleComponents toggle={ENABLE_CHAT ? 'a' : 'b'}>
-        <ChatInterfaceV2Vue
-          slot="a"
-          client:load
-          lienDernierArticle={`/posts/${lastPost}`}
-        />
-        <ChatInterfaceVue
-          slot="b"
-          client:load
-          lienDernierArticle={`/posts/${lastPost}`}
-        />
+        <ChatInterfaceV2Vue slot="a" client:load lienDernierArticle={`/posts/${lastPost}`} />
+        <ChatInterfaceVue slot="b" client:load lienDernierArticle={`/posts/${lastPost}`} />
       </ToggleComponents>
     </div>
   </div>
-  <div
-    class="mt-10 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs"
-  >
-    <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez vos
-    sources et soyez raisonnables.
+  <div class="mt-10 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">
+    <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez vos sources et soyez raisonnables.
   </div>
 </Layout>
 
