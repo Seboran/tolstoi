@@ -1,0 +1,11 @@
+---
+interface Props {
+  tags: string[]
+}
+
+const { tags } = Astro.props
+---
+
+<span class="hidden flex-row text-gray-800 dark:text-gray-400 gap-1">
+  {tags.map((tag) => <span>#{tag}</span>)}
+</span>

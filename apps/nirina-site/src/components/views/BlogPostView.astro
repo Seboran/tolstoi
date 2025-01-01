@@ -6,6 +6,7 @@ import { getSortedPublishedPosts } from '../../utils/getCollections'
 import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
 import Prose from '../Prose.astro'
+import TagsArticles from '../blog/TagsArticles.astro'
 
 const { entry } = Astro.props
 const { Content } = await render(entry)
@@ -29,6 +30,9 @@ export const prerender = true
       >
         {entry.data.title}
       </h1>
+      <div class="flex flex-row justify-center w-full">
+        <TagsArticles tags={entry.data.tags} />
+      </div>
     </header>
 
     <div

@@ -2,6 +2,8 @@
 import type { CollectionEntry } from 'astro:content'
 import DatePublieLeV2 from './DatePublieLeV2.astro'
 import Prose from '../Prose.astro'
+import TagsArticles from './TagsArticles.astro'
+
 interface Props {
   entry: CollectionEntry<'posts'>
 }
@@ -9,28 +11,27 @@ interface Props {
 const { entry } = Astro.props
 
 const { data, id: slug } = entry
+const tags = data.tags
 ---
 
 <article
   class="big-perspective-on-hover space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline"
 >
-  <DatePublieLeV2 date={data.date} />
+  <div>
+    <DatePublieLeV2 date={data.date} />
+    {tags.length && <TagsArticles tags={tags} />}
+  </div>
   <div class="space-y-5 xl:col-span-3">
     <div class="space-y-6">
       <h2 class="statement-font text-2xl leading-8 font-bold tracking-tight">
-        <a
-          class="rainbow-animation text-gray-900 dark:text-white"
-          href={`/posts/${slug}`}
-        >
+        <a class="rainbow-animation text-gray-900 dark:text-white" href={`/posts/${slug}`}>
           {data.title}
         </a>
       </h2>
       {(<Fragment>{data.excerpt && <Prose>{data.excerpt}</Prose>}</Fragment>)}
     </div>
     <div class="text-base leading-6 font-medium">
-      <a class="link" aria-label="read more" href={`/posts/${slug}`}>
-        Lire plus →
-      </a>
+      <a class="link" aria-label="read more" href={`/posts/${slug}`}>Lire plus →</a>
     </div>
   </div>
 </article>
