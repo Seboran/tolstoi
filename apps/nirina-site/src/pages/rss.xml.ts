@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss'
 import { getSortedPublishedPosts } from '../utils/getCollections'
 
-export async function GET(context) {
+export async function GET(context: any) {
   const blog = await getSortedPublishedPosts()
   return rss({
     // `<title>` field in output xml

@@ -1,13 +1,12 @@
 ---
-import { getCollection } from 'astro:content'
 import { getSecret } from 'astro:env/server'
 import { ENABLE_CHAT as ENABLE_CHAT_ENV } from '../../../utils/environment-variables'
 import Layout from '../../layouts/Layout.astro'
+import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
-import { getSortedPublishedPosts } from '../../utils/getCollections'
 
 const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 
