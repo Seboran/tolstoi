@@ -1,11 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
+
+interface Props {
+  afficherInscriptionReussie: boolean
+  erreurDurantInscription: string | undefined
+}
+
+const { afficherInscriptionReussie, erreurDurantInscription } = Astro.props
 ---
 
 <Layout title="Newsletter de Nirina Rabeson" showNirinaRabesonInNavBar>
   <form
-    action="/inscription"
+    method="POST"
     class="max-w-lg mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
   >
     <AnimatedHomeTitle />
@@ -53,6 +60,21 @@ import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
     >
       S'inscrire
     </button>
+
+    {
+      afficherInscriptionReussie && (
+        <p class="text-sm text-gray-700 dark:text-gray-300">
+          Inscription réussie ! Vous devriez recevoir un email de confirmation...
+        </p>
+      )
+    }
+    {
+      erreurDurantInscription && (
+        <p class="text-sm text-gray-700 dark:text-gray-300">
+          L'erreur suivante a eu lieu durant votre inscription : {erreurDurantInscription}
+        </p>
+      )
+    }
   </form>
 </Layout>
 

@@ -446,6 +446,9 @@ importers:
       astro:
         specifier: ^5.0.2
         version: 5.1.1(@types/node@22.10.3)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(rollup@4.29.1)(terser@5.37.0)(typescript@5.7.2)(yaml@2.6.1)
+      nodemailer:
+        specifier: ^6.9.16
+        version: 6.9.16
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.17(ts-node@10.9.2(@types/node@22.10.3)(typescript@5.7.2))
@@ -468,6 +471,9 @@ importers:
       '@types/node':
         specifier: 22.10.3
         version: 22.10.3
+      '@types/nodemailer':
+        specifier: ^6.4.17
+        version: 6.4.17
       node-html-parser:
         specifier: 7.0.1
         version: 7.0.1
@@ -2582,6 +2588,9 @@ packages:
 
   '@types/node@22.10.3':
     resolution: {integrity: sha512-DifAyw4BkrufCILvD3ucnuN8eydUfc/C1GlyrnI+LK6543w5/L3VeVgf05o3B4fqSXP1dKYLOZsKfutpxPzZrw==}
+
+  '@types/nodemailer@6.4.17':
+    resolution: {integrity: sha512-I9CCaIp6DTldEg7vyUTZi8+9Vo0hi1/T8gv3C89yk1rSAAzoKQ8H8ki/jBYJSFoH/BisgLP8tkZMlQ91CIquww==}
 
   '@types/parse-path@7.0.3':
     resolution: {integrity: sha512-LriObC2+KYZD3FzCrgWGv/qufdUy4eXrxcLgQMfYXgPbLIecKIsVBaQgUPmxSSLcjmYbDTQbMgr6qr6l/eb7Bg==}
@@ -6436,6 +6445,10 @@ packages:
 
   node-releases@2.0.19:
     resolution: {integrity: sha512-xxOWJsBKtzAq7DY0J+DTzuz58K8e7sJbdgwkbMWQe8UYB6ekmsQ45q0M/tJDsGaZmbC+l7n57UV8Hl5tHxO9uw==}
+
+  nodemailer@6.9.16:
+    resolution: {integrity: sha512-psAuZdTIRN08HKVd/E8ObdV6NO7NTBY3KsC30F7M4H1OnmLCUNaS56FpYxyb26zWLSyYF9Ozch9KYHhHegsiOQ==}
+    engines: {node: '>=6.0.0'}
 
   nodemon@3.1.9:
     resolution: {integrity: sha512-hdr1oIb2p6ZSxu3PB2JWWYS7ZQ0qvaZsc3hK8DR8f02kRzc8rjYmxAIvdz+aYC+8F2IjNaB7HMcSDg8nQpJxyg==}
@@ -11469,6 +11482,10 @@ snapshots:
   '@types/node@22.10.3':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/nodemailer@6.4.17':
+    dependencies:
+      '@types/node': 22.10.3
 
   '@types/parse-path@7.0.3': {}
 
@@ -16561,6 +16578,8 @@ snapshots:
   node-releases@2.0.18: {}
 
   node-releases@2.0.19: {}
+
+  nodemailer@6.9.16: {}
 
   nodemon@3.1.9:
     dependencies:

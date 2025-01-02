@@ -1,5 +1,29 @@
 ---
 import NewsletterView from '../components/views/NewsletterView.astro'
+import { parseEmailAndSave } from '../utils/saveEmail'
+
+let erreurDurantInscription = undefined
+let inscriptionReussie = false
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+    await parseEmailAndSave(data)
+    inscriptionReussie = true
+    // Do something with the data
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+      erreurDurantInscription = error.message
+    } else {
+      erreurDurantInscription = 'Une erreur inconnue a eu lieu'
+    }
+  }
+}
+
+export const prerender = false
 ---
 
-<NewsletterView />
+<NewsletterView
+  afficherInscriptionReussie={inscriptionReussie}
+  erreurDurantInscription={erreurDurantInscription}
+/>
