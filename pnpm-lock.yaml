@@ -472,7 +472,7 @@ importers:
         specifier: 22.10.3
         version: 22.10.3
       '@types/nodemailer':
-        specifier: ^6.4.17
+        specifier: 6.4.17
         version: 6.4.17
       node-html-parser:
         specifier: 7.0.1
