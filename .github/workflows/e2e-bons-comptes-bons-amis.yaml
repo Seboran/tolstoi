@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - apps/bons-comptes-bons-amis/**
+      - packages/layer-bons-comptes/**
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 permissions:
