@@ -1,0 +1,40 @@
+name: cd-bonne-energie-bons-voisins
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - apps/bonne-energie-bons-voisins/**
+      - packages/layer-bons-comptes/**
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+jobs:
+  deploy-bonne-energie-bons-voisins:
+    environment: Production – bonne-energie-bons-voisins
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      SOLVER_URL: ${{ secrets.SOLVER_URL}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 11
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf
+      - name: Use Node.js 20
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest turbo
+
+      - name: Pull vercel environments
+        run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy bons comptes bons amis
+        run: npx turbo-ignore -d ./apps/bonne-energie-bons-voisins || vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
