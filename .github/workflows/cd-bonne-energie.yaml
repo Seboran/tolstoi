@@ -16,7 +16,6 @@ jobs:
     environment: Production – bonne-energie-bons-voisins
     env:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      SOLVER_URL: ${{ secrets.SOLVER_URL}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
