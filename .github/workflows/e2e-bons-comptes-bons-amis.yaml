@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - apps/bons-comptes-bons-amis/**
-      - pnpm-lock.yaml
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 permissions:

@@ -5,7 +5,6 @@ on:
       - main
     paths:
       - apps/nirina-site/**
-      - pnpm-lock.yaml
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

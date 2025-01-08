@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - apps/clavier-turbo-rapide/**
-      - pnpm-lock.yaml
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
 permissions:
