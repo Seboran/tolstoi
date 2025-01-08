@@ -7,7 +7,9 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  extends: ['layer-bons-comptes'],
+
+  modules: ['@nuxt/ui'],
 
   devServer: {
     port: 3001,

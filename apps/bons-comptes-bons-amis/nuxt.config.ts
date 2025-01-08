@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/test-utils/module',
     '@nuxt/ui',
-    '@nuxtjs/tailwindcss',
     'nuxt-typed-router',
     '@pinia/nuxt',
     'nuxt-security',

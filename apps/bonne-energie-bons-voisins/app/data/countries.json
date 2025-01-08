@@ -1,0 +1,47 @@
+[
+  {
+    "nom": "France",
+    "production": 2.1,
+    "consommation": 1.8
+  },
+  {
+    "nom": "Allemagne",
+    "production": 4.1,
+    "consommation": 2.9
+  },
+  {
+    "nom": "Espagne",
+    "production": 1.4,
+    "consommation": 2.5
+  },
+  {
+    "nom": "Belgique",
+    "production": 0.6,
+    "consommation": 0.8
+  },
+  {
+    "nom": "Danemark",
+    "production": 0.34,
+    "consommation": 0.67
+  },
+  {
+    "nom": "Royaume-Uni",
+    "production": 8.6,
+    "consommation": 9.21
+  },
+  {
+    "nom": "Norvège",
+    "production": 5.4,
+    "consommation": 1.1
+  },
+  {
+    "nom": "Italie",
+    "production": 6.2,
+    "consommation": 7.1
+  },
+  {
+    "nom": "Todo",
+    "production": 0,
+    "consommation": 0
+  }
+]
