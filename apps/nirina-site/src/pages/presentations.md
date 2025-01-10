@@ -5,6 +5,14 @@ title: Présentations, conférences et talks donnés par Nirina Rabeson
 
 # Conférences
 
+## Si l'IA peut créer de la musique, à quoi servent les musiciens aujourd'hui ?
+
+Quelle est la place des musiciens et des musiciennes aujourd'hui face à l'intelligence artificielle ?
+
+Devant 600 personnes à Bordeaux en keynote de cloture, je présente ce que l'IA apporte aujourd'hui et je donne mon opinion sur la question, le tout en musique, en chant, et en exemples !
+
+<https://www.youtube.com/watch?v=nnfPlHgGRPU>
+
 ## Comment mettre 20 développeurs au chômage avec seulement une IA ! 🤑
 
 Dans ce talk, j'explore avec mon collègue Émeric Boyadjian l'état de l'art de l'intelligence artificielle pour potentiellement remplacer les développeurs. Globalement, je pense que l'intelligence artificielle a trop de hype. La stratégie de toutes les boîtes est de rameuter un maximum d'utilisateur·ices pour les rendre captifs, mais le service proposé n'est pour l'instant pas si grandiose, vu qu'il y a un mélange intrinsèque entre langage et logique.
