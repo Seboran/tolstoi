@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/**
       - apps/generateur-musique/**
       - apps/generateur-sudoku/**
 env:

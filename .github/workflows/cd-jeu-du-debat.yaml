@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/**
       - apps/jeu-du-debat/**
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
