@@ -27,7 +27,7 @@
     "@kindspells/astro-shield": "1.7.1",
     "@types/nodemailer": "6.4.17",
     "@playwright/test": "1.49.1",
-    "@tailwindcss/typography": "0.5.15",
+    "@tailwindcss/typography": "0.5.16",
     "@types/node": "22.10.5",
     "node-html-parser": "7.0.1"
   }

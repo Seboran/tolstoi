@@ -490,8 +490,8 @@ importers:
         specifier: 1.49.1
         version: 1.49.1
       '@tailwindcss/typography':
-        specifier: 0.5.15
-        version: 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))
+        specifier: 0.5.16
+        version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))
       '@types/node':
         specifier: 22.10.5
         version: 22.10.5
@@ -2658,6 +2658,11 @@ packages:
     resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
+  '@tailwindcss/typography@0.5.16':
+    resolution: {integrity: sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
   '@tanstack/virtual-core@3.10.9':
     resolution: {integrity: sha512-kBknKOKzmeR7lN+vSadaKWXaLS0SZZG+oqpQ/k80Q6g9REn6zRHS/ZYdrIzHnpHgy/eWs00SujveUN/GJT2qTw==}
@@ -11294,7 +11299,7 @@ snapshots:
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17)
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17)
       '@tailwindcss/forms': 0.5.9(tailwindcss@3.4.17)
-      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17)
       '@vueuse/core': 12.3.0(typescript@5.7.2)
       '@vueuse/integrations': 12.0.0(axios@1.7.7)(change-case@5.4.4)(focus-trap@7.6.0)(fuse.js@7.0.0)(typescript@5.7.2)
       '@vueuse/math': 12.0.0(typescript@5.7.2)
@@ -11338,7 +11343,7 @@ snapshots:
       '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17)
       '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17)
       '@tailwindcss/forms': 0.5.9(tailwindcss@3.4.17)
-      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))
+      '@tailwindcss/typography': 0.5.15(tailwindcss@3.4.17)
       '@vueuse/core': 12.3.0(typescript@5.7.2)
       '@vueuse/integrations': 12.0.0(axios@1.7.7)(change-case@5.4.4)(focus-trap@7.6.0)(fuse.js@7.0.0)(typescript@5.7.2)
       '@vueuse/math': 12.0.0(typescript@5.7.2)
@@ -12017,7 +12022,15 @@ snapshots:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2))
 
-  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))':
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.17)':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2))
+
+  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.10.5)(typescript@5.7.2)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
