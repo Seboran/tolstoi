@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import BalanceInput from '@/components/BalanceInput.vue'
+import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
-import AffichageRemboursementsV2 from './v2/AffichageRemboursementsV2.vue'
 
 const balancesDetailStore = useBalancesDetaillesStore()
 const { ajouterDepense, addBalance } = balancesDetailStore

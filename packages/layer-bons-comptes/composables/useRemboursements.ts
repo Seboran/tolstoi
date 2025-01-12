@@ -21,7 +21,11 @@ export function useRemboursements() {
   const modified = ref(true)
 
   const solveBalances = useDebounceFn(_solveBalances, 1000)
-  const { isLoading, execute } = useAsyncState(solveBalances, undefined, { immediate: true })
+  const { isLoading, execute: calculerSimplementRemboursements } = useAsyncState(
+    solveBalances,
+    undefined,
+    { immediate: true },
+  )
 
   async function calculerRemboursements() {
     historiqueDépenses.value.splice(0)
@@ -35,7 +39,7 @@ export function useRemboursements() {
     })
     try {
       modified.value = false
-      await execute()
+      await calculerSimplementRemboursements()
     } catch (e) {
       modified.value = true
     }
@@ -68,5 +72,6 @@ export function useRemboursements() {
     nomsBalances,
     addBalance,
     matriceDeRemboursements,
+    calculerSimplementRemboursements,
   }
 }

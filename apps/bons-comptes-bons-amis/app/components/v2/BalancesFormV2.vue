@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AffichageRemboursementsV2 from '@/components/v2/AffichageRemboursementsV2.vue'
+import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
 
 const storeBalancesEtRemboursements = useBalancesEtRemboursementsStore()
