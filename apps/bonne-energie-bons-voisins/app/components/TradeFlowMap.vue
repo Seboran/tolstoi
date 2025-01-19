@@ -101,7 +101,7 @@ function drawArrows() {
         .attr('class', 'flow')
         .attr('d', `M ${x1} ${y1} L ${x2} ${y2}`)
         .attr('stroke', '#ff0000')
-        .attr('stroke-width', Math.log(flow.value) + 1)
+        .attr('stroke-width', Math.log(flow.value / 50) + 1)
         .attr('fill', 'none')
         .attr('marker-end', 'url(#arrow)')
     }
