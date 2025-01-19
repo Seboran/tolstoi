@@ -49,3 +49,8 @@ vite.config.js.timestamp-*
 
 # Local Netlify folder
 .netlify
+
+.output
+dist
+.next
+.astro
