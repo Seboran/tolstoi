@@ -7,6 +7,13 @@ export function useRemboursements() {
     useAjouterDepense(balances)
   const matriceDeRemboursements = ref<number[][]>([])
   async function _solveBalances() {
+    if (balances.value.length === 0) {
+      return
+    }
+
+    if (balances.value.reduce((a, b) => a ** 2 + b ** 2, 0) === 0) {
+      return
+    }
     try {
       matriceDeRemboursements.value = []
       const solution = await fetchBalances(balances)
