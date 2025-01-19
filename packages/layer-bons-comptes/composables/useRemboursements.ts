@@ -47,7 +47,7 @@ export function useRemboursements() {
     try {
       modified.value = false
       await calculerSimplementRemboursements()
-    } catch (e) {
+    } catch (_e) {
       modified.value = true
     }
   }

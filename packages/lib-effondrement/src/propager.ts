@@ -1,6 +1,6 @@
 import type VisiteurSolution from './interfaces/visiteurSolution'
-import { Regle } from './models/regle'
-import { Superposition } from './superposition'
+import type { Regle } from './models/regle'
+import type { Superposition } from './superposition'
 
 export class PropagateurSolution<ValeursSuperposition, ResultatContextualisation>
   implements

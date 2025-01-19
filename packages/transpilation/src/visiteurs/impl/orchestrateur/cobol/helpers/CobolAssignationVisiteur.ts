@@ -1,8 +1,8 @@
 import AdditionNoeud from '../../../../../model/AdditionNoeud.model'
-import AssignationNoeud from '../../../../../model/AssignationNoeud.model'
+import type AssignationNoeud from '../../../../../model/AssignationNoeud.model'
 import MultiplicationNoeud from '../../../../../model/MultiplicationNoeud.model'
 import SoustractionNoeud from '../../../../../model/SoustractionNoeud.model'
-import VisiteurNoeud from '../../../../VisiteurNoeud'
+import type VisiteurNoeud from '../../../../VisiteurNoeud'
 import AbstractVisiteurOrchestrateur from '../../AbstractVisiteurOrchestrateur'
 
 export default class CobolAssignationVisiteur

@@ -55,7 +55,7 @@ suite('SudokuAfficherGrille', () => {
     )
   })
   test('Modifier une valeur', async () => {
-    const { getAllByRole, emitted } = render(SudokuAfficherGrille, {
+    const { getAllByRole } = render(SudokuAfficherGrille, {
       props: {
         grid: makeGrilleVide(),
         possibilites: makePossibilitesCompletes(),

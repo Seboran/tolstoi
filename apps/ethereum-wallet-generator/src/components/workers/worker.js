@@ -1,5 +1,6 @@
 import generate from '/src/components/generator/generate'
 
+// biome-ignore lint/suspicious/noGlobalAssign: un peu compliqué désolé les webworkers :'(
 onmessage = ({ data }) => {
   const { start, end } = data
   let publicKey = ''

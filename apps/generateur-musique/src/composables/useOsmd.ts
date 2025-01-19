@@ -1,4 +1,4 @@
-import { type SudokuGrid } from 'lib-sudoku'
+import type { SudokuGrid } from 'lib-sudoku'
 import * as OSMD from 'opensheetmusicdisplay'
 import { onUnmounted, ref, watchEffect } from 'vue'
 import { createPartition } from './musiqueUtils'

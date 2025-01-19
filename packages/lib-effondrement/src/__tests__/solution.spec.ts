@@ -66,10 +66,18 @@ describe('Solution', () => {
 
     const nouveauContexte = [3, 6, undefined, undefined]
     expect(meilleuresSolutions).toEqual([
-      new Superposition([3], () => {}),
-      new Superposition([6], () => {}),
-      new Superposition([3, 6, 9], () => {}),
-      new Superposition([], () => {}),
+      new Superposition([3], () => {
+        //
+      }),
+      new Superposition([6], () => {
+        //
+      }),
+      new Superposition([3, 6, 9], () => {
+        //
+      }),
+      new Superposition([], () => {
+        //
+      }),
     ])
     expect(multipleDuPremier.contexte).toEqual(nouveauContexte)
   })

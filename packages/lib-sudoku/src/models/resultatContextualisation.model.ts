@@ -1,4 +1,4 @@
-import { type SudokuCellule } from '../sudoku2'
+import type { SudokuCellule } from '../sudoku2'
 
 export type ResultatContextualisationSudoku = {
   carre: SudokuCellule[]

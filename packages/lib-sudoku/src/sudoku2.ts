@@ -1,5 +1,5 @@
 import { Solution, Superposition } from 'lib-effondrement'
-import { type ResultatContextualisationSudoku } from './models/resultatContextualisation.model'
+import type { ResultatContextualisationSudoku } from './models/resultatContextualisation.model'
 import { arrayToGrid, gridToArray } from './utils/gridToArray'
 
 export type SudokuCellule = number | null

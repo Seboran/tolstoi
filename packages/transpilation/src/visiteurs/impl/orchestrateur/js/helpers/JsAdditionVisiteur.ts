@@ -1,5 +1,5 @@
-import AdditionNoeud from '../../../../../model/AdditionNoeud.model'
-import VisiteurNoeud from '../../../../VisiteurNoeud'
+import type AdditionNoeud from '../../../../../model/AdditionNoeud.model'
+import type VisiteurNoeud from '../../../../VisiteurNoeud'
 import AbstractVisiteurOrchestrateur from '../../AbstractVisiteurOrchestrateur'
 
 export default class JsAdditionVisiteur

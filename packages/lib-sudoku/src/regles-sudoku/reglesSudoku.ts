@@ -1,7 +1,7 @@
-import { Regle, Superposition } from 'lib-effondrement'
+import type { Regle, Superposition } from 'lib-effondrement'
 import { PropagateurSolution } from 'lib-effondrement/src/propager'
-import { type ResultatContextualisationSudoku } from '../models/resultatContextualisation.model'
-import { type SudokuCellule } from '../sudoku2'
+import type { ResultatContextualisationSudoku } from '../models/resultatContextualisation.model'
+import type { SudokuCellule } from '../sudoku2'
 
 export class RegleLigne implements Regle<SudokuCellule, ResultatContextualisationSudoku> {
   visit(

@@ -4,10 +4,9 @@ import { Superposition } from '../superposition'
 
 describe('Superposition', () => {
   test("Tester une superposition de nombres qui n'accepte que les nombres pairs", () => {
-    const TestSuperpositionNombresPairs = new Superposition(
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      () => {},
-    )
+    const TestSuperpositionNombresPairs = new Superposition([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], () => {
+      //
+    })
     class RegleNombresPairs extends Regle<number, void> {
       visit(superposition: Superposition<number, {}>): number[] {
         return superposition.solutions.filter((n) => n % 2 === 0)

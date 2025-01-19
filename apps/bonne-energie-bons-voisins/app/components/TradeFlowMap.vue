@@ -3,7 +3,7 @@ import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import { onMounted, ref, watch } from 'vue'
 import 'leaflet/dist/leaflet.css'
 import * as d3 from 'd3'
-import type { Map } from 'leaflet'
+import type { Map as MapLeaflet } from 'leaflet'
 
 interface Country {
   nom: string
@@ -30,7 +30,7 @@ const emit = defineEmits<{
 }>()
 
 const tradeFlows = ref<TradeFlow[]>([])
-const mapInstance = ref<Map | null>(null)
+const mapInstance = ref<MapLeaflet | null>(null)
 
 const zoom = ref(4)
 const center = ref([48.0, 7.0]) // Centered more on central Europe
@@ -108,7 +108,7 @@ function drawArrows() {
   })
 }
 
-function onMapReady(map: Map) {
+function onMapReady(map: MapLeaflet) {
   mapInstance.value = map
   updateTradeFlows()
 }

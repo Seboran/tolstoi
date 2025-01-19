@@ -1,4 +1,4 @@
-import { Regle } from './models/regle'
+import type { Regle } from './models/regle'
 
 export class Superposition<ValeursSuperposition, ResultatContextualisation> {
   constructor(

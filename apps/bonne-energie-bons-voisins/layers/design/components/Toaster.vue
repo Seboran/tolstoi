@@ -2,7 +2,9 @@
 import { useDebounceFn } from '@vueuse/core'
 
 const value = ref(false)
-const unsetValue = useDebounceFn(() => (value.value = false), 3000)
+const unsetValue = useDebounceFn(() => {
+  value.value = false
+}, 3000)
 function afficherToaster() {
   value.value = true
   unsetValue()

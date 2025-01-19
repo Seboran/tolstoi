@@ -8,12 +8,12 @@ import type {
 } from 'jscodeshift'
 
 // https://go.codemod.com/ae6W633
-export default function transform(file: FileInfo, api: API, options?: Options) {
+export default function transform(file: FileInfo, api: API, _options?: Options) {
   const j = api.jscodeshift
 
   function transformCode(source: string) {
     const root = j(source)
-    let dirtyFlag = false
+    let _dirtyFlag = false
     let hasDataTransformed = false
 
     // Find the export default object
@@ -54,7 +54,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
                 path.prune()
               }
 
-              dirtyFlag = true
+              _dirtyFlag = true
             }
           }
         })
@@ -78,7 +78,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
             j.variableDeclarator(j.identifier('props'), definePropsCall),
           ])
           path.insertBefore(definePropsDeclaration)
-          dirtyFlag = true
+          _dirtyFlag = true
         }
       }
     })
@@ -128,7 +128,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
                   }
                   // Ensure the function is not a generator
                   j(path).insertBefore(standaloneFunction)
-                  dirtyFlag = true
+                  _dirtyFlag = true
                 }
               })
             }
@@ -147,7 +147,7 @@ export default function transform(file: FileInfo, api: API, options?: Options) {
         j.literal('vue'),
       )
       root.get().node.program.body.unshift(importDeclaration)
-      dirtyFlag = true
+      _dirtyFlag = true
     }
 
     return root.toSource()

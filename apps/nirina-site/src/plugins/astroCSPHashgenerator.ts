@@ -19,9 +19,9 @@ const updateNetlifyCSP = async (scriptHashes: string[], styleHashes: string[]): 
     // Extract and update the CSP header
     const updatedConfig = configContent.replace(
       /Content-Security-Policy\s*=\s*"([^"]+)"/,
-      (match, currentCsp) => {
-        const cspParts = currentCsp.split(';').map((part: any) => part.trim())
-        const scriptSrcIndex = cspParts.findIndex((part: any) => part.startsWith('script-src'))
+      (_match, currentCsp) => {
+        const cspParts = currentCsp.split(';').map((part: string) => part.trim())
+        const scriptSrcIndex = cspParts.findIndex((part: string) => part.startsWith('script-src'))
 
         if (scriptSrcIndex !== -1) {
           cspParts[scriptSrcIndex] = `script-src 'self' ${scriptHashes.join(' ')}`
@@ -30,7 +30,7 @@ const updateNetlifyCSP = async (scriptHashes: string[], styleHashes: string[]): 
         }
 
         // Update or add style-src
-        const styleSrcIndex = cspParts.findIndex((part: any) => part.startsWith('style-src'))
+        const styleSrcIndex = cspParts.findIndex((part: string) => part.startsWith('style-src'))
         const hashesWithGoogle = [...styleHashes, 'fonts.googleapis.com']
         if (styleSrcIndex !== -1) {
           cspParts[styleSrcIndex] = `style-src 'self' ${hashesWithGoogle.join(' ')}`

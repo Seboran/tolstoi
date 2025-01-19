@@ -19,9 +19,15 @@ describe('Propager', () => {
     const deuxRegles = new PropagateurSolution<number, void>([new Regle1(), new Regle2()])
 
     const nouvelleSuperposition = deuxRegles.visit([
-      new Superposition([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], () => {}),
+      new Superposition([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], () => {
+        //
+      }),
     ])
 
-    expect(nouvelleSuperposition).toEqual([new Superposition([6, 12], () => {})])
+    expect(nouvelleSuperposition).toEqual([
+      new Superposition([6, 12], () => {
+        //
+      }),
+    ])
   })
 })

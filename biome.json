@@ -137,18 +137,23 @@
             "noImportAssign": "off",
             "noRedeclare": "off",
             "noUnsafeNegation": "off",
-            "useGetterReturn": "off"
+            "useGetterReturn": "off",
+            "noAssignInExpressions": "off",
+            "noExplicitAny": "off"
           }
         }
       }
     },
     {
-      "include": ["*.vue"],
+      "include": ["*.vue", "*.astro"],
       "linter": {
         "rules": {
           "correctness": {
             "noUndeclaredVariables": "off",
             "noUnusedVariables": "off"
+          },
+          "suspicious": {
+            "noExplicitAny": "off"
           }
         }
       }

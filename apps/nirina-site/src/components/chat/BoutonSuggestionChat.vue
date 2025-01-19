@@ -9,7 +9,9 @@ const slotText = useSlots()['default']?.().at(0)?.children?.toString() ?? ''
 
 const disabledUntilLoaded = ref(true)
 
-onMounted(() => (disabledUntilLoaded.value = false))
+onMounted(() => {
+  disabledUntilLoaded.value = false
+})
 </script>
 
 <template>

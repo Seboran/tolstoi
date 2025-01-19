@@ -1,5 +1,5 @@
-import AssignationNoeud from '../../../../../model/AssignationNoeud.model'
-import VisiteurNoeud from '../../../../VisiteurNoeud'
+import type AssignationNoeud from '../../../../../model/AssignationNoeud.model'
+import type VisiteurNoeud from '../../../../VisiteurNoeud'
 import AbstractVisiteurOrchestrateur from '../../AbstractVisiteurOrchestrateur'
 
 export default class JsAssignationVisiteur

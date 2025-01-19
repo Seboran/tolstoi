@@ -1,5 +1,5 @@
-import FonctionNoeud from '../../../../../model/FonctionNoeud.model'
-import VisiteurNoeud from '../../../../VisiteurNoeud'
+import type FonctionNoeud from '../../../../../model/FonctionNoeud.model'
+import type VisiteurNoeud from '../../../../VisiteurNoeud'
 import AbstractVisiteurOrchestrateur from '../../AbstractVisiteurOrchestrateur'
 
 export default class JsFonctionVisiteur

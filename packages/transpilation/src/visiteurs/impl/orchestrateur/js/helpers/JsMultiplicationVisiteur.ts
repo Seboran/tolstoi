@@ -1,5 +1,5 @@
-import MultiplicationNoeud from '../../../../../model/MultiplicationNoeud.model'
-import VisiteurNoeud from '../../../../VisiteurNoeud'
+import type MultiplicationNoeud from '../../../../../model/MultiplicationNoeud.model'
+import type VisiteurNoeud from '../../../../VisiteurNoeud'
 import AbstractVisiteurOrchestrateur from '../../AbstractVisiteurOrchestrateur'
 
 export default class JsMultiplicationVisiteur

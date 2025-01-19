@@ -1,5 +1,5 @@
-import { PropagateurSolution } from './propager'
-import { Superposition } from './superposition'
+import type { PropagateurSolution } from './propager'
+import type { Superposition } from './superposition'
 
 export abstract class Solution<ValeursSuperposition, ResultatContextualisation, Contexte> {
   constructor(

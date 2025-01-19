@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { type SudokuCellule, type SudokuGrid } from 'lib-sudoku'
+import type { SudokuCellule, SudokuGrid } from 'lib-sudoku'
 import SudokuAfficherLigne from './SudokuAfficherLigne.vue'
 
 defineProps<{

@@ -30,7 +30,7 @@ export function useSudokuGrid() {
   return { sudoku, propager }
 }
 
-const initialSudokuGrid: SudokuGrid = [
+const _initialSudokuGrid: SudokuGrid = [
   [0, 0, 0, 0, 0, 0, 1, 0, 0],
   [0, 0, 1, 0, 7, 0, 0, 0, 0],
   [9, 0, 0, 0, 0, 0, 8, 0, 0],

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { type SudokuCellule, type SudokuPossibilitesCellule } from 'lib-sudoku'
+import type { SudokuCellule, SudokuPossibilitesCellule } from 'lib-sudoku'
 import SudokuAfficherCellule from './SudokuAfficherCellule.vue'
 
 defineProps<{
