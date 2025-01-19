@@ -27,7 +27,7 @@
   },
   "organizeImports": { "enabled": true },
   "linter": {
-    "enabled": false,
+    "enabled": true,
     "rules": {
       "recommended": false,
       "complexity": {
@@ -138,6 +138,17 @@
             "noRedeclare": "off",
             "noUnsafeNegation": "off",
             "useGetterReturn": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off",
+            "noUnusedVariables": "off"
           }
         }
       }
