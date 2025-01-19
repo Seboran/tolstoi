@@ -7,3 +7,4 @@ bruno
 *.md
 *.mdx
 .astro
+matrix.json
