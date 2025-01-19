@@ -1,4 +1,4 @@
-import { suite, expect, test } from 'vitest'
+import { expect, suite, test } from 'vitest'
 import { Sudoku } from '../sudoku'
 import { prettyPrintGrid } from './utils'
 

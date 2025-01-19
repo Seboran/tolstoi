@@ -1,6 +1,4 @@
 import { describe, expect, test } from 'vitest'
-import JavascriptGenerator from '../js/JavascriptGenerator'
-import VisiteurNoeud from '../../../VisiteurNoeud'
 import AdditionNoeud from '../../../../model/AdditionNoeud.model'
 import AssignationNoeud from '../../../../model/AssignationNoeud.model'
 import ConditionNode from '../../../../model/ConditionNode.model'
@@ -14,6 +12,8 @@ import NombreNoeud from '../../../../model/NombreNoeud.model'
 import SiNoeud from '../../../../model/SiNoeud.model'
 import SoustractionNoeud from '../../../../model/SoustractionNoeud.model'
 import SuperieurNoeud from '../../../../model/SuperieurNoeud.model'
+import VisiteurNoeud from '../../../VisiteurNoeud'
+import JavascriptGenerator from '../js/JavascriptGenerator'
 
 describe('Javascript Générateur', () => {
   test('Génére le bon javascript 1', () => {

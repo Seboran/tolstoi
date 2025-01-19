@@ -1,6 +1,6 @@
 import type { RehypePlugin } from '@astrojs/markdown-remark'
-import { visit } from 'unist-util-visit'
 import type { Element } from 'hast'
+import { visit } from 'unist-util-visit'
 
 export const targetBlank: RehypePlugin = ({ domain = '' } = {}) => {
   return (tree) => {

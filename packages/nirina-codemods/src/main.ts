@@ -1,7 +1,7 @@
-import jscodeshift, { type API } from 'jscodeshift'
-import { readdir, readFile, writeFile } from 'node:fs/promises'
-import transform from './index.js'
+import { readFile, readdir, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import jscodeshift, { type API } from 'jscodeshift'
+import transform from './index.js'
 
 const buildApi = (parser: string | undefined): API => ({
   j: parser ? jscodeshift.withParser(parser) : jscodeshift,

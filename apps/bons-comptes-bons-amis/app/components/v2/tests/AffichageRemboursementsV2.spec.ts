@@ -1,6 +1,6 @@
 import { render } from '@testing-library/vue'
-import { describe, expect, test } from 'vitest'
 import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
+import { describe, expect, test } from 'vitest'
 
 describe('Afficher la liste des remboursements', () => {
   test('afficher remboursement entre deux personnes', () => {

@@ -1,4 +1,4 @@
-import { MISTRAL_API_KEY, MISTRAL_API_ENDPOINT_KEY } from '../../utils/environment-variables.ts'
+import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
 
 interface ChatCompletionChunk {

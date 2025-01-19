@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { PropagateurSolution } from '../propager'
 import { Regle } from '../models/regle'
+import { PropagateurSolution } from '../propager'
 import { Solution } from '../solution'
 import { Superposition } from '../superposition'
 

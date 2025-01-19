@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import EndScreen from '../EndScreen.vue'
 import { describe, expect, it } from 'vitest'
+import EndScreen from '../EndScreen.vue'
 
 describe('EndScreen.vue', () => {
   it('emits "replay" event when the button is clicked', async () => {

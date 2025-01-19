@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import StartScreen from './components/StartScreen.vue'
+import EndScreen from './components/EndScreen.vue'
 import GameRules from './components/GameRules.vue'
 import ShowTheme from './components/ShowTheme.vue'
-import EndScreen from './components/EndScreen.vue'
+import StartScreen from './components/StartScreen.vue'
 
 enum GameStates {
   Start,

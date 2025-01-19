@@ -1,6 +1,6 @@
-import { test, expect, describe } from 'vitest'
-import { Sudoku2 } from '../sudoku2'
+import { describe, expect, test } from 'vitest'
 import { reglesSudoku } from '../regles-sudoku/reglesSudoku'
+import { Sudoku2 } from '../sudoku2'
 import { prettyPrintGrid } from './utils'
 
 describe('sudoku 2', () => {

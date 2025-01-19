@@ -1,5 +1,5 @@
-import userEvent from '@testing-library/user-event'
 import { renderSuspended } from '@nuxt/test-utils/runtime'
+import userEvent from '@testing-library/user-event'
 
 import { describe, expect, test } from 'vitest'
 import App from '../app.vue'

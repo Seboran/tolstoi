@@ -1,6 +1,6 @@
+import HistoriqueDepenses from '@/components/HistoriqueDepenses.vue'
 import { render } from '@testing-library/vue'
 import { describe, expect, test } from 'vitest'
-import HistoriqueDepenses from '@/components/HistoriqueDepenses.vue'
 
 describe('Afficher historique des dépenses', () => {
   test('afficher liste de dépenses', () => {

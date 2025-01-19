@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 
-import ShowThemeButton from './ShowThemeButton.vue'
 import { useThemes } from '@/composables/appwrite'
+import ShowThemeButton from './ShowThemeButton.vue'
 
 const props = defineProps<{
   numberPlayers: number

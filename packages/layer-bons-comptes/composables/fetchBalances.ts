@@ -1,4 +1,4 @@
-import { toValue, type MaybeRef } from 'vue'
+import { type MaybeRef, toValue } from 'vue'
 import type { BalanceSolutionResponse } from '../server/api/v2/solve.post'
 
 export async function fetchBalances(balances: MaybeRef<number[]>) {

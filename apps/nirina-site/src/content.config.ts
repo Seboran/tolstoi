@@ -1,6 +1,6 @@
+import { defineCollection, z } from 'astro:content'
 // Import utilities from `astro:content`
 import { glob } from 'astro/loaders'
-import { z, defineCollection } from 'astro:content'
 // Define a `type` and `schema` for each collection
 const postsCollection = defineCollection({
   loader: glob({

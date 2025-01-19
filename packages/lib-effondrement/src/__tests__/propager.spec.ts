@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { Regle } from '../models/regle'
-import { Superposition } from '../superposition'
 import { PropagateurSolution } from '../propager'
+import { Superposition } from '../superposition'
 
 describe('Propager', () => {
   test('Propager deux règles', () => {

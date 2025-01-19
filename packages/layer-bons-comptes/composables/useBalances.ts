@@ -1,5 +1,5 @@
-import NOMS_AU_HASARD from './nomsAuHasard.json'
 import { computed, ref } from 'vue'
+import NOMS_AU_HASARD from './nomsAuHasard.json'
 
 export function useBalances() {
   const balances = ref<number[]>([])

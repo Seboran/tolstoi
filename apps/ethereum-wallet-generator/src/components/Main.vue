@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, nextTick } from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 
 import GenerateButton from './generator/GenerateButton.vue'
 import PrivateKeyField from './generator/PrivateKeyField.vue'

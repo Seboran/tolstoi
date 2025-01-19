@@ -1,7 +1,7 @@
+import MultiSelecteur from '@/components/MultiSelecteur.vue'
 import userEvent from '@testing-library/user-event'
 import { render } from '@testing-library/vue'
 import { describe, expect, test } from 'vitest'
-import MultiSelecteur from '@/components/MultiSelecteur.vue'
 
 describe('Multi sélection', () => {
   test('Sélectionner plusieurs personnes', async () => {

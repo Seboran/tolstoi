@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import ChatInterfaceTemplate from './ChatInterfaceTemplate.vue'
 import type { ListeMessagesMistral } from '../../../utils/types'
+import ChatInterfaceTemplate from './ChatInterfaceTemplate.vue'
 import { useListeMessages } from './useListeMessages'
 
 const { lienDernierArticle } = defineProps<{

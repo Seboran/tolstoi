@@ -1,4 +1,4 @@
-import { ref, type Ref } from 'vue'
+import { type Ref, ref } from 'vue'
 import type { HistoriqueDepenses } from '../models/HistoriqueDepenses'
 
 export function useAjouterDepense(balances: Ref<number[]>) {

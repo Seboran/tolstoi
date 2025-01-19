@@ -1,5 +1,5 @@
-import { ec } from 'elliptic'
 import BN from 'bn.js'
+import { ec } from 'elliptic'
 import { keccak256 } from 'js-sha3'
 var ec2 = new ec('secp256k1')
 

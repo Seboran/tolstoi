@@ -8,8 +8,8 @@
 
 <script setup>
 
-import HelloWorld from './components/HelloWorld.vue'
 import HelloCounter from './components/HelloCounter.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 </script>
 

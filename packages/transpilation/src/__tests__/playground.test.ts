@@ -1,8 +1,8 @@
-import { describe, test, expect } from 'vitest'
-import createMarkdown from '../createMarkdown'
-import { AssignationNoeud, LitteralNoeud, AdditionNoeud, NombreNoeud } from '../model'
-import { JavascriptGenerator, CobolGenerator } from '../visiteurs'
 import prettier from 'prettier'
+import { describe, expect, test } from 'vitest'
+import createMarkdown from '../createMarkdown'
+import { AdditionNoeud, AssignationNoeud, LitteralNoeud, NombreNoeud } from '../model'
+import { CobolGenerator, JavascriptGenerator } from '../visiteurs'
 
 describe('playground', () => {
   test('should work', async () => {

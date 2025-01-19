@@ -1,8 +1,8 @@
-import type { AstroIntegration } from 'astro'
-import { parse } from 'node-html-parser'
+import * as crypto from 'crypto'
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
-import * as crypto from 'crypto'
+import type { AstroIntegration } from 'astro'
+import { parse } from 'node-html-parser'
 
 const NETLIFY_CONFIG_PATH = './netlify.toml' // Adjust this path as necessary
 

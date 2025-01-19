@@ -1,5 +1,5 @@
-import { describe, expect, test } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, test } from 'vitest'
 import ShowTheme from '../ShowTheme.vue'
 
 describe.todo('ShowTheme', () => {

@@ -1,9 +1,9 @@
-import { describe, it } from 'vitest'
-import jscodeshift, { type API } from 'jscodeshift'
-import transform from '../src/index.js'
 import assert from 'node:assert'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import jscodeshift, { type API } from 'jscodeshift'
+import { describe, it } from 'vitest'
+import transform from '../src/index.js'
 
 const buildApi = (parser: string | undefined): API => ({
   j: parser ? jscodeshift.withParser(parser) : jscodeshift,

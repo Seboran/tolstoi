@@ -1,6 +1,6 @@
+import { mount } from '@vue/test-utils'
 import { describe, expect, test } from 'vitest'
 import StartScreen from '../StartScreen.vue'
-import { mount } from '@vue/test-utils'
 
 describe('StartScreen', () => {
   test('emits start event with default value', async () => {

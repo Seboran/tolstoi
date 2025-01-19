@@ -1,6 +1,6 @@
-import { describe, test, expect } from 'vitest'
-import { Superposition } from '../superposition'
+import { describe, expect, test } from 'vitest'
 import { Regle } from '../models/regle'
+import { Superposition } from '../superposition'
 
 describe('Superposition', () => {
   test("Tester une superposition de nombres qui n'accepte que les nombres pairs", () => {

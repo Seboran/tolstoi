@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue'
-import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet'
+import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
+import { onMounted, ref, watch } from 'vue'
 import 'leaflet/dist/leaflet.css'
 import * as d3 from 'd3'
 import type { Map } from 'leaflet'
