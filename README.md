@@ -1,6 +1,5 @@
 # Monorepo des projets de Nirina Rabeson
 
-
 [![cd-bonne-energie-bons-voisins](https://github.com/Seboran/monorepo/actions/workflows/cd-bonne-energie.yaml/badge.svg)](https://github.com/Seboran/monorepo/actions/workflows/cd-bonne-energie.yaml)
 [![cd-bons-comptes-bons-amis](https://github.com/Seboran/monorepo/actions/workflows/cd-bons-comptes-bons-amis.yaml/badge.svg)](https://github.com/Seboran/monorepo/actions/workflows/cd-bons-comptes-bons-amis.yaml)
 [![cd-ethereum-generateur](https://github.com/Seboran/monorepo/actions/workflows/cd-ethereum-generateur.yaml/badge.svg)](https://github.com/Seboran/monorepo/actions/workflows/cd-ethereum-generateur.yaml)
