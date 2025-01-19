@@ -69,7 +69,7 @@ def solve_for_n_pulp_2(balances: list):
 
     problem.objective = sum(who_pays_who_variables.values())
 
-    status = problem.solve()
+    status = problem.solve(PULP_CBC_CMD(threads=8))
 
     if not status == LpStatusOptimal:
         print("invalid solution", status)

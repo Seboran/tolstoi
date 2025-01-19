@@ -11,9 +11,9 @@ const lignesRemboursement = computed(() => {
     return ligne
       .map((montant, i) => {
         return {
-          qui: index,
+          qui: i,
           combien: montant,
-          àQui: i,
+          àQui: index,
         }
       })
       .filter(({ combien }) => combien > 0)
@@ -43,7 +43,7 @@ const rows = computed(() => {
       id: qui + àQui,
       qui: props.nomsBalances[qui],
       àQui: props.nomsBalances[àQui],
-      combien: combien + '€',
+      combien: combien + 'W',
     }
   })
 })

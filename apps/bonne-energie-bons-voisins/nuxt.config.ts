@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 
   extends: ['layer-bons-comptes'],
 
-  modules: ['@nuxt/ui'],
+  modules: ['@nuxt/ui', '@pinia/nuxt'],
 
   devServer: {
     port: 3001,
