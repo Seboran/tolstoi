@@ -7,10 +7,7 @@ import JsNombreVisiteur from '../js/helpers/JsNombreVisiteur'
 import CobolAssignationVisiteur from './helpers/CobolAssignationVisiteur'
 
 const visiteurMappings: Array<
-  [
-    new (...args: any[]) => NoeudModel,
-    new (...args: any[]) => VisiteurNoeud<string, NoeudModel>,
-  ]
+  [new (...args: any[]) => NoeudModel, new (...args: any[]) => VisiteurNoeud<string, NoeudModel>]
 > = [
   [AssignationNoeud, CobolAssignationVisiteur],
   [NombreNoeud, JsNombreVisiteur],
@@ -25,10 +22,7 @@ export default class CobolOrchestrateur extends AbstractVisiteurOrchestrateur<st
     })
   }
 
-  add<T extends NoeudModel>(
-    clazz: new (...args: any[]) => T,
-    visiteur: VisiteurNoeud<string, T>,
-  ) {
+  add<T extends NoeudModel>(clazz: new (...args: any[]) => T, visiteur: VisiteurNoeud<string, T>) {
     this.orchestre[clazz.name] = visiteur
   }
 }

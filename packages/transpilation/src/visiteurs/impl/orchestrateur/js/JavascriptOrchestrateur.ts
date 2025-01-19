@@ -25,10 +25,7 @@ import JsSoutractionVisiteur from './helpers/JsSoutractionVisiteur'
 import JsSuperieurVisiteur from './helpers/JsSuperieurVisiteur'
 
 const visiteurMappings: Array<
-  [
-    new (...args: any[]) => NoeudModel,
-    new (...args: any[]) => VisiteurNoeud<string, NoeudModel>,
-  ]
+  [new (...args: any[]) => NoeudModel, new (...args: any[]) => VisiteurNoeud<string, NoeudModel>]
 > = [
   [AdditionNoeud, JsAdditionVisiteur],
   [SuperieurNoeud, JsSuperieurVisiteur],
@@ -52,10 +49,7 @@ export default class JavascriptOrchestrateur extends AbstractVisiteurOrchestrate
     })
   }
 
-  add<T extends NoeudModel>(
-    clazz: new (...args: any[]) => T,
-    visiteur: VisiteurNoeud<string, T>,
-  ) {
+  add<T extends NoeudModel>(clazz: new (...args: any[]) => T, visiteur: VisiteurNoeud<string, T>) {
     this.orchestre[clazz.name] = visiteur
   }
 }

@@ -76,11 +76,7 @@ export class Sudoku {
     return this.possibilitesGrid
   }
 
-  private remplirGrilleSiPossible(
-    possibilities: number[],
-    i: number,
-    j: number,
-  ) {
+  private remplirGrilleSiPossible(possibilities: number[], i: number, j: number) {
     if (possibilities.length === 1) {
       this.grid[i][j] = possibilities[0]
       this.removePossibilites(i, j)
@@ -105,10 +101,7 @@ export class Sudoku {
           // Si la cellule est vide (représentée par 0)
           if (this.grid[i][j] === 0) {
             // Vérifier si l'option est possible
-            if (
-              this.possibilitesGrid[i][j].includes(num) &&
-              this.isValid(this.grid, i, j, num)
-            ) {
+            if (this.possibilitesGrid[i][j].includes(num) && this.isValid(this.grid, i, j, num)) {
               countLigne++
               lastPossibleIndex = j
             }
@@ -140,11 +133,7 @@ export class Sudoku {
     }
   }
 
-  private getPossibilities(
-    sudoku: SudokuGrid,
-    row: number,
-    col: number,
-  ): number[] {
+  private getPossibilities(sudoku: SudokuGrid, row: number, col: number): number[] {
     const possibilities: number[] = []
 
     // Vérifier chaque nombre de 1 à 9
@@ -156,12 +145,7 @@ export class Sudoku {
     return possibilities
   }
 
-  private isValid(
-    sudoku: SudokuGrid,
-    row: number,
-    col: number,
-    num: number,
-  ): boolean {
+  private isValid(sudoku: SudokuGrid, row: number, col: number, num: number): boolean {
     // Vérifier la ligne
     for (let i = 0; i < 9; i++) {
       if (sudoku[row][i] === num) {

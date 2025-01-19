@@ -22,22 +22,14 @@ export default class CobolAssignationVisiteur
     }
   }
   addition(node: AssignationNoeud, addition: AdditionNoeud): string {
-    return `ADD ${super.visit(addition.a)} ${super.visit(addition.b)} GIVING ${
-      node.variable.name
-    }`
+    return `ADD ${super.visit(addition.a)} ${super.visit(addition.b)} GIVING ${node.variable.name}`
   }
-  multiplication(
-    node: AssignationNoeud,
-    multiplication: MultiplicationNoeud,
-  ): string {
+  multiplication(node: AssignationNoeud, multiplication: MultiplicationNoeud): string {
     return `MULTIPLY ${super.visit(multiplication.a)} BY ${super.visit(
       multiplication.b,
     )} GIVING ${node.variable.name}`
   }
-  soustraction(
-    node: AssignationNoeud,
-    soustraction: SoustractionNoeud,
-  ): string {
+  soustraction(node: AssignationNoeud, soustraction: SoustractionNoeud): string {
     return `SUBTRACT ${super.visit(soustraction.b)} FROM ${super.visit(
       soustraction.a,
     )} GIVING ${node.variable.name}`

@@ -1,11 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import createMarkdown from '../createMarkdown'
-import {
-  AssignationNoeud,
-  LitteralNoeud,
-  AdditionNoeud,
-  NombreNoeud,
-} from '../model'
+import { AssignationNoeud, LitteralNoeud, AdditionNoeud, NombreNoeud } from '../model'
 import { JavascriptGenerator, CobolGenerator } from '../visiteurs'
 import prettier from 'prettier'
 
@@ -16,12 +11,9 @@ describe('playground', () => {
       new AdditionNoeud(new NombreNoeud(5), new NombreNoeud(3)),
     )
     const generateurJavascript = new JavascriptGenerator()
-    const prettiedCode = await prettier.format(
-      instruction.accept(generateurJavascript),
-      {
-        parser: 'babel',
-      },
-    )
+    const prettiedCode = await prettier.format(instruction.accept(generateurJavascript), {
+      parser: 'babel',
+    })
     expect(prettiedCode).toEqual('var test = 5 + 3;\n')
   })
 

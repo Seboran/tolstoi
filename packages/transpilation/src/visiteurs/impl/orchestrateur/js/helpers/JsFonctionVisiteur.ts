@@ -7,11 +7,6 @@ export default class JsFonctionVisiteur
   implements VisiteurNoeud<string, FonctionNoeud>
 {
   visit(node: FonctionNoeud): string {
-    return (
-      super.visit(node.nom) +
-      '(' +
-      node.args.map(super.visit.bind(this)).join(',') +
-      ')'
-    )
+    return super.visit(node.nom) + '(' + node.args.map(super.visit.bind(this)).join(',') + ')'
   }
 }

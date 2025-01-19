@@ -9,8 +9,8 @@
     "pnpm": ">=9.0.0"
   },
   "scripts": {
-    "format": "prettier --write --cache .",
-    "format:check": "prettier --check ."
+    "format": "biome format --write",
+    "format:check": "biome format"
   },
   "keywords": [],
   "author": "",

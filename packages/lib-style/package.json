@@ -1,9 +1,7 @@
 {
   "name": "lib-style",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/lib-style.umd.cjs",
   "module": "./dist/lib-style.js",
   "exports": {

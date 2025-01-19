@@ -6,10 +6,7 @@
   "private": false,
   "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.vue"],
   "applicability": {
-    "from": [
-      ["vue", ">=", "2.0.0"],
-      ["vue", "<", "3.0.0"]
-    ],
+    "from": [["vue", ">=", "2.0.0"], ["vue", "<", "3.0.0"]],
     "to": [["vue", ">=", "3.0.0"]]
   },
   "arguments": [],

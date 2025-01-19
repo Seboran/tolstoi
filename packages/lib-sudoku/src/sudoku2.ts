@@ -6,11 +6,7 @@ export type SudokuCellule = number | null
 export type SudokuGrid = SudokuCellule[][]
 export type SudokuPossibilitesCellule = number[]
 
-export class Sudoku2 extends Solution<
-  SudokuCellule,
-  ResultatContextualisationSudoku,
-  SudokuGrid
-> {
+export class Sudoku2 extends Solution<SudokuCellule, ResultatContextualisationSudoku, SudokuGrid> {
   constructor() {
     super(
       gridToArray(

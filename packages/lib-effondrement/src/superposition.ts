@@ -17,8 +17,7 @@ export class Superposition<ValeursSuperposition, ResultatContextualisation> {
   ): Superposition<ValeursSuperposition, ResultatContextualisation> {
     return new Superposition(
       regles.reduce(
-        (accumulator, regle) =>
-          regle.visit(new Superposition(accumulator, this.contextualisation)),
+        (accumulator, regle) => regle.visit(new Superposition(accumulator, this.contextualisation)),
         this.solutions,
       ),
       this.contextualisation,

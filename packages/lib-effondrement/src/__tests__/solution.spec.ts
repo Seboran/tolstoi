@@ -14,8 +14,7 @@ class RegleMultipleDuPremier extends Regle<number, TypeValeursNombres> {
     >,
   ): number[] {
     return superposition.solutions.filter(
-      (solution) =>
-        solution % superposition.contextualisation().valeurInitiale === 0,
+      (solution) => solution % superposition.contextualisation().valeurInitiale === 0,
     )
   }
 }
@@ -53,18 +52,15 @@ describe('Solution', () => {
 
       setContexte() {
         this.contexte = this.valeurs.map((superposition) =>
-          superposition.solutions.length === 1
-            ? superposition.solutions[0]
-            : undefined,
+          superposition.solutions.length === 1 ? superposition.solutions[0] : undefined,
         )
       }
     }
     const multipleDuPremier = new MultipleDuPremier()
 
-    const propagateurSolutions = new PropagateurSolution<
-      number,
-      TypeValeursNombres
-    >([new RegleMultipleDuPremier()])
+    const propagateurSolutions = new PropagateurSolution<number, TypeValeursNombres>([
+      new RegleMultipleDuPremier(),
+    ])
 
     const meilleuresSolutions = multipleDuPremier.accept(propagateurSolutions)
 
@@ -114,30 +110,24 @@ describe('Solution', () => {
 
       setContexte() {
         this.contexte = this.valeurs.map((superposition) =>
-          superposition.solutions.length === 1
-            ? superposition.solutions[0]
-            : undefined,
+          superposition.solutions.length === 1 ? superposition.solutions[0] : undefined,
         )
       }
     }
     const multipleDuPremier = new MultipleDuPremierCroissant()
 
     class StrictementSuperieur extends Regle<number, TypeValeursNombres> {
-      visit(
-        superposition: Superposition<number, { valeurPrecedente?: number }>,
-      ): number[] {
+      visit(superposition: Superposition<number, { valeurPrecedente?: number }>): number[] {
         return superposition.solutions.filter(
-          (solution) =>
-            solution >
-            (superposition.contextualisation().valeurPrecedente ?? 0),
+          (solution) => solution > (superposition.contextualisation().valeurPrecedente ?? 0),
         )
       }
     }
 
-    const propagateurSolutions = new PropagateurSolution<
-      number,
-      TypeValeursNombres
-    >([new RegleMultipleDuPremier(), new StrictementSuperieur()])
+    const propagateurSolutions = new PropagateurSolution<number, TypeValeursNombres>([
+      new RegleMultipleDuPremier(),
+      new StrictementSuperieur(),
+    ])
 
     multipleDuPremier.valeurs = multipleDuPremier.accept(propagateurSolutions)
     const meilleuresSolutions = multipleDuPremier.accept(propagateurSolutions)

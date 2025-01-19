@@ -13,9 +13,6 @@ export abstract class Regle<ValeursSuperposition, ResultatContextualisation>
    * @param superposition
    */
   abstract visit(
-    superposition: Superposition<
-      ValeursSuperposition,
-      ResultatContextualisation
-    >,
+    superposition: Superposition<ValeursSuperposition, ResultatContextualisation>,
   ): ValeursSuperposition[]
 }

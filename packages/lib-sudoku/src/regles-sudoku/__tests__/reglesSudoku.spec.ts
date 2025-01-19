@@ -1,11 +1,6 @@
 import { Superposition } from 'lib-effondrement'
 import { describe, expect, test } from 'vitest'
-import {
-  RegleCarre,
-  RegleColonne,
-  RegleLigne,
-  reglesSudoku,
-} from '../reglesSudoku'
+import { RegleCarre, RegleColonne, RegleLigne, reglesSudoku } from '../reglesSudoku'
 
 describe('Règle ligne sudoku', () => {
   test('Trouver la solution manquante pour la ligne', () => {

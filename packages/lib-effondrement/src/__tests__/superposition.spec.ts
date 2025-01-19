@@ -14,22 +14,15 @@ describe('Superposition', () => {
       }
     }
 
-    const resultat = TestSuperpositionNombresPairs.appliquer([
-      new RegleNombresPairs(),
-    ])
+    const resultat = TestSuperpositionNombresPairs.appliquer([new RegleNombresPairs()])
     expect(resultat.solutions).toEqual([2, 4, 6, 8, 10])
   })
   test('Tester une superposition de nombres qui doivent rester inférieurs à une valeur du contexte', async () => {
-    const TestSuperpositionSeuil = new Superposition(
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      () => 5,
-    )
+    const TestSuperpositionSeuil = new Superposition([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], () => 5)
 
     class RegleSeuil extends Regle<number, number> {
       visit(superposition: Superposition<number, number>): number[] {
-        return superposition.solutions.filter(
-          (n) => n < superposition.contextualisation(),
-        )
+        return superposition.solutions.filter((n) => n < superposition.contextualisation())
       }
     }
 
@@ -46,15 +39,11 @@ describe('Superposition', () => {
 
     class RegleCroissant extends Regle<number, number> {
       visit(superposition: Superposition<number, number>): number[] {
-        return superposition.solutions.filter(
-          (n) => n >= superposition.contextualisation(),
-        )
+        return superposition.solutions.filter((n) => n >= superposition.contextualisation())
       }
     }
 
-    const resultat = TestSuperpositionCroissantContextualise.appliquer([
-      new RegleCroissant(),
-    ])
+    const resultat = TestSuperpositionCroissantContextualise.appliquer([new RegleCroissant()])
 
     expect(resultat.solutions).toEqual([3, 4, 5, 6, 7, 8, 9, 10])
   })

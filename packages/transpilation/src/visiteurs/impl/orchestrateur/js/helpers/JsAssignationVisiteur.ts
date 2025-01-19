@@ -8,13 +8,7 @@ export default class JsAssignationVisiteur
 {
   visit(node: AssignationNoeud): string {
     const prefix = this.getPrefix(node.final)
-    return (
-      prefix +
-      ' ' +
-      super.visit(node.variable) +
-      ' = ' +
-      super.visit(node.expression)
-    )
+    return prefix + ' ' + super.visit(node.variable) + ' = ' + super.visit(node.expression)
   }
 
   private getPrefix(final: 'final' | 'default') {

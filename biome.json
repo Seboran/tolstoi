@@ -1,30 +1,43 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": []
-  },
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "ignoreUnknown": false, "ignore": [] },
   "formatter": {
     "enabled": true,
-    "indentStyle": "tab"
+    "useEditorconfig": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "attributePosition": "auto",
+    "bracketSpacing": true,
+    "ignore": [
+      "**/.output",
+      "**/pnpm-lock.yaml",
+      "**/.next",
+      "**/.unlighthouse",
+      "packages/nirina-codemods/__testfixtures__",
+      "**/bruno",
+      "**/*.md",
+      "**/*.mdx",
+      "**/.astro",
+      "**/matrix.json"
+    ]
   },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": false,
-    "rules": {
-      "recommended": true
-    }
-  },
+  "organizeImports": { "enabled": true },
+  "linter": { "enabled": false, "rules": { "recommended": true } },
   "javascript": {
     "formatter": {
-      "quoteStyle": "double"
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto",
+      "bracketSpacing": true
     }
   }
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +19,7 @@
 }
 
 .statement-font {
-  font-family: 'DM Serif Text', serif;
+  font-family: "DM Serif Text", serif;
   font-weight: 400 !important;
   font-style: normal;
 }
@@ -57,15 +57,15 @@ h3 .header-anchor {
 }
 
 h3 .header-anchor:before {
-  content: '#';
+  content: "#";
 }
 
 /**
-* prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
-* Based on https://github.com/chriskempson/tomorrow-theme
-*
-* @author Rose Pritchard
-*/
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML.
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ *
+ * @author Rose Pritchard
+ */
 .token.comment,
 .token.block-comment,
 .token.prolog,
@@ -150,8 +150,8 @@ span.lang {
   right: 0.5em;
   font-size: 0.75em;
   color: #999;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 .custom-block {
@@ -179,23 +179,23 @@ span.lang {
   color: #42b883;
 }
 
-.prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+.prose :where(:not(pre) > code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   color: #0a3760;
   padding: 0.25em 0.4em;
   border-radius: 4px;
   background-color: #eee;
 }
 
-.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::before {
-  content: '' !important;
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::before {
+  content: "" !important;
 }
 
-.prose :where(code):not(:where([class~='not-prose'], [class~='not-prose'] *))::after {
-  content: '' !important;
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
+  content: "" !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  .prose :where(:not(pre) > code):not(:where([class~='not-prose'], [class~='not-prose'] *)) {
+  .prose :where(:not(pre) > code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     color: #d1e9ff;
     background-color: #3c3a5b;
   }
