@@ -16,6 +16,7 @@
   "author": "",
   "license": "GPL-3.0-only",
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@playwright/test": "1.49.1",
     "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "0.6.10",
