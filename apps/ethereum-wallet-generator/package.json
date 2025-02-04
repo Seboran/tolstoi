@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview --port 5050",
-    "test:unit": "vitest run --environment jsdom"
+    "test:unit": "vitest run --environment jsdom",
+    "test:e2e": "pnpm playwright test"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -21,7 +21,9 @@
     "vue-clipboard3": "^2.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.50.1",
     "@types/bootstrap": "5.2.10",
+    "@types/node": "^22.13.1",
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/test-utils": "2.4.6",
     "jsdom": "26.0.0",
