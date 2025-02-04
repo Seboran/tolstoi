@@ -72,5 +72,5 @@ jobs:
           overwrites-pull-request-comment: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_ETHEREUM_VANITY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_GENERATEUR_SUDOKU_SITE_ID }}
         timeout-minutes: 1
