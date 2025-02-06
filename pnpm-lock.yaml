@@ -106,8 +106,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.7.3))
       '@vercel/node':
-        specifier: 5.1.0
-        version: 5.1.0(encoding@0.1.13)(rollup@4.32.0)
+        specifier: 5.1.1
+        version: 5.1.1(encoding@0.1.13)(rollup@4.32.0)
       '@vitest/coverage-v8':
         specifier: 3.0.5
         version: 3.0.5(vitest@3.0.5)
@@ -2728,6 +2728,9 @@ packages:
 
   '@vercel/node@5.1.0':
     resolution: {integrity: sha512-ZIFs9qtFcS4yb3Nao8dj2tXvVWkvubtmFhEdsVwEbtOmi1tGp7HViGmXIf+dp50qCTdW1YGu6GPeuYcL8V12wg==}
+
+  '@vercel/node@5.1.1':
+    resolution: {integrity: sha512-Szd/pxacSNM4BEniQ0M2JrTqirVcdA9edKxRkwtOWreNnzBB+1sQquFqqKowD/bEMq4gLWeENtrn+7ETUt7zRw==}
 
   '@vercel/python@4.7.1':
     resolution: {integrity: sha512-H4g/5e8unII4oQ+KN5IUvTZSzHmj+lLYDkAK15QGYgAxBtE/mHUvEZpPPo7DPUDIyfq8ybWB1bmk7H5kEahubQ==}
@@ -11700,6 +11703,34 @@ snapshots:
       node-fetch: 2.6.9(encoding@0.1.13)
       path-to-regexp: 6.2.1
       path-to-regexp-updated: path-to-regexp@6.3.0
+      ts-morph: 12.0.0
+      ts-node: 10.9.1(@types/node@16.18.11)(typescript@4.9.5)
+      typescript: 4.9.5
+      undici: 5.28.4
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - encoding
+      - rollup
+      - supports-color
+
+  '@vercel/node@5.1.1(encoding@0.1.13)(rollup@4.32.0)':
+    dependencies:
+      '@edge-runtime/node-utils': 2.3.0
+      '@edge-runtime/primitives': 4.1.0
+      '@edge-runtime/vm': 3.2.0
+      '@types/node': 16.18.11
+      '@vercel/build-utils': 9.2.0
+      '@vercel/error-utils': 2.0.3
+      '@vercel/nft': 0.27.10(encoding@0.1.13)(rollup@4.32.0)
+      '@vercel/static-config': 3.0.0
+      async-listen: 3.0.0
+      cjs-module-lexer: 1.2.3
+      edge-runtime: 2.5.9
+      es-module-lexer: 1.4.1
+      esbuild: 0.14.47
+      etag: 1.8.1
+      node-fetch: 2.6.9(encoding@0.1.13)
       ts-morph: 12.0.0
       ts-node: 10.9.1(@types/node@16.18.11)(typescript@4.9.5)
       typescript: 4.9.5
