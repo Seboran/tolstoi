@@ -48,7 +48,7 @@ export function Calculator({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 pt-20">
         <div className="text-center mb-12">
           <h1 className="text-2xl text-gray-600 mb-2">
             Simulateur de revenus <span className="text-blue-600">freelancing</span> vs{' '}
