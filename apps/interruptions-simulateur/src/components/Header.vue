@@ -6,7 +6,7 @@ import { Linkedin } from 'lucide-vue-next'
   <header class="header">
     <div class="social-links">
       <a
-        href="https://github.com/Seboran/monorepo/tree/main/apps/freelance-simulateur"
+        href="https://github.com/Seboran/monorepo/tree/main/apps/interruptions-simulateur"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
