@@ -1,10 +1,11 @@
+'use client'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { Calculator } from './components/Calculator'
-import { Header } from './components/Header'
-import { ProfessionCarousel } from './components/ProfessionCarousel'
+import { Calculator } from './components/Calculator.tsx'
+import { Header } from './components/Header.tsx'
+import { ProfessionCarousel } from './components/ProfessionCarousel.tsx'
 import { professions } from './data/professions.tsx'
-import type { Profession } from './types'
+import type { Profession } from './types/index.ts'
 
 function App() {
   const [currentSlide] = useState(0)

@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "eslint .",
     "preview": "vite preview",
     "test:e2e": "pnpm playwright test"
@@ -13,6 +14,7 @@
   "dependencies": {
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.344.0",
+    "next": "^15.1.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
