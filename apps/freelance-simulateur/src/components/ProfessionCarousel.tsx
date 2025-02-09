@@ -26,7 +26,7 @@ export function ProfessionCarousel({
           className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          <div className="grid grid-cols-4 gap-6 w-full flex-shrink-0">
+          <div className="flex flex-row flex-wrap w-full gap-4">
             {professions.map((profession, index) => (
               <ProfessionCard key={index} profession={profession} onSelect={onSelectProfession} />
             ))}
