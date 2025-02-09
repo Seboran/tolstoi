@@ -72,7 +72,7 @@ const updateDailyCost = (event: Event) => {
 }
 
 .input-wrapper {
-  margin: 0.5rem auto;
+  margin: auto;
   max-width: 300px;
 }
 

@@ -10,23 +10,16 @@ defineProps<{
     appear
     name="slide-down"
   >
-    <h1>calculateur de <span class="underline">coût</span> d'interruptions</h1>
+    <h1 class="text-2xl md:text-4xl font-bold mb-6">calculateur de <span class="underline">coût</span> d'interruptions</h1>
   </Transition>
 </template>
 
 <style scoped>
 h1 {
   text-transform: none;
-  font-size: 3em;
-  line-height: 1.1;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
+  color: hsl(210, 29%, 24%);
 }
 
-.underline {
-  border-bottom: 3px solid #764ba2;
-  padding-bottom: 2px;
-}
 
 .slide-down-enter-active,
 .slide-down-leave-active {
