@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap");
+
+:root {
+  font-family: "Playfair Display", serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.container {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #f6d5f7 0%, #fbe9d7 100%);
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 1.1em;
+  font-family: "Playfair Display", serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+input {
+  width: 100%;
+  padding: 0.8em;
+  margin: 0.5em 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 1em;
+}
+
+.form-group {
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.cost-display {
+  font-size: 2em;
+  color: #764ba2;
+  font-weight: 600;
+}
+
+#app {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
