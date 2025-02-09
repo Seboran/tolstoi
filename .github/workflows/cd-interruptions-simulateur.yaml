@@ -1,0 +1,47 @@
+name: cd-interruptions-simulateur
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/**
+      - apps/interruptions-simulateur/**
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+jobs:
+  deploy-interruptions-simulateur:
+    environment: Production – interruptions-simulateur
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf
+      - name: Use Node.js 20
+        uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install turbo CLI
+        run: pnpm install --global turbo
+
+      - run: pnpm install --ignore-scripts
+
+      - run: turbo build --filter=interruptions-simulateur
+      - name: Deploy simulateur interruptions to Netlify
+        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
+        with:
+          publish-dir: './apps/interruptions-simulateur/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_INTERRUPTEUR_SIDE_ID }}
+        timeout-minutes: 1
