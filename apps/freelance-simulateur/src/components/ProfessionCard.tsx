@@ -9,7 +9,7 @@ type ProfessionCardProps = {
 export function ProfessionCard({ profession, onSelect }: ProfessionCardProps) {
   return (
     <div
-      className={`${profession.bgColor} w-48 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer group`}
+      className={`${profession.bgColor} rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer group`}
       onClick={() => onSelect(profession)}
     >
       <div className="flex flex-col items-center">
