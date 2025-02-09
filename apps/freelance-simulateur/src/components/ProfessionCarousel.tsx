@@ -1,15 +1,15 @@
-import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { ProfessionCard } from './ProfessionCard';
-import { Profession } from '../types';
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import React from 'react'
+import type { Profession } from '../types'
+import { ProfessionCard } from './ProfessionCard'
 
 type ProfessionCarouselProps = {
-  professions: Profession[];
-  currentSlide: number;
-  onPrevSlide: () => void;
-  onNextSlide: () => void;
-  onSelectProfession: (profession: Profession) => void;
-};
+  professions: Profession[]
+  currentSlide: number
+  onPrevSlide: () => void
+  onNextSlide: () => void
+  onSelectProfession: (profession: Profession) => void
+}
 
 export function ProfessionCarousel({
   professions,
@@ -26,19 +26,15 @@ export function ProfessionCarousel({
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
-      
+
       <div className="overflow-hidden">
-        <div 
+        <div
           className="flex transition-transform duration-300 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           <div className="grid grid-cols-4 gap-6 w-full flex-shrink-0">
             {professions.map((profession, index) => (
-              <ProfessionCard
-                key={index}
-                profession={profession}
-                onSelect={onSelectProfession}
-              />
+              <ProfessionCard key={index} profession={profession} onSelect={onSelectProfession} />
             ))}
           </div>
         </div>
@@ -51,5 +47,5 @@ export function ProfessionCarousel({
         <ChevronRight className="w-6 h-6" />
       </button>
     </div>
-  );
+  )
 }

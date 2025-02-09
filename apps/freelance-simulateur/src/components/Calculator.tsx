@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { X, ArrowDown, ArrowUp } from 'lucide-react';
-import { Profession } from '../types';
-import { Sidebar } from './Sidebar';
-import { FreedomSection } from './calculator/FreedomSection';
-import { GetStartedSection } from './calculator/GetStartedSection';
-import { ThresholdWarning } from './calculator/ThresholdWarning';
-import { calculateDailyRate } from '../utils/calculator';
+import { ArrowDown, ArrowUp, X } from 'lucide-react'
+import React, { useState } from 'react'
+import type { Profession } from '../types'
+import { calculateDailyRate } from '../utils/calculator'
+import { Sidebar } from './Sidebar'
+import { FreedomSection } from './calculator/FreedomSection'
+import { GetStartedSection } from './calculator/GetStartedSection'
+import { ThresholdWarning } from './calculator/ThresholdWarning'
 
 type CalculatorProps = {
-  profession: Profession;
-  onClose: () => void;
-  annualSalary: number;
-  daysPerWeek: number;
-  vacationDays: number;
-  monthlyExpenses: number;
-  onAnnualSalaryChange: (value: number) => void;
-  onDaysPerWeekChange: (value: number) => void;
-  onVacationDaysChange: (value: number) => void;
-  onMonthlyExpensesChange: (value: number) => void;
-};
+  profession: Profession
+  onClose: () => void
+  annualSalary: number
+  daysPerWeek: number
+  vacationDays: number
+  monthlyExpenses: number
+  onAnnualSalaryChange: (value: number) => void
+  onDaysPerWeekChange: (value: number) => void
+  onVacationDaysChange: (value: number) => void
+  onMonthlyExpensesChange: (value: number) => void
+}
 
 export function Calculator({
   profession,
@@ -32,31 +32,27 @@ export function Calculator({
   onVacationDaysChange,
   onMonthlyExpensesChange,
 }: CalculatorProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [nonBillableTime, setNonBillableTime] = useState(25);
-  const [isAcreEligible, setIsAcreEligible] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [nonBillableTime, setNonBillableTime] = useState(25)
+  const [isAcreEligible, setIsAcreEligible] = useState(false)
 
-  const {
-    dailyRate,
-    netDaily,
-    effectiveWorkingDays,
-    potentialAnnualRevenue,
-    isOverThreshold,
-  } = calculateDailyRate({
-    annualSalary,
-    daysPerWeek,
-    vacationDays,
-    monthlyExpenses,
-    nonBillableTime,
-    isAcreEligible,
-  });
+  const { dailyRate, netDaily, effectiveWorkingDays, potentialAnnualRevenue, isOverThreshold } =
+    calculateDailyRate({
+      annualSalary,
+      daysPerWeek,
+      vacationDays,
+      monthlyExpenses,
+      nonBillableTime,
+      isAcreEligible,
+    })
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
           <h1 className="text-2xl text-gray-600 mb-2">
-            Simulateur de revenus <span className="text-blue-600">freelancing</span> vs <span className="text-blue-600">salariat</span>
+            Simulateur de revenus <span className="text-blue-600">freelancing</span> vs{' '}
+            <span className="text-blue-600">salariat</span>
           </h1>
           <h2 className="text-4xl font-bold text-gray-900">
             Combien facturer en tant que {profession.title} ?
@@ -73,7 +69,7 @@ export function Calculator({
               <div className="text-4xl font-bold text-center p-4 bg-blue-100 rounded-lg text-blue-900 mb-4">
                 {annualSalary.toLocaleString('fr-FR')} €
               </div>
-              
+
               <input
                 type="range"
                 min="20000"
@@ -97,7 +93,7 @@ export function Calculator({
               <div className="text-4xl font-bold text-white bg-pink-500 rounded-lg p-4 mb-4">
                 {dailyRate} €
               </div>
-              
+
               <ThresholdWarning
                 isOverThreshold={isOverThreshold}
                 effectiveWorkingDays={effectiveWorkingDays}
@@ -106,8 +102,14 @@ export function Calculator({
               />
 
               <div className="text-gray-600">
-                <p className="mb-2">Il vous restera <span className="font-semibold text-gray-900">{netDaily} €</span></p>
-                <p className="text-sm">Après déduction des charges<br />et cotisations sociales</p>
+                <p className="mb-2">
+                  Il vous restera <span className="font-semibold text-gray-900">{netDaily} €</span>
+                </p>
+                <p className="text-sm">
+                  Après déduction des charges
+                  <br />
+                  et cotisations sociales
+                </p>
               </div>
             </div>
 
@@ -156,5 +158,5 @@ export function Calculator({
         onAcreEligibleChange={setIsAcreEligible}
       />
     </div>
-  );
+  )
 }

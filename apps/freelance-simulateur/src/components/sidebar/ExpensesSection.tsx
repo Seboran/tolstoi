@@ -1,16 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 type ExpensesSectionProps = {
-  monthlyExpenses: number;
-  onMonthlyExpensesChange: (value: number) => void;
-};
+  monthlyExpenses: number
+  onMonthlyExpensesChange: (value: number) => void
+}
 
-export function ExpensesSection({ monthlyExpenses, onMonthlyExpensesChange }: ExpensesSectionProps) {
+export function ExpensesSection({
+  monthlyExpenses,
+  onMonthlyExpensesChange,
+}: ExpensesSectionProps) {
   return (
     <section>
-      <h3 className="text-2xl font-bold text-navy-900 mb-6">
-        Frais professionnels
-      </h3>
+      <h3 className="text-2xl font-bold text-navy-900 mb-6">Frais professionnels</h3>
       <div>
         <h4 className="text-lg font-semibold text-navy-900 mb-4">
           Estimation du montant des frais professionnels par mois
@@ -32,10 +33,10 @@ export function ExpensesSection({ monthlyExpenses, onMonthlyExpensesChange }: Ex
           </div>
         </div>
         <p className="text-gray-500 text-sm mt-8">
-          Il s'agit des frais nécessaires pour faire fonctionner votre activité, par
-          exemple matériel informatique, frais de transport, essence...
+          Il s'agit des frais nécessaires pour faire fonctionner votre activité, par exemple
+          matériel informatique, frais de transport, essence...
         </p>
       </div>
     </section>
-  );
+  )
 }

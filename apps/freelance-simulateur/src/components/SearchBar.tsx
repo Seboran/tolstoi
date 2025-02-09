@@ -1,5 +1,5 @@
-import React from 'react';
-import { Search } from 'lucide-react';
+import { Search } from 'lucide-react'
+import React from 'react'
 
 export function SearchBar() {
   return (
@@ -11,5 +11,5 @@ export function SearchBar() {
         className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
       />
     </div>
-  );
+  )
 }

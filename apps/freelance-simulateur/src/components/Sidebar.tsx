@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import { X } from 'lucide-react';
-import { WorkingDaysSection } from './sidebar/WorkingDaysSection';
-import { VacationSection } from './sidebar/VacationSection';
-import { NonBillableSection } from './sidebar/NonBillableSection';
-import { ExpensesSection } from './sidebar/ExpensesSection';
-import { ContributionsSection } from './sidebar/ContributionsSection';
+import { X } from 'lucide-react'
+import React, { useState } from 'react'
+import { ContributionsSection } from './sidebar/ContributionsSection'
+import { ExpensesSection } from './sidebar/ExpensesSection'
+import { NonBillableSection } from './sidebar/NonBillableSection'
+import { VacationSection } from './sidebar/VacationSection'
+import { WorkingDaysSection } from './sidebar/WorkingDaysSection'
 
 type SidebarProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  daysPerWeek: number;
-  vacationDays: number;
-  monthlyExpenses: number;
-  nonBillableTime: number;
-  isAcreEligible: boolean;
-  onDaysPerWeekChange: (value: number) => void;
-  onVacationDaysChange: (value: number) => void;
-  onMonthlyExpensesChange: (value: number) => void;
-  onNonBillableTimeChange: (value: number) => void;
-  onAcreEligibleChange: (value: boolean) => void;
-};
+  isOpen: boolean
+  onClose: () => void
+  daysPerWeek: number
+  vacationDays: number
+  monthlyExpenses: number
+  nonBillableTime: number
+  isAcreEligible: boolean
+  onDaysPerWeekChange: (value: number) => void
+  onVacationDaysChange: (value: number) => void
+  onMonthlyExpensesChange: (value: number) => void
+  onNonBillableTimeChange: (value: number) => void
+  onAcreEligibleChange: (value: boolean) => void
+}
 
 export function Sidebar({
   isOpen,
   onClose,
-  daysPerWeek,
   vacationDays,
   monthlyExpenses,
   nonBillableTime,
@@ -35,14 +34,22 @@ export function Sidebar({
   onNonBillableTimeChange,
   onAcreEligibleChange,
 }: SidebarProps) {
-  const [selectedDays, setSelectedDays] = useState<boolean[]>([true, true, true, true, true, false, false]);
+  const [selectedDays, setSelectedDays] = useState<boolean[]>([
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+  ])
 
   const handleDayToggle = (index: number) => {
-    const newSelectedDays = [...selectedDays];
-    newSelectedDays[index] = !newSelectedDays[index];
-    setSelectedDays(newSelectedDays);
-    onDaysPerWeekChange(newSelectedDays.filter(Boolean).length);
-  };
+    const newSelectedDays = [...selectedDays]
+    newSelectedDays[index] = !newSelectedDays[index]
+    setSelectedDays(newSelectedDays)
+    onDaysPerWeekChange(newSelectedDays.filter(Boolean).length)
+  }
 
   return (
     <div
@@ -62,10 +69,7 @@ export function Sidebar({
         </div>
 
         <div className="space-y-12">
-          <WorkingDaysSection
-            selectedDays={selectedDays}
-            onDayToggle={handleDayToggle}
-          />
+          <WorkingDaysSection selectedDays={selectedDays} onDayToggle={handleDayToggle} />
 
           <VacationSection
             vacationDays={vacationDays}
@@ -89,5 +93,5 @@ export function Sidebar({
         </div>
       </div>
     </div>
-  );
+  )
 }

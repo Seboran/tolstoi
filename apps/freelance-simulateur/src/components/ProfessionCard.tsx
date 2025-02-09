@@ -1,10 +1,10 @@
-import React from 'react';
-import { Profession } from '../types';
+import React from 'react'
+import type { Profession } from '../types'
 
 type ProfessionCardProps = {
-  profession: Profession;
-  onSelect: (profession: Profession) => void;
-};
+  profession: Profession
+  onSelect: (profession: Profession) => void
+}
 
 export function ProfessionCard({ profession, onSelect }: ProfessionCardProps) {
   return (
@@ -16,10 +16,8 @@ export function ProfessionCard({ profession, onSelect }: ProfessionCardProps) {
         <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
           {profession.icon}
         </div>
-        <h3 className="font-medium text-gray-900 text-center">
-          {profession.title}
-        </h3>
+        <h3 className="font-medium text-gray-900 text-center">{profession.title}</h3>
       </div>
     </div>
-  );
+  )
 }

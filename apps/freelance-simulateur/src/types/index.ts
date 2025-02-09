@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react'
 
 export type Profession = {
-  icon: ReactNode;
-  title: string;
-  defaultSalary: number;
-  defaultExpenses: number;
-  bgColor: string;
-};
+  icon: ReactNode
+  title: string
+  defaultSalary: number
+  defaultExpenses: number
+  bgColor: string
+}

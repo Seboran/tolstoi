@@ -1,16 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 type VacationSectionProps = {
-  vacationDays: number;
-  onVacationDaysChange: (value: number) => void;
-};
+  vacationDays: number
+  onVacationDaysChange: (value: number) => void
+}
 
 export function VacationSection({ vacationDays, onVacationDaysChange }: VacationSectionProps) {
   return (
     <div className="mb-8">
-      <h4 className="text-lg font-semibold text-navy-900 mb-4">
-        Jours de vacances par an
-      </h4>
+      <h4 className="text-lg font-semibold text-navy-900 mb-4">Jours de vacances par an</h4>
       <div className="relative mb-2">
         <input
           type="range"
@@ -27,5 +25,5 @@ export function VacationSection({ vacationDays, onVacationDaysChange }: Vacation
         </div>
       </div>
     </div>
-  );
+  )
 }

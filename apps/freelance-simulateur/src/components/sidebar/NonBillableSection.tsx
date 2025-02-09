@@ -1,16 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 type NonBillableSectionProps = {
-  nonBillableTime: number;
-  onNonBillableTimeChange: (value: number) => void;
-};
+  nonBillableTime: number
+  onNonBillableTimeChange: (value: number) => void
+}
 
-export function NonBillableSection({ nonBillableTime, onNonBillableTimeChange }: NonBillableSectionProps) {
+export function NonBillableSection({
+  nonBillableTime,
+  onNonBillableTimeChange,
+}: NonBillableSectionProps) {
   return (
     <div className="mt-12 mb-8">
-      <h4 className="text-lg font-semibold text-navy-900 mb-4">
-        Temps non facturé
-      </h4>
+      <h4 className="text-lg font-semibold text-navy-900 mb-4">Temps non facturé</h4>
       <div className="relative mb-2">
         <input
           type="range"
@@ -27,9 +28,9 @@ export function NonBillableSection({ nonBillableTime, onNonBillableTimeChange }:
         </div>
       </div>
       <p className="text-gray-500 text-sm mt-8">
-        Il s'agit du temps passé entre les missions pour prospecter, gérer la relation
-        client ou encore gérer la partie administrative.
+        Il s'agit du temps passé entre les missions pour prospecter, gérer la relation client ou
+        encore gérer la partie administrative.
       </p>
     </div>
-  );
+  )
 }
