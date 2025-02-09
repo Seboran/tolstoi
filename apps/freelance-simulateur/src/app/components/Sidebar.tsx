@@ -58,7 +58,7 @@ export function Sidebar({
       }`}
     >
       <div className="h-full overflow-y-auto p-8 md:max-w-[30rem]">
-        <div className="flex justify-end items-center mb-8">
+        <div className="flex justify-start md:justify-end items-center mb-8">
           <h2 className="sr-only text-2xl font-bold text-gray-900">Paramètres</h2>
           <button
             onClick={onClose}
