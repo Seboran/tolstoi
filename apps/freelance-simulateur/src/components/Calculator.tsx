@@ -103,7 +103,10 @@ export function Calculator({
 
               <div className="text-gray-600">
                 <p className="mb-2">
-                  Il vous restera <span className="font-semibold text-gray-900">{netDaily} €</span>
+                  Il vous restera
+                  <span className="text-lg font-bold text-white bg-gray-500 rounded-lg p-2 m-4">
+                    {netDaily} €
+                  </span>
                 </p>
                 <p className="text-sm">
                   Après déduction des charges

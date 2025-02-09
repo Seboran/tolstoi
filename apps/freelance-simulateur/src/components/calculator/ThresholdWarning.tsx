@@ -26,9 +26,6 @@ export function ThresholdWarning({
           {Math.round(potentialAnnualRevenue).toLocaleString('fr-FR')}€. Vous dépasseriez le plafond
           de la micro-entreprise ({MICRO_THRESHOLD}€).
         </p>
-        <a href="#" className="inline-block mt-2 font-medium hover:text-pink-700">
-          En savoir plus
-        </a>
       </div>
     </div>
   )
