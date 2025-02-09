@@ -62,7 +62,7 @@ function App() {
             Je souhaite me lancer en tant que / Je suis
           </h2>
 
-          <SearchBar />
+          {/* <SearchBar /> */}
 
           <ProfessionCarousel
             professions={professions}

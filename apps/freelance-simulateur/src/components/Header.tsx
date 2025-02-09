@@ -1,5 +1,4 @@
-import { Github, Linkedin } from 'lucide-react'
-import React from 'react'
+import { Linkedin } from 'lucide-react'
 
 export function Header() {
   return (
@@ -8,31 +7,22 @@ export function Header() {
         Briller
       </div>
       <div className="flex gap-4">
-        <a
-          href="https://github.com/Seboran/monorepo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-600 hover:text-gray-900"
-        >
-          <Github className="w-6 h-6" />
+        <a href="https://github.com/Seboran/monorepo" target="_blank" rel="noopener noreferrer">
+          <img height="30" width={30} src="https://cdn.simpleicons.org/github" />
         </a>
         <a
           href="https://bsky.app/profile/nirinarabeson.fr"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-500"
         >
-          <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L1 21h22L12 2zm0 4.5l8 14H4l8-14z" />
-          </svg>
+          <img height="30" width={30} src="https://cdn.simpleicons.org/bluesky" />
         </a>
         <a
           href="https://www.linkedin.com/in/nirinarabeson/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-700"
         >
-          <Linkedin className="w-6 h-6" />
+          <Linkedin className="w-8 h-8" />
         </a>
       </div>
     </header>
