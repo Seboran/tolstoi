@@ -7,7 +7,11 @@ export function Header() {
         Briller
       </div>
       <div className="flex gap-4">
-        <a href="https://github.com/Seboran/monorepo" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/Seboran/monorepo/tree/main/apps/freelance-simulateur"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img height="30" width={30} src="https://cdn.simpleicons.org/github" />
         </a>
         <a
