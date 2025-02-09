@@ -1,29 +1,18 @@
-import { Search } from 'lucide-react'
-import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Calculator } from './components/Calculator'
 import { Header } from './components/Header'
 import { ProfessionCarousel } from './components/ProfessionCarousel'
-import { SearchBar } from './components/SearchBar'
 import { professions } from './data/professions.tsx'
 import type { Profession } from './types'
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide] = useState(0)
   const [selectedProfession, setSelectedProfession] = useState<Profession | null>(null)
   const [annualSalary, setAnnualSalary] = useState<number>(50000)
   const [daysPerWeek, setDaysPerWeek] = useState<number>(5)
   const [vacationDays, setVacationDays] = useState<number>(25)
   const [monthlyExpenses, setMonthlyExpenses] = useState<number>(500)
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % Math.ceil(professions.length / 4))
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + Math.ceil(professions.length / 4)) % Math.ceil(professions.length / 4),
-    )
-  }
 
   const handleProfessionSelect = (profession: Profession) => {
     setSelectedProfession(profession)
@@ -33,18 +22,20 @@ function App() {
 
   if (selectedProfession) {
     return (
-      <Calculator
-        profession={selectedProfession}
-        onClose={() => setSelectedProfession(null)}
-        annualSalary={annualSalary}
-        daysPerWeek={daysPerWeek}
-        vacationDays={vacationDays}
-        monthlyExpenses={monthlyExpenses}
-        onAnnualSalaryChange={setAnnualSalary}
-        onDaysPerWeekChange={setDaysPerWeek}
-        onVacationDaysChange={setVacationDays}
-        onMonthlyExpensesChange={setMonthlyExpenses}
-      />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
+        <Calculator
+          profession={selectedProfession}
+          onClose={() => setSelectedProfession(null)}
+          annualSalary={annualSalary}
+          daysPerWeek={daysPerWeek}
+          vacationDays={vacationDays}
+          monthlyExpenses={monthlyExpenses}
+          onAnnualSalaryChange={setAnnualSalary}
+          onDaysPerWeekChange={setDaysPerWeek}
+          onVacationDaysChange={setVacationDays}
+          onMonthlyExpensesChange={setMonthlyExpenses}
+        />
+      </motion.div>
     )
   }
 
@@ -52,33 +43,61 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       <Header />
 
-      <main className="container mx-auto px-4 py-12">
+      <motion.main
+        className="container mx-auto px-4 py-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Simulateur de revenus <span className="text-blue-600">freelancing</span> vs{' '}
-            <span className="text-blue-600">salariat</span>
-          </h1>
-          <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          <motion.h1
+            className="text-4xl font-bold text-gray-900 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Simulateur de revenus{' '}
+            <motion.span
+              className="text-blue-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              freelancing
+            </motion.span>{' '}
+            vs{' '}
+            <motion.span
+              className="text-blue-600"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.5 }}
+            >
+              salariat
+            </motion.span>
+          </motion.h1>
+
+          <motion.h2
+            className="text-3xl font-bold text-gray-800 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             Je souhaite me lancer en tant que / Je suis
-          </h2>
+          </motion.h2>
 
-          {/* <SearchBar /> */}
-
-          <ProfessionCarousel
-            professions={professions}
-            currentSlide={currentSlide}
-            onPrevSlide={prevSlide}
-            onNextSlide={nextSlide}
-            onSelectProfession={handleProfessionSelect}
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            <ProfessionCarousel
+              professions={professions}
+              currentSlide={currentSlide}
+              onSelectProfession={handleProfessionSelect}
+            />
+          </motion.div>
         </div>
-
-        <div className="text-center mt-12">
-          <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-            Quelle est la différence entre les professions libérales et commerciales ?
-          </a>
-        </div>
-      </main>
+      </motion.main>
     </div>
   )
 }
