@@ -1,5 +1,5 @@
 import { AlertTriangle } from 'lucide-react'
-import React from 'react'
+import { MICRO_THRESHOLD } from '../../utils/calculator'
 
 type ThresholdWarningProps = {
   isOverThreshold: boolean
@@ -24,7 +24,7 @@ export function ThresholdWarning({
           Attention, avec {Math.round(effectiveWorkingDays)} jours facturés à {dailyRate}€, votre
           chiffre d'affaires annuel serait de{' '}
           {Math.round(potentialAnnualRevenue).toLocaleString('fr-FR')}€. Vous dépasseriez le plafond
-          de la micro-entreprise (75 000€).
+          de la micro-entreprise ({MICRO_THRESHOLD}€).
         </p>
         <a href="#" className="inline-block mt-2 font-medium hover:text-pink-700">
           En savoir plus

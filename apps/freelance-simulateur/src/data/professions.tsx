@@ -6,8 +6,8 @@ export const professions: Profession[] = [
   {
     icon: <Code2 className="w-12 h-12 text-blue-500" />,
     title: 'Développeur·euse',
-    defaultSalary: 55000,
-    defaultExpenses: 800,
+    defaultSalary: 40000,
+    defaultExpenses: 0,
     bgColor: 'bg-blue-50',
   },
   {

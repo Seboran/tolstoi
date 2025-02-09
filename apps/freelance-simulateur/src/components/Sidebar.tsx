@@ -53,11 +53,11 @@ export function Sidebar({
 
   return (
     <div
-      className={`fixed inset-y-0 right-0 w-96 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+      className={`fixed inset-y-0 right-0  w-[50vw] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
-      <div className="h-full overflow-y-auto p-8">
+      <div className="h-full overflow-y-auto p-8 max-w-[30rem]">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold text-gray-900">Paramètres</h2>
           <button

@@ -73,8 +73,8 @@ export function Calculator({
               <input
                 type="range"
                 min="20000"
-                max="150000"
-                step="1000"
+                max="75000"
+                step="500"
                 value={annualSalary}
                 onChange={(e) => onAnnualSalaryChange(Number(e.target.value))}
                 className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer"
