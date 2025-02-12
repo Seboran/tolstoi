@@ -21,16 +21,16 @@
     "deploy": "vercel build --prod && vercel deploy --prebuilt --prod --archive=tgz"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.18.6",
-    "@pinia/nuxt": "^0.9.0",
-    "@vueuse/core": "^12.0.0",
+    "@nuxt/ui": "2.21.0",
+    "@pinia/nuxt": "0.9.0",
+    "@vueuse/core": "12.5.0",
     "layer-bons-comptes": "workspace:*",
-    "nuxt": "^3.14.159",
-    "nuxt-security": "^2.0.0",
-    "nuxt-typed-router": "^3.7.0",
+    "nuxt": "3.15.3",
+    "nuxt-security": "2.1.5",
+    "nuxt-typed-router": "3.7.3",
     "vue": "latest",
     "vue-router": "latest",
-    "zod": "^3.24.1"
+    "zod": "3.24.1"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "1.2.2",

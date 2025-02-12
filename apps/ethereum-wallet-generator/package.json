@@ -10,15 +10,15 @@
     "test:e2e": "pnpm playwright test"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bn.js": "^5.2.1",
-    "bootstrap": "^5.3.2",
-    "buffer": "^6.0.3",
-    "elliptic": "^6.5.4",
-    "js-sha3": "^0.9.3",
-    "pinia": "^2.1.7",
-    "vue": "^3.3.13",
-    "vue-clipboard3": "^2.0.0"
+    "@popperjs/core": "2.11.8",
+    "bn.js": "5.2.1",
+    "bootstrap": "5.3.3",
+    "buffer": "6.0.3",
+    "elliptic": "6.6.1",
+    "js-sha3": "0.9.3",
+    "pinia": "2.3.1",
+    "vue": "3.5.13",
+    "vue-clipboard3": "2.0.0"
   },
   "devDependencies": {
     "@playwright/test": "1.50.1",
