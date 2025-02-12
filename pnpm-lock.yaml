@@ -511,6 +511,9 @@ importers:
       '@astrojs/check':
         specifier: 0.9.4
         version: 0.9.4(prettier@3.4.2)(typescript@5.7.3)
+      '@astrojs/markdown-remark':
+        specifier: 6.1.0
+        version: 6.1.0
       '@astrojs/mdx':
         specifier: 4.0.8
         version: 4.0.8(astro@5.2.3(@types/node@22.13.1)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))
@@ -538,6 +541,9 @@ importers:
       typescript:
         specifier: 5.7.3
         version: 5.7.3
+      unist-util-visit:
+        specifier: 5.0.0
+        version: 5.0.0
       vue:
         specifier: 3.5.13
         version: 3.5.13(typescript@5.7.3)
