@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion'
 import { Header } from './components/Header.tsx'
 import { ProfessionCarousel } from './components/ProfessionCarousel.tsx'
-import { professions } from './data/professions.tsx'
 
 function App() {
   return (

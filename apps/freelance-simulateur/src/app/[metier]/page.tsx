@@ -1,5 +1,6 @@
 import { professions } from '../data/professions'
 import ProfessionCalculator from './ProfessionCalculator'
+import { notFound } from 'next/navigation'
 
 export default async function ProfessionPage({
   params,
@@ -10,7 +11,7 @@ export default async function ProfessionPage({
   const profession = professions.find((p) => p.title === decodeURIComponent(metier)) || null
 
   if (!profession) {
-    return <div>Profession not found</div>
+    return notFound()
   }
 
   return <ProfessionCalculator profession={profession} />
