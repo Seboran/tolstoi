@@ -3,14 +3,12 @@ import type { Profession } from '../types'
 
 type ProfessionCardProps = {
   profession: Profession
-  onSelect: (profession: Profession) => void
 }
 
-export function ProfessionCard({ profession, onSelect }: ProfessionCardProps) {
+export function ProfessionCard({ profession }: ProfessionCardProps) {
   return (
     <div
       className={`${profession.bgColor} rounded-xl p-6 shadow-lg hover:shadow-xl transition-all cursor-pointer group`}
-      onClick={() => onSelect(profession)}
     >
       <div className="flex flex-col items-center">
         <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">

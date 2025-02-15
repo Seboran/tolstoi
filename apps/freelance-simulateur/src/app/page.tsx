@@ -1,45 +1,10 @@
 'use client'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { Calculator } from './components/Calculator.tsx'
 import { Header } from './components/Header.tsx'
 import { ProfessionCarousel } from './components/ProfessionCarousel.tsx'
 import { professions } from './data/professions.tsx'
-import type { Profession } from './types/index.ts'
 
 function App() {
-  const [currentSlide] = useState(0)
-  const [selectedProfession, setSelectedProfession] = useState<Profession | null>(null)
-  const [annualSalary, setAnnualSalary] = useState<number>(50000)
-  const [daysPerWeek, setDaysPerWeek] = useState<number>(5)
-  const [vacationDays, setVacationDays] = useState<number>(25)
-  const [monthlyExpenses, setMonthlyExpenses] = useState<number>(500)
-
-  const handleProfessionSelect = (profession: Profession) => {
-    setSelectedProfession(profession)
-    setAnnualSalary(profession.defaultSalary)
-    setMonthlyExpenses(profession.defaultExpenses)
-  }
-
-  if (selectedProfession) {
-    return (
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}>
-        <Calculator
-          profession={selectedProfession}
-          onClose={() => setSelectedProfession(null)}
-          annualSalary={annualSalary}
-          daysPerWeek={daysPerWeek}
-          vacationDays={vacationDays}
-          monthlyExpenses={monthlyExpenses}
-          onAnnualSalaryChange={setAnnualSalary}
-          onDaysPerWeekChange={setDaysPerWeek}
-          onVacationDaysChange={setVacationDays}
-          onMonthlyExpensesChange={setMonthlyExpenses}
-        />
-      </motion.div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50">
       <Header />
@@ -91,11 +56,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <ProfessionCarousel
-              professions={professions}
-              currentSlide={currentSlide}
-              onSelectProfession={handleProfessionSelect}
-            />
+            <ProfessionCarousel />
           </motion.div>
         </div>
       </motion.main>

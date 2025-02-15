@@ -6,10 +6,10 @@ import { Sidebar } from './Sidebar'
 import { FreedomSection } from './calculator/FreedomSection'
 import { GetStartedSection } from './calculator/GetStartedSection'
 import { ThresholdWarning } from './calculator/ThresholdWarning'
+import Link from 'next/link'
 
 type CalculatorProps = {
   profession: Profession
-  onClose: () => void
   annualSalary: number
   daysPerWeek: number
   vacationDays: number
@@ -22,7 +22,6 @@ type CalculatorProps = {
 
 export function Calculator({
   profession,
-  onClose,
   annualSalary,
   daysPerWeek,
   vacationDays,
@@ -139,12 +138,11 @@ export function Calculator({
         </div>
       </div>
 
-      <button
-        onClick={onClose}
-        className="fixed top-4 right-4 p-2 text-gray-500 hover:text-gray-700 bg-white rounded-full shadow-lg hover:shadow-xl transition-all"
-      >
-        <X className="w-6 h-6" />
-      </button>
+      <Link href="/">
+        <button className="fixed top-4 right-4 p-2 text-gray-500 hover:text-gray-700 bg-white rounded-full shadow-lg hover:shadow-xl transition-all">
+          <X className="w-6 h-6" />
+        </button>
+      </Link>
 
       <Sidebar
         isOpen={isSidebarOpen}
