@@ -1,7 +1,7 @@
 {
   "name": "vue-3-ref-transform",
   "devDependencies": {
-    "@codemod.com/codemod-utils": "1.0.0",
+    "@codemod.com/codemod-utils": "1.1.0",
     "@types/jscodeshift": "0.12.0",
     "@types/node": "22.13.4",
     "jscodeshift": "17.1.2",

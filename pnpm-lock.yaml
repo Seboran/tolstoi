@@ -706,8 +706,8 @@ importers:
   packages/nirina-codemods:
     devDependencies:
       '@codemod.com/codemod-utils':
-        specifier: 1.0.0
-        version: 1.0.0
+        specifier: 1.1.0
+        version: 1.1.0
       '@types/jscodeshift':
         specifier: 0.12.0
         version: 0.12.0
@@ -1172,8 +1172,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@codemod.com/codemod-utils@1.0.0':
-    resolution: {integrity: sha512-Uo7oA2kgpfRJS5LFL9ARdsaeenRyEsRHINoTcIsHeBFBce+imLhrkYlEhXcrNYuTLVXmlGx2Mdn6NeUio4wpfw==}
+  '@codemod.com/codemod-utils@1.1.0':
+    resolution: {integrity: sha512-mB09NUBdCblc2OaEZ1v/+1er8jopxf3zcYxpfFXwfY0llQxNP4rBD1A3cp85Tr8oTdq4yRLSPTlIJZEw7HZEfQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -9459,7 +9459,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.25.9
       '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.0)
       '@babel/helpers': 7.26.0
-      '@babel/parser': 7.26.3
+      '@babel/parser': 7.26.7
       '@babel/template': 7.25.9
       '@babel/traverse': 7.26.4
       '@babel/types': 7.26.3
@@ -9984,9 +9984,9 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@codemod.com/codemod-utils@1.0.0':
+  '@codemod.com/codemod-utils@1.1.0':
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.7
       '@types/jscodeshift': 0.11.11
       jscodeshift: 0.16.1
     transitivePeerDependencies:
@@ -12513,7 +12513,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.3
+      '@babel/parser': 7.26.7
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -15489,7 +15489,7 @@ snapshots:
   jscodeshift@0.16.1:
     dependencies:
       '@babel/core': 7.26.7
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.7
       '@babel/plugin-transform-class-properties': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-modules-commonjs': 7.25.9(@babel/core@7.26.7)
       '@babel/plugin-transform-nullish-coalescing-operator': 7.25.9(@babel/core@7.26.7)
