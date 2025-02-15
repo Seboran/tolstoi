@@ -12,7 +12,7 @@ export function ContributionsSection({
   return (
     <section>
       <h3 className="text-2xl font-bold text-navy-900 mb-6">Cotisations</h3>
-      <div className="space-y-6">
+      <div className="space-y-6 pb-4">
         <div>
           <h4 className="text-lg font-semibold text-navy-900 mb-4">
             Je suis éligible à l'ACRE (ex ACCRE)
@@ -43,13 +43,6 @@ export function ContributionsSection({
           <a href="#" className="inline-block mt-4 text-blue-600 hover:text-blue-700 font-medium">
             Suis-je éligible à l'ACRE ?
           </a>
-        </div>
-
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <p className="text-gray-600">
-            Les cotisations sont calculées automatiquement selon votre statut et votre chiffre
-            d'affaires.
-          </p>
         </div>
       </div>
     </section>
