@@ -1,4 +1,5 @@
 import { ArrowDown, ArrowUp, X } from 'lucide-react'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import type { Profession } from '../types'
 import { calculateDailyRate } from '../utils/calculator'
@@ -6,7 +7,6 @@ import { Sidebar } from './Sidebar'
 import { FreedomSection } from './calculator/FreedomSection'
 import { GetStartedSection } from './calculator/GetStartedSection'
 import { ThresholdWarning } from './calculator/ThresholdWarning'
-import Link from 'next/link'
 
 type CalculatorProps = {
   profession: Profession

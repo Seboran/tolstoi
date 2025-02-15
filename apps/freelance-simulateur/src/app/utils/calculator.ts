@@ -1,11 +1,10 @@
 // Constants
-export const WEEKS_PER_YEAR = 52
-export const PUBLIC_HOLIDAYS = 0
-export const BASE_CHARGES_PERCENTAGE = 0.25 // Cotisations sociales ~22% pour prestations de service
-export const ACRE_CHARGES_REDUCTION = 0.5 // 50% réduction ACRE
-export const MARGIN_FACTOR = 1.1
+const WEEKS_PER_YEAR = 52
+const PUBLIC_HOLIDAYS = 0
+const BASE_CHARGES_PERCENTAGE = 0.25 // Cotisations sociales ~22% pour prestations de service
+const ACRE_CHARGES_REDUCTION = 0.5 // 50% réduction ACRE
+const MARGIN_FACTOR = 1.1
 export const MICRO_THRESHOLD = 77700 // Seuil micro-entreprise 2024
-export const TVA_THRESHOLD = 39100 // Seuil franchise TVA 2024
 
 type CalculationParams = {
   annualSalary: number

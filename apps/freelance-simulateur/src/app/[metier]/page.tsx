@@ -1,6 +1,6 @@
+import { notFound } from 'next/navigation'
 import { professions } from '../data/professions'
 import ProfessionCalculator from './ProfessionCalculator'
-import { notFound } from 'next/navigation'
 
 export default async function ProfessionPage({
   params,
