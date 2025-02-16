@@ -2,6 +2,7 @@
 import '../styles/theme.css'
 import RainbowRotatingBackground from './background/RainbowRotatingBackground.astro'
 import NavigationHeader from './header/NavigationHeader.astro'
+import MetaProperties from './MetaProperties.astro'
 interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
@@ -15,34 +16,7 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
 <html lang="fr-FR" class="overflow-x-hidden">
   <meta charset="utf-8" />
 
-  <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta lang="fr-FR" />
-  <title>{title}</title>
-  <meta property="og:image:secure_url" content="https://www.nirinarabeson.fr/card.png" />
-  <meta property="og:image" content="https://www.nirinarabeson.fr/card.png" />
-  <meta property="og:image:url" content="https://www.nirinarabeson.fr/card.png" />
-  <meta name="twitter:site" content="@nirinarabeson.fr" />
-  <meta name="twitter:title" content="Blog de Nirina Rabeson" />
-  <meta property="og:title" content="Blog de Nirina Rabeson" />
-  <meta name="twitter:image" content="https://www.nirinarabeson.fr/card.png" />
-  <meta property="og:type" content="homepage" />
-  <meta
-    name="twitter:description"
-    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
-  />
-  <meta
-    property="og:description"
-    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
-  />
-  <meta
-    name="description"
-    content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
-  />
-  <link
-    rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>"
-  />
+  <MetaProperties title={title} />
   <link
     rel="alternate"
     type="application/rss+xml"
