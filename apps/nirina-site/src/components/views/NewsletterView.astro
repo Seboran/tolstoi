@@ -1,81 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import FormNewsletter from '../FormNewsletter.astro'
 import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
-
-interface Props {
-  afficherInscriptionReussie: boolean
-  erreurDurantInscription: string | undefined
-}
-
-const { afficherInscriptionReussie, erreurDurantInscription } = Astro.props
 ---
 
 <Layout title="Newsletter de Nirina Rabeson" showNirinaRabesonInNavBar>
-  <form
-    method="POST"
-    class="max-w-lg mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
-  >
-    <AnimatedHomeTitle />
-    <h2 class="text-2xl font-semibold">S'abonner à la newsletter</h2>
-
-    <p class="text-sm text-gray-700 dark:text-gray-300">
-      Inscrivez-vous pour recevoir tous les articles de mon blog.
-    </p>
-
-    <div class="space-y-2">
-      <label for="email" class="block text-sm font-medium"> Adresse email </label>
-      <input
-        type="email"
-        id="email"
-        autocomplete="email"
-        required
-        name="email"
-        class="bordures-degrade w-full px-4 py-2 border border-gray-300 text-gray-900 dark:text-gray-100 dark:bg-gray-700 dark:border-gray-600"
-        placeholder="Votre adresse email"
-      />
-    </div>
-
-    <div class="flex items-center space-x-2">
-      <input
-        type="checkbox"
-        id="consent"
-        name="consent"
-        required
-        class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
-      />
-      <label for="consent" class="text-sm"> J'accepte de recevoir la newsletter. </label>
-    </div>
-
-    <div class="text-xs text-gray-600 dark:text-gray-400">
-      Vous pouvez vous désinscrire à tout moment. Pour plus de détails, vous pouvez me contacter à
-      <a
-        href="mailto:hello@nirinarabeson.fr"
-        class="text-indigo-600 hover:text-indigo-500 underline">hello@nirinarabeson.fr</a
-      >.
-    </div>
-
-    <button
-      type="submit"
-      class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
-    >
-      S'inscrire
-    </button>
-
-    {
-      afficherInscriptionReussie && (
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-          Inscription réussie ! Vous devriez recevoir un email de confirmation...
-        </p>
-      )
-    }
-    {
-      erreurDurantInscription && (
-        <p class="text-sm text-gray-700 dark:text-gray-300">
-          L'erreur suivante a eu lieu durant votre inscription : {erreurDurantInscription}
-        </p>
-      )
-    }
-  </form>
+  <AnimatedHomeTitle />
+  <FormNewsletter />
 </Layout>
 
 <style>

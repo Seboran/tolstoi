@@ -1,5 +1,3 @@
-import { formDataToObject } from 'astro:actions'
-import { z } from 'astro/zod'
 import nodemailer from 'nodemailer'
 
 import {
@@ -28,18 +26,12 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-const newsletterSchema = z.object({
-  email: z.string().email(),
-  consent: z.enum(['on']),
-})
-
-export async function parseEmailAndSave(data: FormData) {
-  const formData = formDataToObject(data, newsletterSchema)
-
+export async function parseEmail(formData: Record<string, unknown>) {
+  console.log(formData)
   await transporter.sendMail({
     from: `"Nirina Rabeson" <${EMAIL_USER}>`, // sender address
     to: EMAIL_USER, // list of receivers
     subject: "Vous avez une demande d'inscription à la newsletter", // Subject line
-    text: `${formData.email} veut s'inscrire à la newsletter.`, // plain text body
+    text: `${formData.email} veut s'inscrire à la newsletter.`,
   })
 }

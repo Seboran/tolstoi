@@ -3,6 +3,7 @@ import { render } from 'astro:content'
 import { Fragment } from 'astro/jsx-runtime'
 import MarkdownPostLayout from '../../layouts/Layout.astro'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
+import FormNewsletter from '../FormNewsletter.astro'
 import Prose from '../Prose.astro'
 import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
@@ -20,7 +21,7 @@ const nextPost = currentPostIndex === 0 ? undefined : posts[currentPostIndex - 1
 export const prerender = true
 ---
 
-<MarkdownPostLayout title={entry.data.title + ' | Nirina Rabeson'}>
+<MarkdownPostLayout title={entry.data.title + " | Nirina Rabeson"}>
   <article>
     <header class="pt-6 space-y-1 text-center">
       <DatePublieLeV2 date={entry.data.date} />
@@ -44,6 +45,8 @@ export const prerender = true
           <Content />
         </Prose>
       </div>
+
+      <FormNewsletter />
 
       <footer
         class="flex flex-row w-full justify-between text-sm font-medium leading-5 divide-y divide-gray-200 dark:divide-slate-200/5"
