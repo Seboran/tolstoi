@@ -14,21 +14,23 @@ const { title, showNirinaRabesonInNavBar, animate } = Astro.props
 
 <!doctype html>
 <html lang="fr-FR" class="overflow-x-hidden">
-  <meta charset="utf-8" />
-
-  <MetaProperties title={title} />
-  <link
-    rel="alternate"
-    type="application/rss+xml"
-    title="Site de Nirina Rabeson."
-    href={new URL('rss.xml', Astro.site)}
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <meta name="theme-color" content="#211440" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#dbdae2" media="(prefers-color-scheme: light)" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <head>
+    <meta charset="utf-8" />
+  
+    <MetaProperties title={title} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Site de Nirina Rabeson."
+      href={new URL('rss.xml', Astro.site)}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <meta name="theme-color" content="#211440" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#dbdae2" media="(prefers-color-scheme: light)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  </head>
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     document.documentElement.classList.toggle(
