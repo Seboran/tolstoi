@@ -17,10 +17,11 @@ const { title } = Astro.props
 <meta property="og:image" content="https://www.nirinarabeson.fr/cover.png" />
 <meta property="og:image:url" content="https://www.nirinarabeson.fr/cover.png" />
 <meta name="twitter:site" content="@nirinarabeson.fr" />
-<meta name="twitter:title" content="Blog de Nirina Rabeson" />
-<meta property="og:title" content="Blog de Nirina Rabeson" />
+<meta name="twitter:title" content={title} />
+<meta property="og:title" content={title} />
 <meta name="twitter:image" content="https://www.nirinarabeson.fr/cover.png" />
 <meta property="og:type" content="homepage" />
+<meta name="author" content="Nirina Rabeson" /> 
 <meta
   name="twitter:description"
   content="Site de Nirina Rabeson. Je parle de Javascript, de musique, de technologie le tout avec mon humour à moi et mes propres opinions."
