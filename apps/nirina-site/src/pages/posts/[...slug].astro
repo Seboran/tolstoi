@@ -2,11 +2,14 @@
 import { getCollection } from 'astro:content'
 import BlogPostView from '../../components/views/BlogPostView.astro'
 
-const { slug } = Astro.params
-const blogEntries = await getCollection('posts')
-const entry = blogEntries.find((entry) => entry.id === slug)
-
-// export const prerender = false
+const { entry } = Astro.props
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('posts')
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }))
+}
 ---
 
 <BlogPostView entry={entry} />
