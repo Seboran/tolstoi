@@ -1,6 +1,6 @@
 import { defineAction } from 'astro:actions'
 import { z } from 'astro:schema'
-import { parseEmail } from '../utils/saveEmail'
+import { addEmailSupabase } from '../utils/saveEmail'
 
 export const server = {
   subscribeNewsletter: defineAction({
@@ -9,6 +9,6 @@ export const server = {
       email: z.string().email(),
       consent: z.enum(['on']),
     }),
-    handler: async (input) => await parseEmail(input),
+    handler: async (input) => await addEmailSupabase(input),
   }),
 }

@@ -5,10 +5,6 @@ const result = Astro.getActionResult(actions.subscribeNewsletter)
 
 const afficherInscriptionReussie = result && !result.error
 const erreurDurantInscription = result?.error
-
-if (result && !result.error) {
-  return Astro.redirect(`#newsletter-form`)
-}
 ---
 
 <form
