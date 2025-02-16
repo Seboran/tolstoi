@@ -50,6 +50,7 @@ export async function addEmailSupabase(formData: Record<string, unknown>) {
       }
       throw new Error("Un problème est survenu lors de l'ajout de l'email")
     }
+    await parseEmail(formData)
   } catch (e) {
     console.error(e)
     throw e

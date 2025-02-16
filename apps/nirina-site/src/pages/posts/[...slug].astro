@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content'
 import BlogPostView from '../../components/views/BlogPostView.astro'
 
 const { slug } = Astro.params
-console.log('slug', slug)
 const blogEntries = await getCollection('posts')
 const entry = blogEntries.find((entry) => entry.id === slug)
 
