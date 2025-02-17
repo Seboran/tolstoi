@@ -43,7 +43,7 @@ importers:
         version: 1.9.4
       nuxt:
         specifier: 3.15.4
-        version: 3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
+        version: 3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
       pinia:
         specifier: 2.3.1
         version: 2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
@@ -70,7 +70,7 @@ importers:
         version: link:../../packages/layer-bons-comptes
       nuxt:
         specifier: 3.15.4
-        version: 3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@16.18.11)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@16.18.11)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
+        version: 3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@16.18.11)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@16.18.11)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
       nuxt-security:
         specifier: 2.1.5
         version: 2.1.5(magicast@0.3.5)(rollup@4.32.0)
@@ -513,25 +513,25 @@ importers:
         version: 6.1.0
       '@astrojs/mdx':
         specifier: 4.0.8
-        version: 4.0.8(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))
+        version: 4.0.8(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))
       '@astrojs/netlify':
-        specifier: 6.1.0
-        version: 6.1.0(@types/node@22.13.4)(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(yaml@2.7.0)
+        specifier: 6.2.0
+        version: 6.2.0(@types/node@22.13.4)(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(yaml@2.7.0)
       '@astrojs/rss':
         specifier: 4.0.11
         version: 4.0.11
       '@astrojs/tailwind':
         specifier: 6.0.0
-        version: 6.0.0(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3)))(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))
+        version: 6.0.0(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3)))(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))
       '@astrojs/vue':
         specifier: 5.0.6
-        version: 5.0.6(@types/node@22.13.4)(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(vue@3.5.13(typescript@5.7.3))(yaml@2.7.0)
+        version: 5.0.6(@types/node@22.13.4)(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(vue@3.5.13(typescript@5.7.3))(yaml@2.7.0)
       '@supabase/supabase-js':
         specifier: 2.48.1
         version: 2.48.1
       astro:
-        specifier: 5.2.6
-        version: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+        specifier: 5.3.0
+        version: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       nodemailer:
         specifier: 6.10.0
         version: 6.10.0
@@ -550,7 +550,7 @@ importers:
     devDependencies:
       '@kindspells/astro-shield':
         specifier: 1.7.1
-        version: 1.7.1(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))
+        version: 1.7.1(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))
       '@playwright/test':
         specifier: 1.50.1
         version: 1.50.1
@@ -573,7 +573,7 @@ importers:
     devDependencies:
       nuxt:
         specifier: 3.15.4
-        version: 3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
+        version: 3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -777,9 +777,6 @@ packages:
   '@astrojs/compiler@2.10.3':
     resolution: {integrity: sha512-bL/O7YBxsFt55YHU021oL+xz+B/9HvGNId3F9xURN16aeqDK9juHGktdkCSXz+U4nqFACq6ZFvWomOzhV+zfPw==}
 
-  '@astrojs/internal-helpers@0.4.2':
-    resolution: {integrity: sha512-EdDWkC3JJVcpGpqJAU/5hSk2LKXyG3mNGkzGoAuyK+xoPHbaVdSuIWoN1QTnmK3N/gGfaaAfM8gO2KDCAW7S3w==}
-
   '@astrojs/internal-helpers@0.5.1':
     resolution: {integrity: sha512-M7rAge1n2+aOSxNvKUFa0u/KFn0W+sZy7EW91KOSERotm2Ti8qs+1K0xx3zbOxtAVrmJb5/J98eohVvvEqtNkw==}
 
@@ -804,10 +801,10 @@ packages:
     peerDependencies:
       astro: ^5.0.0
 
-  '@astrojs/netlify@6.1.0':
-    resolution: {integrity: sha512-k8pRjWU6vK3MiHvXfbSL2+u0ML2ATTUdqGsAxFz9HEUJdMb3d/AmAyvIgOI6x/u2ugqBQJWePq14iPnQ8qFKDA==}
+  '@astrojs/netlify@6.2.0':
+    resolution: {integrity: sha512-96oXxWaHgAFXm4ZPQhs1QjDwTwIqbfRttG7eWYqHonB8cGKfnOl5OATdJTqsIuTufuJDxdvee31u4iAli9mvJQ==}
     peerDependencies:
-      astro: ^5.0.0
+      astro: ^5.3.0
 
   '@astrojs/prism@3.2.0':
     resolution: {integrity: sha512-GilTHKGCW6HMq7y3BUv9Ac7GMe/MO9gi9GW62GzKtth0SwukCu/qp2wLiGpEujhY+VVhaG9v7kv/5vFzvf4NYw==}
@@ -1825,6 +1822,10 @@ packages:
 
   '@microsoft/tsdoc@0.15.1':
     resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==}
+
+  '@netlify/blobs@8.1.1':
+    resolution: {integrity: sha512-7Dg3PzArvQ0Owq4wpkLECC9iaDBOxuWUN2uwbQtUF6tZssyez2QN+eO0CjuIhhZUivbw+X9bwsyiEjWkdJnv/A==}
+    engines: {node: ^14.16.0 || >=16.0.0}
 
   '@netlify/functions@2.8.2':
     resolution: {integrity: sha512-DeoAQh8LuNPvBE4qsKlezjKj0PyXDryOFJfJKo3Z1qZLKzQ21sT314KQKPVjfvw6knqijj+IO+0kHXy/TJiqNA==}
@@ -3474,8 +3475,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro@5.2.6:
-    resolution: {integrity: sha512-CrTuJMwpWF9kmOhX+cl6uPqNbTRrHO7eXggFP9SK7+Bsen/7FpJtA6k1p/ALleuV5ndJLqn/9tpmP3qACHPjYA==}
+  astro@5.3.0:
+    resolution: {integrity: sha512-e88l/Yk/6enR/ZDddLbqtM+oblBFk5mneNSmNesyVYGL/6Dj4UA67GPAZOk79VxT5dbLlclZSyyw/wlxN1aj3A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -9314,8 +9315,6 @@ snapshots:
 
   '@astrojs/compiler@2.10.3': {}
 
-  '@astrojs/internal-helpers@0.4.2': {}
-
   '@astrojs/internal-helpers@0.5.1': {}
 
   '@astrojs/language-server@2.15.4(prettier@3.4.2)(typescript@5.7.3)':
@@ -9368,12 +9367,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.0.8(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))':
+  '@astrojs/mdx@4.0.8(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
       '@astrojs/markdown-remark': 6.1.0
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
       acorn: 8.14.0
-      astro: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       es-module-lexer: 1.6.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.4
@@ -9387,13 +9386,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@6.1.0(@types/node@22.13.4)(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(yaml@2.7.0)':
+  '@astrojs/netlify@6.2.0(@types/node@22.13.4)(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(yaml@2.7.0)':
     dependencies:
-      '@astrojs/internal-helpers': 0.4.2
+      '@astrojs/internal-helpers': 0.5.1
       '@astrojs/underscore-redirects': 0.6.0
+      '@netlify/blobs': 8.1.1
       '@netlify/functions': 2.8.2
       '@vercel/nft': 0.29.0(encoding@0.1.13)(rollup@4.32.0)
-      astro: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       esbuild: 0.24.2
       vite: 6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0)
     transitivePeerDependencies:
@@ -9421,9 +9421,9 @@ snapshots:
       fast-xml-parser: 4.5.1
       kleur: 4.1.5
 
-  '@astrojs/tailwind@6.0.0(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3)))(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))':
+  '@astrojs/tailwind@6.0.0(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3)))(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))':
     dependencies:
-      astro: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       autoprefixer: 10.4.20(postcss@8.5.2)
       postcss: 8.5.2
       postcss-load-config: 4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.4)(typescript@5.7.3))
@@ -9445,12 +9445,12 @@ snapshots:
 
   '@astrojs/underscore-redirects@0.6.0': {}
 
-  '@astrojs/vue@5.0.6(@types/node@22.13.4)(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(vue@3.5.13(typescript@5.7.3))(yaml@2.7.0)':
+  '@astrojs/vue@5.0.6(@types/node@22.13.4)(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(vue@3.5.13(typescript@5.7.3))(yaml@2.7.0)':
     dependencies:
       '@vitejs/plugin-vue': 5.2.1(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
       '@vitejs/plugin-vue-jsx': 4.1.1(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
       '@vue/compiler-sfc': 3.5.13
-      astro: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       vite: 6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0)
       vite-plugin-vue-devtools: 7.7.2(rollup@4.32.0)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
       vue: 3.5.13(typescript@5.7.3)
@@ -10462,9 +10462,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@kindspells/astro-shield@1.7.1(astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))':
+  '@kindspells/astro-shield@1.7.1(astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:
-      astro: 5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
+      astro: 5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
 
   '@koa/router@12.0.2':
     dependencies:
@@ -10561,6 +10561,8 @@ snapshots:
       resolve: 1.22.10
 
   '@microsoft/tsdoc@0.15.1': {}
+
+  '@netlify/blobs@8.1.1': {}
 
   '@netlify/functions@2.8.2':
     dependencies:
@@ -12972,7 +12974,7 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro@5.2.6(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0):
+  astro@5.3.0(@netlify/blobs@8.1.1)(@types/node@22.13.4)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.5.1
@@ -13022,7 +13024,7 @@ snapshots:
       tsconfck: 3.1.4(typescript@5.7.3)
       ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
-      unstorage: 1.14.4(db0@0.2.1)(ioredis@5.4.2)
+      unstorage: 1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2)
       vfile: 6.0.3
       vite: 6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0)
       vitefu: 1.0.5(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))
@@ -16656,7 +16658,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nitropack@2.10.4(encoding@0.1.13)(typescript@5.7.3):
+  nitropack@2.10.4(@netlify/blobs@8.1.1)(encoding@0.1.13)(typescript@5.7.3):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@netlify/functions': 2.8.2
@@ -16723,7 +16725,7 @@ snapshots:
       unctx: 2.4.1
       unenv: 1.10.0
       unimport: 3.14.6(rollup@4.32.0)
-      unstorage: 1.14.4(db0@0.2.1)(ioredis@5.4.2)
+      unstorage: 1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2)
       untyped: 1.5.2
       unwasm: 0.3.9
     transitivePeerDependencies:
@@ -16934,7 +16936,7 @@ snapshots:
       - rollup
       - supports-color
 
-  nuxt@3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@16.18.11)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@16.18.11)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
+  nuxt@3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@16.18.11)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@16.18.11)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.21.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
@@ -16972,7 +16974,7 @@ snapshots:
       magic-string: 0.30.17
       mlly: 1.7.4
       nanotar: 0.2.0
-      nitropack: 2.10.4(encoding@0.1.13)(typescript@5.7.3)
+      nitropack: 2.10.4(@netlify/blobs@8.1.1)(encoding@0.1.13)(typescript@5.7.3)
       nypm: 0.5.2
       ofetch: 1.4.1
       ohash: 1.1.4
@@ -16994,7 +16996,7 @@ snapshots:
       unimport: 4.0.0(rollup@4.32.0)
       unplugin: 2.1.2
       unplugin-vue-router: 0.11.2(rollup@4.32.0)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
-      unstorage: 1.14.4(db0@0.2.1)(ioredis@5.4.2)
+      unstorage: 1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2)
       untyped: 1.5.2
       vue: 3.5.13(typescript@5.7.3)
       vue-bundle-renderer: 2.1.1
@@ -17055,7 +17057,7 @@ snapshots:
       - xml2js
       - yaml
 
-  nuxt@3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
+  nuxt@3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0))(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.21.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
@@ -17093,7 +17095,7 @@ snapshots:
       magic-string: 0.30.17
       mlly: 1.7.4
       nanotar: 0.2.0
-      nitropack: 2.10.4(encoding@0.1.13)(typescript@5.7.3)
+      nitropack: 2.10.4(@netlify/blobs@8.1.1)(encoding@0.1.13)(typescript@5.7.3)
       nypm: 0.5.2
       ofetch: 1.4.1
       ohash: 1.1.4
@@ -17115,7 +17117,7 @@ snapshots:
       unimport: 4.0.0(rollup@4.32.0)
       unplugin: 2.1.2
       unplugin-vue-router: 0.11.2(rollup@4.32.0)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
-      unstorage: 1.14.4(db0@0.2.1)(ioredis@5.4.2)
+      unstorage: 1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2)
       untyped: 1.5.2
       vue: 3.5.13(typescript@5.7.3)
       vue-bundle-renderer: 2.1.1
@@ -17176,7 +17178,7 @@ snapshots:
       - xml2js
       - yaml
 
-  nuxt@3.15.4(@biomejs/biome@1.9.4)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
+  nuxt@3.15.4(@biomejs/biome@1.9.4)(@netlify/blobs@8.1.1)(@parcel/watcher@2.5.0)(@types/node@22.13.4)(db0@0.2.1)(encoding@0.1.13)(eslint@9.20.1(jiti@2.4.2))(ioredis@5.4.2)(lightningcss@1.29.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.32.0)(terser@5.37.0)(typescript@5.7.3)(vue-tsc@2.1.10(typescript@5.7.3))(yaml@2.7.0):
     dependencies:
       '@nuxt/cli': 3.21.1(magicast@0.3.5)
       '@nuxt/devalue': 2.0.2
@@ -17214,7 +17216,7 @@ snapshots:
       magic-string: 0.30.17
       mlly: 1.7.4
       nanotar: 0.2.0
-      nitropack: 2.10.4(encoding@0.1.13)(typescript@5.7.3)
+      nitropack: 2.10.4(@netlify/blobs@8.1.1)(encoding@0.1.13)(typescript@5.7.3)
       nypm: 0.5.2
       ofetch: 1.4.1
       ohash: 1.1.4
@@ -17236,7 +17238,7 @@ snapshots:
       unimport: 4.0.0(rollup@4.32.0)
       unplugin: 2.1.2
       unplugin-vue-router: 0.11.2(rollup@4.32.0)(vue-router@4.5.0(vue@3.5.13(typescript@5.7.3)))(vue@3.5.13(typescript@5.7.3))
-      unstorage: 1.14.4(db0@0.2.1)(ioredis@5.4.2)
+      unstorage: 1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2)
       untyped: 1.5.2
       vue: 3.5.13(typescript@5.7.3)
       vue-bundle-renderer: 2.1.1
@@ -19403,7 +19405,7 @@ snapshots:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2
 
-  unstorage@1.14.4(db0@0.2.1)(ioredis@5.4.2):
+  unstorage@1.14.4(@netlify/blobs@8.1.1)(db0@0.2.1)(ioredis@5.4.2):
     dependencies:
       anymatch: 3.1.3
       chokidar: 3.6.0
@@ -19414,6 +19416,7 @@ snapshots:
       ofetch: 1.4.1
       ufo: 1.5.4
     optionalDependencies:
+      '@netlify/blobs': 8.1.1
       db0: 0.2.1
       ioredis: 5.4.2
 
