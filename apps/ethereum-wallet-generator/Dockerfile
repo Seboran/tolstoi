@@ -8,7 +8,7 @@ COPY . .
 RUN yarn run build
 
 # production stage
-FROM nginx:stable-alpine@sha256:0d81c8285a2b38649706462c167463fced008b52bbce69d200e1a6027129d0ac as production-stage
+FROM nginx:stable-alpine@sha256:d2c11a1e63f200585d8225996fd666436277a54e8c0ba728fa9afff28f075bd7 as production-stage
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
