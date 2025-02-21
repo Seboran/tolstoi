@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@iconify-json/heroicons": "1.2.2",
-    "@nuxt/test-utils": "3.15.4",
+    "@nuxt/test-utils": "3.16.0",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@playwright/test": "1.50.1",
     "@testing-library/user-event": "14.6.1",
