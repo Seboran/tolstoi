@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/**
       - apps/freelance-simulateur/**
+
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -13,9 +14,13 @@ env:
 jobs:
   deploy-freelance-simulateur:
     environment: Production – freelance-simulateur
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 11
       - uses: pnpm/action-setup@v4
         with:
           version: 9.15.1+sha512.1acb565e6193efbebda772702950469150cf12bcc764262e7587e71d19dc98a423dff9536e57ea44c49bdf790ff694e83c27be5faa23d67e0c033b583be4bfcf
@@ -24,24 +29,11 @@ jobs:
         with:
           node-version: 20
           cache: 'pnpm'
+      - name: Install Vercel CLI
+        run: pnpm install --global vercel@latest turbo
 
-      - name: Install turbo CLI
-        run: pnpm install --global turbo
+      - name: Pull vercel environments
+        run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
-      - run: pnpm install --ignore-scripts
-
-      - run: turbo build --filter=freelance-simulateur
-      - name: Deploy Freelance Simulateur to Netlify
-        uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0
-        with:
-          publish-dir: './apps/freelance-simulateur/.next'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_FREELANCE_SIMULATEUR_SITE_ID }}
-        timeout-minutes: 1
+      - name: Deploy bons comptes bons amis
+        run: vercel deploy --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
