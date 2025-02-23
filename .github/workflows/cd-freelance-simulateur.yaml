@@ -36,4 +36,4 @@ jobs:
         run: vercel pull --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy bons comptes bons amis
-        run: vercel build && vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel build --prod && vercel deploy --prebuilt --prod --archive=tgz --token=${{ secrets.VERCEL_TOKEN }}
