@@ -133,8 +133,8 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
       vercel:
-        specifier: 41.2.0
-        version: 41.2.0(encoding@0.1.13)(rollup@4.32.0)
+        specifier: 41.2.1
+        version: 41.2.1(encoding@0.1.13)(rollup@4.32.0)
       vitest:
         specifier: 3.0.6
         version: 3.0.6(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@16.18.11)(@vitest/ui@3.0.6)(happy-dom@17.1.2)(jiti@2.4.2)(jsdom@26.0.0)(lightningcss@1.29.1)(terser@5.37.0)(yaml@2.7.0)
@@ -2740,8 +2740,8 @@ packages:
   '@vercel/hydrogen@1.2.0':
     resolution: {integrity: sha512-kdZp8cTVLoNmnu24wtoQPu9ZO+uB00zvDMTOXlQmNdq/V3k0mQa/Q5k2B8nliBQ3BMiBasoXxMKv59+F8rYvDw==}
 
-  '@vercel/next@4.7.0':
-    resolution: {integrity: sha512-cpyfTg0B+eZrUfHjZ3y0XywFJZQdUjOyQEnDf9xQp2YB1pW8HFIn4OJvLYKJCpzM3/JY/yqxQcllpkvQPRY6oQ==}
+  '@vercel/next@4.7.1':
+    resolution: {integrity: sha512-Q8GxgDpn5m3uhHhzyOYWO26yypN5Ztr36U+5YzT3fIwhCiUPYfIWm1LMnAj23S9qV5WMAbIHYgdURTz4EBV+xA==}
 
   '@vercel/nft@0.27.10':
     resolution: {integrity: sha512-zbaF9Wp/NsZtKLE4uVmL3FyfFwlpDyuymQM1kPbeT0mVOHKDQQNjnnfslB3REg3oZprmNFJuh3pkHBk2qAaizg==}
@@ -8361,8 +8361,8 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vercel@41.2.0:
-    resolution: {integrity: sha512-km7XW3gETrtCtoUMu48D0NmGYLU2zMgQXTSzEq6HbO/OQkOwtIRaGM9FC5a/5M+jYWVq8+bXGDr2ktMRR5Jv6A==}
+  vercel@41.2.1:
+    resolution: {integrity: sha512-PNYkkVkQVeGd7xFIOzVmnMMrBfWZRbdfeZn7YSJ4FqLufQcWmI5T+nn4oHKyYPDRDWus46tQ7ONXpA3vH6tkvQ==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -11747,7 +11747,7 @@ snapshots:
       '@vercel/static-config': 3.0.0
       ts-morph: 12.0.0
 
-  '@vercel/next@4.7.0(encoding@0.1.13)(rollup@4.32.0)':
+  '@vercel/next@4.7.1(encoding@0.1.13)(rollup@4.32.0)':
     dependencies:
       '@vercel/nft': 0.27.10(encoding@0.1.13)(rollup@4.32.0)
     transitivePeerDependencies:
@@ -18965,13 +18965,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vercel@41.2.0(encoding@0.1.13)(rollup@4.32.0):
+  vercel@41.2.1(encoding@0.1.13)(rollup@4.32.0):
     dependencies:
       '@vercel/build-utils': 10.2.0
       '@vercel/fun': 1.1.5(encoding@0.1.13)
       '@vercel/go': 3.2.1
       '@vercel/hydrogen': 1.2.0
-      '@vercel/next': 4.7.0(encoding@0.1.13)(rollup@4.32.0)
+      '@vercel/next': 4.7.1(encoding@0.1.13)(rollup@4.32.0)
       '@vercel/node': 5.1.8(encoding@0.1.13)(rollup@4.32.0)
       '@vercel/python': 4.7.1
       '@vercel/redwood': 2.3.0(encoding@0.1.13)(rollup@4.32.0)
