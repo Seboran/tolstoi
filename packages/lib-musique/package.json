@@ -14,7 +14,7 @@
     "ctix": "2.7.0",
     "nodemon": "3.1.9",
     "ts-node": "10.9.2",
-    "vitest": "3.0.6"
+    "vitest": "3.0.7"
   },
   "files": ["dist"]
 }
