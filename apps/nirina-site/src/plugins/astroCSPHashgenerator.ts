@@ -24,18 +24,24 @@ const updateNetlifyCSP = async (scriptHashes: string[], styleHashes: string[]): 
         const scriptSrcIndex = cspParts.findIndex((part: string) => part.startsWith('script-src'))
 
         if (scriptSrcIndex !== -1) {
-          cspParts[scriptSrcIndex] = `script-src 'self' ${scriptHashes.join(' ')}`
+          const existingHashes = new Set(cspParts[scriptSrcIndex].split(' ').slice(1))
+          scriptHashes.forEach((hash) => existingHashes.add(hash))
+          existingHashes.add("'self'")
+          cspParts[scriptSrcIndex] = `script-src ${Array.from(existingHashes).join(' ')}`
         } else {
           cspParts.push(`script-src 'self' ${scriptHashes.join(' ')}`)
         }
 
         // Update or add style-src
         const styleSrcIndex = cspParts.findIndex((part: string) => part.startsWith('style-src'))
-        const hashesWithGoogle = [...styleHashes, 'fonts.googleapis.com']
+        const hashesWithGoogle = new Set([...styleHashes, 'fonts.googleapis.com'])
         if (styleSrcIndex !== -1) {
-          cspParts[styleSrcIndex] = `style-src 'self' ${hashesWithGoogle.join(' ')}`
+          const existingHashes = new Set(cspParts[styleSrcIndex].split(' ').slice(1))
+          hashesWithGoogle.forEach((hash) => existingHashes.add(hash))
+          existingHashes.add("'self'")
+          cspParts[styleSrcIndex] = `style-src ${Array.from(existingHashes).join(' ')}`
         } else {
-          cspParts.push(`style-src 'self' ${hashesWithGoogle.join(' ')}`)
+          cspParts.push(`style-src 'self' ${Array.from(hashesWithGoogle).join(' ')}`)
         }
 
         return `Content-Security-Policy = "${cspParts.join('; ')}"`
