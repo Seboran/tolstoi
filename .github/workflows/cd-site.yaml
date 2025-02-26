@@ -6,6 +6,8 @@ on:
     paths:
       - .github/workflows/**
       - apps/nirina-site/**
+  repository_dispatch:
+    types: [blog_update]
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
