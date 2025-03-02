@@ -37,6 +37,9 @@ export const GET: APIRoute = async ({ request }) => {
   // Create image generator with baseUrl
   const { PNG } = createImageGenerator({ baseUrl })
 
+  // Construct hero image URL
+  const heroImageURL = `${baseUrl}/picture_nirina_rabeson.png`
+
   // Check for required parameters
   if (!title || !author || !dateParam) {
     return new Response('Missing required parameters: title, author and date are required', {
@@ -54,6 +57,7 @@ export const GET: APIRoute = async ({ request }) => {
       decodeURIComponent(author),
       formattedDate,
       PNG,
+      heroImageURL,
     )
 
     return new Response(png, {

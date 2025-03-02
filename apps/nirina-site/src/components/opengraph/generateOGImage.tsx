@@ -8,6 +8,9 @@ export async function generateOGImage(
   author: string,
   publishedDate: string,
   pngGenerator: PNGGenerator,
+  heroImageURL?: string,
 ) {
-  return await pngGenerator(<OG title={title} author={author} publishedDate={publishedDate} />)
+  return await pngGenerator(
+    <OG title={title} author={author} publishedDate={publishedDate} heroImageURL={heroImageURL} />,
+  )
 }

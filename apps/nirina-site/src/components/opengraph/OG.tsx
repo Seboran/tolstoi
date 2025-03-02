@@ -51,7 +51,7 @@ export default function OG({ title, heroImageURL, author, publishedDate }: OGPro
           style={{
             display: 'flex',
             flexDirection: 'column',
-            flex: heroImageURL ? 1 : 2,
+            flex: 2,
             justifyContent: 'center',
           }}
         >
@@ -111,18 +111,20 @@ export default function OG({ title, heroImageURL, author, publishedDate }: OGPro
             style={{
               display: 'flex',
               flexDirection: 'column',
-              flex: 1,
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
+              marginTop: '1rem',
+              alignItems: 'center',
               marginLeft: '2rem',
+              width: '200px',
             }}
           >
             <img
               src={heroImageURL}
               style={{
-                width: '100%',
-                height: '100%',
+                width: '200px',
+                height: '200px',
                 objectFit: 'cover',
-                borderRadius: '24px',
+                borderRadius: '50%',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
               }}
             />
