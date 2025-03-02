@@ -5,12 +5,13 @@ const result = Astro.getActionResult(actions.subscribeNewsletter)
 
 const afficherInscriptionReussie = result && !result.error
 const erreurDurantInscription = result?.error
+const afficherBientotDisponible = true
 ---
 
 <form
   id="newsletter-form"
   method="POST"
-  action={actions.subscribeNewsletter}
+  action={afficherBientotDisponible ? null : actions.subscribeNewsletter}
   class="w-full mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
 >
   <h2 class="text-2xl font-semibold">S'abonner à ma newsletter</h2>
@@ -22,6 +23,7 @@ const erreurDurantInscription = result?.error
   <div class="space-y-2">
     <label for="email" class="block text-sm font-medium"> Adresse email </label>
     <input
+      disabled={afficherBientotDisponible}
       type="email"
       id="email"
       autocomplete="email"
@@ -35,6 +37,7 @@ const erreurDurantInscription = result?.error
 
   <div class="flex items-center space-x-2">
     <input
+      disabled={afficherBientotDisponible}
       type="checkbox"
       id="consent"
       name="consent"
@@ -56,12 +59,24 @@ const erreurDurantInscription = result?.error
     >.
   </div>
 
-  <button
-    type="submit"
-    class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
-  >
-    S'inscrire
-  </button>
+  {
+    !afficherBientotDisponible ? (
+      <button
+        type="submit"
+        class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
+      >
+        S'inscrire
+      </button>
+    ) : (
+      <button
+        type="submit"
+        disabled
+        class="hover:cursor-not-allowed w-full py-2 px-4 bg-gray-600 hover:bg-gray-500 text-white font-semibold shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
+      >
+        S'inscrire (bientôt disponible)
+      </button>
+    )
+  }
 
   {
     afficherInscriptionReussie && (
