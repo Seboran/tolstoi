@@ -1,5 +1,5 @@
-import { PNG } from './createImage'
 import OG from './OG'
+import { PNG } from './createImage'
 
 export async function generateOGImage(
   title: string,
