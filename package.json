@@ -11,7 +11,8 @@
   "scripts": {
     "format": "biome check --write",
     "format:check": "biome check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "poor-man-ci": "turbo build test:unit --concurrency=1"
   },
   "keywords": [],
   "author": "",
