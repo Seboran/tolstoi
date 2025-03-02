@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 import dayjs from 'dayjs'
-import { generateOGImage } from '../../../components/opengraph/generateOGImage'
 import { createImageGenerator } from '../../../components/opengraph/createImage'
+import { generateOGImage } from '../../../components/opengraph/generateOGImage'
 import 'dayjs/locale/fr'
 
 /**
