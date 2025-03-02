@@ -30,6 +30,9 @@ export const GET: APIRoute = async ({ request }) => {
   const author = url.searchParams.get('author')
   const dateParam = url.searchParams.get('date')
 
+  // Get the base URL from the request
+  const baseUrl = url.origin
+
   // Check for required parameters
   if (!title || !author || !dateParam) {
     return new Response('Missing required parameters: title, author and date are required', {
@@ -46,6 +49,7 @@ export const GET: APIRoute = async ({ request }) => {
       decodeURIComponent(title),
       decodeURIComponent(author),
       formattedDate,
+      baseUrl,
     )
 
     return new Response(png, {
