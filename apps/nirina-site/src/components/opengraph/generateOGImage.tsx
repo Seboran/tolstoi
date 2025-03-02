@@ -1,11 +1,13 @@
+import type { JSX } from 'react'
 import OG from './OG'
-import { PNG } from './createImage'
+
+type PNGGenerator = (component: JSX.Element) => Promise<Buffer>
 
 export async function generateOGImage(
   title: string,
   author: string,
   publishedDate: string,
-  baseUrl: string,
+  pngGenerator: PNGGenerator,
 ) {
-  return await PNG(<OG title={title} author={author} publishedDate={publishedDate} />, baseUrl)
+  return await pngGenerator(<OG title={title} author={author} publishedDate={publishedDate} />)
 }

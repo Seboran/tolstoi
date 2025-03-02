@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro'
 import dayjs from 'dayjs'
 import { generateOGImage } from '../../../components/opengraph/generateOGImage'
+import { createImageGenerator } from '../../../components/opengraph/createImage'
 import 'dayjs/locale/fr'
 
 /**
@@ -33,6 +34,9 @@ export const GET: APIRoute = async ({ request }) => {
   // Get the base URL from the request
   const baseUrl = url.origin
 
+  // Create image generator with baseUrl
+  const { PNG } = createImageGenerator({ baseUrl })
+
   // Check for required parameters
   if (!title || !author || !dateParam) {
     return new Response('Missing required parameters: title, author and date are required', {
@@ -49,7 +53,7 @@ export const GET: APIRoute = async ({ request }) => {
       decodeURIComponent(title),
       decodeURIComponent(author),
       formattedDate,
-      baseUrl,
+      PNG,
     )
 
     return new Response(png, {

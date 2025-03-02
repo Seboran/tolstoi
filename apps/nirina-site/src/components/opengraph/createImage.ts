@@ -4,55 +4,65 @@ import sharp from 'sharp'
 import { getIconCode, loadEmoji } from '../../utils/twemoji'
 
 /**
- * Generates a PNG image from a React component
- * @param component - The React component to render as PNG
+ * Creates an image generator with the specified base URL
  * @param baseUrl - Base URL for loading assets like fonts
- * @returns Promise resolving to PNG buffer
- * @throws Error if PNG generation fails
+ * @returns Object containing PNG and SVG generation functions
  */
-export async function PNG(component: JSX.Element, baseUrl: string) {
-  try {
-    const svg = await SVG(component, baseUrl)
-    return await sharp(Buffer.from(svg)).png().toBuffer()
-  } catch (error) {
-    console.error('PNG generation error:', error)
-    throw new Error(
-      `Failed to generate PNG: ${error instanceof Error ? error.message : String(error)}`,
-    )
-  }
-}
-
-/**
- * Generates an SVG image from a React component
- * @param component - The React component to render as SVG
- * @param baseUrl - Base URL for loading assets like fonts
- * @returns Promise resolving to SVG string
- * @throws Error if SVG generation fails
- */
-async function SVG(component: JSX.Element, baseUrl: string) {
-  try {
-    const fontUrl = `${baseUrl}/DMSerifText-Regular.ttf`
-    const fontData = await loadFontData(fontUrl)
-
-    const options: SatoriOptions = {
-      width: 1200,
-      height: 630,
-      fonts: [
-        {
-          name: 'Inter',
-          data: fontData,
-          weight: 400,
-        },
-      ],
-      loadAdditionalAsset: createAssetLoader(),
+export function createImageGenerator({ baseUrl }: { baseUrl: string }) {
+  /**
+   * Generates a PNG image from a React component
+   * @param component - The React component to render as PNG
+   * @returns Promise resolving to PNG buffer
+   * @throws Error if PNG generation fails
+   */
+  async function generatePNG(component: JSX.Element) {
+    try {
+      const svg = await generateSVG(component)
+      return await sharp(Buffer.from(svg)).png().toBuffer()
+    } catch (error) {
+      console.error('PNG generation error:', error)
+      throw new Error(
+        `Failed to generate PNG: ${error instanceof Error ? error.message : String(error)}`,
+      )
     }
+  }
 
-    return await satori(component, options)
-  } catch (error) {
-    console.error('SVG generation error:', error)
-    throw new Error(
-      `Failed to generate SVG: ${error instanceof Error ? error.message : String(error)}`,
-    )
+  /**
+   * Generates an SVG image from a React component
+   * @param component - The React component to render as SVG
+   * @returns Promise resolving to SVG string
+   * @throws Error if SVG generation fails
+   */
+  async function generateSVG(component: JSX.Element) {
+    try {
+      const fontUrl = `${baseUrl}/DMSerifText-Regular.ttf`
+      const fontData = await loadFontData(fontUrl)
+
+      const options: SatoriOptions = {
+        width: 1200,
+        height: 630,
+        fonts: [
+          {
+            name: 'Inter',
+            data: fontData,
+            weight: 400,
+          },
+        ],
+        loadAdditionalAsset: createAssetLoader(),
+      }
+
+      return await satori(component, options)
+    } catch (error) {
+      console.error('SVG generation error:', error)
+      throw new Error(
+        `Failed to generate SVG: ${error instanceof Error ? error.message : String(error)}`,
+      )
+    }
+  }
+
+  return {
+    PNG: generatePNG,
+    SVG: generateSVG,
   }
 }
 
