@@ -10,6 +10,12 @@ export async function getStaticPaths() {
     props: { entry },
   }))
 }
+
+// Generate OG image URL with query parameters
+const ogImageUrl = new URL('/api/og', Astro.url)
+ogImageUrl.searchParams.set('title', entry.data.title)
+ogImageUrl.searchParams.set('author', 'Nirina Rabeson')
+ogImageUrl.searchParams.set('date', entry.data.date.toISOString().split('T')[0])
 ---
 
-<BlogPostView entry={entry} />
+<BlogPostView entry={entry} ogImage={ogImageUrl.toString()} />

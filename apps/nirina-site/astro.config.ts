@@ -13,9 +13,11 @@ import vue from '@astrojs/vue'
 import { astroCSPHashGenerator } from './src/plugins/astroCSPHashgenerator'
 import { targetBlank } from './src/plugins/targetBlank'
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), shield({}), vue(), astroCSPHashGenerator],
+  integrations: [tailwind(), mdx(), shield({}), vue(), astroCSPHashGenerator, react()],
   site: 'https://www.nirinarabeson.fr',
   output: 'static',
   adapter: netlify({}),

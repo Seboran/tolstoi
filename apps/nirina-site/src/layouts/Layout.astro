@@ -7,17 +7,18 @@ interface Props {
   title: string
   showNirinaRabesonInNavBar?: boolean
   animate?: boolean
+  image?: string // TODO: fix this prop drilling
 }
 
-const { title, showNirinaRabesonInNavBar, animate } = Astro.props
+const { title, showNirinaRabesonInNavBar, animate, image } = Astro.props
 ---
 
 <!doctype html>
 <html lang="fr-FR" class="overflow-x-hidden">
   <head>
     <meta charset="utf-8" />
-  
-    <MetaProperties title={title} />
+
+    <MetaProperties title={title} image={image} />
     <link
       rel="alternate"
       type="application/rss+xml"

@@ -9,7 +9,7 @@ import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
 import TagsArticles from '../blog/TagsArticles.astro'
 
-const { entry } = Astro.props
+const { entry, ogImage } = Astro.props
 const { Content } = await render(entry)
 
 const posts = await getSortedPublishedPosts()
@@ -21,7 +21,7 @@ const nextPost = currentPostIndex === 0 ? undefined : posts[currentPostIndex - 1
 export const prerender = true
 ---
 
-<MarkdownPostLayout title={entry.data.title + " | Nirina Rabeson"}>
+<MarkdownPostLayout title={entry.data.title + " | Nirina Rabeson"} image={ogImage}>
   <article>
     <header class="pt-6 space-y-1 text-center">
       <DatePublieLeV2 date={entry.data.date} />
