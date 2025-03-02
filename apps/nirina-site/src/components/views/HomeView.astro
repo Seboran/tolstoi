@@ -4,6 +4,7 @@ import { getSecret } from 'astro:env/server'
 import { ENABLE_CHAT as ENABLE_CHAT_ENV } from '../../../utils/environment-variables'
 import Layout from '../../layouts/Layout.astro'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
+import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
 import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
@@ -37,6 +38,7 @@ export const prerender = false
   <div class="mt-10 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">
     <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez vos sources et soyez raisonnables.
   </div>
+  <ArticlesLesPlusRecents />
 </Layout>
 
 <style scoped>
