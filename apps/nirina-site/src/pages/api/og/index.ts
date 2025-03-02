@@ -17,14 +17,12 @@ import 'dayjs/locale/fr'
  * @queryParam {string} date - Required publication date (ISO format: YYYY-MM-DD)
  *                             Will be formatted according to French standards (DD/MM/YYYY)
  *
- * @returns {Response} A PNG image with appropriate cache headers
- *
  * @example
  * // Usage (all parameters are required)
  * /api/og?title=My%20Blog%20Post%20Title&author=John%20Doe&date=2023-01-01
  */
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async ({ request }): Promise<Response> => {
   // Extract query parameters
   const url = new URL(request.url)
   const title = url.searchParams.get('title')
