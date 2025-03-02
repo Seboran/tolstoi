@@ -21,6 +21,7 @@ export default defineConfig({
   site: 'https://www.nirinarabeson.fr',
   output: 'static',
   adapter: netlify({}),
+  prefetch: true,
   vite: {
     build: {
       assetsInlineLimit: 0,
