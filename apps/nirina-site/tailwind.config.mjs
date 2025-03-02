@@ -4,7 +4,20 @@ import tailwindTypography from '@tailwindcss/typography'
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h2: {
+              fontWeight: '400',
+            },
+            h3: {
+              fontWeight: '400',
+            },
+          },
+        },
+      },
+    },
   },
   plugins: [tailwindTypography],
 }
