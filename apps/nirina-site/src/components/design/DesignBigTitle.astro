@@ -1,0 +1,14 @@
+---
+interface Props {
+  reallyBig?: 'text-6xl' | 'text-5xl'
+}
+
+const { reallyBig = 'text-5xl' }: Props = Astro.props
+---
+
+<h1
+  class={`statement-font rainbow-animation text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:${reallyBig} md:leading-14`}
+>
+  <slot />
+</h1>
+

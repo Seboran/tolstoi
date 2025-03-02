@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import Prose from '../Prose.astro'
+import DesignTitle from '../design/DesignTitle.astro'
 import DatePublieLeV2 from './DatePublieLeV2.astro'
 import TagsArticles from './TagsArticles.astro'
 
@@ -23,11 +24,11 @@ const tags = data.tags
   </div>
   <div class="space-y-5 xl:col-span-3">
     <div class="space-y-6">
-      <h2 class="statement-font text-2xl leading-8 font-bold tracking-tight">
+      <DesignTitle>
         <a class="rainbow-animation text-gray-900 dark:text-white" href={`/posts/${slug}`}>
           {data.title}
         </a>
-      </h2>
+      </DesignTitle>
       {(<Fragment>{data.excerpt && <Prose>{data.excerpt}</Prose>}</Fragment>)}
     </div>
     <div class="text-base leading-6 font-medium">

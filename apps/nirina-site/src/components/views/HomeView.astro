@@ -7,6 +7,8 @@ import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
 import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV2Vue from '../chat/ChatInterfaceV2.vue'
+import DesignBigTitle from '../design/DesignBigTitle.astro'
+import DesignTitle from '../design/DesignTitle.astro'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
 
@@ -35,7 +37,7 @@ export const prerender = false
       </ToggleComponents>
     </div>
   </div>
-  <div class="mt-10 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">
+  <div class="mt-10 mb-32 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">
     <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez vos sources et soyez raisonnables.
   </div>
   <ArticlesLesPlusRecents />

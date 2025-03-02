@@ -8,6 +8,7 @@ import Prose from '../Prose.astro'
 import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
 import TagsArticles from '../blog/TagsArticles.astro'
+import DesignBigTitle from '../design/DesignBigTitle.astro'
 
 const { entry, ogImage } = Astro.props
 const { Content } = await render(entry)
@@ -26,11 +27,9 @@ export const prerender = true
     <header class="pt-6 space-y-1 text-center">
       <DatePublieLeV2 date={entry.data.date} />
 
-      <h1
-        class="statement-font rainbow-animation text-3xl leading-9 font-extrabold text-gray-900 dark:text-white tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14"
-      >
+      <DesignBigTitle>
         {entry.data.title}
-      </h1>
+      </DesignBigTitle>
       <div class="flex flex-row justify-center w-full">
         <TagsArticles tags={entry.data.tags} />
       </div>
