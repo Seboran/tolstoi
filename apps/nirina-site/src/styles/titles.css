@@ -3,3 +3,9 @@ h2,
 h3 {
   font-family: "DM Serif Text", serif;
 }
+
+.statement-font {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400 !important;
+  font-style: normal;
+}

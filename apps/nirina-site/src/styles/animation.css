@@ -1,0 +1,59 @@
+.rainbow-animation:hover {
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%,
+      rgba(255, 0, 0, 0.8)
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%, rgba(0, 255, 0, 0.8)),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%, rgba(0, 0, 255, 0.8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  transition: 1s all ease-in-out;
+  background-size: 400% 100%;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .rainbow-animation,
+  .rainbow-animation:hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@keyframes rainbow_animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+.perspective-on-hover,
+.big-perspective-on-hover {
+  transform: perspective(500px) translate3d(0, 0, 0);
+
+  transition: transform 1s;
+  backface-visibility: hidden;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .perspective-on-hover,
+  .big-perspective-on-hover {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+.perspective-on-hover:hover {
+  transform: perspective(500px) translate3d(0, 0, 18px);
+}
+
+.big-perspective-on-hover:hover {
+  transform: perspective(500px) translate3d(0, 0, 5px);
+}
