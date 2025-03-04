@@ -61,7 +61,11 @@ export const GET: APIRoute = async ({ request }): Promise<Response> => {
     return new Response(png, {
       headers: {
         'Content-Type': 'image/png',
-        'Cache-Control': 'public, max-age=31536000, immutable',
+        'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
+        // Add Netlify-specific cache headers
+        'CDN-Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
+        // Add cache tag for easier cache invalidation if needed
+        'Cache-Tag': 'og-images',
       },
     })
   } catch (error) {
