@@ -2,7 +2,7 @@ name: e2e-nirina-site
 on:
   push:
     paths:
-      - .github/workflows/**
+
       - apps/nirina-site/**
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
