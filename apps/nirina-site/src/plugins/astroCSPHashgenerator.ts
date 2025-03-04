@@ -64,6 +64,10 @@ export const astroCSPHashGenerator: AstroIntegration = {
       const styleHashes: string[] = []
 
       for (const page of pages) {
+        if (page.pathname.includes('404')) {
+          // Ignore 404 because not generated
+          continue
+        }
         const filePath = fileURLToPath(`${dir.href}${page.pathname}index.html`)
 
         try {
