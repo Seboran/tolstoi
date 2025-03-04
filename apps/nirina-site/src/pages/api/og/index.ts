@@ -1,8 +1,9 @@
+import { getEntry } from 'astro:content'
 import type { APIRoute } from 'astro'
 import dayjs from 'dayjs'
+import 'dayjs/locale/fr'
 import { createImageGenerator } from '../../../components/opengraph/createImage'
 import { generateOGImage } from '../../../components/opengraph/generateOGImage'
-import 'dayjs/locale/fr'
 
 /**
  * Open Graph Image Generation API Endpoint
@@ -12,10 +13,7 @@ import 'dayjs/locale/fr'
  *
  * @endpoint /api/og
  *
- * @queryParam {string} title - Required title to display on the OG image
- * @queryParam {string} author - Required author name to display
- * @queryParam {string} date - Required publication date (ISO format: YYYY-MM-DD)
- *                             Will be formatted according to French standards (DD/MM/YYYY)
+ * @queryParam {string} slug - Required title to display on the OG image
  *
  * @example
  * // Usage (all parameters are required)
@@ -25,9 +23,23 @@ import 'dayjs/locale/fr'
 export const GET: APIRoute = async ({ request }): Promise<Response> => {
   // Extract query parameters
   const url = new URL(request.url)
-  const title = url.searchParams.get('title')
-  const author = url.searchParams.get('author')
-  const dateParam = url.searchParams.get('date')
+  const id = url.searchParams.get('id')
+
+  if (!id) {
+    return new Response('Missing required parameters: id', {
+      status: 400,
+    })
+  }
+
+  const entry = await getEntry('posts', id)
+
+  if (!entry) {
+    return new Response('Article not found', {
+      status: 404,
+    })
+  }
+
+  const { title, author, date: dateParam } = entry.data
 
   // Get the base URL from the request
   const baseUrl = url.origin
