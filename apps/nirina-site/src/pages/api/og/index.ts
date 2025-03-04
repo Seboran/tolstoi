@@ -76,6 +76,7 @@ export const GET: APIRoute = async ({ request }): Promise<Response> => {
         'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
         // Add Netlify-specific cache headers
         'CDN-Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
+        'Netlify-CDN-Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
         // Add cache tag for easier cache invalidation if needed
         'Cache-Tag': 'og-images',
       },
