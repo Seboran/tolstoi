@@ -89,8 +89,6 @@ export const astroCSPHashGenerator: AstroIntegration = {
       if (scriptHashes.length > 0 || styleHashes.length > 0) {
         await updateNetlifyCSP(scriptHashes, styleHashes)
       }
-
-      logger.info(`Generated hashes: ${scriptHashes.join(' ')}`)
     },
   },
 }
