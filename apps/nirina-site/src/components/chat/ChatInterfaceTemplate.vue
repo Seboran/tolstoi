@@ -58,7 +58,7 @@ function submitOnEnter(key: KeyboardEvent) {
     <div class="funny-background absolute h-24 w-full max-w-lg"></div>
 
     <form
-      class="big-perspective-on-hover chat-container relative top-0 m-auto grid max-w-lg columns-1 flex-row gap-3 bg-slate-100 p-4 text-black dark:bg-slate-700 dark:text-white"
+      class="big-perspective-on-hover chat-container relative top-0 m-auto grid max-w-lg columns-1 flex-row gap-3 bg-white p-4 text-black dark:bg-slate-700 dark:text-white"
       @submit.prevent="handleFormSubmit"
     >
       <div class="flex w-full flex-row">
