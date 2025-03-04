@@ -52,7 +52,7 @@ export default function OG({ title, heroImageURL, author, publishedDate }: OGPro
             display: 'flex',
             flexDirection: 'column',
             flex: 2,
-            justifyContent: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <h1
@@ -112,7 +112,6 @@ export default function OG({ title, heroImageURL, author, publishedDate }: OGPro
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'flex-start',
-              marginTop: '1rem',
               alignItems: 'center',
               marginLeft: '2rem',
               width: '200px',
