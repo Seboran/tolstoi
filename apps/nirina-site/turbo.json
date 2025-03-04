@@ -4,7 +4,8 @@
   "tasks": {
     "build": {
       "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"],
-      "env": ["MISTRAL_API_KEY", "ENABLE_CHAT"]
+      "env": ["MISTRAL_API_KEY", "ENABLE_CHAT"],
+      "outputs": ["node_modules/.astro"]
     },
     "test:e2e": {
       "env": ["PLAYWRIGHT_URL"]
