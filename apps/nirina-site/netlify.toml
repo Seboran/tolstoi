@@ -8,7 +8,7 @@
 [[headers]]
   for = "/api/og"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, s-maxage=31536000, immutable"
+    Cache-Control = "public, max-age=31536000, s-maxage=31536000"
 [context.dev]
   [[headers]]
   for = "/*"
