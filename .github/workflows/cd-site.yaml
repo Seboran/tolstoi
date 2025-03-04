@@ -32,9 +32,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: apps/nirina-site/node_modules/.astro
-          key: ${{ runner.os }}-astro-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-astro-
+          key: ${{ runner.os }}-astro-
 
       - name: Install turbo CLI
         run: pnpm install --global turbo
