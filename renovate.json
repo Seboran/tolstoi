@@ -2,5 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>Seboran/renovate-config", "customManagers:biomeVersions"],
   "prConcurrentLimit": 1,
-  "branchConcurrentLimit": 1
+  "branchConcurrentLimit": 1,
+  "updateLockFiles": false
 }
