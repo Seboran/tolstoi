@@ -9,24 +9,22 @@ import { generateOGImage } from '../../../components/opengraph/generateOGImage'
  * Open Graph Image Generation API Endpoint
  *
  * This endpoint dynamically generates Open Graph (OG) images for social media sharing.
- * It takes all parameters as query parameters.
+ * It takes the post ID as a route parameter.
  *
- * @endpoint /api/og
+ * @endpoint /api/og/[id]
  *
- * @queryParam {string} slug - Required title to display on the OG image
+ * @param {string} id - Required post ID to generate the OG image for
  *
  * @example
- * // Usage (all parameters are required)
- * /api/og?title=My%20Blog%20Post%20Title&author=John%20Doe&date=2023-01-01
+ * // Usage
+ * /api/og/my-post-slug
  */
-
-export const GET: APIRoute = async ({ request }): Promise<Response> => {
-  // Extract query parameters
-  const url = new URL(request.url)
-  const id = url.searchParams.get('id')
+export const GET: APIRoute = async ({ params, request }): Promise<Response> => {
+  // Extract ID from route parameter
+  const { id } = params
 
   if (!id) {
-    return new Response('Missing required parameters: id', {
+    return new Response('Missing required parameter: id', {
       status: 400,
     })
   }
@@ -42,6 +40,7 @@ export const GET: APIRoute = async ({ request }): Promise<Response> => {
   const { title, author, date: dateParam } = entry.data
 
   // Get the base URL from the request
+  const url = new URL(request.url)
   const baseUrl = url.origin
 
   // Create image generator with baseUrl

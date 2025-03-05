@@ -11,9 +11,8 @@ export async function getStaticPaths() {
   }))
 }
 
-// Generate OG image URL with query parameters
-const ogImageUrl = new URL('/api/og', Astro.url)
-ogImageUrl.searchParams.set('id', entry.id)
+// Generate OG image URL using route parameter
+const ogImageUrl = new URL(`/api/og/${entry.id}`, Astro.url).toString()
 ---
 
-<BlogPostView entry={entry} ogImage={ogImageUrl.toString()} />
+<BlogPostView entry={entry} ogImage={ogImageUrl} />
