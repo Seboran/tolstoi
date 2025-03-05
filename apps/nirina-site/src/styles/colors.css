@@ -1,0 +1,8 @@
+:root {
+  /* Ghost theme colors */
+  --color-ghost-border: rgba(241, 245, 249, 0.25);
+  --color-ghost-light: #f1f5f9;
+  --color-ghost-dark: #1e293b;
+  --color-text-light: #000000;
+  --color-text-dark: #ffffff;
+}

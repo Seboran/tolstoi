@@ -4,6 +4,7 @@
 @import "./prose.css" layer(base);
 @import "./token.css" layer(base);
 @import "./animation.css" layer(base);
+@import "./colors.css" layer(base);
 
 @import "tailwindcss";
 

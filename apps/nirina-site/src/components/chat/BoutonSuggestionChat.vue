@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="perspective-on-hover text-nowrap rounded-lg border border-slate-100/25 bg-slate-100 px-2 py-1 text-xs text-black dark:bg-slate-800 dark:text-white"
+    class="perspective-on-hover text-nowrap rounded-lg border bg-ghost px-2 py-1 text-xs"
   >
     <button @click="$emit('click', slotText)" :disabled="disabledUntilLoaded">
       <slot />
