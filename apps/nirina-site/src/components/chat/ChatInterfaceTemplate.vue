@@ -63,14 +63,14 @@ function submitOnEnter(key: KeyboardEvent) {
     >
       <div class="flex w-full flex-row">
         <textarea
-          class="h-16 w-full resize-none border-none bg-transparent outline-none placeholder:text-slate-400/75 dark:placeholder:text-slate-100/75"
+          class="h-16 w-full resize-none border-none bg-transparent outline-hidden placeholder:text-slate-400/75 dark:placeholder:text-slate-100/75"
           placeholder="Par exemple : Je voudrais lire le dernier article de blog."
           autofocus
           v-model="message"
           @keypress="submitOnEnter"
         ></textarea>
         <button
-          class="h-8 w-8 rounded-sm bg-blue-500 p-2 hover:bg-blue-400"
+          class="h-8 w-8 rounded-xs bg-blue-500 p-2 hover:bg-blue-400"
           name="Envoyer message"
           aria-label="Envoyer message"
           type="submit"

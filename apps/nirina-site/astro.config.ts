@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 
 import mdx from '@astrojs/mdx'
 
@@ -17,7 +17,7 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx(), shield({}), vue(), astroCSPHashGenerator, react()],
+  integrations: [mdx(), shield({}), vue(), astroCSPHashGenerator, react()],
   site: 'https://www.nirinarabeson.fr',
   output: 'static',
   adapter: netlify({}),
@@ -26,6 +26,7 @@ export default defineConfig({
     build: {
       assetsInlineLimit: 0,
     },
+    plugins: [tailwindcss()],
   },
   markdown: {
     rehypePlugins: [
