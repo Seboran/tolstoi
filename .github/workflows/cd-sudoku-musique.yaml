@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-
+      - .github/workflows/cd-sudoku-musique.yaml
       - apps/generateur-musique/**
       - apps/generateur-sudoku/**
 env:

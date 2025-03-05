@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-
+      - .github/workflows/cd-site.yaml
       - apps/nirina-site/**
   repository_dispatch:
     types: [blog_update]

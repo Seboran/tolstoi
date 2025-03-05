@@ -2,7 +2,7 @@ name: e2e-bons-comptes-bons-amis
 on:
   push:
     paths:
-
+      - .github/workflows/e2e-bons-comptes-bons-amis.yaml
       - apps/bons-comptes-bons-amis/**
       - packages/layer-bons-comptes/**
 
