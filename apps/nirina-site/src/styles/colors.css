@@ -1,3 +1,19 @@
+/* Initial color scheme detection to prevent flash */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --color-chat-bg-light: #334155; /* Use dark theme values */
+    --color-chat-bg-dark: #334155;
+    --color-chat-text-light: #ffffff;
+    --color-chat-text-dark: #ffffff;
+    --color-ghost-light: #1e293b;
+    --color-ghost-dark: #1e293b;
+    --color-text-light: #ffffff;
+    --color-text-dark: #ffffff;
+    --color-border-gradient-light: var(--color-border-gradient-dark);
+    /* Add other colors that need initial dark values */
+  }
+}
+
 :root {
   /* Ghost theme colors */
   --color-ghost-border: rgba(241, 245, 249, 0.25);
@@ -5,4 +21,34 @@
   --color-ghost-dark: #1e293b;
   --color-text-light: #000000;
   --color-text-dark: #ffffff;
+
+  /* Chat form colors */
+  --color-chat-bg-light: #ffffff;
+  --color-chat-bg-dark: #334155; /* slate-700 */
+  --color-chat-text-light: #000000;
+  --color-chat-text-dark: #ffffff;
+  --color-chat-border-light: #b827fc;
+  --color-chat-border-dark: #2c90fc;
+
+  /* Button colors */
+  --color-button-bg: #3b82f6; /* blue-500 */
+  --color-button-bg-hover: #60a5fa; /* blue-400 */
+  --color-button-text: #ffffff;
+
+  /* Border gradient colors */
+  --color-border-gradient-light: #888888;
+  --color-border-gradient-dark: rgb(15, 23, 42); /* equivalent to slate-900 */
+}
+
+/* Explicitly set dark mode values when .dark class is present */
+.dark {
+  --color-chat-bg-light: #334155;
+  --color-chat-bg-dark: #334155;
+  --color-chat-text-light: #ffffff;
+  --color-chat-text-dark: #ffffff;
+  --color-ghost-light: #1e293b;
+  --color-ghost-dark: #1e293b;
+  --color-text-light: #ffffff;
+  --color-text-dark: #ffffff;
+  --color-border-gradient-light: var(--color-border-gradient-dark);
 }
