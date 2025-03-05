@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "check": "astro check",
-    "preview": "astro preview",
+    "preview": "netlify serve",
     "astro": "astro",
     "test:e2e": "pnpm playwright test"
   },

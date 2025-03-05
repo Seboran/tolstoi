@@ -28,6 +28,9 @@ export default defineConfig({
     },
     plugins: [tailwindcss()],
   },
+  devToolbar: {
+    enabled: !process.env.DISABLE_TOOLBAR && true,
+  },
   markdown: {
     rehypePlugins: [
       [
