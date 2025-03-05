@@ -21,4 +21,4 @@ Mais tout cela ne change pas le fait que les articles de ce blog sont réellemen
 
 ---
 
-Je vous invite à exprimer avec transparencevotre utilisation de l'IA [en suivant ce manifeste](https://www.bydamo.la/p/ai-manifesto).
+Je vous invite à exprimer avec transparence votre utilisation de l'IA [en suivant ce manifeste](https://www.bydamo.la/p/ai-manifesto).
