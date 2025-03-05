@@ -37,24 +37,25 @@ const { title, showNirinaRabesonInNavBar, animate, image } = Astro.props
     <meta name="color-scheme" content="dark light">
   </head>
   <script>
-    // This script is overwriting your prevent-flash.js and has issues
-    // Replace with this corrected version:
+    // Import and apply theme immediately
+    import { applyTheme } from '../utils/theme.js';
+    
+    // Apply theme on initial page load
+    applyTheme();
+    
+    // Listen for system preference changes
     if (typeof window !== 'undefined') {
-      function updateTheme() {
-        // Only set class based on localStorage or system preference
-        document.documentElement.classList.toggle(
-          'dark',
-          localStorage.theme === 'dark' ||
-            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        );
-      }
-      
-      // Run once on initial load
-      updateTheme();
-      
-      // Also listen for system preference changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (!('theme' in localStorage)) {
+          applyTheme();
+        }
+      });
     }
+    
+    // Handle theme persistence during Astro view transitions
+    document.addEventListener('astro:page-load', () => {
+      applyTheme();
+    });
   </script>
 
   <body class="relative overflow-x-hidden">
