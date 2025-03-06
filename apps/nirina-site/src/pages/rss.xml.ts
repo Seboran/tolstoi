@@ -1,9 +1,21 @@
-import rss from '@astrojs/rss'
+import { getEntry } from 'astro:content'
+import rss, { type RSSFeedItem } from '@astrojs/rss'
 import type { APIContext } from 'astro'
 import { getSortedPublishedPosts } from '../utils/getCollections'
 
 export async function GET(context: APIContext) {
   const blog = await getSortedPublishedPosts()
+  const remapToRss: RSSFeedItem[] = await Promise.all(
+    blog.map(async (post) => ({
+      title: post.data.title,
+      pubDate: post.data.date,
+      description: post.data.excerpt,
+      // Compute RSS link from post `slug`
+      // This example assumes all posts are rendered as `/blog/[slug]` routes
+      link: `/posts/${post.id}/`,
+      content: (await getEntry(post)).rendered?.html,
+    })),
+  )
   return rss({
     // `<title>` field in output xml
     title: 'Le blog de Nirina Rabeson',
@@ -15,15 +27,9 @@ export async function GET(context: APIContext) {
     site: context.site!,
     // Array of `<item>`s in output xml
     // See "Generating items" section for examples using content collections and glob imports
-    items: blog.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.date,
-      description: post.data.excerpt,
-      // Compute RSS link from post `slug`
-      // This example assumes all posts are rendered as `/blog/[slug]` routes
-      link: `/posts/${post.id}/`,
-    })),
+    items: remapToRss,
     // (optional) inject custom xml
     customData: `<language>fr-fr</language>`,
+    stylesheet: '/rss/styles.xsl',
   })
 }
