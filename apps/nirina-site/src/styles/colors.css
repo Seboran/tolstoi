@@ -2,6 +2,7 @@
   --color-form: var(--theme-color-form);
   --color-send-message: var(--theme-color-send-message);
   --color-send-message-active: var(--theme-color-send-message-active);
+  --color-suggestion-chat: var(--theme-color-suggestion-chat);
 }
 
 @layer base {
@@ -9,11 +10,13 @@
     --theme-color-form: #ffffff;
     --theme-color-send-message: var(--color-blue-500);
     --theme-color-send-message-active: var(--color-blue-400);
+    --theme-color-suggestion-chat: var(--color-slate-100);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --theme-color-form: var(--color-slate-700);
+      --theme-color-suggestion-chat: var(--color-slate-800);
     }
   }
 }
