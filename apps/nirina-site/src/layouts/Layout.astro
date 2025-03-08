@@ -34,27 +34,23 @@ const { title, showNirinaRabesonInNavBar, animate, image } = Astro.props
     <meta name="theme-color" content="#dbdae2" media="(prefers-color-scheme: light)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="color-scheme" content="dark light">
   </head>
   <script>
-    // This script is overwriting your prevent-flash.js and has issues
-    // Replace with this corrected version:
-    if (typeof window !== 'undefined') {
-      function updateTheme() {
-        // Only set class based on localStorage or system preference
-        document.documentElement.classList.toggle(
-          'dark',
-          localStorage.theme === 'dark' ||
-            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        );
-      }
-      
-      // Run once on initial load
-      updateTheme();
-      
-      // Also listen for system preference changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
-    }
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    document.documentElement.classList.toggle(
+      'dark',
+      localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+    )
+
+    // Whenever the user explicitly chooses light mode
+    localStorage.theme = 'light'
+
+    // Whenever the user explicitly chooses dark mode
+    localStorage.theme = 'dark'
+
+    // Whenever the user explicitly chooses to respect the OS preference
+    localStorage.removeItem('theme')
   </script>
 
   <body class="relative overflow-x-hidden">
