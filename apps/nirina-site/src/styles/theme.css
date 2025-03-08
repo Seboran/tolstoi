@@ -9,6 +9,22 @@
 
 @config '../../tailwind.config.mjs';
 
+@theme {
+  --color-form: var(--theme-color-form);
+}
+
+@layer base {
+  :root {
+    --theme-color-form: #ffffff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --theme-color-form: var(--color-slate-700);
+    }
+  }
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
