@@ -70,7 +70,7 @@ function submitOnEnter(key: KeyboardEvent) {
           @keypress="submitOnEnter"
         ></textarea>
         <button
-          class="h-8 w-8 rounded-xs bg-blue-500 p-2 hover:bg-blue-400"
+          class="h-8 w-8 rounded-xs bg-send-message p-2 hover:bg-send-message-hover"
           name="Envoyer message"
           aria-label="Envoyer message"
           type="submit"
