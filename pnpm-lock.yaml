@@ -754,8 +754,8 @@ importers:
   packages/nirina-codemods:
     devDependencies:
       '@codemod.com/codemod-utils':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.1.2
+        version: 1.1.2
       '@types/jscodeshift':
         specifier: 0.12.0
         version: 0.12.0
@@ -1219,8 +1219,8 @@ packages:
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
     engines: {node: '>=16.13'}
 
-  '@codemod.com/codemod-utils@1.1.0':
-    resolution: {integrity: sha512-mB09NUBdCblc2OaEZ1v/+1er8jopxf3zcYxpfFXwfY0llQxNP4rBD1A3cp85Tr8oTdq4yRLSPTlIJZEw7HZEfQ==}
+  '@codemod.com/codemod-utils@1.1.2':
+    resolution: {integrity: sha512-TLR4HA10RfUoWte+btFjuMzYpCPRZErCRde75XHl9yuvZA98sxr6rTABiFa0TN6Uup3spkuh9JAU0fm4NyqtNQ==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -10255,7 +10255,7 @@ snapshots:
     dependencies:
       mime: 3.0.0
 
-  '@codemod.com/codemod-utils@1.1.0':
+  '@codemod.com/codemod-utils@1.1.2':
     dependencies:
       '@babel/parser': 7.26.7
       '@types/jscodeshift': 0.11.11
