@@ -33,7 +33,7 @@
     "@vitejs/plugin-vue": "5.2.1",
     "@vue/test-utils": "2.4.6",
     "@vue/tsconfig": "0.7.0",
-    "autoprefixer": "10.4.20",
+    "autoprefixer": "10.4.21",
     "jsdom": "26.0.0",
     "npm-run-all2": "7.0.2",
     "postcss": "8.5.3",
