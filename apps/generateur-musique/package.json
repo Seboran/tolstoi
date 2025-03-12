@@ -2,10 +2,6 @@
   "name": "generateur-musique",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
-  },
   "scripts": {
     "build": "vite build",
     "preview": "pnpm -C ./packages/app-visualisation run preview",
