@@ -5,13 +5,15 @@ const result = Astro.getActionResult(actions.subscribeNewsletter)
 
 const afficherInscriptionReussie = result && !result.error
 const erreurDurantInscription = result?.error
-const afficherBientotDisponible = true
+const afficherBientotDisponible = false
+
+const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/nirina'
 ---
 
 <form
   id="newsletter-form"
   method="POST"
-  action={afficherBientotDisponible ? null : actions.subscribeNewsletter}
+  action={newsletterAction}
   class="w-full mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
 >
   <h2 class="text-2xl font-semibold">S'abonner à ma newsletter</h2>
