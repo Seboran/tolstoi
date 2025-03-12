@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
   },
 })
 
-export async function parseEmail(formData: Record<string, unknown>) {
+async function parseEmail(formData: Record<string, unknown>) {
   console.log(formData)
   await transporter.sendMail({
     from: `"Nirina Rabeson" <${EMAIL_USER}>`, // sender address

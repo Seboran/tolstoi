@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content'
 
-export async function getPublishedPosts() {
+async function getPublishedPosts() {
   return await getCollection('posts', ({ data }) => !data.draft || import.meta.env.DEV)
 }
 
