@@ -7,10 +7,3 @@ export interface CostParams {
   contextSwitchMinutes: number
   nonBillablePercentage: number
 }
-
-export interface WorkSettings {
-  workDays: number[]
-  vacationDays: number
-  contextSwitchMinutes: number
-  nonBillablePercentage: number
-}

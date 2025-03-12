@@ -1,13 +1,13 @@
 import { HOURS_PER_DAY, MINUTES_PER_HOUR } from './constants'
 import type { CostParams } from './types'
 
-export function calculateWorkingWeeks(vacationDays: number): number {
+function calculateWorkingWeeks(vacationDays: number): number {
   const totalWeeks = 52
   const vacationWeeks = Math.ceil(vacationDays / 5)
   return totalWeeks - vacationWeeks
 }
 
-export function calculateEffectiveRate(dailyCost: number, nonBillablePercentage: number): number {
+function calculateEffectiveRate(dailyCost: number, nonBillablePercentage: number): number {
   return dailyCost * (1 - nonBillablePercentage / 100)
 }
 
@@ -18,10 +18,6 @@ export function calculateCostPerInterruption(
   const hourlyRate = effectiveRate / HOURS_PER_DAY
   const minuteRate = hourlyRate / MINUTES_PER_HOUR
   return minuteRate * params.contextSwitchMinutes
-}
-
-export function calculateWeeklyInterruptions(interruptions: number): number {
-  return interruptions
 }
 
 export function calculateAnnualCost(params: CostParams): number {

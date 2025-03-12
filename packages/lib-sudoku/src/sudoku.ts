@@ -1,8 +1,8 @@
 import { visitArray } from './utils/visitArray'
 
-export type SudokuCellule = number | null
-export type SudokuGrid = SudokuCellule[][]
-export type SudokuPossibilitesCellule = number[]
+type SudokuCellule = number | null
+type SudokuGrid = SudokuCellule[][]
+type SudokuPossibilitesCellule = number[]
 
 export class Sudoku {
   grid: SudokuCellule[][]
