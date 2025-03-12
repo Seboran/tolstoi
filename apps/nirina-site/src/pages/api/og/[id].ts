@@ -61,13 +61,13 @@ export const GET: APIRoute = async ({ params, request }): Promise<Response> => {
     dayjs.locale('fr')
     const formattedDate = dayjs(dateParam).format('D MMMM YYYY')
 
-    const png = await generateOGImage(
-      decodeURIComponent(title),
-      decodeURIComponent(author),
-      formattedDate,
-      PNG,
+    const png = await generateOGImage({
+      title: decodeURIComponent(title),
+      author: decodeURIComponent(author),
+      publishedDate: formattedDate,
+      pngGenerator: PNG,
       heroImageURL,
-    )
+    })
 
     return new Response(png, {
       headers: {
