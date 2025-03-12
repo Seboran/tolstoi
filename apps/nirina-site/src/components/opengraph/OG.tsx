@@ -39,6 +39,7 @@ export default function OG({ title, heroImageURL, author, publishedDate }: OGPro
         style={{
           display: 'flex',
           flexDirection: 'row',
+          alignItems: author || publishedDate ? 'stretch' : 'center',
           width: '100%',
           height: '100%',
           padding: '3rem',
