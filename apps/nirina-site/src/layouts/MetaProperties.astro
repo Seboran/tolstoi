@@ -4,7 +4,9 @@ interface Props {
   image?: string
 }
 
-const { title, image = 'https://www.nirinarabeson.fr/cover.png' } = Astro.props
+const { title, image: originalImage } = Astro.props
+const defaultCoverImage = new URL(`/api/og/title/${title}`, Astro.site).toString()
+const image = originalImage || defaultCoverImage // If no original image or is empty, use the default cover image
 ---
 
 <meta name="fediverse:creator" content="@nirina@nirinarabeson.fr" />
