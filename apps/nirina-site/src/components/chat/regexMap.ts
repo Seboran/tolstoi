@@ -1,4 +1,9 @@
-export const regexMap = [
+export const regexMap: { pattern: RegExp; href: string }[] = [
+  // Manifest IA
+  {
+    pattern: /manifest|manifest|ia|intelligence artificielle/,
+    href: '/ai',
+  },
   // Demander le dernier article ou les nouveautés
   {
     pattern: /dernier|récents?|latest|nouveau|nouveautés|actualités/,
