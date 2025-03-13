@@ -71,6 +71,12 @@ async function handleFormSubmit(inputMessage: string) {
       href: '/presentations',
     },
 
+    // À propos de mon chat
+    {
+      pattern: /peppers?|chat(?!bot)|animal|animaux/,
+      href: '/chat',
+    },
+
     // Par défaut, redirige vers le blog si rien ne correspond
     { pattern: /.*/, href: '/blog' },
   ]
@@ -142,5 +148,4 @@ form {
 form:hover {
   opacity: 1;
 }
-
 </style>
