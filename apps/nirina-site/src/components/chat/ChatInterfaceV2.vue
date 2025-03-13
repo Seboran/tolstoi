@@ -131,6 +131,12 @@ async function handleFormSubmit(inputMessage: string) {
       href: '/presentations',
     },
 
+    // À propos de mon chat
+    {
+      pattern: /peppers?|chat(?!bot)|animal|animaux/,
+      href: '/chat',
+    },
+
     // Par défaut, redirige vers le blog si rien ne correspond
     { pattern: /.*/, href: '/blog' },
   ]
@@ -156,7 +162,9 @@ async function handleFormSubmit(inputMessage: string) {
   <ChatInterfaceTemplate @submit="handleFormSubmit">
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
-        <p v-if="mistralAnswer"><strong>Réponse :</strong> {{ mistralAnswer }}</p>
+        <p v-if="mistralAnswer">
+          <strong>Réponse :</strong> {{ mistralAnswer }}
+        </p>
       </div>
 
       <a
