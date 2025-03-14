@@ -18,7 +18,7 @@ async function handleFormSubmit(inputMessage: string) {
   const lowerCaseInput = inputMessage.toLowerCase()
 
   // Parcourir la map pour trouver la première correspondance
-  for (const { pattern, href } of regexMap) {
+  for (const { pattern, href } of regexMap(lienDernierArticle)) {
     if (pattern.test(lowerCaseInput)) {
       document.location.href = href
       return
