@@ -1,7 +1,9 @@
 import { ofetch } from 'ofetch'
 import type { WordPosition } from '../components/words-entry/useWordToPosition'
 
-const convertWordEndpoint = 'http://localhost:5328/api/word-to-position'
+const convertWordEndpoint = import.meta.env.DEV
+  ? 'http://localhost:5328/api/word-to-position'
+  : '/api/word-to-position'
 
 export async function convertWords(words: string[]): Promise<WordPosition[]> {
   try {
