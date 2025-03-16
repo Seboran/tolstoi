@@ -1,7 +1,7 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-  "files": { "ignoreUnknown": false, "ignore": [] },
+  "files": { "ignoreUnknown": false, "ignore": ["**/venv/**"] },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -23,7 +23,8 @@
       "**/*.mdx",
       "**/.astro",
       "**/dist",
-      "**/matrix.json"
+      "**/matrix.json",
+      "**/venv/**"
     ]
   },
   "organizeImports": { "enabled": true },
@@ -65,7 +66,11 @@
         "useValidForDirection": "error",
         "useYield": "error"
       },
-      "style": { "noNamespace": "error", "useAsConstAssertion": "error", "useImportType": "error" },
+      "style": {
+        "noNamespace": "error",
+        "useAsConstAssertion": "error",
+        "useImportType": "error"
+      },
       "suspicious": {
         "noAssignInExpressions": "error",
         "noAsyncPromiseExecutor": "error",
@@ -128,7 +133,11 @@
             "noUnreachable": "off",
             "noUnreachableSuper": "off"
           },
-          "style": { "noArguments": "error", "noVar": "error", "useConst": "error" },
+          "style": {
+            "noArguments": "error",
+            "noVar": "error",
+            "useConst": "error"
+          },
           "suspicious": {
             "noClassAssign": "off",
             "noDuplicateClassMembers": "off",
