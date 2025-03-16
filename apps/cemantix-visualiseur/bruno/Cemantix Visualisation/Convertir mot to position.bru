@@ -5,13 +5,13 @@ meta {
 }
 
 post {
-  url: /api/v2/word-to-position
+  url: {{baseUrl}}/api/v2/word-to-position
   body: json
   auth: none
 }
 
 body:json {
   {
-    "word": "bonjour"
+    "words": ["bonjour", "salut"]
   }
 }
