@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full">
-    <textarea autofocus v-model="textareaValue" class="w-full h-96" />
+  <div class="absolute top-0 left-0">
+    <textarea autofocus v-model="textareaValue" class="h-96" />
   </div>
 </template>
 

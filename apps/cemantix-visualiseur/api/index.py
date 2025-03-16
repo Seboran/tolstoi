@@ -8,7 +8,7 @@ from sklearn.decomposition import PCA
 # Load the downloaded file using a path relative to this script
 script_dir = os.path.dirname(__file__)
 model_path = os.path.join(
-    script_dir, "data", "frWac_non_lem_no_postag_no_phrase_200_cbow_cut0.bin")
+    script_dir, "data", "frWac_non_lem_no_postag_no_phrase_200_cbow_cut100.bin")
 
 print("Loading model from", model_path)
 model = KeyedVectors.load_word2vec_format(

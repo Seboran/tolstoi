@@ -9,6 +9,8 @@ const words = ref<string[]>(listeMotsInitiale)
 </script>
 
 <template>
-  <ListWordsTextArea class="right-0" v-model="words" />
-  <DisplayWordsCanvas :words />
+  <div class="relative h-full w-full">
+    <DisplayWordsCanvas :words />
+    <ListWordsTextArea v-model="words" />
+  </div>
 </template>
