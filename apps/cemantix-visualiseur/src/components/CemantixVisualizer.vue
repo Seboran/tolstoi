@@ -10,7 +10,7 @@ const words = ref<string[]>(listeMotsInitiale)
 
 <template>
   <div class="relative h-full w-full">
-    <DisplayWordsCanvas :words />
     <ListWordsTextArea v-model="words" />
+    <DisplayWordsCanvas :words />
   </div>
 </template>
