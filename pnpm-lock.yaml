@@ -163,7 +163,7 @@ importers:
         specifier: 5.5.2
         version: 5.5.2(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.32.0)(terser@5.37.0)(typescript@5.8.2)(yaml@2.7.0)
       ofetch:
-        specifier: ^1.4.1
+        specifier: 1.4.1
         version: 1.4.1
       tailwindcss:
         specifier: 4.0.14
