@@ -49,8 +49,20 @@ export function useArrowDrawing(): ArrowDrawing {
     const ctrlX = midX + perpX
     const ctrlY = midY + perpY
 
-    // Calculate the arrow head points
-    const angle = Math.atan2(toY - ctrlY, toX - ctrlX)
+    // Shorten the arrow to stop before reaching the destination
+    // 0.96 means the arrow will go 96% of the way (increased from 0.92)
+    const shortenFactor = 0.96
+
+    // Calculate a point along the quadratic Bezier curve
+    const t = shortenFactor
+    const newToX = (1 - t) * (1 - t) * fromX + 2 * (1 - t) * t * ctrlX + t * t * toX
+    const newToY = (1 - t) * (1 - t) * fromY + 2 * (1 - t) * t * ctrlY + t * t * toY
+
+    // Calculate the tangent angle at this point for correct arrow head orientation
+    // Derivative of quadratic Bezier: B'(t) = 2*(1-t)*(P1-P0) + 2*t*(P2-P1)
+    const tangentX = 2 * (1 - t) * (ctrlX - fromX) + 2 * t * (toX - ctrlX)
+    const tangentY = 2 * (1 - t) * (ctrlY - fromY) + 2 * t * (toY - ctrlY)
+    const angle = Math.atan2(tangentY, tangentX)
 
     // Begin drawing
     ctx.save()
@@ -62,19 +74,19 @@ export function useArrowDrawing(): ArrowDrawing {
     // Draw the curved line
     ctx.beginPath()
     ctx.moveTo(fromX, fromY)
-    ctx.quadraticCurveTo(ctrlX, ctrlY, toX, toY)
+    ctx.quadraticCurveTo(ctrlX, ctrlY, newToX, newToY)
     ctx.stroke()
 
-    // Draw the arrow head
+    // Draw the arrow head at the new end point
     ctx.beginPath()
-    ctx.moveTo(toX, toY)
+    ctx.moveTo(newToX, newToY)
     ctx.lineTo(
-      toX - arrowSize * Math.cos(angle - Math.PI / 6),
-      toY - arrowSize * Math.sin(angle - Math.PI / 6),
+      newToX - arrowSize * Math.cos(angle - Math.PI / 6),
+      newToY - arrowSize * Math.sin(angle - Math.PI / 6),
     )
     ctx.lineTo(
-      toX - arrowSize * Math.cos(angle + Math.PI / 6),
-      toY - arrowSize * Math.sin(angle + Math.PI / 6),
+      newToX - arrowSize * Math.cos(angle + Math.PI / 6),
+      newToY - arrowSize * Math.sin(angle + Math.PI / 6),
     )
     ctx.closePath()
     ctx.fill()

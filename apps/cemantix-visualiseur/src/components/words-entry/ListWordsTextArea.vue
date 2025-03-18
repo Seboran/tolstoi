@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
 
 const words = defineModel<string[]>({ required: true })
 
