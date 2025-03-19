@@ -17,7 +17,7 @@
     "d3": "7.9.0",
     "layer-bons-comptes": "workspace:*",
     "leaflet": "1.9.4",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.0",
     "pinia": "3.0.1",
     "vue": "latest",
     "vue-router": "latest"
