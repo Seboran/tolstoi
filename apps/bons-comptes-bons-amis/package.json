@@ -25,7 +25,7 @@
     "@pinia/nuxt": "0.10.1",
     "@vueuse/core": "12.7.0",
     "layer-bons-comptes": "workspace:*",
-    "nuxt": "3.15.4",
+    "nuxt": "3.16.0",
     "nuxt-security": "2.1.5",
     "nuxt-typed-router": "3.7.3",
     "vue": "latest",
