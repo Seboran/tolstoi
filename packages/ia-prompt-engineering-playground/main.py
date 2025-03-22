@@ -20,7 +20,7 @@ def main():
     # Use a single model name for both AI sides
     model_name = "gemma-3-12b-it"
 
-    prompt = "début conversation"  # initial prompt from AI A
+    prompt = "start"  # initial prompt from AI A
     log_message("AI A", prompt)
     while True:
         response_A = call_local_model(
@@ -28,7 +28,7 @@ def main():
         log_message("AI A", response_A)
         print("--------------------")
         response_B = call_local_model(
-            response_A, model_name=model_name, ai_side="B")
+            response_A, model_name="gemma-3-4b-it", ai_side="B")
         log_message("AI B", response_B)
         print("--------------------")
         prompt = response_B  # feed AI B response back to AI A
