@@ -1,0 +1,10 @@
+[project]
+name = "ia-prompt-engineering-playground"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.68.2",
+    "requests>=2.32.3",
+]

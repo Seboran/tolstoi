@@ -24,7 +24,8 @@
       "**/.astro",
       "**/dist",
       "**/matrix.json",
-      "**/venv/**"
+      "**/venv/**",
+      "**/.venv/**"
     ]
   },
   "organizeImports": { "enabled": true },
