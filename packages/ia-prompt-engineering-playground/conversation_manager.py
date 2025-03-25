@@ -1,5 +1,6 @@
 """Module for managing AI conversations."""
 
+import re
 from ai_conversation import call_local_model, ConversationSuccessError, ConversationFailureError
 from config import DEFAULT_MODEL_A, DEFAULT_MODEL_B
 
@@ -12,7 +13,9 @@ class ConversationManager:
         self.logger = logger
         self.model_a = model_a
         self.model_b = model_b
-        self.prompt_history = []
+        self.prompt_history = []  # History for offensive prompts and their results
+        self.defense_prompt_history = []  # History for defensive prompts
+        self.current_conversation = []  # Track messages in current conversation
 
     def run_conversation(self, system_prompt_a, system_prompt_b):
         """
@@ -28,6 +31,9 @@ class ConversationManager:
         prompt = "start"  # initial prompt
         self.logger.log_message("AI A", prompt)
 
+        # Reset the current conversation tracking
+        self.current_conversation = [("AI A", prompt)]
+
         try:
             while True:
                 # AI A generates a response
@@ -39,6 +45,7 @@ class ConversationManager:
                     system_prompt_b=system_prompt_b
                 )
                 self.logger.log_message("AI A", response_a)
+                self.current_conversation.append(("AI A", response_a))
                 print("--------------------")
 
                 # AI B responds
@@ -50,13 +57,18 @@ class ConversationManager:
                     system_prompt_b=system_prompt_b
                 )
                 self.logger.log_message("AI B", response_b)
+                self.current_conversation.append(("AI B", response_b))
                 print("--------------------")
 
                 # Update prompt for next iteration
                 prompt = response_b
 
         except ConversationSuccessError as success:
-            self._add_to_history(system_prompt_a, str(success), "success")
+            # Format conversation transcript for history
+            conversation_transcript = self._format_conversation_transcript()
+
+            self._add_to_history(system_prompt_a, str(
+                success), "success", conversation_transcript)
             self.logger.log_message(
                 "System", f"Conversation ended successfully: {success}")
             self.logger.log_prompt_result(
@@ -65,7 +77,11 @@ class ConversationManager:
             return True, str(success)
 
         except ConversationFailureError as failure:
-            self._add_to_history(system_prompt_a, str(failure), "failure")
+            # Format conversation transcript for history
+            conversation_transcript = self._format_conversation_transcript()
+
+            self._add_to_history(system_prompt_a, str(
+                failure), "failure", conversation_transcript)
             self.logger.log_message(
                 "System", f"Conversation failed: {failure}")
             self.logger.log_prompt_result(
@@ -73,14 +89,51 @@ class ConversationManager:
             print(f"Conversation failed: {failure}")
             return False, str(failure)
 
-    def _add_to_history(self, prompt, result, status):
+    def _format_conversation_transcript(self):
+        """Format the current conversation into a readable transcript."""
+        transcript = ""
+        for role, message in self.current_conversation:
+            # Remove thinking tags from transcript
+            thinking_pattern = re.compile(r'<think>(.*?)</think>', re.DOTALL)
+            cleaned_message = thinking_pattern.sub('', message)
+            transcript += f"{role}: {cleaned_message}\n\n"
+        return transcript
+
+    def _add_to_history(self, prompt, result, status, conversation=None):
         """Add a conversation attempt to history."""
-        self.prompt_history.append({
+        entry = {
             'prompt': prompt,
             'result': result,
             'status': status
-        })
+        }
+
+        # Add conversation transcript if available
+        if conversation:
+            entry['conversation'] = conversation
+
+        self.prompt_history.append(entry)
 
     def get_history(self):
-        """Get the conversation history."""
+        """Get the conversation history for offensive prompts."""
         return self.prompt_history
+
+    def get_defense_history(self):
+        """Get the conversation history for defensive prompts."""
+        return self.defense_prompt_history
+
+    def add_to_defense_history(self, prompt, result, status):
+        """Add a conversation attempt to defensive history."""
+        conversation = None
+        if self.current_conversation:
+            conversation = self._format_conversation_transcript()
+
+        self.defense_prompt_history.append({
+            'prompt': prompt,
+            'result': result,
+            'status': status,
+            'conversation': conversation
+        })
+
+    def get_current_conversation(self):
+        """Get the transcript of the current/most recent conversation."""
+        return self.current_conversation

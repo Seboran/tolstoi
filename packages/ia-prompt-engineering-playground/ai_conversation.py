@@ -1,6 +1,6 @@
-import openai
 from openai import OpenAI
-import sys
+import re
+from config import (PASSWORD)
 
 client = OpenAI(api_key="unused", base_url="http://localhost:1234/v1")
 
@@ -21,6 +21,37 @@ class ConversationFailureError(Exception):
     pass
 
 
+def clear_conversation_histories():
+    """Clear both conversation histories when a conversation ends"""
+    global conversation_history_A, conversation_history_B
+    conversation_history_A = []
+    conversation_history_B = []
+    print("Conversation histories cleared.")
+
+
+def extract_and_remove_thinking(response_text):
+    """
+    Extract thinking content from response and remove it from the text.
+
+    Args:
+        response_text: The response text that may contain <think>...</think> tags
+
+    Returns:
+        tuple: (cleaned_response, thinking_content)
+    """
+    thinking_pattern = re.compile(r'<think>(.*?)</think>', re.DOTALL)
+    thinking_matches = thinking_pattern.findall(response_text)
+
+    # Extract thinking content
+    thinking_content = "\n".join(
+        thinking_matches) if thinking_matches else None
+
+    # Remove thinking from response
+    cleaned_response = thinking_pattern.sub('', response_text)
+
+    return cleaned_response, thinking_content
+
+
 def call_local_model(prompt: str, model_name: str, ai_side: str, system_prompt_a: str, system_prompt_b: str) -> str:
     """
     Calls the local LM Studio server with a conversation history specific to each AI.
@@ -29,10 +60,14 @@ def call_local_model(prompt: str, model_name: str, ai_side: str, system_prompt_a
     system_prompt_b: System prompt for AI side B
     """
 
-    if "2334passwordBONJOUR" in prompt:
+    if f"<password>{PASSWORD}</password>" in prompt:
+        # Clear histories before raising the exception
+        clear_conversation_histories()
         raise ConversationSuccessError(
             "Password detected. Ending conversation.")
     elif "<endconversation />" in prompt:
+        # Clear histories before raising the exception
+        clear_conversation_histories()
         raise ConversationFailureError(
             "Termination command detected. Ending conversation.")
 
@@ -58,6 +93,9 @@ def call_local_model(prompt: str, model_name: str, ai_side: str, system_prompt_a
         stream=True
     )
     response_text = ""
+    thinking_buffer = ""
+    in_thinking_tag = False
+
     for chunk in completion:
         # Safely extract content with error handling
         partial_text = ""
@@ -68,16 +106,46 @@ def call_local_model(prompt: str, model_name: str, ai_side: str, system_prompt_a
             # Handle case where the expected structure isn't present
             continue
 
-        print(partial_text, end="", flush=True)
+        # Process the partial text to handle thinking tags in real-time
+        i = 0
+        while i < len(partial_text):
+            # Check for opening tag
+            if partial_text[i:i+7] == "<think>" and not in_thinking_tag:
+                in_thinking_tag = True
+                print("\n[Thinking] ", end="", flush=True)
+                i += 7
+            # Check for closing tag
+            elif partial_text[i:i+8] == "</think>" and in_thinking_tag:
+                in_thinking_tag = False
+                print("\n[Response] ", end="", flush=True)
+                i += 8
+            # Regular content
+            else:
+                if in_thinking_tag:
+                    thinking_buffer += partial_text[i]
+                    print(partial_text[i], end="", flush=True)
+                else:
+                    print(partial_text[i], end="", flush=True)
+                i += 1
+
         response_text += partial_text
+
     print()
+
+    # Ensure we properly extracted any thinking content from the full response
+    cleaned_response, thinking_content = extract_and_remove_thinking(
+        response_text)
 
     # Ensure the conversation alternates correctly for the assistant's response
     # If the last message was from user, we can add assistant message
     if history and history[-1]["role"] == "user":
-        history.append({"role": "assistant", "content": response_text})
+        history.append({"role": "assistant", "content": cleaned_response})
     # If the last message was from assistant, we need to replace it
     elif history and history[-1]["role"] == "assistant":
-        history[-1] = {"role": "assistant", "content": response_text}
+        history[-1] = {"role": "assistant", "content": cleaned_response}
 
-    return response_text
+    # Log thinking content if available
+    if thinking_content:
+        print(f"\n[AI {ai_side} Thinking]\n{thinking_content}\n")
+
+    return cleaned_response
