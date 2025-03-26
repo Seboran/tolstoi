@@ -11,7 +11,7 @@ export function GetStartedSection() {
           className="mt-6 text-blue-600 hover:text-blue-700 font-medium"
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/Seboran/monorepo/blob/main/apps/freelance-simulateur/src/app/utils/calculator.ts"
+          href="https://github.com/seboran/tolstoi/blob/main/apps/freelance-simulateur/src/app/utils/calculator.ts"
         >
           le code source du calcul sur GitHub (lien externe)
         </a>

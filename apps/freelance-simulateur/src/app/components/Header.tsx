@@ -8,7 +8,7 @@ export function Header() {
       </div>
       <div className="flex gap-4">
         <a
-          href="https://github.com/Seboran/monorepo/tree/main/apps/freelance-simulateur"
+          href="https://github.com/seboran/tolstoi/tree/main/apps/freelance-simulateur"
           target="_blank"
           rel="noopener noreferrer"
         >

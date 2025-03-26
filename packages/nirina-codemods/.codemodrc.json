@@ -12,6 +12,6 @@
   "arguments": [],
   "meta": {
     "tags": ["vue", "3", "migration"],
-    "git": "https://github.com/Seboran/monorepo/tree/main/packages/nirina-codemods"
+    "git": "https://github.com/seboran/tolstoi/tree/main/packages/nirina-codemods"
   }
 }

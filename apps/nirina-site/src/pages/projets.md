@@ -37,6 +37,6 @@ Stack technique : *vuejs, webworkers, crypto*
 
 ## Source ?
 
-Tous les projets sont regroupés dans un monorepo : <https://github.com/Seboran/monorepo>
+Tous les projets sont regroupés dans un monorepo : <https://github.com/seboran/tolstoi>
 
 Stack technique du monorepo : *Vercel, Netlify, turborepo, eslint, pnpm workspaces, renovate, devcontainers, gitpod (WIP), GitHub actions*
