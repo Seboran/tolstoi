@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.5",
   "scripts": {
     "format": "biome check --write",
     "format:check": "biome check",
