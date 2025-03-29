@@ -1,0 +1,30 @@
+{
+  "rediriger_vers_presentation_personnelle": {
+    "description": "Rediriger vers la page de présentation personnelle",
+    "href": "/a-propos"
+  },
+  "rediriger_vers_manifeste_ia": {
+    "description": "Rediriger vers le manifeste de l'IA de Nirina Rabeson",
+    "href": "/ai"
+  },
+  "rediriger_vers_dernier_article": {
+    "description": "Rediriger vers le dernier article de blog de Nirina Rabeson",
+    "href": "/404"
+  },
+  "rediriger_vers_tous_les_articles": {
+    "description": "Rediriger vers tous les articles de blog de Nirina Rabeson",
+    "href": "/blog"
+  },
+  "rediriger_vers_contact": {
+    "description": "Rediriger vers la page de contact de Nirina Rabeson",
+    "href": "/contact"
+  },
+  "rediriger_vers_presentations": {
+    "description": "Rediriger vers les présentations de Nirina Rabeson",
+    "href": "/presentations"
+  },
+  "rediriger_vers_projets": {
+    "description": "Rediriger vers les projets de Nirina Rabeson",
+    "href": "/projets"
+  }
+}
