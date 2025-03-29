@@ -1,6 +1,7 @@
 import os
 
 from openai import OpenAI
+from tenacity import retry, stop_after_attempt, wait_exponential
 
 
 def initialize_openai_client(
@@ -34,10 +35,15 @@ def prepare_tools(list_of_functions: dict) -> list:
     ]
 
 
-def generate_response(client: OpenAI, model: str, messages: list, tools: list) -> dict:
-    response = client.chat.completions.create(
+@retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5))
+def call(client: OpenAI, model: str, messages: list, tools: list):
+    return client.chat.completions.create(
         model=model, messages=messages, tools=tools, tool_choice="any"
     )
+
+
+def generate_response(client: OpenAI, model: str, messages: list, tools: list) -> dict:
+    response = call(client, model, messages, tools)
     tool_call = response.choices[0].message.tool_calls[0]
     messages.append(response.choices[0].message)
     messages.append({"role": "tool", "content": "", "tool_call_id": tool_call.id})

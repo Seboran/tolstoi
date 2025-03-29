@@ -22,9 +22,9 @@ def main():
 
     messages = [
         {"role": "system", "content": chatbot_instructions},
-        {"role": "user", "content": "Peux-tu parler de toi ?"},
+        {"role": "user", "content": "De quels sujets parles-tu ?"},
     ]
-
+    messages
     return generate_response(client, model, messages, tools)
 
 
