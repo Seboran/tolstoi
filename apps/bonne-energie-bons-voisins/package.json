@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/ui": "2.21.0",
+    "@nuxt/ui": "2.21.1",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@pinia/nuxt": "0.10.1",
     "@vue-leaflet/vue-leaflet": "0.10.1",
