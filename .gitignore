@@ -54,4 +54,7 @@ vite.config.js.timestamp-*
 dist
 .next
 .astro
+
+# Python
 venv/
+.venv/

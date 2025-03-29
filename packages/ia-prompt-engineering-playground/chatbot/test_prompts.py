@@ -15,7 +15,8 @@ client = initialize_openai_client(api_key=API_KEY)
 
 model = "mistral-small-latest"
 
-with open("utils/liste_routes.json", "r") as file:
+path = os.path.join(os.path.dirname(__file__), "utils", "liste_routes.json")
+with open(path, "r") as file:
     list_of_functions = json.load(file)
 
 tools = prepare_tools(list_of_functions)

@@ -1,3 +1,5 @@
+import os
+
 from openai import OpenAI
 
 
@@ -8,7 +10,9 @@ def initialize_openai_client(
 
 
 def get_chatbot_instructions() -> str:
-    with open("./utils/system_prompt.txt", "r") as file:
+    path = os.path.join(os.path.dirname(__file__), "liste_routes.json")
+
+    with open(path, "r") as file:
         return file.read()
 
 
