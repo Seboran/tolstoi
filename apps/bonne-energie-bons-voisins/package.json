@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@nuxt/ui": "2.21.1",
-    "@nuxtjs/tailwindcss": "6.13.1",
+    "@nuxtjs/tailwindcss": "6.13.2",
     "@pinia/nuxt": "0.10.1",
     "@vue-leaflet/vue-leaflet": "0.10.1",
     "d3": "7.9.0",
