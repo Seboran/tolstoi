@@ -1,10 +1,6 @@
 ---
-import { actions } from 'astro:actions'
-
-const result = Astro.getActionResult(actions.subscribeNewsletter)
-
-const afficherInscriptionReussie = result && !result.error
-const erreurDurantInscription = result?.error
+const afficherInscriptionReussie = false
+const erreurDurantInscription = undefined
 const afficherBientotDisponible = false
 
 const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/nirina'
