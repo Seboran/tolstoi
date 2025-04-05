@@ -1,0 +1,27 @@
+{
+  "bons-comptes-bons-amis.md": {
+    "title": "Bons comptes, bons amis",
+    "url": "https://bons-comptes-bons-amis.vercel.app",
+    "screenshotPath": "/images/project-screenshots/bons-comptes-bons-amis.png"
+  },
+  "ethereum-wallet-generator.md": {
+    "title": "Générateur de clefs privées vanity pour Ethereum",
+    "url": "https://ethereum-wallet-generator.netlify.app/",
+    "screenshotPath": "/images/project-screenshots/générateur-de-clefs-privées-vanity-pour-ethereum.png"
+  },
+  "generateur-musique.md": {
+    "title": "Générateur de musique",
+    "url": "https://generateur-musique.netlify.app",
+    "screenshotPath": "/images/project-screenshots/générateur-de-musique.png"
+  },
+  "generateur-sudoku.md": {
+    "title": "Générateur de sudoku",
+    "url": "https://generateur-sudoku.netlify.app",
+    "screenshotPath": "/images/project-screenshots/générateur-de-sudoku.png"
+  },
+  "jeu-du-debat.md": {
+    "title": "Jeu du débat",
+    "url": "https://jeu-du-debat.netlify.app/",
+    "screenshotPath": "/images/project-screenshots/jeu-du-débat.png"
+  }
+}
