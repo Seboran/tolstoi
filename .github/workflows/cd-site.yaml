@@ -34,9 +34,6 @@ jobs:
           path: apps/nirina-site/node_modules/.astro
           key: ${{ runner.os }}-astro-
 
-      - name: Install turbo CLI
-        run: pnpm install --global turbo
-
       - run: pnpm install --ignore-scripts
 
       - name: set deploy key to pull content
@@ -51,5 +48,5 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_BLOG_SITE_ID }}
           COMMIT_MESSAE: ${{ github.event.head_commit.message }}
         run: |
-          pnpm install -g netlify-cli@17.37.2
+          pnpm install -g netlify-cli@17.37.2 turbo
           netlify deploy --filter nirina-site --build --prod --message "$COMMIT_MESSAGE"
