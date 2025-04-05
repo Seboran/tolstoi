@@ -1,50 +1,10 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
-
 import ProjetCard from '../projets/ProjetCard.astro'
 
-const projects = [
-  {
-    title: 'Bons comptes, bons amis',
-    description:
-      "C'est une appli de remboursement entre amis qui a pour seul but de remplacer l'application tricount.",
-    screenshot: '/images/projects/bons-comptes-screenshot.png', // You'll need to add this image
-    url: 'https://bons-comptes-bons-amis.vercel.app',
-    technologies: ['Vuejs', 'Python Flask', 'scipy', 'lambdas', 'Vercel'],
-  },
-  {
-    title: 'Jeu du débat',
-    description:
-      "Le but de ce jeu, c'est que au moins 3 personnes discutent autour d'un sujet... Mais une des personnes dans le groupe n'est pas au courant du sujet ! Le but est de deviner qui ne sait pas de quoi on parle, ou de quoi tout le monde parle.",
-    screenshot: '/images/projects/jeu-du-debat-screenshot.png', // You'll need to add this image
-    url: 'https://jeu-du-debat.netlify.app/',
-    technologies: ['Vuejs', 'TypeScript', 'Vite', 'Vitest'],
-  },
-  {
-    title: 'Générateur de sudoku et de musique',
-    description:
-      "Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs.",
-    screenshot: '/images/projects/generateur-screenshot.png', // You'll need to add this image
-    url: 'https://generateur-sudoku.netlify.app',
-    technologies: ['Nuxt', 'Vuejs', 'Vite', 'vitest workspace'],
-  },
-  {
-    title: 'Générateur de musique',
-    description:
-      "Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs.",
-    screenshot: '/images/projects/generateur-screenshot.png', // You'll need to add this image
-    url: 'https://generateur-musique.netlify.app',
-    technologies: ['Nuxt', 'Vuejs', 'Vite', 'vitest workspace'],
-  },
-  {
-    title: 'Générateur de clefs privées vanity pour Ethereum',
-    description:
-      'Ce petit projet présente comment on pourrait tenter de "copier" une clef Ethereum en en créant une suffisamment ressemblante. C\'est un peu janky, mais avec de la patience on peut obtenir un peu ce qu\'on veut comme nom de clef.',
-    screenshot: '/images/projects/ethereum-wallet-screenshot.png', // You'll need to add this image
-    url: 'https://ethereum-wallet-generator.netlify.app/',
-    technologies: ['vuejs', 'webworkers', 'crypto'],
-  },
-]
+// Fetch all projects from the content collection
+const projects = await getCollection('projets')
 ---
 
 <Layout title="Projets de Nirina Rabeson">
@@ -57,11 +17,11 @@ const projects = [
     {
       projects.map((project) => (
         <ProjetCard
-          title={project.title}
-          description={project.description}
-          screenshot={project.screenshot}
-          url={project.url}
-          technologies={project.technologies}
+          title={project.data.title}
+          description={project.data.description}
+          screenshot={project.data.screenshot}
+          url={project.data.url}
+          technologies={project.data.technologies}
         />
       ))
     }
