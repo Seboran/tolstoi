@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
+import DesignBigTitle from '../design/DesignBigTitle.astro'
 import ProjetCard from '../projets/ProjetCard.astro'
 
 // Fetch all projects from the content collection
@@ -8,8 +9,8 @@ const projects = await getCollection('projets')
 ---
 
 <Layout title="Projets de Nirina Rabeson">
-  <h1>Mes projets</h1>
-  <p>
+  <DesignBigTitle>Mes projets</DesignBigTitle>
+  <p class="text-dark dark:text-white">
     Peut-être la partie la plus <i>portfolio</i> de ce site est ici. Vous pourrez
     voir les différents projets et produits que je maintiens à gauche et à droite.
   </p>
@@ -26,7 +27,7 @@ const projects = await getCollection('projets')
       ))
     }
   </div>
-  <div class="mt-12 p-6 rounded-lg">
+  <div class="mt-12 p-6 rounded-lg text-dark dark:text-white">
     <h3>Source ?</h3>
     <p>
       Tous les projets sont regroupés dans un monorepo :
