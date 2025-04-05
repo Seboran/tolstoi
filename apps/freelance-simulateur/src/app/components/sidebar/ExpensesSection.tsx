@@ -32,7 +32,7 @@ export function ExpensesSection({
             </div>
           </div>
         </div>
-        <p className="text-gray-500 text-sm mt-8">
+        <p className="text-dark text-sm mt-8">
           Il s'agit des frais nécessaires pour faire fonctionner votre activité, par exemple
           matériel informatique, frais de transport, essence...
         </p>

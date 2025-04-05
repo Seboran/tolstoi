@@ -62,7 +62,7 @@ export function Sidebar({
           <h2 className="sr-only text-2xl font-bold text-gray-900">Paramètres</h2>
           <button
             onClick={onClose}
-            className="p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100"
+            className="p-2 text-dark hover:text-gray-700 rounded-lg hover:bg-gray-100"
           >
             <X className="w-6 h-6" />
           </button>

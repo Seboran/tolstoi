@@ -27,7 +27,7 @@ export function NonBillableSection({
           </div>
         </div>
       </div>
-      <p className="text-gray-500 text-sm mt-8">
+      <p className="text-dark text-sm mt-8">
         Il s'agit du temps passé entre les missions pour prospecter, gérer la relation client ou
         encore gérer la partie administrative.
       </p>

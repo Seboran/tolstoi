@@ -21,7 +21,7 @@ export function ContributionsSection({
             <button
               onClick={() => onAcreEligibleChange(true)}
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                isAcreEligible ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
+                isAcreEligible ? 'bg-blue-600 text-white' : 'bg-gray-100 text-dark'
               }`}
             >
               Oui
@@ -29,13 +29,13 @@ export function ContributionsSection({
             <button
               onClick={() => onAcreEligibleChange(false)}
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-                !isAcreEligible ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
+                !isAcreEligible ? 'bg-blue-600 text-white' : 'bg-gray-100 text-dark'
               }`}
             >
               Non
             </button>
           </div>
-          <p className="text-gray-500 text-sm mt-4">
+          <p className="text-dark text-sm mt-4">
             Il s'agit d'un dispositif de l'État permettant de payer moins de cotisation en fonction
             de certaines conditions, par exemple si vous avez moins de 25 ans ou vous reprenez une
             activité.

@@ -33,7 +33,7 @@ export function WorkingDaysSection({ selectedDays, onDayToggle }: WorkingDaysSec
               key={day.key}
               onClick={() => onDayToggle(index)}
               className={`w-12 h-12 rounded-lg font-medium flex items-center justify-center transition-colors ${
-                selectedDays[index] ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
+                selectedDays[index] ? 'bg-blue-600 text-white' : 'bg-gray-100 text-dark'
               }`}
             >
               {day.label}
