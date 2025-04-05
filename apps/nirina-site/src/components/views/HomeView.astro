@@ -25,9 +25,9 @@ export const prerender = false
 
     <div class="m-auto max-w-2xl">
       <h2
-        class="text-lg text-center md:text-2xl font-sans leading-3 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
+        class="text-lg text-center md:text-2xl font-sans leading-5 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
       >
-        Comment puis-je vous aider aujourd'hui ?
+        Comment puis-je vous aider aujourd'hui&nbsp;?
       </h2>
       <ToggleComponents toggle={ENABLE_CHAT ? 'a' : 'b'}>
         <ChatInterfaceV2Vue slot="a" client:load lienDernierArticle={`/posts/${lastPost}`} />
