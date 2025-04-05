@@ -13,8 +13,6 @@ import ToggleComponents from '../utils/ToggleComponents.astro'
 const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 
 const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
-
-export const prerender = false
 ---
 
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
