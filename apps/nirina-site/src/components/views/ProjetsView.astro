@@ -1,0 +1,84 @@
+---
+import Layout from '../../layouts/Layout.astro'
+
+import ProjetCard from '../projets/ProjetCard.astro'
+
+const projects = [
+  {
+    title: 'Bons comptes, bons amis',
+    description:
+      "C'est une appli de remboursement entre amis qui a pour seul but de remplacer l'application tricount.",
+    screenshot: '/images/projects/bons-comptes-screenshot.png', // You'll need to add this image
+    url: 'https://bons-comptes-bons-amis.vercel.app',
+    technologies: ['Vuejs', 'Python Flask', 'scipy', 'lambdas', 'Vercel'],
+  },
+  {
+    title: 'Jeu du débat',
+    description:
+      "Le but de ce jeu, c'est que au moins 3 personnes discutent autour d'un sujet... Mais une des personnes dans le groupe n'est pas au courant du sujet ! Le but est de deviner qui ne sait pas de quoi on parle, ou de quoi tout le monde parle.",
+    screenshot: '/images/projects/jeu-du-debat-screenshot.png', // You'll need to add this image
+    url: 'https://jeu-du-debat.netlify.app/',
+    technologies: ['Vuejs', 'TypeScript', 'Vite', 'Vitest'],
+  },
+  {
+    title: 'Générateur de sudoku et de musique',
+    description:
+      "Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs.",
+    screenshot: '/images/projects/generateur-screenshot.png', // You'll need to add this image
+    url: 'https://generateur-sudoku.netlify.app',
+    technologies: ['Nuxt', 'Vuejs', 'Vite', 'vitest workspace'],
+  },
+  {
+    title: 'Générateur de musique',
+    description:
+      "Dans le cadre de ma présentation sur la génération de contenu procédurale dans la musique, j'ai créé deux sites webs démonstrateurs.",
+    screenshot: '/images/projects/generateur-screenshot.png', // You'll need to add this image
+    url: 'https://generateur-musique.netlify.app',
+    technologies: ['Nuxt', 'Vuejs', 'Vite', 'vitest workspace'],
+  },
+  {
+    title: 'Générateur de clefs privées vanity pour Ethereum',
+    description:
+      'Ce petit projet présente comment on pourrait tenter de "copier" une clef Ethereum en en créant une suffisamment ressemblante. C\'est un peu janky, mais avec de la patience on peut obtenir un peu ce qu\'on veut comme nom de clef.',
+    screenshot: '/images/projects/ethereum-wallet-screenshot.png', // You'll need to add this image
+    url: 'https://ethereum-wallet-generator.netlify.app/',
+    technologies: ['vuejs', 'webworkers', 'crypto'],
+  },
+]
+---
+
+<Layout title="Projets de Nirina Rabeson">
+  <h1>Mes projets</h1>
+  <p>
+    Peut-être la partie la plus <i>portfolio</i> de ce site est ici. Vous pourrez
+    voir les différents projets et produits que je maintiens à gauche et à droite.
+  </p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+    {
+      projects.map((project) => (
+        <ProjetCard
+          title={project.title}
+          description={project.description}
+          screenshot={project.screenshot}
+          url={project.url}
+          technologies={project.technologies}
+        />
+      ))
+    }
+  </div>
+  <div class="mt-12 p-6 rounded-lg">
+    <h3>Source ?</h3>
+    <p>
+      Tous les projets sont regroupés dans un monorepo :
+      <a href="https://github.com/seboran/tolstoi" target="_blank"
+        >https://github.com/seboran/tolstoi</a
+      >
+    </p>
+    <p>
+      <em
+        >Stack technique du monorepo : Vercel, Netlify, turborepo, eslint, pnpm
+        workspaces, renovate, devcontainers, gitpod (WIP), GitHub actions</em
+      >
+    </p>
+  </div>
+</Layout>

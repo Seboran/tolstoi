@@ -1,0 +1,107 @@
+---
+import DesignTitle from '../design/DesignTitle.astro'
+export interface Props {
+  title: string
+  description: string
+  screenshot: string
+  url: string
+  technologies?: string[]
+}
+
+const { title, description, screenshot, url, technologies = [] } = Astro.props
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer" class="project-card perspective-on-hover">
+  <div class="screenshot">
+    <img src={screenshot} alt={`Screenshot of ${title}`} />
+  </div>
+  <div class="flex flex-col p-4 content-between">
+      <div>
+    <DesignTitle>{title}</DesignTitle>
+    <p>{description}</p>
+      </div>
+    {technologies.length > 0 && (
+      <div class="tech-stack">
+        {technologies.map(tech => <span class="tech-pill">{tech}</span>)}
+      </div>
+    )}
+    <!-- <div class="links">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="visit-link">Visiter</a>
+      {secondaryUrl && (
+        <a href={secondaryUrl} target="_blank" rel="noopener noreferrer" class="visit-link secondary">
+          Version alternative
+        </a>
+      )}
+    </div> -->
+  </div>
+</a>
+
+<style>
+  .project-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .screenshot {
+    overflow: hidden;
+  }
+
+  .screenshot img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .tech-pill {
+    background: #f1f5f9;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+
+  .links {
+    margin-top: auto;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .visit-link {
+    display: inline-block;
+    background: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+
+  .visit-link:hover {
+    background: #2563eb;
+  }
+
+  .secondary {
+    background: #64748b;
+  }
+
+  .secondary:hover {
+    background: #475569;
+  }
+</style>
