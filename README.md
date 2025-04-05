@@ -1,4 +1,6 @@
-# Monorepo des projets de Nirina Rabeson
+# Tolstoï
+
+Pourquoi ne pas faire un seul repo contenant tous mes projets ?
 
 [![cd-bonne-energie-bons-voisins](https://github.com/seboran/tolstoi/actions/workflows/cd-bonne-energie.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-bonne-energie.yaml)
 [![cd-bons-comptes-bons-amis](https://github.com/seboran/tolstoi/actions/workflows/cd-bons-comptes-bons-amis.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-bons-comptes-bons-amis.yaml)
