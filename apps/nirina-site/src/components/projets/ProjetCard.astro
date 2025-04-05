@@ -11,12 +11,12 @@ export interface Props {
 const { title, description, screenshot, url, technologies = [] } = Astro.props
 ---
 
-<a href={url} target="_blank" rel="noopener noreferrer" class="project-card perspective-on-hover">
+<a href={url} target="_blank" rel="noopener noreferrer" class="project-card perspective-on-hover bg-white dark:bg-gray-800">
   <div class="screenshot">
     <img src={screenshot} alt={`Screenshot of ${title}`} />
   </div>
   <div class="flex flex-col p-4 content-between">
-      <div>
+      <div class="text-dark dark:text-white">
     <DesignTitle>{title}</DesignTitle>
     <p>{description}</p>
       </div>
@@ -42,7 +42,6 @@ const { title, description, screenshot, url, technologies = [] } = Astro.props
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    background: white;
     height: 100%;
     display: flex;
     flex-direction: column;
