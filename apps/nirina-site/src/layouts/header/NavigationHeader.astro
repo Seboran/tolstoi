@@ -10,7 +10,7 @@ interface Props {
 const { animate } = Astro.props
 ---
 
-<nav class:list={['flex', 'justify-between', 'items-center', 'pb-10', animate && 'animate']}>
+<nav class:list={['flex', 'justify-between', 'items-center', 'pb-0','sm:pb-10', animate && 'animate']}>
   <a class="perspective-on-hover text-xl" href="/" aria-label="Site de Nirina Rabeson">
     <slot />
   </a>
