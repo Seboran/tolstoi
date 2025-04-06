@@ -5,6 +5,33 @@ import { systemPrompt } from './system_prompt.ts'
 
 const MODEL = 'mistral-small-latest'
 
+// Add helper functions for retry logic
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+async function callWithRetry<T>(fn: () => Promise<T>, retries = 3, delayMs = 500): Promise<T> {
+  let attempt = 0
+  while (attempt < retries) {
+    try {
+      return await fn()
+    } catch (error: any) {
+      if (
+        error.response?.status === 429 ||
+        (typeof error.status === 'number' && error.status === 429)
+      ) {
+        attempt++
+        if (attempt < retries) {
+          await sleep(delayMs * attempt)
+          continue
+        }
+      }
+      throw error
+    }
+  }
+  return await fn() // fallback
+}
+
 export function useChatFunction(
   variables: Partial<{
     apiKey: string
@@ -77,13 +104,15 @@ export function useChatFunction(
     stream: boolean,
   ): Promise<Response> {
     try {
-      const response = await client.chat.completions.create({
-        model: MODEL,
-        messages: [{ role: 'system', content: systemPrompt }, ...messages],
-        tools,
-        tool_choice: 'required',
-        stream,
-      })
+      const response = await callWithRetry(() =>
+        client.chat.completions.create({
+          model: MODEL,
+          messages: [{ role: 'system', content: systemPrompt }, ...messages],
+          tools,
+          tool_choice: 'required',
+          stream,
+        }),
+      )
 
       if (stream) {
         const streamBody = new ReadableStream<Uint8Array>({
@@ -126,11 +155,13 @@ export function useChatFunction(
    * @returns une réponse contenant un ReadableStream
    */
   async function fetchMistralApi(messages: ListeMessagesMistral): Promise<Response> {
-    const completionStream = await client.chat.completions.create({
-      model: MODEL,
-      messages: [{ role: 'system', content: systemPrompt }, ...messages],
-      stream: true,
-    })
+    const completionStream = await callWithRetry(() =>
+      client.chat.completions.create({
+        model: MODEL,
+        messages: [{ role: 'system', content: systemPrompt }, ...messages],
+        stream: true,
+      }),
+    )
 
     const streamBody = new ReadableStream<Uint8Array>({
       async start(controller) {

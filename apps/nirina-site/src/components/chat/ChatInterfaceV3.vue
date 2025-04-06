@@ -60,25 +60,18 @@ async function fetchWithFunctionCalling(messages: ListeMessagesMistral) {
   const toolCalls = initialResult.choices?.[0]?.message?.tool_calls || []
 
   // Step 2: Process function calls to get hrefs
-  const functionCalls = []
-  const hrefs = []
-
   if (toolCalls && toolCalls.length > 0) {
-    for (const toolCall of toolCalls) {
-      const functionName = toolCall.function?.name
-      if (functionName) {
-        functionCalls.push(functionName)
-        if (functionName === 'rediriger_vers_dernier_article') {
-          hrefs.push(lienDernierArticle)
-        } else if (listeRoutes[functionName]) {
-          hrefs.push((listeRoutes[functionName] as any).href)
-        }
-      }
-    }
+    // Compute hrefs for all tool calls
+    const hrefs = toolCalls
+      .map((toolCall) => {
+        const functionName = toolCall.function?.name
+        return functionName === 'rediriger_vers_dernier_article'
+          ? lienDernierArticle
+          : (listeRoutes[functionName] as any)?.href || ''
+      })
+      .filter((link) => link !== '')
 
-    // Step 3: Skip actual code execution since we just need the hrefs
-
-    // Step 4: Second API call with function results
+    // Step 3 and 4: Second API call with function results
     const updatedMessages = [
       ...messages,
       {
@@ -109,6 +102,8 @@ async function fetchWithFunctionCalling(messages: ListeMessagesMistral) {
         stream: true,
       }),
     })
+
+    console.log('hrefs', hrefs)
 
     return {
       stream: finalResponse.body,
@@ -199,7 +194,7 @@ async function handleFormSubmit(inputMessage: string) {
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">
-          <strong>Réponse :</strong> {{ mistralAnswer }}
+          {{ mistralAnswer }}
         </p>
       </div>
 
@@ -217,7 +212,7 @@ async function handleFormSubmit(inputMessage: string) {
       </a>
 
       <!-- Show multiple suggested links if available -->
-      <div class="mt-4">
+      <div  v-if="suggestedLinks.length > 1" class="mt-4">
         <p class="font-medium mb-2">Liens suggérés :</p>
         <div class="flex flex-wrap gap-2">
           <a 
