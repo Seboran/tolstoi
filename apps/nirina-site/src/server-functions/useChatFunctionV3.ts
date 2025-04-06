@@ -1,36 +1,10 @@
 import OpenAI from 'openai'
 import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
+import { callWithRetry } from '../utils/retryUtils.ts'
 import { systemPrompt } from './system_prompt.ts'
 
 const MODEL = 'mistral-small-latest'
-
-// Add helper functions for retry logic
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
-
-async function callWithRetry<T>(fn: () => Promise<T>, retries = 3, delayMs = 500): Promise<T> {
-  let attempt = 0
-  while (attempt < retries) {
-    try {
-      return await fn()
-    } catch (error: any) {
-      if (
-        error.response?.status === 429 ||
-        (typeof error.status === 'number' && error.status === 429)
-      ) {
-        attempt++
-        if (attempt < retries) {
-          await sleep(delayMs * attempt)
-          continue
-        }
-      }
-      throw error
-    }
-  }
-  return await fn() // fallback
-}
 
 export function useChatFunction(
   variables: Partial<{
