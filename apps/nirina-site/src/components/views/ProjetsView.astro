@@ -15,17 +15,7 @@ const projects = await getCollection('projets')
     voir les différents projets et produits que je maintiens à gauche et à droite.
   </p>
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
-    {
-      projects.map((project) => (
-        <ProjetCard
-          title={project.data.title}
-          description={project.data.description}
-          screenshot={project.data.screenshot}
-          url={project.data.url}
-          technologies={project.data.technologies}
-        />
-      ))
-    }
+    {projects.map(({ id }) => <ProjetCard projectId={id} />)}
   </div>
   <div class="mt-12 p-6 rounded-lg text-dark dark:text-white">
     <h3>Source ?</h3>

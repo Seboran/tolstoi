@@ -1,30 +1,47 @@
 ---
+import { getEntry, render } from 'astro:content'
 import DesignTitle from '../design/DesignTitle.astro'
 export interface Props {
-  title: string
-  description: string
-  screenshot: string
-  url: string
-  technologies?: string[]
+  projectId: string
 }
 
-const { title, description, screenshot, url, technologies = [] } = Astro.props
+const { projectId } = Astro.props
+
+const entry = await getEntry('projets', projectId)
+
+if (!entry) {
+  // Handle Error, for example:
+  throw new Error(`Could not find project ${projectId}`)
+}
+
+const { title, description, url, technologies = [] } = entry.data
+
+const { Content } = await render(entry)
 ---
 
-<a href={url} target="_blank" rel="noopener noreferrer" class="project-card perspective-on-hover bg-white dark:bg-gray-800">
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="project-card perspective-on-hover bg-white dark:bg-gray-800"
+>
   <div class="screenshot">
-    <img src={screenshot} alt={`Screenshot of ${title}`} />
+    <Content />
   </div>
   <div class="flex flex-col p-4 content-between">
-      <div class="text-dark dark:text-white">
-    <DesignTitle>{title}</DesignTitle>
-    <p>{description}</p>
-      </div>
-    {technologies.length > 0 && (
-      <div class="tech-stack">
-        {technologies.map(tech => <span class="tech-pill">{tech}</span>)}
-      </div>
-    )}
+    <div class="text-dark dark:text-white">
+      <DesignTitle>{title}</DesignTitle>
+      <p>{description}</p>
+    </div>
+    {
+      technologies.length > 0 && (
+        <div class="tech-stack">
+          {technologies.map((tech) => (
+            <span class="tech-pill">{tech}</span>
+          ))}
+        </div>
+      )
+    }
     <!-- <div class="links">
       <a href={url} target="_blank" rel="noopener noreferrer" class="visit-link">Visiter</a>
       {secondaryUrl && (
@@ -40,7 +57,7 @@ const { title, description, screenshot, url, technologies = [] } = Astro.props
   .project-card {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     height: 100%;
     display: flex;
@@ -58,7 +75,6 @@ const { title, description, screenshot, url, technologies = [] } = Astro.props
     display: block;
     transition: transform 0.5s ease;
   }
-
 
   .tech-stack {
     display: flex;
