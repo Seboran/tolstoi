@@ -6,7 +6,7 @@ import {
   MISTRAL_API_ENDPOINT_KEY,
   MISTRAL_API_KEY,
 } from '../../../utils/environment-variables'
-import { useChatFunction } from '../../server-functions/useChatFunction'
+import { useChatFunction } from '../../server-functions/useChatFunctionV3'
 const { post } = useChatFunction({
   apiKey: getSecret(MISTRAL_API_KEY),
   MISTRAL_AGENT_ID: getSecret(MISTRAL_AGENT_ID_KEY),
