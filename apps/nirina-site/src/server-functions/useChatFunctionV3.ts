@@ -4,7 +4,7 @@ import type { ListeMessagesMistral } from '../../utils/types.ts'
 import { callWithRetry } from '../utils/retryUtils.ts'
 import { systemPrompt } from './system_prompt.ts'
 
-const MODEL = 'mistral-small-latest'
+const MODEL = 'mistral-small-2503'
 
 export function useChatFunction(
   variables: Partial<{

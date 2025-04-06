@@ -61,7 +61,7 @@ export function useChatFunction(
    */
   async function fetchMistralApi(messages: ListeMessagesMistral): Promise<Response> {
     const completionStream = await client.chat.completions.create({
-      model: 'mistral-small-latest', // adjust model if needed
+      model: 'mistral-small-2503', // adjust model if needed
       messages: [{ role: 'system', content: systemPrompt }, ...messages],
       stream: true,
     })

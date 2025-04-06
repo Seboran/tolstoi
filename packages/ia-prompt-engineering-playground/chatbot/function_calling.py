@@ -12,7 +12,7 @@ def main():
     API_KEY = os.getenv("API_KEY")
     client = initialize_openai_client(api_key=API_KEY)
 
-    model = "mistral-small-latest"
+    model = "mistral-small-2503"
 
     with open("utils/liste_routes.json", "r") as file:
         list_of_functions = json.load(file)
@@ -22,7 +22,10 @@ def main():
 
     messages = [
         {"role": "system", "content": chatbot_instructions},
-        {"role": "user", "content": "De quels sujets parles-tu ?"},
+        {
+            "role": "user",
+            "content": "il paraît que Nirina a un chat très mignon, peux-tu m'en parler ?",
+        },
     ]
     return generate_response(client, model, messages, tools)
 

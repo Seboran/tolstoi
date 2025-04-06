@@ -4,10 +4,8 @@ from openai import OpenAI
 from tenacity import retry, stop_after_attempt, wait_exponential
 
 
-def initialize_openai_client(
-    api_key: str, base_url: str = "https://api.mistral.ai/v1/"
-) -> OpenAI:
-    return OpenAI(api_key=api_key, base_url=base_url)
+def initialize_openai_client(api_key: str) -> OpenAI:
+    return OpenAI(api_key=api_key)
 
 
 def get_chatbot_instructions() -> str:
@@ -35,10 +33,9 @@ def prepare_tools(list_of_functions: dict) -> list:
     ]
 
 
-@retry(wait=wait_exponential(multiplier=1, min=4, max=20), stop=stop_after_attempt(5))
 def call(client: OpenAI, model: str, messages: list, tools: list):
     return client.chat.completions.create(
-        model=model, messages=messages, tools=tools, tool_choice="any"
+        model=model, messages=messages, tools=tools, tool_choice="required"
     )
 
 

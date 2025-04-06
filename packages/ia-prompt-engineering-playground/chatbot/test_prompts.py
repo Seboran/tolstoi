@@ -11,7 +11,7 @@ from utils.generate_response import (
 API_KEY = os.getenv("API_KEY")
 client = initialize_openai_client(api_key=API_KEY)
 
-model = "mistral-small-latest"
+model = "mistral-small-2503"
 
 path = os.path.join(os.path.dirname(__file__), "utils", "liste_routes.json")
 with open(path, "r") as file:
