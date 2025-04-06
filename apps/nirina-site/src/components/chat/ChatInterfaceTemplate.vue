@@ -6,6 +6,10 @@ const pauseEntreMots = 120
 
 const message = ref('')
 
+const props = withDefaults(defineProps<{ loading?: boolean }>(), {
+  loading: false,
+})
+
 async function waitForDelay(delayMs: number) {
   await new Promise((resolve) => setTimeout(resolve, delayMs))
 }
@@ -46,6 +50,9 @@ async function handleFormSubmit() {
 }
 
 function submitOnEnter(key: KeyboardEvent) {
+  if (props.loading) {
+    return
+  }
   if (key.key === 'Enter' && !key.shiftKey) {
     key.stopPropagation()
     key.preventDefault()
@@ -70,7 +77,9 @@ function submitOnEnter(key: KeyboardEvent) {
           @keypress="submitOnEnter"
         ></textarea>
         <button
+          :disabled="loading"
           class="h-8 w-8 rounded-xs bg-send-message p-2 hover:bg-send-message-hover"
+          :class="{ 'cursor-not-allowed': loading }"
           name="Envoyer message"
           aria-label="Envoyer message"
           type="submit"

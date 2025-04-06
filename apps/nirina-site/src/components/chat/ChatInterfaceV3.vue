@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import type { ListeMessagesMistral } from '../../../utils/types'
 import ChatInterfaceTemplate from './ChatInterfaceTemplate.vue'
-import { regexMap } from './regexMap'
 import { useListeMessages } from './useListeMessages'
 
 const { lienDernierArticle } = defineProps<{
@@ -63,13 +62,13 @@ async function fetchWithFunctionCalling(messages: ListeMessagesMistral) {
   if (toolCalls && toolCalls.length > 0) {
     // Compute hrefs for all tool calls
     const hrefs = toolCalls
-      .map((toolCall) => {
-        const functionName = toolCall.function?.name
+      .map((toolCall: { function: { name: any } }) => {
+        const functionName = toolCall.function?.name as keyof typeof listeRoutes
         return functionName === 'rediriger_vers_dernier_article'
           ? lienDernierArticle
-          : (listeRoutes[functionName] as any)?.href || ''
+          : listeRoutes[functionName]?.href || ''
       })
-      .filter((link) => link !== '')
+      .filter((link: string) => link !== '')
 
     // Step 3 and 4: Second API call with function results
     const updatedMessages = [
@@ -79,8 +78,8 @@ async function fetchWithFunctionCalling(messages: ListeMessagesMistral) {
         content: null,
         tool_calls: toolCalls,
       },
-      ...toolCalls.map((tool) => {
-        const functionName = tool.function?.name
+      ...toolCalls.map((tool: { function: { name: any }; id: any }) => {
+        const functionName: keyof typeof listeRoutes = tool.function?.name
         return {
           role: 'tool',
           tool_call_id: tool.id,
@@ -131,7 +130,8 @@ async function fetchMistralResponse(inputMessage: string) {
   ajouterMessageUser(inputMessage)
 
   try {
-    const result = await fetchWithFunctionCalling(messages)
+    // Spread messages array to convert readonly to mutable
+    const result = await fetchWithFunctionCalling([...messages])
 
     if (result.hrefs && result.hrefs.length > 0) {
       suggestedLinks.value = result.hrefs
@@ -190,7 +190,7 @@ async function handleFormSubmit(inputMessage: string) {
 }
 </script>
 <template>
-  <ChatInterfaceTemplate @submit="handleFormSubmit">
+  <ChatInterfaceTemplate :loading="bloquerSubmitDoublon" @submit="handleFormSubmit">
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">
