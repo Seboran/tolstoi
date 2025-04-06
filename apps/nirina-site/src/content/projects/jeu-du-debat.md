@@ -5,4 +5,4 @@ url: "https://jeu-du-debat.netlify.app/"
 technologies: ["Vuejs", "TypeScript", "Vite", "Vitest"]
 ---
 
-<iframe src="https://jeu-du-debat.netlify.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" width="100%" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Jeu du débat"></iframe>
+<iframe loading="lazy" src="https://jeu-du-debat.netlify.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" width="100%" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Jeu du débat"></iframe>

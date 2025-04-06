@@ -5,4 +5,4 @@ url: "https://ethereum-wallet-generator.netlify.app/"
 technologies: ["vuejs", "webworkers", "crypto"]
 ---
 
-<iframe src="https://ethereum-wallet-generator.netlify.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" width="100%" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Ethereum wallet generator, appli de génération de vanity keys"></iframe>
+<iframe loading="lazy" src="https://ethereum-wallet-generator.netlify.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" width="100%" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Ethereum wallet generator, appli de génération de vanity keys"></iframe>
