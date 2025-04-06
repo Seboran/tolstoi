@@ -14,7 +14,7 @@ const projects = await getCollection('projets')
     Peut-être la partie la plus <i>portfolio</i> de ce site est ici. Vous pourrez
     voir les différents projets et produits que je maintiens à gauche et à droite.
   </p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+  <div class="grid grid-cols-1 gap-8 mt-8">
     {projects.map(({ id }) => <ProjetCard projectId={id} />)}
   </div>
   <div class="mt-12 p-6 rounded-lg text-dark dark:text-white">
