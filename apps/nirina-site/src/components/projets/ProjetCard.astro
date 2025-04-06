@@ -23,100 +23,31 @@ const { Content } = await render(entry)
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="project-card perspective-on-hover bg-white dark:bg-gray-800"
+  class="rounded-lg overflow-hidden shadow-md hover:scale-[1.02] transition-transform duration-300 h-full flex flex-col bg-white dark:bg-gray-800"
 >
-  <div class="screenshot bg-white">
+  <div class="overflow-hidden bg-white">
     <Content />
   </div>
-  <div class="flex flex-col p-4 content-between">
+  <div class="flex flex-col flex-1 p-4 content-between">
     <div class="text-dark dark:text-white">
       <DesignTitle>{title}</DesignTitle>
       <p>{description}</p>
     </div>
     {
       technologies.length > 0 && (
-        <div class="tech-stack">
+        <div class="flex flex-wrap gap-2 my-4">
           {technologies.map((tech) => (
-            <span class="tech-pill">{tech}</span>
+            <span class="bg-slate-100 px-3 py-1 rounded-full text-sm">
+              {tech}
+            </span>
           ))}
         </div>
       )
     }
-    <!-- <div class="links">
-      <a href={url} target="_blank" rel="noopener noreferrer" class="visit-link">Visiter</a>
-      {secondaryUrl && (
-        <a href={secondaryUrl} target="_blank" rel="noopener noreferrer" class="visit-link secondary">
-          Version alternative
-        </a>
-      )}
-    </div> -->
+    <button
+      class="mt-auto inline-block bg-blue-500 text-white px-4 py-2 rounded font-medium transition-colors hover:bg-blue-600 hover:pointer-events-none"
+    >
+      Voir le projet
+    </button>
   </div>
 </a>
-
-<style>
-  .project-card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .screenshot {
-    overflow: hidden;
-  }
-
-  .screenshot img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 16/9;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-
-  .tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 1rem 0;
-  }
-
-  .tech-pill {
-    background: #f1f5f9;
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.8rem;
-  }
-
-  .links {
-    margin-top: auto;
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .visit-link {
-    display: inline-block;
-    background: #3b82f6;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.2s;
-  }
-
-  .visit-link:hover {
-    background: #2563eb;
-  }
-
-  .secondary {
-    background: #64748b;
-  }
-
-  .secondary:hover {
-    background: #475569;
-  }
-</style>
