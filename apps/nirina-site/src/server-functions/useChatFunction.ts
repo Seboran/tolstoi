@@ -1,6 +1,7 @@
 import OpenAI from 'openai'
 import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
+import { systemPrompt } from './system_prompt.ts'
 
 export function useChatFunction(
   variables: Partial<{
@@ -61,7 +62,7 @@ export function useChatFunction(
   async function fetchMistralApi(messages: ListeMessagesMistral): Promise<Response> {
     const completionStream = await client.chat.completions.create({
       model: 'mistral-small-latest', // adjust model if needed
-      messages,
+      messages: [{ role: 'system', content: systemPrompt }, ...messages],
       stream: true,
     })
 
