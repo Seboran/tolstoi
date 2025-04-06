@@ -24,7 +24,6 @@ def main():
         {"role": "system", "content": chatbot_instructions},
         {"role": "user", "content": "De quels sujets parles-tu ?"},
     ]
-    messages
     return generate_response(client, model, messages, tools)
 
 

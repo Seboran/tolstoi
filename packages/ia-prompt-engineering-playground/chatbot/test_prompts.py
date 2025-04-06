@@ -24,7 +24,7 @@ chatbot_instructions = get_chatbot_instructions()
 def utils_generate_response(message: str):
     """
     "content": completion_2.choices[0].message.content,
-    "function_call": tool_call.function.name,
+    "function_calls": tool_call.function.name,
     """
 
     messages = [
@@ -33,32 +33,34 @@ def utils_generate_response(message: str):
     ]
 
     result = generate_response(client, model, messages, tools)
-    return list_of_functions[result["function_call"]]["href"]
+    function_calls = result["function_calls"]
+    hrefs_list = [list_of_functions[f]["href"] for f in function_calls]
+    return hrefs_list
 
 
 def test_biographie():
     res = utils_generate_response("Peux-tu parler de toi ?")
-    assert res == "/a-propos"
+    assert "/a-propos" in res
 
 
 def test_contact():
     res = utils_generate_response("Je voudrais prendre contact")
-    assert res == "/contact"
+    assert "/contact" in res
 
 
 def test_balade():
     res = utils_generate_response("Je me balade juste")
-    assert res == "/blog"
+    assert "/blog" in res
 
 
 def test_ia():
     res = utils_generate_response("Quel est ton avis sur l'intelligence artificielle ?")
-    assert res == "/ai"
+    assert "/ai" in res
 
 
 def test_presentations():
-    assert "/presentations" == utils_generate_response("De quels sujets parles-tu ?")
+    assert "/presentations" in utils_generate_response("De quels sujets parles-tu ?")
 
 
 def test_chat():
-    assert "/chat" == utils_generate_response("Comment s'appelle ton chat ?")
+    assert "/chat" in utils_generate_response("Comment s'appelle ton chat ?")

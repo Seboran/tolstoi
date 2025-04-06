@@ -35,7 +35,7 @@ def prepare_tools(list_of_functions: dict) -> list:
     ]
 
 
-@retry(wait=wait_exponential(multiplier=1, min=4, max=10), stop=stop_after_attempt(5))
+@retry(wait=wait_exponential(multiplier=1, min=4, max=20), stop=stop_after_attempt(5))
 def call(client: OpenAI, model: str, messages: list, tools: list):
     return client.chat.completions.create(
         model=model, messages=messages, tools=tools, tool_choice="any"
@@ -44,17 +44,23 @@ def call(client: OpenAI, model: str, messages: list, tools: list):
 
 def generate_response(client: OpenAI, model: str, messages: list, tools: list) -> dict:
     response = call(client, model, messages, tools)
-    tool_call = response.choices[0].message.tool_calls[0]
-    messages.append(response.choices[0].message)
-    messages.append({"role": "tool", "content": "", "tool_call_id": tool_call.id})
+    tool_calls = response.choices[0].message.tool_calls
 
-    completion_2 = client.chat.completions.create(
-        model=model,
-        messages=messages,
-        tools=tools,
-    )
+    completion_2 = response
+    if tool_calls:
+        messages.append(response.choices[0].message)
+        for tool_call in tool_calls:
+            messages.append(
+                {"role": "tool", "content": "", "tool_call_id": tool_call.id}
+            )
+
+        completion_2 = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            tools=tools,
+        )
 
     return {
         "content": completion_2.choices[0].message.content,
-        "function_call": tool_call.function.name,
+        "function_calls": [tool_call.function.name for tool_call in tool_calls],
     }
