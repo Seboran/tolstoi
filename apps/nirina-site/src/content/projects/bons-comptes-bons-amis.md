@@ -5,4 +5,4 @@ url: "https://bons-comptes-bons-amis.vercel.app"
 technologies: ["Vuejs", "Python Flask", "scipy", "lambdas", "Vercel"]
 ---
 
-<iframe src="https://bons-comptes-bons-amis.vercel.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Bons comptes bons amis, appli de remboursement"></iframe>
+<iframe src="https://bons-comptes-bons-amis.vercel.app/" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="650" width="100%" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" title="Bons comptes bons amis, appli de remboursement"></iframe>
