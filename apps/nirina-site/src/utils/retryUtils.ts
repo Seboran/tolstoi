@@ -11,7 +11,7 @@ export function shouldRetry(error: any): boolean {
 }
 
 export function getRetryDelay(attempt: number, baseDelay: number): number {
-  return baseDelay * attempt
+  return baseDelay * Math.pow(2, attempt)
 }
 
 export async function callWithRetry<T>(
