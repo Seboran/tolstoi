@@ -12,7 +12,11 @@ const { mistralAnswer, lienVersSuite, suggestedLinks, bloquerSubmitDoublon, hand
 
 <template>
   <ChatInterfaceTemplate :loading="bloquerSubmitDoublon" @submit="handleFormSubmit">
-    <div v-if="mistralAnswer">
+    <div v-if="bloquerSubmitDoublon" class="flex justify-center py-3">
+      <div class="spinner h-5 w-5"></div>
+    </div>
+    
+    <div v-else-if="mistralAnswer">
       <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">
           {{ mistralAnswer }}
@@ -48,17 +52,34 @@ const { mistralAnswer, lienVersSuite, suggestedLinks, bloquerSubmitDoublon, hand
   0%,
   100% {
     transform: translateY(0);
-    /* Position de départ et de fin */
   }
-
   50% {
     transform: translateY(-1px);
-    /* Léger mouvement vers le haut */
   }
 }
 
 .button-levitation {
   animation: levitation 3s infinite ease-in-out;
   transition: all 0.3s ease;
+}
+
+/* Simple spinner animation */
+.spinner {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 2px solid #2c90fc;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .spinner {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-top: 2px solid #2c90fc;
+  }
 }
 </style>
