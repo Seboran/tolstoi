@@ -58,3 +58,6 @@ dist
 # Python
 venv/
 .venv/
+
+# Builds
+deploy/
