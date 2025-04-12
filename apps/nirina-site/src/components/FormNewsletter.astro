@@ -12,10 +12,13 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
   action={newsletterAction}
   class="w-full mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
 >
-  <h2 class="text-2xl font-semibold">S'abonner à ma newsletter</h2>
+  <h2 class="text-2xl font-semibold">Une newsletter qui parle d'humanité et de technologie ?</h2>
 
   <p class="text-sm text-gray-700 dark:text-gray-300">
-    Inscrivez-vous pour recevoir tous les articles de mon blog.
+      La tech évolue très vite. Et c'est difficile à suivre. Nous rentrons dans un monde qui change éternellement, et si les innovations se succèdent, mais c'est dur pous nous, les humains, de suivre.<br/></br>
+      <b>Et si je t'aidais à y voir plus clair ?</b></br></br>
+      Je publie une fois par mois sur plein de sujets, avec ma touche personnelle, mon sarcasme et mon humour...<br/><br/>
+      Alors ne rate rien et abonne toi !
   </p>
 
   <div class="space-y-2">
@@ -28,7 +31,7 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
       required
       name="email"
       class="bordures-degrade w-full px-4 py-2 border border-gray-300 text-gray-900 dark:text-gray-100 dark:bg-gray-700 dark:border-gray-600"
-      placeholder="Votre adresse email"
+      placeholder="Ton adresse email"
       transition:persist
     />
   </div>
@@ -48,7 +51,7 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
   </div>
 
   <div class="text-xs text-gray-600 dark:text-gray-400">
-    Vous pouvez vous désinscrire à tout moment. Pour plus de détails, vous
+    Tu pouvez te désinscrire à tout moment. Pour plus de détails, te
     pouvez me contacter à
     <a
       href="mailto:hello@nirinarabeson.fr"
@@ -79,14 +82,14 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
   {
     afficherInscriptionReussie && (
       <p class="text-sm text-gray-700 dark:text-gray-300">
-        Inscription réussie ! Vous devriez recevoir un email de confirmation...
+        Inscription réussie ! Tu devrais recevoir un email de confirmation...
       </p>
     )
   }
   {
     erreurDurantInscription && (
       <p class="text-sm text-gray-700 dark:text-gray-300">
-        L'erreur suivante a eu lieu durant votre inscription :{" "}
+        L'erreur suivante a eu lieu durant ton inscription :{" "}
         {erreurDurantInscription}
       </p>
     )
