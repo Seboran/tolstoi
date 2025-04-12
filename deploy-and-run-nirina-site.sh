@@ -12,5 +12,5 @@ rm -rf deploy/nirina-site
 pnpm --filter=nirina-site deploy ./deploy/nirina-site
 echo "Deploying to $1"
 rsync -rlz --delete deploy/nirina-site/ $1:/app/nirina-site
-echo "Copying .env file to remote server"
-rsync -z .env.runtime $1:/app/nirina-site/.env
+# echo "Copying .env file to remote server"
+# rsync -z .env.runtime $1:/app/nirina-site/.env
