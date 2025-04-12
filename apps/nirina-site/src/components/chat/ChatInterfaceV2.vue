@@ -101,11 +101,8 @@ async function handleFormSubmit(inputMessage: string) {
         </p>
       </div>
 
-      <a
-        v-if="lienVersSuite"
-        :href="lienVersSuite"
-        class="text-blue-800 hover:text-gray-800 dark:text-blue-200 dark:hover:text-gray-200"
-      >
+      <a v-if="lienVersSuite" :href="lienVersSuite"
+        class="text-blue-800 hover:text-gray-800 dark:text-blue-200 dark:hover:text-gray-200">
         <div class="my-1 py-1">
           <button type="button" class="button-levitation">
             Continuer vers {{ lienVersSuite }} &rarr;
@@ -118,12 +115,16 @@ async function handleFormSubmit(inputMessage: string) {
 
 <style>
 @keyframes levitation {
+
   0%,
   100% {
-    transform: translateY(0); /* Position de départ et de fin */
+    transform: translateY(0);
+    /* Position de départ et de fin */
   }
+
   50% {
-    transform: translateY(-1px); /* Léger mouvement vers le haut */
+    transform: translateY(-1px);
+    /* Léger mouvement vers le haut */
   }
 }
 

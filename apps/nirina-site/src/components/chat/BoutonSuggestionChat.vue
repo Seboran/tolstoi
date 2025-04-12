@@ -16,8 +16,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="perspective-on-hover text-nowrap rounded-lg border border-slate-100/25 bg-suggestion-chat px-2 py-1 text-xs text-black dark:text-white"
-  >
+    class="perspective-on-hover text-nowrap rounded-lg border border-slate-100/25 bg-suggestion-chat px-2 py-1 text-xs text-black dark:text-white">
     <button @click="$emit('click', slotText)" :disabled="disabledUntilLoaded">
       <slot />
     </button>
@@ -29,6 +28,7 @@ button {
   opacity: 0.6;
   transition: 0.4s opacity ease;
 }
+
 button:hover {
   opacity: 1;
 }

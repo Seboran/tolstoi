@@ -6,7 +6,7 @@ import Layout from '../../layouts/Layout.astro'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
 import ChatInterfaceVue from '../chat/ChatInterface.vue'
-import ChatInterfaceV2Vue from '../chat/ChatInterfaceV3.vue'
+import ChatInterfaceV3 from '../chat/ChatInterfaceV3.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
 import ToggleComponents from '../utils/ToggleComponents.astro'
 
@@ -28,7 +28,7 @@ const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
         Comment puis-je vous aider aujourd'hui&nbsp;?
       </h2>
       <ToggleComponents toggle={ENABLE_CHAT ? 'a' : 'b'}>
-        <ChatInterfaceV2Vue slot="a" client:load lienDernierArticle={`/posts/${lastPost}`} />
+        <ChatInterfaceV3 slot="a" client:load lienDernierArticle={`/posts/${lastPost}`} />
         <ChatInterfaceVue slot="b" client:load lienDernierArticle={`/posts/${lastPost}`} />
       </ToggleComponents>
     </div>

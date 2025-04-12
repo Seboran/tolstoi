@@ -34,25 +34,26 @@ async function handleFormSubmit(inputMessage: string) {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0.3;
   }
+
   100% {
     opacity: 0.8;
   }
 }
+
 .chat-container {
   /* animation: fade-in 0.8s ease-out forwards; */
   /* opacity: 0; */
   border: 1px solid transparent;
-  border-image: linear-gradient(
-    to bottom right,
-    #b827fc 0%,
-    #2c90fc 25%,
-    #888888 50%,
-    #888888 75%,
-    #888888 100%
-  );
+  border-image: linear-gradient(to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      #888888 50%,
+      #888888 75%,
+      #888888 100%);
   border-image-slice: 1;
 }
 
@@ -66,14 +67,12 @@ async function handleFormSubmit(inputMessage: string) {
     /* animation: fade-in 0.8s ease-out forwards; */
     /* opacity: 0; */
     border: 1px solid transparent;
-    border-image: linear-gradient(
-      to bottom right,
-      #b827fc 0%,
-      #2c90fc 25%,
-      rgb(15, 23, 42) 50%,
-      rgb(15, 23, 42) 75%,
-      rgb(15, 23, 42) 100%
-    );
+    border-image: linear-gradient(to bottom right,
+        #b827fc 0%,
+        #2c90fc 25%,
+        rgb(15, 23, 42) 50%,
+        rgb(15, 23, 42) 75%,
+        rgb(15, 23, 42) 100%);
     border-image-slice: 1;
   }
 }
@@ -81,6 +80,7 @@ async function handleFormSubmit(inputMessage: string) {
 form {
   opacity: 0.8;
 }
+
 form:hover {
   opacity: 1;
 }

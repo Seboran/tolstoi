@@ -35,11 +35,11 @@ export function useMistralChat(lienDernierArticle: string) {
       }
 
       // Handle the case where we got direct content (no streaming)
-      if (result.content) {
-        mistralAnswer.value = result.content
-        ajouterMessageAssistant(mistralAnswer.value)
-        return
-      }
+      // if (result.content) {
+      //   mistralAnswer.value = result.content
+      //   ajouterMessageAssistant(mistralAnswer.value)
+      //   return
+      // }
 
       // Handle streaming response
       if (!result.stream) {
