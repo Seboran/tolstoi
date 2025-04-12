@@ -18,7 +18,7 @@
     "layer-bons-comptes": "workspace:*",
     "leaflet": "1.9.4",
     "nuxt": "3.16.2",
-    "pinia": "3.0.1",
+    "pinia": "3.0.2",
     "vue": "latest",
     "vue-router": "latest"
   }
