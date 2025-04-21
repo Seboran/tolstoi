@@ -5,7 +5,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 import mdx from '@astrojs/mdx'
 
-import netlify from '@astrojs/netlify'
 import node from '@astrojs/node'
 import { shield } from '@kindspells/astro-shield'
 
@@ -19,10 +18,7 @@ import {
   MISTRAL_AGENT_ID_KEY,
   MISTRAL_API_ENDPOINT_KEY,
   MISTRAL_API_KEY,
-  RUN_NODE_ADAPTER_KEY,
 } from './utils/environment-variables'
-
-const enableNodeJs = !!process.env[RUN_NODE_ADAPTER_KEY]
 
 const headers = {
   'Content-Security-Policy':
@@ -39,11 +35,9 @@ export default defineConfig({
   server: {
     headers: import.meta.env.DEV ? {} : headers,
   },
-  adapter: enableNodeJs
-    ? node({
-        mode: 'standalone',
-      })
-    : netlify({}),
+  adapter: node({
+    mode: 'standalone',
+  }),
   prefetch: true,
   vite: {
     build: {

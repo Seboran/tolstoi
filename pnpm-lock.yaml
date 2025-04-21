@@ -3,7 +3,6 @@ lockfileVersion: '9.0'
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
-  injectWorkspacePackages: true
 
 importers:
 
@@ -548,9 +547,6 @@ importers:
       '@astrojs/mdx':
         specifier: 4.2.4
         version: 4.2.4(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))
-      '@astrojs/netlify':
-        specifier: 6.3.0
-        version: 6.3.0(@types/node@22.13.8)(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(yaml@2.7.0)
       '@astrojs/node':
         specifier: 9.2.0
         version: 9.2.0(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))
@@ -563,9 +559,6 @@ importers:
       '@astrojs/vue':
         specifier: 5.0.10
         version: 5.0.10(@types/node@22.13.8)(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(vue@3.5.13(typescript@5.8.3))(yaml@2.7.0)
-      '@netlify/edge-functions':
-        specifier: 2.11.1
-        version: 2.11.1
       '@supabase/supabase-js':
         specifier: 2.49.4
         version: 2.49.4
@@ -886,11 +879,6 @@ packages:
     peerDependencies:
       astro: ^5.0.0
 
-  '@astrojs/netlify@6.3.0':
-    resolution: {integrity: sha512-HNMa5wQ0BahP3jObp2c6Im8R99lM5eUcw3tA4nVPe+hrgk1CtSMvhqo34yL16YvDiTKIBFpUtlWXmMkvVby77Q==}
-    peerDependencies:
-      astro: ^5.3.0
-
   '@astrojs/node@9.2.0':
     resolution: {integrity: sha512-TUQPsMz8OtMsVc66rE7R2c2KsHgZ31sgdnazbn1bQp+9JMAYUvl9XzDPwBnrb9WkVWtEKLdyw+W8h9DzU+LQ9w==}
     peerDependencies:
@@ -915,9 +903,6 @@ packages:
   '@astrojs/telemetry@3.2.0':
     resolution: {integrity: sha512-wxhSKRfKugLwLlr4OFfcqovk+LIFtKwLyGPqMsv+9/ibqqnW3Gv7tBhtKEb0gAyUAC4G9BTVQeQahqnQAhd6IQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
-
-  '@astrojs/underscore-redirects@0.6.0':
-    resolution: {integrity: sha512-dnJgFpaM955IFNIkEEmMaaIdWXRdeZs1ID6mlGBqdjh6NiCXfKmOdq7L4fd9Dd/tr18fkLrOJ25IUJSxRAEhjQ==}
 
   '@astrojs/vue@5.0.10':
     resolution: {integrity: sha512-x0aXf+qn/uF2Qw+8O9S+avYwAQEUCEZVef3mN0F1Fq2byHA+Y0KNDjfk2iYEN/eHtkNIZCcGXKygblhecjEb7g==}
@@ -2078,9 +2063,6 @@ packages:
   '@netlify/blobs@8.1.1':
     resolution: {integrity: sha512-7Dg3PzArvQ0Owq4wpkLECC9iaDBOxuWUN2uwbQtUF6tZssyez2QN+eO0CjuIhhZUivbw+X9bwsyiEjWkdJnv/A==}
     engines: {node: ^14.16.0 || >=16.0.0}
-
-  '@netlify/edge-functions@2.11.1':
-    resolution: {integrity: sha512-pyQOTZ8a+ge5lZlE+H/UAHyuqQqtL5gE0pXrHT9mOykr3YQqnkB2hZMtx12odatZ87gHg4EA+UPyMZUbLfnXvw==}
 
   '@netlify/functions@3.0.2':
     resolution: {integrity: sha512-9bngT722zbsdW7ri7j9ItrgOO33M1141cIBP7l+VE79EEP78JubM5fV4a58I+ZVQU4KRK0PJIbpUAlojXExl5Q==}
@@ -8507,10 +8489,6 @@ packages:
     resolution: {integrity: sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==}
     engines: {node: '>=10'}
 
-  sirv@3.0.0:
-    resolution: {integrity: sha512-BPwJGUeDaDCHihkORDchNyyTvWFhcusy1XMmhEVTQTwGeybFbp8YEmB+njbPnth1FibULBSBVwCQni25XlCUDg==}
-    engines: {node: '>=18'}
-
   sirv@3.0.1:
     resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
     engines: {node: '>=18'}
@@ -9457,12 +9435,6 @@ packages:
       '@nuxt/kit':
         optional: true
 
-  vite-plugin-vue-devtools@7.7.2:
-    resolution: {integrity: sha512-5V0UijQWiSBj32blkyPEqIbzc6HO9c1bwnBhx+ay2dzU0FakH+qMdNUT8nF9BvDE+i6I1U8CqCuJiO20vKEdQw==}
-    engines: {node: '>=v14.21.3'}
-    peerDependencies:
-      vite: ^3.1.0 || ^4.0.0-0 || ^5.0.0-0 || ^6.0.0-0
-
   vite-plugin-vue-devtools@7.7.5:
     resolution: {integrity: sha512-cSlQYI1E+8d0qubBg70suTBbXMFbTHLn7vLPYUPK9GjNNJ0nw+Yks0ZLOAp7/+PjmqSpN5fK1taor6HeAjKb1g==}
     engines: {node: '>=v14.21.3'}
@@ -10191,33 +10163,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@6.3.0(@types/node@22.13.8)(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))(encoding@0.1.13)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(yaml@2.7.0)':
-    dependencies:
-      '@astrojs/internal-helpers': 0.6.1
-      '@astrojs/underscore-redirects': 0.6.0
-      '@netlify/blobs': 8.1.1
-      '@netlify/functions': 3.0.2
-      '@vercel/nft': 0.29.2(encoding@0.1.13)(rollup@4.39.0)
-      astro: 5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0)
-      esbuild: 0.25.2
-      tinyglobby: 0.2.12
-      vite: 6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0)
-    transitivePeerDependencies:
-      - '@types/node'
-      - encoding
-      - jiti
-      - less
-      - lightningcss
-      - rollup
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
-
   '@astrojs/node@9.2.0(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))':
     dependencies:
       '@astrojs/internal-helpers': 0.6.1
@@ -10271,8 +10216,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/underscore-redirects@0.6.0': {}
-
   '@astrojs/vue@5.0.10(@types/node@22.13.8)(astro@5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0))(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(vue@3.5.13(typescript@5.8.3))(yaml@2.7.0)':
     dependencies:
       '@vitejs/plugin-vue': 5.2.1(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3))
@@ -10280,7 +10223,7 @@ snapshots:
       '@vue/compiler-sfc': 3.5.13
       astro: 5.7.4(@netlify/blobs@8.1.1)(@types/node@22.13.8)(db0@0.3.1)(encoding@0.1.13)(ioredis@5.6.0)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.7.0)
       vite: 6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0)
-      vite-plugin-vue-devtools: 7.7.2(rollup@4.39.0)(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3))
+      vite-plugin-vue-devtools: 7.7.5(rollup@4.39.0)(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3))
       vue: 3.5.13(typescript@5.8.3)
     transitivePeerDependencies:
       - '@nuxt/kit'
@@ -11493,9 +11436,8 @@ snapshots:
       '@tybys/wasm-util': 0.9.0
     optional: true
 
-  '@netlify/blobs@8.1.1': {}
-
-  '@netlify/edge-functions@2.11.1': {}
+  '@netlify/blobs@8.1.1':
+    optional: true
 
   '@netlify/functions@3.0.2':
     dependencies:
@@ -13409,44 +13351,6 @@ snapshots:
       - supports-color
 
   '@vercel/nft@0.29.2(encoding@0.1.13)(rollup@4.36.0)':
-    dependencies:
-      '@mapbox/node-pre-gyp': 2.0.0(encoding@0.1.13)
-      '@rollup/pluginutils': 5.1.4(rollup@4.36.0)
-      acorn: 8.14.1
-      acorn-import-attributes: 1.9.5(acorn@8.14.1)
-      async-sema: 3.1.1
-      bindings: 1.5.0
-      estree-walker: 2.0.2
-      glob: 10.4.5
-      graceful-fs: 4.2.11
-      node-gyp-build: 4.8.4
-      picomatch: 4.0.2
-      resolve-from: 5.0.0
-    transitivePeerDependencies:
-      - encoding
-      - rollup
-      - supports-color
-
-  '@vercel/nft@0.29.2(encoding@0.1.13)(rollup@4.39.0)':
-    dependencies:
-      '@mapbox/node-pre-gyp': 2.0.0(encoding@0.1.13)
-      '@rollup/pluginutils': 5.1.4(rollup@4.39.0)
-      acorn: 8.14.1
-      acorn-import-attributes: 1.9.5(acorn@8.14.1)
-      async-sema: 3.1.1
-      bindings: 1.5.0
-      estree-walker: 2.0.2
-      glob: 10.4.5
-      graceful-fs: 4.2.11
-      node-gyp-build: 4.8.4
-      picomatch: 4.0.2
-      resolve-from: 5.0.0
-    transitivePeerDependencies:
-      - encoding
-      - rollup
-      - supports-color
-
-  '@vercel/nft@0.29.2(rollup@4.36.0)':
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0(encoding@0.1.13)
       '@rollup/pluginutils': 5.1.4(rollup@4.36.0)
@@ -18117,106 +18021,6 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nitropack@2.11.8(@netlify/blobs@8.1.1):
-    dependencies:
-      '@cloudflare/kv-asset-handler': 0.4.0
-      '@netlify/functions': 3.0.2
-      '@rollup/plugin-alias': 5.1.1(rollup@4.36.0)
-      '@rollup/plugin-commonjs': 28.0.3(rollup@4.36.0)
-      '@rollup/plugin-inject': 5.0.5(rollup@4.36.0)
-      '@rollup/plugin-json': 6.1.0(rollup@4.36.0)
-      '@rollup/plugin-node-resolve': 16.0.1(rollup@4.36.0)
-      '@rollup/plugin-replace': 6.0.2(rollup@4.36.0)
-      '@rollup/plugin-terser': 0.4.4(rollup@4.36.0)
-      '@vercel/nft': 0.29.2(rollup@4.36.0)
-      archiver: 7.0.1
-      c12: 3.0.2(magicast@0.3.5)
-      chokidar: 4.0.3
-      citty: 0.1.6
-      compatx: 0.1.8
-      confbox: 0.2.1
-      consola: 3.4.2
-      cookie-es: 2.0.0
-      croner: 9.0.0
-      crossws: 0.3.4
-      db0: 0.3.1
-      defu: 6.1.4
-      destr: 2.0.3
-      dot-prop: 9.0.0
-      esbuild: 0.25.2
-      escape-string-regexp: 5.0.0
-      etag: 1.8.1
-      exsolve: 1.0.4
-      globby: 14.1.0
-      gzip-size: 7.0.0
-      h3: 1.15.1
-      hookable: 5.5.3
-      httpxy: 0.1.7
-      ioredis: 5.6.0
-      jiti: 2.4.2
-      klona: 2.0.6
-      knitwork: 1.2.0
-      listhen: 1.9.0
-      magic-string: 0.30.17
-      magicast: 0.3.5
-      mime: 4.0.6
-      mlly: 1.7.4
-      node-fetch-native: 1.6.6
-      node-mock-http: 1.0.0
-      ofetch: 1.4.1
-      ohash: 2.0.11
-      pathe: 2.0.3
-      perfect-debounce: 1.0.0
-      pkg-types: 2.1.0
-      pretty-bytes: 6.1.1
-      radix3: 1.1.2
-      rollup: 4.36.0
-      rollup-plugin-visualizer: 5.14.0(rollup@4.36.0)
-      scule: 1.3.0
-      semver: 7.7.1
-      serve-placeholder: 2.0.2
-      serve-static: 1.16.2
-      source-map: 0.7.4
-      std-env: 3.8.1
-      ufo: 1.5.4
-      ultrahtml: 1.5.3
-      uncrypto: 0.1.3
-      unctx: 2.4.1
-      unenv: 2.0.0-rc.15
-      unimport: 4.1.3
-      unplugin-utils: 0.2.4
-      unstorage: 1.15.0(@netlify/blobs@8.1.1)(db0@0.3.1)(ioredis@5.6.0)
-      untyped: 2.0.0
-      unwasm: 0.3.9
-      youch: 4.1.0-beta.6
-      youch-core: 0.3.2
-    transitivePeerDependencies:
-      - '@azure/app-configuration'
-      - '@azure/cosmos'
-      - '@azure/data-tables'
-      - '@azure/identity'
-      - '@azure/keyvault-secrets'
-      - '@azure/storage-blob'
-      - '@capacitor/preferences'
-      - '@deno/kv'
-      - '@electric-sql/pglite'
-      - '@libsql/client'
-      - '@netlify/blobs'
-      - '@planetscale/database'
-      - '@upstash/redis'
-      - '@vercel/blob'
-      - '@vercel/kv'
-      - aws4fetch
-      - better-sqlite3
-      - drizzle-orm
-      - encoding
-      - idb-keyval
-      - mysql2
-      - rolldown
-      - sqlite3
-      - supports-color
-      - uploadthing
-
   nitropack@2.11.8(@netlify/blobs@8.1.1)(encoding@0.1.13):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.4.0
@@ -18655,7 +18459,7 @@ snapshots:
       mlly: 1.7.4
       mocked-exports: 0.1.1
       nanotar: 0.2.0
-      nitropack: 2.11.8(@netlify/blobs@8.1.1)
+      nitropack: 2.11.8(@netlify/blobs@8.1.1)(encoding@0.1.13)
       nypm: 0.6.0
       ofetch: 1.4.1
       ohash: 2.0.11
@@ -18776,7 +18580,7 @@ snapshots:
       mlly: 1.7.4
       mocked-exports: 0.1.1
       nanotar: 0.2.0
-      nitropack: 2.11.8(@netlify/blobs@8.1.1)
+      nitropack: 2.11.8(@netlify/blobs@8.1.1)(encoding@0.1.13)
       nypm: 0.6.0
       ofetch: 1.4.1
       ohash: 2.0.11
@@ -20280,12 +20084,6 @@ snapshots:
     dependencies:
       semver: 7.7.1
 
-  sirv@3.0.0:
-    dependencies:
-      '@polka/url': 1.0.0-next.28
-      mrmime: 2.0.1
-      totalist: 3.0.1
-
   sirv@3.0.1:
     dependencies:
       '@polka/url': 1.0.0-next.28
@@ -21546,22 +21344,6 @@ snapshots:
       '@nuxt/kit': 3.16.2(magicast@0.3.5)
     transitivePeerDependencies:
       - supports-color
-
-  vite-plugin-vue-devtools@7.7.2(rollup@4.39.0)(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3)):
-    dependencies:
-      '@vue/devtools-core': 7.7.2(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3))
-      '@vue/devtools-kit': 7.7.2
-      '@vue/devtools-shared': 7.7.2
-      execa: 9.5.2
-      sirv: 3.0.0
-      vite: 6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0)
-      vite-plugin-inspect: 0.8.9(rollup@4.39.0)(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))
-      vite-plugin-vue-inspector: 5.3.1(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))
-    transitivePeerDependencies:
-      - '@nuxt/kit'
-      - rollup
-      - supports-color
-      - vue
 
   vite-plugin-vue-devtools@7.7.5(rollup@4.39.0)(vite@6.2.6(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.3)):
     dependencies:
