@@ -9,7 +9,7 @@ const MODEL = 'mistral-small-2503'
 export function useChatFunction(
   variables: Partial<{
     apiKey: string
-    ENABLE_CHAT: string
+    ENABLE_CHAT: boolean
     MISTRAL_API_ENDPOINT: string
     MISTRAL_AGENT_ID: string
   }>,

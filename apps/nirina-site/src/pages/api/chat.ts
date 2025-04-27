@@ -1,17 +1,17 @@
-import { getSecret } from 'astro:env/server'
-import type { APIRoute } from 'astro'
 import {
-  ENABLE_CHAT as ENABLE_CHAT_KEY,
-  MISTRAL_AGENT_ID_KEY,
-  MISTRAL_API_ENDPOINT_KEY,
+  ENABLE_CHAT,
+  MISTRAL_AGENT_ID,
+  MISTRAL_API_ENDPOINT,
   MISTRAL_API_KEY,
-} from '../../../utils/environment-variables'
+} from 'astro:env/server'
+import type { APIRoute } from 'astro'
 import { useChatFunction } from '../../server-functions/useChatFunctionV3'
+
 const { post } = useChatFunction({
-  apiKey: getSecret(MISTRAL_API_KEY),
-  MISTRAL_AGENT_ID: getSecret(MISTRAL_AGENT_ID_KEY),
-  ENABLE_CHAT: getSecret(ENABLE_CHAT_KEY),
-  MISTRAL_API_ENDPOINT: getSecret(MISTRAL_API_ENDPOINT_KEY),
+  apiKey: MISTRAL_API_KEY,
+  MISTRAL_AGENT_ID: MISTRAL_AGENT_ID,
+  ENABLE_CHAT: ENABLE_CHAT,
+  MISTRAL_API_ENDPOINT: MISTRAL_API_ENDPOINT,
 })
 export const POST: APIRoute = async ({ request }) => {
   return await post(request)
