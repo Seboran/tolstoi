@@ -34,7 +34,7 @@
     "autoprefixer": "10.4.21",
     "happy-dom": "17.1.2",
     "jsdom": "26.0.0",
-    "nodemon": "3.1.9",
+    "nodemon": "3.1.10",
     "npm-run-all2": "7.0.2",
     "postcss": "8.5.3",
     "tailwindcss": "3.4.17",
