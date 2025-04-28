@@ -10,7 +10,6 @@ export function useChatFunction(
   variables: Partial<{
     apiKey: string
     MISTRAL_API_ENDPOINT: string
-    MISTRAL_AGENT_ID: string
   }>,
 ) {
   const client = new OpenAI({

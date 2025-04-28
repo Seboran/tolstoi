@@ -8,7 +8,6 @@ export function useChatFunction(
     apiKey: string
     ENABLE_CHAT: string
     MISTRAL_API_ENDPOINT: string
-    MISTRAL_AGENT_ID: string
   }>,
 ) {
   const client = new OpenAI({

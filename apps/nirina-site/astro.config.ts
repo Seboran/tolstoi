@@ -13,11 +13,7 @@ import { astroCSPHashGenerator } from './src/plugins/astroCSPHashgenerator'
 import { targetBlank } from './src/plugins/targetBlank'
 
 import react from '@astrojs/react'
-import {
-  MISTRAL_AGENT_ID_KEY,
-  MISTRAL_API_ENDPOINT_KEY,
-  MISTRAL_API_KEY,
-} from './utils/environment-variables'
+import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from './utils/environment-variables'
 
 const headers = {
   'Content-Security-Policy':
@@ -78,10 +74,6 @@ export default defineConfig({
         access: 'public',
       }),
       [MISTRAL_API_ENDPOINT_KEY]: envField.string({
-        context: 'server',
-        access: 'public',
-      }),
-      [MISTRAL_AGENT_ID_KEY]: envField.string({
         context: 'server',
         access: 'public',
       }),

@@ -13,7 +13,6 @@ jobs:
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
       MISTRAL_API_KEY: "unfauxsecret^^"
       MISTRAL_API_ENDPOINT: "https://api.mistral.ai/v1"
-      MISTRAL_AGENT_ID: "unfauxagent^^"
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
