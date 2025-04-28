@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"],
-      "env": ["MISTRAL_API_KEY", "ENABLE_CHAT"],
+      "env": ["MISTRAL_API_KEY", "MISTRAL_API_ENDPOINT", "MISTRAL_AGENT_ID"],
       "outputs": ["node_modules/.astro", "dist"]
     },
     "test:e2e": {
