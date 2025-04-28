@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config'
+import { defineConfig, envField, fontProviders } from 'astro/config'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -28,6 +28,20 @@ const headers = {
 }
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: 'DM Serif Text',
+        cssVariable: '--dm-serif-text-font',
+      },
+      {
+        provider: fontProviders.google(),
+        name: 'Sora',
+        cssVariable: '--font-sans',
+      },
+    ],
+  },
   integrations: [mdx(), shield({}), vue(), astroCSPHashGenerator, react()],
   site: 'https://www.nirinarabeson.fr',
   output: 'static',

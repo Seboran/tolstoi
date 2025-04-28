@@ -1,9 +1,9 @@
 .prose :where(h1, h2, h3) {
-  font-family: "DM Serif Text", serif;
+  font-family: var(--dm-serif-text-font), serif;
 }
 
 .statement-font {
-  font-family: "DM Serif Text", serif;
+  font-family: var(--dm-serif-text-font), serif;
   font-weight: 400 !important;
   font-style: normal;
 }
