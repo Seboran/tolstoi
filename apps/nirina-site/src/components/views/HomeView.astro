@@ -1,18 +1,11 @@
 ---
-import { getSecret } from 'astro:env/server'
-
-import { ENABLE_CHAT as ENABLE_CHAT_ENV } from '../../../utils/environment-variables'
 import Layout from '../../layouts/Layout.astro'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
-import ChatInterfaceVue from '../chat/ChatInterface.vue'
 import ChatInterfaceV3 from '../chat/ChatInterfaceV3.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
-import ToggleComponents from '../utils/ToggleComponents.astro'
 
 const lastPost = (await getSortedPublishedPosts()).at(0)?.id
-
-const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
 ---
 
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
@@ -27,10 +20,7 @@ const ENABLE_CHAT = getSecret(ENABLE_CHAT_ENV)
       >
         Comment puis-je vous aider aujourd'hui&nbsp;?
       </h2>
-      <ToggleComponents toggle={ENABLE_CHAT ? 'a' : 'b'}>
-        <ChatInterfaceV3 slot="a" client:load lienDernierArticle={`/posts/${lastPost}`} />
-        <ChatInterfaceVue slot="b" client:load lienDernierArticle={`/posts/${lastPost}`} />
-      </ToggleComponents>
+    <ChatInterfaceV3 client:load lienDernierArticle={`/posts/${lastPost}`} />
     </div>
   </div>
   <div class="mt-10 mb-22 sm:mb-28 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">

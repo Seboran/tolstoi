@@ -14,7 +14,6 @@ import { targetBlank } from './src/plugins/targetBlank'
 
 import react from '@astrojs/react'
 import {
-  ENABLE_CHAT as ENABLE_CHAT_KEY,
   MISTRAL_AGENT_ID_KEY,
   MISTRAL_API_ENDPOINT_KEY,
   MISTRAL_API_KEY,
@@ -61,10 +60,6 @@ export default defineConfig({
   env: {
     schema: {
       [MISTRAL_API_KEY]: envField.string({
-        context: 'server',
-        access: 'public',
-      }),
-      [ENABLE_CHAT_KEY]: envField.boolean({
         context: 'server',
         access: 'public',
       }),

@@ -9,7 +9,6 @@ const MODEL = 'mistral-small-2503'
 export function useChatFunction(
   variables: Partial<{
     apiKey: string
-    ENABLE_CHAT: boolean
     MISTRAL_API_ENDPOINT: string
     MISTRAL_AGENT_ID: string
   }>,
@@ -27,18 +26,6 @@ export function useChatFunction(
     if (!variables.MISTRAL_API_ENDPOINT)
       throw new Error(`${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`)
 
-    /**
-     * Désactivation du service si non configuré
-     */
-    if (!variables.ENABLE_CHAT)
-      return new Response(
-        JSON.stringify({
-          error: 'There is no chat ATM',
-        }),
-        {
-          status: 405,
-        },
-      )
     const requestBody = await request.json()
 
     if (!requestBody) {
