@@ -113,8 +113,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.13)(vue@3.5.13(typescript@5.8.3))
       '@vercel/node':
-        specifier: 5.1.14
-        version: 5.1.14(encoding@0.1.13)(rollup@4.39.0)
+        specifier: 5.1.15
+        version: 5.1.15(encoding@0.1.13)(rollup@4.39.0)
       '@vitest/coverage-v8':
         specifier: 3.0.9
         version: 3.0.9(vitest@3.0.9)
@@ -3381,8 +3381,8 @@ packages:
   '@vercel/node@5.1.12':
     resolution: {integrity: sha512-Rpid+Sz64D7jtSUWsKkLzL7Hh5XfUBE6fiisLG+1pB/TI7cJ58hDj7Lk9B8p/fGp/nnWkz7BDm4eq1X9XQp6Zg==}
 
-  '@vercel/node@5.1.14':
-    resolution: {integrity: sha512-kLXAR4ZtNSXJw5ffIzKPDAVHD4/Dwxw/287ZCnQlqtOQzY3IH1E5QM3nxn0LGfTkYxXpQFFOOcXL7fZW7MjC6A==}
+  '@vercel/node@5.1.15':
+    resolution: {integrity: sha512-r/DIdg2J/Ez59eK6sw5ez36rDI3GkcyzYjxLY41gItqKZb9lndAwwEgCCVMAP+l1YkeHiUcL9ie1BMZpsCoD2w==}
 
   '@vercel/python@4.7.1':
     resolution: {integrity: sha512-H4g/5e8unII4oQ+KN5IUvTZSzHmj+lLYDkAK15QGYgAxBtE/mHUvEZpPPo7DPUDIyfq8ybWB1bmk7H5kEahubQ==}
@@ -13409,7 +13409,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/node@5.1.14(encoding@0.1.13)(rollup@4.39.0)':
+  '@vercel/node@5.1.15(encoding@0.1.13)(rollup@4.39.0)':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
@@ -21468,7 +21468,7 @@ snapshots:
 
   vite@6.2.3(@types/node@16.18.11)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0):
     dependencies:
-      esbuild: 0.25.1
+      esbuild: 0.25.2
       postcss: 8.5.3
       rollup: 4.36.0
     optionalDependencies:
@@ -21481,7 +21481,7 @@ snapshots:
 
   vite@6.2.3(@types/node@22.13.8)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.37.0)(yaml@2.7.0):
     dependencies:
-      esbuild: 0.25.1
+      esbuild: 0.25.2
       postcss: 8.5.3
       rollup: 4.36.0
     optionalDependencies:
