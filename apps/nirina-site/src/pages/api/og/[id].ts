@@ -1,4 +1,4 @@
-import { getEntry } from 'astro:content'
+import { getCollection, getEntry } from 'astro:content'
 import type { APIRoute } from 'astro'
 import dayjs from 'dayjs'
 import 'dayjs/locale/fr'
@@ -21,14 +21,16 @@ import { generateOGImage } from '../../../components/opengraph/generateOGImage'
  */
 export const GET: APIRoute = async ({ params, request }): Promise<Response> => {
   // Extract ID from route parameter
-  const { id } = params
-
+  let { id } = params
   if (!id) {
     return new Response('Missing required parameter: id', {
       status: 400,
     })
   }
 
+  if (id.endsWith('.png')) {
+    id = id.slice(0, -4)
+  }
   const entry = await getEntry('posts', id)
 
   if (!entry) {
@@ -87,4 +89,6 @@ export const GET: APIRoute = async ({ params, request }): Promise<Response> => {
   }
 }
 
-export const prerender = false
+export async function getStaticPaths() {
+  return (await getCollection('posts')).map(({ id }) => ({ params: { id: `${id}.png` } }))
+}

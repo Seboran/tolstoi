@@ -15,4 +15,4 @@ export async function getStaticPaths() {
 const ogImageUrl = new URL(`/api/og/${entry.id}`, Astro.url).toString()
 ---
 
-<BlogPostView entry={entry} ogImage={ogImageUrl} />
+<BlogPostView entry={entry} ogImage={ogImageUrl + ".png"} />
