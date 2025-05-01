@@ -90,5 +90,5 @@ export const GET: APIRoute = async ({ params, request }): Promise<Response> => {
 }
 
 export async function getStaticPaths() {
-  return (await getCollection('posts')).map(({ id }) => ({ params: { id: `${id}.png` } }))
+  return (await getCollection('posts')).map(({ id }) => ({ params: { id: `${id}` } }))
 }
