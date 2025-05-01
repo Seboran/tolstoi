@@ -4,6 +4,7 @@ import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
 import ChatInterfaceV3 from '../chat/ChatInterfaceV3.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
+import NudgeScroller from '../homepage/NudgeScroller.astro'
 import PhotoNirina from '../homepage/PhotoNirina.astro'
 
 const lastPost = (await getSortedPublishedPosts()).at(0)?.id
@@ -28,7 +29,7 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
         />
       </div>
       <div
-        class="mt-10 mb-22 sm:mb-28 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs"
+        class="mt-5 sm:mt-11 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs"
       >
         <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez
         vos sources et soyez raisonnables.
@@ -38,6 +39,8 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
       <PhotoNirina />
     </div>
   </div>
+  <NudgeScroller />
+  <a id="scroll-target"></a>
   <ArticlesLesPlusRecents />
 </Layout>
 

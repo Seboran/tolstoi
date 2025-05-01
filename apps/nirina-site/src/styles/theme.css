@@ -27,6 +27,10 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/@import */
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .vp-code span {
   color: var(--shiki-dark, inherit);
 }
