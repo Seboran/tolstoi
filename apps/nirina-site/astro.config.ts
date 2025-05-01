@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 import mdx from '@astrojs/mdx'
 
 import node from '@astrojs/node'
-import { shield } from '@kindspells/astro-shield'
 
 import vue from '@astrojs/vue'
 import { astroCSPHashGenerator } from './src/plugins/astroCSPHashgenerator'
@@ -38,7 +37,7 @@ export default defineConfig({
       },
     ],
   },
-  integrations: [mdx(), shield({}), vue(), astroCSPHashGenerator, react()],
+  integrations: [mdx(), vue(), astroCSPHashGenerator, react()],
   site: 'https://www.nirinarabeson.fr',
   output: 'static',
   server: {
