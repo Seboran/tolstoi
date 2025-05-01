@@ -4,27 +4,39 @@ import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
 import ChatInterfaceV3 from '../chat/ChatInterfaceV3.vue'
 import MovingAnimatedHomeTitle from '../header/MovingAnimatedHomeTitle.astro'
+import PhotoNirina from '../homepage/PhotoNirina.astro'
 
 const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 ---
 
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
-  ><div class="m-auto">
-    <div class="pt-6 pb-2 text-center">
-      <MovingAnimatedHomeTitle />
-    </div>
+  ><div class="m-auto flex flex-col-reverse md:grid md:grid-cols-3 gap-x-8">
+    <div class="col-span-2">
+      <div class="pt-6 pb-2 text-center">
+        <MovingAnimatedHomeTitle />
+      </div>
 
-    <div class="m-auto max-w-2xl">
-      <h2
-        class="text-lg text-center md:text-2xl font-sans leading-5 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
+      <div class="m-auto max-w-2xl">
+        <h2
+          class="text-lg text-center md:text-2xl font-sans leading-5 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
+        >
+          Comment puis-je vous aider aujourd'hui&nbsp;?
+        </h2>
+        <ChatInterfaceV3
+          client:load
+          lienDernierArticle={`/posts/${lastPost}`}
+        />
+      </div>
+      <div
+        class="mt-10 mb-22 sm:mb-28 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs"
       >
-        Comment puis-je vous aider aujourd'hui&nbsp;?
-      </h2>
-    <ChatInterfaceV3 client:load lienDernierArticle={`/posts/${lastPost}`} />
+        <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez
+        vos sources et soyez raisonnables.
+      </div>
     </div>
-  </div>
-  <div class="mt-10 mb-22 sm:mb-28 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs">
-    <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez vos sources et soyez raisonnables.
+    <div class="m-auto md:m-0">
+      <PhotoNirina />
+    </div>
   </div>
   <ArticlesLesPlusRecents />
 </Layout>
