@@ -1,59 +1,29 @@
 import * as crypto from 'crypto'
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
+import * as path from 'path'
 import type { AstroIntegration } from 'astro'
 import { parse } from 'node-html-parser'
 
-const NETLIFY_CONFIG_PATH = './netlify.toml' // Adjust this path as necessary
+const CSP_JSON_PATH = path.join(process.cwd(), 'csp.generated.json')
+
+const updateCSPJson = async (scriptHashes: string[], styleHashes: string[]): Promise<void> => {
+  try {
+    // Store only the unique hashes
+    const uniqueScriptHashes = Array.from(new Set(scriptHashes))
+    const uniqueStyleHashes = Array.from(new Set(styleHashes))
+
+    const cspConfig = { scriptHashes: uniqueScriptHashes, styleHashes: uniqueStyleHashes }
+    await writeFile(CSP_JSON_PATH, JSON.stringify(cspConfig, null, 2), 'utf-8')
+    console.log(`CSP configuration written to ${CSP_JSON_PATH}`)
+  } catch (error) {
+    console.error(`Error writing CSP JSON file: ${error}`)
+  }
+}
 
 const createCspHash = async (scriptContent: string): Promise<string> => {
   const hash = crypto.createHash('sha256').update(scriptContent).digest('base64')
   return `'sha256-${hash}'`
-}
-
-const updateNetlifyCSP = async (scriptHashes: string[], styleHashes: string[]): Promise<void> => {
-  try {
-    // Read the Netlify configuration file
-    const configContent = await readFile(NETLIFY_CONFIG_PATH, 'utf-8')
-
-    // Extract and update the CSP header
-    const updatedConfig = configContent.replace(
-      /Content-Security-Policy\s*=\s*"([^"]+)"/,
-      (_match, currentCsp) => {
-        const cspParts = currentCsp.split(';').map((part: string) => part.trim())
-        const scriptSrcIndex = cspParts.findIndex((part: string) => part.startsWith('script-src'))
-
-        if (scriptSrcIndex !== -1) {
-          const existingHashes = new Set(cspParts[scriptSrcIndex].split(' ').slice(1))
-          scriptHashes.forEach((hash) => existingHashes.add(hash))
-          existingHashes.add("'self'")
-          cspParts[scriptSrcIndex] = `script-src ${Array.from(existingHashes).join(' ')}`
-        } else {
-          cspParts.push(`script-src 'self' ${scriptHashes.join(' ')}`)
-        }
-
-        // Update or add style-src
-        const styleSrcIndex = cspParts.findIndex((part: string) => part.startsWith('style-src'))
-        const hashesWithGoogle = new Set([...styleHashes, 'fonts.googleapis.com'])
-        if (styleSrcIndex !== -1) {
-          const existingHashes = new Set(cspParts[styleSrcIndex].split(' ').slice(1))
-          hashesWithGoogle.forEach((hash) => existingHashes.add(hash))
-          existingHashes.add("'self'")
-          cspParts[styleSrcIndex] = `style-src ${Array.from(existingHashes).join(' ')}`
-        } else {
-          cspParts.push(`style-src 'self' ${Array.from(hashesWithGoogle).join(' ')}`)
-        }
-
-        return `Content-Security-Policy = "${cspParts.join('; ')}"`
-      },
-    )
-
-    // Write the updated configuration back to the file
-    await writeFile(NETLIFY_CONFIG_PATH, updatedConfig, 'utf-8')
-    console.log('Netlify configuration updated successfully with new CSP hashes.')
-  } catch (error) {
-    console.error(`Error updating Netlify configuration: ${error}`)
-  }
 }
 
 export const astroCSPHashGenerator: AstroIntegration = {
@@ -62,10 +32,10 @@ export const astroCSPHashGenerator: AstroIntegration = {
     'astro:build:done': async ({ dir, pages, logger }) => {
       const scriptHashes: string[] = []
       const styleHashes: string[] = []
+      logger.info('Starting CSP Hash Generation...') // Add log
 
       for (const page of pages) {
         if (page.pathname.includes('404')) {
-          // Ignore 404 because not generated
           continue
         }
         const filePath = fileURLToPath(`${dir.href}${page.pathname}index.html`)
@@ -81,8 +51,15 @@ export const astroCSPHashGenerator: AstroIntegration = {
 
           // Process style tags
           const styles = root.querySelectorAll('style')
+          logger.info(`Found ${styles.length} style tag(s) in ${page.pathname}index.html`) // Add log
           for (const style of styles) {
-            const hash = await createCspHash(style.textContent || '')
+            const styleContent = style.textContent || ''
+            // Log the content being hashed (first 100 chars)
+            logger.info(
+              `Hashing style content (start): ${styleContent.substring(0, 100).replace(/\n/g, '\\n')}...`,
+            )
+            const hash = await createCspHash(styleContent)
+            logger.info(`Generated style hash: ${hash}`) // Add log
             styleHashes.push(hash)
           }
         } catch (error) {
@@ -91,7 +68,10 @@ export const astroCSPHashGenerator: AstroIntegration = {
       }
 
       if (scriptHashes.length > 0 || styleHashes.length > 0) {
-        await updateNetlifyCSP(scriptHashes, styleHashes)
+        logger.info('Updating CSP JSON file...') // Add log
+        await updateCSPJson(scriptHashes, styleHashes)
+      } else {
+        logger.info('No script or style hashes found to update CSP JSON.') // Add log
       }
     },
   },

@@ -2,10 +2,10 @@
   "name": "nirina-site",
   "type": "module",
   "version": "0.0.1",
-  "files": ["dist", "ecosystem.config.cjs"],
+  "files": ["dist", "ecosystem.config.cjs", "server.mjs"],
   "scripts": {
     "dev": "astro dev",
-    "start": "node ./dist/server/entry.mjs",
+    "start": "node server.mjs",
     "build": "astro build",
     "check": "astro check",
     "astro": "astro",

@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'nirina-site',
-      script: './dist/server/entry.mjs',
+      script: 'server.mjs',
       watch: ['./dist'],
       ignore_watch: ['node_modules', 'logs'],
       watch_options: {

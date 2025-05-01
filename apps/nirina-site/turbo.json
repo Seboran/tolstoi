@@ -3,9 +3,9 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!netlify.toml"],
+      "inputs": ["$TURBO_DEFAULT$", "**/*.mdx", "**/*.md", "!ecosystem.config.cjs"],
       "env": ["MISTRAL_API_KEY", "MISTRAL_API_ENDPOINT"],
-      "outputs": ["node_modules/.astro", "dist"]
+      "outputs": ["node_modules/.astro", "dist", "csp.generated.json"]
     },
     "test:e2e": {
       "env": ["PLAYWRIGHT_URL"]
