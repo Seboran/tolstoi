@@ -9,7 +9,7 @@
   "branchConcurrentLimit": 1,
   "packageRules": [
     {
-      "matchPackageNames": ["happy-dom", "@tailwindcss/postcss"],
+      "matchPackageNames": ["happy-dom", "@tailwindcss/postcss", "@nuxtjs/tailwindcss"],
       "enabled": false
     }
   ]
