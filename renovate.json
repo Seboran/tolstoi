@@ -9,7 +9,7 @@
   "branchConcurrentLimit": 1,
   "packageRules": [
     {
-      "packageNames": ["happy-dom"],
+      "matchPackageNames": ["happy-dom"],
       "enabled": false
     }
   ]
