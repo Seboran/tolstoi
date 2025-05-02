@@ -6,7 +6,7 @@
   "dockerFile": "Dockerfile",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.13" },
     "ghcr.io/joshuanianji/devcontainer-features/mount-pnpm-store": {},
     "ghcr.io/nils-geistmann/devcontainers-features/zsh": {},
     "ghcr.io/devcontainers/features/rust": {}
