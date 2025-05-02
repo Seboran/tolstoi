@@ -6,5 +6,11 @@
     "group:allNonMajor"
   ],
   "prConcurrentLimit": 1,
-  "branchConcurrentLimit": 1
+  "branchConcurrentLimit": 1,
+  "packageRules": [
+    {
+      "packageNames": ["happy-dom"],
+      "enabled": false
+    }
+  ]
 }
