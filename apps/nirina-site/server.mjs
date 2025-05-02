@@ -15,18 +15,12 @@ try {
   console.error('Failed to read csp.generated.json, using default CSP:', err)
   // Define a fallback CSP if the file is missing or invalid
   // Fallback might be too restrictive, ensure hashes are generated and read correctly.
-  cspConfig = { scriptHashes: ["'self'"], styleHashes: ["'self'", 'fonts.googleapis.com'] }
+  process.exit(1)
 }
 
 // Construct the CSP string parts using the loaded hashes, ensuring uniqueness
 const scriptSources = new Set(["'self'", ...cspConfig.scriptHashes])
-// TODO: remove 'unsafe-inline' to style-src but not break fonts
-const styleSources = new Set([
-  "'self'",
-  'fonts.googleapis.com',
-  ...cspConfig.styleHashes,
-  "'unsafe-inline'",
-])
+const styleSources = new Set(["'self'", 'fonts.googleapis.com', ...cspConfig.styleHashes])
 
 const scriptSrc = Array.from(scriptSources).join(' ')
 const styleSrc = Array.from(styleSources).join(' ')
