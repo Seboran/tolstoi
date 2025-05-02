@@ -40,7 +40,7 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('X-Content-Type-Options', 'nosniff')
     res.setHeader('X-Frame-Options', 'DENY') // Keep this for older browser compatibility, though frame-ancestors in CSP is preferred
     res.setHeader('X-XSS-Protection', '1; mode=block') // Deprecated but doesn't hurt
-    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains') // Ensure this is only sent over HTTPS in production
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload') // Ensure this is only sent over HTTPS in production
     res.setHeader('Referrer-Policy', 'no-referrer') // Add Referrer-Policy header back
 
     await ssrHandler(req, res)
