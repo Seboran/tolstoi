@@ -51,15 +51,10 @@ export const astroCSPHashGenerator: AstroIntegration = {
 
           // Process style tags
           const styles = root.querySelectorAll('style')
-          logger.info(`Found ${styles.length} style tag(s) in ${page.pathname}index.html`) // Add log
           for (const style of styles) {
             const styleContent = style.textContent || ''
             // Log the content being hashed (first 100 chars)
-            logger.info(
-              `Hashing style content (start): ${styleContent.substring(0, 100).replace(/\n/g, '\\n')}...`,
-            )
             const hash = await createCspHash(styleContent)
-            logger.info(`Generated style hash: ${hash}`) // Add log
             styleHashes.push(hash)
           }
         } catch (error) {

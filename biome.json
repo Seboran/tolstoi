@@ -25,7 +25,8 @@
       "**/dist",
       "**/matrix.json",
       "**/venv/**",
-      "**/.venv/**"
+      "**/.venv/**",
+      "csp.generated.json"
     ]
   },
   "organizeImports": { "enabled": true },
