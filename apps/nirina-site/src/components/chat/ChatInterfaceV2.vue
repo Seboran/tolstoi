@@ -29,7 +29,7 @@ async function fetchMistralResponse(inputMessage: string) {
   ajouterMessageUser(inputMessage)
 
   try {
-    const response = await fetch('/api/chat', {
+    const response = await fetch('/api/peppers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

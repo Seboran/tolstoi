@@ -2,7 +2,7 @@ import OpenAI from 'openai'
 import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
 import { callWithRetry } from '../utils/retryUtils.ts'
-import { systemPrompt } from './system_prompt.ts'
+import { PRESENTATION_NIRINA_SYSTEM_PROMPT } from './system_prompt.ts'
 
 const MODEL = 'mistral-small-2503'
 
@@ -67,7 +67,7 @@ export function useChatFunction(
       const response = await callWithRetry(() =>
         client.chat.completions.create({
           model: MODEL,
-          messages: [{ role: 'system', content: systemPrompt }, ...messages],
+          messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
           tools,
           tool_choice: 'required',
           stream,
@@ -118,7 +118,7 @@ export function useChatFunction(
     const completionStream = await callWithRetry(() =>
       client.chat.completions.create({
         model: MODEL,
-        messages: [{ role: 'system', content: systemPrompt }, ...messages],
+        messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
         stream: true,
       }),
     )

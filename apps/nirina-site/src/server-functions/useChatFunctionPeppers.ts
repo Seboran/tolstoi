@@ -1,12 +1,14 @@
 import OpenAI from 'openai'
 import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from '../../utils/environment-variables.ts'
 import type { ListeMessagesMistral } from '../../utils/types.ts'
-import { PRESENTATION_NIRINA_SYSTEM_PROMPT } from './system_prompt.ts'
+import { callWithRetry } from '../utils/retryUtils.ts'
+import { PEPPERS_SYSTEM_PROMPT } from './system_prompt.ts'
 
-export function useChatFunction(
+const MODEL = 'mistral-large-2411'
+
+export function useChatPeppersFunction(
   variables: Partial<{
     apiKey: string
-    ENABLE_CHAT: string
     MISTRAL_API_ENDPOINT: string
   }>,
 ) {
@@ -23,18 +25,6 @@ export function useChatFunction(
     if (!variables.MISTRAL_API_ENDPOINT)
       throw new Error(`${MISTRAL_API_ENDPOINT_KEY} is not set on netlify or is empty`)
 
-    /**
-     * Désactivation du service si non configuré
-     */
-    if (!variables.ENABLE_CHAT)
-      return new Response(
-        JSON.stringify({
-          error: 'There is no chat ATM',
-        }),
-        {
-          status: 405,
-        },
-      )
     const requestBody = await request.json()
 
     if (!requestBody) {
@@ -49,7 +39,10 @@ export function useChatFunction(
     /**
      * Début concret de la fonction
      */
-    return await fetchMistralApi(requestBody.messages)
+    const { messages } = requestBody
+
+    // Handle regular streaming request
+    return await fetchMistralApi(messages)
   }
 
   /**
@@ -59,11 +52,13 @@ export function useChatFunction(
    * @returns une réponse contenant un ReadableStream
    */
   async function fetchMistralApi(messages: ListeMessagesMistral): Promise<Response> {
-    const completionStream = await client.chat.completions.create({
-      model: 'mistral-small-2503', // adjust model if needed
-      messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
-      stream: true,
-    })
+    const completionStream = await callWithRetry(() =>
+      client.chat.completions.create({
+        model: MODEL,
+        messages: [{ role: 'system', content: PEPPERS_SYSTEM_PROMPT }, ...messages],
+        stream: true,
+      }),
+    )
 
     const streamBody = new ReadableStream<Uint8Array>({
       async start(controller) {
