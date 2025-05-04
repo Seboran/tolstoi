@@ -94,7 +94,7 @@ async function handleFormSubmit(inputMessage: string) {
 }
 </script>
 <template>
-  <ChatInterfaceTemplate @submit="handleFormSubmit">
+  <ChatInterfaceTemplate @submit="handleFormSubmit" placeholder="À quelle heure mange le chat ?">
     <div v-if="mistralAnswer">
       <div class="text-black dark:text-white">
         <p v-if="mistralAnswer">

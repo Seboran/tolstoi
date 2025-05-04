@@ -7,7 +7,7 @@ const pauseEntreMots = 120
 
 const message = ref('')
 
-const props = withDefaults(defineProps<{ loading?: boolean }>(), {
+const props = withDefaults(defineProps<{ loading?: boolean; placeholder?: string }>(), {
   loading: false,
 })
 
@@ -60,6 +60,8 @@ function submitOnEnter(key: KeyboardEvent) {
     handleFormSubmit()
   }
 }
+
+const defaultPlaceholder = 'Par exemple : Je voudrais lire le dernier article de blog.'
 </script>
 <template>
   <div>
@@ -71,7 +73,7 @@ function submitOnEnter(key: KeyboardEvent) {
       <div class="flex w-full flex-row">
         <textarea
           class="h-16 w-full resize-none border-none bg-transparent outline-hidden placeholder:text-slate-400/75 dark:placeholder:text-slate-100/75"
-          placeholder="Par exemple : Je voudrais lire le dernier article de blog." autofocus v-model="message"
+          :placeholder="placeholder ?? defaultPlaceholder"
           @keypress="submitOnEnter"></textarea>
         <EnvoyerButton :loading />
       </div>
