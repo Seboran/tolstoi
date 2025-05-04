@@ -69,28 +69,7 @@ async function fetchMistralResponse(inputMessage: string) {
 
 // Gestionnaire des redirections pour le chatbot
 async function handleFormSubmit(inputMessage: string) {
-  // Si le champ est vide, redirige vers le dernier article
-  if (inputMessage.length === 0) {
-    document.location.href = lienDernierArticle
-    return false
-  }
-
-  // Convertir l'entrée utilisateur en minuscules pour éviter les erreurs liées à la casse
-  const lowerCaseInput = inputMessage.toLowerCase()
-
-  // Parcourir la map pour trouver la première correspondance
-  for (const { pattern, href } of regexMap(lienDernierArticle)) {
-    if (pattern.test(lowerCaseInput)) {
-      try {
-        await fetchMistralResponse(inputMessage)
-      } catch (e) {
-        console.error(e)
-      } finally {
-        lienVersSuite.value = href
-      }
-      return
-    }
-  }
+  await fetchMistralResponse(inputMessage)
 }
 </script>
 <template>
@@ -101,15 +80,6 @@ async function handleFormSubmit(inputMessage: string) {
           <strong>Réponse :</strong> {{ mistralAnswer }}
         </p>
       </div>
-
-      <a v-if="lienVersSuite" :href="lienVersSuite"
-        class="text-blue-800 hover:text-gray-800 dark:text-blue-200 dark:hover:text-gray-200">
-        <div class="my-1 py-1">
-          <button type="button" class="button-levitation">
-            Continuer vers {{ lienVersSuite }} &rarr;
-          </button>
-        </div>
-      </a>
     </div>
     <template #suggestions>
     Voici les consignes qu'a reçu le chatbot :
