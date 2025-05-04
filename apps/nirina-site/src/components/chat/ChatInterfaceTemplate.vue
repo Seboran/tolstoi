@@ -80,11 +80,13 @@ function submitOnEnter(key: KeyboardEvent) {
     </form>
 
     <div class="flex flex-row flex-wrap justify-center gap-2 pt-5">
-      <BoutonSuggestionChat @click="handleClickOnSuggestion">
-        Peux-tu montrer tous tes articles ?
-      </BoutonSuggestionChat>
-      <BoutonSuggestionChat @click="handleClickOnSuggestion">Je voudrais prendre contact</BoutonSuggestionChat>
-      <BoutonSuggestionChat @click="handleClickOnSuggestion">Peux-tu te présenter ?</BoutonSuggestionChat>
+        <slot name="suggestions">
+            <BoutonSuggestionChat @click="handleClickOnSuggestion">
+                Peux-tu montrer tous tes articles ?
+            </BoutonSuggestionChat>
+            <BoutonSuggestionChat @click="handleClickOnSuggestion">Je voudrais prendre contact</BoutonSuggestionChat>
+            <BoutonSuggestionChat @click="handleClickOnSuggestion">Peux-tu te présenter ?</BoutonSuggestionChat>
+        </slot>
     </div>
   </div>
 </template>

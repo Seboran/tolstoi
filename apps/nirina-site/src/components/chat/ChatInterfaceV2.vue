@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { ListeMessagesMistral } from '../../../utils/types'
+import { PEPPERS_SYSTEM_PROMPT } from '../../server-functions/system_prompt'
 import ChatInterfaceTemplate from './ChatInterfaceTemplate.vue'
 import { regexMap } from './regexMap'
 import { useListeMessages } from './useListeMessages'
@@ -110,6 +111,11 @@ async function handleFormSubmit(inputMessage: string) {
         </div>
       </a>
     </div>
+    <template #suggestions>
+    Voici les consignes qu'a reçu le chatbot :
+    <p>
+        {{ PEPPERS_SYSTEM_PROMPT }}
+    </p></template>
   </ChatInterfaceTemplate>
 </template>
 
