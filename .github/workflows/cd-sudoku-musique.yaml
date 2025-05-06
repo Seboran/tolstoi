@@ -1,4 +1,6 @@
 name: cd-sudoku-musique
+permissions:
+  contents: read
 on:
   push:
     branches:

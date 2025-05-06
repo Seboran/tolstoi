@@ -1,4 +1,6 @@
 name: cd-bons-comptes-bons-amis
+permissions:
+  contents: read
 on:
   push:
     branches:

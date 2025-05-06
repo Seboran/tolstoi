@@ -1,4 +1,6 @@
 name: cd-freelance-simulateur
+permissions:
+  contents: read
 on:
   push:
     branches:
