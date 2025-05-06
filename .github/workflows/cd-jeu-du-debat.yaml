@@ -1,4 +1,6 @@
 name: cd-jeu-du-debat
+permissions:
+  contents: read
 on:
   push:
     branches:
