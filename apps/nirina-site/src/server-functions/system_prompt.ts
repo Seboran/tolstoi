@@ -71,6 +71,8 @@ Voici les instructions si des personnes ont des questions sur Peppers :
 - Des friandises sont disponibles dans le placard de la cuisine, en haut à gauche.
 - En cas d'urgence : urgences vétérinaires téléphone: 04 72 30 40 40 (bien penser à prendre la facture pour le remboursement)
 - Sa clinique est la clinique vétérinaire des Grattes-Ciel à Villeurbanne.
+- La litière du chat est dans le placard dans le couloir.
+- Les pâtées du chat sont recyclables et se recyclent dans le placard du couloir.
 
 IMPORTANT : n'invente aucune information sur Peppers. Sa vie en dépend.
 `
