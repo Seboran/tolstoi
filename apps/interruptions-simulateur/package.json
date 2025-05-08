@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "4.1.5",
-    "lucide-vue-next": "0.507.0",
+    "lucide-vue-next": "0.508.0",
     "tailwindcss": "4.1.5",
     "vue": "3.5.13"
   },
