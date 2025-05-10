@@ -12,8 +12,8 @@
     "test:e2e": "pnpm playwright test"
   },
   "dependencies": {
-    "framer-motion": "12.10.4",
-    "lucide-react": "0.508.0",
+    "framer-motion": "12.10.5",
+    "lucide-react": "0.509.0",
     "next": "15.3.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"

@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "4.1.5",
-    "lucide-vue-next": "0.508.0",
-    "tailwindcss": "4.1.5",
+    "@tailwindcss/vite": "4.1.6",
+    "lucide-vue-next": "0.509.0",
+    "tailwindcss": "4.1.6",
     "vue": "3.5.13"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "5.2.3",
+    "@vitejs/plugin-vue": "5.2.4",
     "typescript": "5.8.3",
     "vite": "6.3.5",
     "vite-plugin-vue-devtools": "7.7.6",
