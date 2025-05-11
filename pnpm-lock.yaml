@@ -649,7 +649,7 @@ importers:
   apps/reinventons-le-web:
     dependencies:
       '@slidev/cli':
-        specifier: ^51.6.0
+        specifier: 51.6.0
         version: 51.6.0(@babel/parser@7.27.1)(@nuxt/kit@3.17.2(magicast@0.3.5))(@types/markdown-it@14.1.2)(@types/node@22.15.17)(@vue/compiler-sfc@3.5.13)(lightningcss@1.29.2)(magicast@0.3.5)(markdown-it-async@2.2.0)(postcss@8.5.3)(react@19.1.0)(terser@5.37.0)
       '@slidev/theme-default':
         specifier: latest
@@ -658,7 +658,7 @@ importers:
         specifier: latest
         version: 0.25.0
       vue:
-        specifier: ^3.5.13
+        specifier: 3.5.13
         version: 3.5.13(typescript@5.8.3)
 
   apps/tricount-solver: {}
@@ -11415,7 +11415,7 @@ snapshots:
 
   '@astrojs/yaml2ts@0.2.2':
     dependencies:
-      yaml: 2.7.0
+      yaml: 2.7.1
 
   '@babel/code-frame@7.26.2':
     dependencies:
@@ -23267,7 +23267,7 @@ snapshots:
       '@quansync/fs': 0.1.3
       defu: 6.1.4
       jiti: 2.4.2
-      quansync: 0.2.8
+      quansync: 0.2.10
 
   uncrypto@0.1.3: {}
 
@@ -23897,7 +23897,7 @@ snapshots:
       debug: 4.4.0(supports-color@5.5.0)
       error-stack-parser-es: 1.0.5
       ohash: 2.0.11
-      open: 10.1.0
+      open: 10.1.2
       perfect-debounce: 1.0.0
       sirv: 3.0.1
       unplugin-utils: 0.2.4
@@ -23914,7 +23914,7 @@ snapshots:
       debug: 4.4.0(supports-color@5.5.0)
       error-stack-parser-es: 1.0.5
       ohash: 2.0.11
-      open: 10.1.0
+      open: 10.1.2
       perfect-debounce: 1.0.0
       sirv: 3.0.1
       unplugin-utils: 0.2.4
