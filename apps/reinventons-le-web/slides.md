@@ -64,8 +64,8 @@ layout: fact
 ---
 
 <!-- Parler de qui a déjà codé sans framework ?-->
-<h1 v-click="fade">
-❓❓❓
+<h1>
+∅
 </h1>
 
 ---
@@ -76,12 +76,45 @@ layout: center
 
 ![alt text](./assets/slidev_front.png)
 
+<!-- Confirmer le fait que les développeurs web utilisent principalement des frameworks pour faire leur travail
+
+Prouver que le cadre est bien posé et donc enchaîner sur les problèmes que cela peut poser -->
+
 ---
 layout: fact
 ---
 
 # Mais où est le problème ?
 
+---
+layout: center
+---
+
+<img src="./assets/choix-framework-debut-carriere.png" alt="meme avec les deux chemins qui split" style="display: block; max-width: 500px; margin: auto;" />
+
+<span v-click style="position: absolute; top: 20%; left: 37%; transform: translate(-50%, -50%); background: rgba(255,255,255); padding: 1em;">
+  FAIRE DU WEB
+</span>
+<span v-click style="position: absolute; top: 20%; left: 63%; transform: translate(-50%, -50%); background: rgba(255,255,255,1); padding: 1em;">
+  FAIRE DU EMBER.JS
+</span>
+
+<!-- Parler de la difficulté de choisir un framework pour choisir son premier framework 
+
+Parler de toutes les dingueries que cela implique : toujours plus spécialisé dans une technologie qui n'existe depuis pas si longtemps
+Parler du fait que ça devient de moins en moins bien vu pour manipuler les autres frameworks
+
+Comment avoir des opportunités d'utiliser d'autres frameworks ? Et surtout, les outils préférés ?
+
+C'est là que j'ai besoin de parler du rêve : pouvoir emprunter des technologies venant d'autres frameworks et ensuite décider à la carte ce que l'on veut -->
+
+---
+layout: center
+---
+
+![years of academy training wasted](./assets/years-of-academy-training-wasted.png)
+
+<!-- Years of academic training wasted -->
 ---
 
 # L'enfer des migrations
