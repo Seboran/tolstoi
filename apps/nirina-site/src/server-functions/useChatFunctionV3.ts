@@ -6,16 +6,44 @@ import { PRESENTATION_NIRINA_SYSTEM_PROMPT } from './system_prompt.ts'
 
 const MODEL = 'mistral-small-2503'
 
-export function useChatFunction(
-  variables: Partial<{
-    apiKey: string
-    MISTRAL_API_ENDPOINT: string
-  }>,
-) {
+interface AIClient {
+  chatStream(
+    messages: ListeMessagesMistral,
+    tools: any[] | undefined,
+    { stream }: { stream: boolean },
+  ): Promise<unknown>
+}
+
+function getClient(variables: ChatFunctionArguments): AIClient {
   const client = new OpenAI({
     baseURL: variables.MISTRAL_API_ENDPOINT,
     apiKey: variables.apiKey,
   })
+
+  return {
+    chatStream: function (
+      messages: ListeMessagesMistral,
+      tools: any[] | undefined,
+      { stream }: { stream: boolean },
+    ) {
+      return client.chat.completions.create({
+        model: MODEL,
+        messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
+        tools,
+        tool_choice: tools ? 'required' : undefined,
+        stream,
+      })
+    },
+  }
+}
+
+type ChatFunctionArguments = Partial<{
+  apiKey: string
+  MISTRAL_API_ENDPOINT: string
+}>
+
+export function useChatFunction(variables: ChatFunctionArguments) {
+  const client = getClient(variables)
 
   async function post(request: Request): Promise<Response> {
     /**
@@ -64,15 +92,7 @@ export function useChatFunction(
     stream: boolean,
   ): Promise<Response> {
     try {
-      const response = await callWithRetry(() =>
-        client.chat.completions.create({
-          model: MODEL,
-          messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
-          tools,
-          tool_choice: 'required',
-          stream,
-        }),
-      )
+      const response = await callWithRetry(() => client.chatStream(messages, tools, { stream }))
 
       if (stream) {
         const streamBody = new ReadableStream<Uint8Array>({
@@ -116,11 +136,7 @@ export function useChatFunction(
    */
   async function fetchMistralApi(messages: ListeMessagesMistral): Promise<Response> {
     const completionStream = await callWithRetry(() =>
-      client.chat.completions.create({
-        model: MODEL,
-        messages: [{ role: 'system', content: PRESENTATION_NIRINA_SYSTEM_PROMPT }, ...messages],
-        stream: true,
-      }),
+      client.chatStream(messages, undefined, { stream: true }),
     )
 
     const streamBody = new ReadableStream<Uint8Array>({
