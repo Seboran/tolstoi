@@ -26,11 +26,13 @@
       "**/matrix.json",
       "**/venv/**",
       "**/.venv/**",
-      "csp.generated.json"
+      "csp.generated.json",
+      "**/.obsidian/**"
     ]
   },
   "organizeImports": { "enabled": true },
   "linter": {
+    "ignore": ["**/.obsidian/**"],
     "enabled": true,
     "rules": {
       "recommended": false,
