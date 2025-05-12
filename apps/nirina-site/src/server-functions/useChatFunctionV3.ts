@@ -4,7 +4,8 @@ import type { ListeMessagesMistral } from '../../utils/types.ts'
 import { callWithRetry } from '../utils/retryUtils.ts'
 import { PRESENTATION_NIRINA_SYSTEM_PROMPT } from './system_prompt.ts'
 
-const MODEL = 'mistral-small-2503'
+type Models = 'mistral-medium-2505' | 'mistral-large-2411' | 'mistral-small-2503'
+const MODEL = 'mistral-large-2411' satisfies Models
 
 interface AIClient {
   chatStream(
