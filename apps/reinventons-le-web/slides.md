@@ -26,7 +26,7 @@ Anecdote de rechercher un emploi en react.js alors que je fais du vue.js
 
 ---
 
-# Déconstruisons les frameworks JS pour mieux réinventer le web !
+# Déconstruisons les frameworks JS pour mieux réinventer le web
 
 ---
 transition: fade-out
@@ -34,7 +34,7 @@ layout: center
 class: text-center text-5xl align-center
 ---
 
-# Faisons connaissance !
+# Faisons connaissance
 
 <style>
 h1 {
@@ -109,6 +109,14 @@ Comment avoir des opportunités d'utiliser d'autres frameworks ? Et surtout, les
 C'est là que j'ai besoin de parler du rêve : pouvoir emprunter des technologies venant d'autres frameworks et ensuite décider à la carte ce que l'on veut -->
 
 ---
+
+![tendances de téléchargements sur npmtrends de ember.js](./assets/ember-js.png)
+
+---
+
+![tendances de téléchargements sur npmtrends de ember.js contre react.js](./assets/react-js-vs-ember-js.png)
+
+---
 layout: center
 ---
 
@@ -122,6 +130,7 @@ layout: center
 - Qui se souvient de la migration de AngularJS à Angular 2 ?
 - Qui se souvient de la migration de Vue2 à Vue 3 ? (ou Nuxt 2 à Nuxt 3)
 - Qui se demande encore quelle est la meilleure façon de faire du store ou du routing en react.js ?
+- Qui sait migrer une application faite en ember ?
 
 ---
 
@@ -136,7 +145,6 @@ L'enfer de trouver des développeurs qui veulent faire du Gatsby
 # Silos de compétences
 
 Le ridicule d'être recalé à des rôles senior pour des frameworks JS car on n'a pas assez d'expérience en vue ou react
-
 
 ![Graphique qui montre les principaux problèmes des frameworks](./assets/faible_performance_et_complexite.png)
 
@@ -154,11 +162,15 @@ Prendre peut-être l'exemple de wallmart ou de back market ?
 
 Il est nécessaire de commencer à faire autre chose. Est-ce qu'il est possible de faire les choses proprement ?
 
+Parler de rêve : je rêve d'un monde dans lequel on peut facilement faire du web, sans avoir besoin d'être très fortement spécialisé dans des technologies obscures. Je rêve d'un monde ou les projets sont complexes, mais il est possible de les séparer en de petits éléments
+
+Regarder comment on pourrait faire sans.
+
 ---
 layout: statement
 ---
 
-# Peut-on faire sans framework js ?
+# Un exemple qui fait sens
 
 ---
 
@@ -189,7 +201,7 @@ Montrer que c'est très facile d'afficher du contenu statique
 
 Mais un premier code smell : la réutilisation de composants, sensation de se répéter.
 
---- 
+---
 
 # La sensation de réécrire du code : DRY vs WET
 
@@ -209,13 +221,27 @@ Comment on pourrait réutiliser des éléments ?
 
 # La composition d'éléments : la grande différence pour expliquer pourquoi le dev-web est si différent du reste du monde
 
+<!-- C'est la partie compliquée du talk, comme dans le précédent, réussir à amener très progressivement un petit peu tout -->
+
 Décrire comment les applications utilisent de la composition, montrer les arbres syntaxiques de parcours, et comment on les explore.
+
+Réussir à faire la peinture initiale du site !!!
+
+Montrer que `vite.js` fait incroyablement bien les choses en zéro configuration
+
+---
+
+# Tout ce que l'on peut réussir à faire sans javascript en ayant un code plutôt joli
+
+Des jolies homepage, des animations et des transitions
 
 ---
 
 # La nécessité de rendre le site web dynamique
 
 Parler de l'enfer de gérer des états réactifs, se pose la question de ce qui pose le plus cher.
+
+Parler d'exemples d'intéractivité qui nécessitent du javascript
 
 ---
 
@@ -234,6 +260,27 @@ Avons-nous inventé mieux que les event listeners ?
 
 Peut-on faire des proxies d'absolument tout ?
 
+<!-- Je me rends compte qu'on ne pourra pas tout faire en fait, donc je vais plutôt choisir un grand chemin pour réussir à faire proprement ma réactivité.
+
+Peut-être parler de stores et de voir comment on va réussir à les implémenter à la main -->
+
+<!-- C'est là qu'on se met à faire faire le bingo avec les deux parties -->
+<!-- je me dis que ce serait trop cool de le faire en deux temps : d'abord le jeu de rôles, et ensuite le jeu du bingo. Bref, il se passera plein de choses -->
+
+---
+
+# Les façons d'implémenter des proxies
+
+- parler de liste de listeners
+- parler de proxy function
+- parler de whatever qui est à la mode ?
+
+---
+
+# Implémentons notre propre listener !
+
+On va implémenter des proxies et ce sera beaucoup plus simple de tout afficher
+
 ---
 
 # Comment afficher dans le navigateur les choses que l'on a faites ?
@@ -251,6 +298,27 @@ L'enfer des circular loops, comment
 # L'intégration avec le reste de l'écosystème
 
 Blablabla avec vite, vitest et esbuild ou je sais pas ce qui va être utilisé
+
+---
+
+# Parler d'une architecture
+
+- Module federation
+- Microfrontends
+
+Pas de meilleur choix, mais important que l'architecture du projet permette de facilement revenir en arrière dans le web (c'est un MUST have)
+
+Exemple :
+
+---
+
+# Rappeler que le SSR et SSG aident énormément
+
+---
+
+# Pour aller plus loin
+
+Parler du talk de JS sur les designs systems et le fait de le faire sans aide.
 
 ---
 layout: end
