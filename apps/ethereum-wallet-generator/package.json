@@ -17,13 +17,13 @@
     "elliptic": "6.6.1",
     "js-sha3": "0.9.3",
     "pinia": "3.0.2",
-    "vue": "3.5.13",
+    "vue": "3.5.14",
     "vue-clipboard3": "2.0.0"
   },
   "devDependencies": {
     "@playwright/test": "1.52.0",
     "@types/bootstrap": "5.2.10",
-    "@types/node": "22.15.17",
+    "@types/node": "22.15.18",
     "@vitejs/plugin-vue": "5.2.4",
     "@vue/test-utils": "2.4.6",
     "jsdom": "26.1.0",
