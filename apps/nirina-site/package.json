@@ -19,7 +19,7 @@
     "@astrojs/react": "4.2.7",
     "@astrojs/rss": "4.0.11",
     "@astrojs/vue": "5.0.13",
-    "@supabase/supabase-js": "2.49.4",
+    "@supabase/supabase-js": "2.49.5",
     "@tailwindcss/vite": "4.1.7",
     "@types/react": "19.1.4",
     "@types/react-dom": "19.1.5",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@playwright/test": "1.52.0",
     "@tailwindcss/typography": "0.5.16",
-    "@types/node": "22.15.18",
+    "@types/node": "22.15.19",
     "@types/nodemailer": "6.4.17",
     "kill-port": "2.0.1",
     "node-html-parser": "7.0.1",
