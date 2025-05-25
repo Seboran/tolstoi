@@ -27,12 +27,13 @@
       "**/venv/**",
       "**/.venv/**",
       "csp.generated.json",
-      "**/.obsidian/**"
+      "**/.obsidian/**",
+      "**/reinventons-le-web/**"
     ]
   },
   "organizeImports": { "enabled": true },
   "linter": {
-    "ignore": ["**/.obsidian/**"],
+    "ignore": ["**/.obsidian/**", "**/reinventons-le-web/**"],
     "enabled": true,
     "rules": {
       "recommended": false,

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #333;
+      cursor: pointer;
+      font-size: 20px;
+      user-select: none;
+    }
+
+    .marked {
+      background-color: #8f8;
+    }
+
+    .error {
+      background-color: #f88;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Bingo</h1>
+  <table id="bingo-grid">
+    <tr>
+      <td>5</td>
+      <td>12</td>
+      <td>1</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>3</td>
+      <td>11</td>
+      <td class="green">2</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>7</td>
+      <td>4</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>15</td>
+      <td>10</td>
+      <td>13</td>
+    </tr>
+  </table>
+
+
+  <h1>Bingo</h1>
+  <BingoTableau />
+    <BingoLigne>
+      <BingoCase>9</BingoCase>
+      <BingoCase>3</BingoCase>
+      <BingoCase>11</BingoCase>
+      <BingoCase class="green">2</BingoCase>
+    </BingoLigne>
+    <BingoLigne>
+      <BingoCase>14</BingoCase>
+      <BingoCase>7</BingoCase>
+      <BingoCase>4</BingoCase>
+      <BingoCase>6</BingoCase>
+    </BingoLigne>
+    <BingoLigne>
+      <BingoCase>8</BingoCase>
+      <BingoCase>15</BingoCase>
+      <BingoCase>10</BingoCase>
+      <BingoCase>13</BingoCase>
+    </BingoLigne>
+  </BingoTableau>
+
+  <script src="bingo.js"></script>
+  <style>
+    .green {
+      background-color: rgb(126, 255, 126);
+    }
+  </style>
+</body>
+
+</html>
