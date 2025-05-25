@@ -7,6 +7,4 @@ graph TD
   T[BingoTableau] --> R1[BingoLigne]
   R1 --> C1[BingoCase]
   R1 --> C2[BingoCase]
-  R1 --> C3[BingoCase]
-  R1 --> C4[BingoCase]
  
