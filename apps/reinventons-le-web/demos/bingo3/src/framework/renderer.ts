@@ -51,3 +51,11 @@ export function render(v: VNode | string | Array<VNode | string>): Node {
 export function mount(vnode: VNode, container: HTMLElement) {
   container.appendChild(render(vnode))
 }
+
+export function mountReactive(vnodeFn: () => VNode, container: HTMLElement) {
+  effect(() => {
+    container.innerHTML = ''
+    const vnode = vnodeFn()
+    container.appendChild(render(vnode))
+  })
+}
