@@ -1,10 +1,19 @@
 import { effect } from './reactive'
 import type { VNode } from './vdom'
 
-export function render(v: VNode | string | Array<VNode | string>): Node {
+export function render(v: VNode | string | Array<VNode | string> | (() => string)): Node {
   console.log('Rendering:', v)
 
   if (typeof v === 'string') return document.createTextNode(v)
+
+  // Handle reactive functions
+  if (typeof v === 'function') {
+    const textNode = document.createTextNode('')
+    effect(() => {
+      textNode.textContent = String(v())
+    })
+    return textNode
+  }
 
   // Handle arrays by creating a document fragment
   if (Array.isArray(v)) {
@@ -32,6 +41,11 @@ export function render(v: VNode | string | Array<VNode | string>): Node {
     if (k.startsWith('on') && typeof val === 'function') {
       const event = k.slice(2).toLowerCase()
       el.addEventListener(event, val)
+    } else if (typeof val === 'function') {
+      // Handle reactive attributes
+      effect(() => {
+        el.setAttribute(k, String(val()))
+      })
     } else {
       el.setAttribute(k, String(val))
     }
@@ -41,7 +55,17 @@ export function render(v: VNode | string | Array<VNode | string>): Node {
   console.log('Processing children:', children)
   for (const child of children) {
     if (child !== undefined && child !== null) {
-      el.appendChild(render(child))
+      // Check if child is a reactive function
+      if (typeof child === 'function') {
+        // Create a text node that updates reactively
+        const textNode = document.createTextNode('')
+        effect(() => {
+          textNode.textContent = String(child())
+        })
+        el.appendChild(textNode)
+      } else {
+        el.appendChild(render(child))
+      }
     }
   }
 

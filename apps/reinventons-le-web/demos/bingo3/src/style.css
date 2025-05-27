@@ -23,6 +23,7 @@ td {
   cursor: pointer;
   font-size: 20px;
   user-select: none;
+  transition: background-color 0.2s ease;
 }
 
 .marked {

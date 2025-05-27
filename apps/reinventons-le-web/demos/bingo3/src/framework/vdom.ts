@@ -1,13 +1,13 @@
 export type VNode = {
   tag: string | Function
   props: Record<string, any>
-  children: Array<VNode | string>
+  children: Array<VNode | string | (() => string)>
 }
 
 export function h(
   tag: string,
   props: Record<string, any> = {},
-  ...children: Array<VNode | string>
+  ...children: Array<VNode | string | (() => string)>
 ): VNode {
   return { tag, props, children }
 }
@@ -15,7 +15,7 @@ export function h(
 // JSX runtime functions
 export function jsx(tag: string | Function, props: Record<string, any> = {}): VNode {
   const { children, ...restProps } = props || {}
-  let childrenArray: Array<VNode | string> = []
+  let childrenArray: Array<VNode | string | (() => string)> = []
 
   if (children !== undefined) {
     if (Array.isArray(children)) {
