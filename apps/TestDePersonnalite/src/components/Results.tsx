@@ -84,9 +84,18 @@ export const Results: Component<{
   }
 
   const shareToBluesky = () => {
-    const shareText = `J'ai fait le test de personnalité des frameworks JavaScript ! Mon framework idéal est ${framework} ! 🚀 @nirinarabeson.fr`
+    const shareText = `J'ai fait le test de personnalité des frameworks JavaScript ! Mon framework idéal est ${framework} ! 🚀
+
+Fait le test toi aussi :`
     const shareUrl = window.location.href
-    const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText + '\n\n' + shareUrl)}`
+
+    // Try different approaches for the mention to work
+    const mention = '@nirinarabeson.fr'
+    const fullText = `${shareText} ${shareUrl}
+
+${mention}`
+
+    const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(fullText)}`
     window.open(blueskyUrl, '_blank')
   }
 
