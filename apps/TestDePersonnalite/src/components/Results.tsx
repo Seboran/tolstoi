@@ -106,6 +106,7 @@ ${mention}`
       <p class="result-description">
         {frameworkDescriptions[framework] || 'Un excellent choix pour vos projets web !'}
       </p>
+
       <button class="restart-button" onclick={onRestart}>
         Refaire le test
       </button>
@@ -124,6 +125,19 @@ ${mention}`
             🦋 Bluesky
           </button>
         </div>
+      </div>
+
+      {/* Source code link */}
+      <div class="source-section">
+        <a
+          href="https://github.com/Seboran/tolstoi/tree/main/apps/TestDePersonnalite"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="source-link"
+        >
+          <span class="source-icon">🔗</span>
+          Voir le code source
+        </a>
       </div>
     </div>
   )
