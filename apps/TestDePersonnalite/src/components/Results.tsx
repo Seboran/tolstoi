@@ -29,6 +29,67 @@ export const Results: Component<{
   framework: string
   onRestart: () => void
 }> = ({ framework, onRestart }) => {
+  // Check if native sharing is supported - requires secure context (HTTPS)
+  const isNativeShareSupported = () => {
+    return (
+      typeof navigator !== 'undefined' &&
+      'share' in navigator &&
+      typeof navigator.share === 'function' &&
+      window.isSecureContext // Required for Web Share API
+    )
+  }
+
+  // Check if we're on mobile
+  const isMobile = () => {
+    return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  }
+
+  const shareResults = async () => {
+    const shareText = `J'ai fait le test de personnalité des frameworks JavaScript ! Mon framework idéal est ${framework} ! 🚀`
+
+    // Construct the share data according to Web Share API spec
+    const shareData = {
+      title: 'Test de Personnalité - Résultats',
+      text: shareText,
+      url: window.location.href,
+    }
+
+    // Check if sharing is supported and validate the data first
+    if (!isNativeShareSupported()) {
+      console.log('Web Share API not supported')
+      return
+    }
+
+    // Validate share data before attempting to share (required by spec)
+    if (navigator.canShare && !navigator.canShare(shareData)) {
+      console.log('Share data is not valid for this platform')
+      return
+    }
+
+    try {
+      await navigator.share(shareData)
+      console.log('Share successful')
+    } catch (error) {
+      // Handle specific error cases as per spec
+      if (error.name === 'AbortError') {
+        console.log('Share cancelled by user')
+      } else if (error.name === 'NotAllowedError') {
+        console.log('Share not allowed (user gesture required or permissions)')
+      } else if (error.name === 'DataError') {
+        console.log('Share data error')
+      } else {
+        console.log('Share failed:', error.name, error.message)
+      }
+    }
+  }
+
+  const shareToBluesky = () => {
+    const shareText = `J'ai fait le test de personnalité des frameworks JavaScript ! Mon framework idéal est ${framework} ! 🚀 @nirinarabeson.fr`
+    const shareUrl = window.location.href
+    const blueskyUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(shareText + '\n\n' + shareUrl)}`
+    window.open(blueskyUrl, '_blank')
+  }
+
   return (
     <div class="results-container">
       <h2>Votre framework idéal est :</h2>
@@ -39,6 +100,22 @@ export const Results: Component<{
       <button class="restart-button" onclick={onRestart}>
         Refaire le test
       </button>
+
+      {/* Share buttons - always show on mobile, prioritize native iOS sharing */}
+      <div class="share-section">
+        <h4>Partager vos résultats :</h4>
+        <div class="share-buttons">
+          {isMobile() && (
+            <button class="share-button native-share" onclick={shareResults}>
+              📱 Partager
+            </button>
+          )}
+
+          <button class="share-button bluesky-share" onclick={shareToBluesky}>
+            🦋 Bluesky
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

@@ -742,3 +742,110 @@ h1 {
     border: 2px solid oklch(0.25 0.02 240);
   }
 }
+
+/* Share section styles */
+.share-section {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid oklch(0.85 0.03 240);
+  text-align: center;
+}
+
+.share-section h4 {
+  color: oklch(0.35 0.04 240);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.share-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 44px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(0.9 0.02 240 / 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.share-button:hover::before {
+  left: 100%;
+}
+
+.share-button:active {
+  transform: scale(0.95);
+}
+
+.native-share {
+  background: linear-gradient(135deg, oklch(0.6 0.15 220), oklch(0.65 0.18 240));
+  color: white;
+  box-shadow: 0 4px 12px oklch(0.6 0.15 220 / 0.3);
+}
+
+.native-share:hover {
+  background: linear-gradient(135deg, oklch(0.55 0.17 220), oklch(0.6 0.2 240));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px oklch(0.6 0.15 220 / 0.4);
+}
+
+.bluesky-share {
+  background: linear-gradient(135deg, oklch(0.6 0.15 200), oklch(0.65 0.18 220));
+  color: white;
+  box-shadow: 0 4px 12px oklch(0.6 0.15 200 / 0.3);
+}
+
+.bluesky-share:hover {
+  background: linear-gradient(135deg, oklch(0.55 0.17 200), oklch(0.6 0.2 220));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px oklch(0.6 0.15 200 / 0.4);
+}
+
+.mastodon-share {
+  background: linear-gradient(135deg, oklch(0.55 0.12 280), oklch(0.6 0.15 300));
+  color: white;
+  box-shadow: 0 4px 12px oklch(0.55 0.12 280 / 0.3);
+}
+
+.mastodon-share:hover {
+  background: linear-gradient(135deg, oklch(0.5 0.14 280), oklch(0.55 0.17 300));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px oklch(0.55 0.12 280 / 0.4);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .share-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .share-button {
+    width: 100%;
+    max-width: 240px;
+    justify-content: center;
+  }
+}

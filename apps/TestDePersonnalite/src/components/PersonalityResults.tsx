@@ -52,7 +52,7 @@ export const PersonalityResults: Component<{
         <h4>Tous vos scores :</h4>
         <div class="results-list">
           {sortedResults.map(([framework, score]) => (
-            <div class="result-item">
+            <div class="result-item" key={framework}>
               <span class="result-framework">{framework}</span>
               <div class="result-bar">
                 <div class="result-fill" style={`width: ${Math.round((score * 100) / 30)}%`}></div>
