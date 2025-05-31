@@ -1,4 +1,3 @@
-import { effect } from './reactive'
 import type { VNode } from './vdom'
 
 export function render(v: VNode | string | Array<VNode | string>): Node {
