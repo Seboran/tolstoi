@@ -11,11 +11,11 @@
     "prepublish": "ctix create --overwrite --useRootDir && tsc"
   },
   "devDependencies": {
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "ctix": "2.7.1",
     "nodemon": "3.1.10",
     "ts-node": "10.9.2",
-    "vitest": "3.1.4"
+    "vitest": "3.2.2"
   },
   "dependencies": {
     "lib-effondrement": "workspace:*"
