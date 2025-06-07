@@ -1,4 +1,3 @@
-import { effect } from './reactive'
 import type { VNode } from './vdom'
 
 export function render(v: VNode | string | Array<VNode | string> | (() => string)): Node {
@@ -9,9 +8,7 @@ export function render(v: VNode | string | Array<VNode | string> | (() => string
   // Handle reactive functions
   if (typeof v === 'function') {
     const textNode = document.createTextNode('')
-    effect(() => {
-      textNode.textContent = String(v())
-    })
+    textNode.textContent = String(v())
     return textNode
   }
 
@@ -43,9 +40,7 @@ export function render(v: VNode | string | Array<VNode | string> | (() => string
       el.addEventListener(event, val)
     } else if (typeof val === 'function') {
       // Handle reactive attributes
-      effect(() => {
-        el.setAttribute(k, String(val()))
-      })
+      el.setAttribute(k, String(val()))
     } else {
       el.setAttribute(k, String(val))
     }
@@ -59,9 +54,7 @@ export function render(v: VNode | string | Array<VNode | string> | (() => string
       if (typeof child === 'function') {
         // Create a text node that updates reactively
         const textNode = document.createTextNode('')
-        effect(() => {
-          textNode.textContent = String(child())
-        })
+        textNode.textContent = String(child())
         el.appendChild(textNode)
       } else {
         el.appendChild(render(child))
@@ -73,13 +66,6 @@ export function render(v: VNode | string | Array<VNode | string> | (() => string
 }
 
 export function mount(vnode: VNode, container: HTMLElement) {
+  container.innerHTML = ''
   container.appendChild(render(vnode))
-}
-
-export function mountReactive(vnodeFn: () => VNode, container: HTMLElement) {
-  effect(() => {
-    container.innerHTML = ''
-    const vnode = vnodeFn()
-    container.appendChild(render(vnode))
-  })
 }
