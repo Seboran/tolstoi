@@ -12,8 +12,8 @@
     "test:e2e": "pnpm playwright test"
   },
   "dependencies": {
-    "framer-motion": "12.15.0",
-    "lucide-react": "0.511.0",
+    "framer-motion": "12.16.0",
+    "lucide-react": "0.513.0",
     "next": "15.3.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -21,10 +21,10 @@
   "devDependencies": {
     "@eslint/js": "9.28.0",
     "@playwright/test": "1.52.0",
-    "@types/node": "22.15.29",
+    "@types/node": "22.15.30",
     "@types/react": "19.1.6",
-    "@types/react-dom": "19.1.5",
-    "@vitejs/plugin-react": "4.5.0",
+    "@types/react-dom": "19.1.6",
+    "@vitejs/plugin-react": "4.5.1",
     "eslint": "9.28.0",
     "eslint-plugin-react-hooks": "5.2.0",
     "eslint-plugin-react-refresh": "0.4.20",
@@ -32,7 +32,7 @@
     "postcss": "8.5.4",
     "tailwindcss": "3.4.17",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.33.0",
+    "typescript-eslint": "8.33.1",
     "vite": "6.3.5"
   }
 }
