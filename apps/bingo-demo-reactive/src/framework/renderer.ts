@@ -40,6 +40,7 @@ export function render(v: VNode | string | Array<VNode | string> | (() => string
       el.addEventListener(event, val)
     } else if (typeof val === 'function') {
       // Handle reactive attributes
+      // effect ici
       el.setAttribute(k, String(val()))
     } else {
       el.setAttribute(k, String(val))

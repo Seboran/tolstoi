@@ -7,7 +7,7 @@ export const BingoCase: Component<{ value: number }> = ({ value }) => {
   }
 
   return (
-    // 'marked'
+    // 'marked' + bien penser à faire une fonction
     <td onclick={handleClick}>{String(value)}</td>
   )
 }
