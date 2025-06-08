@@ -5,8 +5,8 @@
     "customManagers:biomeVersions",
     "group:allNonMajor"
   ],
-  "prConcurrentLimit": 1,
-  "branchConcurrentLimit": 1,
+  "prConcurrentLimit": 2,
+  "branchConcurrentLimit": 2,
   "packageRules": [
     {
       "matchPackageNames": ["happy-dom", "@tailwindcss/postcss", "@nuxtjs/tailwindcss"],
