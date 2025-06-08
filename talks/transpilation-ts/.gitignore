@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.idea/
+coverage/
+.vscode
+index.ts.bak
