@@ -1,5 +1,5 @@
 {
-  "name": "transpilation-ts-talk",
+  "name": "transpilation-ts",
   "version": "0.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
