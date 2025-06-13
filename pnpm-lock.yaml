@@ -225,11 +225,11 @@ importers:
         specifier: 22.15.31
         version: 22.15.31
       '@types/react':
-        specifier: 19.1.7
-        version: 19.1.7
+        specifier: 19.1.8
+        version: 19.1.8
       '@types/react-dom':
         specifier: 19.1.6
-        version: 19.1.6(@types/react@19.1.7)
+        version: 19.1.6(@types/react@19.1.8)
       postcss:
         specifier: 8.5.5
         version: 8.5.5
@@ -351,11 +351,11 @@ importers:
         specifier: 22.15.31
         version: 22.15.31
       '@types/react':
-        specifier: 19.1.7
-        version: 19.1.7
+        specifier: 19.1.8
+        version: 19.1.8
       '@types/react-dom':
         specifier: 19.1.6
-        version: 19.1.6(@types/react@19.1.7)
+        version: 19.1.6(@types/react@19.1.8)
       '@vitejs/plugin-react':
         specifier: 4.5.2
         version: 4.5.2(vite@6.3.5(@types/node@22.15.31)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.0))
@@ -611,7 +611,7 @@ importers:
         version: 9.2.2(astro@5.9.1(@netlify/blobs@8.1.1)(@types/node@22.15.31)(db0@0.3.2)(encoding@0.1.13)(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.8.0))
       '@astrojs/react':
         specifier: 4.3.0
-        version: 4.3.0(@types/node@22.15.31)(@types/react-dom@19.1.6(@types/react@19.1.7))(@types/react@19.1.7)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.37.0)(yaml@2.8.0)
+        version: 4.3.0(@types/node@22.15.31)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.37.0)(yaml@2.8.0)
       '@astrojs/rss':
         specifier: 4.0.12
         version: 4.0.12
@@ -625,11 +625,11 @@ importers:
         specifier: 4.1.8
         version: 4.1.8(vite@6.3.5(@types/node@22.15.31)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.0))
       '@types/react':
-        specifier: 19.1.7
-        version: 19.1.7
+        specifier: 19.1.8
+        version: 19.1.8
       '@types/react-dom':
         specifier: 19.1.6
-        version: 19.1.6(@types/react@19.1.7)
+        version: 19.1.6(@types/react@19.1.8)
       astro:
         specifier: 5.9.1
         version: 5.9.1(@netlify/blobs@8.1.1)(@types/node@22.15.31)(db0@0.3.2)(encoding@0.1.13)(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(rollup@4.41.0)(terser@5.37.0)(typescript@5.8.3)(yaml@2.8.0)
@@ -3497,8 +3497,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.1.7':
-    resolution: {integrity: sha512-BnsPLV43ddr05N71gaGzyZ5hzkCmGwhMvYc8zmvI8Ci1bRkkDSzDDVfAXfN2tk748OwI7ediiPX6PfT9p0QGVg==}
+  '@types/react@19.1.8':
+    resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -11402,10 +11402,10 @@ snapshots:
     dependencies:
       prismjs: 1.30.0
 
-  '@astrojs/react@4.3.0(@types/node@22.15.31)(@types/react-dom@19.1.6(@types/react@19.1.7))(@types/react@19.1.7)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.37.0)(yaml@2.8.0)':
+  '@astrojs/react@4.3.0(@types/node@22.15.31)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(jiti@2.4.2)(lightningcss@1.30.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(terser@5.37.0)(yaml@2.8.0)':
     dependencies:
-      '@types/react': 19.1.7
-      '@types/react-dom': 19.1.6(@types/react@19.1.7)
+      '@types/react': 19.1.8
+      '@types/react-dom': 19.1.6(@types/react@19.1.8)
       '@vitejs/plugin-react': 4.5.2(vite@6.3.5(@types/node@22.15.31)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.0))
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
@@ -14704,11 +14704,11 @@ snapshots:
 
   '@types/phoenix@1.6.6': {}
 
-  '@types/react-dom@19.1.6(@types/react@19.1.7)':
+  '@types/react-dom@19.1.6(@types/react@19.1.8)':
     dependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
 
-  '@types/react@19.1.7':
+  '@types/react@19.1.8':
     dependencies:
       csstype: 3.1.3
 

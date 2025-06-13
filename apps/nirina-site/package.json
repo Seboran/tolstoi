@@ -21,7 +21,7 @@
     "@astrojs/vue": "5.1.0",
     "@supabase/supabase-js": "2.50.0",
     "@tailwindcss/vite": "4.1.8",
-    "@types/react": "19.1.7",
+    "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "astro": "5.9.1",
     "dayjs": "1.11.13",
