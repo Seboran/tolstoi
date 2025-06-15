@@ -21,7 +21,17 @@ Pourquoi ne pas faire un seul repo contenant tous mes projets ?
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![Vitest](https://img.shields.io/badge/-Vitest-252529?style=for-the-badge&logo=vitest&logoColor=FCC72B)
 
-## Pourquoi ?
+## Pour déconstruire les framework Javascript
+
+Vous pouvez consulter ces trois répertoires :
+
+- [La démo statique](https://github.com/Seboran/tolstoi/tree/main/apps/bingo-demo)
+- [La démo réactive](https://github.com/Seboran/tolstoi/tree/main/apps/bingo-demo-reactive)
+- [Le test de personnalité](https://github.com/Seboran/tolstoi/tree/main/apps/TestDePersonnalite)
+
+---
+
+## Pourquoi ce repo ?
 
 Dans mon quotidien, je trouve cela beaucoup plus simple de mettre tous les projets dans un seul espace de travail. Je l'ai nommé Tolstoï, car ça devient un grand projet.
 
