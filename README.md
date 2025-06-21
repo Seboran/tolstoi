@@ -5,8 +5,6 @@ Pourquoi ne pas faire un seul repo contenant tous mes projets ?
 [![cd-bonne-energie-bons-voisins](https://github.com/seboran/tolstoi/actions/workflows/cd-bonne-energie.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-bonne-energie.yaml)
 [![cd-bons-comptes-bons-amis](https://github.com/seboran/tolstoi/actions/workflows/cd-bons-comptes-bons-amis.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-bons-comptes-bons-amis.yaml)
 [![cd-ethereum-generateur](https://github.com/seboran/tolstoi/actions/workflows/cd-ethereum-generateur.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-ethereum-generateur.yaml)
-[![cd-jeu-du-debat](https://github.com/seboran/tolstoi/actions/workflows/cd-jeu-du-debat.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-jeu-du-debat.yaml)
-[![cd-sudoku-musique](https://github.com/seboran/tolstoi/actions/workflows/cd-sudoku-musique.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/cd-sudoku-musique.yaml)
 
 [![ci](https://github.com/seboran/tolstoi/actions/workflows/ci.yaml/badge.svg)](https://github.com/seboran/tolstoi/actions/workflows/ci.yaml)
 
