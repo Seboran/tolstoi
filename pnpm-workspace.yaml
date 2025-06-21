@@ -1,9 +1,11 @@
 packages:
   - packages/*
   - apps/*
+injectWorkspacePackages: true
 onlyBuiltDependencies:
   - "@biomejs/biome"
   - "@parcel/watcher"
+  - "@tailwindcss/oxide"
   - esbuild
+  - gl
   - sharp
-injectWorkspacePackages: true
