@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content'
+import PresentationCard from '../components/PresentationCard.astro'
+import Layout from '../layouts/Layout.astro'
+
+const myPresentations = await getCollection('presentations')
+---
+
+<Layout title="Présentations, conférences et talks donnés par Nirina Rabeson">
+  <main class="max-w-4xl mx-auto px-6 py-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-8">Conférences</h1>
+
+    <div class="space-y-12">
+      {
+        myPresentations.map((presentation, index) => (
+          <PresentationCard
+            id={presentation.id}
+            isLast={index === myPresentations.length - 1}
+          />
+        ))
+      }
+    </div>
+  </main>
+</Layout>

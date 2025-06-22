@@ -30,7 +30,19 @@ const projetsCollection = defineCollection({
   }),
 })
 
+const presentationsCollection = defineCollection({
+  loader: glob({
+    pattern: ['**/*.md', '**/*.mdx'],
+    base: './src/content/presentations',
+  }),
+  schema: z.object({
+    title: z.string(),
+    url: z.string().url(),
+  }),
+})
+
 export const collections = {
   posts: postsCollection,
   projets: projetsCollection,
+  presentations: presentationsCollection,
 }
