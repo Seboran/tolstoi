@@ -23,7 +23,7 @@
   "devDependencies": {
     "@playwright/test": "1.52.0",
     "@types/bootstrap": "5.2.10",
-    "@types/node": "22.15.33",
+    "@types/node": "22.15.34",
     "@vitejs/plugin-vue": "5.2.4",
     "@vue/test-utils": "2.4.6",
     "jsdom": "26.1.0",
