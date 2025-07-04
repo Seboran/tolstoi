@@ -1,8 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>Seboran/renovate-config", "customManagers:biomeVersions"],
-  "prConcurrentLimit": 3,
-  "branchConcurrentLimit": 3,
+  "prConcurrentLimit": 1,
+  "branchConcurrentLimit": 1,
   "packageRules": [
     {
       "matchPackageNames": ["happy-dom", "@tailwindcss/postcss", "@nuxtjs/tailwindcss"],
