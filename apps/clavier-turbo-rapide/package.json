@@ -16,8 +16,8 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@playwright/experimental-ct-react": "1.53.1",
-    "@playwright/test": "1.53.1",
+    "@playwright/experimental-ct-react": "1.53.2",
+    "@playwright/test": "1.53.2",
     "@types/node": "22.15.34",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
