@@ -65,10 +65,10 @@ const defaultPlaceholder = 'Par exemple : Je voudrais lire le dernier article de
 </script>
 <template>
   <div>
-    <div class="funny-background absolute h-24 w-full max-w-lg"></div>
+    <div class="funny-background absolute h-24 w-full"></div>
 
     <form
-      class="big-perspective-on-hover chat-container relative top-0 m-auto grid max-w-lg columns-1 flex-row gap-3 bg-form p-4 text-black dark:text-white"
+      class="big-perspective-on-hover chat-container relative top-0 grid columns-1 flex-row gap-3 bg-form p-4 text-black dark:text-white"
       @submit.prevent="handleFormSubmit">
       <div class="flex w-full flex-row">
         <textarea
@@ -82,15 +82,6 @@ const defaultPlaceholder = 'Par exemple : Je voudrais lire le dernier article de
       <slot />
     </form>
 
-    <div class="flex flex-row flex-wrap justify-center gap-2 pt-5">
-        <slot name="suggestions">
-            <BoutonSuggestionChat @click="handleClickOnSuggestion">
-                Peux-tu montrer tous tes articles ?
-            </BoutonSuggestionChat>
-            <BoutonSuggestionChat @click="handleClickOnSuggestion">Je voudrais prendre contact</BoutonSuggestionChat>
-            <BoutonSuggestionChat @click="handleClickOnSuggestion">Peux-tu te présenter ?</BoutonSuggestionChat>
-        </slot>
-    </div>
   </div>
 </template>
 <style scoped>
