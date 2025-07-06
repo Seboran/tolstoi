@@ -36,8 +36,8 @@ html {
 }
 
 :root {
-  --c-brand: #4b8d97;
-  --c-brand-light: #75a8b0;
+  --c-brand: #000;
+  --c-brand-light: white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,12 +54,8 @@ p img {
   margin: 0px auto;
 }
 
-.link {
-  color: var(--c-brand);
-}
-
 .link:hover {
-  color: var(--c-brand-light);
+  opacity: 0.9;
 }
 
 .header-anchor {
@@ -71,7 +67,7 @@ h3 .header-anchor {
   position: absolute;
   left: -1em;
   text-decoration: none;
-  color: var(--c-brand);
+  /* color: var(--c-brand); */
 }
 
 h3 .header-anchor:before {

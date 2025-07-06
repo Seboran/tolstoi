@@ -4,6 +4,8 @@
   --color-send-message-active: var(--theme-color-send-message-active);
   --color-suggestion-chat: var(--theme-color-suggestion-chat);
   --color-paragraph: var(--theme-paragraph-color);
+  --color-title: var(--theme-title-color);
+  --color-link: var(--theme-link-color);
 }
 
 * {
@@ -17,6 +19,8 @@
     --theme-color-send-message-active: var(--color-blue-400);
     --theme-color-suggestion-chat: var(--color-slate-100);
     --theme-paragraph-color: var(--color-slate-900);
+    --theme-title-color: #ef5945;
+    --theme-link-color: var(--color-blue-500);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -24,6 +28,8 @@
       --theme-color-form: var(--color-slate-700);
       --theme-color-suggestion-chat: var(--color-slate-800);
       --theme-paragraph-color: var(--color-slate-200);
+      --theme-title-color: var(--color-white);
+      --theme-link-color: var(--color-blue-500);
     }
   }
 }

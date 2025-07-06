@@ -10,7 +10,7 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
   id="newsletter-form"
   method="POST"
   action={newsletterAction}
-  class="w-full mx-auto p-6 rounded-lg text-gray-900 dark:text-white space-y-4"
+  class="w-full mx-auto p-6 rounded-lg space-y-4"
 >
   <h2 class="text-2xl font-semibold">Une newsletter qui parle d'humanité et de technologie ?</h2>
 
@@ -30,7 +30,7 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
       autocomplete="email"
       required
       name="email"
-      class="bordures-degrade w-full px-4 py-2 border border-gray-300 text-gray-900 dark:text-gray-100 dark:bg-gray-700 dark:border-gray-600"
+      class="bordures-degrade w-full px-4 py-2 border border-gray-300 dark:bg-gray-700 dark:border-gray-600"
       placeholder="Votre adresse email"
       transition:persist
     />
@@ -64,7 +64,7 @@ const newsletterAction = 'https://buttondown.com/api/emails/embed-subscribe/niri
     !afficherBientotDisponible ? (
       <button
         type="submit"
-        class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-sm focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
+        class="w-full py-2 px-4 bg-[var(--color-send-message)] hover:bg-[var(--color-send-message-active)] text-white font-semibold shadow-sm focus:outline-hidden focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-800"
       >
         S'inscrire
       </button>

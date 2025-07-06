@@ -13,26 +13,18 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
   ><div class="m-auto flex flex-col-reverse md:grid md:grid-cols-3 gap-x-8">
     <div class="col-span-2">
-      <div class="pt-6 pb-2 text-center">
+      <div class="pt-6 pb-6 text-left md:text-center">
         <MovingAnimatedHomeTitle />
       </div>
 
       <div class="m-auto max-w-2xl">
-        <h2
-          class="text-lg text-center md:text-2xl font-sans leading-5 text-gray-900 dark:text-white tracking-tight sm:leading-10 md:leading-14 mb-3"
-        >
-          Comment puis-je vous aider aujourd'hui&nbsp;?
-        </h2>
-        <ChatInterfaceV3
-          client:load
-          lienDernierArticle={`/posts/${lastPost}`}
-        />
-      </div>
-      <div
-        class="mt-5 sm:mt-11 m-auto w-full text-center text-black/50 dark:text-white/50 text-xs"
-      >
-        <strong>Attention</strong> : ce chatbot est encore expérimental. Vérifiez
-        vos sources et soyez raisonnables.
+        <p class="description text-lg leading-7 text-justify">
+          Je suis ingénieur en informatique spécialisé en développement frontend. Je suis passionné de musique, de stack javascript, mais j'adore aussi
+          le partage et la bonne vibe.<br></br> Motivé par une énergie détonnante et une
+          bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
+          soit dans le domaine du web, de l'intelligence artificielle, ou de
+          sujets très variés un peu geeks.
+        </p>
       </div>
     </div>
     <div class="m-auto md:m-0">

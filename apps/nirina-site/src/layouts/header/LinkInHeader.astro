@@ -6,6 +6,6 @@ interface Props {
 const { href } = Astro.props
 ---
 
-<div class="perspective-on-hover dark:text-white leading-5">
-  <a class="dark:hover:text-gray-200" href={href}><slot /></a>
+<div class="perspective-on-hover leading-5">
+  <a href={href}><slot /></a>
 </div>
