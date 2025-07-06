@@ -40,7 +40,7 @@ export function createImageGenerator() {
       // Load font from local filesystem
       const fontPath = path.resolve(
         process.cwd(),
-        'apps/nirina-site/src/images/opengraph/fonts/DMSerifText-Regular.ttf',
+        'src/images/opengraph/fonts/DMSerifText-Regular.ttf',
       )
       const fontData = fs.readFileSync(fontPath)
 
