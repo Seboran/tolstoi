@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import type { JSX } from 'react'
 import satori, { type SatoriOptions } from 'satori'
 import sharp from 'sharp'
@@ -8,7 +10,7 @@ import { getIconCode, loadEmoji } from '../../utils/twemoji'
  * @param baseUrl - Base URL for loading assets like fonts
  * @returns Object containing PNG and SVG generation functions
  */
-export function createImageGenerator({ baseUrl }: { baseUrl: string }) {
+export function createImageGenerator() {
   /**
    * Generates a PNG image from a React component
    * @param component - The React component to render as PNG
@@ -35,15 +37,19 @@ export function createImageGenerator({ baseUrl }: { baseUrl: string }) {
    */
   async function generateSVG(component: JSX.Element) {
     try {
-      const fontUrl = `${baseUrl}/DMSerifText-Regular.ttf`
-      const fontData = await loadFontData(fontUrl)
+      // Load font from local filesystem
+      const fontPath = path.resolve(
+        process.cwd(),
+        'apps/nirina-site/src/images/opengraph/fonts/DMSerifText-Regular.ttf',
+      )
+      const fontData = fs.readFileSync(fontPath)
 
       const options: SatoriOptions = {
         width: 1200,
         height: 630,
         fonts: [
           {
-            name: 'Inter',
+            name: 'DM Serif Text',
             data: fontData,
             weight: 400,
           },
@@ -63,27 +69,6 @@ export function createImageGenerator({ baseUrl }: { baseUrl: string }) {
   return {
     PNG: generatePNG,
     SVG: generateSVG,
-  }
-}
-
-/**
- * Loads font data from the specified URL
- * @param fontUrl - The URL to load the font from
- * @returns Promise resolving to font data
- * @throws Error if font loading fails
- */
-async function loadFontData(fontUrl: string): Promise<ArrayBuffer> {
-  try {
-    const fontResponse = await fetch(fontUrl)
-    if (!fontResponse.ok) {
-      throw new Error(`Failed to load font: ${fontResponse.status} ${fontResponse.statusText}`)
-    }
-    return await fontResponse.arrayBuffer()
-  } catch (error) {
-    console.error('Font loading error:', error)
-    throw new Error(
-      `Failed to load font from ${fontUrl}: ${error instanceof Error ? error.message : String(error)}`,
-    )
   }
 }
 
