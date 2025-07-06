@@ -1,19 +1,19 @@
 <div class="background-effect"></div>
 <style>
   @property --hue1 {
-    syntax: '<number>';
+    syntax: "<number>";
     initial-value: 220;
     inherits: false;
   }
 
   @property --hue2 {
-    syntax: '<number>';
+    syntax: "<number>";
     initial-value: 260;
     inherits: false;
   }
 
   @property --hue3 {
-    syntax: '<number>';
+    syntax: "<number>";
     initial-value: 300;
     inherits: false;
   }
@@ -36,7 +36,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(
+    background:
+      radial-gradient(
         100% 100% at 0% 0%,
         hsla(var(--hue1), 100%, 90%, 0.2) 0%,
         transparent 60%
@@ -58,38 +59,37 @@
     mix-blend-mode: screen;
   }
 
-  @media (prefers-color-scheme: dark) {
-    .background-effect {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(
-          100% 100% at 0% 0%,
-          hsla(var(--hue1), 100%, 60%, 0.2) 0%,
-          transparent 60%
-        ),
-        radial-gradient(
-          100% 100% at 100% 0%,
-          hsla(var(--hue2), 100%, 60%, 0.2) 0%,
-          transparent 60%
-        ),
-        radial-gradient(
-          100% 100% at 50% 100%,
-          hsla(var(--hue3), 100%, 60%, 0.2) 0%,
-          transparent 60%
-        ),
-        radial-gradient(
-          50% 50% at 50% 50%,
-          hsla(var(--hue1), 80%, 50%, 0.1) 0%,
-          transparent 100%
-        ),
-        hsl(220, 80%, 8%);
-      z-index: -1;
-      opacity: 1;
-      mix-blend-mode: screen;
-    }
+  :global(.dark) .background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(
+        100% 100% at 0% 0%,
+        hsla(var(--hue1), 100%, 60%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        100% 100% at 100% 0%,
+        hsla(var(--hue2), 100%, 60%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        100% 100% at 50% 100%,
+        hsla(var(--hue3), 100%, 60%, 0.2) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        50% 50% at 50% 50%,
+        hsla(var(--hue1), 80%, 50%, 0.1) 0%,
+        transparent 100%
+      ),
+      hsl(220, 80%, 8%);
+    z-index: -1;
+    opacity: 1;
+    mix-blend-mode: screen;
   }
 
   @media (prefers-reduced-motion: no-preference) {

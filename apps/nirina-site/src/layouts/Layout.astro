@@ -27,34 +27,81 @@ const { title, showNirinaRabesonInNavBar, animate, image } = Astro.props
       rel="alternate"
       type="application/rss+xml"
       title="Site de Nirina Rabeson."
-      href={new URL('rss.xml', Astro.site)}
+      href={new URL("rss.xml", Astro.site)}
     />
-    <Font cssVariable='--dm-serif-text-font' preload />
-    <Font cssVariable='--font-sans' preload />
+    <Font cssVariable="--dm-serif-text-font" preload />
+    <Font cssVariable="--font-sans" preload />
 
-
-    <meta name="theme-color" content="#211440" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#dbdae2" media="(prefers-color-scheme: light)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  </head>
-  <script>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    document.documentElement.classList.toggle(
-      'dark',
-      localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
-    )
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+      );
+    </script>
+    <script is:inline>
+      // Theme colors for iOS Safari status bar
+      const THEME_COLORS = {
+        light: "#ffffff", // White background for light mode
+        dark: "#0f172a", // Slate-900 background for dark mode
+      };
 
-    // Whenever the user explicitly chooses light mode
-    localStorage.theme = 'light'
+      // Update meta theme-color tag for iOS Safari
+      function updateThemeColor(isDark) {
+        // Remove existing theme-color meta tags
+        const existingMetas = document.querySelectorAll(
+          'meta[name="theme-color"]'
+        );
+        existingMetas.forEach((meta) => meta.remove());
 
-    // Whenever the user explicitly chooses dark mode
-    localStorage.theme = 'dark'
+        // Create new theme-color meta tag
+        const meta = document.createElement("meta");
+        meta.name = "theme-color";
+        meta.content = isDark ? THEME_COLORS.dark : THEME_COLORS.light;
+        document.head.appendChild(meta);
+      }
 
-    // Whenever the user explicitly chooses to respect the OS preference
-    localStorage.removeItem('theme')
-  </script>
+      // Make updateThemeColor globally accessible for ThemeToggle component
+      window.updateThemeColor = updateThemeColor;
+
+      // Handle theme persistence during Astro transitions
+      function applyTheme() {
+        const isDark =
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+        document.documentElement.classList.toggle("dark", isDark);
+        updateThemeColor(isDark);
+      }
+
+      // Apply theme on initial load
+      applyTheme();
+
+      // Re-apply theme after Astro transitions
+      document.addEventListener("astro:after-swap", applyTheme);
+
+      // Listen for OS-level theme changes
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      function handleThemeChange() {
+        // Only auto-update if user hasn't set a manual preference
+        if (!("theme" in localStorage)) {
+          applyTheme();
+        }
+      }
+
+      // Add listener for theme changes
+      mediaQuery.addListener(handleThemeChange);
+      // Also support modern syntax
+      if (mediaQuery.addEventListener) {
+        mediaQuery.addEventListener("change", handleThemeChange);
+      }
+    </script></head
+  >
 
   <body class="relative overflow-x-hidden">
     <RainbowRotatingBackground />
@@ -66,7 +113,9 @@ const { title, showNirinaRabesonInNavBar, animate, image } = Astro.props
             ✨
             {
               !showNirinaRabesonInNavBar && (
-                <h3 class="inline statement-font rainbow-animation">Nirina Rabeson</h3>
+                <h3 class="inline statement-font rainbow-animation">
+                  Nirina Rabeson
+                </h3>
               )
             }</NavigationHeader
           >

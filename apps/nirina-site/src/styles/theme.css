@@ -40,10 +40,8 @@ html {
   --c-brand-light: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0f172a;
-  }
+.dark body {
+  background-color: #0f172a;
 }
 
 nav img {

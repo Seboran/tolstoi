@@ -14,7 +14,7 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
   ><div class="m-auto gap-x-8">
     <div class="col-span-2">
       <div class="pt-6 pb-2 text-center">
-        <MovingAnimatedHomeTitle >Miaou miaou miaou</MovingAnimatedHomeTitle>
+        <MovingAnimatedHomeTitle>Miaou miaou miaou</MovingAnimatedHomeTitle>
       </div>
 
       <div class="m-auto max-w-2xl">
@@ -35,25 +35,5 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
         vos sources et soyez raisonnables.
       </div>
     </div>
+  </div>
 </Layout>
-
-<style scoped>
-  .zenika-lien {
-    transition: 1s all ease;
-    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, black);
-  }
-
-  .description:hover .zenika-lien,
-  .zenika-lien:hover {
-    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, black);
-  }
-  @media (prefers-color-scheme: dark) {
-    .zenika-lien {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
-    }
-    .description:hover .zenika-lien,
-    .zenika-lien:hover {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
-    }
-  }
-</style>

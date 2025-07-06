@@ -18,10 +18,19 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
       </div>
 
       <div class="m-auto max-w-2xl">
-        <p class="description text-lg leading-7 text-justify">
-          Je suis ingénieur en informatique spécialisé en développement frontend. Je suis passionné de musique, de stack javascript, mais j'adore aussi
-          le partage et la bonne vibe.<br></br> Motivé par une énergie détonnante et une
-          bonne humeur inébranlable, j'ai plaisir à contribuer et partager dans le domaine du web, de l'intelligence artificielle, et à propos de l'humain.
+        <p
+          class="description text-lg leading-7 text-justify text-gray-900 dark:text-gray-100"
+        >
+          Je suis ingénieur en informatique spécialisé en développement
+          frontend. Je suis passionné de musique, de stack javascript, mais
+          j'adore aussi le partage et la bonne vibe.
+        </p>
+        <p
+          class="description text-lg leading-7 text-justify text-gray-900 dark:text-gray-100"
+        >
+          Motivé par une énergie détonnante et une bonne humeur inébranlable,
+          j'ai plaisir à contribuer et partager dans le domaine du web, de
+          l'intelligence artificielle, et à propos de l'humain.
         </p>
       </div>
     </div>
@@ -35,6 +44,10 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 </Layout>
 
 <style scoped>
+  .description {
+    color: var(--theme-paragraph-color);
+  }
+
   .zenika-lien {
     transition: 1s all ease;
     color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, black);
@@ -44,13 +57,11 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
   .zenika-lien:hover {
     color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, black);
   }
-  @media (prefers-color-scheme: dark) {
-    .zenika-lien {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
-    }
-    .description:hover .zenika-lien,
-    .zenika-lien:hover {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
-    }
+  .dark .zenika-lien {
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
+  }
+  .dark .description:hover .zenika-lien,
+  .dark .zenika-lien:hover {
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
   }
 </style>

@@ -9,11 +9,12 @@ import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
     <div class="pt-6 pb-8 space-y-2 md:space-y-5">
       <AnimatedHomeTitle />
       <p class="description text-lg leading-7 text-dark dark:text-white">
-        Je suis ingénieur en informatique spécialisé en développement frontend. Je suis passionné de musique, de stack javascript, mais j'adore aussi
-        le partage et la bonne vibe. Motivé par une énergie détonnante et une
-        bonne humeur inébranlable, j'ai plaisir à contribuer et partager, que ce
-        soit dans le domaine du web, de l'intelligence artificielle, ou de
-        sujets très variés un peu geeks.
+        Je suis ingénieur en informatique spécialisé en développement frontend.
+        Je suis passionné de musique, de stack javascript, mais j'adore aussi le
+        partage et la bonne vibe. Motivé par une énergie détonnante et une bonne
+        humeur inébranlable, j'ai plaisir à contribuer et partager, que ce soit
+        dans le domaine du web, de l'intelligence artificielle, ou de sujets
+        très variés un peu geeks.
       </p>
     </div>
     <ArticlesLesPlusRecents />
@@ -30,13 +31,11 @@ import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
   .employeur-lien:hover {
     color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, black);
   }
-  @media (prefers-color-scheme: dark) {
-    .employeur-lien {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
-    }
-    .description:hover .employeur-lien,
-    .employeur-lien:hover {
-      color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
-    }
+  .dark .employeur-lien {
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 0%, white);
+  }
+  .dark .description:hover .employeur-lien,
+  .dark .employeur-lien:hover {
+    color: color-mix(in oklab, hsl(0, 70%, 35.29%) 100%, white);
   }
 </style>

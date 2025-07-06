@@ -23,13 +23,11 @@
     --theme-link-color: var(--color-blue-500);
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --theme-color-form: var(--color-slate-700);
-      --theme-color-suggestion-chat: var(--color-slate-800);
-      --theme-paragraph-color: var(--color-slate-200);
-      --theme-title-color: var(--color-white);
-      --theme-link-color: var(--color-blue-500);
-    }
+  :root.dark {
+    --theme-color-form: var(--color-slate-700);
+    --theme-color-suggestion-chat: var(--color-slate-800);
+    --theme-paragraph-color: var(--color-slate-200);
+    --theme-title-color: var(--color-white);
+    --theme-link-color: var(--color-blue-500);
   }
 }

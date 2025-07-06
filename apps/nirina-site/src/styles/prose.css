@@ -17,11 +17,9 @@
   content: "" !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  .prose :where(:not(pre) > code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
-    color: #d1e9ff;
-    background-color: #3c3a5b;
-  }
+.dark .prose :where(:not(pre) > code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: #d1e9ff;
+  background-color: #3c3a5b;
 }
 
 @media (max-width: 518px) {

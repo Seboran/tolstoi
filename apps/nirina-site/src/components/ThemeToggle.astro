@@ -1,0 +1,202 @@
+---
+// Theme Toggle Component with 3 states: auto (follows system), light, dark
+---
+
+<div class="theme-toggle">
+  <button
+    id="theme-toggle-btn"
+    class="theme-btn"
+    aria-label="Toggle theme"
+    title="Toggle theme"
+  >
+    <!-- Auto/System icon -->
+    <svg
+      class="icon auto-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2V6M12 18V22M4.93 4.93L7.76 7.76M16.24 7.76L19.07 4.93M2 12H6M18 12H22M4.93 19.07L7.76 16.24M16.24 16.24L19.07 19.07"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"></path>
+      <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"
+      ></circle>
+    </svg>
+
+    <!-- Light icon -->
+    <svg
+      class="icon light-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"
+      ></circle>
+      <path
+        d="M12 2V4M12 20V22M4.93 4.93L6.34 6.34M17.66 6.34L19.07 4.93M2 12H4M20 12H22M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66"
+        stroke="currentColor"
+        stroke-width="2"></path>
+    </svg>
+
+    <!-- Dark icon -->
+    <svg
+      class="icon dark-icon"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+        stroke="currentColor"
+        stroke-width="2"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  function initThemeToggle() {
+    const btn = document.getElementById("theme-toggle-btn");
+    if (!btn) return;
+
+    type Theme = "auto" | "light" | "dark";
+
+    // Get current theme state
+    function getCurrentTheme(): Theme {
+      if (localStorage.theme === "light") return "light";
+      if (localStorage.theme === "dark") return "dark";
+      return "auto"; // follows system preference
+    }
+
+    // Apply theme and update UI
+    function setTheme(theme: Theme) {
+      const html = document.documentElement;
+      let isDark = false;
+
+      if (theme === "light") {
+        localStorage.theme = "light";
+        html.classList.remove("dark");
+        isDark = false;
+      } else if (theme === "dark") {
+        localStorage.theme = "dark";
+        html.classList.add("dark");
+        isDark = true;
+      } else {
+        // auto
+        localStorage.removeItem("theme");
+        // Apply system preference
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        html.classList.toggle("dark", prefersDark);
+        isDark = prefersDark;
+      }
+
+      // Update theme-color for iOS Safari if function exists
+      if (typeof (window as any).updateThemeColor === "function") {
+        (window as any).updateThemeColor(isDark);
+      }
+
+      updateButtonUI(theme);
+    }
+
+    // Update button appearance based on current theme
+    function updateButtonUI(theme: Theme) {
+      if (!btn) return;
+
+      btn.setAttribute("data-theme", theme);
+
+      // Update title for accessibility
+      const titles: Record<Theme, string> = {
+        auto: "Theme: Auto (follows system)",
+        light: "Theme: Light",
+        dark: "Theme: Dark",
+      };
+      btn.setAttribute("title", titles[theme]);
+      btn.setAttribute("aria-label", titles[theme]);
+    }
+
+    // Handle button click
+    function handleClick() {
+      const current = getCurrentTheme();
+      const next: Theme =
+        current === "auto" ? "light" : current === "light" ? "dark" : "auto";
+      setTheme(next);
+    }
+
+    // Initialize
+    updateButtonUI(getCurrentTheme());
+    btn.addEventListener("click", handleClick);
+
+    // Re-initialize after Astro transitions
+    document.addEventListener("astro:after-swap", () => {
+      // Re-run the entire initialization after page swap
+      initThemeToggle();
+    });
+  }
+
+  // Initialize on load
+  initThemeToggle();
+
+  // Also initialize after DOM content loaded as a fallback
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeToggle);
+  }
+</script>
+
+<style>
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: currentColor;
+  }
+
+  .theme-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .theme-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .icon {
+    position: absolute;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8) rotate(90deg);
+  }
+
+  /* Show appropriate icon based on theme state */
+  .theme-btn[data-theme="auto"] .auto-icon,
+  .theme-btn[data-theme="light"] .light-icon,
+  .theme-btn[data-theme="dark"] .dark-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+
+  /* Smooth transitions between icons */
+  .theme-btn:active {
+    transform: scale(0.95);
+  }
+</style>

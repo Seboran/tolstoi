@@ -117,19 +117,17 @@ const defaultPlaceholder = 'Par exemple : Je voudrais lire le dernier article de
   transform: translate3d(0, 0, 0);
 }
 
-@media (prefers-color-scheme: dark) {
-  .chat-container {
-    /* animation: fade-in 0.8s ease-out forwards; */
-    /* opacity: 0; */
-    border: 1px solid transparent;
-    border-image: linear-gradient(to bottom right,
-        #b827fc 0%,
-        #2c90fc 25%,
-        rgb(15, 23, 42) 50%,
-        rgb(15, 23, 42) 75%,
-        rgb(15, 23, 42) 100%);
-    border-image-slice: 1;
-  }
+.dark .chat-container {
+  /* animation: fade-in 0.8s ease-out forwards; */
+  /* opacity: 0; */
+  border: 1px solid transparent;
+  border-image: linear-gradient(to bottom right,
+      #b827fc 0%,
+      #2c90fc 25%,
+      rgb(15, 23, 42) 50%,
+      rgb(15, 23, 42) 75%,
+      rgb(15, 23, 42) 100%);
+  border-image-slice: 1;
 }
 
 form {
