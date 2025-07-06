@@ -17,7 +17,7 @@ const tags = data.tags
 
 // Get excerpt from markdown body (fallback if no excerpt in frontmatter)
 const excerpt = getExcerptFromMarkdown(body)
-const md = new MarkdownIt()
+const md = new MarkdownIt({ linkify: true })
 const excerptHtml = md.render(excerpt)
 ---
 
