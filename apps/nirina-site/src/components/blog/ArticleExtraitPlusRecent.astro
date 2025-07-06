@@ -1,5 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
+import MarkdownIt from 'markdown-it'
+import { getExcerptFromMarkdown } from '../../utils/getExcerptFromMarkdown'
 import Prose from '../Prose.astro'
 import DesignTitle from '../design/DesignTitle.astro'
 import DatePublieLeV2 from './DatePublieLeV2.astro'
@@ -10,9 +12,13 @@ interface Props {
 }
 
 const { entry } = Astro.props
-
-const { data, id: slug } = entry
+const { data, body, id: slug } = entry
 const tags = data.tags
+
+// Get excerpt from markdown body (fallback if no excerpt in frontmatter)
+const excerpt = getExcerptFromMarkdown(body)
+const md = new MarkdownIt()
+const excerptHtml = md.render(excerpt)
 ---
 
 <article
@@ -29,10 +35,12 @@ const tags = data.tags
           {data.title}
         </a>
       </DesignTitle>
-      {(<Fragment>{data.excerpt && <Prose>{data.excerpt}</Prose>}</Fragment>)}
+      {excerptHtml && <Prose set:html={excerptHtml} />}
     </div>
     <div class="text-base leading-6 font-medium">
-      <a class="link" aria-label="read more" href={`/posts/${slug}`}>Lire plus</a>
+      <a class="link" aria-label="read more" href={`/posts/${slug}`}
+        >Lire plus</a
+      >
     </div>
   </div>
 </article>
