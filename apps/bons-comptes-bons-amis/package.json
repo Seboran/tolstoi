@@ -27,7 +27,7 @@
     "layer-bons-comptes": "workspace:*",
     "nuxt": "3.17.6",
     "nuxt-security": "2.2.0",
-    "nuxt-typed-router": "3.8.0",
+    "nuxt-typed-router": "4.0.1",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "3.25.76"
