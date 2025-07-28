@@ -14,7 +14,7 @@
   "author": "",
   "license": "GPL-3.0-only",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.1.2",
     "@playwright/test": "1.54.1",
     "husky": "9.1.7",
     "turbo": "2.5.4"
