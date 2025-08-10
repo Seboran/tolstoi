@@ -1,6 +1,5 @@
+import { h, reactive } from 'nirina.js'
 import type { Component } from '../declarations'
-import { reactive } from '../framework/reactive'
-import { h } from '../framework/vdom'
 import { type QuestionData, QuestionSlider } from './QuestionSlider'
 import { Results } from './Results'
 

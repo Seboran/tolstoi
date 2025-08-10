@@ -1,5 +1,5 @@
+import { h } from 'nirina.js'
 import type { Component } from '../declarations'
-import { h } from '../framework/vdom'
 
 export const Button: Component<{
   onClick: () => void

@@ -1,5 +1,5 @@
+import { h } from 'nirina.js'
 import type { Component } from '../declarations'
-import { h } from '../framework/vdom'
 
 // This component uses the old h function syntax
 export const StatusMessage: Component<{ message: string }> = ({ message }) =>

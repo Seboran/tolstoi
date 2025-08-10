@@ -1,0 +1,77 @@
+{
+  "name": "nirina.js",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Tiny reactive JSX runtime + renderer.",
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./jsx-runtime": {
+      "types": "./dist/framework/jsx-runtime.d.ts",
+      "import": "./dist/framework/jsx-runtime.js",
+      "default": "./dist/framework/jsx-runtime.js"
+    },
+    "./jsx-dev-runtime": {
+      "types": "./dist/framework/jsx-dev-runtime.d.ts",
+      "import": "./dist/framework/jsx-dev-runtime.js",
+      "default": "./dist/framework/jsx-dev-runtime.js"
+    },
+    "./framework/reactive": {
+      "types": "./dist/framework/reactive.d.ts",
+      "import": "./dist/framework/reactive.js",
+      "default": "./dist/framework/reactive.js"
+    },
+    "./framework/renderer": {
+      "types": "./dist/framework/renderer.d.ts",
+      "import": "./dist/framework/renderer.js",
+      "default": "./dist/framework/renderer.js"
+    },
+    "./framework/vdom": {
+      "types": "./dist/framework/vdom.d.ts",
+      "import": "./dist/framework/vdom.js",
+      "default": "./dist/framework/vdom.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "build:js": "vite build",
+    "build": "npm run clean && npm run build:types && npm run build:js",
+    "dev": "vite",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "vite": "7.0.4",
+    "rimraf": "^5.0.0"
+  },
+  "keywords": ["reactive", "jsx", "vdom", "framework", "frontend"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/nirina.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-org/nirina.js/issues"
+  },
+  "homepage": "https://github.com/your-org/nirina.js#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

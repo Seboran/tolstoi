@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "composite": false,
+    "stripInternal": true,
+    "preserveSymlinks": false
+  },
+  "include": ["src", "index.ts"],
+  "exclude": ["dist", "node_modules", "**/__tests__/**", "**/*.test.*"]
+}

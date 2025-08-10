@@ -1,3 +1,15 @@
+/**
+ * Virtual DOM + JSX runtime for nirina.js
+ *
+ * Exports:
+ *  - VNode: Core virtual node type
+ *  - h(): Manual hyperscript creator for classic JSX factory mode
+ *  - jsx/jsxs/jsxDEV: Automatic JSX runtime entrypoints
+ *  - Fragment: Placeholder component enabling <>...</> syntax (optional)
+ *
+ * Keep this module minimal; additions should remain backwards compatible.
+ */
+
 export type VNode = {
   tag: string | Function
   props: Record<string, any>
@@ -32,6 +44,10 @@ export function jsx(tag: string | Function, props: Record<string, any> = {}): VN
 export function jsxs(tag: string | Function, props: Record<string, any> = {}): VNode {
   return jsx(tag, props)
 }
+
+// Fragment support (optional usage). Enables <>children</> with proper tsconfig.
+// Exported to align with React-like automatic runtime expectations.
+export const Fragment = (props: { children?: any }) => props.children
 
 // Export jsx as default for React JSX transform
 export { jsx as jsxDEV }

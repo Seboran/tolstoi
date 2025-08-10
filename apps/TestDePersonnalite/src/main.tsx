@@ -1,6 +1,5 @@
+import { h, mountReactive } from 'nirina.js'
 import { PersonalityTest } from './components/PersonalityTest'
-import { mountReactive } from './framework/renderer'
-import { h } from './framework/vdom'
 import './style.css'
 
 const container = document.getElementById('app')!

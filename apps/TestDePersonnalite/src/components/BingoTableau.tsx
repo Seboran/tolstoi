@@ -1,5 +1,5 @@
+import { h } from 'nirina.js'
 import type { Component } from '../declarations'
-import { h } from '../framework/vdom'
 import { BingoRow } from './BingoRow'
 
 export const BingoTableau: Component<{ rows: number[][]; nombresCoches: number[] }> = ({

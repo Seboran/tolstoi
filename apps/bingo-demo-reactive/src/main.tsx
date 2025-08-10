@@ -1,6 +1,5 @@
+import { h, mount } from 'nirina.js'
 import { BingoTableau } from './components/BingoTableau'
-import { mount } from './framework/renderer'
-import { h } from './framework/vdom'
 import './style.css'
 
 const container = document.getElementById('app')!

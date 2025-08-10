@@ -1,5 +1,5 @@
+import { effect, h, mountReactive, reactive } from 'nirina.js'
 import type { Component } from '../declarations'
-import { h } from '../framework/vdom'
 
 const frameworkDescriptions: Record<string, string> = {
   vue: "Vue.js - Un framework progressif qui combine simplicité et puissance. Parfait pour ceux qui aiment l'équilibre entre facilité d'apprentissage et fonctionnalités avancées.",
