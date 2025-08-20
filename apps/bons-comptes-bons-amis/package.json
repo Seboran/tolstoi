@@ -21,7 +21,7 @@
     "deploy": "vercel build --prod && vercel deploy --prebuilt --prod --archive=tgz"
   },
   "dependencies": {
-    "@nuxt/ui": "2.22.0",
+    "@nuxt/ui": "3.3.2",
     "@pinia/nuxt": "0.11.1",
     "@vueuse/core": "13.5.0",
     "layer-bons-comptes": "workspace:*",
