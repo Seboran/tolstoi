@@ -1,5 +1,5 @@
 # build stage
-FROM node:lts-alpine@sha256:10962e8568729b0cfd506170c5a2d1918a2c10ac08c0e6900180b4bac061adc9 as build-stage
+FROM node:lts-alpine@sha256:d2166de198f26e17e5a442f537754dd616ab069c47cc57b889310a717e0abbf9 as build-stage
 WORKDIR /app
 COPY package.json ./
 COPY yarn.lock ./
