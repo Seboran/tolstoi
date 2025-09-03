@@ -151,8 +151,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.21)(vue@3.5.21(typescript@5.8.3))
       '@vercel/node':
-        specifier: 5.3.17
-        version: 5.3.17(encoding@0.1.13)(rollup@4.46.2)
+        specifier: 5.3.19
+        version: 5.3.19(encoding@0.1.13)(rollup@4.46.2)
       '@vitest/coverage-v8':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -4089,8 +4089,8 @@ packages:
   '@vercel/build-utils@10.6.6':
     resolution: {integrity: sha512-zhqsL6iQce3QShGyrqlyVJjp1FKo6ju36A/hDWcD31vIUM9e+7NxGzHXPsIKtBS6z92V+6PpLVln30KIJk2Hag==}
 
-  '@vercel/build-utils@11.0.2':
-    resolution: {integrity: sha512-Y48OT9IsvAFU21LJ3m5SbrXpQaD++h4v4nQoQjCUDZORxXzPf3doVQfrQBBIX45xoSkfq/Fuq0VNF0yRbJw/aA==}
+  '@vercel/build-utils@12.0.0':
+    resolution: {integrity: sha512-pWlOGHc8oC4xWQkf2HhwL19jbATjw+u5Wqg1CfF098XghDp4Bjs6UdmdrEnzvR1uYE2PEgfdMF4BU/qyTbkFWQ==}
 
   '@vercel/error-utils@2.0.3':
     resolution: {integrity: sha512-CqC01WZxbLUxoiVdh9B/poPbNpY9U+tO1N9oWHwTl5YAZxcqXmmWJ8KNMFItJCUUWdY3J3xv8LvAuQv2KZ5YdQ==}
@@ -4129,8 +4129,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@vercel/node@5.3.17':
-    resolution: {integrity: sha512-quNnXO1XuMMid9MXJKPDtpwiNZUFrJgTvdcUu+AXRZg99rOw9N5pk+M0rM4+0FwVXVCIlXzjfKelEOXC8SxGQw==}
+  '@vercel/node@5.3.19':
+    resolution: {integrity: sha512-trzZND3HxCN6frqBs50gCk98B/VUU7EU1b1Cso1yDCjUSklVRufO9Lt2HKLTeLWxiKE4z81UlsRetkOxdE8JVQ==}
 
   '@vercel/node@5.3.5':
     resolution: {integrity: sha512-nFn3er+Vmbc4TrdCn7k4rFU1ImJMwqGKF9sD+QcHYDemhsCqP/aLt6wknkTENryNjQKygKxbimdKwOs5godkMA==}
@@ -16645,7 +16645,7 @@ snapshots:
 
   '@vercel/build-utils@10.6.6': {}
 
-  '@vercel/build-utils@11.0.2': {}
+  '@vercel/build-utils@12.0.0': {}
 
   '@vercel/error-utils@2.0.3': {}
 
@@ -16703,7 +16703,7 @@ snapshots:
   '@vercel/nft@0.29.2(encoding@0.1.13)(rollup@4.46.2)':
     dependencies:
       '@mapbox/node-pre-gyp': 2.0.0(encoding@0.1.13)
-      '@rollup/pluginutils': 5.1.4(rollup@4.46.2)
+      '@rollup/pluginutils': 5.2.0(rollup@4.46.2)
       acorn: 8.15.0
       acorn-import-attributes: 1.9.5(acorn@8.15.0)
       async-sema: 3.1.1
@@ -16712,7 +16712,7 @@ snapshots:
       glob: 10.4.5
       graceful-fs: 4.2.11
       node-gyp-build: 4.8.4
-      picomatch: 4.0.2
+      picomatch: 4.0.3
       resolve-from: 5.0.0
     transitivePeerDependencies:
       - encoding
@@ -16757,13 +16757,13 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/node@5.3.17(encoding@0.1.13)(rollup@4.46.2)':
+  '@vercel/node@5.3.19(encoding@0.1.13)(rollup@4.46.2)':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
       '@edge-runtime/vm': 3.2.0
       '@types/node': 16.18.11
-      '@vercel/build-utils': 11.0.2
+      '@vercel/build-utils': 12.0.0
       '@vercel/error-utils': 2.0.3
       '@vercel/nft': 0.30.1(encoding@0.1.13)(rollup@4.46.2)
       '@vercel/static-config': 3.1.2
@@ -17497,9 +17497,9 @@ snapshots:
   '@vue/language-core@2.2.12(typescript@5.8.3)':
     dependencies:
       '@volar/language-core': 2.4.15
-      '@vue/compiler-dom': 3.5.20
+      '@vue/compiler-dom': 3.5.21
       '@vue/compiler-vue2': 2.7.16
-      '@vue/shared': 3.5.20
+      '@vue/shared': 3.5.21
       alien-signals: 1.0.13
       minimatch: 9.0.5
       muggle-string: 0.4.1
