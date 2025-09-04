@@ -17,6 +17,6 @@
     "@biomejs/biome": "1.9.4",
     "@playwright/test": "1.54.1",
     "husky": "9.1.7",
-    "turbo": "2.5.4"
+    "turbo": "2.5.6"
   }
 }
