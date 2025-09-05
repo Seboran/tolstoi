@@ -117,8 +117,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(magicast@0.3.5)(rollup@4.46.2)
       nuxt-typed-router:
-        specifier: 4.0.1
-        version: 4.0.1(magicast@0.3.5)(prettier@3.6.2)
+        specifier: 4.0.2
+        version: 4.0.2(magicast@0.3.5)(prettier@3.6.2)
       vue:
         specifier: latest
         version: 3.5.21(typescript@5.8.3)
@@ -8698,8 +8698,8 @@ packages:
     resolution: {integrity: sha512-bTdgAAAdnvM1R1wAX3zQBbYJh6YNFyvsKJwbT9oVv+0U9J/9+k+mufQlJMFO8AdTefi/EDFHG75in9RTnCpngQ==}
     engines: {node: '>=18.0.0'}
 
-  nuxt-typed-router@4.0.1:
-    resolution: {integrity: sha512-RS14ygbGj6TO/uAzmg1sbjNqvIK6Gqh2E7GfA1Ii37KhsyOgRWiZ/iHGGj1imlETyulKcRUsxdzTRLBUux7q2A==}
+  nuxt-typed-router@4.0.2:
+    resolution: {integrity: sha512-k1KYzu9z00h8KdePsWS6B8g65BYgwvDv1t/WPv5Iggigf81B1zmT5rFY+HF+544ui/2Xciu034dO0Lr5ZPYDvA==}
     peerDependencies:
       prettier: ^2.5.x || 3.x
 
@@ -22625,7 +22625,7 @@ snapshots:
       - rollup
       - supports-color
 
-  nuxt-typed-router@4.0.1(magicast@0.3.5)(prettier@3.6.2):
+  nuxt-typed-router@4.0.2(magicast@0.3.5)(prettier@3.6.2):
     dependencies:
       '@nuxt/kit': 3.17.5(magicast@0.3.5)
       chalk: 5.4.1
