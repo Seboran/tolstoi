@@ -24,7 +24,7 @@
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "astro": "5.13.5",
-    "dayjs": "1.11.13",
+    "dayjs": "1.11.18",
     "gray-matter": "4.0.3",
     "markdown-it": "14.1.0",
     "nodemailer": "7.0.5",
