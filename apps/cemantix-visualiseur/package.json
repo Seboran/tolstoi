@@ -12,7 +12,7 @@
   "dependencies": {
     "@astrojs/node": "9.4.3",
     "@astrojs/vue": "5.1.0",
-    "@tailwindcss/vite": "4.1.11",
+    "@tailwindcss/vite": "4.1.13",
     "astro": "5.13.5",
     "ofetch": "1.4.1",
     "tailwindcss": "4.1.11",
