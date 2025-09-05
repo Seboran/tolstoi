@@ -12,7 +12,7 @@
   "dependencies": {
     "@popperjs/core": "2.11.8",
     "bn.js": "5.2.2",
-    "bootstrap": "5.3.7",
+    "bootstrap": "5.3.8",
     "buffer": "6.0.3",
     "elliptic": "6.6.1",
     "js-sha3": "0.9.3",
