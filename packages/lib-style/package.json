@@ -22,7 +22,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "vue": "3.5.17"
+    "vue": "3.5.21"
   },
   "devDependencies": {
     "@tsconfig/node18": "18.2.4",
