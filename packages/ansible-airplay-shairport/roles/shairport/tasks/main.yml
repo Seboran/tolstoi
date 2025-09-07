@@ -1,0 +1,78 @@
+---
+- name: Ensure apt cache is up to date
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Optionally upgrade system packages (dist)
+  apt:
+    upgrade: dist
+  when: shairport_upgrade | bool
+
+- name: Install required packages
+  apt:
+    name:
+      - shairport-sync
+      - alsa-utils
+    state: present
+
+- name: Show ALSA playback devices (for user reference)
+  command: aplay -l
+  register: aplay_devices
+  changed_when: false
+
+- name: Print ALSA devices
+  debug:
+    msg: "Available playback devices:\n{{ aplay_devices.stdout }}"
+
+- name: Backup original shairport config (once)
+  copy:
+    src: /etc/shairport-sync.conf
+    dest: /etc/shairport-sync.conf.orig
+    remote_src: true
+  when: not lookup('ansible.builtin.fileglob', '/etc/shairport-sync.conf.orig')
+  ignore_errors: true
+
+- name: Set output_device if requested
+  lineinfile:
+    path: /etc/shairport-sync.conf
+    regex: '^//?\s*output_device'
+    line: 'output_device = "hw:{{ shairport_output_device }}"'
+    backrefs: false
+  when: shairport_output_device | length > 0
+  notify: Restart shairport-sync
+
+- name: Ensure output_device line exists if config didn't contain it
+  lineinfile:
+    path: /etc/shairport-sync.conf
+    insertafter: EOF
+    line: 'output_device = "hw:{{ shairport_output_device }}"'
+  when: shairport_output_device | length > 0
+  notify: Restart shairport-sync
+
+- name: Set friendly AirPlay name if requested
+  lineinfile:
+    path: /etc/shairport-sync.conf
+    regex: "^name = "
+    line: 'name = "{{ shairport_friendly_name }}"'
+    insertafter: EOF
+  when: shairport_friendly_name | length > 0
+  notify: Restart shairport-sync
+
+- name: Enable and start shairport-sync service
+  systemd:
+    name: shairport-sync
+    enabled: true
+    state: started
+
+- name: Optionally set PCM volume
+  command: amixer sset PCM,0 {{ shairport_volume_percent }}%
+  when: shairport_set_volume | bool
+  register: amixer_set
+  failed_when: false
+  changed_when: "'Updated' in amixer_set.stdout"
+
+- name: Debug volume command output (best effort)
+  debug:
+    var: amixer_set.stdout
+  when: shairport_set_volume | bool

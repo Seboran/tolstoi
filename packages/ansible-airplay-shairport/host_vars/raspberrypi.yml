@@ -1,0 +1,5 @@
+---
+# Host-specific overrides for raspberrypi
+shairport_output_device: "M2X2"
+# Uncomment to also set the AirPlay advertised name to the same value
+# shairport_friendly_name: "M2X2"

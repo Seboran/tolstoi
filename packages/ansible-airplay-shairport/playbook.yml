@@ -1,0 +1,8 @@
+---
+- name: Setup Raspberry Pi as AirPlay receiver
+  hosts: airplay
+  become: true
+  gather_facts: true
+
+  roles:
+    - shairport

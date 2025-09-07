@@ -1,0 +1,15 @@
+---
+# Default variables for the AirPlay (shairport-sync) role
+
+# Empty means: don't modify output_device line yet.
+shairport_output_device: ""
+
+# Friendly display name (empty -> keep existing / default hostname)
+shairport_friendly_name: ""
+
+# Force system upgrade? (apt full-upgrade)
+shairport_upgrade: true
+
+# Whether to run amixer to set volume
+shairport_set_volume: true
+shairport_volume_percent: 100
