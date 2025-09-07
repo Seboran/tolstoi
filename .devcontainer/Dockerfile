@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/javascript-node:3-22-bullseye@sha256:21e62a42fb3bbeb702cf783b12a34b28211355f6642119eed4420b0db8956a2c
 
-FROM mcr.microsoft.com/playwright:v1.54.1-noble@sha256:307ace13c8ba4349f790f4dfbc6eaa9fcafdeb29c218ff36129c7cacebb1e35f
+FROM mcr.microsoft.com/playwright:v1.55.0-noble@sha256:b27e719ecbfef153e13fd24e8341736733bf2658b229677eb21ff57ff5d7fb29
 
 ENV COREPACK_ENABLE_AUTO_PIN=0
