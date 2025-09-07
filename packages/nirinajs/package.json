@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "typescript": "5.8.3",
-    "vite": "7.0.4",
+    "vite": "7.1.4",
     "rimraf": "5.0.10"
   },
   "keywords": ["reactive", "jsx", "vdom", "framework", "frontend"],
