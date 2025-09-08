@@ -1,7 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticlesLesPlusRecents from '../blog/ArticlesLesPlusRecents.astro'
+import PaginationNav from '../blog/PaginationNav.astro'
 import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
+
+interface Props {
+  page?: number
+  totalPages?: number
+  pageSize?: number
+}
+
+const { page = 1, totalPages, pageSize } = Astro.props as Props
+const allPosts = await getSortedPublishedPosts()
+const size = pageSize ?? 10
+const start = (page - 1) * size
+const currentPagePosts = allPosts.slice(start, start + size)
 ---
 
 <Layout title="Nirina Rabeson" showNirinaRabesonInNavBar
@@ -17,7 +31,8 @@ import AnimatedHomeTitle from '../header/AnimatedHomeTitle.astro'
         très variés un peu geeks.
       </p>
     </div>
-    <ArticlesLesPlusRecents />
+    <ArticlesLesPlusRecents posts={currentPagePosts} />
+  {totalPages && totalPages > 1 && <PaginationNav page={page} totalPages={totalPages} />}
   </div></Layout
 >
 

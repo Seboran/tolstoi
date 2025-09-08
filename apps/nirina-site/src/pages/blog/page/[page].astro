@@ -1,0 +1,25 @@
+---
+import BlogView from '../../../components/views/BlogView.astro'
+import { getSortedPublishedPosts } from '../../../utils/getCollections'
+
+export async function getStaticPaths() {
+  const pageSize = 10
+  const totalPosts = (await getSortedPublishedPosts()).length
+  const totalPages = Math.ceil(totalPosts / pageSize)
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2 // because first page is /blog
+    return {
+      params: { page: String(page) },
+      props: { page, totalPages, pageSize },
+    }
+  })
+}
+
+const { page, totalPages, pageSize } = Astro.props as {
+  page: number
+  totalPages: number
+  pageSize: number
+}
+---
+
+<BlogView page={page} totalPages={totalPages} pageSize={pageSize} />

@@ -1,0 +1,26 @@
+---
+interface Props {
+  page: number
+  totalPages: number
+}
+
+const { page, totalPages } = Astro.props as Props
+---
+
+{totalPages > 1 && (
+  <nav class="mt-12 flex items-center justify-center gap-4" aria-label="Pagination">
+    {page > 1 && (
+      <a class="perspective-on-hover px-3 py-2 text-sm" href={page - 1 === 1 ? '/blog' : `/blog/page/${page - 1}`}>← Plus récents</a>
+    )}
+    <span class="text-sm">Page {page} / {totalPages}</span>
+    {page < totalPages && (
+      <a class="perspective-on-hover px-3 py-2 text-sm" href={`/blog/page/${page + 1}`}>Plus anciens →</a>
+    )}
+  </nav>
+)}
+
+<style scoped>
+  nav a {
+    text-decoration: none;
+  }
+</style>

@@ -1,5 +1,10 @@
 ---
 import BlogView from '../components/views/BlogView.astro'
+import { getSortedPublishedPosts } from '../utils/getCollections'
+
+const pageSize = 10
+const totalPosts = (await getSortedPublishedPosts()).length
+const totalPages = Math.ceil(totalPosts / pageSize)
 ---
 
-<BlogView />
+<BlogView page={1} totalPages={totalPages} pageSize={pageSize} />

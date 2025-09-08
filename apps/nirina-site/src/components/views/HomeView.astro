@@ -40,7 +40,7 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
   </div>
   <NudgeScroller />
   <a id="scroll-target"></a>
-  <ArticlesLesPlusRecents />
+  <ArticlesLesPlusRecents limit={10} showOlderLink olderLinkLabel="Voir tous les articles" />
 </Layout>
 
 <style scoped>

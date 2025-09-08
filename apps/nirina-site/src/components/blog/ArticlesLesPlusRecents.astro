@@ -1,16 +1,46 @@
 ---
+import type { CollectionEntry } from 'astro:content'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
 import ArticleExtraitPlusRecent from './ArticleExtraitPlusRecent.astro'
 
-const allPosts = await getSortedPublishedPosts()
+interface Props {
+  /** Pre-fetched posts subset (already sorted). If not provided we fetch all. */
+  posts?: CollectionEntry<'posts'>[]
+  /** Limit number of posts to display (applied after optional fetch). */
+  limit?: number
+  /** Show a link to the full paginated blog (/blog). */
+  showOlderLink?: boolean
+  olderLinkLabel?: string
+}
+
+const {
+  posts,
+  limit,
+  showOlderLink,
+  olderLinkLabel = "Voir plus d'articles",
+} = Astro.props as Props
+
+let list = posts ?? (await getSortedPublishedPosts())
+if (typeof limit === 'number') {
+  list = list.slice(0, limit)
+}
 ---
 
-<ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
-  {
-    allPosts.map((entry) => (
+<div>
+  <ul class="divide-y divide-gray-200 dark:divide-slate-200/5">
+    {list.map((entry) => (
       <li class="py-12">
         <ArticleExtraitPlusRecent entry={entry} />
       </li>
-    ))
-  }
-</ul>
+    ))}
+  </ul>
+  {showOlderLink && (
+    <div class="justify-end text-right text-base leading-6 font-medium">
+      <a
+        href="/blog"
+        class="link hover:opacity-90 transition"
+        >{olderLinkLabel}</a
+      >
+    </div>
+  )}
+</div>
