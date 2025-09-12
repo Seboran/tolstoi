@@ -19,6 +19,6 @@
     "typescript": "5.8.3",
     "vite": "7.1.5",
     "vite-plugin-vue-devtools": "7.7.7",
-    "vue-tsc": "3.0.6"
+    "vue-tsc": "3.0.7"
   }
 }
