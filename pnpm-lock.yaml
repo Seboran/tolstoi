@@ -151,8 +151,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0(@vue/compiler-sfc@3.5.21)(vue@3.5.21(typescript@5.9.2))
       '@vercel/node':
-        specifier: 5.3.21
-        version: 5.3.21(encoding@0.1.13)(rollup@4.50.1)
+        specifier: 5.3.23
+        version: 5.3.23(encoding@0.1.13)(rollup@4.50.1)
       '@vitest/coverage-v8':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -3965,8 +3965,8 @@ packages:
   '@vercel/node@5.3.11':
     resolution: {integrity: sha512-mXywAl778oXpuQZgdqf8SSO/AH+fwQ2x89ucbbm72Xa+pXhvMKorkxZ10Modo2wQAIta9xRoL9l5tkbC8ESi0g==}
 
-  '@vercel/node@5.3.21':
-    resolution: {integrity: sha512-rtyylPomqpMFQu5DcAqXYf+J3gvboakpBewpjWUgSrkSwtu0mqgpYFjys6VaXb55qePhH9K6HYARaYLEuo9OLw==}
+  '@vercel/node@5.3.23':
+    resolution: {integrity: sha512-pmsZOiEV3D82rmQLrvZv9VgJv1oc/YX7lpRZ6vK1/GDLFrdjb0diLtkFyAoK9h5Kh4vWc2GK93DBLbcDDaIC8A==}
 
   '@vercel/python@5.0.0':
     resolution: {integrity: sha512-JHpYKQ8d478REzmF7NcJTJcncFziJhVOwzan8wW4F1RJOHGDBTPkATAgi4CPQIijToRamPCkgeECzNOvLUDR+w==}
@@ -12809,7 +12809,7 @@ snapshots:
   '@mapbox/node-pre-gyp@2.0.0(encoding@0.1.13)':
     dependencies:
       consola: 3.4.2
-      detect-libc: 2.0.4
+      detect-libc: 2.1.0
       https-proxy-agent: 7.0.6
       node-fetch: 2.7.0(encoding@0.1.13)
       nopt: 8.1.0
@@ -15771,7 +15771,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/node@5.3.21(encoding@0.1.13)(rollup@4.50.1)':
+  '@vercel/node@5.3.23(encoding@0.1.13)(rollup@4.50.1)':
     dependencies:
       '@edge-runtime/node-utils': 2.3.0
       '@edge-runtime/primitives': 4.1.0
