@@ -13,8 +13,8 @@ importers:
         specifier: 1.9.4
         version: 1.9.4
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -134,13 +134,13 @@ importers:
         version: 1.2.3
       '@nuxt/test-utils':
         specifier: 3.19.2
-        version: 3.19.2(@playwright/test@1.55.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.0)(typescript@5.9.2)(vitest@3.2.4)
+        version: 3.19.2(@playwright/test@1.55.1)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.1)(typescript@5.9.2)(vitest@3.2.4)
       '@nuxtjs/tailwindcss':
         specifier: 6.13.2
         version: 6.13.2(magicast@0.3.5)(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.2))
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       '@tailwindcss/postcss':
         specifier: 4.0.14
         version: 4.0.14
@@ -172,8 +172,8 @@ importers:
         specifier: 8.0.4
         version: 8.0.4
       playwright-core:
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       tailwindcss:
         specifier: 3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.2))
@@ -215,7 +215,7 @@ importers:
     dependencies:
       next:
         specifier: 15.5.3
-        version: 15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -224,11 +224,11 @@ importers:
         version: 19.1.1(react@19.1.1)
     devDependencies:
       '@playwright/experimental-ct-react':
-        specifier: 1.55.0
-        version: 1.55.0(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(vite@7.1.7(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(yaml@2.8.1)
+        specifier: 1.55.1
+        version: 1.55.1(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(vite@7.1.7(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(yaml@2.8.1)
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       '@types/node':
         specifier: 22.16.3
         version: 22.16.3
@@ -307,8 +307,8 @@ importers:
         version: 2.0.0
     devDependencies:
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       '@types/bootstrap':
         specifier: 5.2.10
         version: 5.2.10
@@ -341,7 +341,7 @@ importers:
         version: 0.544.0(react@19.1.1)
       next:
         specifier: 15.5.3
-        version: 15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react:
         specifier: 19.1.1
         version: 19.1.1
@@ -353,8 +353,8 @@ importers:
         specifier: 9.36.0
         version: 9.36.0
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       '@types/node':
         specifier: 22.16.3
         version: 22.16.3
@@ -572,8 +572,8 @@ importers:
         version: 3.5.21(typescript@5.9.2)
     devDependencies:
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.55.1
+        version: 1.55.1
       '@tailwindcss/typography':
         specifier: 0.5.19
         version: 0.5.19(tailwindcss@4.1.11)
@@ -2627,17 +2627,17 @@ packages:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
 
-  '@playwright/experimental-ct-core@1.55.0':
-    resolution: {integrity: sha512-8HRI8Envzgv3bVr6CrKCW3NxFR3dvXaE10OACkfs50GiTn5t4m31UJ3wDpFAgzxZvXPoyLfG3mLG16YbpWS5Ww==}
+  '@playwright/experimental-ct-core@1.55.1':
+    resolution: {integrity: sha512-Mhdmx3CDlOYi4Nr8N4bzaqhjmdcl+SKdsKWznN6TWZCFZDMZARyZ3Vp5IIS3AAoymzMCcG6bRsKicA79eUBLKA==}
     engines: {node: '>=18'}
 
-  '@playwright/experimental-ct-react@1.55.0':
-    resolution: {integrity: sha512-mtm5kkcQx7ilqBnBIWHqhKVjvAjHQi5OBx+ySmofwj82IS8GiQvpKLVsFDeAEfNpVj+j6B1Dm+8610rqfH/9sw==}
+  '@playwright/experimental-ct-react@1.55.1':
+    resolution: {integrity: sha512-q+qH/J99iV6+99oVT417AA8KsYp3lwxsnxZrLZjIwkEC5+G28QCkr7+UYAOZoNPzelGqHFMLhYMvc6mXuREa2w==}
     engines: {node: '>=18'}
     hasBin: true
 
-  '@playwright/test@1.55.0':
-    resolution: {integrity: sha512-04IXzPwHrW69XusN/SIdDdKZBzMfOT9UNT/YiJit/xpy2VuAoB8NHc8Aplb96zsWDddLnbkPL3TsmrS04ZU2xQ==}
+  '@playwright/test@1.55.1':
+    resolution: {integrity: sha512-IVAh/nOJaw6W9g+RJVlIQJ6gSiER+ae6mKQ5CX1bERzQgbC1VSeBlwdvczT7pxb0GWiyrxH4TGKbMfDb4Sq/ig==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -8758,13 +8758,13 @@ packages:
   plantuml-encoder@1.4.0:
     resolution: {integrity: sha512-sxMwpDw/ySY1WB2CE3+IdMuEcWibJ72DDOsXLkSmEaSzwEUaYBT6DWgOfBiHGCux4q433X6+OEFWjlVqp7gL6g==}
 
-  playwright-core@1.55.0:
-    resolution: {integrity: sha512-GvZs4vU3U5ro2nZpeiwyb0zuFaqb9sUiAJuyrWpcGouD8y9/HLgGbNRjIph7zU9D3hnPaisMl9zG9CgFi/biIg==}
+  playwright-core@1.55.1:
+    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.55.0:
-    resolution: {integrity: sha512-sdCWStblvV1YU909Xqx0DhOjPZE4/5lJsIS84IfN9dAZfcl/CIZ5O8l3o0j7hPMjDvqoTF8ZUcc+i/GL5erstA==}
+  playwright@1.55.1:
+    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -13466,7 +13466,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt/test-utils@3.19.2(@playwright/test@1.55.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.0)(typescript@5.9.2)(vitest@3.2.4)':
+  '@nuxt/test-utils@3.19.2(@playwright/test@1.55.1)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.1)(typescript@5.9.2)(vitest@3.2.4)':
     dependencies:
       '@nuxt/kit': 3.17.5(magicast@0.3.5)
       c12: 3.0.4(magicast@0.3.5)
@@ -13490,16 +13490,16 @@ snapshots:
       tinyexec: 1.0.1
       ufo: 1.6.1
       unplugin: 2.3.5
-      vitest-environment-nuxt: 1.0.1(@playwright/test@1.55.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.0)(typescript@5.9.2)(vitest@3.2.4)
+      vitest-environment-nuxt: 1.0.1(@playwright/test@1.55.1)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.1)(typescript@5.9.2)(vitest@3.2.4)
       vue: 3.5.22(typescript@5.9.2)
     optionalDependencies:
-      '@playwright/test': 1.55.0
+      '@playwright/test': 1.55.1
       '@testing-library/vue': 8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2))
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       '@vue/test-utils': 2.4.6
       happy-dom: 17.1.2
       jsdom: 26.1.0
-      playwright-core: 1.55.0
+      playwright-core: 1.55.1
       vitest: 3.2.4(@edge-runtime/vm@3.2.0)(@types/debug@4.1.12)(@types/node@16.18.11)(@vitest/ui@3.2.4)(happy-dom@17.1.2)(jiti@2.5.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - magicast
@@ -13996,10 +13996,10 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
-  '@playwright/experimental-ct-core@1.55.0(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)':
+  '@playwright/experimental-ct-core@1.55.1(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)':
     dependencies:
-      playwright: 1.55.0
-      playwright-core: 1.55.0
+      playwright: 1.55.1
+      playwright-core: 1.55.1
       vite: 6.3.6(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
@@ -14014,9 +14014,9 @@ snapshots:
       - tsx
       - yaml
 
-  '@playwright/experimental-ct-react@1.55.0(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(vite@7.1.7(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(yaml@2.8.1)':
+  '@playwright/experimental-ct-react@1.55.1(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(vite@7.1.7(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(yaml@2.8.1)':
     dependencies:
-      '@playwright/experimental-ct-core': 1.55.0(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)
+      '@playwright/experimental-ct-core': 1.55.1(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)
       '@vitejs/plugin-react': 4.7.0(vite@7.1.7(@types/node@22.16.3)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))
     transitivePeerDependencies:
       - '@types/node'
@@ -14033,9 +14033,9 @@ snapshots:
       - vite
       - yaml
 
-  '@playwright/test@1.55.0':
+  '@playwright/test@1.55.1':
     dependencies:
-      playwright: 1.55.0
+      playwright: 1.55.1
 
   '@polka/url@1.0.0-next.28': {}
 
@@ -21136,7 +21136,7 @@ snapshots:
       qs: 6.14.0
     optional: true
 
-  next@15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next@15.5.3(@babel/core@7.28.0)(@playwright/test@1.55.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       '@next/env': 15.5.3
       '@swc/helpers': 0.5.15
@@ -21154,7 +21154,7 @@ snapshots:
       '@next/swc-linux-x64-musl': 15.5.3
       '@next/swc-win32-arm64-msvc': 15.5.3
       '@next/swc-win32-x64-msvc': 15.5.3
-      '@playwright/test': 1.55.0
+      '@playwright/test': 1.55.1
       sharp: 0.34.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -22142,11 +22142,11 @@ snapshots:
 
   plantuml-encoder@1.4.0: {}
 
-  playwright-core@1.55.0: {}
+  playwright-core@1.55.1: {}
 
-  playwright@1.55.0:
+  playwright@1.55.1:
     dependencies:
-      playwright-core: 1.55.0
+      playwright-core: 1.55.1
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -24873,9 +24873,9 @@ snapshots:
     optionalDependencies:
       vite: 7.1.7(@types/node@24.2.0)(jiti@2.5.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1)
 
-  vitest-environment-nuxt@1.0.1(@playwright/test@1.55.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.0)(typescript@5.9.2)(vitest@3.2.4):
+  vitest-environment-nuxt@1.0.1(@playwright/test@1.55.1)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.1)(typescript@5.9.2)(vitest@3.2.4):
     dependencies:
-      '@nuxt/test-utils': 3.19.2(@playwright/test@1.55.0)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.0)(typescript@5.9.2)(vitest@3.2.4)
+      '@nuxt/test-utils': 3.19.2(@playwright/test@1.55.1)(@testing-library/vue@8.1.0(@vue/compiler-sfc@3.5.22)(vue@3.5.22(typescript@5.9.2)))(@vitest/ui@3.2.4)(@vue/test-utils@2.4.6)(happy-dom@17.1.2)(jsdom@26.1.0)(magicast@0.3.5)(playwright-core@1.55.1)(typescript@5.9.2)(vitest@3.2.4)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
