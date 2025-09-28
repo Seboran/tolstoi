@@ -65,12 +65,12 @@
   "keywords": ["reactive", "jsx", "vdom", "framework", "frontend"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/nirina.js.git"
+    "url": "https://github.com/Seboran/tolstoi.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/nirina.js/issues"
+    "url": "https://github.com/Seboran/tolstoi/issues"
   },
-  "homepage": "https://github.com/your-org/nirina.js#readme",
+  "homepage": "https://github.com/Seboran/tolstoi#readme",
   "publishConfig": {
     "access": "public"
   }
