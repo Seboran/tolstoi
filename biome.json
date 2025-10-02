@@ -27,7 +27,8 @@
       "**/venv/**",
       "**/.venv/**",
       "csp.generated.json",
-      "**/.obsidian/**"
+      "**/.obsidian/**",
+      "**/src-tauri/**"
     ]
   },
   "organizeImports": { "enabled": true },
