@@ -30,7 +30,7 @@
     "nuxt-typed-router": "4.0.2",
     "vue": "latest",
     "vue-router": "latest",
-    "zod": "4.1.11"
+    "zod": "4.1.12"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "1.2.3",
