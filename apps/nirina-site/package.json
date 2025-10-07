@@ -27,7 +27,7 @@
     "dayjs": "1.11.18",
     "gray-matter": "4.0.3",
     "markdown-it": "14.1.0",
-    "nodemailer": "7.0.5",
+    "nodemailer": "7.0.7",
     "openai": "5.23.2",
     "react": "19.2.0",
     "react-dom": "19.2.0",
