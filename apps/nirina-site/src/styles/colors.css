@@ -6,6 +6,7 @@
   --color-paragraph: var(--theme-paragraph-color);
   --color-title: var(--theme-title-color);
   --color-link: var(--theme-link-color);
+  --color-background: var(--theme-background-color);
 }
 
 * {
@@ -21,6 +22,7 @@
     --theme-paragraph-color: var(--color-slate-900);
     --theme-title-color: #ef5945;
     --theme-link-color: var(--color-blue-500);
+    --theme-background-color: white;
   }
 
   :root.dark {
@@ -29,5 +31,6 @@
     --theme-paragraph-color: var(--color-slate-200);
     --theme-title-color: var(--color-white);
     --theme-link-color: var(--color-blue-500);
+    --theme-background-color: #1c2b4e;
   }
 }
