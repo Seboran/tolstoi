@@ -47,6 +47,6 @@
     "kill-port": "2.0.1",
     "node-html-parser": "7.0.1",
     "serve": "14.2.5",
-    "wait-on": "8.0.5"
+    "wait-on": "9.0.1"
   }
 }

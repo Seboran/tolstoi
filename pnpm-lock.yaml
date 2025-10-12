@@ -61,7 +61,7 @@ importers:
     dependencies:
       '@nuxt/ui':
         specifier: 2.22.0
-        version: 2.22.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(vite@7.1.9(@types/node@24.2.0)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@3.25.76)
+        version: 2.22.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(vite@7.1.9(@types/node@24.2.0)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@3.25.76)
       '@nuxtjs/tailwindcss':
         specifier: 6.13.2
         version: 6.13.2(magicast@0.3.5)
@@ -100,7 +100,7 @@ importers:
     dependencies:
       '@nuxt/ui':
         specifier: 2.22.0
-        version: 2.22.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3))(vite@7.1.9(@types/node@16.18.11)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)
+        version: 2.22.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3))(vite@7.1.9(@types/node@16.18.11)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)
       '@pinia/nuxt':
         specifier: 0.11.2
         version: 0.11.2(magicast@0.3.5)(pinia@3.0.3(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3)))
@@ -593,8 +593,8 @@ importers:
         specifier: 14.2.5
         version: 14.2.5
       wait-on:
-        specifier: 8.0.5
-        version: 8.0.5
+        specifier: 9.0.1
+        version: 9.0.1
 
   apps/reinventons-le-web:
     dependencies:
@@ -4763,8 +4763,8 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
-  axios@1.12.1:
-    resolution: {integrity: sha512-Kn4kbSXpkFHCGE6rBFNwIv0GQs4AvDT80jlveJDKFxjbTYMUeB4QtsdPCv6H8Cm19Je7IU6VFtRl2zWZI0rudQ==}
+  axios@1.12.2:
+    resolution: {integrity: sha512-vMJzPewAlRyOgxV2dU0Cuz2O8zzzx9VYtbJOaBgXFeLc4IV/Eg50n4LowmehOOR61S8ZMpc2K5Sa7g6A4jfkUw==}
 
   axobject-query@4.1.0:
     resolution: {integrity: sha512-qIj0G9wZbMGNLjLmg1PT6v2mE9AH2zlnADJD/2tC6E00hgmhUOfEB6greHPAfLRSufHqROIUTkw6E+M3lH0PTQ==}
@@ -11218,9 +11218,9 @@ packages:
     resolution: {integrity: sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==}
     engines: {node: '>=18'}
 
-  wait-on@8.0.5:
-    resolution: {integrity: sha512-J3WlS0txVHkhLRb2FsmRg3dkMTCV1+M6Xra3Ho7HzZDHpE7DCOnoSoCJsZotrmW3uRMhvIJGSKUKrh/MeF4iag==}
-    engines: {node: '>=12.0.0'}
+  wait-on@9.0.1:
+    resolution: {integrity: sha512-noeCAI+XbqWMXY23sKril0BSURhuLYarkVXwJv1uUWwoojZJE7pmX3vJ7kh7SZaNgPGzfsCSQIZM/AGvu0Q9pA==}
+    engines: {node: '>=20.0.0'}
     hasBin: true
 
   wcwidth@1.0.1:
@@ -13758,7 +13758,7 @@ snapshots:
       - magicast
       - typescript
 
-  '@nuxt/ui@2.22.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3))(vite@7.1.9(@types/node@16.18.11)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)':
+  '@nuxt/ui@2.22.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3))(vite@7.1.9(@types/node@16.18.11)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@4.1.12)':
     dependencies:
       '@headlessui/tailwindcss': 0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3)))
       '@headlessui/vue': 1.7.23(vue@3.5.22(typescript@5.9.3))
@@ -13774,7 +13774,7 @@ snapshots:
       '@tailwindcss/forms': 0.5.10(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3)))
       '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@16.18.11)(typescript@5.9.3)))
       '@vueuse/core': 13.1.0(vue@3.5.22(typescript@5.9.3))
-      '@vueuse/integrations': 13.1.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))
+      '@vueuse/integrations': 13.1.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))
       '@vueuse/math': 13.1.0(vue@3.5.22(typescript@5.9.3))
       defu: 6.1.4
       fuse.js: 7.1.0
@@ -13804,7 +13804,7 @@ snapshots:
       - vite
       - vue
 
-  '@nuxt/ui@2.22.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(vite@7.1.9(@types/node@24.2.0)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@3.25.76)':
+  '@nuxt/ui@2.22.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(joi@17.13.3)(jwt-decode@4.0.0)(magicast@0.3.5)(vite@7.1.9(@types/node@24.2.0)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.37.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))(zod@3.25.76)':
     dependencies:
       '@headlessui/tailwindcss': 0.2.2(tailwindcss@3.4.17)
       '@headlessui/vue': 1.7.23(vue@3.5.22(typescript@5.9.3))
@@ -13820,7 +13820,7 @@ snapshots:
       '@tailwindcss/forms': 0.5.10(tailwindcss@3.4.17)
       '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17)
       '@vueuse/core': 13.1.0(vue@3.5.22(typescript@5.9.3))
-      '@vueuse/integrations': 13.1.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))
+      '@vueuse/integrations': 13.1.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))
       '@vueuse/math': 13.1.0(vue@3.5.22(typescript@5.9.3))
       defu: 6.1.4
       fuse.js: 7.1.0
@@ -16842,13 +16842,13 @@ snapshots:
       '@vueuse/shared': 13.9.0(vue@3.5.22(typescript@5.9.3))
       vue: 3.5.22(typescript@5.9.3)
 
-  '@vueuse/integrations@13.1.0(axios@1.12.1)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))':
+  '@vueuse/integrations@13.1.0(axios@1.12.2)(change-case@5.4.4)(drauu@0.4.3)(focus-trap@7.6.0)(fuse.js@7.1.0)(jwt-decode@4.0.0)(vue@3.5.22(typescript@5.9.3))':
     dependencies:
       '@vueuse/core': 13.1.0(vue@3.5.22(typescript@5.9.3))
       '@vueuse/shared': 13.1.0(vue@3.5.22(typescript@5.9.3))
       vue: 3.5.22(typescript@5.9.3)
     optionalDependencies:
-      axios: 1.12.1
+      axios: 1.12.2
       change-case: 5.4.4
       drauu: 0.4.3
       focus-trap: 7.6.0
@@ -17351,7 +17351,7 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.0.0
 
-  axios@1.12.1:
+  axios@1.12.2:
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.4
@@ -25523,9 +25523,9 @@ snapshots:
     dependencies:
       xml-name-validator: 5.0.0
 
-  wait-on@8.0.5:
+  wait-on@9.0.1:
     dependencies:
-      axios: 1.12.1
+      axios: 1.12.2
       joi: 18.0.1
       lodash: 4.17.21
       minimist: 1.2.8
