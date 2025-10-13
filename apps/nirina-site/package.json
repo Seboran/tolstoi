@@ -22,7 +22,7 @@
     "@supabase/supabase-js": "2.75.0",
     "@tailwindcss/vite": "4.1.14",
     "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.1",
+    "@types/react-dom": "19.2.2",
     "astro": "5.14.4",
     "dayjs": "1.11.18",
     "gray-matter": "4.0.3",
