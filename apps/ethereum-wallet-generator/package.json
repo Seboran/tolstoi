@@ -26,7 +26,7 @@
     "@types/node": "22.18.11",
     "@vitejs/plugin-vue": "6.0.1",
     "@vue/test-utils": "2.4.6",
-    "jsdom": "27.0.0",
+    "jsdom": "27.0.1",
     "vite": "7.1.10",
     "vitest": "3.2.4"
   }
