@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { listeMotsInitiale } from './listeMots'
 // @ts-ignore
 import DisplayWordsCanvas from './words-entry/DisplayWordsCanvas.vue'
 import ListWordsTextArea from './words-entry/ListWordsTextArea.vue'
-
-import { ref } from 'vue'
 
 const words = ref<string[]>(listeMotsInitiale)
 const canvasRef = ref<any | null>(null)

@@ -1,7 +1,7 @@
-import BalanceInputV2 from '@/components/v2/BalanceInputV2.vue'
 import userEvent from '@testing-library/user-event'
 import { render } from '@testing-library/vue'
 import { describe, expect, test } from 'vitest'
+import BalanceInputV2 from '@/components/v2/BalanceInputV2.vue'
 
 describe('Affiche les balances et permet de les modifier', () => {
   test("Affiche l'argend que doit Alfred", () => {

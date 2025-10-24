@@ -1,4 +1,4 @@
-import { type Ref, onBeforeUnmount, onMounted } from 'vue'
+import { onBeforeUnmount, onMounted, type Ref } from 'vue'
 
 export interface CanvasSetup {
   resizeCanvas: () => void

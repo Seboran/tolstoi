@@ -20,5 +20,7 @@
   "dependencies": {
     "lib-effondrement": "workspace:*"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }

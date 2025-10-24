@@ -1,4 +1,5 @@
 import useClipboard from 'vue-clipboard3'
+
 const { toClipboard } = useClipboard()
 
 export async function useCopy(value) {

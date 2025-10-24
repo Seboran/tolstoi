@@ -2,8 +2,8 @@ import BN from 'bn.js'
 import { describe, expect, it } from 'vitest'
 
 import generate, {
-  generatePrivateKeyFromRandomInput,
   generateEthereumAddressFromPublicKey,
+  generatePrivateKeyFromRandomInput,
   generatePublicKeyFromPrivateKey,
   MAX_PRIVATE_KEY,
 } from '../generate'

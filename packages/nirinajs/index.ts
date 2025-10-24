@@ -12,15 +12,12 @@
  */
 
 // Reactive system
-export { reactive, effect, ref, reactiveSet } from './src/framework/reactive'
-
-// VDOM / JSX runtime
-export { h } from './src/framework/vdom'
-export { jsx, jsxs, jsxDEV } from './src/framework/vdom'
-export type { VNode } from './src/framework/vdom'
-
+export { effect, reactive, reactiveSet, ref } from './src/framework/reactive'
 // Renderer
-export { render, mount, mountReactive } from './src/framework/renderer'
+export { mount, mountReactive, render } from './src/framework/renderer'
+export type { VNode } from './src/framework/vdom'
+// VDOM / JSX runtime
+export { h, jsx, jsxDEV, jsxs } from './src/framework/vdom'
 
 // Optional aggregated default export for convenience / discoverability
 import { effect, reactive, reactiveSet, ref } from './src/framework/reactive'

@@ -7,7 +7,7 @@
 https://developer.mozilla.org/en-US/docs/Web/CSS/@import */
 @import "tailwindcss";
 
-@config '../../tailwind.config.mjs';
+@config "../../tailwind.config.mjs";
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -85,8 +85,9 @@ span.lang {
   right: 0.5em;
   font-size: 0.75em;
   color: #999;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
 }
 
 .custom-block {

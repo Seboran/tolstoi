@@ -3,6 +3,7 @@ import { Tooltip } from 'bootstrap'
 import { onMounted, ref } from 'vue'
 
 import { useCopy } from './useCopy.js'
+
 defineProps({
   value: {
     required: true,

@@ -3,12 +3,12 @@ import { render } from 'astro:content'
 import { Fragment } from 'astro/jsx-runtime'
 import MarkdownPostLayout from '../../layouts/Layout.astro'
 import { getSortedPublishedPosts } from '../../utils/getCollections'
-import FormNewsletter from '../FormNewsletter.astro'
-import Prose from '../Prose.astro'
 import DatePublieLeV2 from '../blog/DatePublieLeV2.astro'
 import LinkToOtherArticle from '../blog/LinkToOtherArticle.astro'
 import TagsArticles from '../blog/TagsArticles.astro'
 import DesignBigTitle from '../design/DesignBigTitle.astro'
+import FormNewsletter from '../FormNewsletter.astro'
+import Prose from '../Prose.astro'
 
 const { entry, ogImage } = Astro.props
 const { Content } = await render(entry)

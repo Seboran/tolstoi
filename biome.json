@@ -1,7 +1,7 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.0/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-  "files": { "ignoreUnknown": false, "ignore": ["**/venv/**"] },
+  "files": { "ignoreUnknown": false, "includes": ["**", "!**/venv/**"] },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -12,38 +12,38 @@
     "lineWidth": 100,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": [
-      "**/.output",
-      "**/pnpm-lock.yaml",
-      "**/.next",
-      "**/.unlighthouse",
-      "packages/nirina-codemods/__testfixtures__",
-      "**/bruno",
-      "**/*.md",
-      "**/*.mdx",
-      "**/.astro",
-      "**/dist",
-      "**/matrix.json",
-      "**/venv/**",
-      "**/.venv/**",
-      "csp.generated.json",
-      "**/.obsidian/**",
-      "**/src-tauri/**"
+    "includes": [
+      "**",
+      "!**/.output",
+      "!**/pnpm-lock.yaml",
+      "!**/.next",
+      "!**/.unlighthouse",
+      "!**/packages/nirina-codemods/__testfixtures__",
+      "!**/bruno",
+      "!**/*.md",
+      "!**/*.mdx",
+      "!**/.astro",
+      "!**/dist",
+      "!**/matrix.json",
+      "!**/venv/**",
+      "!**/.venv/**",
+      "!**/csp.generated.json",
+      "!**/.obsidian/**",
+      "!**/src-tauri/**"
     ]
   },
-  "organizeImports": { "enabled": true },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "linter": {
-    "ignore": ["**/.obsidian/**"],
+    "includes": ["**", "!**/.obsidian/**"],
     "enabled": true,
     "rules": {
       "recommended": false,
       "complexity": {
         "noExtraBooleanCast": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noUselessCatch": "error",
         "noUselessThisAlias": "error",
         "noUselessTypeConstraint": "error",
-        "noWith": "error"
+        "noAdjacentSpacesInRegex": "error"
       },
       "correctness": {
         "noConstAssign": "error",
@@ -66,15 +66,16 @@
         "noUnusedLabels": "error",
         "noUnusedPrivateClassMembers": "error",
         "noUnusedVariables": "error",
-        "useArrayLiterals": "off",
         "useIsNan": "error",
         "useValidForDirection": "error",
-        "useYield": "error"
+        "useYield": "error",
+        "useValidTypeof": "error"
       },
       "style": {
         "noNamespace": "error",
         "useAsConstAssertion": "error",
-        "useImportType": "error"
+        "useImportType": "error",
+        "useArrayLiterals": "off"
       },
       "suspicious": {
         "noAssignInExpressions": "error",
@@ -105,7 +106,7 @@
         "noUnsafeNegation": "error",
         "useGetterReturn": "error",
         "useNamespaceKeyword": "error",
-        "useValidTypeof": "error"
+        "noWith": "error"
       }
     }
   },
@@ -124,7 +125,7 @@
   },
   "overrides": [
     {
-      "include": ["*.ts", "*.tsx", "*.mts", "*.cts"],
+      "includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
       "linter": {
         "rules": {
           "correctness": {
@@ -132,15 +133,12 @@
             "noGlobalObjectCalls": "off",
             "noInvalidBuiltinInstantiation": "off",
             "noInvalidConstructorSuper": "off",
-            "noNewSymbol": "off",
             "noSetterReturn": "off",
             "noUndeclaredVariables": "off",
             "noUnreachable": "off",
             "noUnreachableSuper": "off"
           },
           "style": {
-            "noArguments": "error",
-            "noVar": "error",
             "useConst": "error"
           },
           "suspicious": {
@@ -154,13 +152,17 @@
             "noUnsafeNegation": "off",
             "useGetterReturn": "off",
             "noAssignInExpressions": "off",
-            "noExplicitAny": "off"
+            "noExplicitAny": "off",
+            "noVar": "error"
+          },
+          "complexity": {
+            "noArguments": "error"
           }
         }
       }
     },
     {
-      "include": ["*.vue", "*.astro"],
+      "includes": ["**/*.vue", "**/*.astro"],
       "linter": {
         "rules": {
           "correctness": {
@@ -173,5 +175,10 @@
         }
       }
     }
-  ]
+  ],
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  }
 }

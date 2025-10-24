@@ -6,7 +6,7 @@ export interface Component<P = {}> {
 
 // JSX namespace declaration
 declare global {
-  // biome-ignore lint/style/noNamespace: <explanation>
+  // biome-ignore lint/style/noNamespace: this is JSX
   namespace JSX {
     interface Element extends VNode {}
     interface IntrinsicElements {

@@ -7,7 +7,9 @@
   "author": "",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -62,7 +64,13 @@
     "vite": "7.1.11",
     "rimraf": "6.0.1"
   },
-  "keywords": ["reactive", "jsx", "vdom", "framework", "frontend"],
+  "keywords": [
+    "reactive",
+    "jsx",
+    "vdom",
+    "framework",
+    "frontend"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Seboran/tolstoi.git"

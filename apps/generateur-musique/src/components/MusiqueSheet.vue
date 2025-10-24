@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { useOsmd } from '@/composables/useOsmd'
 import { StyledBouton } from 'lib-style'
 import type { SudokuGrid } from 'lib-sudoku'
+import { useOsmd } from '@/composables/useOsmd'
 import MusiqueSheetTemplate from './MusiqueSheetTemplate.vue'
 
 const props = defineProps<{

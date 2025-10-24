@@ -1,17 +1,13 @@
 // @ts-check
-import { defineConfig, envField, fontProviders } from 'astro/config'
-
-import tailwindcss from '@tailwindcss/vite'
 
 import mdx from '@astrojs/mdx'
-
 import node from '@astrojs/node'
-
+import react from '@astrojs/react'
 import vue from '@astrojs/vue'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig, envField, fontProviders } from 'astro/config'
 import { astroCSPHashGenerator } from './src/plugins/astroCSPHashgenerator'
 import { targetBlank } from './src/plugins/targetBlank'
-
-import react from '@astrojs/react'
 import { MISTRAL_API_ENDPOINT_KEY, MISTRAL_API_KEY } from './utils/environment-variables'
 
 // https://astro.build/config

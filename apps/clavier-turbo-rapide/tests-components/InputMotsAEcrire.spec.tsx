@@ -1,5 +1,5 @@
-import { InputMotsAEcrire } from '@/app/InputMotsAEcrire'
 import { expect, test } from '@playwright/experimental-ct-react'
+import { InputMotsAEcrire } from '@/app/InputMotsAEcrire'
 
 test('doit permettre de saisir le texte proposé', async ({ mount, page }) => {
   const component = await mount(

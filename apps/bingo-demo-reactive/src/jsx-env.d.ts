@@ -40,7 +40,7 @@ declare module 'nirina.js/jsx-dev-runtime' {
  * If another file already declares this, ensure the definitions stay compatible.
  */
 declare global {
-  // biome-ignore lint/style/noNamespace: <explanation>
+  // biome-ignore lint/style/noNamespace: this is JSX namespace
   namespace JSX {
     // What <Element /> resolves to
     interface Element extends VNode {}

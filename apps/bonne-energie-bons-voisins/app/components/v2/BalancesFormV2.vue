@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
 import countries from '@/data/countries.json'
 import matriceDeRemboursements from '@/data/matrix.json'
-import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
 import TradeFlowMap from '../TradeFlowMap.vue'
 import BalanceInputV2 from './BalanceInputV2.vue'
 

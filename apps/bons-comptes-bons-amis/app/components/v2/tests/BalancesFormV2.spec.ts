@@ -1,7 +1,7 @@
-import BalancesFormV2 from '@/components/v2/BalancesFormV2.vue'
 import userEvent from '@testing-library/user-event'
 import { render, waitFor } from '@testing-library/vue'
 import { beforeEach, describe, expect, test, vi } from 'vitest'
+import BalancesFormV2 from '@/components/v2/BalancesFormV2.vue'
 import type { BalanceSolutionResponse } from '~/composables/useFetchBalances'
 
 vi.mock('@/components/useFetchBalances', () => ({

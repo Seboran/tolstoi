@@ -1,4 +1,4 @@
-import { Fragment, effect, h, reactive, ref } from 'nirina.js'
+import { effect, Fragment, h, reactive, ref } from 'nirina.js'
 
 /**
  * PersonalityTest Component

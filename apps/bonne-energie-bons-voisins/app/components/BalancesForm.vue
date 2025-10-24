@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import BalanceInput from '@/components/BalanceInput.vue'
 import AffichageRemboursementsV2 from 'layer-bons-comptes/components/v2/AffichageRemboursementsV2.vue'
+import BalanceInput from '@/components/BalanceInput.vue'
 import AjoutDepenseFormulaire from './AjoutDepenseFormulaire.vue'
 import HistoriqueDepenses from './HistoriqueDepenses.vue'
 

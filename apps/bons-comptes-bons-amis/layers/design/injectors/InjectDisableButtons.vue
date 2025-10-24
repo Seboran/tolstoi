@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { disableButtons } from '../injectSymbols/disableSymbol'
+
 const props = defineProps<{
   value?: boolean
 }>()

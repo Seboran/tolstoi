@@ -2,7 +2,12 @@
   "name": "nirina-site",
   "type": "module",
   "version": "0.0.1",
-  "files": ["dist", "ecosystem.config.cjs", "server.mjs", "csp.generated.json"],
+  "files": [
+    "dist",
+    "ecosystem.config.cjs",
+    "server.mjs",
+    "csp.generated.json"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "node server.mjs",

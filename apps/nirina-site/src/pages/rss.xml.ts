@@ -1,8 +1,8 @@
-import * as path from 'path'
 import { getEntry } from 'astro:content'
 import rss, { type RSSFeedItem } from '@astrojs/rss'
 import type { APIContext } from 'astro'
 import * as fs from 'fs/promises'
+import * as path from 'path'
 import { getSortedPublishedPosts } from '../utils/getCollections'
 
 export async function GET(context: APIContext) {

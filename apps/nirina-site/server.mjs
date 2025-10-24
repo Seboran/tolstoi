@@ -1,6 +1,7 @@
 // server.js
-import * as http from 'http'
+
 import { readFile } from 'node:fs/promises' // Import readFile
+import * as http from 'http'
 import { handler as ssrHandler } from './dist/server/entry.mjs'
 
 const PORT = 4321

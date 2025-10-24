@@ -1,9 +1,9 @@
-import * as crypto from 'crypto'
 import { readFile, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
-import * as path from 'path'
 import type { AstroIntegration } from 'astro'
+import * as crypto from 'crypto'
 import { parse } from 'node-html-parser'
+import * as path from 'path'
 
 const CSP_JSON_PATH = path.join(process.cwd(), 'csp.generated.json')
 
