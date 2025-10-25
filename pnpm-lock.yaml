@@ -538,8 +538,8 @@ importers:
         specifier: 14.1.0
         version: 14.1.0
       nodemailer:
-        specifier: 7.0.9
-        version: 7.0.9
+        specifier: 7.0.10
+        version: 7.0.10
       openai:
         specifier: 6.6.0
         version: 6.6.0(ws@8.18.3)(zod@4.1.12)
@@ -581,8 +581,8 @@ importers:
         specifier: 22.18.12
         version: 22.18.12
       '@types/nodemailer':
-        specifier: 7.0.2
-        version: 7.0.2
+        specifier: 7.0.3
+        version: 7.0.3
       kill-port:
         specifier: 2.0.1
         version: 2.0.1
@@ -3706,8 +3706,8 @@ packages:
   '@types/node@24.2.0':
     resolution: {integrity: sha512-3xyG3pMCq3oYCNg7/ZP+E1ooTaGB4cG8JWRsqqOYQdbWNY4zbaV0Ennrd7stjiJEFZCaybcIgpTjJWHRfBSIDw==}
 
-  '@types/nodemailer@7.0.2':
-    resolution: {integrity: sha512-Zo6uOA9157WRgBk/ZhMpTQ/iCWLMk7OIs/Q9jvHarMvrzUUP/MDdPHL2U1zpf57HrrWGv4nYQn5uIxna0xY3xw==}
+  '@types/nodemailer@7.0.3':
+    resolution: {integrity: sha512-fC8w49YQ868IuPWRXqPfLf+MuTRex5Z1qxMoG8rr70riqqbOp2F5xgOKE9fODEBPzpnvjkJXFgK6IL2xgMSTnA==}
 
   '@types/parse-path@7.0.3':
     resolution: {integrity: sha512-LriObC2+KYZD3FzCrgWGv/qufdUy4eXrxcLgQMfYXgPbLIecKIsVBaQgUPmxSSLcjmYbDTQbMgr6qr6l/eb7Bg==}
@@ -8255,8 +8255,8 @@ packages:
   node-releases@2.0.21:
     resolution: {integrity: sha512-5b0pgg78U3hwXkCM8Z9b2FJdPZlr9Psr9V2gQPESdGHqbntyFJKFW4r5TeWGFzafGY3hzs1JC62VEQMbl1JFkw==}
 
-  nodemailer@7.0.9:
-    resolution: {integrity: sha512-9/Qm0qXIByEP8lEV2qOqcAW7bRpL8CR9jcTwk3NBnHJNmP9fIJ86g2fgmIXqHY+nj55ZEMwWqYAT2QTDpRUYiQ==}
+  nodemailer@7.0.10:
+    resolution: {integrity: sha512-Us/Se1WtT0ylXgNFfyFSx4LElllVLJXQjWi2Xz17xWw7amDKO2MLtFnVp1WACy7GkVGs+oBlRopVNUzlrGSw1w==}
     engines: {node: '>=6.0.0'}
 
   nodemon@3.1.10:
@@ -15479,7 +15479,7 @@ snapshots:
       undici-types: 7.10.0
     optional: true
 
-  '@types/nodemailer@7.0.2':
+  '@types/nodemailer@7.0.3':
     dependencies:
       '@aws-sdk/client-sesv2': 3.908.0
       '@types/node': 22.18.12
@@ -21396,7 +21396,7 @@ snapshots:
 
   node-releases@2.0.21: {}
 
-  nodemailer@7.0.9: {}
+  nodemailer@7.0.10: {}
 
   nodemon@3.1.10:
     dependencies:
