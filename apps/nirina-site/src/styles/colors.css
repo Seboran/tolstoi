@@ -16,21 +16,22 @@
 @layer base {
   :root {
     --theme-color-form: #ffffff;
-    --theme-color-send-message: var(--color-blue-500);
+    --theme-color-send-message: var(--color-indigo-600);
     --theme-color-send-message-active: var(--color-blue-400);
     --theme-color-suggestion-chat: var(--color-slate-100);
     --theme-paragraph-color: var(--color-slate-900);
-    --theme-title-color: #ef5945;
-    --theme-link-color: var(--color-blue-500);
+    --theme-title-color: hsl(3, 96%, 46%);
+    --theme-link-color: hsl(215, 87%, 48%);
     --theme-background-color: white;
   }
 
   :root.dark {
     --theme-color-form: var(--color-slate-700);
+    --theme-color-send-message: var(--color-indigo-600);
     --theme-color-suggestion-chat: var(--color-slate-800);
     --theme-paragraph-color: var(--color-slate-200);
     --theme-title-color: var(--color-white);
-    --theme-link-color: var(--color-blue-500);
+    --theme-link-color: hsl(216, 100%, 68%);
     --theme-background-color: #1c2b4e;
   }
 }
