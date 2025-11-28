@@ -28,7 +28,7 @@ const excerptHtml = md.render(excerpt)
     <DatePublieLeV2 date={data.date} />
     {tags.length && <TagsArticles tags={tags} />}
   </div>
-  <div class="space-y-5 xl:col-span-3">
+  <div class="space-y-5 xl:col-span-3" transition:name={data.title}>
     <div class="space-y-6">
       <DesignTitle>
         <a class="rainbow-animation" href={`/posts/${slug}`}>

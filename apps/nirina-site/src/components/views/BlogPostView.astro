@@ -23,7 +23,7 @@ export const prerender = true
 ---
 
 <MarkdownPostLayout title={entry.data.title + " | Nirina Rabeson"} image={ogImage}>
-  <article>
+  <article transition:name={entry.data.title}>
     <header class="pt-6 space-y-1 text-center">
       <DatePublieLeV2 date={entry.data.date} />
 
