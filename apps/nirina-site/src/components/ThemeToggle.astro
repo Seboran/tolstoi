@@ -137,13 +137,12 @@
     // Initialize
     updateButtonUI(getCurrentTheme());
     btn.addEventListener("click", handleClick);
-
-    // Re-initialize after Astro transitions
-    document.addEventListener("astro:after-swap", () => {
-      // Re-run the entire initialization after page swap
-      initThemeToggle();
-    });
   }
+  // Re-initialize after Astro transitions
+  document.addEventListener("astro:after-swap", () => {
+    // Re-run the entire initialization after page swap
+    initThemeToggle();
+  });
 
   // Initialize on load
   initThemeToggle();
