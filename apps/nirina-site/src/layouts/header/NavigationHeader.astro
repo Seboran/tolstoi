@@ -3,23 +3,9 @@ import AnimatedBoutonMeContacter from '../../components/AnimatedBoutonMeContacte
 import ThemeToggle from '../../components/ThemeToggle.astro'
 import LinkInHeader from './LinkInHeader.astro'
 import NavigationMenuList from './menu/NavigationMenuList.astro'
-
-interface Props {
-  animate?: boolean
-}
-
-const { animate } = Astro.props
 ---
 
-<nav
-  class:list={[
-    "flex",
-    "justify-between",
-    "items-center",
-    "pb-0",
-    "sm:pb-10",
-  ]}
->
+<nav class="flex justify-between items-center pb-0 sm:pb-10">
   <a
     class="perspective-on-hover text-xl"
     href="/"
