@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:4-22-bullseye@sha256:d8a4d28fca98aaf3375a866eaf94296a27ba03afdea3fa3baf308817ca28d440
+FROM mcr.microsoft.com/devcontainers/javascript-node:4-22-bullseye@sha256:7c087d511e21faac299075e94597914ddb06699cf28a1a6c619116cda7304b0f
 
 FROM mcr.microsoft.com/playwright:v1.56.1-noble@sha256:f1e7e01021efd65dd1a2c56064be399f3e4de00fd021ac561325f2bfbb2b837a
 
