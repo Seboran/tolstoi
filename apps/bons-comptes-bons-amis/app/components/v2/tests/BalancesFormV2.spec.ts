@@ -30,34 +30,31 @@ describe("Affiche les balances et permet d'ajouter des dépenses", () => {
     expect(queryAllByRole('textbox')).toHaveLength(3)
   })
 
-  test.todo(
-    'Après avoir ajouté 3 personnes, permet de renseigner leurs sommes dépensées',
-    async () => {
-      const { getAllByRole, getByRole } = render(BalancesFormV2)
+  test.todo('Après avoir ajouté 3 personnes, permet de renseigner leurs sommes dépensées', async () => {
+    const { getAllByRole, getByRole } = render(BalancesFormV2)
 
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
 
-      const premièreBalance = getAllByRole('spinbutton')[0]
-      const deuxièmeBalance = getAllByRole('spinbutton')[1]
-      const troisièmeBalance = getAllByRole('spinbutton')[2]
+    const premièreBalance = getAllByRole('spinbutton')[0]
+    const deuxièmeBalance = getAllByRole('spinbutton')[1]
+    const troisièmeBalance = getAllByRole('spinbutton')[2]
 
-      await userEvent.type(premièreBalance, '30')
-      await userEvent.type(deuxièmeBalance, '45')
-      await userEvent.type(troisièmeBalance, '200')
+    await userEvent.type(premièreBalance, '30')
+    await userEvent.type(deuxièmeBalance, '45')
+    await userEvent.type(troisièmeBalance, '200')
 
-      await userEvent.click(getByRole('button', { name: 'Calculer remboursements' }))
+    await userEvent.click(getByRole('button', { name: 'Calculer remboursements' }))
 
-      const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
-      await waitFor(() => {
-        expect(tableauRemboursements.textContent).toEqual(
-          'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
-        ),
-          { timeout: 2000 }
-      })
-    },
-  )
+    const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
+    await waitFor(() => {
+      expect(tableauRemboursements.textContent).toEqual(
+        'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
+      ),
+        { timeout: 2000 }
+    })
+  })
 
   test('Après avoir ajouté 3 personnes, vider les résultats quand on retire une personne', async () => {
     const { getAllByRole, getByRole, queryByRole } = render(BalancesFormV2)

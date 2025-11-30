@@ -52,41 +52,42 @@ test('affiche 404', async ({ page }) => {
   await expect(page.getByText('404')).toBeVisible()
 })
 
-test.describe.skip("Chat dans l'accueil", () => {
-  test('affiche une zone de chat avec autofocus', async ({ page }) => {
-    await page.goto('/')
+test.describe
+  .skip("Chat dans l'accueil", () => {
+    test('affiche une zone de chat avec autofocus', async ({ page }) => {
+      await page.goto('/')
 
-    await expect(page.getByRole('textbox')).toBeFocused()
+      await expect(page.getByRole('textbox')).toBeFocused()
+    })
+
+    test('permet de lire le dernier article de blog', async ({ page }) => {
+      await page.goto('/')
+      await page.waitForTimeout(1000)
+      await page
+        .getByRole('button')
+        .getByText(/Je voudrais lire le dernier article de blog/)
+        .click()
+      await page.waitForURL('**/posts/**')
+      expect(page.url()).toMatch(/\/posts\/.+/)
+    })
+
+    test('permet de prendre contact en tapant à la main', async ({ page }) => {
+      await page.goto('/')
+      await page.waitForTimeout(1000)
+
+      await page.getByRole('textbox').fill('Je voudrais prendre contact')
+      await page.getByLabel('Envoyer message').click()
+      await page.waitForURL('**/contact/')
+      expect(page.url()).toMatch(/\/contact/)
+    })
+
+    test('permet de prendre contact en appuyant ensuite sur enter', async ({ page }) => {
+      await page.goto('/')
+      await page.waitForTimeout(1000)
+
+      await page.getByRole('textbox').pressSequentially('Je voudrais prendre contact')
+      await page.keyboard.press('Enter')
+      await page.waitForURL('**/contact/')
+      expect(page.url()).toMatch(/\/contact/)
+    })
   })
-
-  test('permet de lire le dernier article de blog', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForTimeout(1000)
-    await page
-      .getByRole('button')
-      .getByText(/Je voudrais lire le dernier article de blog/)
-      .click()
-    await page.waitForURL('**/posts/**')
-    expect(page.url()).toMatch(/\/posts\/.+/)
-  })
-
-  test('permet de prendre contact en tapant à la main', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForTimeout(1000)
-
-    await page.getByRole('textbox').fill('Je voudrais prendre contact')
-    await page.getByLabel('Envoyer message').click()
-    await page.waitForURL('**/contact/')
-    expect(page.url()).toMatch(/\/contact/)
-  })
-
-  test('permet de prendre contact en appuyant ensuite sur enter', async ({ page }) => {
-    await page.goto('/')
-    await page.waitForTimeout(1000)
-
-    await page.getByRole('textbox').pressSequentially('Je voudrais prendre contact')
-    await page.keyboard.press('Enter')
-    await page.waitForURL('**/contact/')
-    expect(page.url()).toMatch(/\/contact/)
-  })
-})

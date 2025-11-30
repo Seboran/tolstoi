@@ -34,41 +34,38 @@ describe('Afficher version 1 des balances', () => {
     expect(queryAllByRole('textbox')).toHaveLength(3)
   })
 
-  test.todo(
-    'Après avoir ajouté 3 personnes, permet de renseigner leurs sommes dépensées',
-    async () => {
-      useBalancesDetaillesStore().$reset()
+  test.todo('Après avoir ajouté 3 personnes, permet de renseigner leurs sommes dépensées', async () => {
+    useBalancesDetaillesStore().$reset()
 
-      const { getByRole } = render(BalancesForm, {
-        global: {
-          plugins: [createPinia()],
-        },
-      })
+    const { getByRole } = render(BalancesForm, {
+      global: {
+        plugins: [createPinia()],
+      },
+    })
 
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
-      await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une personne' }))
 
-      await userEvent.selectOptions(getByRole('combobox'), ['Une autruche curieuse'])
+    await userEvent.selectOptions(getByRole('combobox'), ['Une autruche curieuse'])
 
-      await userEvent.type(getByRole('spinbutton', { name: 'a dépensé' }), '230')
+    await userEvent.type(getByRole('spinbutton', { name: 'a dépensé' }), '230')
 
-      await userEvent.click(getByRole('checkbox', { name: 'Un castor affairé' }))
-      await userEvent.click(getByRole('checkbox', { name: 'Un ornithorynque malicieux' }))
+    await userEvent.click(getByRole('checkbox', { name: 'Un castor affairé' }))
+    await userEvent.click(getByRole('checkbox', { name: 'Un ornithorynque malicieux' }))
 
-      await userEvent.click(getByRole('button', { name: 'Ajouter une dépense' }))
+    await userEvent.click(getByRole('button', { name: 'Ajouter une dépense' }))
 
-      const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
-      await waitFor(
-        () => {
-          expect(tableauRemboursements.textContent).toEqual(
-            'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
-          )
-        },
-        {
-          timeout: 2000,
-        },
-      )
-    },
-  )
+    const tableauRemboursements = getByRole('table', { name: 'Remboursements' })
+    await waitFor(
+      () => {
+        expect(tableauRemboursements.textContent).toEqual(
+          'quidoità quiUn castor affairé1€Une autruche curieuseUne autruche curieuse1€Un ornithorynque malicieux',
+        )
+      },
+      {
+        timeout: 2000,
+      },
+    )
+  })
 })
