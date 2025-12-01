@@ -254,8 +254,8 @@ importers:
         specifier: 2.8.0
         version: 2.8.0
       '@tauri-apps/plugin-opener':
-        specifier: 2.5.0
-        version: 2.5.0
+        specifier: 2.5.2
+        version: 2.5.2
       vue:
         specifier: 3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -3464,8 +3464,8 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
-  '@tauri-apps/plugin-opener@2.5.0':
-    resolution: {integrity: sha512-B0LShOYae4CZjN8leiNDbnfjSrTwoZakqKaWpfoH6nXiJwt6Rgj6RnVIffG3DoJiKsffRhMkjmBV9VeilSb4TA==}
+  '@tauri-apps/plugin-opener@2.5.2':
+    resolution: {integrity: sha512-ei/yRRoCklWHImwpCcDK3VhNXx+QXM9793aQ64YxpqVF0BDuuIlXhZgiAkc15wnPVav+IbkYhmDJIv5R326Mew==}
 
   '@testing-library/dom@9.3.4':
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}
@@ -15289,7 +15289,7 @@ snapshots:
       '@tauri-apps/cli-win32-ia32-msvc': 2.8.4
       '@tauri-apps/cli-win32-x64-msvc': 2.8.4
 
-  '@tauri-apps/plugin-opener@2.5.0':
+  '@tauri-apps/plugin-opener@2.5.2':
     dependencies:
       '@tauri-apps/api': 2.8.0
 
