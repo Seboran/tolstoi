@@ -407,8 +407,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/lib-sudoku
       opensheetmusicdisplay:
-        specifier: 1.9.2
-        version: 1.9.2
+        specifier: 1.9.3
+        version: 1.9.3
       vue:
         specifier: 3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -8510,8 +8510,8 @@ packages:
       zod:
         optional: true
 
-  opensheetmusicdisplay@1.9.2:
-    resolution: {integrity: sha512-EKTb0H7f9eiJ1Q1kmtylN5lWNDzzwfH0Pmka1t1m9Gh6TODeCXjanw2y/IuNs+zgNdwhc0Qa7mB8tS5X6MI3nQ==}
+  opensheetmusicdisplay@1.9.3:
+    resolution: {integrity: sha512-5wrcHQS0D3FJRNKzm4MTNOgzA/+YJpWdZvWotiFHDuJtpYoMTvBQIzEbVv/71AmAoeqYth23jxYJM0kIV2phDA==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -22031,7 +22031,7 @@ snapshots:
       ws: 8.18.3
       zod: 3.25.76
 
-  opensheetmusicdisplay@1.9.2:
+  opensheetmusicdisplay@1.9.3:
     dependencies:
       '@types/vexflow': 1.2.42
       jszip: 3.10.1
