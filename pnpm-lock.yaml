@@ -529,8 +529,8 @@ importers:
         specifier: 5.16.3
         version: 5.16.3(@netlify/blobs@9.1.2)(@types/node@22.18.12)(@vercel/blob@1.0.2)(db0@0.3.2)(ioredis@5.7.0)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.50.1)(terser@5.37.0)(typescript@5.9.3)(yaml@2.8.1)
       dayjs:
-        specifier: 1.11.18
-        version: 1.11.18
+        specifier: 1.11.19
+        version: 1.11.19
       gray-matter:
         specifier: 4.0.3
         version: 4.0.3
@@ -5541,8 +5541,8 @@ packages:
     resolution: {integrity: sha512-BnBS08aLUM+DKamupXs3w2tJJoqU+AkaE/+6vQxi/G/DPmIZFJJp9Dkb1kM03AZx8ADehDUZgsNxju3mPXZYIA==}
     engines: {node: '>=20'}
 
-  dayjs@1.11.18:
-    resolution: {integrity: sha512-zFBQ7WFRvVRhKcWoUh+ZA1g2HVgUbsZm9sbddh8EC5iv93sui8DVVz1Npvz+r6meo9VKfa8NyLWBsQK1VvIKPA==}
+  dayjs@1.11.19:
+    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
 
   db0@0.3.2:
     resolution: {integrity: sha512-xzWNQ6jk/+NtdfLyXEipbX55dmDSeteLFt/ayF+wZUU5bzKgmrDOxmInUTbyVRp46YwnJdkDA1KhB7WIXFofJw==}
@@ -18074,7 +18074,7 @@ snapshots:
       comment-json: 4.2.5
       comment-parser: 1.4.1
       consola: 3.4.2
-      dayjs: 1.11.18
+      dayjs: 1.11.19
       eta: 3.5.0
       filenamify: 4.3.0
       find-up: 5.0.0
@@ -18301,7 +18301,7 @@ snapshots:
       whatwg-mimetype: 4.0.0
       whatwg-url: 15.1.0
 
-  dayjs@1.11.18: {}
+  dayjs@1.11.19: {}
 
   db0@0.3.2: {}
 
@@ -20870,7 +20870,7 @@ snapshots:
       d3: 7.9.0
       d3-sankey: 0.12.3
       dagre-d3-es: 7.0.11
-      dayjs: 1.11.18
+      dayjs: 1.11.19
       dompurify: 3.2.5
       katex: 0.16.25
       khroma: 2.1.0
