@@ -13,32 +13,26 @@ const lastPost = (await getSortedPublishedPosts()).at(0)?.id
 <Layout title="Nirina Rabeson" animate showNirinaRabesonInNavBar
   ><div class="m-auto flex flex-col-reverse md:grid md:grid-cols-3 gap-x-8">
     <div class="col-span-2">
-      <div class="pt-6 pb-2 md:pb-6 text-left md:text-center">
+      <div class="pt-6 pb-2 text-left md:text-center">
         <MovingAnimatedHomeTitle />
       </div>
 
       <div class="m-auto max-w-2xl">
         <p
-          class="description text-lg leading-7 text-justify text-gray-900 dark:text-gray-100"
+          class="description leading-7 text-justify"
         >
           Je suis ingénieur en informatique spécialisé en développement
           frontend. Je suis passionné de musique, de stack javascript, mais
           j'adore aussi le partage et la bonne vibe.
         </p>
-        <p
-          class="description text-lg leading-7 text-justify text-gray-900 dark:text-gray-100"
-        >
-          Motivé par une énergie détonnante et une bonne humeur inébranlable,
-          j'ai plaisir à contribuer et partager dans le domaine du web, de
-          l'intelligence artificielle, et à propos de l'humain.
-        </p>
+        
       </div>
     </div>
     <div class="m-auto md:m-0">
       <PhotoNirina />
     </div>
   </div>
-  <NudgeScroller />
+  <!-- <NudgeScroller /> -->
   <a id="scroll-target"></a>
   <ArticlesLesPlusRecents limit={10} showOlderLink olderLinkLabel="Voir tous les articles" />
 </Layout>
