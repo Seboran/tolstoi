@@ -21,20 +21,19 @@ const md = new MarkdownIt({ linkify: true })
 const excerptHtml = md.render(excerpt)
 ---
 
-<article
-  class="big-perspective-on-hover space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline"
->
-  <div>
-    <DatePublieLeV2 date={data.date} />
-    {tags.length && <TagsArticles tags={tags} />}
-  </div>
+<article class="big-perspective-on-hover space-y-2">
   <div class="space-y-5 xl:col-span-3" transition:name={data.title}>
     <div class="space-y-6">
-      <DesignTitle>
-        <a class="rainbow-animation" href={`/posts/${slug}`}>
-          {data.title}
-        </a>
-      </DesignTitle>
+      <div class="w-full xl:flex xl:justify-between xl:items-baseline">
+        <DesignTitle>
+          <a class="rainbow-animation" href={`/posts/${slug}`}>
+            {data.title}
+          </a>
+        </DesignTitle>
+        <DatePublieLeV2 date={data.date} />
+        {tags.length && <TagsArticles tags={tags} />}
+      </div>
+
       {excerptHtml && <Prose set:html={excerptHtml} />}
     </div>
     <div class="text-base leading-6 font-medium">
