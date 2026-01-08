@@ -413,9 +413,9 @@ importers:
         specifier: 3.5.25
         version: 3.5.25(typescript@5.9.3)
     devDependencies:
-      '@tsconfig/node20':
-        specifier: 20.1.0
-        version: 20.1.0
+      '@tsconfig/node22':
+        specifier: 22.0.0
+        version: 22.0.0
       '@types/jsdom':
         specifier: 27.0.0
         version: 27.0.0
@@ -670,9 +670,9 @@ importers:
         specifier: 3.5.25
         version: 3.5.25(typescript@5.9.3)
     devDependencies:
-      '@tsconfig/node20':
-        specifier: 20.1.0
-        version: 20.1.0
+      '@tsconfig/node22':
+        specifier: 22.0.0
+        version: 22.0.0
       '@types/jsdom':
         specifier: 27.0.0
         version: 27.0.0
@@ -3646,8 +3646,8 @@ packages:
   '@tsconfig/node16@1.0.4':
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
 
-  '@tsconfig/node20@20.1.0':
-    resolution: {integrity: sha512-7Yz1xDv3sot8+NwiYA8wkx60qr3Tr+soJwlqVQSkiEqqgYoNmMmqSPiYs1vMmTxneB3igHAD11dGOR2+BShzTA==}
+  '@tsconfig/node22@22.0.0':
+    resolution: {integrity: sha512-twLQ77zevtxobBOD4ToAtVmuYrpeYUh3qh+TEp+08IWhpsrIflVHqQ1F1CiPxQGL7doCdBIOOCF+1Tm833faNg==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -15570,7 +15570,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@tsconfig/node20@20.1.0': {}
+  '@tsconfig/node22@22.0.0': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
