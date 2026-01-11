@@ -12,7 +12,7 @@
   "dependencies": {
     "vue": "3.5.25",
     "@tauri-apps/api": "2.8.0",
-    "@tauri-apps/plugin-opener": "2.5.2"
+    "@tauri-apps/plugin-opener": "2.5.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "6.0.3",
