@@ -10,7 +10,7 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "vue": "3.5.25",
+    "vue": "3.5.26",
     "@tauri-apps/api": "2.8.0",
     "@tauri-apps/plugin-opener": "2.5.3"
   },

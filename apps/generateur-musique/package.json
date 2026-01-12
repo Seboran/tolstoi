@@ -18,7 +18,7 @@
     "lib-style": "workspace:*",
     "lib-sudoku": "workspace:*",
     "opensheetmusicdisplay": "1.9.3",
-    "vue": "3.5.25"
+    "vue": "3.5.26"
   },
   "devDependencies": {
     "@tsconfig/node24": "24.0.3",
