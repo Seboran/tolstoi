@@ -10,7 +10,7 @@
     "prepublish": "ctix create --overwrite --useRootDir && tsc"
   },
   "devDependencies": {
-    "@types/node": "22.19.5",
+    "@types/node": "22.19.7",
     "ctix": "2.7.2",
     "nodemon": "3.1.11",
     "ts-node": "10.9.2",
