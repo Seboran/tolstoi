@@ -407,8 +407,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/lib-sudoku
       opensheetmusicdisplay:
-        specifier: 1.9.3
-        version: 1.9.3
+        specifier: 1.9.4
+        version: 1.9.4
       vue:
         specifier: 3.5.26
         version: 3.5.26(typescript@5.9.3)
@@ -6109,10 +6109,6 @@ packages:
     resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
     engines: {node: '>=8'}
 
-  detect-libc@2.1.0:
-    resolution: {integrity: sha512-vEtk+OcP7VBRtQZ1EJ3bdgzSfBjgnEalLTp5zjJrS+2Z1w2KZly4SBdac/WDU3hhsNAZ9E8SC96ME4Ey8MZ7cg==}
-    engines: {node: '>=8'}
-
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
@@ -8895,8 +8891,8 @@ packages:
       zod:
         optional: true
 
-  opensheetmusicdisplay@1.9.3:
-    resolution: {integrity: sha512-5wrcHQS0D3FJRNKzm4MTNOgzA/+YJpWdZvWotiFHDuJtpYoMTvBQIzEbVv/71AmAoeqYth23jxYJM0kIV2phDA==}
+  opensheetmusicdisplay@1.9.4:
+    resolution: {integrity: sha512-0y1ucliKnKngMsoH/1FmBMxIZ7IZExfE7JM+0Y3Z/rR5GfxuU+eRSsQFeaj5EO/gH2M/2W+QGpX51E+QHusSaw==}
 
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
@@ -19237,9 +19233,6 @@ snapshots:
 
   detect-libc@2.0.3: {}
 
-  detect-libc@2.1.0:
-    optional: true
-
   detect-libc@2.1.2: {}
 
   deterministic-object-hash@2.0.2:
@@ -22857,7 +22850,7 @@ snapshots:
       ws: 8.18.3
       zod: 4.1.12
 
-  opensheetmusicdisplay@1.9.3:
+  opensheetmusicdisplay@1.9.4:
     dependencies:
       '@types/vexflow': 1.2.42
       jszip: 3.10.1
@@ -23487,7 +23480,7 @@ snapshots:
 
   prebuild-install@7.1.2:
     dependencies:
-      detect-libc: 2.1.0
+      detect-libc: 2.1.2
       expand-template: 2.0.3
       github-from-package: 0.0.0
       minimist: 1.2.8
