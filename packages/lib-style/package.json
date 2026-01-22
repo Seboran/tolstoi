@@ -24,7 +24,7 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "vue": "3.5.26"
+    "vue": "3.5.27"
   },
   "devDependencies": {
     "@tsconfig/node24": "24.0.4",
