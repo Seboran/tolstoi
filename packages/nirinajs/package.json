@@ -61,7 +61,7 @@
   },
   "devDependencies": {
     "typescript": "5.9.3",
-    "vite": "7.1.12",
+    "vite": "7.3.1",
     "rimraf": "6.1.2"
   },
   "keywords": [
