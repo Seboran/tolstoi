@@ -337,8 +337,8 @@ importers:
         specifier: 12.29.0
         version: 12.29.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       lucide-react:
-        specifier: 0.546.0
-        version: 0.546.0(react@19.2.3)
+        specifier: 0.563.0
+        version: 0.563.0(react@19.2.3)
       next:
         specifier: 15.5.9
         version: 15.5.9(@babel/core@7.28.4)(@playwright/test@1.58.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -465,8 +465,8 @@ importers:
         specifier: 4.1.18
         version: 4.1.18(vite@7.3.1(@types/node@24.2.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.37.0)(tsx@4.19.2)(yaml@2.8.2))
       lucide-vue-next:
-        specifier: 0.546.0
-        version: 0.546.0(vue@3.5.27(typescript@5.9.3))
+        specifier: 0.563.0
+        version: 0.563.0(vue@3.5.27(typescript@5.9.3))
       tailwindcss:
         specifier: 4.1.11
         version: 4.1.11
@@ -8439,13 +8439,13 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lucide-react@0.546.0:
-    resolution: {integrity: sha512-Z94u6fKT43lKeYHiVyvyR8fT7pwCzDu7RyMPpTvh054+xahSgj4HFQ+NmflvzdXsoAjYGdCguGaFKYuvq0ThCQ==}
+  lucide-react@0.563.0:
+    resolution: {integrity: sha512-8dXPB2GI4dI8jV4MgUDGBeLdGk8ekfqVZ0BdLcrRzocGgG75ltNEmWS+gE7uokKF/0oSUuczNDT+g9hFJ23FkA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  lucide-vue-next@0.546.0:
-    resolution: {integrity: sha512-Ra4lNbm0m9uSb82ZBMCUg3c2xQ4qaU9b87fAFvFPoLC0/u7JxG5FJjhUFqfNfofk1xdZiDpF6EnCbaxTHXzLcw==}
+  lucide-vue-next@0.563.0:
+    resolution: {integrity: sha512-zsE/lCKtmaa7bGfhSpN84br1K9YoQ5pCN+2oKWjQQG3Lo6ufUUKBuHSjNFI6RvUevxaajNXb8XwFUKeTXG3sIA==}
     peerDependencies:
       vue: '>=3.0.1'
 
@@ -22052,11 +22052,11 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lucide-react@0.546.0(react@19.2.3):
+  lucide-react@0.563.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 
-  lucide-vue-next@0.546.0(vue@3.5.27(typescript@5.9.3)):
+  lucide-vue-next@0.563.0(vue@3.5.27(typescript@5.9.3)):
     dependencies:
       vue: 3.5.27(typescript@5.9.3)
 
