@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "vue": "3.5.27",
-    "@tauri-apps/api": "2.8.0",
+    "@tauri-apps/api": "2.9.1",
     "@tauri-apps/plugin-opener": "2.5.3"
   },
   "devDependencies": {
@@ -19,6 +19,6 @@
     "typescript": "5.9.3",
     "vite": "7.3.1",
     "vue-tsc": "3.2.3",
-    "@tauri-apps/cli": "2.8.4"
+    "@tauri-apps/cli": "2.9.6"
   }
 }
