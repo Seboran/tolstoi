@@ -24,7 +24,7 @@
     "@astrojs/react": "4.4.2",
     "@astrojs/rss": "4.0.15",
     "@astrojs/vue": "5.1.4",
-    "@supabase/supabase-js": "2.92.0",
+    "@supabase/supabase-js": "2.93.3",
     "@tailwindcss/vite": "4.1.18",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
