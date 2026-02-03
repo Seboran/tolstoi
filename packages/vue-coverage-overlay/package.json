@@ -1,0 +1,42 @@
+{
+  "name": "@seboran/vue-coverage-overlay",
+  "version": "0.1.0",
+  "description": "Vite plugin to visualize Vue component test coverage directly on the page",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "vue",
+    "coverage",
+    "vitest",
+    "testing",
+    "devtools"
+  ],
+  "author": "Nirina",
+  "license": "MIT",
+  "peerDependencies": {
+    "vite": ">=4.0.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

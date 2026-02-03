@@ -6,5 +6,11 @@ export default defineVitestConfig({
     globals: true,
     environment: 'nuxt',
     include: ['app/components/**/*.spec.ts'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      include: ['app/components/**/*.{vue,ts}'],
+      reportsDirectory: './coverage',
+    },
   },
 })

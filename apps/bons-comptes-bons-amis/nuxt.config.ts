@@ -1,5 +1,6 @@
 import path from 'node:path'
 import { fileURLToPath, URL } from 'node:url'
+import { vueCoverageOverlay } from '@seboran/vue-coverage-overlay'
 
 const rootDir = fileURLToPath(new URL('../..', import.meta.url))
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -14,6 +15,13 @@ export default defineNuxtConfig({
     pinia: path.resolve(rootDir, 'node_modules/pinia/dist/pinia.mjs'),
   },
   devtools: { enabled: true },
+  vite: {
+    plugins: [
+      vueCoverageOverlay({
+        coveragePath: '../coverage/coverage-final.json',
+      }),
+    ],
+  },
   modules: [
     '@nuxt/test-utils/module',
     '@nuxt/ui',
