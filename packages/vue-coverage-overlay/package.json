@@ -1,6 +1,6 @@
 {
   "name": "@seboran/vue-coverage-overlay",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vite plugin to visualize Vue component test coverage directly on the page",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -31,6 +31,11 @@
   ],
   "author": "Nirina",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Seboran/tolstoi",
+    "directory": "packages/vue-coverage-overlay"
+  },
   "peerDependencies": {
     "vite": ">=4.0.0"
   },
