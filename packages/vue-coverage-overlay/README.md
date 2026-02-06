@@ -2,6 +2,8 @@
 
 A Vite plugin that visualizes Vue component test coverage directly on your running application. No browser extension needed.
 
+![Vue coverage overlay over default starting app](image.png)
+
 ## Features
 
 - 📊 **Visual coverage overlay** - See which components have test coverage at a glance
