@@ -772,13 +772,13 @@ importers:
   packages/vue-coverage-overlay:
     devDependencies:
       tsup:
-        specifier: ^8.0.0
+        specifier: 8.5.1
         version: 8.5.1(@microsoft/api-extractor@7.51.0(@types/node@24.2.0))(jiti@2.6.1)(postcss@8.5.6)(tsx@4.19.2)(typescript@5.9.3)(yaml@2.8.2)
       typescript:
-        specifier: ^5.0.0
+        specifier: 5.9.3
         version: 5.9.3
       vite:
-        specifier: ^5.0.0
+        specifier: 5.4.21
         version: 5.4.21(@types/node@24.2.0)(lightningcss@1.30.2)(terser@5.37.0)
 
 packages:
@@ -24685,7 +24685,7 @@ snapshots:
 
   sucrase@3.35.0:
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.8
+      '@jridgewell/gen-mapping': 0.3.12
       commander: 4.1.1
       glob: 10.4.5
       lines-and-columns: 1.2.4
