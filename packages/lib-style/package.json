@@ -33,7 +33,7 @@
     "@vitejs/plugin-vue": "6.0.3",
     "@vue/test-utils": "2.4.6",
     "@vue/tsconfig": "0.8.1",
-    "autoprefixer": "10.4.23",
+    "autoprefixer": "10.4.24",
     "happy-dom": "17.1.2",
     "jsdom": "27.4.0",
     "nodemon": "3.1.11",
