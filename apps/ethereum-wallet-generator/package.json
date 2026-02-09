@@ -24,7 +24,7 @@
     "@seboran/vue-coverage-overlay": "workspace:*",
     "@playwright/test": "1.58.0",
     "@types/bootstrap": "5.2.10",
-    "@types/node": "22.19.7",
+    "@types/node": "22.19.9",
     "@vitejs/plugin-vue": "6.0.3",
     "@vue/test-utils": "2.4.6",
     "jsdom": "27.4.0",
